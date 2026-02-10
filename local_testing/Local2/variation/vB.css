@@ -1,28 +1,57 @@
-html body #ServicePageBusinessInfoSection>div>div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-}
-
-/* #ServicePageBusinessInfoSection>div>div:nth-child(2)>div {
-    max-width: 50%;
-} */
-
-html body #ServicePageBusinessInfoSection>div>div:nth-child(2)>div:first-child {
-    order: 3;
-}
-
-html body #ServicePageBusinessInfoSection>div>div:nth-child(2)>div:nth-child(3) {
-    order: 2;
-}
-
-html body #ServicePageBusinessInfoSection>div>div:nth-child(2)>div:nth-child(4) {
-    order: 1;
-}
-
-html body section#ServicePageHeaderSection+div>div:first-child {
+html body.TT-182 .shadow-100 .flex-column .relative.s_static,
+html body.TT-182 #ServicePageHeaderSection+section .flex-column>.relative.s_static {
     display: none;
 }
 
-/* #ServicePageBusinessInfoSection>div>div:nth-child(2)>div:nth-child(2) {
-    order: 4;
+html body.TT-182 .bmttmove>div>div {
+    flex-direction: column;
+    margin-left: 0 !important;
+}
+
+html body.TT-182 .bmttmove>div>div>div {
+    width: 100% !important;
+    padding-left: 0 !important;
+
+}
+
+html body.TT-182 .bg-white .mt3+.mt3+.mt3 button {
+    display: none;
+}
+
+html body.TT-182 aside .mt3>button {
+    display: none;
+}
+
+html body.TT-182 .bmttmove>div>div>div:first-child {
+    margin-bottom: 15px;
+}
+
+html body.TT-182 .bmttmove>div>div>div:first-child button {
+    background-color: #009fd9;
+    color: #fff;
+    border: #009fd9;
+}
+
+html body.TT-182 .bmttmove {
+    padding-bottom: 8px;
+}
+
+@media screen and (max-width: 768px) {
+
+    html body.TT-182 .bmttmove {
+        margin-top: 12px;
+    }
+
+    html body.TT-182 #ServicePageHeaderSection+section .mt3 button {
+        display: none;
+    }
+
+    /* #ServicePageHeaderSection+section>div>div div.mt3 {
+        margin-top: 4px !important;
+    } */
+
+    #ServicePageHeaderSection+section>div>div div.mt3 div.mt2 {
+        margin-bottom: 10px !important;
+        margin-top: 0px !important;
+    }
 }

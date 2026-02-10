@@ -54,4 +54,8 @@ html body.TT-182 .bmttmove {
         margin-bottom: 10px !important;
         margin-top: 0px !important;
     }
+
+    html body.TT-182 .bmttmove+div.mt1 {
+        display: none;
+    }
 }

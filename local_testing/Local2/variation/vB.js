@@ -1537,3 +1537,5 @@
     if (debug) console.log(e, "error in Test" + variation_name);
   }
 })();
+
+#__next > div > div.sc-e5a2a45e-0.ehcwgK > div.mt-2.flex.flex-row.lg\:container.lg\:mt-10.lg\:px-0 > div > ol > li:nth-child(58) > div > div > div.col-span-2.lg\:col-span-1 > div.relative.flex.max-w-full.flex-col.items-stretch > div.group.relative.-mx-3.lg\:mx-0.pointer-coarse\:overflow-x-clip > div > div:nth-child(2) > button.relative.select-none.items-center.justify-center.whitespace-nowrap.rounded.no-underline.ring-offset-background.duration-500.hover\:transition-colors.focus-visible\:z-10.focus-visible\:outline-none.focus-visible\:ring-2.focus-visible\:ring-ring.focus-visible\:ring-offset-2.active\:scale-\[0\.98\].disabled\:pointer-events-none.disabled\:opacity-80.pointer-fine\:hover\:bg-gray-200.active\:bg-white.flex.h-10.flex-col.truncate.bg-transparent.px-px.py-0.text-center.text-2xs.font-semibold.text-brand-blue.my-0\.5

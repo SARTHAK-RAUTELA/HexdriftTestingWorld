@@ -258,4 +258,8 @@
     gap: 5px !important;
   }
 
+  html body.cre-t-160 [data-times-available="true"] a img{
+    height: 101px;
+    object-fit: cover;
+  }
 }

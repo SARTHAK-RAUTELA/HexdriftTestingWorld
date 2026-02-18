@@ -63,6 +63,13 @@
 
     var helper = _$();
 
+    function insertCSS(css) {
+      var style = document.createElement("style");
+      style.type = "text/css";
+      style.innerHTML = css;
+      document.getElementsByTagName("head")[0].appendChild(style);
+    }
+
     function debounce(func, timeout = 300) {
       let timer;
       return (...args) => {
@@ -129,29 +136,41 @@
 
       return done;
     }
+
+    /* Live event binding function */
     function live(selector, event, callback, context) {
+      /****Helper Functions****/
+      // helper for enabling IE 8 event bindings
       function addEvent(el, type, handler) {
         if (el.attachEvent) el.attachEvent("on" + type, handler);
         else el.addEventListener(type, handler);
       }
-
-      if (!Element.prototype.matches) {
-        Element.prototype.matches =
-          Element.prototype.matchesSelector ||
-          Element.prototype.webkitMatchesSelector ||
-          Element.prototype.msMatchesSelector ||
-          function (s) {
-            var nodes = (this.parentNode || this.ownerDocument).querySelectorAll(s);
-            for (var i = 0; i < nodes.length; i++) if (nodes[i] === this) return true;
-            return false;
-          };
+      // matches polyfill
+      this.Element &&
+        (function (ElementPrototype) {
+          ElementPrototype.matches =
+            ElementPrototype.matches ||
+            ElementPrototype.matchesSelector ||
+            ElementPrototype.webkitMatchesSelector ||
+            ElementPrototype.msMatchesSelector ||
+            function (selector) {
+              var node = this,
+                nodes = (node.parentNode || node.document).querySelectorAll(selector),
+                i = -1;
+              while (nodes[++i] && nodes[i] != node);
+              return !!nodes[i];
+            };
+        })(Element.prototype);
+      // live binding helper using matchesSelector
+      function live(selector, event, callback, context) {
+        addEvent(context || document, event, function (e) {
+          var found,
+            el = e.target || e.srcElement;
+          while (el && el.matches && el !== context && !(found = el.matches(selector))) el = el.parentElement;
+          if (found) callback.call(el, e);
+        });
       }
-
-      addEvent(context || document, event, function (e) {
-        let el = e.target;
-        while (el && el !== context && !el.matches(selector)) el = el.parentElement;
-        if (el && el.matches(selector)) callback.call(el, e);
-      });
+      live(selector, event, callback, context);
     }
 
     function updateAndCopyText() {
@@ -286,6 +305,253 @@
       });
     }
 
+    function hrTextSeparate() {
+      // Process TIME buttons
+      const timeButtons = document.querySelectorAll('[data-attribute="restaurant-list-item"] button[data-attribute="New_booking-time-button"]');
+      timeButtons.forEach((button) => {
+        if (button.dataset.processedTime) return;
+
+        const textContent = button.textContent.trim();
+        const matches = textContent.match(/(\d{1,2}(:\d{2})?)(\s?[APap][Mm])/);
+
+        if (!matches) {
+          return;
+        }
+
+        const time = matches[1];
+        const ampm = matches[3].trim();
+
+        // Create spans for time and am/pm
+        const timeSpan = document.createElement("span");
+        timeSpan.textContent = time;
+        timeSpan.classList.add("time-span");
+
+        const ampmSpan = document.createElement("span");
+        ampmSpan.textContent = ampm;
+        ampmSpan.classList.add("ampm-span");
+
+        // Clear previous content and append new spans
+        button.textContent = "";
+        button.appendChild(timeSpan);
+        button.appendChild(ampmSpan);
+
+        button.dataset.processedTime = "true";
+      });
+
+      // Process DATE bold spans
+      const dateSpans = document.querySelectorAll('[data-attribute="New_booking-date-button"] span.font-bold');
+      dateSpans.forEach((span) => {
+        if (span.dataset.processedDate) return;
+
+        const originalText = span.textContent.trim();
+        const parts = originalText.split(/\s+/); // Split on any whitespace
+        let dayPart = "";
+        let monthPart = "";
+
+        if (parts.length === 2) {
+          const [part1, part2] = parts.map((p) => p.trim());
+
+          if (/^\d+$/.test(part1)) {
+            dayPart = part1;
+            monthPart = part2;
+          } else if (/^\d+$/.test(part2)) {
+            dayPart = part2;
+            monthPart = part1;
+          }
+        } else if (parts.length === 1) {
+          // Attempt to match mixed formats like "11DEC" or "DEC11"
+          const match = originalText.match(/^(\d+)([A-Za-z]+)|^([A-Za-z]+)(\d+)$/);
+          if (match) {
+            dayPart = match[1] || match[4];
+            monthPart = match[2] || match[3];
+          } else {
+            // Can't split — fallback to treating as day
+            dayPart = originalText;
+            monthPart = "";
+          }
+        }
+
+        // Create spans for day and month
+        const daySpan = document.createElement("span");
+        daySpan.textContent = dayPart;
+        daySpan.classList.add("date-day-span");
+
+        const monthSpan = document.createElement("span");
+        monthSpan.textContent = monthPart;
+        monthSpan.classList.add("date-month-span");
+
+        // Clear previous content and append new spans
+        span.textContent = "";
+        span.appendChild(daySpan);
+        if (monthPart) span.appendChild(monthSpan);
+
+        span.dataset.processedDate = "true";
+      });
+    }
+
+    function buttonFunctionMoreThanThree() {
+      // 1. Define the selector for the "row" containers
+      const rowSelector = '[data-attribute="restaurant-list-item"] .group.relative div.items-stretch';
+
+      // 2. Define the selector for the "button" inside those containers
+      const buttonSelector = '[data-attribute="restaurant-list-item"] .group.relative div.items-stretch button:not([data-attribute="New_booking-date-button"])';
+
+      // 3. Define the classes and attributes to be added
+      const targetClass = "has-more-than-three-buttons";
+      const buttonClassToAdd = "cre-t-160-remove-class";
+      const attributeToAdd = "data-more-than-three-buttons";
+      const attributeValue = "true";
+
+      // 4. Get all elements matching the row selector (NodeList)
+      const rowElements = document.querySelectorAll(rowSelector);
+
+      // 5. Check if any row elements were found
+      if (rowElements.length > 0) {
+        rowElements.forEach(function (row) {
+          const buttons = row.querySelectorAll(buttonSelector);
+
+          if (buttons.length > 3) {
+            row.classList.add(targetClass);
+
+            const parentDiv = row.closest('[data-attribute="restaurant-list-item"] .group.relative');
+
+            if (parentDiv) {
+              if (!parentDiv.hasAttribute(attributeToAdd)) {
+                parentDiv.insertAdjacentHTML(
+                  "beforeend",
+                  `<div class="cre-t-160-more-times-container">
+                <div class="cre-t-160-more-time-text">More times</div>
+                <div class="cre-t-160-more-time-text-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-3.5 text-gray-300">
+                    <path d="m3 6 5 5 5-5" stroke="currentColor" stroke-width="2"></path>
+                  </svg>
+                </div>
+              </div>`
+                );
+
+                // 12. Add the attribute with the value 'true'
+                parentDiv.setAttribute(attributeToAdd, attributeValue);
+              }
+            }
+
+            // 13. Add the button class to all buttons except the first 3
+            buttons.forEach(function (button, index) {
+              if (index >= 3) {
+                button.classList.add(buttonClassToAdd);
+              }
+            });
+          }
+        });
+      }
+    }
+    function buttonFunctionMoreTime() {
+      // Define selectors and attributes
+      const rowSelector = '[data-attribute="restaurant-list-item"] .group.relative div.items-stretch';
+      const buttonSelector = 'button:not([data-attribute="New_booking-date-button"])';
+      const targetClass = "has-more-than-three-buttons";
+      const buttonClassToAdd = "cre-t-160-remove-class";
+      const attributeToAdd = "data-more-than-three-buttons";
+      const attributeValue = "true";
+
+      const rowElements = document.querySelectorAll(rowSelector);
+
+      if (rowElements.length === 0) {
+        return;
+      }
+
+      rowElements.forEach(function (row) {
+        const buttons = row.querySelectorAll(buttonSelector);
+
+        // First, check if there is a "more times" button and add the attribute if it exists
+        let moreTimesButtonFound = false;
+        buttons.forEach(function (button) {
+          if (button.textContent.trim().toLowerCase() === "more times") {
+            // If the button text is "more times", add the attribute
+            button.setAttribute("data-more-time", "true");
+            moreTimesButtonFound = true;
+          }
+        });
+
+        // If a "more times" button is found, proceed with the rest of the logic
+        if (moreTimesButtonFound) {
+          // Add class to the row if not already added
+          if (!row.classList.contains(targetClass)) {
+            row.classList.add(targetClass);
+          }
+
+          const parentDiv = row.closest('[data-attribute="restaurant-list-item"] .group.relative');
+          if (!parentDiv) return;
+
+          // Check if "more time" element already exists
+          let moreTimeDiv = parentDiv.querySelector(".cre-t-160-more-time-button");
+
+          if (!moreTimeDiv) {
+            // Create and insert "more time" div if it doesn't exist
+            moreTimeDiv = document.createElement("div");
+            moreTimeDiv.textContent = "More times";
+            moreTimeDiv.classList.add("cre-t-160-more-time-button");
+
+            // Create the SVG icon
+            const moreTimeIconDiv = document.createElement("div");
+            moreTimeIconDiv.classList.add("cre-t-160-more-time-text-icon");
+
+            const svgIcon = `
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-3.5 text-gray-300">
+                <path d="m3 6 5 5 5-5" stroke="currentColor" stroke-width="2"></path>
+              </svg>
+            `;
+
+            moreTimeIconDiv.innerHTML = svgIcon;
+
+            // Append the icon to the moreTimeDiv
+            moreTimeDiv.appendChild(moreTimeIconDiv);
+
+            // Insert the "more time" div after the parentDiv
+            parentDiv.appendChild(moreTimeDiv);
+          }
+
+          // Ensure the attribute is set on parentDiv
+          if (!parentDiv.hasAttribute(attributeToAdd)) {
+            parentDiv.setAttribute(attributeToAdd, attributeValue);
+          }
+
+          // Add class to buttons beyond the first 3
+          buttons.forEach(function (button, index) {
+            // Check if button is beyond the first 3 and doesn't already have the class
+            if (index >= 3 && !button.classList.contains(buttonClassToAdd)) {
+              button.classList.add(buttonClassToAdd);
+            }
+          });
+        }
+      });
+    }
+
+    function eventListenerButton() {
+      live(".cre-t-160-more-time-button", "click", function () {
+        const btnParentDiv = this.closest('[data-attribute="restaurant-list-item"] .group.relative');
+        // Find the button inside the row that contains data-more-time="true"
+        const buttonWithMoreTime = btnParentDiv.querySelector('button[data-more-time="true"]');
+
+        // Check if a button with data-more-time="true" exists
+        if (buttonWithMoreTime) {
+          // Proceed to add the class to the parent div only if it isn't already present
+          if (!btnParentDiv.classList.contains("cre-t-160-remove-class-button")) {
+            buttonWithMoreTime.click();
+            btnParentDiv.classList.add("cre-t-160-remove-class-button");
+          }
+        } else {
+          // If no such button exists, just add the class
+          if (!btnParentDiv.classList.contains("cre-t-160-remove-class-button")) {
+            btnParentDiv.classList.add("cre-t-160-remove-class-button");
+          }
+        }
+      });
+
+      live(".cre-t-160-more-times-container", "click", function () {
+        const parentDiv = this.closest('[data-attribute="restaurant-list-item"] .group.relative');
+        parentDiv.classList.add("cre-t-160-remove-class-button");
+      });
+    }
 
     function getOriginId() {
       const origin = window.location.origin.trim();
@@ -1135,6 +1401,7 @@
   align-items: center;
   }
 
+
   
   html body.cre-t-160 [data-attribute="restaurant-title-row"]+div .cre-t-160-menu-icon svg {
   width: 100% !important;
@@ -1479,11 +1746,10 @@
 
     function init() {
       _$("body").addClass(variation_name);
-
       addScript();
-
       if (!window.observer160Li) {
-        observeSelector(`[data-attribute="restaurant-list-item"]`, (listItem) => {
+        eventListenerButton();
+        observeSelector(`[data-attribute="restaurant-list-item"] button`, (listItem) => {
           if (window.location.pathname.includes("/auckland") || window.location.pathname.includes("/queenstown-lakes")) {
             document.body.classList.remove(variation_name);
             return;
@@ -1494,7 +1760,15 @@
             function () {
               updateAndCopyText();
               addTags();
-              
+              // Need to force a reflow
+              const interval = setInterval(() => {
+                hrTextSeparate();
+                buttonFunctionMoreTime();
+                buttonFunctionMoreThanThree();
+              }, 100);
+              setTimeout(() => {
+                clearInterval(interval);
+              }, 2000);
             },
             100,
             8000
@@ -1537,5 +1811,3 @@
     if (debug) console.log(e, "error in Test" + variation_name);
   }
 })();
-
-#__next > div > div.sc-e5a2a45e-0.ehcwgK > div.mt-2.flex.flex-row.lg\:container.lg\:mt-10.lg\:px-0 > div > ol > li:nth-child(58) > div > div > div.col-span-2.lg\:col-span-1 > div.relative.flex.max-w-full.flex-col.items-stretch > div.group.relative.-mx-3.lg\:mx-0.pointer-coarse\:overflow-x-clip > div > div:nth-child(2) > button.relative.select-none.items-center.justify-center.whitespace-nowrap.rounded.no-underline.ring-offset-background.duration-500.hover\:transition-colors.focus-visible\:z-10.focus-visible\:outline-none.focus-visible\:ring-2.focus-visible\:ring-ring.focus-visible\:ring-offset-2.active\:scale-\[0\.98\].disabled\:pointer-events-none.disabled\:opacity-80.pointer-fine\:hover\:bg-gray-200.active\:bg-white.flex.h-10.flex-col.truncate.bg-transparent.px-px.py-0.text-center.text-2xs.font-semibold.text-brand-blue.my-0\.5

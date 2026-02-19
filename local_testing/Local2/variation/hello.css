@@ -15,7 +15,7 @@ html body.cre-t-161-modal-open {
 }
 
 /* ===========================
-MODAL OVERLAY
+modal overlay
 =========================== */
 html body.cre-t-161 .cre-t-161-overlay {
     position: fixed;
@@ -25,36 +25,66 @@ html body.cre-t-161 .cre-t-161-overlay {
     height: 100%;
     --tw-backdrop-blur: blur(4px);
     z-index: 2147483646 !important;
-    background-color: rgba(39, 43, 46, .8);
+    background-color: rgba(39, 43, 46, 0.8);
     backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-/* ===========================
-MODAL CONTENT (SCALE BASED)
-=========================== */
 html body.cre-t-161 .cre-t-161-modal-content {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transform-origin: center center;
-    padding: 52px 74px;
+    padding: 52px 74px 0 74px;
     background-color: #fff;
     max-width: 817px;
     width: calc(100% - 20px);
+    max-height: 90dvh;
     height: auto;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 2147483647 !important;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 /* ===========================
-BADGE + CLOSE ICON
+everything above the cta scrolls
+=========================== */
+html body.cre-t-161 .cre-t-161-modal-scrollable {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+}
+
+/* ===========================
+close icon
 =========================== */
 html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper {
     position: absolute;
-    top: .5rem;
-    right: .5rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper img {
+    pointer-events: none;
+    display: block;
+}
+
+/* ===========================
+cta — sticky at the bottom of the modal
+=========================== */
+html body.cre-t-161 .cre-t-161-modal-cta {
+    flex: 0 0 auto;
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 14px 20px;
     cursor: pointer;
 }
 
@@ -63,33 +93,43 @@ html body.cre-t-161 .cre-t-161-modal-cta:hover {
 }
 
 html body.cre-t-161 .cre-t-161-modal-cta-text {
-    color: #FFF;
+    text-decoration-line: none;
+    transition-duration: 0.5s;
+    animation-duration: 0.5s;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-color: rgb(38 86 130 / var(--tw-bg-opacity, 1));
+    font-weight: 700;
+    color: #fff;
     text-align: center;
     font-size: 17px;
-    font-weight: 700;
     line-height: 26px;
+    border-radius: 0.25rem;
+    display: block;
 }
 
-/* Responsive */
+/* ===========================
+responsive — tablet
+=========================== */
 @media (max-width: 1023px) {
     html body.cre-t-161 .cre-t-161-modal-content {
         width: calc(100% - 40px);
     }
 }
 
+/* ===========================
+responsive — mobile (≤767px)
+=========================== */
 @media screen and (max-width: 767px) {
     html body.cre-t-161 .cre-t-161-modal-content {
-        transform: translate(-50%, -50%) scale(0.9);
-        padding: 8px 0px;
-        width: calc(100% - -25px);
+        max-height: 92dvh;
+        width: calc(100% - 24px);
+        padding: 8px 0 0 0;
+        transform: translate(-50%, -50%);
     }
 
     html body.cre-t-161 .cre-t-161-modal-cta {
         padding: 10px 10px;
-    }
-
-    html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper .cre-t-161-cross-icon {
-        width: 100%
     }
 
     html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper {
@@ -101,29 +141,28 @@ html body.cre-t-161 .cre-t-161-modal-cta-text {
     }
 }
 
-/*
-@media screen and (max-width: 374px) {
-html body.cre-t-161 .cre-t-161-modal-content {
-transform: translate(-50%, -50%) scale(0.8);
-width: calc(100% - -50px);
-}
-} */
-@media screen and (max-width: 376px) {
+/* ===========================
+very small screens (≤375px)
+=========================== */
+@media screen and (max-width: 375px) {
     html body.cre-t-161 .cre-t-161-modal-content {
-        max-height: 100vh;
-        overflow-y: auto;
+        max-height: 95dvh;
+        padding-bottom: 0;
     }
 }
 
-/* own css */
+/* ===========================
+own styles
+=========================== */
 html body.cre-t-161 .cre-t-161-main-title {
     --tw-text-opacity: 1;
-    color: rgb(39 43 46/var(--tw-text-opacity, 1));
+    color: rgb(39 43 46 / var(--tw-text-opacity, 1));
     letter-spacing: 0;
     font-weight: 400;
     font-size: 2rem;
     line-height: 2.5rem;
-    font-family: var(--font-abril-fatface), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-abril-fatface), ui-serif, georgia, cambria,
+        "times new roman", times, serif;
     margin-top: 28px;
     padding: 0px 20px;
 }
@@ -139,29 +178,16 @@ html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item svg {
     max-width: 24px;
 }
 
-html body.cre-t-161 .cre-t-161-modal-cta-text {
-    border-radius: .25rem;
-    text-decoration-line: none;
-    transition-duration: .5s;
-    font-size: .9375rem;
-    line-height: 1.5rem;
-    animation-duration: .5s;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    background-color: rgb(38 86 130/var(--tw-bg-opacity, 1));
-    font-weight: 700;
-}
-
 html body.cre-t-161 .cre-t-161-subtitle-text {
     padding: 0px 20px;
     margin: 12px 0px 8px 0px;
     --tw-text-opacity: 1;
-    color: rgb(94 101 112/var(--tw-text-opacity, 1));
+    color: rgb(94 101 112 / var(--tw-text-opacity, 1));
 }
 
 html body.cre-t-161 .cre-t-161-modal-benefits-checklist-title {
     --tw-text-opacity: 1;
-    color: rgb(94 101 112/var(--tw-text-opacity, 1));
+    color: rgb(94 101 112 / var(--tw-text-opacity, 1));
 }
 
 html body.cre-t-161 .cre-t-161-modal-benefits-checklist {
@@ -178,7 +204,7 @@ html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item strong {
 
 html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item-p {
     --tw-text-opacity: 1;
-    color: rgb(94 101 112/var(--tw-text-opacity, 1));
+    color: rgb(94 101 112 / var(--tw-text-opacity, 1));
     line-height: 1.625;
     font-size: 16px;
     font-family: inherit;
@@ -193,15 +219,15 @@ html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item-text {
     width: 100%;
 }
 
-html body.cre-t-161 .cre-t-161-modal-cta {
-    position: sticky;
-    /* bottom: 0; */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    background: #fff;
+/* V2 specific — tag icon next to the service fee text */
+html body.cre-t-161 .cre-t-161-tag-icon {
+    width: 9px;
+    height: 9px;
+    display: flex;
+    align-items: center;
 }
 
-@media screen and (max-width: 375px) {
-    html body.cre-t-161 .cre-t-161-modal-content {
-        padding-bottom: 0px;
-    }
+html body.cre-t-161 .cre-t-161-tag-icon img {
+    width: 100%;
+    height: 100%;
 }

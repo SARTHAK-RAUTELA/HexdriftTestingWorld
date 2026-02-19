@@ -96,13 +96,24 @@
                 () => {
                     var triggerElements = document.querySelectorAll(".tag-2 .cre-t-160-text, .tag-2 .cre-t-160-control-text");
                     triggerElements.forEach((el) => {
+                        // if (document.querySelector(".cre-t-161-tag-icon")) return;
+                        if (el.nextElementSibling && el.nextElementSibling.classList.contains("cre-t-161-tag-icon")) return;
+                        const newElement = document.createElement("div");
+                        newElement.classList.add("cre-t-161-tag-icon");
+                        newElement.innerHTML = `
+<img src="https://v2.crocdn.com/FirstTable/i-icon%20(1).svg" alt="i-icon">
+`;
+                        // Insert the new element after each trigger element
+                        el.insertAdjacentElement("afterend", newElement);
+                        // Add the event listener to show the modal
                         el.addEventListener("click", () => {
                             document.querySelector(".cre-t-161-modal-main").classList.add("active");
                             document.querySelector('body').classList.add('cre-t-161-modal-open');
                         });
                     });
+                    // Close function
                     var closeElements = document.querySelectorAll(".cre-t-161-modal-cross-icon-wrapper, .cre-t-161-modal-cta");
-                    closeElements.forEach((element) => {
+                    closeElements.forEach(element => {
                         element.addEventListener("click", () => {
                             document.querySelector(".cre-t-161-modal-main").classList.remove("active");
                             document.querySelector('body').classList.remove('cre-t-161-modal-open');

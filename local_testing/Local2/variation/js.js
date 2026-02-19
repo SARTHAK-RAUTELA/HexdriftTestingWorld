@@ -1,14 +1,120 @@
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=1012929&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9012249&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9012290&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9012311&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9013473&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9051658&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9052381&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9053782&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9057971&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9058038&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9060235&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9189227&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9009691&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
-https://petinsurancegurus.com/home/?utm_campaign=Cro_mode_85&_conv_eforce=100051087.1000252885&affid=1319&gad_campaignid=23180209370&gad_source=1&gbraid=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&gclid=EAIaIQobChMIvozg87CQkQMV64juAR39HAICEAAYBCAAEgKJTfD_BwE&geo_id=9009591&oid=39&sub1=23180209370&sub2=0AAAAA9buGnbdnlkn2duHJnZjWH1QgPdOn&sub3=e&sub4=renters+liability+insurance&sub5=CkAKCAiAxJXJBhBQEjAAo_TGIvLe6kffeykMLuKHii0tksxM1-d6BfWEV0XJDUZp-ryGk-ijYiHE_A9Q6AUaAtJ_
+(function () {
+    try {
+        /* main variables */
+        var debug = 1;
+        var variation_name = "cre-t-161";
+        /* all Pure helper functions */
+        function addClass(selector, className) {
+            var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+            if (!element) return;
+            if (element.classList) element.classList.add(className);
+            else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
+                element.className += " " + className;
+            }
+        }
+        function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+            var interval = setInterval(function () {
+                if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
+                    clearInterval(interval);
+                    trigger();
+                }
+            }, delayInterval);
+            setTimeout(function () {
+                clearInterval(interval);
+            }, delayTimeout);
+        }
+        /* Variation Init */
+        function addModal() {
+            var modalHtml = `<div class="cre-t-161-modal-main" style="display: none">
+<div id="cre-t-161-modal-overlay" class="cre-t-161-overlay"></div>
+<div class="cre-t-161-modal-content">
+<div class="cre-t-161-modal-cross-icon-wrapper">
+<img src="https://v2.crocdn.com/FirstTable/close.svg" alt="i-icon">
+</div>
+<div class="cre-t-161-modal-scrollable">
+<div class="cre-t-161-main-title">
+<h2 class="cre-t-161-text">Why is there a service fee?</h2>
+</div>
+<div class="cre-t-161-main-subtitle">
+<p class="cre-t-161-subtitle-text">Your service fee is a small but important part of how we continue to bring you incredible dining deals while supporting local restaurants.</p>
+</div>
+<div class="cre-t-161-modal-benefits-checklist">
+<span class="cre-t-161-modal-benefits-checklist-title">Here's why it's important:</span>
+<div class="cre-t-161-modal-benefits-checklist-item">
+<div class="cre-t-161-modal-benefits-checklist-item-icon">
+<img src="https://v2.crocdn.com/FirstTable/icon.svg" alt="i-icon">
+</div>
+<div class="cre-t-161-modal-benefits-checklist-item-text">
+<strong>It reduces no-shows</strong>
+<p class="cre-t-161-modal-benefits-checklist-item-p">Making it easier for restaurants to plan ahead and offer you the best deals.</p>
+</div>
+</div>
+<div class="cre-t-161-modal-benefits-checklist-item">
+<div class="cre-t-161-modal-benefits-checklist-item-icon">
+<img src="https://v2.crocdn.com/FirstTable/icon.svg" alt="i-icon">
+</div>
+<div class="cre-t-161-modal-benefits-checklist-item-text">
+<strong>It secures your table</strong>
+<p class="cre-t-161-modal-benefits-checklist-item-p">Your booking is guaranteed, along with your 50% discount.</p>
+</div>
+</div>
+<div class="cre-t-161-modal-benefits-checklist-item">
+<div class="cre-t-161-modal-benefits-checklist-item-icon">
+<img src="https://v2.crocdn.com/FirstTable/icon.svg" alt="i-icon">
+</div>
+<div class="cre-t-161-modal-benefits-checklist-item-text">
+<strong>It keeps us going</strong>
+<p class="cre-t-161-modal-benefits-checklist-item-p">The fee helps cover our costs so we can continue running our platform and bringing on new restaurants.</p>
+</div>
+</div>
+<div class="cre-t-161-modal-benefits-checklist-item">
+<div class="cre-t-161-modal-benefits-checklist-item-icon">
+<img src="https://v2.crocdn.com/FirstTable/icon.svg" alt="i-icon">
+</div>
+<div class="cre-t-161-modal-benefits-checklist-item-text">
+<strong>It helps us attract restaurants</strong>
+<p class="cre-t-161-modal-benefits-checklist-item-p">Restaurants join First Table for free, so the fee helps us bring more dining options to your area.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cre-t-161-modal-cta">
+<div class="cre-t-161-modal-cta-text">Got it</div>
+</div>
+</div>
+</div>
+`;
+            if (!document.querySelector(".cre-t-161-modal-main")) {
+                document.body.insertAdjacentHTML("beforeend", modalHtml);
+            }
+        }
+        function init() {
+            addClass("body", variation_name);
+            addModal();
+            waitForElement(
+                ".tag-2 .cre-t-160-text, .tag-2 .cre-t-160-control-text",
+                () => {
+                    var triggerElements = document.querySelectorAll(".tag-2 .cre-t-160-text, .tag-2 .cre-t-160-control-text");
+                    triggerElements.forEach((el) => {
+                        el.addEventListener("click", () => {
+                            document.querySelector(".cre-t-161-modal-main").classList.add("active");
+                            document.querySelector('body').classList.add('cre-t-161-modal-open');
+                        });
+                    });
+                    var closeElements = document.querySelectorAll(".cre-t-161-modal-cross-icon-wrapper, .cre-t-161-modal-cta");
+                    closeElements.forEach((element) => {
+                        element.addEventListener("click", () => {
+                            document.querySelector(".cre-t-161-modal-main").classList.remove("active");
+                            document.querySelector('body').classList.remove('cre-t-161-modal-open');
+                        });
+                    });
+                },
+                50,
+                5000
+            );
+        }
+        waitForElement("body", init, 50, 5000);
+    } catch (e) {
+        if (debug) console.log(e, "error in Test " + variation_name);
+    }
+})();

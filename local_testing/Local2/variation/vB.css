@@ -1,265 +1,171 @@
-@media screen and (max-width: 600px) {
-
-  html body.cre-t-160 [data-times-available="true"] a .leading-tight.whitespace-nowrap {
-    display: none !important;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-title-row"] h3,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"] h3 a {
-    color: #272B2E;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-list-location"] a.flex {
-    cursor: none;
-    text-decoration: none;
-    text-underline-offset: unset;
-    color: #5e6570;
-    font-family: inherit;
-    font-size: 13px !important;
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--line-height-14, 14px);
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-list-location"] a svg {
-    display: none;
-  }
-
-  html body.cre-t-160 .cre-t-160-tag-wrapper {
-    display: block !important;
-  }
-
-  html body.cre-t-160 [data-attribute="booking-fee-element"]~a[href="/frequent-foodies"] {
-    display: none;
-  }
-
-  html body.cre-t-160 .cre-t-160-box-wrapper {
-    border-radius: 85px;
-    background: #f7f7f8;
-    display: inline-flex;
-    padding: 3px 8px;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-  }
-
-  /* Per person and fee css */
-  html body.cre-t-160 .cre-t-160-container {
-    display: flex;
-    gap: 5px;
-  }
-
-  html body.cre-t-160 .cre-t-160-box-wrapper .cre-t-160-text {
-    color: #535A64;
-    font-family: inherit;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: var(--line-height-14, 14px); /* 140% */
-  }
-
-  html body.cre-t-160 .cre-t-160-box-wrapper.tag-2 .cre-t-160-icon {
-    width: 12px;
-    height: 9px;
-    aspect-ratio: 12/9;
-    display: flex;
-    align-items: center
-  }
-
-  html body.cre-t-160 .cre-t-160-box-wrapper.tag-1 .cre-t-160-icon {
-    width: 9px;
-    height: 12px;
-    aspect-ratio: 9/12;
-    display: flex;
-    align-items: center
-  }
-
-  html body.cre-t-160 .cre-t-160-box-wrapper.tag-1 .cre-t-160-icon svg,
-  html body.cre-t-160 .cre-t-160-box-wrapper.tag-2 .cre-t-160-icon svg {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-list-location"] {
-    padding: 0px 0px 4px 0px;
-    justify-content: center;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-list-item"] .group.grid .col-span-2>div>.items-center {
-    display: none !important;
-  }
-
-  /* Review order for control flow */
-  /* Review order for control flow */
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none {
-    margin-left: -3px;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>span,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>span,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>span {
-    color: #272b2e;
-    font-family: inherit;
-    font-size: 13px !important;
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div {
-    order: 1;
-    margin: 0px;
-    transform: scale(0.9);
-    position: relative;
-    left: -4px;
-    top: -1.5px;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>span.sr-only+span:not(.leading-none),
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>span.sr-only+span:not(.leading-none),
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>span.sr-only+span:not(.leading-none) {
-    order: 2;
-    margin: 0px 0px 0px -2px;
-    display: none !important;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div+span.leading-none,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none {
-    order: 3;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none+span,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div+span.leading-none+span,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span {
-    order: 4;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none+span+span+span,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div+span.leading-none+span+span+span,
-  html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span+span+span {
-    order: 5;
-  }
-
-  /* This all optional code is to hide the menu and photos */
- 
-
-  html body.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-123-review-container {
-    display: none !important;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-list-item"][data-review-summary] .cre-t-123-link-review {
-    display: block !important;
-  }
-
-  html body.cre-t-160 button[data-attribute="New_booking-time-button"] {  
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-      margin: 3.5px 2px;
-      background-color: rgb(38 86 130/var(--tw-bg-opacity,1));
-  }
-
-  html body.cre-t-160 [data-attribute="New_booking-time-button"] span {
-    color: #fff;
-    font-family: inherit;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: var(--line-height-14, 14px);
-    /* 107.692% */
-  }
-
-  html body.cre-t-160 [data-attribute="New_booking-time-button"] span.ampm-span {
-    font-size: 9px;
-    text-transform: uppercase;
-  }
-
-  html body.cre-t-160 .cre-t-160-box-wrapper.tag-3 {
-    border-radius: 5px;
-    background: #EAE5DC;
-    color: #272B2E;
-    font-family: inherit;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--line-height-14, 14px);
-  }
-
-  /* Button css */
-  html body.cre-t-160 .cre-t-160-more-time-button,
-  html body.cre-t-160 .cre-t-160-more-times-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #99A3AB1A;
-    max-width: 354px;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 17px;
-    padding-top: 9px;
-    gap: 4px;
-    color: #275682;
-    font-family: inherit;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: var(--line-height-14, 14px);
-  }
-
-  html body.cre-t-160 .cre-t-160-more-time-button svg,
-  html body.cre-t-160 .cre-t-160-more-times-container svg {
-    color: #275682;
-  }
-
-  html body.cre-t-160 .cre-t-160-remove-class {
-    display: none !important;
-  }
-
-  html body.cre-t-160 .cre-t-160-remove-class-button .cre-t-160-remove-class {
-    display: block !important;
-  }
-
-  html body.cre-t-160 .cre-t-160-remove-class-button .cre-t-160-more-times-container,
-  html body.cre-t-160 .cre-t-160-remove-class-button .cre-t-160-more-time-button {
-    display: none !important;
-  }
-
-
-  html body.cre-t-160 .cre-t-160-box-wrapper.service-wrapper.tag-3 .cre-t-160-text {
-    color: #272B2E;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-129-review-ai-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-129-review-ai-text {
-    font-size: 13px;
-  }
-
-  html body.cre-t-160.cre-t-129-v5 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div,
-  html body.cre-t-160.cre-t-129-v5 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div,
-  html body.cre-t-160.cre-t-129-v5 [data-attribute="restaurant-title-row"]+a>div>div {
-    margin-right: 3px;
-  }
-
-  html body.cre-t-160 [data-attribute="restaurant-list-item"] > div > div > div.flex.self-stretch {
-    gap: 5px !important;
-  }
-
-  html body.cre-t-160 [data-times-available="true"] a img{
-    height: 101px;
-    object-fit: cover;
-  }
+html body.cre-t-161.cre-t-161-modal-open .cre-t-161-modal-main {
+display: block !important;
+}
+html body.cre-t-161 .cre-t-161-modal-main {
+display: none !important;
+}
+html body.cre-t-161 .cre-t-161-modal-main.active {
+display: block !important;
+}
+html body.cre-t-161-modal-open{
+overflow: hidden;
+}
+/* ===========================
+MODAL OVERLAY
+=========================== */
+html body.cre-t-161 .cre-t-161-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+--tw-backdrop-blur: blur(4px);
+z-index: 2147483646 !important;
+background-color: rgba(39,43,46,.8);
+backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+/* ===========================
+MODAL CONTENT (SCALE BASED)
+=========================== */
+html body.cre-t-161 .cre-t-161-modal-content {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+transform-origin: center center;
+padding: 52px 74px;
+background-color: #fff;
+max-width: 817px;
+width: calc(100% - 20px);
+height: auto;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+z-index: 2147483647 !important;
+border-radius: 8px;
+}
+/* ===========================
+BADGE + CLOSE ICON
+=========================== */
+html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper {
+position: absolute;
+top: .5rem;
+right: .5rem;
+cursor: pointer;
+}
+html body.cre-t-161 .cre-t-161-modal-cta:hover {
+cursor: pointer;
+}
+html body.cre-t-161 .cre-t-161-modal-cta-text {
+color: #FFF;
+text-align: center;
+font-size: 17px;
+font-weight: 700;
+line-height: 26px;
+}
+/* Responsive */
+@media (max-width: 1023px) {
+html body.cre-t-161 .cre-t-161-modal-content {
+width: calc(100% - 40px);
+}
+}
+@media screen and (max-width: 767px) {
+html body.cre-t-161 .cre-t-161-modal-content {
+transform: translate(-50%, -50%) scale(0.9);
+padding: 8px 0px;
+width: calc(100% - -25px);
+}
+html body.cre-t-161 .cre-t-161-modal-cta { padding: 10px 10px; }
+html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper .cre-t-161-cross-icon { width: 100% }
+html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper { max-width: 20px; }
+html body.cre-t-161 .cre-t-161-modal-cta-text { font-size: 14px; }
+}
+/*
+@media screen and (max-width: 374px) {
+html body.cre-t-161 .cre-t-161-modal-content {
+transform: translate(-50%, -50%) scale(0.8);
+width: calc(100% - -50px);
+}
+} */
+@media screen and (max-width: 376px) {
+html body.cre-t-161 .cre-t-161-modal-content {
+max-height: 100vh;
+overflow-y: auto;
+}
+}
+/* own css */
+html body.cre-t-161 .cre-t-161-main-title{
+--tw-text-opacity: 1;
+color: rgb(39 43 46/var(--tw-text-opacity,1));
+letter-spacing: 0;
+font-weight: 400;
+font-size: 2rem;
+line-height: 2.5rem;
+font-family: var(--font-abril-fatface),ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+margin-top: 28px;
+padding: 0px 20px;
+}
+html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item{
+display: flex;
+gap: 9px;
+padding: 8px 0px;
+}
+html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item svg{
+width: 100%;
+max-width: 24px;
+}
+html body.cre-t-161 .cre-t-161-modal-cta-text{
+border-radius: .25rem;
+text-decoration-line: none;
+transition-duration: .5s;
+font-size: .9375rem;
+line-height: 1.5rem;
+animation-duration: .5s;
+padding-top: 13px;
+padding-bottom: 13px;
+background-color: rgb(38 86 130/var(--tw-bg-opacity,1));
+font-weight: 700;
+}
+html body.cre-t-161 .cre-t-161-subtitle-text{
+padding: 0px 20px;
+margin: 12px 0px 8px 0px;
+--tw-text-opacity: 1;
+color: rgb(94 101 112/var(--tw-text-opacity,1));
+}
+html body.cre-t-161 .cre-t-161-modal-benefits-checklist-title{
+--tw-text-opacity: 1;
+color: rgb(94 101 112/var(--tw-text-opacity,1));
+}
+html body.cre-t-161 .cre-t-161-modal-benefits-checklist{
+padding: 0px 20px;
+margin: 12px 0px 8px 0px;
+}
+html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item strong{
+color: var(--tw-prose-bold);
+font-weight: 600;
+font-family: inherit;
+font-size: 16px;
+}
+html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item-p{
+--tw-text-opacity: 1;
+color: rgb(94 101 112/var(--tw-text-opacity,1));
+line-height: 1.625;
+font-size: 16px;
+font-family: inherit;
+}
+html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item-icon img{
+width: 22px;
+height: 22px;
+}
+html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item-text{
+width: 100%;
+}
+html body.cre-t-161 .cre-t-161-modal-cta{
+position: sticky;
+/* bottom: 0; */
+box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+background: #fff;
+}
+@media screen and (max-width: 375px) {
+html body.cre-t-161 .cre-t-161-modal-content{
+padding-bottom: 0px;
+}
 }

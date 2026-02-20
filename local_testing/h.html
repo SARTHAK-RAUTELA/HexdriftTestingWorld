@@ -1,280 +1,2224 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>macOS Neon Scientific Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEXDRIFT - Stickman Brawl</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap');
 
-  <style>
-    /* ================= ROOT THEME ================= */
-    :root {
-      --bg: #0a0d12;
-      --panel: rgba(30, 35, 45, 0.85);
-      --btn: #2a2f38;
-      --btn-dark: #1e232b;
-      --btn-op: #ff9f0a;
-      --btn-eq: #30d158;
-      --text: #e5e7eb;
-      --display: #9efcff;
-      --neon: #00eaff;
-    }
+  :root {
+    --bg: #0a0a0f;
+    --panel: #12121a;
+    --accent: #ff3c3c;
+    --accent2: #3caaff;
+    --gold: #ffd700;
+    --green: #00ff88;
+    --text: #e0e0e0;
+    --dim: #555;
+  }
 
-    * {
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-        "Segoe UI", system-ui, sans-serif;
-    }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* ================= BODY ================= */
-    body {
-      margin: 0;
-      height: 100vh;
-      background: black;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
 
-    /* ================= BACKGROUND ================= */
-    #bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: 0;
-    }
+  #gameContainer {
+    position: relative;
+    width: 900px;
+    max-width: 100vw;
+    user-select: none;
+  }
 
-    .formula {
-      position: absolute;
-      color: rgba(0, 234, 255, 0.08);
-      white-space: nowrap;
-      font-size: 18px;
-      animation: flow linear infinite;
-    }
+  /* ---- SCREENS ---- */
+  .screen {
+    display: none;
+    position: absolute;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  .screen.active { display: flex; }
 
-    @keyframes flow {
-      from {
-        transform: translateY(110vh);
-      }
+  /* ---- TITLE SCREEN ---- */
+  #titleScreen {
+    background: radial-gradient(ellipse at center, #1a0020 0%, #0a0a0f 70%);
+    gap: 20px;
+  }
 
-      to {
-        transform: translateY(-20vh);
-      }
-    }
+  .title-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff3c3c, #ffd700, #ff3c3c);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+    text-shadow: none;
+    filter: drop-shadow(0 0 30px rgba(255,60,60,0.5));
+  }
 
-    /* ================= CALCULATOR ================= */
-    .calculator {
-      position: relative;
-      z-index: 2;
-      width: 460px;
-      padding: 18px;
-      border-radius: 22px;
-      background: linear-gradient(180deg,
-          rgba(40, 45, 55, 0.85),
-          rgba(15, 18, 25, 0.9));
-      backdrop-filter: blur(16px);
-      box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.9),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    }
+  @keyframes logoGlow {
+    from { background-position: 0% 50%; filter: drop-shadow(0 0 20px rgba(255,60,60,0.4)); }
+    to { background-position: 100% 50%; filter: drop-shadow(0 0 50px rgba(255,215,0,0.8)); }
+  }
 
-    /* ================= DISPLAY ================= */
-    .display {
-      height: 90px;
-      background: linear-gradient(180deg, #020617, #000);
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 14px;
-      text-align: right;
-      font-size: 36px;
-      color: var(--display);
-      overflow-x: auto;
-      box-shadow:
-        inset 0 0 25px rgba(0, 234, 255, 0.15);
-    }
+  .title-sub {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 8px;
+    color: #ffd700;
+    opacity: 0.8;
+  }
 
-    /* ================= BUTTONS ================= */
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 8px;
-    }
+  .title-decoration {
+    width: 400px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff3c3c, #ffd700, #ff3c3c, transparent);
+    margin: 10px 0;
+  }
 
-    button {
-      height: 54px;
-      border-radius: 12px;
-      border: none;
-      background: linear-gradient(180deg, #2e3440, #1f2430);
-      color: var(--text);
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
-        0 6px 14px rgba(0, 0, 0, 0.5);
-    }
+  .stickmen-display {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+  }
 
-    button:hover {
-      transform: translateY(-1px);
-      box-shadow:
-        0 0 12px rgba(0, 234, 255, 0.25),
-        0 10px 20px rgba(0, 0, 0, 0.7);
-    }
+  .menu-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 4px;
+    padding: 14px 40px;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    min-width: 220px;
+  }
+  .menu-btn:hover, .menu-btn.selected {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 25px rgba(255,60,60,0.6);
+  }
+  .menu-btn.p2 { border-color: var(--accent2); color: var(--accent2); }
+  .menu-btn.p2:hover { background: var(--accent2); color: #fff; box-shadow: 0 0 25px rgba(60,170,255,0.6); }
 
-    .op {
-      background: linear-gradient(180deg, #ffb347, #ff9500);
-      color: black;
-    }
+  /* ---- CHARACTER SELECT ---- */
+  #charSelect {
+    background: radial-gradient(ellipse at center, #0d1020 0%, #0a0a0f 80%);
+    padding: 20px;
+    gap: 15px;
+  }
 
-    .eq {
-      grid-column: span 2;
-      background: linear-gradient(180deg, #34d399, #22c55e);
-      color: black;
-      font-size: 20px;
-    }
+  .cs-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(255,215,0,0.5);
+  }
 
-    .clear {
-      background: linear-gradient(180deg, #fb7185, #ef4444);
-    }
+  .cs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+  }
 
-    /* ================= NEON GLOW ================= */
-    .neon {
-      text-shadow:
-        0 0 6px rgba(0, 234, 255, 0.6),
-        0 0 14px rgba(0, 234, 255, 0.4);
-    }
-  </style>
+  .cs-card {
+    background: #15151f;
+    border: 2px solid #333;
+    padding: 15px 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+    position: relative;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  }
+  .cs-card:hover { border-color: var(--gold); box-shadow: 0 0 20px rgba(255,215,0,0.3); }
+  .cs-card.selected-p1 { border-color: var(--accent); box-shadow: 0 0 25px rgba(255,60,60,0.5); background: #1f1020; }
+  .cs-card.selected-p2 { border-color: var(--accent2); box-shadow: 0 0 25px rgba(60,170,255,0.5); background: #10151f; }
+
+  .cs-stick { width: 80px; height: 90px; margin: 0 auto 8px; }
+  .cs-name { font-family: 'Orbitron', sans-serif; font-size: 14px; color: var(--gold); letter-spacing: 2px; }
+  .cs-style { font-size: 12px; color: #888; letter-spacing: 1px; margin-top: 4px; }
+
+  .cs-indicators {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  .cs-player-ind {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    padding: 8px 20px;
+    border: 2px solid;
+    letter-spacing: 3px;
+  }
+  .cs-player-ind.p1 { color: var(--accent); border-color: var(--accent); }
+  .cs-player-ind.p2 { color: var(--accent2); border-color: var(--accent2); }
+
+  .cs-confirm-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    letter-spacing: 6px;
+    padding: 14px 50px;
+    background: linear-gradient(135deg, #ff3c3c, #cc0000);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 30px rgba(255,60,60,0.4);
+    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+    transition: all 0.2s;
+  }
+  .cs-confirm-btn:hover { box-shadow: 0 0 50px rgba(255,60,60,0.7); transform: scale(1.02); }
+  .cs-confirm-btn:disabled { opacity: 0.4; cursor: default; }
+
+  /* ---- GAME CANVAS AREA ---- */
+  #gameArea {
+    display: none;
+    flex-direction: column;
+    width: 900px;
+    position: relative;
+  }
+  #gameArea.active { display: flex; }
+
+  /* HUD */
+  #hud {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 8px 10px 6px;
+    background: linear-gradient(180deg, #0d0d15 0%, #0a0a0f 100%);
+    border-bottom: 2px solid #1a1a2a;
+    gap: 10px;
+  }
+
+  .hud-player {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+  }
+  .hud-player.p2 { align-items: flex-end; }
+
+  .hud-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--gold);
+  }
+
+  .hp-bar-outer {
+    width: 100%;
+    height: 18px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+  }
+  .hp-bar-fill {
+    height: 100%;
+    transition: width 0.1s;
+    position: relative;
+  }
+  .hp-bar-fill.p1 {
+    background: linear-gradient(90deg, #00cc44, #00ff88);
+    box-shadow: 0 0 8px rgba(0,255,136,0.6);
+  }
+  .hp-bar-fill.p2 {
+    background: linear-gradient(270deg, #00cc44, #00ff88);
+    box-shadow: 0 0 8px rgba(0,255,136,0.6);
+    float: right;
+  }
+  .hp-bar-fill.yellow { background: linear-gradient(90deg, #cc8800, #ffdd00) !important; }
+  .hp-bar-fill.yellow.p2 { background: linear-gradient(270deg, #cc8800, #ffdd00) !important; }
+  .hp-bar-fill.red { background: linear-gradient(90deg, #cc0000, #ff4400) !important; }
+  .hp-bar-fill.red.p2 { background: linear-gradient(270deg, #cc0000, #ff4400) !important; }
+
+  .hp-pct { font-size: 11px; color: #888; letter-spacing: 1px; }
+
+  .hud-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    gap: 5px;
+  }
+
+  .round-counter {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #888;
+  }
+
+  .round-pips {
+    display: flex;
+    gap: 5px;
+  }
+  .round-pip {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #444;
+    border-radius: 50%;
+  }
+  .round-pip.won-p1 { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 8px rgba(255,60,60,0.8); }
+  .round-pip.won-p2 { background: var(--accent2); border-color: var(--accent2); box-shadow: 0 0 8px rgba(60,170,255,0.8); }
+
+  #timer {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.3);
+    line-height: 1;
+  }
+  #timer.low { color: var(--accent); text-shadow: 0 0 15px rgba(255,60,60,0.8); animation: timerPulse 0.5s ease-in-out infinite alternate; }
+  @keyframes timerPulse { from { transform: scale(1); } to { transform: scale(1.15); } }
+
+  /* CANVAS */
+  #gameCanvas {
+    display: block;
+    width: 900px;
+    height: 480px;
+    background: #000;
+  }
+
+  /* ANNOUNCER OVERLAY */
+  #announcer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    color: #fff;
+    text-shadow: 0 0 40px rgba(255,215,0,0.8), 0 4px 0 #000;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.15s;
+    white-space: nowrap;
+  }
+  #announcer.show { opacity: 1; }
+
+  /* MOVE LIST OVERLAY */
+  #moveListOverlay {
+    position: absolute;
+    bottom: 60px;
+    right: 5px;
+    background: rgba(0,0,0,0.85);
+    border: 1px solid #333;
+    padding: 10px;
+    font-size: 11px;
+    z-index: 15;
+    max-width: 220px;
+    line-height: 1.7;
+    display: none;
+  }
+  #moveListOverlay.show { display: block; }
+  .ml-title { color: var(--gold); font-family: 'Orbitron', sans-serif; font-size: 12px; margin-bottom: 5px; }
+  .ml-move { display: flex; justify-content: space-between; gap: 10px; }
+  .ml-key { color: var(--accent); }
+  .ml-name { color: #ccc; }
+
+  /* CONTROLS BAR */
+  #controlsBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+    background: #0d0d15;
+    border-top: 1px solid #1a1a2a;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+  }
+  .ctrl-grp { display: flex; gap: 12px; }
+  .ctrl-key { color: var(--accent2); }
+  .ctrl-key.p2k { color: var(--accent); }
+
+  /* GAME OVER */
+  #gameOverScreen {
+    background: rgba(0,0,0,0.92);
+    gap: 20px;
+  }
+  .go-winner {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-shadow: 0 0 40px currentColor;
+  }
+  .go-winner.p1 { color: var(--accent); }
+  .go-winner.p2 { color: var(--accent2); }
+  .go-sub { font-size: 18px; color: #888; letter-spacing: 4px; }
+
+  /* SCANLINES */
+  #gameArea::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* STAGE NAME FLASH */
+  #stageFlash {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    letter-spacing: 8px;
+    color: rgba(255,215,0,0.7);
+    text-align: center;
+    pointer-events: none;
+    z-index: 18;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-shadow: 0 0 20px rgba(255,215,0,0.5);
+  }
+  #stageFlash.show { opacity: 1; }
+
+  .blink {
+    animation: blink 0.8s step-start infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>
 </head>
-
 <body>
 
-  <div id="bg"></div>
+<div id="gameContainer">
 
-  <div class="calculator">
-    <div id="display" class="display neon">0</div>
+  <!-- TITLE SCREEN -->
+  <div class="screen active" id="titleScreen">
+    <div class="title-logo">HEXDRIFT</div>
+    <div class="title-sub">Stickman Brawl Championship</div>
+    <div class="title-decoration"></div>
 
-    <div class="buttons">
-      <button onclick="press('Math.sin(')">sin</button>
-      <button onclick="press('Math.cos(')">cos</button>
-      <button onclick="press('Math.tan(')">tan</button>
-      <button onclick="press('Math.log10(')">log</button>
-      <button onclick="press('Math.log(')">ln</button>
-      <button onclick="press('**2')">x²</button>
+    <canvas id="titleCanvas" width="600" height="120" style="margin:10px 0;"></canvas>
 
-      <button onclick="press('Math.sqrt(')">√</button>
-      <button onclick="press('1/')">1/x</button>
-      <button onclick="press('%')">%</button>
-      <button onclick="press('Math.PI')">π</button>
-      <button onclick="press('Math.E')">e</button>
-      <button class="clear" onclick="clearDisplay()">C</button>
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:center;margin-top:10px;">
+      <button class="menu-btn" id="btnVsAI">▶ VS CPU</button>
+      <button class="menu-btn p2" id="btnVs2P">▶ 2 PLAYER LOCAL</button>
+      <button class="menu-btn" id="btnPractice" style="border-color:#888;color:#888;">▶ PRACTICE MODE</button>
+    </div>
 
-      <button onclick="press('7')">7</button>
-      <button onclick="press('8')">8</button>
-      <button onclick="press('9')">9</button>
-      <button class="op" onclick="press('/')">÷</button>
-      <button onclick="factorial()">n!</button>
-      <button onclick="press('(')">(</button>
+    <div style="margin-top:20px;font-size:12px;color:#444;letter-spacing:2px;">PRESS ANY BUTTON TO BEGIN</div>
+  </div>
 
-      <button onclick="press('4')">4</button>
-      <button onclick="press('5')">5</button>
-      <button onclick="press('6')">6</button>
-      <button class="op" onclick="press('*')">×</button>
-      <button onclick="press(')')">)</button>
-      <button onclick="press('.')">.</button>
+  <!-- CHARACTER SELECT -->
+  <div class="screen" id="charSelect">
+    <div class="cs-title">SELECT FIGHTER</div>
 
-      <button onclick="press('1')">1</button>
-      <button onclick="press('2')">2</button>
-      <button onclick="press('3')">3</button>
-      <button class="op" onclick="press('-')">−</button>
-      <button onclick="press('0')">0</button>
-      <button class="eq" onclick="calculate()">=</button>
+    <div class="cs-indicators">
+      <div class="cs-player-ind p1" id="p1Ind">P1: SELECT</div>
+      <div class="cs-player-ind p2" id="p2Ind">P2: SELECT</div>
+    </div>
 
-      <button class="op" onclick="press('+')">+</button>
+    <div class="cs-grid" id="charGrid"></div>
+
+    <button class="cs-confirm-btn" id="confirmBtn" disabled>FIGHT!</button>
+    <div style="font-size:11px;color:#555;letter-spacing:2px;margin-top:5px;">P1: click/arrow+Z | P2: click/arrow+M</div>
+  </div>
+
+  <!-- GAME AREA -->
+  <div id="gameArea">
+    <!-- HUD -->
+    <div id="hud">
+      <div class="hud-player p1" id="hudP1">
+        <div class="hud-name" id="p1Name">PLAYER 1</div>
+        <div class="hp-bar-outer">
+          <div class="hp-bar-fill p1" id="hp1" style="width:100%"></div>
+        </div>
+        <div class="hp-pct" id="hp1Pct">100%</div>
+      </div>
+
+      <div class="hud-center">
+        <div class="round-counter">ROUND</div>
+        <div class="round-pips" id="roundPips"></div>
+        <div id="timer">60</div>
+      </div>
+
+      <div class="hud-player p2" id="hudP2">
+        <div class="hud-name" id="p2Name">PLAYER 2</div>
+        <div class="hp-bar-outer">
+          <div class="hp-bar-fill p2" id="hp2" style="width:100%"></div>
+        </div>
+        <div class="hp-pct" id="hp2Pct">100%</div>
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <div style="position:relative;">
+      <canvas id="gameCanvas" width="900" height="480"></canvas>
+      <div id="announcer"></div>
+      <div id="stageFlash"></div>
+      <div id="moveListOverlay">
+        <div class="ml-title" id="mlTitle">MOVE LIST</div>
+        <div id="mlContent"></div>
+      </div>
+    </div>
+
+    <!-- Controls bar -->
+    <div id="controlsBar">
+      <div class="ctrl-grp">
+        <span>P1: <span class="ctrl-key">A/D</span> Move</span>
+        <span><span class="ctrl-key">W</span> Jump</span>
+        <span><span class="ctrl-key">S</span> Crouch</span>
+        <span><span class="ctrl-key">F</span> Punch</span>
+        <span><span class="ctrl-key">G</span> Kick</span>
+        <span><span class="ctrl-key">H</span> Special</span>
+      </div>
+      <div style="color:#333;">|</div>
+      <div class="ctrl-grp">
+        <span>P2: <span class="ctrl-key p2k">←/→</span> Move</span>
+        <span><span class="ctrl-key p2k">↑</span> Jump</span>
+        <span><span class="ctrl-key p2k">↓</span> Crouch</span>
+        <span><span class="ctrl-key p2k">J</span> Punch</span>
+        <span><span class="ctrl-key p2k">K</span> Kick</span>
+        <span><span class="ctrl-key p2k">L</span> Special</span>
+      </div>
+      <div style="color:#446;font-size:10px;letter-spacing:1px;cursor:pointer;" id="toggleMoves">TAB:MOVES</div>
     </div>
   </div>
 
- 
+  <!-- GAME OVER -->
+  <div class="screen" id="gameOverScreen">
+    <div class="go-winner" id="goWinner">PLAYER 1 WINS!</div>
+    <div class="go-sub" id="goSub">PERFECT VICTORY</div>
+    <div style="margin-top:30px;display:flex;gap:20px;">
+      <button class="menu-btn" id="btnRematch">REMATCH</button>
+      <button class="menu-btn" id="btnMenu">MAIN MENU</button>
+    </div>
+  </div>
 
-  <audio id="click">
-    <source src="click-sound.mp3" type="audio/mpeg">
-  </audio>
-  
-  <script>
-    const display = document.getElementById("display");
-    const sound = document.getElementById("click");
+</div>
 
-    function play() {
-      sound.currentTime = 0;
-      sound.play();
+<script>
+// ============================================================
+// HEXDRIFT — Complete Fighting Game Engine
+// ============================================================
+
+const CANVAS_W = 900, CANVAS_H = 480;
+const GROUND_Y = CANVAS_H - 80;
+const GRAVITY = 0.65;
+const MAX_ROUNDS = 3;
+const ROUND_TIME = 60;
+
+// ── AUDIO ──────────────────────────────────────────────────
+let audioCtx = null;
+function initAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+
+function playSound(type, vol = 0.5) {
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+  const gainNode = audioCtx.createGain();
+  gainNode.connect(audioCtx.destination);
+  gainNode.gain.setValueAtTime(vol, now);
+
+  const osc = audioCtx.createOscillator();
+  osc.connect(gainNode);
+
+  const sounds = {
+    punch:   { type:'square', freq:200, decay:0.08, freqEnd:100 },
+    kick:    { type:'square', freq:150, decay:0.12, freqEnd:60  },
+    special: { type:'sawtooth', freq:400, decay:0.25, freqEnd:50 },
+    block:   { type:'square', freq:300, decay:0.06, freqEnd:280 },
+    jump:    { type:'sine',   freq:300, decay:0.15, freqEnd:500 },
+    land:    { type:'square', freq:80,  decay:0.1,  freqEnd:40  },
+    hit:     { type:'square', freq:250, decay:0.1,  freqEnd:80  },
+    throw_:  { type:'sawtooth', freq:180, decay:0.2, freqEnd:40 },
+    ko:      { type:'sawtooth', freq:120, decay:0.8, freqEnd:20 },
+    select:  { type:'sine',   freq:440, decay:0.1,  freqEnd:550 },
+    win:     { type:'sine',   freq:600, decay:0.4,  freqEnd:800 },
+    countdown:{type:'sine',   freq:500, decay:0.15, freqEnd:500 },
+    round_go:{type:'sawtooth',freq:300, decay:0.3,  freqEnd:150 },
+    guard_break:{type:'square',freq:100,decay:0.2,  freqEnd:40  },
+  };
+
+  const s = sounds[type] || sounds.hit;
+  osc.type = s.type;
+  osc.frequency.setValueAtTime(s.freq, now);
+  osc.frequency.exponentialRampToValueAtTime(s.freqEnd, now + s.decay);
+  gainNode.gain.exponentialRampToValueAtTime(0.001, now + s.decay);
+  osc.start(now);
+  osc.stop(now + s.decay + 0.02);
+
+  // Extra noise layer for hits
+  if (type === 'punch' || type === 'kick' || type === 'hit') {
+    const bufSize = audioCtx.sampleRate * 0.05;
+    const buf = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < bufSize; i++) data[i] = (Math.random()*2-1) * (1 - i/bufSize);
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = buf;
+    const noiseGain = audioCtx.createGain();
+    noiseGain.gain.setValueAtTime(vol * 0.5, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+    noise.connect(noiseGain);
+    noiseGain.connect(audioCtx.destination);
+    noise.start(now);
+  }
+}
+
+function playBGM() {
+  if (!audioCtx) return;
+  // Minimal arcade BGM loop using oscillators
+  const bpm = 150;
+  const beat = 60 / bpm;
+  const pattern = [0,4,7,12, 0,5,9,12, 0,3,7,10, 2,5,9,12];
+  let time = audioCtx.currentTime + 0.1;
+
+  function scheduleBeat(idx) {
+    if (!audioCtx) return;
+    const note = pattern[idx % pattern.length];
+    const freq = 110 * Math.pow(2, note/12);
+
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.value = freq;
+    g.gain.setValueAtTime(0.04, time);
+    g.gain.exponentialRampToValueAtTime(0.001, time + beat * 0.8);
+    osc.connect(g); g.connect(audioCtx.destination);
+    osc.start(time); osc.stop(time + beat * 0.8);
+
+    // Bass
+    if (idx % 4 === 0) {
+      const bass = audioCtx.createOscillator();
+      const bg = audioCtx.createGain();
+      bass.type = 'sawtooth';
+      bass.frequency.value = freq / 2;
+      bg.gain.setValueAtTime(0.06, time);
+      bg.gain.exponentialRampToValueAtTime(0.001, time + beat * 1.8);
+      bass.connect(bg); bg.connect(audioCtx.destination);
+      bass.start(time); bass.stop(time + beat * 1.8);
     }
 
-    function press(val) {
-      play();
-      if (display.innerText === "0") display.innerText = val;
-      else display.innerText += val;
+    time += beat;
+    if (gameState.mode !== 'none') {
+      setTimeout(() => scheduleBeat(idx+1), (beat * 1000) - 50);
+    }
+  }
+  scheduleBeat(0);
+}
+
+// ── CHARACTERS ────────────────────────────────────────────
+const CHARS = [
+  {
+    id: 0, name: 'JIN', style: 'KARATE',
+    color: '#3caaff', accentColor: '#80d4ff',
+    hp: 100, speed: 4.2, jumpForce: -15,
+    specials: [
+      { name: 'LIGHTNING BOLT',  key: 'special',         damage: 22, type: 'projectile',  color: '#3caaff' },
+      { name: 'RISING DRAGON',   key: 'up+punch',         damage: 28, type: 'uppercut',    color: '#00aaff' },
+      { name: 'WIND KICK',       key: 'forward+kick',     damage: 18, type: 'spin',        color: '#80d4ff' },
+      { name: 'DOUBLE STRIKE',   key: 'punch+kick',       damage: 20, type: 'combo',       color: '#aaf' },
+      { name: 'DEVIL BEAM',      key: 'down+special',     damage: 35, type: 'beam',        color: '#ff00ff' },
+    ],
+    combos: [
+      { keys: ['punch','punch','kick'], name: 'Lightning Rave', dmg: [8,8,14] },
+      { keys: ['kick','kick','punch'], name: 'Spinning Slash', dmg: [10,10,12] },
+    ],
+    portrait: drawJin,
+  },
+  {
+    id: 1, name: 'KAZUYA', style: 'MISHIMA',
+    color: '#ff3c3c', accentColor: '#ff8080',
+    hp: 110, speed: 3.8, jumpForce: -14,
+    specials: [
+      { name: 'DEVIL FIST',      key: 'special',          damage: 30, type: 'rush',        color: '#ff0000' },
+      { name: 'IRON SWEEP',      key: 'down+kick',         damage: 16, type: 'low',         color: '#cc2200' },
+      { name: 'ELECTRIC SURGE',  key: 'up+punch',          damage: 25, type: 'electric',    color: '#ff6600' },
+      { name: 'THUNDER STOMP',   key: 'forward+kick',      damage: 20, type: 'ground',      color: '#aa0000' },
+      { name: 'HELL AXLE',       key: 'down+special',      damage: 40, type: 'heavy',       color: '#ff00aa' },
+    ],
+    combos: [
+      { keys: ['punch','punch','special'], name: 'Mishima Combo', dmg: [7,7,20] },
+      { keys: ['kick','punch','kick'],    name: 'Devil String',   dmg: [10,8,14] },
+    ],
+    portrait: drawKazuya,
+  },
+  {
+    id: 2, name: 'PAUL', style: 'BRAWLER',
+    color: '#ffd700', accentColor: '#ffe066',
+    hp: 115, speed: 3.5, jumpForce: -13,
+    specials: [
+      { name: 'DEATH FIST',      key: 'special',          damage: 38, type: 'rush',        color: '#ffd700' },
+      { name: 'TILE SPLITTER',   key: 'down+punch',        damage: 20, type: 'low',         color: '#cc9900' },
+      { name: 'BURNING FIST',    key: 'up+punch',          damage: 26, type: 'fire',        color: '#ff8800' },
+      { name: 'SHOULDER RAM',    key: 'forward+punch',     damage: 22, type: 'rush',        color: '#ffaa00' },
+      { name: 'SUPER DEATH FIST',key: 'down+special',      damage: 50, type: 'ultra',       color: '#ff4400' },
+    ],
+    combos: [
+      { keys: ['punch','punch','punch'], name: 'Triple Punch',  dmg: [7,7,12] },
+      { keys: ['punch','kick','special'],name: 'Paul Combo',    dmg: [8,10,28] },
+    ],
+    portrait: drawPaul,
+  },
+  {
+    id: 3, name: 'NINA', style: 'ASSASSIN',
+    color: '#cc44ff', accentColor: '#dd88ff',
+    hp: 90, speed: 5.0, jumpForce: -16,
+    specials: [
+      { name: 'SHADOW STRIKE',   key: 'special',          damage: 20, type: 'teleport',    color: '#aa00ff' },
+      { name: 'ROSE WHIP',       key: 'forward+punch',    damage: 16, type: 'long',        color: '#ff44cc' },
+      { name: 'FLIP KICK',       key: 'up+kick',           damage: 22, type: 'aerial',      color: '#cc44ff' },
+      { name: 'VENOM THROW',     key: 'punch+kick',        damage: 28, type: 'grab',        color: '#6600cc' },
+      { name: 'SILENT BLADE',    key: 'down+special',      damage: 32, type: 'stab',        color: '#ff00cc' },
+    ],
+    combos: [
+      { keys: ['punch','kick','punch'],  name: 'Quick Assault', dmg: [6,8,10] },
+      { keys: ['kick','kick','kick'],    name: 'Triple Flip',   dmg: [8,9,12] },
+    ],
+    portrait: drawNina,
+  },
+  {
+    id: 4, name: 'KING', style: 'WRESTLER',
+    color: '#ff8800', accentColor: '#ffaa44',
+    hp: 120, speed: 3.2, jumpForce: -13,
+    specials: [
+      { name: 'JAGUAR RUSH',     key: 'special',          damage: 26, type: 'rush',        color: '#ff8800' },
+      { name: 'BODY SLAM',       key: 'forward+punch',    damage: 32, type: 'grab',        color: '#cc5500' },
+      { name: 'POWERBOMB',       key: 'down+punch',        damage: 40, type: 'grab',        color: '#ff4400' },
+      { name: 'LARIAT',          key: 'forward+kick',     damage: 20, type: 'sweep',       color: '#ffaa00' },
+      { name: 'KING ANNIHILATOR',key: 'down+special',     damage: 45, type: 'ultra',       color: '#ff0000' },
+    ],
+    combos: [
+      { keys: ['punch','punch','kick'], name: 'King Smash',   dmg: [9,9,16] },
+      { keys: ['kick','special'],       name: 'Jaguar Combo', dmg: [12,24] },
+    ],
+    portrait: drawKing,
+  },
+  {
+    id: 5, name: 'HWOARANG', style: 'TAEKWONDO',
+    color: '#00ff88', accentColor: '#66ffbb',
+    hp: 95, speed: 4.8, jumpForce: -15,
+    specials: [
+      { name: 'SPIRAL KICK',     key: 'special',          damage: 24, type: 'spin',        color: '#00ff88' },
+      { name: 'HEEL STORM',      key: 'kick+kick',         damage: 18, type: 'multi',       color: '#00cc66' },
+      { name: 'SKY DIVIDE',      key: 'up+kick',           damage: 26, type: 'aerial',      color: '#00ffcc' },
+      { name: 'TALON SWEEP',     key: 'down+kick',         damage: 14, type: 'low',         color: '#00aa44' },
+      { name: 'RAGE STORM',      key: 'down+special',      damage: 42, type: 'ultra',       color: '#ff8800' },
+    ],
+    combos: [
+      { keys: ['kick','kick','kick'],    name: 'Kick Rush',    dmg: [7,8,12] },
+      { keys: ['punch','kick','kick'],   name: 'TKD String',   dmg: [6,10,14] },
+    ],
+    portrait: drawHwoarang,
+  },
+];
+
+// ── PORTRAIT DRAW FUNCTIONS (SVG-like on Canvas) ──────────
+function drawStickman(ctx, x, y, color, accentColor, pose, direction) {
+  const d = direction === 'right' ? 1 : -1;
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.strokeStyle = color;
+  ctx.fillStyle = color;
+  ctx.lineWidth = 3;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+
+  // Shadow
+  ctx.save();
+  ctx.fillStyle = 'rgba(0,0,0,0.3)';
+  ctx.beginPath();
+  ctx.ellipse(0, 2, 20, 5, 0, 0, Math.PI*2);
+  ctx.fill();
+  ctx.restore();
+
+  const p = POSES[pose] || POSES['idle'];
+  const scale = 1;
+
+  // Apply pose
+  function ln(x1,y1,x2,y2) {
+    ctx.beginPath();
+    ctx.moveTo(x1*d*scale, y1*scale);
+    ctx.lineTo(x2*d*scale, y2*scale);
+    ctx.stroke();
+  }
+  function circle(cx,cy,r) {
+    ctx.beginPath();
+    ctx.arc(cx*d*scale, cy*scale, r, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  ctx.shadowBlur = 8;
+  ctx.shadowColor = accentColor;
+
+  // Head
+  circle(p.head[0], p.head[1], 9);
+  // Eyes
+  ctx.fillStyle = '#000';
+  ctx.beginPath();
+  ctx.arc((p.head[0]+3)*d, p.head[1]-1, 2, 0, Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle = color;
+
+  // Body
+  ln(p.neck[0], p.neck[1], p.hip[0], p.hip[1]);
+  // Arms
+  ln(p.shoulderL[0], p.shoulderL[1], p.elbowL[0], p.elbowL[1]);
+  ln(p.elbowL[0], p.elbowL[1], p.handL[0], p.handL[1]);
+  ln(p.shoulderR[0], p.shoulderR[1], p.elbowR[0], p.elbowR[1]);
+  ln(p.elbowR[0], p.elbowR[1], p.handR[0], p.handR[1]);
+  // Legs
+  ln(p.hip[0], p.hip[1], p.kneeL[0], p.kneeL[1]);
+  ln(p.kneeL[0], p.kneeL[1], p.footL[0], p.footL[1]);
+  ln(p.hip[0], p.hip[1], p.kneeR[0], p.kneeR[1]);
+  ln(p.kneeR[0], p.kneeR[1], p.footR[0], p.footR[1]);
+
+  ctx.restore();
+}
+
+const POSES = {
+  idle: {
+    head:[-1,-60], neck:[-1,-50], hip:[-1,-15],
+    shoulderL:[-1,-48], elbowL:[-12,-35], handL:[-18,-25],
+    shoulderR:[-1,-48], elbowR:[11,-35],  handR:[16,-22],
+    kneeL:[-8,2],  footL:[-12,18],
+    kneeR:[6,2],   footR:[10,18],
+  },
+  punch: {
+    head:[-1,-60], neck:[-1,-50], hip:[-1,-15],
+    shoulderL:[-1,-48], elbowL:[-8,-42],  handL:[-5,-48],
+    shoulderR:[-1,-48], elbowR:[18,-40],  handR:[36,-40],
+    kneeL:[-10,2], footL:[-14,18],
+    kneeR:[8,2],   footR:[12,18],
+  },
+  kick: {
+    head:[-1,-62], neck:[-1,-52], hip:[-1,-15],
+    shoulderL:[-1,-50], elbowL:[-14,-40], handL:[-20,-32],
+    shoulderR:[-1,-50], elbowR:[12,-40],  handR:[18,-32],
+    kneeL:[-5,-5], footL:[-8,12],
+    kneeR:[18,-10], footR:[36,-8],
+  },
+  jump: {
+    head:[-1,-68], neck:[-1,-58], hip:[-1,-22],
+    shoulderL:[-1,-56], elbowL:[-18,-44], handL:[-24,-35],
+    shoulderR:[-1,-56], elbowR:[16,-44],  handR:[22,-35],
+    kneeL:[-14,-5], footL:[-20,6],
+    kneeR:[12,-5],  footR:[18,6],
+  },
+  block: {
+    head:[-1,-60], neck:[-1,-50], hip:[-1,-15],
+    shoulderL:[-1,-48], elbowL:[-5,-55],  handL:[-5,-63],
+    shoulderR:[-1,-48], elbowR:[12,-52],  handR:[14,-60],
+    kneeL:[-6,4],  footL:[-10,20],
+    kneeR:[4,4],   footR:[8,20],
+  },
+  crouch: {
+    head:[-1,-44], neck:[-1,-36], hip:[-1,-12],
+    shoulderL:[-1,-34], elbowL:[-14,-26], handL:[-20,-18],
+    shoulderR:[-1,-34], elbowR:[12,-26],  handR:[18,-18],
+    kneeL:[-14,4], footL:[-12,16],
+    kneeR:[12,4],  footR:[14,16],
+  },
+  special: {
+    head:[-1,-64], neck:[-1,-54], hip:[-1,-18],
+    shoulderL:[-1,-52], elbowL:[-20,-50], handL:[-30,-52],
+    shoulderR:[-1,-52], elbowR:[22,-48],  handR:[38,-44],
+    kneeL:[-12,-2], footL:[-16,14],
+    kneeR:[10,-2],  footR:[14,14],
+  },
+  hit: {
+    head:[4,-56], neck:[2,-47], hip:[-1,-15],
+    shoulderL:[-1,-45], elbowL:[-18,-38], handL:[-24,-32],
+    shoulderR:[-1,-45], elbowR:[16,-35],  handR:[22,-28],
+    kneeL:[-6,4],  footL:[-10,20],
+    kneeR:[6,4],   footR:[10,20],
+  },
+  ko: {
+    head:[14,-20], neck:[8,-14], hip:[0,0],
+    shoulderL:[2,-10], elbowL:[-8,0],    handL:[-14,10],
+    shoulderR:[2,-10], elbowR:[16,-5],   handR:[22,4],
+    kneeL:[-10,8], footL:[-18,20],
+    kneeR:[12,10], footR:[20,22],
+  },
+};
+
+function drawJin(ctx, x, y, dir) { drawStickman(ctx, x, y, '#3caaff', '#80d4ff', 'idle', dir); }
+function drawKazuya(ctx, x, y, dir) { drawStickman(ctx, x, y, '#ff3c3c', '#ff8080', 'idle', dir); }
+function drawPaul(ctx, x, y, dir) { drawStickman(ctx, x, y, '#ffd700', '#ffe066', 'idle', dir); }
+function drawNina(ctx, x, y, dir) { drawStickman(ctx, x, y, '#cc44ff', '#dd88ff', 'idle', dir); }
+function drawKing(ctx, x, y, dir) { drawStickman(ctx, x, y, '#ff8800', '#ffaa44', 'idle', dir); }
+function drawHwoarang(ctx, x, y, dir) { drawStickman(ctx, x, y, '#00ff88', '#66ffbb', 'idle', dir); }
+
+// Portrait for select screen (on an SVG canvas)
+function drawPortraitOnCanvas(ctx, x, y, charData, size) {
+  ctx.save();
+  ctx.scale(size, size);
+  drawStickman(ctx, x/size, y/size, charData.color, charData.accentColor, 'idle', 'right');
+  ctx.restore();
+}
+
+// ── STAGES ────────────────────────────────────────────────
+const STAGES = [
+  { name: 'DEVIL\'S COURT', bg: '#0a0018', midBg: '#180030', groundColor: '#330055', groundTop: '#6600cc', accentColor: '#aa00ff', lightColor: 'rgba(120,0,255,0.15)' },
+  { name: 'STEEL FACTORY',  bg: '#080c10', midBg: '#101820', groundColor: '#202830', groundTop: '#3060a0', accentColor: '#3080ff', lightColor: 'rgba(30,100,200,0.15)' },
+  { name: 'LAVA RIFT',      bg: '#150800', midBg: '#2a1000', groundColor: '#4a1800', groundTop: '#cc4400', accentColor: '#ff6600', lightColor: 'rgba(200,60,0,0.2)' },
+  { name: 'ROOFTOP DUSK',   bg: '#0a0510', midBg: '#1a0f20', groundColor: '#201018', groundTop: '#aa5588', accentColor: '#ff88cc', lightColor: 'rgba(200,100,150,0.15)' },
+  { name: 'DIGITAL VOID',   bg: '#000a08', midBg: '#001810', groundColor: '#002818', groundTop: '#00aa66', accentColor: '#00ff88', lightColor: 'rgba(0,200,100,0.15)' },
+  { name: 'GOLDEN ARENA',   bg: '#100a00', midBg: '#201500', groundColor: '#302000', groundTop: '#997700', accentColor: '#ffd700', lightColor: 'rgba(200,160,0,0.15)' },
+];
+
+// ── PARTICLES ─────────────────────────────────────────────
+class Particle {
+  constructor(x, y, vx, vy, color, life, size) {
+    this.x = x; this.y = y;
+    this.vx = vx; this.vy = vy;
+    this.color = color;
+    this.life = life; this.maxLife = life;
+    this.size = size;
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.vy += 0.3;
+    this.life--;
+    return this.life > 0;
+  }
+  draw(ctx) {
+    const alpha = this.life / this.maxLife;
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = this.color;
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = this.color;
+    ctx.fillRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
+    ctx.restore();
+  }
+}
+
+// ── PROJECTILE ────────────────────────────────────────────
+class Projectile {
+  constructor(x, y, vx, color, damage, owner) {
+    this.x = x; this.y = y;
+    this.vx = vx; this.color = color;
+    this.damage = damage; this.owner = owner;
+    this.alive = true;
+    this.r = 12;
+  }
+  update() {
+    this.x += this.vx;
+    if (this.x < 0 || this.x > CANVAS_W) this.alive = false;
+  }
+  draw(ctx) {
+    ctx.save();
+    ctx.shadowBlur = 20;
+    ctx.shadowColor = this.color;
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    // trail
+    ctx.globalAlpha = 0.3;
+    ctx.fillStyle = this.color;
+    for (let i = 1; i <= 3; i++) {
+      ctx.beginPath();
+      ctx.arc(this.x - this.vx * i * 1.5, this.y, this.r * (1 - i*0.25), 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+}
+
+// ── FIGHTER ───────────────────────────────────────────────
+class Fighter {
+  constructor(charData, x, facing, playerId) {
+    this.char = charData;
+    this.x = x;
+    this.y = GROUND_Y;
+    this.vx = 0;
+    this.vy = 0;
+    this.facing = facing; // 'right' or 'left'
+    this.playerId = playerId;
+
+    this.hp = charData.hp;
+    this.maxHp = charData.hp;
+
+    this.state = 'idle'; // idle, walk, jump, crouch, punch, kick, special, block, hit, ko
+    this.stateTimer = 0;
+    this.onGround = true;
+
+    // Input buffer for combos
+    this.inputBuffer = [];
+    this.inputTimer = 0;
+
+    // Combo system
+    this.comboCount = 0;
+    this.comboTimer = 0;
+
+    // Invincibility frames
+    this.iframes = 0;
+
+    // Block stun / hit stun
+    this.stunTimer = 0;
+
+    // Animation
+    this.frameTimer = 0;
+    this.bobOffset = Math.random() * Math.PI * 2;
+
+    // Special move charge
+    this.specialCharge = 0;
+
+    // Current pose for drawing
+    this.drawPose = 'idle';
+
+    // Hit flash
+    this.hitFlash = 0;
+
+    // Guard meter
+    this.guard = 100;
+    this.guardRegenTimer = 0;
+
+    // AI state (for CPU)
+    this.aiState = 'approach';
+    this.aiTimer = 0;
+    this.aiActionTimer = 0;
+  }
+
+  get dir() { return this.facing === 'right' ? 1 : -1; }
+
+  takeDamage(dmg, attacker) {
+    if (this.iframes > 0) return false;
+    if (this.state === 'block' && this.onGround) {
+      // Blocked
+      const reduced = Math.floor(dmg * 0.15);
+      this.hp = Math.max(0, this.hp - reduced);
+      this.guard -= 15;
+      this.stunTimer = 8;
+      playSound('block');
+      spawnParticles(this.x, this.y - 40, '#aaaaff', 6);
+      if (this.guard <= 0) {
+        // Guard break!
+        this.guard = 0;
+        this.stunTimer = 40;
+        this.state = 'hit';
+        this.stateTimer = 40;
+        playSound('guard_break');
+        spawnParticles(this.x, this.y - 40, '#ffffff', 20);
+        game.showAnnouncer('GUARD BREAK!', 1200);
+      }
+      return false;
+    }
+    this.hp = Math.max(0, this.hp - dmg);
+    this.iframes = 12;
+    this.stunTimer = 15;
+    this.hitFlash = 8;
+    this.state = 'hit';
+    this.stateTimer = 15;
+    playSound('hit');
+    spawnParticles(this.x, this.y - 30, attacker.char.color, 12);
+    // Knockback
+    this.vx = (this.x < attacker.x ? -4 : 4) * (dmg/20);
+    return true;
+  }
+
+  doAttack(type) {
+    if (this.stunTimer > 0) return;
+    if (['punch','kick','special'].includes(this.state) && this.stateTimer > 4) return;
+
+    this.state = type;
+    let duration = type === 'punch' ? 16 : type === 'kick' ? 20 : 30;
+    this.stateTimer = duration;
+    this.drawPose = type === 'punch' ? 'punch' : type === 'kick' ? 'kick' : 'special';
+
+    if (type === 'punch') playSound('punch');
+    else if (type === 'kick') playSound('kick');
+    else playSound('special');
+  }
+
+  getAttackBox(type) {
+    if (!['punch','kick','special'].includes(this.state)) return null;
+    if (this.stateTimer < 8 || this.stateTimer > (this.state === 'punch' ? 14 : 17)) return null;
+
+    const reach = this.state === 'punch' ? 55 : this.state === 'kick' ? 65 : 70;
+    const x = this.facing === 'right' ? this.x + 10 : this.x - 10 - reach;
+    const y = this.state === 'kick' ? this.y - 35 : this.y - 45;
+    const h = 35;
+    return { x, y, w: reach, h };
+  }
+
+  getHurtBox() {
+    return { x: this.x - 20, y: this.y - 70, w: 40, h: 70 };
+  }
+
+  update(keys, opponent, projectiles) {
+    this.frameTimer++;
+    if (this.iframes > 0) this.iframes--;
+    if (this.hitFlash > 0) this.hitFlash--;
+    if (this.stunTimer > 0) this.stunTimer--;
+    if (this.comboTimer > 0) this.comboTimer--;
+    else if (this.comboTimer === 0 && this.comboCount > 0) this.comboCount = 0;
+    if (this.guardRegenTimer > 0) this.guardRegenTimer--;
+    else if (this.guard < 100) {
+      this.guard = Math.min(100, this.guard + 0.3);
     }
 
-    function clearDisplay() {
-      play();
-      display.innerText = "0";
-    }
+    if (this.state === 'ko') { this.drawPose = 'ko'; return; }
 
-    function calculate() {
-      play();
-      try {
-        display.innerText = eval(display.innerText);
-      } catch {
-        display.innerText = "Error";
+    // Decay state timer
+    if (this.stateTimer > 0) {
+      this.stateTimer--;
+      if (this.stateTimer === 0 && ['punch','kick','special','hit'].includes(this.state)) {
+        this.state = 'idle';
+        this.drawPose = 'idle';
       }
     }
 
-    function factorial() {
-      play();
-      let n = eval(display.innerText);
-      let r = 1;
-      for (let i = 1; i <= n; i++) r *= i;
-      display.innerText = r;
+    // Physics
+    this.vy += GRAVITY;
+    this.y += this.vy;
+    this.x += this.vx;
+    this.vx *= 0.8;
+
+    // Ground
+    if (this.y >= GROUND_Y) {
+      this.y = GROUND_Y;
+      if (this.vy > 4) playSound('land', 0.3);
+      this.vy = 0;
+      this.onGround = true;
+      if (this.state === 'jump') {
+        this.state = 'idle';
+        this.drawPose = 'idle';
+      }
+    } else {
+      this.onGround = false;
     }
 
-    /* ============ KEYBOARD SUPPORT ============ */
-    document.addEventListener("keydown", e => {
-      const k = e.key;
-      if (!isNaN(k)) press(k);
-      if (["+", "-", "*", "/", ".", "(", ")"].includes(k)) press(k);
-      if (k === "Enter") calculate();
-      if (k === "Backspace") {
-        display.innerText =
-          display.innerText.length > 1
-            ? display.innerText.slice(0, -1)
-            : "0";
+    // Wall clamp
+    this.x = Math.max(40, Math.min(CANVAS_W - 40, this.x));
+
+    // Auto-face opponent
+    if (!['punch','kick','special'].includes(this.state)) {
+      this.facing = this.x < opponent.x ? 'right' : 'left';
+    }
+
+    // Process projectiles
+    for (const proj of projectiles) {
+      if (proj.owner !== this) {
+        const hb = this.getHurtBox();
+        if (proj.alive && proj.x > hb.x && proj.x < hb.x + hb.w && proj.y > hb.y && proj.y < hb.y + hb.h) {
+          if (this.takeDamage(proj.damage, proj.ownerFighter)) {
+            proj.alive = false;
+          }
+        }
       }
-      if (k === "Escape") clearDisplay();
+    }
+
+    // Idle bob
+    if (this.state === 'idle') this.drawPose = 'idle';
+    if (this.state === 'block') this.drawPose = 'block';
+    if (this.state === 'crouch') this.drawPose = 'crouch';
+  }
+
+  handleInput(keys, prefix, opponent, projectiles) {
+    if (this.state === 'ko') return;
+    if (this.stunTimer > 4) return;
+
+    const left = keys[prefix + 'Left'];
+    const right = keys[prefix + 'Right'];
+    const up = keys[prefix + 'Up'];
+    const down = keys[prefix + 'Down'];
+    const punch = keys[prefix + 'Punch'];
+    const kick = keys[prefix + 'Kick'];
+    const special = keys[prefix + 'Special'];
+
+    // Block
+    if (down && !up && !['punch','kick','special','hit','jump'].includes(this.state)) {
+      this.state = 'crouch';
+      this.drawPose = 'crouch';
+    }
+
+    // Movement
+    if (!['punch','kick','special','hit'].includes(this.state) || this.stateTimer < 5) {
+      if (!down) {
+        const moveDir = this.facing === 'right' ? 1 : -1;
+        // Moving toward opponent = forward
+        const towardOpponent = (this.x < opponent.x) ? right : left;
+        const awayFromOpponent = (this.x < opponent.x) ? left : right;
+
+        if (awayFromOpponent && this.onGround && !['punch','kick','special'].includes(this.state)) {
+          // Walking back = block
+          this.state = 'block';
+          this.drawPose = 'block';
+          this.vx = (this.x < opponent.x ? -1 : 1) * 2;
+        } else if (left || right) {
+          if (this.state === 'block') this.state = 'idle';
+          this.vx = (right ? 1 : -1) * this.char.speed;
+          if (this.state !== 'jump') this.drawPose = 'idle';
+        } else if (this.state === 'block' && !awayFromOpponent) {
+          this.state = 'idle';
+          this.drawPose = 'idle';
+        }
+      }
+    }
+
+    // Jump
+    if (up && this.onGround && !['punch','kick','special','hit'].includes(this.state)) {
+      this.vy = this.char.jumpForce;
+      this.state = 'jump';
+      this.drawPose = 'jump';
+      playSound('jump', 0.3);
+    }
+
+    // Attacks
+    if (punch && !keys[prefix + 'PunchPrev']) {
+      if (down) {
+        this.doSpecialMove('TILE_SPLITTER', opponent, projectiles);
+      } else if (up) {
+        this.doSpecialMove('RISING', opponent, projectiles);
+      } else {
+        this.doAttack('punch');
+      }
+    }
+    if (kick && !keys[prefix + 'KickPrev']) {
+      if (down) {
+        this.doSpecialMove('TALON', opponent, projectiles);
+      } else if (up) {
+        this.doSpecialMove('SKY', opponent, projectiles);
+      } else if ((this.facing === 'right' ? right : left)) {
+        this.doSpecialMove('FORWARD_KICK', opponent, projectiles);
+      } else {
+        this.doAttack('kick');
+      }
+    }
+    if (special && !keys[prefix + 'SpecialPrev']) {
+      if (down) {
+        this.doUltraSpecial(opponent, projectiles);
+      } else {
+        this.doSpecialMove('MAIN', opponent, projectiles);
+      }
+    }
+
+    // Store prev
+    keys[prefix + 'PunchPrev'] = punch;
+    keys[prefix + 'KickPrev'] = kick;
+    keys[prefix + 'SpecialPrev'] = special;
+  }
+
+  doSpecialMove(type, opponent, projectiles) {
+    const char = this.char;
+    let special;
+    if (type === 'MAIN') special = char.specials[0];
+    else if (type === 'RISING') special = char.specials[1];
+    else if (type === 'FORWARD_KICK') special = char.specials[2];
+    else if (type === 'TILE_SPLITTER' || type === 'TALON') special = char.specials.find(s=>s.type==='low') || char.specials[3];
+    else if (type === 'SKY') special = char.specials.find(s=>s.type==='aerial') || char.specials[1];
+
+    if (!special) { this.doAttack('special'); return; }
+
+    this.state = 'special';
+    this.stateTimer = 30;
+    this.drawPose = 'special';
+    playSound('special');
+
+    // Execute by type
+    setTimeout(() => {
+      if (this.state !== 'ko') {
+        const dist = Math.abs(this.x - opponent.x);
+        switch(special.type) {
+          case 'projectile':
+          case 'beam':
+            const speed = 8;
+            const proj = new Projectile(
+              this.x + this.dir * 20,
+              this.y - 45,
+              this.dir * speed,
+              special.color, special.damage, this.playerId
+            );
+            proj.ownerFighter = this;
+            projectiles.push(proj);
+            break;
+          case 'rush':
+          case 'uppercut':
+          case 'electric':
+            this.vx = this.dir * 10;
+            if (special.type === 'uppercut') this.vy = -10;
+            setTimeout(() => {
+              if (dist < 120) this.tryHit(opponent, special.damage, special.color);
+            }, 100);
+            break;
+          case 'spin':
+          case 'multi':
+            if (dist < 110) {
+              this.tryHit(opponent, Math.floor(special.damage*0.6), special.color);
+              setTimeout(() => {
+                if (dist < 130) this.tryHit(opponent, Math.floor(special.damage*0.7), special.color);
+              }, 150);
+            }
+            break;
+          case 'grab':
+          case 'aerial':
+          case 'low':
+          case 'stab':
+          case 'ground':
+          case 'fire':
+          case 'long':
+          case 'teleport':
+            if (dist < 130) this.tryHit(opponent, special.damage, special.color);
+            else if (special.type === 'teleport') {
+              // Teleport close
+              this.x = opponent.x - this.dir * 60;
+              this.tryHit(opponent, special.damage, special.color);
+            }
+            break;
+          case 'combo':
+            if (dist < 100) {
+              for (let i = 0; i < 3; i++) {
+                setTimeout(() => this.tryHit(opponent, Math.floor(special.damage/3), special.color), i*120);
+              }
+            }
+            break;
+        }
+        spawnParticles(this.x + this.dir*30, this.y-40, special.color, 20);
+        game.showFlash(special.color, 0.3);
+      }
+    }, 200);
+
+    // Show move name
+    game.showAnnouncer(special.name, 800);
+  }
+
+  doUltraSpecial(opponent, projectiles) {
+    const special = this.char.specials[4];
+    if (!special) return;
+
+    this.state = 'special';
+    this.stateTimer = 50;
+    this.drawPose = 'special';
+    playSound('special', 0.8);
+    playSound('ko', 0.4);
+
+    game.showFlash(special.color, 0.8);
+    game.shakeScreen(15);
+    game.showAnnouncer(special.name + '!!', 1500);
+
+    setTimeout(() => {
+      if (this.state !== 'ko') {
+        const dist = Math.abs(this.x - opponent.x);
+        if (dist < 150) {
+          this.tryHit(opponent, special.damage, special.color);
+        } else {
+          // Ultra always travels
+          this.x = opponent.x - this.dir * 50;
+          this.tryHit(opponent, special.damage, special.color);
+        }
+        spawnParticles(opponent.x, opponent.y - 40, special.color, 40);
+        spawnParticles(opponent.x, opponent.y - 40, '#ffffff', 20);
+      }
+    }, 300);
+  }
+
+  tryHit(opponent, damage, color) {
+    if (opponent.state === 'ko') return;
+    if (opponent.takeDamage(damage, this)) {
+      this.comboCount++;
+      this.comboTimer = 80;
+      spawnParticles(opponent.x, opponent.y - 35, color, 15);
+      if (this.comboCount >= 3) {
+        game.showAnnouncer(this.comboCount + ' HIT COMBO!', 1000);
+      }
+      game.shakeScreen(damage * 0.3);
+    }
+  }
+
+  // AI behavior
+  updateAI(opponent, keys, projectiles) {
+    if (this.state === 'ko') return;
+    this.aiTimer++;
+    this.aiActionTimer--;
+
+    const dist = Math.abs(this.x - opponent.x);
+    const myHpPct = this.hp / this.maxHp;
+    const oppHpPct = opponent.hp / opponent.maxHp;
+
+    // Difficulty scaling (gets harder as fight progresses)
+    const reactionTime = 18 + Math.floor(Math.random() * 15);
+
+    if (this.aiTimer % reactionTime === 0) {
+      // Make decision
+      if (dist > 200) {
+        this.aiState = 'approach';
+      } else if (dist < 60 && Math.random() < 0.4) {
+        this.aiState = 'attack';
+      } else if (myHpPct < 0.3 && Math.random() < 0.4) {
+        this.aiState = 'retreat';
+      } else if (dist < 120 && Math.random() < 0.55) {
+        this.aiState = 'attack';
+      } else if (dist < 160 && Math.random() < 0.35) {
+        this.aiState = 'special';
+      } else {
+        this.aiState = 'approach';
+      }
+    }
+
+    // Clear AI keys
+    const pre = 'p2';
+    keys[pre+'Left'] = false; keys[pre+'Right'] = false;
+    keys[pre+'Up'] = false; keys[pre+'Down'] = false;
+    keys[pre+'Punch'] = false; keys[pre+'Kick'] = false; keys[pre+'Special'] = false;
+
+    const moveRight = this.x < opponent.x;
+
+    switch(this.aiState) {
+      case 'approach':
+        if (moveRight) keys[pre+'Right'] = true;
+        else keys[pre+'Left'] = true;
+        if (Math.random() < 0.01) keys[pre+'Up'] = true;
+        break;
+      case 'retreat':
+        if (!moveRight) keys[pre+'Right'] = true;
+        else keys[pre+'Left'] = true;
+        break;
+      case 'attack':
+        if (dist > 80) {
+          if (moveRight) keys[pre+'Right'] = true;
+          else keys[pre+'Left'] = true;
+        }
+        if (this.aiActionTimer <= 0) {
+          const r = Math.random();
+          this.aiActionTimer = 20 + Math.floor(Math.random()*15);
+          if (r < 0.4) { keys[pre+'Punch'] = true; }
+          else if (r < 0.75) { keys[pre+'Kick'] = true; }
+          else { keys[pre+'Special'] = true; }
+        }
+        break;
+      case 'special':
+        if (this.aiActionTimer <= 0) {
+          keys[pre+'Special'] = true;
+          this.aiActionTimer = 40 + Math.floor(Math.random()*30);
+          if (Math.random() < 0.25) keys[pre+'Down'] = true;
+        }
+        break;
+    }
+
+    // Sometimes block when getting hit
+    if (opponent.state === 'punch' || opponent.state === 'kick' || opponent.state === 'special') {
+      if (dist < 120 && Math.random() < 0.3) {
+        const awayDir = this.x < opponent.x ? 'Left' : 'Right';
+        keys['p2'+awayDir] = true;
+        keys[pre+'Left'] = false; keys[pre+'Right'] = false;
+        // Override
+        keys['p2'+awayDir] = true;
+      }
+    }
+
+    // Random jump
+    if (Math.random() < 0.003 && this.onGround) {
+      keys[pre+'Up'] = true;
+    }
+  }
+
+  draw(ctx, stageAccent) {
+    if (this.hp <= 0 && this.state !== 'ko') {
+      this.state = 'ko';
+      this.drawPose = 'ko';
+    }
+
+    // Hit flash overlay
+    const flash = this.hitFlash > 0 ? this.hitFlash / 8 : 0;
+
+    ctx.save();
+    if (flash > 0) {
+      ctx.globalAlpha = 0.5 + flash * 0.5;
+    }
+
+    // Glow aura for low HP
+    if (this.hp / this.maxHp < 0.25 && this.state !== 'ko') {
+      ctx.shadowBlur = 25;
+      ctx.shadowColor = '#ff0000';
+    }
+
+    drawStickman(ctx, this.x, this.y, 
+      flash > 0 ? '#ffffff' : this.char.color,
+      this.char.accentColor,
+      this.drawPose, this.facing);
+
+    ctx.restore();
+
+    // Combo counter above fighter
+    if (this.comboCount >= 2 && this.comboTimer > 0) {
+      ctx.save();
+      ctx.font = 'bold 18px Orbitron, sans-serif';
+      ctx.fillStyle = '#ffd700';
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = '#ffd700';
+      ctx.textAlign = 'center';
+      ctx.fillText(this.comboCount + 'x COMBO', this.x, this.y - 90);
+      ctx.restore();
+    }
+
+    // Name above in game
+    ctx.save();
+    ctx.font = '11px Orbitron, sans-serif';
+    ctx.fillStyle = this.char.color;
+    ctx.textAlign = 'center';
+    ctx.globalAlpha = 0.7;
+    ctx.fillText(this.char.name, this.x, this.y - 82);
+    ctx.restore();
+  }
+}
+
+// ── PARTICLES GLOBAL POOL ─────────────────────────────────
+let particles = [];
+function spawnParticles(x, y, color, count) {
+  for (let i = 0; i < count; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 1 + Math.random() * 5;
+    particles.push(new Particle(
+      x + (Math.random()-0.5)*20,
+      y + (Math.random()-0.5)*20,
+      Math.cos(angle)*speed,
+      Math.sin(angle)*speed - 1,
+      color,
+      15 + Math.floor(Math.random()*20),
+      3 + Math.random()*4
+    ));
+  }
+}
+
+// ── GAME STATE MANAGER ────────────────────────────────────
+const gameState = {
+  mode: 'none', // 'ai', '2p', 'practice'
+  p1Char: null,
+  p2Char: null,
+  round: 1,
+  p1Wins: 0,
+  p2Wins: 0,
+};
+
+// ── MAIN GAME OBJECT ──────────────────────────────────────
+const game = {
+  canvas: null, ctx: null,
+  fighter1: null, fighter2: null,
+  keys: {},
+  projectiles: [],
+  stage: null,
+  roundTimer: ROUND_TIME * 60, // in frames
+  roundState: 'countdown', // countdown, fight, roundover, gameover
+  countdownVal: 3,
+  countdownTimer: 0,
+  screenShake: 0,
+  flashColor: null, flashAlpha: 0,
+  bgStars: [],
+  bgDecoration: [],
+  lastTime: 0,
+  raf: null,
+  announcerTimeout: null,
+  showMoveList: false,
+
+  init() {
+    this.canvas = document.getElementById('gameCanvas');
+    this.ctx = this.canvas.getContext('2d');
+
+    // Generate background stars
+    this.bgStars = [];
+    for (let i = 0; i < 80; i++) {
+      this.bgStars.push({
+        x: Math.random()*CANVAS_W,
+        y: Math.random()*(CANVAS_H - 120),
+        r: Math.random()*1.5,
+        blink: Math.random()*Math.PI*2,
+        speed: 0.5 + Math.random()*1.5,
+      });
+    }
+
+    this.setupInput();
+  },
+
+  setupInput() {
+    const keyMap = {
+      'KeyA': 'p1Left', 'KeyD': 'p1Right', 'KeyW': 'p1Up', 'KeyS': 'p1Down',
+      'KeyF': 'p1Punch', 'KeyG': 'p1Kick', 'KeyH': 'p1Special',
+      'ArrowLeft': 'p2Left', 'ArrowRight': 'p2Right', 'ArrowUp': 'p2Up', 'ArrowDown': 'p2Down',
+      'KeyJ': 'p2Punch', 'KeyK': 'p2Kick', 'KeyL': 'p2Special',
+    };
+    document.addEventListener('keydown', e => {
+      if (keyMap[e.code]) { this.keys[keyMap[e.code]] = true; e.preventDefault(); }
+      if (e.code === 'Tab') { this.showMoveList = !this.showMoveList; updateMoveList(); e.preventDefault(); }
+    });
+    document.addEventListener('keyup', e => {
+      if (keyMap[e.code]) this.keys[keyMap[e.code]] = false;
+    });
+  },
+
+  startFight(p1CharId, p2CharId, mode) {
+    gameState.mode = mode;
+    gameState.p1Char = CHARS[p1CharId];
+    gameState.p2Char = CHARS[p2CharId];
+
+    this.stage = STAGES[Math.floor(Math.random() * STAGES.length)];
+
+    document.getElementById('gameArea').classList.add('active');
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+
+    this.newRound();
+    this.startLoop();
+    playBGM();
+    updateRoundPips();
+  },
+
+  newRound() {
+    particles = [];
+    this.projectiles = [];
+
+    this.fighter1 = new Fighter(gameState.p1Char, 220, 'right', 'p1');
+    this.fighter2 = new Fighter(gameState.p2Char, 680, 'left', 'p2');
+
+    this.roundTimer = ROUND_TIME * 60;
+    this.roundState = 'countdown';
+    this.countdownVal = 3;
+    this.countdownTimer = 60;
+    this.screenShake = 0;
+    this.flashColor = null;
+    this.flashAlpha = 0;
+
+    // Reset AI keys
+    ['p2Left','p2Right','p2Up','p2Down','p2Punch','p2Kick','p2Special'].forEach(k => this.keys[k] = false);
+
+    // HUD names
+    document.getElementById('p1Name').textContent = gameState.p1Char.name;
+    document.getElementById('p2Name').textContent = gameState.p2Char.name;
+
+    // Stage flash
+    this.showStageFlash(this.stage.name);
+
+    updateMoveList();
+  },
+
+  startLoop() {
+    if (this.raf) cancelAnimationFrame(this.raf);
+    const loop = (ts) => {
+      this.update();
+      this.render();
+      this.raf = requestAnimationFrame(loop);
+    };
+    this.raf = requestAnimationFrame(loop);
+  },
+
+  update() {
+    if (this.roundState === 'countdown') {
+      this.countdownTimer--;
+      if (this.countdownTimer <= 0) {
+        this.countdownVal--;
+        this.countdownTimer = 60;
+        if (this.countdownVal > 0) {
+          this.showAnnouncer('' + this.countdownVal, 900);
+          playSound('countdown', 0.6);
+        } else {
+          this.showAnnouncer('FIGHT!', 1200);
+          playSound('round_go', 0.8);
+          this.roundState = 'fight';
+        }
+      }
+      return;
+    }
+
+    if (this.roundState !== 'fight') return;
+
+    // Timer
+    this.roundTimer--;
+    const timerSecs = Math.ceil(this.roundTimer / 60);
+    document.getElementById('timer').textContent = timerSecs;
+    document.getElementById('timer').className = timerSecs <= 10 ? 'low' : '';
+
+    // Fighter updates
+    const f1 = this.fighter1, f2 = this.fighter2;
+
+    // AI for P2 in AI mode
+    if (gameState.mode === 'ai' || gameState.mode === 'practice') {
+      f2.updateAI(f1, this.keys, this.projectiles);
+    }
+
+    f1.handleInput(this.keys, 'p1', f2, this.projectiles);
+    f2.handleInput(this.keys, 'p2', f1, this.projectiles);
+
+    f1.update(this.keys, f2, this.projectiles);
+    f2.update(this.keys, f1, this.projectiles);
+
+    // Check attacks
+    this.checkAttackCollision(f1, f2);
+    this.checkAttackCollision(f2, f1);
+
+    // Projectiles
+    this.projectiles = this.projectiles.filter(p => {
+      p.update();
+      return p.alive;
     });
 
-    /* ============ BACKGROUND FORMULAS ============ */
-    const formulas = [
-      "E = mc²", "F = ma", "∇·E = ρ/ε₀", "PV = nRT",
-      "ΔxΔp ≥ ħ/2", "λ = h/p", "V = IR",
-      "sin²θ + cos²θ = 1", "a² + b² = c²",
-      "ω = 2πf", "KE = ½mv²", "A = πr²",
-      "∫ eˣ dx = eˣ", "d/dx(x²)=2x",
-      "∮ B·dl = μ₀I", "lim x→∞",
-      "∑ n²", "x = vt", "log(ab)=log a+log b",
-      "∫ x dx"
-    ];
+    // Particles
+    particles = particles.filter(p => p.update());
 
-    const bg = document.getElementById("bg");
-    for (let i = 0; i < 45; i++) {
-      let f = document.createElement("div");
-      f.className = "formula";
-      f.innerText = formulas[Math.floor(Math.random() * formulas.length)];
-      f.style.left = Math.random() * 100 + "vw";
-      f.style.animationDuration = 10 + Math.random() * 18 + "s";
-      f.style.fontSize = 14 + Math.random() * 22 + "px";
-      bg.appendChild(f);
+    // Screen shake decay
+    if (this.screenShake > 0) this.screenShake *= 0.85;
+
+    // Flash decay
+    if (this.flashAlpha > 0) this.flashAlpha *= 0.88;
+
+    // Update HUD
+    this.updateHUD();
+
+    // Check round end
+    if (f1.hp <= 0 || f2.hp <= 0 || this.roundTimer <= 0) {
+      this.endRound();
     }
-  </script>
+  },
 
+  checkAttackCollision(attacker, defender) {
+    const atkBox = attacker.getAttackBox(attacker.state);
+    if (!atkBox) return;
+    const defBox = defender.getHurtBox();
+
+    if (atkBox.x < defBox.x + defBox.w && atkBox.x + atkBox.w > defBox.x &&
+        atkBox.y < defBox.y + defBox.h && atkBox.y + atkBox.h > defBox.y) {
+      const dmg = attacker.state === 'punch' ? 8 : attacker.state === 'kick' ? 12 : 20;
+      if (defender.takeDamage(dmg, attacker)) {
+        attacker.tryHit(defender, 0, attacker.char.color); // Register combo without extra damage
+      }
+    }
+  },
+
+  endRound() {
+    if (this.roundState !== 'fight') return;
+    this.roundState = 'roundover';
+
+    const f1 = this.fighter1, f2 = this.fighter2;
+    let winner;
+
+    if (f1.hp <= 0 && f2.hp <= 0) {
+      winner = 'draw';
+    } else if (f1.hp <= f2.hp) {
+      winner = 'p2';
+      gameState.p2Wins++;
+      f1.state = 'ko'; f1.drawPose = 'ko';
+    } else {
+      winner = 'p1';
+      gameState.p1Wins++;
+      f2.state = 'ko'; f2.drawPose = 'ko';
+    }
+
+    playSound('ko', 0.7);
+
+    if (winner === 'p1') {
+      this.showAnnouncer('K.O.!', 2000);
+      if (f2.hp > 0) {} // Time up case
+    } else if (winner === 'p2') {
+      this.showAnnouncer('K.O.!', 2000);
+    } else {
+      this.showAnnouncer('DRAW!', 2000);
+    }
+
+    this.shakeScreen(20);
+    this.showFlash('#ff0000', 0.6);
+    spawnParticles(winner === 'p1' ? f2.x : f1.x, GROUND_Y - 30, '#ffd700', 30);
+
+    updateRoundPips();
+
+    setTimeout(() => {
+      if (gameState.p1Wins >= 2 || gameState.p2Wins >= 2) {
+        this.showGameOver();
+      } else {
+        gameState.round++;
+        this.newRound();
+      }
+    }, 2800);
+  },
+
+  showGameOver() {
+    this.roundState = 'gameover';
+    cancelAnimationFrame(this.raf);
+
+    const goScreen = document.getElementById('gameOverScreen');
+    const goWinner = document.getElementById('goWinner');
+    const goSub = document.getElementById('goSub');
+
+    if (gameState.p1Wins > gameState.p2Wins) {
+      goWinner.textContent = gameState.p1Char.name + ' WINS!';
+      goWinner.className = 'go-winner p1';
+      goSub.textContent = gameState.p2Wins === 0 ? 'PERFECT VICTORY' : 'WINNER!';
+    } else {
+      goWinner.textContent = gameState.p2Char.name + ' WINS!';
+      goWinner.className = 'go-winner p2';
+      goSub.textContent = gameState.p1Wins === 0 ? 'PERFECT VICTORY' : 'WINNER!';
+    }
+
+    playSound('win', 0.7);
+    document.getElementById('gameArea').classList.remove('active');
+    goScreen.classList.add('active');
+  },
+
+  updateHUD() {
+    const f1 = this.fighter1, f2 = this.fighter2;
+    const p1Pct = Math.max(0, f1.hp / f1.maxHp) * 100;
+    const p2Pct = Math.max(0, f2.hp / f2.maxHp) * 100;
+
+    const hp1El = document.getElementById('hp1');
+    const hp2El = document.getElementById('hp2');
+    hp1El.style.width = p1Pct + '%';
+    hp2El.style.width = p2Pct + '%';
+
+    // Color changes
+    hp1El.className = 'hp-bar-fill p1' + (p1Pct < 25 ? ' red' : p1Pct < 50 ? ' yellow' : '');
+    hp2El.className = 'hp-bar-fill p2' + (p2Pct < 25 ? ' red' : p2Pct < 50 ? ' yellow' : '');
+
+    document.getElementById('hp1Pct').textContent = Math.ceil(p1Pct) + '%';
+    document.getElementById('hp2Pct').textContent = Math.ceil(p2Pct) + '%';
+  },
+
+  showAnnouncer(text, duration) {
+    const el = document.getElementById('announcer');
+    el.textContent = text;
+    el.classList.add('show');
+    if (this.announcerTimeout) clearTimeout(this.announcerTimeout);
+    this.announcerTimeout = setTimeout(() => el.classList.remove('show'), duration);
+  },
+
+  showStageFlash(name) {
+    const el = document.getElementById('stageFlash');
+    el.textContent = '— ' + name + ' —';
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 2000);
+  },
+
+  shakeScreen(intensity) {
+    this.screenShake = Math.max(this.screenShake, intensity);
+  },
+
+  showFlash(color, alpha) {
+    this.flashColor = color;
+    this.flashAlpha = alpha;
+  },
+
+  render() {
+    const ctx = this.ctx;
+    const stage = this.stage;
+
+    // Screen shake
+    const sx = this.screenShake > 0.5 ? (Math.random()-0.5)*this.screenShake : 0;
+    const sy = this.screenShake > 0.5 ? (Math.random()-0.5)*this.screenShake * 0.5 : 0;
+
+    ctx.save();
+    ctx.translate(sx, sy);
+
+    // Background
+    const grad = ctx.createLinearGradient(0, 0, 0, CANVAS_H);
+    grad.addColorStop(0, stage.bg);
+    grad.addColorStop(0.6, stage.midBg);
+    grad.addColorStop(1, stage.groundColor);
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+
+    // Stage ambient light
+    ctx.save();
+    const lGrad = ctx.createRadialGradient(CANVAS_W/2, CANVAS_H*0.4, 50, CANVAS_W/2, CANVAS_H*0.4, 400);
+    lGrad.addColorStop(0, stage.lightColor);
+    lGrad.addColorStop(1, 'transparent');
+    ctx.fillStyle = lGrad;
+    ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+    ctx.restore();
+
+    // Stars
+    const t = Date.now() * 0.001;
+    ctx.save();
+    for (const star of this.bgStars) {
+      const alpha = 0.4 + 0.6 * Math.abs(Math.sin(star.blink + t * star.speed));
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.r, 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    // Background architecture
+    this.drawStageDecor(ctx, stage);
+
+    // Ground
+    ctx.save();
+    // Ground gradient
+    const gGrad = ctx.createLinearGradient(0, GROUND_Y, 0, CANVAS_H);
+    gGrad.addColorStop(0, stage.groundTop);
+    gGrad.addColorStop(0.3, stage.groundColor);
+    gGrad.addColorStop(1, '#000');
+    ctx.fillStyle = gGrad;
+    ctx.fillRect(0, GROUND_Y, CANVAS_W, CANVAS_H - GROUND_Y);
+
+    // Ground line glow
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = stage.accentColor;
+    ctx.fillStyle = stage.accentColor;
+    ctx.fillRect(0, GROUND_Y, CANVAS_W, 3);
+    ctx.restore();
+
+    // Ground grid lines
+    ctx.save();
+    ctx.strokeStyle = stage.accentColor;
+    ctx.globalAlpha = 0.15;
+    ctx.lineWidth = 1;
+    for (let x = 0; x < CANVAS_W; x += 60) {
+      ctx.beginPath();
+      ctx.moveTo(x, GROUND_Y);
+      ctx.lineTo(x + 30, CANVAS_H);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Projectiles
+    for (const proj of this.projectiles) {
+      proj.draw(ctx);
+    }
+
+    // Particles
+    for (const p of particles) {
+      p.draw(ctx);
+    }
+
+    // Fighters
+    if (this.fighter1 && this.fighter2) {
+      this.fighter1.draw(ctx, stage.accentColor);
+      this.fighter2.draw(ctx, stage.accentColor);
+
+      // Attack hit boxes (debug, hidden)
+      // this.drawHitboxes(ctx);
+    }
+
+    // Flash overlay
+    if (this.flashAlpha > 0.01) {
+      ctx.save();
+      ctx.globalAlpha = this.flashAlpha;
+      ctx.fillStyle = this.flashColor || '#ffffff';
+      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+      ctx.restore();
+    }
+
+    // Countdown overlay
+    if (this.roundState === 'countdown') {
+      ctx.save();
+      ctx.globalAlpha = 0.4;
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+      ctx.restore();
+    }
+
+    ctx.restore(); // end shake
+  },
+
+  drawStageDecor(ctx, stage) {
+    ctx.save();
+    // Pillars / architecture
+    const pillarColor = stage.accentColor;
+    ctx.strokeStyle = pillarColor;
+    ctx.globalAlpha = 0.08;
+    ctx.lineWidth = 2;
+
+    for (let i = 0; i < 5; i++) {
+      const px = i * 200 + 50;
+      ctx.beginPath();
+      ctx.moveTo(px, 0);
+      ctx.lineTo(px, GROUND_Y);
+      ctx.stroke();
+    }
+
+    // Geometric shapes in background
+    ctx.globalAlpha = 0.05;
+    ctx.fillStyle = pillarColor;
+    for (let i = 0; i < 3; i++) {
+      const rx = 150 + i * 300;
+      const ry = 100;
+      ctx.beginPath();
+      ctx.moveTo(rx, ry - 60);
+      ctx.lineTo(rx + 40, ry + 60);
+      ctx.lineTo(rx - 40, ry + 60);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    // Horizontal scan lines
+    ctx.globalAlpha = 0.03;
+    for (let y = 0; y < GROUND_Y; y += 30) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(CANVAS_W, y);
+      ctx.stroke();
+    }
+    ctx.restore();
+  },
+};
+
+// ── UI FUNCTIONS ──────────────────────────────────────────
+function updateRoundPips() {
+  const container = document.getElementById('roundPips');
+  container.innerHTML = '';
+  for (let i = 0; i < MAX_ROUNDS; i++) {
+    const pip = document.createElement('div');
+    pip.className = 'round-pip';
+    if (i < gameState.p1Wins) pip.classList.add('won-p1');
+    else if (i < gameState.p2Wins) pip.classList.add('won-p2');
+    container.appendChild(pip);
+  }
+}
+
+function updateMoveList() {
+  const overlay = document.getElementById('moveListOverlay');
+  if (!game.showMoveList) { overlay.classList.remove('show'); return; }
+  overlay.classList.add('show');
+
+  // Show P1's moves
+  const char = gameState.p1Char;
+  if (!char) return;
+
+  document.getElementById('mlTitle').textContent = char.name + ' MOVES';
+  const content = document.getElementById('mlContent');
+  content.innerHTML = '';
+
+  const moves = [
+    { key: 'F', name: 'Punch (light)' },
+    { key: 'G', name: 'Kick (medium)' },
+    { key: 'H', name: char.specials[0].name },
+    { key: 'W+F', name: char.specials[1].name },
+    { key: '→+G', name: char.specials[2].name },
+    { key: 'S+F', name: (char.specials.find(s=>s.type==='low') || char.specials[3]).name },
+    { key: 'W+G', name: (char.specials.find(s=>s.type==='aerial') || char.specials[1]).name },
+    { key: 'S+H', name: char.specials[4].name + ' (ULTRA)' },
+  ];
+
+  for (const m of moves) {
+    const div = document.createElement('div');
+    div.className = 'ml-move';
+    div.innerHTML = `<span class="ml-key">${m.key}</span><span class="ml-name">${m.name}</span>`;
+    content.appendChild(div);
+  }
+}
+
+// ── CHARACTER SELECT ───────────────────────────────────────
+let csP1 = -1, csP2 = -1;
+const csMode = { mode: 'ai' };
+
+function buildCharSelect() {
+  const grid = document.getElementById('charGrid');
+  grid.innerHTML = '';
+
+  CHARS.forEach((char, idx) => {
+    const card = document.createElement('div');
+    card.className = 'cs-card';
+    card.dataset.idx = idx;
+
+    // Mini canvas for portrait
+    const canvas = document.createElement('canvas');
+    canvas.className = 'cs-stick';
+    canvas.width = 80; canvas.height = 90;
+    const cctx = canvas.getContext('2d');
+
+    // Draw portrait
+    drawStickman(cctx, 40, 78, char.color, char.accentColor, 'idle', 'right');
+
+    card.appendChild(canvas);
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'cs-name';
+    nameEl.textContent = char.name;
+    card.appendChild(nameEl);
+
+    const styleEl = document.createElement('div');
+    styleEl.className = 'cs-style';
+    styleEl.textContent = char.style;
+    card.appendChild(styleEl);
+
+    card.addEventListener('click', () => {
+      if (csP1 === -1) { selectChar(1, idx); }
+      else if (csP2 === -1 && idx !== csP1) { selectChar(2, idx); }
+      else { selectChar(1, idx); csP2 = -1; updateCSUI(); }
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+function selectChar(player, idx) {
+  if (player === 1) {
+    csP1 = idx;
+    document.getElementById('p1Ind').textContent = 'P1: ' + CHARS[idx].name;
+  } else {
+    csP2 = idx;
+    document.getElementById('p2Ind').textContent = 'P2: ' + CHARS[idx].name;
+  }
+  playSound('select', 0.5);
+  updateCSUI();
+}
+
+function updateCSUI() {
+  document.querySelectorAll('.cs-card').forEach((card, i) => {
+    card.classList.remove('selected-p1', 'selected-p2');
+    if (i === csP1) card.classList.add('selected-p1');
+    if (i === csP2) card.classList.add('selected-p2');
+  });
+
+  const confirmBtn = document.getElementById('confirmBtn');
+  if (csMode.mode === 'ai') {
+    // Auto pick P2 if not picked
+    if (csP1 >= 0 && csP2 === -1) {
+      let aiIdx;
+      do { aiIdx = Math.floor(Math.random() * CHARS.length); } while (aiIdx === csP1);
+      csP2 = aiIdx;
+      document.getElementById('p2Ind').textContent = 'CPU: ' + CHARS[aiIdx].name;
+      document.querySelectorAll('.cs-card')[aiIdx].classList.add('selected-p2');
+    }
+    confirmBtn.disabled = csP1 < 0;
+  } else {
+    confirmBtn.disabled = csP1 < 0 || csP2 < 0;
+  }
+}
+
+// ── TITLE ANIMATION ───────────────────────────────────────
+function animateTitleScreen() {
+  const canvas = document.getElementById('titleCanvas');
+  const ctx = canvas.getContext('2d');
+  const t = Date.now() * 0.001;
+
+  ctx.clearRect(0, 0, 600, 120);
+
+  // Draw 6 fighters in title
+  CHARS.forEach((char, i) => {
+    const x = 50 + i * 90;
+    const y = 90;
+    const pose = Math.sin(t * 2 + i * 0.8) > 0.7 ? 'punch' : 'idle';
+    ctx.save();
+    ctx.scale(0.7, 0.7);
+    drawStickman(ctx, x/0.7, y/0.7, char.color, char.accentColor, pose, i % 2 === 0 ? 'right' : 'left');
+    ctx.restore();
+  });
+
+  if (document.getElementById('titleScreen').classList.contains('active')) {
+    requestAnimationFrame(animateTitleScreen);
+  }
+}
+
+// ── BUTTON WIRING ─────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  game.init();
+  buildCharSelect();
+  animateTitleScreen();
+  updateRoundPips();
+
+  document.getElementById('btnVsAI').addEventListener('click', () => {
+    initAudio();
+    csMode.mode = 'ai';
+    csP1 = -1; csP2 = -1;
+    document.getElementById('p1Ind').textContent = 'P1: SELECT';
+    document.getElementById('p2Ind').textContent = 'CPU: AUTO';
+    updateCSUI();
+    document.getElementById('titleScreen').classList.remove('active');
+    document.getElementById('charSelect').classList.add('active');
+    gameState.round = 1; gameState.p1Wins = 0; gameState.p2Wins = 0;
+    playSound('select');
+  });
+
+  document.getElementById('btnVs2P').addEventListener('click', () => {
+    initAudio();
+    csMode.mode = '2p';
+    csP1 = -1; csP2 = -1;
+    document.getElementById('p1Ind').textContent = 'P1: SELECT';
+    document.getElementById('p2Ind').textContent = 'P2: SELECT';
+    updateCSUI();
+    document.getElementById('titleScreen').classList.remove('active');
+    document.getElementById('charSelect').classList.add('active');
+    gameState.round = 1; gameState.p1Wins = 0; gameState.p2Wins = 0;
+    playSound('select');
+  });
+
+  document.getElementById('btnPractice').addEventListener('click', () => {
+    initAudio();
+    csMode.mode = 'practice';
+    csP1 = -1; csP2 = -1;
+    document.getElementById('p1Ind').textContent = 'P1: SELECT';
+    document.getElementById('p2Ind').textContent = 'CPU: AUTO';
+    updateCSUI();
+    document.getElementById('titleScreen').classList.remove('active');
+    document.getElementById('charSelect').classList.add('active');
+    gameState.round = 1; gameState.p1Wins = 0; gameState.p2Wins = 0;
+    playSound('select');
+  });
+
+  document.getElementById('confirmBtn').addEventListener('click', () => {
+    if (csP1 < 0) return;
+    if (csP2 < 0) {
+      let ai; do { ai = Math.floor(Math.random()*CHARS.length); } while(ai===csP1);
+      csP2 = ai;
+    }
+    document.getElementById('charSelect').classList.remove('active');
+    game.startFight(csP1, csP2, csMode.mode);
+    playSound('round_go');
+  });
+
+  document.getElementById('btnRematch').addEventListener('click', () => {
+    initAudio();
+    gameState.round = 1; gameState.p1Wins = 0; gameState.p2Wins = 0;
+    document.getElementById('gameOverScreen').classList.remove('active');
+    document.getElementById('gameArea').classList.add('active');
+    game.startFight(csP1, csP2, csMode.mode);
+  });
+
+  document.getElementById('btnMenu').addEventListener('click', () => {
+    initAudio();
+    gameState.round = 1; gameState.p1Wins = 0; gameState.p2Wins = 0;
+    document.getElementById('gameOverScreen').classList.remove('active');
+    document.getElementById('titleScreen').classList.add('active');
+    animateTitleScreen();
+  });
+
+  document.getElementById('toggleMoves').addEventListener('click', () => {
+    game.showMoveList = !game.showMoveList;
+    updateMoveList();
+  });
+
+  // Keyboard navigation on char select
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('charSelect').classList.contains('active')) return;
+    if (e.code === 'KeyZ' || e.code === 'Enter') {
+      if (csP1 < 0) {
+        selectChar(1, 0);
+      } else {
+        document.getElementById('confirmBtn').click();
+      }
+    }
+  });
+});
+</script>
 </body>
-
 </html>

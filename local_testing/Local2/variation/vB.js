@@ -249,19 +249,18 @@
         const newTagHtml = `
           <div class="cre-t-160-tag-wrapper">
             <div class="cre-t-160-container">
-              ${
-                pointsValue
-                  ? `
-              <a href="/frequent-foodies" target="_blank" class="cre-t-160-box-wrapper points-wrapper tag-1">
+              ${pointsValue
+            ? `
+              <div class="cre-t-160-box-wrapper points-wrapper tag-1">
                 <div class="cre-t-160-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12" fill="none">
                 <path d="M6.95157 2.03571C6.44758 2.03571 6.02097 2.1044 5.66682 2.23906C5.36854 2.35248 5.2194 2.40919 5.16673 2.42314C5.09327 2.44259 5.09975 2.44135 5.02429 2.45042C4.97019 2.45691 4.90788 2.45785 4.78326 2.45973C4.66247 2.46156 4.5364 2.46262 4.40423 2.46262H3.44134L3.52038 1.97444C3.64561 1.20265 3.9308 0.88583 4.16778 0.753002C4.21362 0.727312 4.23653 0.714467 4.29528 0.710568C4.33501 0.707932 4.40901 0.725271 4.44344 0.74528C4.49434 0.774869 4.51942 0.811562 4.56959 0.884946L4.90458 1.37497C5.00511 1.52203 5.05538 1.59556 5.16945 1.65578C5.24232 1.69425 5.41512 1.7225 5.49645 1.70925C5.62376 1.6885 5.65789 1.66272 5.72615 1.61115C5.83007 1.53264 5.92259 1.43549 6.00305 1.31827C6.0984 1.18552 6.16997 1.05233 6.21999 0.92014C6.24314 0.858964 6.25472 0.828376 6.24169 0.705135C6.2344 0.63613 6.15866 0.465023 6.11248 0.413227C6.03002 0.320722 5.98931 0.304667 5.90788 0.272556C5.51369 0.117107 4.97511 0 4.44555 0C3.69823 0 3.11798 0.146255 2.69402 0.440741C2.28084 0.733251 1.9988 1.26095 1.8497 2.03373L1.83343 2.12483C1.81727 2.21526 1.8092 2.26047 1.78996 2.29664C1.77199 2.33043 1.75099 2.35552 1.7209 2.37916C1.68867 2.40447 1.64149 2.4219 1.54711 2.45676C1.42373 2.50234 1.30899 2.55178 1.20465 2.60527C1.17723 2.61933 1.16353 2.62635 1.14603 2.63941C1.09668 2.67622 1.05519 2.74412 1.04494 2.80483C1.04131 2.82636 1.04131 2.84611 1.04131 2.88561C1.04131 2.95945 1.04131 2.99637 1.04874 3.02681C1.0718 3.12127 1.14555 3.19502 1.24001 3.21808C1.27045 3.22551 1.30737 3.22551 1.38121 3.22551H1.63952L1.11137 7.11708C0.99373 7.91489 0.66938 8.49323 0.147393 8.85068C0.122529 8.8677 0.110097 8.87622 0.105562 8.87962C0.0165971 8.94641 -0.0163104 9.03503 0.00750589 9.1437C0.00872002 9.14924 0.0112096 9.15862 0.0161888 9.17739C0.0196819 9.19056 0.0214284 9.19715 0.0235969 9.20384C0.0621424 9.32282 0.189412 9.40063 0.31288 9.38072C0.319827 9.3796 0.324548 9.37857 0.333991 9.37652C0.626039 9.31307 0.915045 9.22069 1.30538 9.01444C1.56048 8.88795 1.78144 8.73971 1.97365 8.56381C2.35989 8.22189 2.70301 7.6349 2.78205 6.93129L3.28915 3.3732C3.2966 3.32097 3.30032 3.29486 3.31302 3.27546C3.3242 3.25836 3.34017 3.24494 3.35892 3.23685C3.38021 3.22766 3.40658 3.22847 3.45931 3.23009L4.59824 3.26504C4.49764 3.49628 4.41501 3.7631 4.35572 4.06944L4.33945 4.16054C4.3233 4.25096 4.31522 4.29618 4.29598 4.33235C4.27801 4.36614 4.25701 4.39123 4.22692 4.41487C4.1947 4.44018 4.14751 4.45761 4.05313 4.49247C3.92975 4.53805 3.81502 4.58749 3.71067 4.64098C3.68326 4.65504 3.66955 4.66206 3.65205 4.67512C3.6027 4.71193 3.56121 4.77983 3.55096 4.84054C3.54733 4.86207 3.54733 4.88182 3.54733 4.92132C3.54733 4.99516 3.54733 5.03208 3.55476 5.06252C3.57782 5.15698 3.65157 5.23073 3.74603 5.25379C3.77648 5.26122 3.81339 5.26122 3.88723 5.26122H4.14554L3.61739 9.15279C3.49975 9.9506 3.1754 10.5289 2.65342 10.8864C2.62855 10.9034 2.61612 10.9119 2.61159 10.9153C2.52262 10.9821 2.48971 11.0707 2.51353 11.1794C2.51474 11.1849 2.51723 11.1943 2.52221 11.2131C2.5257 11.2262 2.52744 11.2328 2.52961 11.2395C2.56816 11.3585 2.69551 11.4363 2.81898 11.4164C2.82592 11.4153 2.83062 11.4142 2.84001 11.4122C3.13157 11.3487 3.41976 11.2564 3.81141 11.0501C4.0665 10.9237 4.28746 10.7754 4.47968 10.5995C4.86591 10.2576 5.20903 9.67061 5.28807 8.967L5.81622 5.26122H6.35959C6.43397 5.26122 6.47115 5.26122 6.50181 5.25368C6.59591 5.23053 6.66938 5.15706 6.69253 5.06296C6.70007 5.03231 6.70007 4.99512 6.70007 4.92074C6.70007 4.88127 6.70007 4.86154 6.69638 4.83986C6.68614 4.77961 6.64457 4.71158 6.59564 4.67496C6.57804 4.66179 6.5645 4.65484 6.53742 4.64095C6.40656 4.57383 6.25941 4.51369 6.10016 4.45976C6.04967 4.44266 6.02442 4.43411 6.0081 4.41897C5.99338 4.40533 5.98349 4.38892 5.97829 4.36954C5.97253 4.34804 5.9766 4.32262 5.98476 4.27177L6.02641 4.01213C6.15163 3.24033 6.43682 2.92352 6.6738 2.79069C6.71964 2.765 6.74256 2.75215 6.80131 2.74825C6.84103 2.74562 6.91504 2.76296 6.94946 2.78297C7.00036 2.81256 7.02545 2.84925 7.07561 2.92263L7.4106 3.41266C7.51114 3.55972 7.5614 3.63325 7.67548 3.69346C7.74835 3.73193 7.92114 3.76019 8.00247 3.74693C8.12979 3.72619 8.16392 3.7004 8.23217 3.64884C8.3361 3.57033 8.42861 3.47317 8.50908 3.35596C8.60442 3.2232 8.67599 3.09002 8.72602 2.95783C8.74917 2.89665 8.76074 2.86606 8.74771 2.74282C8.74042 2.67382 8.66468 2.50271 8.61851 2.45091C8.53604 2.35841 8.49533 2.34235 8.4139 2.31024C8.01971 2.15479 7.48113 2.03769 6.95157 2.03769V2.03571Z" fill="#717982"/>
               </svg>
                 </div>
                 <div class="cre-t-160-text">${pointsValue} points</div>
-              </a>`
-                  : ""
-              }
+              </div>`
+            : ""
+          }
               <div class="cre-t-160-box-wrapper service-wrapper tag-2">
                 <div class="cre-t-160-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
@@ -285,7 +284,6 @@
         }
       });
     }
-
 
     function getOriginId() {
       const origin = window.location.origin.trim();
@@ -313,7 +311,7 @@
         if (window.Swiper) cb();
         else setTimeout(check, 50);
       };
-      setTimeout(() => {}, 15000); // safety
+      setTimeout(() => { }, 15000); // safety
       check();
     }
 
@@ -332,7 +330,7 @@
           (img, i) =>
             `<div class="swiper-slide" data-swiper-slide-index="${i}">
           <img src="${img.url}" alt="Image" style="display:block;width:100%;height:auto;object-fit:contain;">
-        </div>`
+        </div>`,
         )
         .join("");
 
@@ -344,7 +342,7 @@
             (img, i) =>
               `<div class="swiper-slide" data-swiper-slide-index="${i}">
             <img src="${img.url}" alt="Thumb">
-          </div>`
+          </div>`,
           )
           .join("");
 
@@ -429,33 +427,96 @@
 
       document.querySelector(`.${variation_name}-modal-close`).addEventListener("click", function () {
         closeModal();
+
+        // // 5. Restore body scroll and exact position
+        // document.body.style.position = "";
+        // document.body.style.top = "";
+        // document.body.style.left = "";
+        // document.body.style.right = "";
+        // document.body.style.overflowY = "";
+
+        // // 6. Jump back to where user was
+        // window.scrollTo(0, window.cre171ScrollPosition);
       });
       document.querySelector(`.${variation_name}-close-icon`).addEventListener("click", function () {
         closeModal();
+
+        // //  5. Restore body scroll and exact position
+        // document.body.style.position = "";
+        // document.body.style.top = "";
+        // document.body.style.left = "";
+        // document.body.style.right = "";
+        // document.body.style.overflowY = "";
+
+        // // 6. Jump back to where user was
+        // window.scrollTo(0, window.cre171ScrollPosition);
       });
       document.querySelector(`.${variation_name}-close-icon svg`).addEventListener("click", function () {
         closeModal();
+
+        // // 5. Restore body scroll and exact position
+        // document.body.style.position = "";
+        // document.body.style.top = "";
+        // document.body.style.left = "";
+        // document.body.style.right = "";
+        // document.body.style.overflowY = "";
+
+        // // 6. Jump back to where user was
+        // window.scrollTo(0, window.cre171ScrollPosition);
       });
       document.querySelector(`.${variation_name}-modal-overlay`).addEventListener("click", function () {
         closeModal();
+
+        // // 5. Restore body scroll and exact position
+        // document.body.style.position = "";
+        // document.body.style.top = "";
+        // document.body.style.left = "";
+        // document.body.style.right = "";
+        // document.body.style.overflowY = "";
+
+        // // 6. Jump back to where user was
+        // window.scrollTo(0, window.cre171ScrollPosition);
       });
       // live(`.${variation_name}-modal-close, .${variation_name}-close-icon, .${variation_name}-close-icon svg, .${variation_name}-modal-overlay`, "click", closeModal);
 
       function enablePinchAndTapZoom(mainSlider) {
         let currentImage = null;
+
+        // zoom + pan state
         let currentScale = 1;
         let baseScale = 1;
         let startDistance = 0;
+
+        // pan in SCREEN px (extra translate applied on top of the image's natural layout position)
         let currentPanX = 0;
         let currentPanY = 0;
         let basePanX = 0;
         let basePanY = 0;
+
         let panStartX = 0;
         let panStartY = 0;
         let isPanning = false;
 
-        const MAX_PINCH_SCALE = 3;
-        const TAP_ZOOM_LEVEL = 2;
+        const MAX_PINCH_SCALE = 4;
+        const TAP_ZOOM_LEVEL = 4;
+
+        // pinch anchor in IMAGE-SPACE coords (relative to rendered image at scale=1)
+        let pinchAnchorX = 0;
+        let pinchAnchorY = 0;
+
+        // double-tap detection
+        let lastTapTime = 0;
+        const DOUBLE_TAP_DELAY = 250; // ms
+        const TAP_MOVE_TOLERANCE = 10; // px
+        let tapStartX = 0;
+        let tapStartY = 0;
+
+        // IMPORTANT: base layout info (fixes "I tap eye but cursor ends up on leg")
+        // This accounts for the image NOT starting at the parent's (0,0) due to centering/object-fit/etc.
+        let baseOffsetX = 0; // image's left inside parent when scale=1 and pan=0
+        let baseOffsetY = 0; // image's top inside parent when scale=1 and pan=0
+        let baseW = 0; // rendered width when scale=1
+        let baseH = 0; // rendered height when scale=1
 
         function getDistance(touches) {
           const dx = touches[0].clientX - touches[1].clientX;
@@ -463,90 +524,245 @@
           return Math.sqrt(dx * dx + dy * dy);
         }
 
-        function setTransform(scale, x, y, smooth = false) {
+        function getMidpoint(touches) {
+          return {
+            x: (touches[0].clientX + touches[1].clientX) / 2,
+            y: (touches[0].clientY + touches[1].clientY) / 2,
+          };
+        }
+
+        // Recompute base offsets/sizes for the active image at scale=1/pan=0
+        function measureBase() {
           if (!currentImage) return;
+
+          const parent = currentImage.parentElement;
+
+          // Temporarily reset so we measure the real layout box
+          const prevTransform = currentImage.style.transform;
+          const prevTransition = currentImage.style.transition;
+          const prevOrigin = currentImage.style.transformOrigin;
+
+          currentImage.style.transition = "none";
+          currentImage.style.transformOrigin = "0 0";
+          currentImage.style.transform = "translate(0px, 0px) scale(1)";
+
+          const imgRect = currentImage.getBoundingClientRect();
+          const parentRect = parent.getBoundingClientRect();
+
+          baseOffsetX = imgRect.left - parentRect.left;
+          baseOffsetY = imgRect.top - parentRect.top;
+          baseW = imgRect.width;
+          baseH = imgRect.height;
+
+          // Restore (we'll set properly after)
+          currentImage.style.transform = prevTransform;
+          currentImage.style.transition = prevTransition;
+          currentImage.style.transformOrigin = prevOrigin || "0 0";
+        }
+
+        // Clamp currentPanX/Y so the image covers the viewport, accounting for baseOffset
+        function clampPan(x, y, scale) {
+          const parent = currentImage.parentElement;
+          const parentW = parent.offsetWidth;
+          const parentH = parent.offsetHeight;
+
+          const scaledW = baseW * scale;
+          const scaledH = baseH * scale;
+
+          let clampedX = x;
+          let clampedY = y;
+
+          // X bounds: left = baseOffsetX + panX, right = left + scaledW
+          if (scaledW <= parentW) {
+            clampedX = (parentW - scaledW) / 2 - baseOffsetX;
+          } else {
+            const minX = parentW - baseOffsetX - scaledW; // right edge >= parentW
+            const maxX = -baseOffsetX; // left edge <= 0
+            clampedX = Math.max(minX, Math.min(maxX, x));
+          }
+
+          // Y bounds
+          if (scaledH <= parentH) {
+            clampedY = (parentH - scaledH) / 2 - baseOffsetY;
+          } else {
+            const minY = parentH - baseOffsetY - scaledH;
+            const maxY = -baseOffsetY;
+            clampedY = Math.max(minY, Math.min(maxY, y));
+          }
+
+          return { x: clampedX, y: clampedY };
+        }
+
+        // NOTE: translate then scale, origin 0 0.
+        // pan values are "extra translate" on top of the image's base layout offset.
+        function setTransform(scale, x, y, smooth = false, clamp = true) {
+          if (!currentImage) return;
+
           currentScale = scale;
 
-          const { offsetWidth, offsetHeight } = currentImage;
-          const { offsetWidth: parentWidth, offsetHeight: parentHeight } = currentImage.parentElement;
-
-          const maxPanX = Math.max(0, (offsetWidth * currentScale - parentWidth) / 2 / currentScale);
-          const maxPanY = Math.max(0, (offsetHeight * currentScale - parentHeight) / 2 / currentScale);
-
-          currentPanX = Math.max(-maxPanX, Math.min(maxPanX, x));
-          currentPanY = Math.max(-maxPanY, Math.min(maxPanY, y));
+          if (clamp) {
+            const c = clampPan(x, y, currentScale);
+            currentPanX = c.x;
+            currentPanY = c.y;
+          } else {
+            currentPanX = x;
+            currentPanY = y;
+          }
 
           currentImage.style.transition = smooth ? "transform 0.15s ease" : "none";
-          currentImage.style.transform = `scale(${currentScale}) translate(${currentPanX}px, ${currentPanY}px)`;
+          currentImage.style.transformOrigin = "0 0";
+          currentImage.style.transform = `translate(${currentPanX}px, ${currentPanY}px) scale(${currentScale})`;
         }
 
         function resetZoom() {
           baseScale = 1;
-          setTransform(1, 0, 0, true);
+          setTransform(1, 0, 0, true, true);
           mainSlider.allowTouchMove = true;
         }
 
+        // Convert a client point -> local point inside the image's rendered box at scale=1 (image-space)
+        function clientToImageSpace(clientX, clientY) {
+          const parentRect = currentImage.parentElement.getBoundingClientRect();
+          const localXInParent = clientX - parentRect.left;
+          const localYInParent = clientY - parentRect.top;
+
+          // local within the image's own box (scale=1) after accounting for baseOffset and current pan+scale
+          const imgX = (localXInParent - baseOffsetX - currentPanX) / currentScale;
+          const imgY = (localYInParent - baseOffsetY - currentPanY) / currentScale;
+
+          return { imgX, imgY, localXInParent, localYInParent };
+        }
+
+        // Zoom so that the tapped point stays under the finger/mouse
+        function zoomToPoint(clientX, clientY, targetScale) {
+          if (!currentImage) return;
+
+          const s = Math.min(Math.max(1, targetScale), MAX_PINCH_SCALE);
+          const { imgX, imgY, localXInParent, localYInParent } = clientToImageSpace(clientX, clientY);
+
+          // We want:
+          // localXInParent = baseOffsetX + panX + imgX * s  => panX = localXInParent - baseOffsetX - imgX*s
+          const newPanX = localXInParent - baseOffsetX - imgX * s;
+          const newPanY = localYInParent - baseOffsetY - imgY * s;
+
+          // Apply exact anchor first (no clamp), then clamp next frame (if needed)
+          setTransform(s, newPanX, newPanY, true, false);
+          baseScale = s;
+          mainSlider.allowTouchMove = false;
+
+          requestAnimationFrame(() => {
+            setTransform(s, currentPanX, currentPanY, true, true);
+          });
+        }
+
         function handleTouchStart(e) {
+          if (!currentImage) return;
+
           if (e.touches.length === 2) {
             isPanning = false;
+
             startDistance = getDistance(e.touches);
             baseScale = currentScale;
+
+            const mid = getMidpoint(e.touches);
+
+            // Compute anchor in image-space under midpoint
+            const { imgX, imgY } = clientToImageSpace(mid.x, mid.y);
+            pinchAnchorX = imgX;
+            pinchAnchorY = imgY;
+
             e.preventDefault();
-          } else if (e.touches.length === 1 && currentScale > 1) {
-            isPanning = true;
-            panStartX = e.touches[0].clientX;
-            panStartY = e.touches[0].clientY;
-            basePanX = currentPanX;
-            basePanY = currentPanY;
-            e.preventDefault();
-            mainSlider.allowTouchMove = false;
+          } else if (e.touches.length === 1) {
+            tapStartX = e.touches[0].clientX;
+            tapStartY = e.touches[0].clientY;
+
+            if (currentScale > 1) {
+              isPanning = true;
+              panStartX = e.touches[0].clientX;
+              panStartY = e.touches[0].clientY;
+              basePanX = currentPanX;
+              basePanY = currentPanY;
+              e.preventDefault();
+              mainSlider.allowTouchMove = false;
+            }
           }
         }
 
         function handleTouchMove(e) {
+          if (!currentImage) return;
+
           if (e.touches.length === 2 && !isPanning) {
             e.preventDefault();
+
             const currentDistance = getDistance(e.touches);
             const newScale = baseScale * (currentDistance / startDistance);
             const clampedScale = Math.min(Math.max(1, newScale), MAX_PINCH_SCALE);
-            setTransform(clampedScale, currentPanX, currentPanY);
+
+            const mid = getMidpoint(e.touches);
+            const parentRect = currentImage.parentElement.getBoundingClientRect();
+            const midLocalX = mid.x - parentRect.left;
+            const midLocalY = mid.y - parentRect.top;
+
+            // Keep midpoint anchored:
+            // midLocalX = baseOffsetX + panX + pinchAnchorX * clampedScale  => panX = midLocalX - baseOffsetX - pinchAnchorX*scale
+            const newPanX = midLocalX - baseOffsetX - pinchAnchorX * clampedScale;
+            const newPanY = midLocalY - baseOffsetY - pinchAnchorY * clampedScale;
+
+            // No clamp while pinching => anchor stays EXACTLY under fingers
+            setTransform(clampedScale, newPanX, newPanY, false, false);
             mainSlider.allowTouchMove = false;
           } else if (e.touches.length === 1 && isPanning) {
             e.preventDefault();
+
             const dx = e.touches[0].clientX - panStartX;
             const dy = e.touches[0].clientY - panStartY;
 
-            const newPanX = basePanX + dx / currentScale;
-            const newPanY = basePanY + dy / currentScale;
-            setTransform(currentScale, newPanX, newPanY);
+            const newPanX = basePanX + dx;
+            const newPanY = basePanY + dy;
+
+            // Clamp while panning so you can't drag into blank space
+            setTransform(currentScale, newPanX, newPanY, false, true);
           }
         }
 
         function handleTouchEnd(e) {
-          if (isPanning) {
-            isPanning = false;
-          }
+          if (isPanning) isPanning = false;
 
-          if (currentScale > 1) {
-            mainSlider.allowTouchMove = false;
-          } else {
-            mainSlider.allowTouchMove = true;
-          }
+          mainSlider.allowTouchMove = currentScale <= 1;
 
-          if (e.touches.length === 0 && !isPanning) {
+          if (e.touches.length === 0 && e.changedTouches && e.changedTouches.length) {
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+
+            const moved = Math.abs(endX - tapStartX) > TAP_MOVE_TOLERANCE || Math.abs(endY - tapStartY) > TAP_MOVE_TOLERANCE;
+
+            if (!moved) {
+              const now = Date.now();
+              if (now - lastTapTime <= DOUBLE_TAP_DELAY) {
+                if (currentScale > 1.1) resetZoom();
+                else {
+                  measureBase(); // re-measure right before zoom so coords are accurate
+                  zoomToPoint(endX, endY, TAP_ZOOM_LEVEL);
+                }
+                lastTapTime = 0;
+              } else {
+                lastTapTime = now;
+              }
+            }
+
             baseScale = currentScale;
+
+            // After pinch/double-tap finishes, snap into bounds smoothly
+            if (currentScale > 1) {
+              setTransform(currentScale, currentPanX, currentPanY, true, true);
+            }
           }
         }
 
-        function handleClick(e) {
+        function handleDblClick(e) {
           e.stopPropagation();
-          if (currentScale > 1.1) {
-            resetZoom();
-          } else {
-            setTransform(TAP_ZOOM_LEVEL, 0, 0, true);
-            baseScale = TAP_ZOOM_LEVEL;
-            mainSlider.allowTouchMove = false;
-          }
+          if (currentScale > 1.1) resetZoom();
+          else zoomToPoint(e.clientX, e.clientY, TAP_ZOOM_LEVEL);
         }
 
         function cleanup() {
@@ -554,19 +770,27 @@
             currentImage.removeEventListener("touchstart", handleTouchStart);
             currentImage.removeEventListener("touchmove", handleTouchMove);
             currentImage.removeEventListener("touchend", handleTouchEnd);
-            currentImage.removeEventListener("click", handleClick);
+            currentImage.removeEventListener("dblclick", handleDblClick);
           }
         }
 
         function attachToImage(img) {
           if (!img) return;
-          img.addEventListener("touchstart", handleTouchStart);
-          img.addEventListener("touchmove", handleTouchMove);
-          img.addEventListener("touchend", handleTouchEnd);
-          img.addEventListener("click", handleClick);
+
+          // If iOS Safari gives trouble with preventDefault, switch these to passive:false:
+          img.addEventListener("touchstart", handleTouchStart, { passive: false });
+          img.addEventListener("touchmove", handleTouchMove, { passive: false });
+          img.addEventListener("touchend", handleTouchEnd, { passive: false });
+
+          // img.addEventListener("touchstart", handleTouchStart);
+          // img.addEventListener("touchmove", handleTouchMove);
+          // img.addEventListener("touchend", handleTouchEnd);
+
+          img.addEventListener("dblclick", handleDblClick);
         }
 
-        mainSlider.on("init slideChange", () => {
+        // Setup once immediately + on slide changes (Swiper init may have already fired)
+        function setupActiveImage() {
           cleanup();
           resetZoom();
 
@@ -574,17 +798,27 @@
           currentImage = activeSlide ? activeSlide.querySelector("img") : null;
 
           if (currentImage) {
-            currentImage.style.transform = "scale(1) translate(0px, 0px)";
             currentImage.style.transition = "none";
+            currentImage.style.transformOrigin = "0 0";
+            currentImage.style.transform = "translate(0px, 0px) scale(1)";
+
             currentScale = 1;
             baseScale = 1;
             currentPanX = 0;
             currentPanY = 0;
+            lastTapTime = 0;
+
+            // Measure base layout offsets so "tap eye keeps eye under finger"
+            measureBase();
+
             attachToImage(currentImage);
           }
-        });
+        }
 
+        mainSlider.on("init slideChange", setupActiveImage);
         mainSlider.on("destroy", cleanup);
+
+        setupActiveImage();
       }
       helper.waitForElement(
         `.${variation_name}-overlay-and-modal`,
@@ -633,7 +867,7 @@
           });
         },
         50,
-        5000
+        5000,
       );
     }
 
@@ -1494,10 +1728,9 @@
             function () {
               updateAndCopyText();
               addTags();
-              
             },
             100,
-            8000
+            8000,
           );
         });
 
@@ -1519,6 +1752,15 @@
           const link = this.closest('[data-attribute="restaurant-list-item"]').querySelector('[data-attribute="restaurant-title-row"] h3 a').href;
           const slug = new URL(link).pathname.split("/").pop();
           fetchRestaurantMenu(slug, getOriginId());
+
+          // window.cre171ScrollPosition = 0;
+          // window.cre171ScrollPosition = window.pageYOffset;
+
+          // document.body.style.position = "fixed";
+          // document.body.style.top = `-${window.cre171ScrollPosition}px`;
+          // document.body.style.left = "0";
+          // document.body.style.right = "0";
+          // document.body.style.overflowY = "scroll";
         });
 
         live(".cre-t-160-photos-item", "click", function (e) {
@@ -1527,6 +1769,15 @@
           const link = this.closest('[data-attribute="restaurant-list-item"]').querySelector('[data-attribute="restaurant-title-row"] h3 a').href;
           const slug = new URL(link).pathname.split("/").pop();
           fetchRestaurantPhotos(slug, getOriginId());
+
+          // window.cre171ScrollPosition = 0;
+          // window.cre171ScrollPosition = window.pageYOffset;
+
+          // document.body.style.position = "fixed";
+          // document.body.style.top = `-${window.cre171ScrollPosition}px`;
+          // document.body.style.left = "0";
+          // document.body.style.right = "0";
+          // document.body.style.overflowY = "scroll";
         });
 
         window.observer160Li = true;

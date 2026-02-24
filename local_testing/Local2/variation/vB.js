@@ -285,6 +285,90 @@
       });
     }
 
+    function hrTextSeparate() {
+      // Process TIME buttons
+      const timeButtons = document.querySelectorAll('[data-attribute="restaurant-list-item"] button[data-attribute="New_booking-time-button"]');
+      timeButtons.forEach((button) => {
+        if (button.dataset.processedTime) return;
+
+        const textContent = button.textContent.trim();
+        const matches = textContent.match(/(\d{1,2}(:\d{2})?)(\s?[APap][Mm])/);
+
+        if (!matches) {
+          return;
+        }
+
+        const time = matches[1];
+        const ampm = matches[3].trim();
+
+        // Create spans for time and am/pm
+        const timeSpan = document.createElement("span");
+        timeSpan.textContent = time;
+        timeSpan.classList.add("time-span");
+
+        const ampmSpan = document.createElement("span");
+        ampmSpan.textContent = ampm;
+        ampmSpan.classList.add("ampm-span");
+
+        // Clear previous content and append new spans
+        button.textContent = "";
+        button.appendChild(timeSpan);
+        button.appendChild(ampmSpan);
+
+        button.dataset.processedTime = "true";
+      });
+
+      // Process DATE bold spans
+      const dateSpans = document.querySelectorAll('[data-attribute="New_booking-date-button"] span.font-bold');
+      dateSpans.forEach((span) => {
+        if (span.dataset.processedDate) return;
+
+        const originalText = span.textContent.trim();
+        const parts = originalText.split(/\s+/); // Split on any whitespace
+        let dayPart = "";
+        let monthPart = "";
+
+        if (parts.length === 2) {
+          const [part1, part2] = parts.map((p) => p.trim());
+
+          if (/^\d+$/.test(part1)) {
+            dayPart = part1;
+            monthPart = part2;
+          } else if (/^\d+$/.test(part2)) {
+            dayPart = part2;
+            monthPart = part1;
+          }
+        } else if (parts.length === 1) {
+          // Attempt to match mixed formats like "11DEC" or "DEC11"
+          const match = originalText.match(/^(\d+)([A-Za-z]+)|^([A-Za-z]+)(\d+)$/);
+          if (match) {
+            dayPart = match[1] || match[4];
+            monthPart = match[2] || match[3];
+          } else {
+            // Can't split — fallback to treating as day
+            dayPart = originalText;
+            monthPart = "";
+          }
+        }
+
+        // Create spans for day and month
+        const daySpan = document.createElement("span");
+        daySpan.textContent = dayPart;
+        daySpan.classList.add("date-day-span");
+
+        const monthSpan = document.createElement("span");
+        monthSpan.textContent = monthPart;
+        monthSpan.classList.add("date-month-span");
+
+        // Clear previous content and append new spans
+        span.textContent = "";
+        span.appendChild(daySpan);
+        if (monthPart) span.appendChild(monthSpan);
+
+        span.dataset.processedDate = "true";
+      });
+    }
+
     function getOriginId() {
       const origin = window.location.origin.trim();
       if (origin === "https://www.firsttable.co.nz") return 1;
@@ -428,397 +512,191 @@
       document.querySelector(`.${variation_name}-modal-close`).addEventListener("click", function () {
         closeModal();
 
-        // // 5. Restore body scroll and exact position
-        // document.body.style.position = "";
-        // document.body.style.top = "";
-        // document.body.style.left = "";
-        // document.body.style.right = "";
-        // document.body.style.overflowY = "";
+        // 5. Restore body scroll and exact position
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.overflowY = "";
 
-        // // 6. Jump back to where user was
-        // window.scrollTo(0, window.cre171ScrollPosition);
+        // 6. Jump back to where user was
+        window.scrollTo(0, window.cre171ScrollPosition);
       });
       document.querySelector(`.${variation_name}-close-icon`).addEventListener("click", function () {
         closeModal();
 
-        // //  5. Restore body scroll and exact position
-        // document.body.style.position = "";
-        // document.body.style.top = "";
-        // document.body.style.left = "";
-        // document.body.style.right = "";
-        // document.body.style.overflowY = "";
+        // 5. Restore body scroll and exact position
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.overflowY = "";
 
-        // // 6. Jump back to where user was
-        // window.scrollTo(0, window.cre171ScrollPosition);
+        // 6. Jump back to where user was
+        window.scrollTo(0, window.cre171ScrollPosition);
       });
       document.querySelector(`.${variation_name}-close-icon svg`).addEventListener("click", function () {
         closeModal();
 
-        // // 5. Restore body scroll and exact position
-        // document.body.style.position = "";
-        // document.body.style.top = "";
-        // document.body.style.left = "";
-        // document.body.style.right = "";
-        // document.body.style.overflowY = "";
+        // 5. Restore body scroll and exact position
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.overflowY = "";
 
-        // // 6. Jump back to where user was
-        // window.scrollTo(0, window.cre171ScrollPosition);
+        // 6. Jump back to where user was
+        window.scrollTo(0, window.cre171ScrollPosition);
       });
       document.querySelector(`.${variation_name}-modal-overlay`).addEventListener("click", function () {
         closeModal();
 
-        // // 5. Restore body scroll and exact position
-        // document.body.style.position = "";
-        // document.body.style.top = "";
-        // document.body.style.left = "";
-        // document.body.style.right = "";
-        // document.body.style.overflowY = "";
+        // 5. Restore body scroll and exact position
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.overflowY = "";
 
-        // // 6. Jump back to where user was
-        // window.scrollTo(0, window.cre171ScrollPosition);
+        // 6. Jump back to where user was
+        window.scrollTo(0, window.cre171ScrollPosition);
       });
       // live(`.${variation_name}-modal-close, .${variation_name}-close-icon, .${variation_name}-close-icon svg, .${variation_name}-modal-overlay`, "click", closeModal);
 
+      function loadPinchZoom(cb) {
+        // If already available
+        if (window.PinchZoom) return cb();
+
+        // Prevent double-inject
+        if (document.getElementById("cre-pinchzoom-js")) {
+          const t = setInterval(() => {
+            if (window.PinchZoom) {
+              clearInterval(t);
+              cb();
+            }
+          }, 50);
+          setTimeout(() => clearInterval(t), 8000);
+          return;
+        }
+
+        const s = document.createElement("script");
+        s.id = "cre-pinchzoom-js";
+        // UMD build exposes PinchZoom as a global (safest for in-page experiments)
+        s.src = "https://unpkg.com/pinch-zoom-js@2.3.5/dist/pinch-zoom.umd.min.js";
+        s.onload = cb;
+        document.head.appendChild(s);
+      }
+
       function enablePinchAndTapZoom(mainSlider) {
-        let currentImage = null;
+        loadPinchZoom(() => {
+          const PinchZoomCtor = window.PinchZoom?.default || window.PinchZoom;
+          if (!PinchZoomCtor || !mainSlider) return;
 
-        // zoom + pan state
-        let currentScale = 1;
-        let baseScale = 1;
-        let startDistance = 0;
+          const instances = new WeakMap();
 
-        // pan in SCREEN px (extra translate applied on top of the image's natural layout position)
-        let currentPanX = 0;
-        let currentPanY = 0;
-        let basePanX = 0;
-        let basePanY = 0;
+          function ensureHost(slide) {
+            const img = slide.querySelector("img");
+            if (!img) return null;
 
-        let panStartX = 0;
-        let panStartY = 0;
-        let isPanning = false;
+            let host = slide.querySelector(".cre-t-160-pz-host");
+            if (host) return host;
 
-        const MAX_PINCH_SCALE = 4;
-        const TAP_ZOOM_LEVEL = 4;
+            host = document.createElement("div");
+            host.className = "cre-t-160-pz-host";
+            host.style.cssText = `
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        touch-action: none;
+      `;
 
-        // pinch anchor in IMAGE-SPACE coords (relative to rendered image at scale=1)
-        let pinchAnchorX = 0;
-        let pinchAnchorY = 0;
+            img.parentNode.insertBefore(host, img);
+            host.appendChild(img);
 
-        // double-tap detection
-        let lastTapTime = 0;
-        const DOUBLE_TAP_DELAY = 250; // ms
-        const TAP_MOVE_TOLERANCE = 10; // px
-        let tapStartX = 0;
-        let tapStartY = 0;
+            img.style.maxWidth = "100%";
+            img.style.maxHeight = "100%";
+            img.style.width = "auto";
+            img.style.height = "auto";
+            img.style.objectFit = "contain";
+            img.style.display = "block";
+            img.draggable = false;
 
-        // IMPORTANT: base layout info (fixes "I tap eye but cursor ends up on leg")
-        // This accounts for the image NOT starting at the parent's (0,0) due to centering/object-fit/etc.
-        let baseOffsetX = 0; // image's left inside parent when scale=1 and pan=0
-        let baseOffsetY = 0; // image's top inside parent when scale=1 and pan=0
-        let baseW = 0; // rendered width when scale=1
-        let baseH = 0; // rendered height when scale=1
-
-        function getDistance(touches) {
-          const dx = touches[0].clientX - touches[1].clientX;
-          const dy = touches[0].clientY - touches[1].clientY;
-          return Math.sqrt(dx * dx + dy * dy);
-        }
-
-        function getMidpoint(touches) {
-          return {
-            x: (touches[0].clientX + touches[1].clientX) / 2,
-            y: (touches[0].clientY + touches[1].clientY) / 2,
-          };
-        }
-
-        // Recompute base offsets/sizes for the active image at scale=1/pan=0
-        function measureBase() {
-          if (!currentImage) return;
-
-          const parent = currentImage.parentElement;
-
-          // Temporarily reset so we measure the real layout box
-          const prevTransform = currentImage.style.transform;
-          const prevTransition = currentImage.style.transition;
-          const prevOrigin = currentImage.style.transformOrigin;
-
-          currentImage.style.transition = "none";
-          currentImage.style.transformOrigin = "0 0";
-          currentImage.style.transform = "translate(0px, 0px) scale(1)";
-
-          const imgRect = currentImage.getBoundingClientRect();
-          const parentRect = parent.getBoundingClientRect();
-
-          baseOffsetX = imgRect.left - parentRect.left;
-          baseOffsetY = imgRect.top - parentRect.top;
-          baseW = imgRect.width;
-          baseH = imgRect.height;
-
-          // Restore (we'll set properly after)
-          currentImage.style.transform = prevTransform;
-          currentImage.style.transition = prevTransition;
-          currentImage.style.transformOrigin = prevOrigin || "0 0";
-        }
-
-        // Clamp currentPanX/Y so the image covers the viewport, accounting for baseOffset
-        function clampPan(x, y, scale) {
-          const parent = currentImage.parentElement;
-          const parentW = parent.offsetWidth;
-          const parentH = parent.offsetHeight;
-
-          const scaledW = baseW * scale;
-          const scaledH = baseH * scale;
-
-          let clampedX = x;
-          let clampedY = y;
-
-          // X bounds: left = baseOffsetX + panX, right = left + scaledW
-          if (scaledW <= parentW) {
-            clampedX = (parentW - scaledW) / 2 - baseOffsetX;
-          } else {
-            const minX = parentW - baseOffsetX - scaledW; // right edge >= parentW
-            const maxX = -baseOffsetX; // left edge <= 0
-            clampedX = Math.max(minX, Math.min(maxX, x));
+            return host;
           }
 
-          // Y bounds
-          if (scaledH <= parentH) {
-            clampedY = (parentH - scaledH) / 2 - baseOffsetY;
-          } else {
-            const minY = parentH - baseOffsetY - scaledH;
-            const maxY = -baseOffsetY;
-            clampedY = Math.max(minY, Math.min(maxY, y));
-          }
+          function getInstance(slide) {
+            const host = ensureHost(slide);
+            if (!host) return null;
 
-          return { x: clampedX, y: clampedY };
-        }
+            let inst = instances.get(host);
+            if (!inst) {
+              inst = new PinchZoomCtor(host, {
+                maxZoom: 4,
+                minZoom: 1,
+                tapZoomFactor: 4,
+                draggableUnzoomed: false,
 
-        // NOTE: translate then scale, origin 0 0.
-        // pan values are "extra translate" on top of the image's base layout offset.
-        function setTransform(scale, x, y, smooth = false, clamp = true) {
-          if (!currentImage) return;
+                onZoomUpdate: (pz) => {
+                  mainSlider.allowTouchMove = pz.zoomFactor <= 1.01;
+                },
+                onZoomEnd: (pz) => {
+                  mainSlider.allowTouchMove = pz.zoomFactor <= 1.01;
+                },
+                onDragEnd: (pz) => {
+                  mainSlider.allowTouchMove = pz.zoomFactor <= 1.01;
+                },
+              });
 
-          currentScale = scale;
-
-          if (clamp) {
-            const c = clampPan(x, y, currentScale);
-            currentPanX = c.x;
-            currentPanY = c.y;
-          } else {
-            currentPanX = x;
-            currentPanY = y;
-          }
-
-          currentImage.style.transition = smooth ? "transform 0.15s ease" : "none";
-          currentImage.style.transformOrigin = "0 0";
-          currentImage.style.transform = `translate(${currentPanX}px, ${currentPanY}px) scale(${currentScale})`;
-        }
-
-        function resetZoom() {
-          baseScale = 1;
-          setTransform(1, 0, 0, true, true);
-          mainSlider.allowTouchMove = true;
-        }
-
-        // Convert a client point -> local point inside the image's rendered box at scale=1 (image-space)
-        function clientToImageSpace(clientX, clientY) {
-          const parentRect = currentImage.parentElement.getBoundingClientRect();
-          const localXInParent = clientX - parentRect.left;
-          const localYInParent = clientY - parentRect.top;
-
-          // local within the image's own box (scale=1) after accounting for baseOffset and current pan+scale
-          const imgX = (localXInParent - baseOffsetX - currentPanX) / currentScale;
-          const imgY = (localYInParent - baseOffsetY - currentPanY) / currentScale;
-
-          return { imgX, imgY, localXInParent, localYInParent };
-        }
-
-        // Zoom so that the tapped point stays under the finger/mouse
-        function zoomToPoint(clientX, clientY, targetScale) {
-          if (!currentImage) return;
-
-          const s = Math.min(Math.max(1, targetScale), MAX_PINCH_SCALE);
-          const { imgX, imgY, localXInParent, localYInParent } = clientToImageSpace(clientX, clientY);
-
-          // We want:
-          // localXInParent = baseOffsetX + panX + imgX * s  => panX = localXInParent - baseOffsetX - imgX*s
-          const newPanX = localXInParent - baseOffsetX - imgX * s;
-          const newPanY = localYInParent - baseOffsetY - imgY * s;
-
-          // Apply exact anchor first (no clamp), then clamp next frame (if needed)
-          setTransform(s, newPanX, newPanY, true, false);
-          baseScale = s;
-          mainSlider.allowTouchMove = false;
-
-          requestAnimationFrame(() => {
-            setTransform(s, currentPanX, currentPanY, true, true);
-          });
-        }
-
-        function handleTouchStart(e) {
-          if (!currentImage) return;
-
-          if (e.touches.length === 2) {
-            isPanning = false;
-
-            startDistance = getDistance(e.touches);
-            baseScale = currentScale;
-
-            const mid = getMidpoint(e.touches);
-
-            // Compute anchor in image-space under midpoint
-            const { imgX, imgY } = clientToImageSpace(mid.x, mid.y);
-            pinchAnchorX = imgX;
-            pinchAnchorY = imgY;
-
-            e.preventDefault();
-          } else if (e.touches.length === 1) {
-            tapStartX = e.touches[0].clientX;
-            tapStartY = e.touches[0].clientY;
-
-            if (currentScale > 1) {
-              isPanning = true;
-              panStartX = e.touches[0].clientX;
-              panStartY = e.touches[0].clientY;
-              basePanX = currentPanX;
-              basePanY = currentPanY;
-              e.preventDefault();
-              mainSlider.allowTouchMove = false;
-            }
-          }
-        }
-
-        function handleTouchMove(e) {
-          if (!currentImage) return;
-
-          if (e.touches.length === 2 && !isPanning) {
-            e.preventDefault();
-
-            const currentDistance = getDistance(e.touches);
-            const newScale = baseScale * (currentDistance / startDistance);
-            const clampedScale = Math.min(Math.max(1, newScale), MAX_PINCH_SCALE);
-
-            const mid = getMidpoint(e.touches);
-            const parentRect = currentImage.parentElement.getBoundingClientRect();
-            const midLocalX = mid.x - parentRect.left;
-            const midLocalY = mid.y - parentRect.top;
-
-            // Keep midpoint anchored:
-            // midLocalX = baseOffsetX + panX + pinchAnchorX * clampedScale  => panX = midLocalX - baseOffsetX - pinchAnchorX*scale
-            const newPanX = midLocalX - baseOffsetX - pinchAnchorX * clampedScale;
-            const newPanY = midLocalY - baseOffsetY - pinchAnchorY * clampedScale;
-
-            // No clamp while pinching => anchor stays EXACTLY under fingers
-            setTransform(clampedScale, newPanX, newPanY, false, false);
-            mainSlider.allowTouchMove = false;
-          } else if (e.touches.length === 1 && isPanning) {
-            e.preventDefault();
-
-            const dx = e.touches[0].clientX - panStartX;
-            const dy = e.touches[0].clientY - panStartY;
-
-            const newPanX = basePanX + dx;
-            const newPanY = basePanY + dy;
-
-            // Clamp while panning so you can't drag into blank space
-            setTransform(currentScale, newPanX, newPanY, false, true);
-          }
-        }
-
-        function handleTouchEnd(e) {
-          if (isPanning) isPanning = false;
-
-          mainSlider.allowTouchMove = currentScale <= 1;
-
-          if (e.touches.length === 0 && e.changedTouches && e.changedTouches.length) {
-            const endX = e.changedTouches[0].clientX;
-            const endY = e.changedTouches[0].clientY;
-
-            const moved = Math.abs(endX - tapStartX) > TAP_MOVE_TOLERANCE || Math.abs(endY - tapStartY) > TAP_MOVE_TOLERANCE;
-
-            if (!moved) {
-              const now = Date.now();
-              if (now - lastTapTime <= DOUBLE_TAP_DELAY) {
-                if (currentScale > 1.1) resetZoom();
-                else {
-                  measureBase(); // re-measure right before zoom so coords are accurate
-                  zoomToPoint(endX, endY, TAP_ZOOM_LEVEL);
-                }
-                lastTapTime = 0;
-              } else {
-                lastTapTime = now;
-              }
+              inst.enable();
+              instances.set(host, inst);
             }
 
-            baseScale = currentScale;
-
-            // After pinch/double-tap finishes, snap into bounds smoothly
-            if (currentScale > 1) {
-              setTransform(currentScale, currentPanX, currentPanY, true, true);
-            }
+            return inst;
           }
-        }
 
-        function handleDblClick(e) {
-          e.stopPropagation();
-          if (currentScale > 1.1) resetZoom();
-          else zoomToPoint(e.clientX, e.clientY, TAP_ZOOM_LEVEL);
-        }
+          function resetAll() {
+            mainSlider.slides.forEach((slide) => {
+              const host = slide.querySelector(".cre-t-160-pz-host");
+              if (!host) return;
 
-        function cleanup() {
-          if (currentImage) {
-            currentImage.removeEventListener("touchstart", handleTouchStart);
-            currentImage.removeEventListener("touchmove", handleTouchMove);
-            currentImage.removeEventListener("touchend", handleTouchEnd);
-            currentImage.removeEventListener("dblclick", handleDblClick);
+              const inst = instances.get(host);
+              if (!inst) return;
+
+              try {
+                inst.stopAnimation?.();
+                inst.zoomFactor = 1;
+                inst.setupOffsets?.();
+                inst.update?.();
+              } catch (e) { }
+            });
+
+            mainSlider.allowTouchMove = true;
           }
-        }
 
-        function attachToImage(img) {
-          if (!img) return;
+          function onSlideChange() {
+            resetAll();
 
-          // If iOS Safari gives trouble with preventDefault, switch these to passive:false:
-          img.addEventListener("touchstart", handleTouchStart, { passive: false });
-          img.addEventListener("touchmove", handleTouchMove, { passive: false });
-          img.addEventListener("touchend", handleTouchEnd, { passive: false });
+            const activeSlide = mainSlider.slides[mainSlider.activeIndex];
+            getInstance(activeSlide);
 
-          // img.addEventListener("touchstart", handleTouchStart);
-          // img.addEventListener("touchmove", handleTouchMove);
-          // img.addEventListener("touchend", handleTouchEnd);
-
-          img.addEventListener("dblclick", handleDblClick);
-        }
-
-        // Setup once immediately + on slide changes (Swiper init may have already fired)
-        function setupActiveImage() {
-          cleanup();
-          resetZoom();
-
-          const activeSlide = mainSlider.slides[mainSlider.activeIndex];
-          currentImage = activeSlide ? activeSlide.querySelector("img") : null;
-
-          if (currentImage) {
-            currentImage.style.transition = "none";
-            currentImage.style.transformOrigin = "0 0";
-            currentImage.style.transform = "translate(0px, 0px) scale(1)";
-
-            currentScale = 1;
-            baseScale = 1;
-            currentPanX = 0;
-            currentPanY = 0;
-            lastTapTime = 0;
-
-            // Measure base layout offsets so "tap eye keeps eye under finger"
-            measureBase();
-
-            attachToImage(currentImage);
+            requestAnimationFrame(() => {
+              const active = mainSlider.slides[mainSlider.activeIndex];
+              const host = active?.querySelector(".cre-t-160-pz-host");
+              const inst = host ? instances.get(host) : null;
+              inst?.update?.();
+            });
           }
-        }
 
-        mainSlider.on("init slideChange", setupActiveImage);
-        mainSlider.on("destroy", cleanup);
+          mainSlider.on("init", onSlideChange);
+          mainSlider.on("slideChangeTransitionStart", onSlideChange);
+          mainSlider.on("resize", onSlideChange);
 
-        setupActiveImage();
+          if (mainSlider.initialized) onSlideChange();
+        });
       }
       helper.waitForElement(
         `.${variation_name}-overlay-and-modal`,
@@ -912,6 +790,7 @@
             });
 
             if (menuImages.length > 0) {
+              console.log("Fetched images:", menuImages);
               // This is the fix to enable pagination for photos
               showMenuModal(menuImages, false);
             } else {
@@ -1024,7 +903,26 @@
     }
 
     // Your CSS as a string
-    var cssContent = `.cre-t-160-menu-and-photos{
+    var cssContent = `
+    
+      html body.cre-t-160   .pinch-zoom-container {
+    width: 100%;
+}
+
+html body.cre-t-160 .cre-t-160-pz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ html body.cre-t-160    .cre-t-160-pz img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+  
+.cre-t-160-menu-and-photos{
       display: none;
   }
   
@@ -1368,7 +1266,7 @@
   gap: 3px;
   align-items: center;
   }
-
+  
   
   html body.cre-t-160 [data-attribute="restaurant-title-row"]+div .cre-t-160-menu-icon svg {
   width: 100% !important;
@@ -1728,6 +1626,13 @@
             function () {
               updateAndCopyText();
               addTags();
+              // Need to force a reflow
+              const interval = setInterval(() => {
+                hrTextSeparate();
+              }, 100);
+              setTimeout(() => {
+                clearInterval(interval);
+              }, 2000);
             },
             100,
             8000,
@@ -1753,14 +1658,14 @@
           const slug = new URL(link).pathname.split("/").pop();
           fetchRestaurantMenu(slug, getOriginId());
 
-          // window.cre171ScrollPosition = 0;
-          // window.cre171ScrollPosition = window.pageYOffset;
+          window.cre171ScrollPosition = 0;
+          window.cre171ScrollPosition = window.pageYOffset;
 
-          // document.body.style.position = "fixed";
-          // document.body.style.top = `-${window.cre171ScrollPosition}px`;
-          // document.body.style.left = "0";
-          // document.body.style.right = "0";
-          // document.body.style.overflowY = "scroll";
+          document.body.style.position = "fixed";
+          document.body.style.top = `-${window.cre171ScrollPosition}px`;
+          document.body.style.left = "0";
+          document.body.style.right = "0";
+          document.body.style.overflowY = "scroll";
         });
 
         live(".cre-t-160-photos-item", "click", function (e) {
@@ -1770,14 +1675,14 @@
           const slug = new URL(link).pathname.split("/").pop();
           fetchRestaurantPhotos(slug, getOriginId());
 
-          // window.cre171ScrollPosition = 0;
-          // window.cre171ScrollPosition = window.pageYOffset;
+          window.cre171ScrollPosition = 0;
+          window.cre171ScrollPosition = window.pageYOffset;
 
-          // document.body.style.position = "fixed";
-          // document.body.style.top = `-${window.cre171ScrollPosition}px`;
-          // document.body.style.left = "0";
-          // document.body.style.right = "0";
-          // document.body.style.overflowY = "scroll";
+          document.body.style.position = "fixed";
+          document.body.style.top = `-${window.cre171ScrollPosition}px`;
+          document.body.style.left = "0";
+          document.body.style.right = "0";
+          document.body.style.overflowY = "scroll";
         });
 
         window.observer160Li = true;

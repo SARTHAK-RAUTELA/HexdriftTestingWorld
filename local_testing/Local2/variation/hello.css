@@ -1,233 +1,809 @@
-html body.cre-t-161.cre-t-161-modal-open .cre-t-161-modal-main {
-    display: block !important;
+@media (max-width: 767px) {
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-123-review-container {
+        display: none !important;
+    }
+
+    /* remove in case of issue */
+    /* html body.cre-t-171-modal-open {
+        overflow: hidden !important;
+        overscroll-behavior: contain;
+        position: fixed !important;
+        padding-left: 0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        margin-left: 0;
+        margin-top: 0;
+        margin-right: 0px !important;
+        --removed-body-scroll-bar-size: 0px;
+    } */
+    /* _______________________________________________________ */
+
+    html body.cre-t-171 .cre-t-95-rating,
+    html body.cre-t-171 .cre-t-95-svg,
+    html body.cre-t-171 .cre-t-95-count {
+        display: none !important;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-container {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        gap: 9px;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-ai-wrapper {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-ai-icon {
+        width: 18px;
+        height: 18px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    /* _______________________________ */
+    /* _______________________________ */
+    html body.cre-t-171 .cre-t-171-modal-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9998;
+        display: none;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        display: none;
+        max-width: 767px;
+        width: calc(100% - 46px);
+        padding: 0;
+        margin: 0 auto;
+        border-radius: 5px;
+        max-height: 90vh;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-cross {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: -1px;
+        top: -38px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    html body.cre-t-171-modal-open .cre-t-171-modal-overlay,
+    html body.cre-t-171-modal-open .cre-t-171-modal {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    /* _______________________________________________________________________ */
+    /* _______________________________________________________________________ */
+    html body.cre-t-171 .cre-t-171-modal-main {
+        border-radius: 12px;
+        background: #fff;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-info4 {
+        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content[cretext="full"] .cre-t-171-description-half,
+    html body.cre-t-171 .cre-t-171-description-content[cretext="half"] .cre-t-171-description-full,
+    html body.cre-t-171 .cre-t-171-description-content[cretext="full"] .cre-t-171-description-cta2 {
+        display: none;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-full-text {
+        color: #272b2e;
+        font-family: inherit;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 23px;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-half-text {
+        color: #272b2e;
+        font-family: inherit;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 23px;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-cta1 {
+        color: #272b2e;
+        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 23px;
+        cursor: pointer;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-cta2 {
+        cursor: pointer;
+        color: #272b2e;
+        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 23px;
+        display: none;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-half {
+        max-height: 350px;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
+        /* max-height: 350px; */
+        overflow: auto;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content.cre-t-171-show-full .cre-t-171-description-full {
+        display: block;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content.cre-t-171-show-full .cre-t-171-description-half {
+        display: none;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content1 {
+        padding: 28px 35px 0;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-product-name {
+        padding-bottom: 19px;
+        border-bottom: 1px solid #ebeff2;
+        color: #d6bb96;
+        font-family: var(--font-abril-fatface), serif;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 31.99px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content2 {
+        padding: 21px 35px 20px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-info1 {
+        color: #275682;
+        font-family: var(--font-abril-fatface), serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 29.2px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-info2 {
+        color: #99a3ab;
+        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 23px;
+        margin-top: 3px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-info3 {
+        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        margin-top: 20px;
+        margin-bottom: 19px;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-info3 div [class*="text-yellow"]~span {
+        color: #6b7280;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-info3 div>span.mt-0\.5:first-child {
+        color: #272b2e;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content3 {
+        padding: 10px 35px 33px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-review-link {
+        border-radius: 2px;
+        border: #ff685d;
+        background: #ff685d;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        min-height: 50px;
+        cursor: pointer;
+        -webkit-transition: 0.1s ease-out;
+        -o-transition: 0.1s ease-out;
+        transition: 0.1s ease-out;
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-review-link:hover {
+        background: rgb(255, 117, 107);
+        border-color: rgb(255, 117, 107);
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-review-link:active {
+        background: rgb(245, 90, 78);
+        border-color: rgb(245, 90, 78);
+        -webkit-transform: scale(0.98);
+        -ms-transform: scale(0.98);
+        transform: scale(0.98);
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-review-link span {
+        color: #fff;
+        text-align: center;
+        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24.38px;
+        letter-spacing: -0.5px;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"][data-review-summary] .cre-t-171-link-review {
+        display: none;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-container .cre-t-171-link-review {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-modal-info3 .cre-t-171-link-review {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-container>.flex>span {
+        color: #272b2e;
+        font-family: inherit;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14px;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-container>.flex>.flex~span,
+    html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span {
+        color: #6b7280;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-title-row"]~.cre-t-171-review-container>div:first-child>div,
+    html body.cre-t-171 [data-attribute="restaurant-title-row"]+a>div>div,
+    html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div {
+        margin: 0px;
+        transform: scale(0.875);
+        position: relative;
+        left: 0;
+        top: 0px;
+    }
+
+    /* html body.cre-t-171 [data-attribute="restaurant-title-row"] ~ .cre-t-171-review-container > div:first-child > * {
+        order: 2;
+    } */
+    html body.cre-t-171 [data-attribute="restaurant-list-item"]>div>div>div.flex.self-stretch {
+        gap: 7px;
+    }
 }
 
-html body.cre-t-161 .cre-t-161-modal-main {
+@media (max-height: 760px) and (max-width: 767px) {
+    html body.cre-t-171 .cre-t-171-modal-cross {
+        right: 12px;
+        top: 12px;
+        width: 20px;
+        height: 20px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-container {
+        position: relative;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-cross svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-height: 695px) and (max-width: 767px) {
+
+    /* html body.cre-t-171 .cre-t-171-modal {
+        width: 98%;
+    } */
+    html body.cre-t-171 .cre-t-171-description-content.cre-t-171-show-full .cre-t-171-description-full[style="height: 0px;"] {
+        height: auto !important;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content2 {
+        padding: 20px 20px 10px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content1 {
+        padding: 28px 20px 0;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content3 {
+        padding: 10px 20px 20px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-cross svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-cross {
+        width: 20px;
+        height: 20px;
+        right: 8px;
+        top: 8px;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-product-name {
+        padding-bottom: 10px;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-half {
+        max-height: 325px;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
+        max-height: 325px;
+    }
+}
+
+@media (max-height: 560px) and (max-width: 767px) {
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
+        max-height: none;
+    }
+
+    html body.cre-t-171 .cre-t-171-modal-main {
+        max-height: 95dvh;
+        overflow: auto;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-half {
+        display: none;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-full {
+        display: block;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
+        height: auto !important;
+    }
+}
+
+@media (max-width: 360px) {
+    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-half {
+        display: none;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-full {
+        display: block;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-half {
+        max-height: 260px;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
+        max-height: 260px;
+        height: auto !important;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 767px) and (max-height: 400px) {
+    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-half {
+        display: none;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-full {
+        display: block;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-half {
+        max-height: 60px;
+    }
+
+    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
+        max-height: 60px;
+    }
+}
+
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+
+/* Create the shimmer effect with translation and rotation */
+@keyframes shimmer {
+    0% {
+        opacity: 1;
+        transform: rotate(40deg) translateX(-40%) translateY(100%);
+    }
+
+    25% {
+        opacity: 1;
+        transform: rotate(40deg) translateX(-40%) translateY(-100%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: rotate(40deg) translateX(-40%) translateY(-200%);
+    }
+
+    75% {
+        opacity: 1;
+        transform: rotate(40deg) translateX(-40%) translateY(-300%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(40deg) translateX(-40%) translateY(-400%);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply the shimmer animation to the icon */
+html body.cre-t-171 [data-attribute="restaurant-list-item"].cre-t-171-active-shimmer .cre-t-171-review-ai-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-ai-icon::before {
+    content: "";
+    position: absolute;
+    width: 22.076px;
+    height: 5px;
+    transform: rotate(40deg) translateX(-40%) translateY(100%);
+    filter: blur(1.75px);
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #fff;
+    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%); */
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+}
+
+html body.cre-t-171 [data-attribute="restaurant-list-item"].cre-t-171-active-shimmer .cre-t-171-review-ai-icon::before {
+    animation:
+        shimmer 1.6s ease-in-out 0s 1 normal forwards,
+        shimmer 1.6s ease-in-out 4s 1 normal forwards;
+}
+
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+/* ________________________________________________________ */
+
+html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-container {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    width: 231px;
+    right: -4.02rem;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+html body.cre-t-171 [data-attribute="restaurant-list-item"].cre-t-171-active-shimmer .cre-t-171-tooltip-container {
+    animation:
+        fadeIn 0.3s ease-in-out 1.3s normal forwards,
+        bounce 1s ease-in-out 3.3s normal forwards,
+        fadeOut 2s ease-in-out 8s normal forwards;
+}
+
+html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-wrapper {
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    background: #141414;
+    position: relative;
+}
+
+html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-text {
+    color: var(--Base-White, #fff);
+    text-align: center;
+    font-family: inherit;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    /* 150% */
+}
+
+html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-arrow {
+    position: absolute;
+    bottom: -6px;
+    left: 85px;
+    right: 0;
+    margin: 0 auto;
+    width: 16px;
+    height: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 0;
+        pointer-events: all;
+    }
+
+    100% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+        /* Fade in */
+        pointer-events: all;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    50% {
+        visibility: visible;
+        transform: translateY(5px);
+        pointer-events: all;
+    }
+
+    100% {
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    95% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 0;
+        pointer-events: all;
+    }
+
+    100% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* _______________________________________________________________________________________________ */
+/* this is only for fst160  */
+@media (max-width: 767px) {
+
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-171-review-container>div:first-child>div,
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div {
+        /* order: 1; */
+        /* left: -4px; */
+        transform: scale(0.9);
+    }
+
+    /* html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-171-review-container > .flex > .flex + span {
+        margin-left: 4px;
+    } */
+
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-171-review-container>div:first-child>span,
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>span {
+        color: #272b2e;
+        font-family: inherit;
+        font-size: 13px !important;
+        font-style: normal;
+        font-weight: 400;
+        margin-top: 0;
+    }
+
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-171-review-ai-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-171-review-container>.flex>.flex~span {
+        color: #6b7280;
+    }
+
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-container {
+        right: -4.1rem;
+    }
+
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-location"] {
+        padding: 2px 0px 2px 0px;
+    }
+
+    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-171-review-container>div:first-child>span:nth-child(2) {
+        margin-top: 2px;
+    }
+}
+
+/* this is only for fst160  */
+/* _______________________________________________________________________________________________ */
+
+@media (max-width: 374px) {
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-container {
+        bottom: calc(100% + 12px);
+        right: -0.7rem !important;
+    }
+
+    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-arrow {
+        left: unset;
+        right: 11px;
+    }
+}
+
+html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-129-review-container {
     display: none !important;
 }
 
-html body.cre-t-161 .cre-t-161-modal-main.active {
-    display: block !important;
+html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a.cre-t-171-link-review>div>span.sr-only+span:not(.leading-none) {
+    order: 1;
+    margin-top: 2px;
 }
 
-html body.cre-t-161-modal-open {
-    overflow: hidden;
+html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none {
+    margin-left: 0px;
 }
 
-/* ===========================
-modal overlay
-=========================== */
-html body.cre-t-161 .cre-t-161-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    --tw-backdrop-blur: blur(4px);
-    z-index: 2147483646 !important;
-    background-color: rgba(39, 43, 46, 0.8);
-    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+
+html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span+span+span,
+html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none,
+html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span,
+html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none,
+html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span+span+span {
+    color: #6b7280;
 }
 
-html body.cre-t-161 .cre-t-161-modal-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transform-origin: center center;
-    padding: 52px 74px 0 74px;
-    background-color: #fff;
-    max-width: 817px;
-    width: calc(100% - 20px);
-    max-height: 90dvh;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 2147483647 !important;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* ===========================
-everything above the cta scrolls
-=========================== */
-html body.cre-t-161 .cre-t-161-modal-scrollable {
-    flex: 1 1 auto;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 16px;
-}
-
-/* ===========================
-close icon
-=========================== */
-html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    cursor: pointer;
-    z-index: 10;
-}
-
-html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper img {
-    pointer-events: none;
-    display: block;
-}
-
-/* ===========================
-cta — sticky at the bottom of the modal
-=========================== */
-html body.cre-t-161 .cre-t-161-modal-cta {
-    flex: 0 0 auto;
-    position: sticky;
-    bottom: 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    padding: 14px 20px;
-    cursor: pointer;
-}
-
-html body.cre-t-161 .cre-t-161-modal-cta:hover {
-    cursor: pointer;
-}
-
-html body.cre-t-161 .cre-t-161-modal-cta-text {
-    text-decoration-line: none;
-    transition-duration: 0.5s;
-    animation-duration: 0.5s;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    background-color: rgb(38 86 130 / var(--tw-bg-opacity, 1));
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    font-size: 17px;
-    line-height: 26px;
-    border-radius: 0.25rem;
-    display: block;
-}
-
-/* ===========================
-responsive — tablet
-=========================== */
-@media (max-width: 1023px) {
-    html body.cre-t-161 .cre-t-161-modal-content {
-        width: calc(100% - 40px);
-    }
-}
-
-/* ===========================
-responsive — mobile (≤767px)
-=========================== */
-@media screen and (max-width: 767px) {
-    html body.cre-t-161 .cre-t-161-modal-content {
-        max-height: 92dvh;
-        width: calc(100% - 24px);
-        padding: 8px 0 0 0;
-        transform: translate(-50%, -50%);
-    }
-
-    html body.cre-t-161 .cre-t-161-modal-cta {
-        padding: 10px 10px;
-    }
-
-    html body.cre-t-161 .cre-t-161-modal-cross-icon-wrapper {
-        max-width: 20px;
-    }
-
-    html body.cre-t-161 .cre-t-161-modal-cta-text {
-        font-size: 14px;
-    }
-}
-
-/* ===========================
-very small screens (≤375px)
-=========================== */
-@media screen and (max-width: 375px) {
-    html body.cre-t-161 .cre-t-161-modal-content {
-        max-height: 95dvh;
-        padding-bottom: 0;
-    }
-}
-
-/* ===========================
-own styles
-=========================== */
-html body.cre-t-161 .cre-t-161-main-title {
-    --tw-text-opacity: 1;
-    color: rgb(39 43 46 / var(--tw-text-opacity, 1));
-    letter-spacing: 0;
+html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>span {
+    color: #272b2e;
+    font-family: inherit;
+    font-size: 15px !important;
+    font-style: normal;
     font-weight: 400;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-family: var(--font-abril-fatface), ui-serif, georgia, cambria,
-        "times new roman", times, serif;
-    margin-top: 28px;
-    padding: 0px 20px;
+    line-height: 14px;
 }
 
-html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item {
-    display: flex;
-    gap: 9px;
-    padding: 8px 0px;
-}
-
-html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item svg {
-    width: 100%;
-    max-width: 24px;
-}
-
-html body.cre-t-161 .cre-t-161-subtitle-text {
-    padding: 0px 20px;
-    margin: 12px 0px 8px 0px;
-    --tw-text-opacity: 1;
-    color: rgb(94 101 112 / var(--tw-text-opacity, 1));
-}
-
-html body.cre-t-161 .cre-t-161-modal-benefits-checklist-title {
-    --tw-text-opacity: 1;
-    color: rgb(94 101 112 / var(--tw-text-opacity, 1));
-}
-
-html body.cre-t-161 .cre-t-161-modal-benefits-checklist {
-    padding: 0px 20px;
-    margin: 12px 0px 8px 0px;
-}
-
-html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item strong {
-    color: var(--tw-prose-bold);
-    font-weight: 600;
-    font-family: inherit;
-    font-size: 16px;
-}
-
-html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item-p {
-    --tw-text-opacity: 1;
-    color: rgb(94 101 112 / var(--tw-text-opacity, 1));
-    line-height: 1.625;
-    font-size: 16px;
-    font-family: inherit;
-}
-
-html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item-icon img {
-    width: 22px;
-    height: 22px;
-}
-
-html body.cre-t-161 .cre-t-161-modal-benefits-checklist-item-text {
-    width: 100%;
-}
-
-/* V2 specific — tag icon next to the service fee text */
-html body.cre-t-161 .cre-t-161-tag-icon {
-    width: 9px;
-    height: 9px;
-    display: flex;
-    align-items: center;
-}
-
-html body.cre-t-161 .cre-t-161-tag-icon img {
-    width: 100%;
-    height: 100%;
+html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-link-review .leading-tight .leading-none,
+html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-link-review>.flex>.flex~span {
+    color: #6b7280;
 }

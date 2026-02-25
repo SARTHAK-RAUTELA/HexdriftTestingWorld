@@ -1,98 +1,326 @@
-//@version=5
-strategy("NIFTY50 EMA + Supertrend Strategy v4", overlay=true,
-     initial_capital=1000000,
-     commission_type=strategy.commission.percent,
-     commission_value=0.02,
-     slippage=2)
+@media screen and (max-width: 600px) {
+    html body.cre-t-160 [data-times-available="true"] a .leading-tight.whitespace-nowrap {
+        display: none !important;
+    }
 
-// ─────────────────────────────────────
-// INPUTS
-// ─────────────────────────────────────
-emaFastLen  = input.int(20,   "Fast EMA")
-emaSlowLen  = input.int(50,   "Slow EMA")
-emaTrendLen = input.int(200,  "Trend EMA")
-rsiLen      = input.int(14,   "RSI Length")
-atrLen      = input.int(14,   "ATR Length")
-atrSLMult   = input.float(1.5, "ATR SL Multiplier", step=0.1)
-atrTPMult   = input.float(2.5, "ATR TP Multiplier", step=0.1)
+    html body.cre-t-160 [data-attribute="restaurant-title-row"] h3,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"] h3 a {
+        color: #272b2e;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
 
-// Supertrend Inputs
-stAtrPeriod = input.int(10,   "Supertrend ATR Period")
-stMultiplier = input.float(3.0, "Supertrend Multiplier", step=0.1)
+    html body.cre-t-160 [data-attribute="restaurant-list-location"] a.flex {
+        cursor: none;
+        text-decoration: none;
+        text-underline-offset: unset;
+        color: #5e6570;
+        font-family: inherit;
+        font-size: 13px !important;
+        font-style: normal;
+        font-weight: 400;
+        line-height: var(--line-height-14, 14px);
+    }
 
-// ─────────────────────────────────────
-// EMA INDICATORS
-// ─────────────────────────────────────
-emaFast  = ta.ema(close, emaFastLen)
-emaSlow  = ta.ema(close, emaSlowLen)
-emaTrend = ta.ema(close, emaTrendLen)
-rsi      = ta.rsi(close, rsiLen)
-atr      = ta.atr(atrLen)
+    html body.cre-t-160 [data-attribute="restaurant-list-location"] a svg {
+        display: none;
+    }
 
-// ─────────────────────────────────────
-// SUPERTREND CALCULATION (v5 native)
-// ─────────────────────────────────────
-[stLine, stDirection] = ta.supertrend(stMultiplier, stAtrPeriod)
-// stDirection: -1 = uptrend (bullish), +1 = downtrend (bearish)
-stBull = stDirection < 0   // supertrend is bullish
-stBear = stDirection > 0   // supertrend is bearish
+    html body.cre-t-160 .cre-t-160-tag-wrapper {
+        display: block !important;
+    }
 
-// ─────────────────────────────────────
-// HIGHER TIMEFRAME DAILY BIAS
-// ─────────────────────────────────────
-emaFastHTF = request.security(syminfo.tickerid, "D", ta.ema(close, 20))
-emaSlowHTF = request.security(syminfo.tickerid, "D", ta.ema(close, 50))
-htfBullBias = emaFastHTF > emaSlowHTF
-htfBearBias = emaFastHTF < emaSlowHTF
+    html body.cre-t-160 [data-attribute="booking-fee-element"]~a[href="/frequent-foodies"] {
+        display: none;
+    }
 
-// ─────────────────────────────────────
-// CONDITIONS
-// ─────────────────────────────────────
-noPosition = strategy.position_size == 0
+    html body.cre-t-160 .cre-t-160-box-wrapper {
+        border-radius: 85px;
+        background: #f7f7f8;
+        display: inline-flex;
+        padding: 5px 12px;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+    }
 
-bullTrend = close > emaTrend
-bearTrend = close < emaTrend
+    /* Per person and fee css */
+    html body.cre-t-160 .cre-t-160-container {
+        display: flex;
+        gap: 5px;
+    }
 
-bullCross = ta.crossover(emaFast, emaSlow)
-bearCross = ta.crossunder(emaFast, emaSlow)
+    html body.cre-t-160 .cre-t-160-box-wrapper .cre-t-160-text {
+        color: #535a64;
+        font-family: inherit;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: var(--line-height-14, 14px);
+        /* 140% */
+    }
 
-// ✅ All 3 must agree: EMA cross + Supertrend + Daily bias
-bullSignal = bullCross and rsi > 52 and bullTrend and stBull and htfBullBias
-bearSignal = bearCross and rsi < 48 and bearTrend and stBear and htfBearBias
+    html body.cre-t-160 .cre-t-160-box-wrapper.tag-2 .cre-t-160-icon {
+        width: 12px;
+        height: 8.5px;
+        aspect-ratio: 12/9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5px;
+    }
 
-// ─────────────────────────────────────
-// ORDERS
-// ─────────────────────────────────────
-if bullSignal and noPosition
-    strategy.entry("Long", strategy.long)
+    html body.cre-t-160 .cre-t-160-box-wrapper.tag-1 .cre-t-160-icon {
+        width: 9px;
+        height: 12px;
+        aspect-ratio: 9/12;
+        display: flex;
+        align-items: center;
+    }
 
-if strategy.position_size > 0
-    strategy.exit("Long Exit", "Long",
-         stop  = strategy.position_avg_price - atrSLMult * atr,
-         limit = strategy.position_avg_price + atrTPMult * atr)
+    html body.cre-t-160 .cre-t-160-box-wrapper.tag-1 .cre-t-160-icon svg,
+    html body.cre-t-160 .cre-t-160-box-wrapper.tag-2 .cre-t-160-icon svg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
 
-if bearSignal and noPosition
-    strategy.entry("Short", strategy.short)
+    html body.cre-t-160 [data-attribute="restaurant-list-location"] {
+        padding: 0px 0px 4px 0px;
+        justify-content: center;
+    }
 
-if strategy.position_size < 0
-    strategy.exit("Short Exit", "Short",
-         stop  = strategy.position_avg_price + atrSLMult * atr,
-         limit = strategy.position_avg_price - atrTPMult * atr)
+    html body.cre-t-160 [data-attribute="restaurant-list-item"] .group.grid .col-span-2>div>.items-center {
+        display: none !important;
+    }
 
-// ─────────────────────────────────────
-// PLOTTING
-// ─────────────────────────────────────
-plot(emaFast,  "EMA 20",  color=color.yellow)
-plot(emaSlow,  "EMA 50",  color=color.orange)
-plot(emaTrend, "EMA 200", color=color.blue, linewidth=2)
+    /* Review order for control flow */
+    /* Review order for control flow */
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none {
+        margin-left: -3px;
+    }
 
-// Supertrend line
-plot(stBull ? stLine : na, "Supertrend Up",   color=color.green, linewidth=2, style=plot.style_linebr)
-plot(stBear ? stLine : na, "Supertrend Down", color=color.red,   linewidth=2, style=plot.style_linebr)
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>span,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>span,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>span {
+        color: #272b2e;
+        font-family: inherit;
+        font-size: 13px !important;
+        font-style: normal;
+        font-weight: 400;
+    }
 
-// Background: daily bias
-bgcolor(htfBullBias ? color.new(color.green, 97) : color.new(color.red, 97), title="Daily Bias")
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div {
+        order: 1;
+        margin: 0px;
+        transform: scale(0.9);
+        position: relative;
+        left: -4px;
+        top: -1.5px;
+    }
 
-// Entry signals
-plotshape(bullSignal and noPosition, "Buy",  shape.triangleup,   location.belowbar, color.lime,  size=size.small)
-plotshape(bearSignal and noPosition, "Sell", shape.triangledown,  location.abovebar, color.red,   size=size.small)
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>span.sr-only+span:not(.leading-none),
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>span.sr-only+span:not(.leading-none),
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>span.sr-only+span:not(.leading-none) {
+        order: 2;
+        margin: 0px 0px 0px -2px;
+        display: none !important;
+    }
+
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div+span.leading-none,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none {
+        order: 3;
+    }
+
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none+span,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div+span.leading-none+span,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span {
+        order: 4;
+    }
+
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div+span.leading-none+span+span+span,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div+span.leading-none+span+span+span,
+    html body.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span+span+span {
+        order: 5;
+    }
+
+    /* This all optional code is to hide the menu and photos */
+
+    html body.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-123-review-container {
+        display: none !important;
+    }
+
+    html body.cre-t-160 [data-attribute="restaurant-list-item"][data-review-summary] .cre-t-123-link-review {
+        display: block !important;
+    }
+
+    html body.cre-t-160 button[data-attribute="New_booking-time-button"] {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        margin: 3.5px 2px;
+        background-color: rgb(38 86 130 / var(--tw-bg-opacity, 1));
+    }
+
+    html body.cre-t-160 [data-attribute="New_booking-time-button"] span {
+        color: #fff;
+        font-family: inherit;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: var(--line-height-14, 14px);
+        /* 107.692% */
+    }
+
+    html body.cre-t-160 [data-attribute="New_booking-time-button"] span.ampm-span {
+        font-size: 9px;
+        text-transform: uppercase;
+    }
+
+    html body.cre-t-160 .cre-t-160-box-wrapper.tag-3 {
+        border-radius: 5px;
+        background: #eae5dc;
+        color: #272b2e;
+        font-family: inherit;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: var(--line-height-14, 14px);
+    }
+
+    /* Button css */
+    html body.cre-t-160 .cre-t-160-more-time-button,
+    html body.cre-t-160 .cre-t-160-more-times-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #99a3ab1a;
+        max-width: 354px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 17px;
+        padding-top: 9px;
+        gap: 4px;
+        color: #275682;
+        font-family: inherit;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: var(--line-height-14, 14px);
+    }
+
+    html body.cre-t-160 .cre-t-160-more-time-button svg,
+    html body.cre-t-160 .cre-t-160-more-times-container svg {
+        color: #275682;
+    }
+
+    html body.cre-t-160 .cre-t-160-remove-class {
+        display: none !important;
+    }
+
+    html body.cre-t-160 .cre-t-160-remove-class-button .cre-t-160-remove-class {
+        display: flex !important;
+    }
+
+    html body.cre-t-160 .cre-t-160-remove-class-button .cre-t-160-more-times-container,
+    html body.cre-t-160 .cre-t-160-remove-class-button .cre-t-160-more-time-button {
+        display: none !important;
+    }
+
+    html body.cre-t-160 .cre-t-160-box-wrapper.service-wrapper.tag-3 .cre-t-160-text {
+        color: #272b2e;
+    }
+
+    html body.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-129-review-ai-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    html body.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-129-review-ai-text {
+        font-size: 13px;
+    }
+
+    html body.cre-t-160.cre-t-129-v5 [data-attribute="restaurant-title-row"]~.cre-t-129-review-container>div:first-child>div,
+    html body.cre-t-160.cre-t-129-v5 [data-attribute="restaurant-title-row"]~.cre-t-123-review-container>div:first-child>div,
+    html body.cre-t-160.cre-t-129-v5 [data-attribute="restaurant-title-row"]+a>div>div {
+        margin-right: 3px;
+    }
+
+    html body.cre-t-160 [data-attribute="restaurant-list-item"]>div>div>div.flex.self-stretch {
+        gap: 7px !important;
+    }
+
+    html body.cre-t-160 [data-attribute="New_booking-date-button"] div.inline-flex {
+        color: #fff;
+        font-family: inherit;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 700;
+        /* line-height: var(--line-height-14, 14px); */
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    html body.cre-t-160 [data-processed-date="true"],
+    html body.cre-t-160 [data-attribute="New_booking-date-button"] .font-normal {
+        color: #272b2e;
+        text-align: center;
+        font-family: inherit;
+        font-size: 12.5px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22.2px;
+        /* 276.667% */
+        margin-bottom: 0px;
+    }
+
+    html body.cre-t-160 [data-times-available="true"] a img {
+        height: 108px;
+        object-fit: cover;
+    }
+
+    html body.cre-t-160 [data-times-available="false"] div.font-semibold.absolute {
+        margin-top: 5px;
+    }
+
+    html body.cre-t-160 .cre-t-160-more-time-text {
+        text-transform: none !important;
+    }
+
+    html body.cre-t-160 [data-times-available="true"] {
+        row-gap: 10px;
+    }
+
+    html body.cre-t-160 [data-attribute="New_booking-date-button"] {
+        flex-direction: row;
+        gap: 2.5px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    html body.cre-t-160 [data-attribute="New_booking-date-button"] .date-month-span {
+        display: none;
+    }
+
+    html body.cre-t-160 .cre-t-160-photos-item:active,
+    html body.cre-t-160 .cre-t-160-menu-item:active {
+        background-color: #e3e6e6;
+        /* slightly darker than #F2F4F4 */
+        transform: scale(0.98);
+    }
+
+    html body.cre-t-160 .text-gray-400[data-attribute="New_booking-time-button"] {
+        padding: 5px 0;
+    }
+
+
+
+}

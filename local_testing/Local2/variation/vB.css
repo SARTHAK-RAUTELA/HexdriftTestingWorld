@@ -575,7 +575,10 @@ html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-129-review-co
     }
 
     html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span+span+span,
-    html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none {
+    html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none,
+    html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"] + a > div > div + span.leading-none + span,
+    html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"] + a > div > div + span.leading-none,
+    html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"] + a > div > div + span.leading-none + span + span + span {
         color: #6b7280;
     }
 

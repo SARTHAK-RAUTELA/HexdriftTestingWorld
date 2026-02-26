@@ -1,809 +1,146 @@
-@media (max-width: 767px) {
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-123-review-container {
-        display: none !important;
-    }
-
-    /* remove in case of issue */
-    /* html body.cre-t-171-modal-open {
-        overflow: hidden !important;
-        overscroll-behavior: contain;
-        position: fixed !important;
-        padding-left: 0px;
-        padding-top: 0px;
-        padding-right: 0px;
-        margin-left: 0;
-        margin-top: 0;
-        margin-right: 0px !important;
-        --removed-body-scroll-bar-size: 0px;
-    } */
-    /* _______________________________________________________ */
-
-    html body.cre-t-171 .cre-t-95-rating,
-    html body.cre-t-171 .cre-t-95-svg,
-    html body.cre-t-171 .cre-t-95-count {
-        display: none !important;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-container {
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        gap: 9px;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-ai-wrapper {
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        cursor: pointer;
-        position: relative;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-ai-icon {
-        width: 18px;
-        height: 18px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
-
-    /* _______________________________ */
-    /* _______________________________ */
-    html body.cre-t-171 .cre-t-171-modal-overlay {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9998;
-        display: none;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        display: none;
-        max-width: 767px;
-        width: calc(100% - 46px);
-        padding: 0;
-        margin: 0 auto;
-        border-radius: 5px;
-        max-height: 90vh;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-container {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-cross {
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        right: -1px;
-        top: -38px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
-
-    html body.cre-t-171-modal-open .cre-t-171-modal-overlay,
-    html body.cre-t-171-modal-open .cre-t-171-modal {
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
-
-    /* _______________________________________________________________________ */
-    /* _______________________________________________________________________ */
-    html body.cre-t-171 .cre-t-171-modal-main {
-        border-radius: 12px;
-        background: #fff;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-info4 {
-        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content[cretext="full"] .cre-t-171-description-half,
-    html body.cre-t-171 .cre-t-171-description-content[cretext="half"] .cre-t-171-description-full,
-    html body.cre-t-171 .cre-t-171-description-content[cretext="full"] .cre-t-171-description-cta2 {
-        display: none;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-full-text {
-        color: #272b2e;
-        font-family: inherit;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 23px;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-half-text {
-        color: #272b2e;
-        font-family: inherit;
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 23px;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-cta1 {
-        color: #272b2e;
-        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 23px;
-        cursor: pointer;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-cta2 {
-        cursor: pointer;
-        color: #272b2e;
-        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 23px;
-        display: none;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-half {
-        max-height: 350px;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
-        /* max-height: 350px; */
-        overflow: auto;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content.cre-t-171-show-full .cre-t-171-description-full {
-        display: block;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content.cre-t-171-show-full .cre-t-171-description-half {
-        display: none;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content1 {
-        padding: 28px 35px 0;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-product-name {
-        padding-bottom: 19px;
-        border-bottom: 1px solid #ebeff2;
-        color: #d6bb96;
-        font-family: var(--font-abril-fatface), serif;
-        font-size: 21px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 31.99px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content2 {
-        padding: 21px 35px 20px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-info1 {
-        color: #275682;
-        font-family: var(--font-abril-fatface), serif;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 29.2px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-info2 {
-        color: #99a3ab;
-        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 23px;
-        margin-top: 3px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-info3 {
-        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        margin-top: 20px;
-        margin-bottom: 19px;
-        width: -webkit-fit-content;
-        width: -moz-fit-content;
-        width: fit-content;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-info3 div [class*="text-yellow"]~span {
-        color: #6b7280;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-info3 div>span.mt-0\.5:first-child {
-        color: #272b2e;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content3 {
-        padding: 10px 35px 33px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-review-link {
-        border-radius: 2px;
-        border: #ff685d;
-        background: #ff685d;
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        min-height: 50px;
-        cursor: pointer;
-        -webkit-transition: 0.1s ease-out;
-        -o-transition: 0.1s ease-out;
-        transition: 0.1s ease-out;
-        vertical-align: middle;
-        text-align: center;
-        text-decoration: none;
-        -ms-touch-action: manipulation;
-        touch-action: manipulation;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-review-link:hover {
-        background: rgb(255, 117, 107);
-        border-color: rgb(255, 117, 107);
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-review-link:active {
-        background: rgb(245, 90, 78);
-        border-color: rgb(245, 90, 78);
-        -webkit-transform: scale(0.98);
-        -ms-transform: scale(0.98);
-        transform: scale(0.98);
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-review-link span {
-        color: #fff;
-        text-align: center;
-        font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24.38px;
-        letter-spacing: -0.5px;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"][data-review-summary] .cre-t-171-link-review {
-        display: none;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-container .cre-t-171-link-review {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        gap: 8px;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-modal-info3 .cre-t-171-link-review {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        gap: 8px;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-container>.flex>span {
-        color: #272b2e;
-        font-family: inherit;
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 14px;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-container>.flex>.flex~span,
-    html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span {
-        color: #6b7280;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-title-row"]~.cre-t-171-review-container>div:first-child>div,
-    html body.cre-t-171 [data-attribute="restaurant-title-row"]+a>div>div,
-    html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div {
-        margin: 0px;
-        transform: scale(0.875);
-        position: relative;
-        left: 0;
-        top: 0px;
-    }
-
-    /* html body.cre-t-171 [data-attribute="restaurant-title-row"] ~ .cre-t-171-review-container > div:first-child > * {
-        order: 2;
-    } */
-    html body.cre-t-171 [data-attribute="restaurant-list-item"]>div>div>div.flex.self-stretch {
-        gap: 7px;
-    }
+html body[data-path="/"].cre-t-97 .oxy-header-container .logo-image:not(.cre-t-97-logo-image),
+html body[data-path="/home/"].cre-t-97 .oxy-header-container .logo-image:not(.cre-t-97-logo-image) {
+    display: none;
 }
 
-@media (max-height: 760px) and (max-width: 767px) {
-    html body.cre-t-171 .cre-t-171-modal-cross {
-        right: 12px;
-        top: 12px;
-        width: 20px;
-        height: 20px;
-    }
+/* ________________________________________________________________________ */
+/* ________________________________________________________________________ */
 
-    html body.cre-t-171 .cre-t-171-modal-container {
-        position: relative;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-cross svg {
-        width: 20px;
-        height: 20px;
-    }
+html body[data-path="/"] .social-proof,
+html body[data-path="/home/"] .social-proof {
+    background-color: #000000;
 }
 
-@media (max-height: 695px) and (max-width: 767px) {
-
-    /* html body.cre-t-171 .cre-t-171-modal {
-        width: 98%;
-    } */
-    html body.cre-t-171 .cre-t-171-description-content.cre-t-171-show-full .cre-t-171-description-full[style="height: 0px;"] {
-        height: auto !important;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content2 {
-        padding: 20px 20px 10px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content1 {
-        padding: 28px 20px 0;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-content.cre-t-171-modal-content3 {
-        padding: 10px 20px 20px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-cross svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-cross {
-        width: 20px;
-        height: 20px;
-        right: 8px;
-        top: 8px;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-product-name {
-        padding-bottom: 10px;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-half {
-        max-height: 325px;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
-        max-height: 325px;
-    }
+html body[data-path="/"] .ct-section h1.home-heading span span.underline,
+html body[data-path="/home/"] .ct-section h1.home-heading span span.underline {
+    box-shadow: inset 0 -15px 0 #cce3fa;
 }
 
-@media (max-height: 560px) and (max-width: 767px) {
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
-        max-height: none;
-    }
-
-    html body.cre-t-171 .cre-t-171-modal-main {
-        max-height: 95dvh;
-        overflow: auto;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-half {
-        display: none;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-full {
-        display: block;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
-        height: auto !important;
-    }
+html body[data-path="/"] .ct-link-button.header-quote-button,
+html body[data-path="/home/"] .ct-link-button.header-quote-button {
+    background: #0272e4 !important;
 }
 
-@media (max-width: 360px) {
-    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-half {
-        display: none;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-full {
-        display: block;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-half {
-        max-height: 260px;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
-        max-height: 260px;
-        height: auto !important;
-    }
+html body[data-path="/"] .filter-options .oxy-tabs-wrapper .oxy-tab[class*="tab-active"],
+html body[data-path="/home/"] .filter-options .oxy-tabs-wrapper .oxy-tab[class*="tab-active"] {
+    background-color: #0272e4;
+    border-top-color: #0272e4;
+    border-right-color: #0272e4;
+    border-bottom-color: #0272e4;
+    border-left-color: #0272e4;
 }
 
-@media (orientation: landscape) and (max-width: 767px) and (max-height: 400px) {
-    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-half {
-        display: none;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-container .cre-t-171-description-content .cre-t-171-description-full {
-        display: block;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-half {
-        max-height: 60px;
-    }
-
-    html body.cre-t-171 .cre-t-171-description-content .cre-t-171-description-full {
-        max-height: 60px;
-    }
+html body[data-path="/"] #comparison-section .see-plans-button,
+html body[data-path="/home/"] #comparison-section .see-plans-button {
+    background: #0272e4 !important;
+    border-radius: 55px !important;
 }
 
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-
-/* Create the shimmer effect with translation and rotation */
-@keyframes shimmer {
-    0% {
-        opacity: 1;
-        transform: rotate(40deg) translateX(-40%) translateY(100%);
-    }
-
-    25% {
-        opacity: 1;
-        transform: rotate(40deg) translateX(-40%) translateY(-100%);
-    }
-
-    50% {
-        opacity: 1;
-        transform: rotate(40deg) translateX(-40%) translateY(-200%);
-    }
-
-    75% {
-        opacity: 1;
-        transform: rotate(40deg) translateX(-40%) translateY(-300%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: rotate(40deg) translateX(-40%) translateY(-400%);
-    }
+html body[data-path="/"] #comparison-section .see-plans-button span,
+html body[data-path="/home/"] #comparison-section .see-plans-button span {
+    font-size: 0 !important;
+    line-height: 0;
 }
 
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(5px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
+html body[data-path="/"] #comparison-section .see-plans-button span::after,
+html body[data-path="/home/"] #comparison-section .see-plans-button span::after {
+    content: "See Plans";
+    font-size: 1.6rem;
+    line-height: 1.1em;
 }
 
-/* Apply the shimmer animation to the icon */
-html body.cre-t-171 [data-attribute="restaurant-list-item"].cre-t-171-active-shimmer .cre-t-171-review-ai-icon {
-    position: relative;
-    overflow: hidden;
+html body[data-path="/"] #comparison-section .see-plans-button:hover,
+html body[data-path="/home/"] #comparison-section .see-plans-button:hover {
+    background: rgb(2 114 228 / 80%) !important;
 }
 
-html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-review-ai-icon::before {
-    content: "";
-    position: absolute;
-    width: 22.076px;
-    height: 5px;
-    transform: rotate(40deg) translateX(-40%) translateY(100%);
-    filter: blur(1.75px);
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    background: #fff;
-    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%); */
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0;
+html body[data-path="/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child,
+html body[data-path="/home/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child {
+    border: 0;
+    box-shadow: none;
 }
 
-html body.cre-t-171 [data-attribute="restaurant-list-item"].cre-t-171-active-shimmer .cre-t-171-review-ai-icon::before {
-    animation:
-        shimmer 1.6s ease-in-out 0s 1 normal forwards,
-        shimmer 1.6s ease-in-out 4s 1 normal forwards;
+html body[data-path="/"] #comparison-section .plan-box,
+html body[data-path="/home/"] #comparison-section .plan-box {
+    border: 1px solid;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
 }
 
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-/* ________________________________________________________ */
-
-html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-container {
-    position: absolute;
-    bottom: calc(100% + 12px);
-    width: 231px;
-    right: -4.02rem;
-    visibility: hidden;
-    pointer-events: none;
+html body[data-path="/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block .plan-box,
+html body[data-path="/home/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block .plan-box {
+    /* box-shadow:
+        0 2px 14px rgba(17, 24, 39, 0.2),
+        0 10px 30px rgba(17, 24, 39, 0.1); */
+    box-shadow: 0 1px 6px rgba(17, 24, 39, 0.16), 0 6px 14px rgba(17, 24, 39, 0.08);
 }
 
-html body.cre-t-171 [data-attribute="restaurant-list-item"].cre-t-171-active-shimmer .cre-t-171-tooltip-container {
-    animation:
-        fadeIn 0.3s ease-in-out 1.3s normal forwards,
-        bounce 1s ease-in-out 3.3s normal forwards,
-        fadeOut 2s ease-in-out 8s normal forwards;
+html body[data-path="/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child .plan-box,
+html body[data-path="/home/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child .plan-box {
+    box-shadow: none;
+    margin-top: 0;
 }
 
-html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-wrapper {
-    display: flex;
-    padding: 8px 12px;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 8px;
-    background: #141414;
-    position: relative;
+html body[data-path="/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child,
+html body[data-path="/home/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child {
+    /* box-shadow:
+        0 2px 14px rgba(17, 24, 39, 0.2),
+        0 10px 30px rgba(17, 24, 39, 0.1); */
+    box-shadow: 0 1px 6px rgba(17, 24, 39, 0.16), 0 6px 14px rgba(17, 24, 39, 0.08);
+    margin-top: 4rem;
 }
 
-html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-text {
-    color: var(--Base-White, #fff);
-    text-align: center;
-    font-family: inherit;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px;
-    /* 150% */
+html body[data-path="/"] #comparison-section .plan-repeater div:first-of-type .rating-bar,
+html body[data-path="/home/"] #comparison-section .plan-repeater div:first-of-type .rating-bar {
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
 }
 
-html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-arrow {
-    position: absolute;
-    bottom: -6px;
-    left: 85px;
-    right: 0;
-    margin: 0 auto;
-    width: 16px;
-    height: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+html body[data-path="/"] #comparison-section .guarantee-container .best-price-label,
+html body[data-path="/home/"] #comparison-section .guarantee-container .best-price-label {
+    color: #383838;
 }
 
-@keyframes fadeIn {
-    0% {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 0;
-        pointer-events: all;
-    }
-
-    100% {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 1;
-        /* Fade in */
-        pointer-events: all;
-    }
+html body[data-path="/"] #comparison-section .guarantee-container .oxy-popover_marker-inner,
+html body[data-path="/home/"] #comparison-section .guarantee-container .oxy-popover_marker-inner {
+    color: #383838 !important;
 }
 
-@keyframes bounce {
-    0% {
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: all;
-    }
-
-    50% {
-        visibility: visible;
-        transform: translateY(5px);
-        pointer-events: all;
-    }
-
-    100% {
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: all;
-    }
+html body[data-path="/"] #comparison-section .plan-box .number-bubble,
+html body[data-path="/home/"] #comparison-section .plan-box .number-bubble {
+    background-color: #000;
 }
 
-@keyframes fadeOut {
-    0% {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    95% {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 0;
-        pointer-events: all;
-    }
-
-    100% {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 0;
-        pointer-events: none;
-    }
+html body[data-path="/"] #comparison-section .plan-box .number-bubble.best-overall-bubble,
+html body[data-path="/home/"] #comparison-section .plan-box .number-bubble.best-overall-bubble {
+    background-color: #0272e4;
+    border-radius: 55px;
 }
 
-/* _______________________________________________________________________________________________ */
-/* this is only for fst160  */
-@media (max-width: 767px) {
-
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-171-review-container>div:first-child>div,
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>div {
-        /* order: 1; */
-        /* left: -4px; */
-        transform: scale(0.9);
-    }
-
-    /* html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-171-review-container > .flex > .flex + span {
-        margin-left: 4px;
-    } */
-
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-171-review-container>div:first-child>span,
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]+a>div>span {
-        color: #272b2e;
-        font-family: inherit;
-        font-size: 13px !important;
-        font-style: normal;
-        font-weight: 400;
-        margin-top: 0;
-    }
-
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-171-review-ai-icon {
-        width: 16px;
-        height: 16px;
-    }
-
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-171-review-container>.flex>.flex~span {
-        color: #6b7280;
-    }
-
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-container {
-        right: -4.1rem;
-    }
-
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-list-location"] {
-        padding: 2px 0px 2px 0px;
-    }
-
-    html body.cre-t-171.cre-t-160 [data-attribute="restaurant-title-row"]~.cre-t-171-review-container>div:first-child>span:nth-child(2) {
-        margin-top: 2px;
-    }
+html body[data-path="/"] #comparison-section .oxy-read-more-link.oxy-read-more-link,
+html body[data-path="/home/"] #comparison-section .oxy-read-more-link.oxy-read-more-link {
+    background: #f5f5f9 !important;
+    color: #000 !important;
+    border: 1px solid #000;
+    border-radius: 55px !important;
 }
 
-/* this is only for fst160  */
-/* _______________________________________________________________________________________________ */
-
-@media (max-width: 374px) {
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-container {
-        bottom: calc(100% + 12px);
-        right: -0.7rem !important;
-    }
-
-    html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-tooltip-arrow {
-        left: unset;
-        right: 11px;
-    }
-}
-
-html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-129-review-container {
-    display: none !important;
-}
-
-html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a.cre-t-171-link-review>div>span.sr-only+span:not(.leading-none) {
-    order: 1;
-    margin-top: 2px;
-}
-
-html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none {
-    margin-left: 0px;
-}
-
-
-html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span+span+span,
-html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none,
-html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span,
-html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none,
-html body.cre-t-160.cre-t-171 [data-attribute="restaurant-title-row"]+a>div>div+span.leading-none+span+span+span {
-    color: #6b7280;
-}
-
-html body.cre-t-171.cre-t-160-control [data-attribute="restaurant-title-row"]+a>div>span {
-    color: #272b2e;
-    font-family: inherit;
-    font-size: 15px !important;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 14px;
-}
-
-html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-link-review .leading-tight .leading-none,
-html body.cre-t-171 [data-attribute="restaurant-list-item"] .cre-t-171-link-review>.flex>.flex~span {
-    color: #6b7280;
+html body[data-path="/"] #comparison-section .oxy-read-more-link.oxy-read-more-link:hover,
+html body[data-path="/home/"] #comparison-section .oxy-read-more-link.oxy-read-more-link:hover {
+    background: #fff !important;
+    color: #0272e4 !important;
+    border: 1px solid #0272e4;
+    border-radius: 55px !important;
 }

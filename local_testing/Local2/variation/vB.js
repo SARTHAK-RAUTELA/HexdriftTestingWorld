@@ -1795,6 +1795,7 @@ html body.cre-t-160 .cre-t-160-pz {
     `
 
     function init() {
+      console.log("variation160")
       _$("body").addClass(variation_name);
       addScript();
       if (!window.observer160Li) {

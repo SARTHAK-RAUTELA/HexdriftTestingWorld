@@ -80,14 +80,14 @@
 
     function init() {
       // SWF99 - Clicks on Review Badge (control)
-      live(".ct-image.trustpilot-image", "click", function () {
+      live(".cre-t-76-review-top", "click", function () {
         //GOAL CODE HERE
         window._conv_q = window._conv_q || [];
         _conv_q.push(["triggerConversion", "100037376"]);
       });
 
       // SWF99 - hover on Review Badge (control)
-      live(".ct-image.trustpilot-image", "mouseover", function () {
+      live(".cre-t-76-review-top", "mouseover", function () {
         //GOAL CODE HERE
         window._conv_q = window._conv_q || [];
         _conv_q.push(["triggerConversion", "100037376"]);

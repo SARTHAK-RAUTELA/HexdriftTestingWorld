@@ -1,190 +1,57 @@
 (function () {
   try {
-    /* Main Variables */
-    var debug = 0;
-    var variation_name = "cre-t-99-custom-goals";
+    /* main variables */
+    var debug = 1;
+    var variation_name = "cre-t-88";
 
-    /* Helper Library */
-    var _$;
-    !(function (factory) {
-      _$ = factory();
-    })(function () {
-      var bm = function (s) {
-        if (typeof s === "string") {
-          this.value = Array.prototype.slice.call(document.querySelectorAll(s));
+    function waitForElement(selector, trigger) {
+      var interval = setInterval(function () {
+        var element = document.querySelector(selector);
+        if (element) {
+          clearInterval(interval);
+          trigger(element);
         }
-        if (typeof s === "object") {
-          this.value = [s];
-        }
-      };
-      bm.prototype = {
-        eq: function (n) {
-          this.value = [this.value[n]];
-          return this;
-        },
-        each: function (fn) {
-          [].forEach.call(this.value, fn);
-          return this;
-        },
+      }, 50);
 
-        waitForElement: function (selector, trigger, delayInterval, delayTimeout) {
-          var interval = setInterval(function () {
-            if (_$(selector).value.length) {
-              clearInterval(interval);
-              trigger();
-            }
-          }, delayInterval);
-          setTimeout(function () {
-            clearInterval(interval);
-          }, delayTimeout);
-        },
-      };
-      return function (selector) {
-        return new bm(selector);
-      };
-    });
-    var helper = _$();
-
-    /* Live Event Listener */
-    function live(selector, event, callback, context) {
-      function addEvent(el, type, handler) {
-        if (el.attachEvent) el.attachEvent("on" + type, handler);
-        else el.addEventListener(type, handler);
-      }
-      this &&
-        this.Element &&
-        (function (ElementPrototype) {
-          ElementPrototype.matches =
-            ElementPrototype.matches ||
-            ElementPrototype.matchesSelector ||
-            ElementPrototype.webkitMatchesSelector ||
-            ElementPrototype.msMatchesSelector ||
-            function (selector) {
-              var node = this,
-                nodes = (node.parentNode || node.document).querySelectorAll(selector),
-                i = -1;
-              while (nodes[++i] && nodes[i] != node);
-              return !!nodes[i];
-            };
-        })(Element.prototype);
-      function live(selector, event, callback, context) {
-        addEvent(context || document, event, function (e) {
-          var found,
-            el = e.target || e.srcElement;
-          while (el && el.matches && el !== context && !(found = el.matches(selector))) el = el.parentElement;
-          if (found) callback.call(el, e);
-        });
-      }
-      live(selector, event, callback, context);
+      setTimeout(function () {
+        clearInterval(interval);
+      }, 15000);
     }
 
+    /* Insert Subheading */
+    function addSubheading(heading) {
+      if (!heading) return;
+
+      // Prevent duplicate insertion
+      if (!document.querySelector('.Cre_subheading')) {
+        heading.insertAdjacentHTML(
+          'afterend',
+          '<p class="Cre_subheading">*Based on an independent review of 29 U.S. providers</p>'
+        );
+      }
+    }
+
+    /* Update Description Text */
+    function updateDescription(desc) {
+      if (!desc) return;
+
+      desc.innerHTML =
+        '500k+ pet owners have used our free comparison service to secure the lowest <span class="Cre_highlight">price—guaranteed.</span> We donate $15 for every policy purchased.';
+    }
+
+    /* Variation Init */
     function init() {
-      // SWF99 - Clicks on Review Badge (control)
-      live(".cre-t-76-review-top", "click", function () {
-        //GOAL CODE HERE
-        window._conv_q = window._conv_q || [];
-        _conv_q.push(["triggerConversion", "100037376"]);
-      });
+      if (document.body.classList.contains(variation_name)) return;
 
-      // SWF99 - hover on Review Badge (control)
-      live(".cre-t-76-review-top", "mouseover", function () {
-        //GOAL CODE HERE
-        window._conv_q = window._conv_q || [];
-        _conv_q.push(["triggerConversion", "100037376"]);
-      });
+      document.body.classList.add(variation_name);
 
-      // _________________________________________________________
-      // _________________________________________________________
-      // _________________________________________________________
-      // SWF99 - Clicks on Review Badge (variation)
-      live(".cre-t-99-review-top", "click", function () {
-        //GOAL CODE HERE
-        window._conv_q = window._conv_q || [];
-        _conv_q.push(["triggerConversion", "100037376"]);
-      });
-
-      // SWF99 - hover on Review Badge (variation)
-      live(".cre-t-99-review-top", "mouseover", function () {
-        //GOAL CODE HERE
-        window._conv_q = window._conv_q || [];
-        _conv_q.push(["triggerConversion", "100037376"]);
-      });
-
-      // SWF99 - Review Summary Overlay Opens (control Mobile)
-      live(".cre-t-76-review-top", "click", function () {
-        if (window.innerWidth < 992) {
-          var parent = this.closest(".cre-t-76-container");
-          setTimeout(() => {
-            if (parent && parent.classList.contains("cre-t-76-dropdown-active")) {
-              //GOAL CODE HERE
-              window._conv_q = window._conv_q || [];
-              _conv_q.push(["triggerConversion", "100037377"]);
-            }
-          }, 300);
-        }
-      });
-
-      // SWF99 - Review Summary Overlay Opens (variation Mobile)
-      live(".cre-t-99-review-top", "click", function () {
-        if (window.innerWidth < 992) {
-          var parent = this.closest(".cre-t-99-container");
-          setTimeout(() => {
-            if (parent && parent.classList.contains("cre-t-99-dropdown-active")) {
-              //GOAL CODE HERE
-              window._conv_q = window._conv_q || [];
-              _conv_q.push(["triggerConversion", "100037377"]);
-            }
-          }, 300);
-        }
-      });
-
-      // SWF99 - Review Summary Overlay Opens (control Desktop)
-      live(".cre-t-76-review-top", "mouseover", function () {
-        if (window.innerWidth > 991) {
-          //GOAL CODE HERE
-          window._conv_q = window._conv_q || [];
-          _conv_q.push(["triggerConversion", "100037377"]);
-        }
-      });
-
-      // SWF99 - Review Summary Overlay Opens (variation Desktop)
-      live(".cre-t-99-review-top", "mouseover", function () {
-        if (window.innerWidth > 991) {
-          //GOAL CODE HERE
-          window._conv_q = window._conv_q || [];
-          _conv_q.push(["triggerConversion", "100037377"]);
-        }
-      });
-
-      // SWF99 - SWF99 - Clicks on "Ranking Methodology" Link in Overlay (variation)
-      live(".cre-t-99-dropdown-bottom-link", "click", function () {
-        //GOAL CODE HERE
-        window._conv_q = window._conv_q || [];
-        _conv_q.push(["triggerConversion", "100037378"]);
-      });
-
-      // SWF99 - SWF76 - Clicks on "Ranking Methodology" Link in Overlay (control)
-      live(".cre-t-76-dropdown-bottom-link", "click", function () {
-        //GOAL CODE HERE
-        window._conv_q = window._conv_q || [];
-        _conv_q.push(["triggerConversion", "100037378"]);
-      });
+      waitForElement(".ct-headline.home-heading", addSubheading);
+      waitForElement(".page-description .ct-span p:first-child", updateDescription);
     }
 
-    helper.waitForElement(
-      "#comparison-section",
-      function () {
-        if (!window.Goal_99_added) {
-          init();
-          window.Goal_99_added = true;
-        }
-      },
-      25,
-      25000,
-    );
+    waitForElement("body", init);
 
-    /* Wait for Element to Load and Initialize */
   } catch (e) {
-    if (debug) console.log(e, "Error in Test " + variation_name);
+    if (debug) console.log(e, "error in Test " + variation_name);
   }
 })();

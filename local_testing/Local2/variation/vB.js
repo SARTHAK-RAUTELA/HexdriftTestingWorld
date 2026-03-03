@@ -110,6 +110,20 @@
         _conv_q.push(["triggerConversion", "100037376"]);
       });
 
+      // SWF99 - Review Summary Overlay Opens (control Mobile)
+      live(".cre-t-76-review-top", "click", function () {
+        if (window.innerWidth < 992) {
+          var parent = this.closest(".cre-t-76-container");
+          setTimeout(() => {
+            if (parent && parent.classList.contains("cre-t-76-dropdown-active")) {
+              //GOAL CODE HERE
+              window._conv_q = window._conv_q || [];
+              _conv_q.push(["triggerConversion", "100037377"]);
+            }
+          }, 300);
+        }
+      });
+
       // SWF99 - Review Summary Overlay Opens (variation Mobile)
       live(".cre-t-99-review-top", "click", function () {
         if (window.innerWidth < 992) {
@@ -124,6 +138,15 @@
         }
       });
 
+      // SWF99 - Review Summary Overlay Opens (control Desktop)
+      live(".cre-t-76-review-top", "mouseover", function () {
+        if (window.innerWidth > 991) {
+          //GOAL CODE HERE
+          window._conv_q = window._conv_q || [];
+          _conv_q.push(["triggerConversion", "100037377"]);
+        }
+      });
+
       // SWF99 - Review Summary Overlay Opens (variation Desktop)
       live(".cre-t-99-review-top", "mouseover", function () {
         if (window.innerWidth > 991) {
@@ -133,8 +156,15 @@
         }
       });
 
-      // SWF99 - SWF99 - Clicks on “Ranking Methodology” Link in Overlay (variation)
+      // SWF99 - SWF99 - Clicks on "Ranking Methodology" Link in Overlay (variation)
       live(".cre-t-99-dropdown-bottom-link", "click", function () {
+        //GOAL CODE HERE
+        window._conv_q = window._conv_q || [];
+        _conv_q.push(["triggerConversion", "100037378"]);
+      });
+
+      // SWF99 - SWF76 - Clicks on "Ranking Methodology" Link in Overlay (control)
+      live(".cre-t-76-dropdown-bottom-link", "click", function () {
         //GOAL CODE HERE
         window._conv_q = window._conv_q || [];
         _conv_q.push(["triggerConversion", "100037378"]);

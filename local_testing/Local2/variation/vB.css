@@ -1,37 +1,15 @@
-html body.cre-t-88 #intro-section .ct-section-inner-wrap .home-heading {
-    margin-bottom: 0 !important;
+:root {
+    --primary-color: #1A0EAB;
+    --secondary-color: #565ad0;
+    --underline-color: #bbbee7ab;
+    --color-white: #fff;
+    --hover-color: #2e20c1;
 }
 
-html body.cre-t-88 #intro-section .Cre_subheading {
-    color: rgba(0, 0, 0, 1);
-    font-size: 19px;
-    margin-top: 6px;
+html body a.ct-link-button.see-plans-button {
+    background: var(--primary-color) !important;
 }
 
-html body.cre-t-88 #intro-section .page-description .ct-span>p:nth-child(2) {
-    display: none;
-}
-
-html body.cre-t-88 #intro-section .Cre_subheading:after {
-    content: " ";
-    display: block;
-    height: 1px;
-    width: 75px;
-    background: rgba(209, 209, 209, 0.70);
-    position: relative;
-    top: 22px;
-}
-
-html body.cre-t-88 #intro-section #text_block-18-63 {
-    margin-top: 22px;
-}
-
-@media screen and (max-width:768px) {
-    html body.cre-t-88 #intro-section .Cre_subheading {
-        font-size: 18px;
-    }
-}
-
-html body.cre-t-88 #intro-section .page-description .Cre_highlight {
-    text-wrap: nowrap;
+html body a.ct-link-button.see-plans-button:hover {
+    background: var(--hover-color) !important;
 }

@@ -1,3 +1,4 @@
+
 (function () {
     try {
         /* Main variables */
@@ -58,7 +59,7 @@ const itemsection = `
 
   <!-- Testimonials -->
   <div class="testimonials">
-    <h2>Real results from real pros.</h2>
+    <h2>Real results from real painters.</h2>
     <div class="testimonial-cards">
       <div class="card">
         <img src="https://cdn.optimizely.com/img/20611073899/ddcb9bf943e44ce698bdbc45101727a8.png " alt="Alex">
@@ -74,7 +75,8 @@ const itemsection = `
       </div>
       <div class="card">
         <img src="https://cdn.optimizely.com/img/20611073899/e15f8076b4cd4899bf86ec6141504773.png" alt="Mehdi">
-        <p>different streams, but the best return we get is from Thumbtack."</p>
+        <p>“We invest our marketing budgets in
+different streams, but the best return we get is from Thumbtack.”</p>
         <span>Rafael Rodriguez, Dambrak Painting</span>
       </div>
     </div>
@@ -262,7 +264,8 @@ const itemsection1 = `
           if (target && !alreadyExists) {
               target.insertAdjacentHTML('beforebegin', `
                   <div class="section_topimage">
-                      <img src="https://cdn.optimizely.com/img/20611073899/41b8f28eaf21412d9eb8cbcb042ecf90.png">
+                      <img class="desktop_image" src="https://cdn.optimizely.com/img/20611073899/41b8f28eaf21412d9eb8cbcb042ecf90.png">
+                      <img class="mobile_image" src="https://cdn.optimizely.com/img/20611073899/19900e74574e4c778c65af6e48721caf.png">
                   </div>
               `);
           }
@@ -293,7 +296,7 @@ waitForElement(
     var el = document.querySelector('[class*="hero_heroInnerContainer"] [class*="hero_heroInnerOffsetRight"] .br-pill [class*="Type_text1"]');
     
     if (el) {
-      el.innerHTML = 'In partnership with Sherwin-Williams. <a href="tel:+18556639023">Book a call with our team.</a>';
+      el.innerHTML = 'In partnership with Sherwin-Williams. <a href="https://www.thumbtack.com/sales">Book a call with our team.</a>';
     }
   },
   100,
@@ -468,6 +471,7 @@ waitForElement('[class*="see-how-different_seeHowDifferentSection"] > div', func
         if (debug) console.log(e, "error in Test" + variation_name); // Log errors if debug is enabled
     }
 })();
+
 
 
 

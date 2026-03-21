@@ -46,8 +46,8 @@ html body.tt-williams-partner-lp .thumbtack-section-variation .card {
 }
 
 html body.tt-williams-partner-lp .thumbtack-section-variation .card img {
-    width: 180px;
-    height: 180px;
+    width: 272px;
+    height: 272px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -293,12 +293,33 @@ html body.tt-williams-partner-lp .thumbtack-section-variation .testimonial-line 
         border-radius: 50%;
         object-fit: cover;
     }
+
+
+    html body.tt-williams-partner-lp [aria-label="Thumbtack Home"] [aria-label="logo"] {
+        display: none !important;
+    }
 }
 
 @media (min-width: 769px) {
+    html body.tt-williams-partner-lp .section_topimage .mobile_image {
+        display: none;
+    }
+
     html body.tt-williams-partner-lp .thumbtack-section-variation .tools-logos.mobile_section {
         display: none;
     }
+
+    html body.tt-williams-partner-lp [aria-label="Thumbtack Home"]:after {
+        content: " ";
+        background-image: url(https://cdn.optimizely.com/img/20611073899/4a51537b87884762beaae75ad401b092.svg);
+        height: 43px;
+        width: 160px;
+        display: inline-block;
+        background-size: cover;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -632,6 +653,10 @@ html body.tt-williams-partner-lp [class*="TextInput_inputStylesRoundedBordersLef
 }
 
 @media screen and (max-width: 768px) {
+    html body.tt-williams-partner-lp .section_topimage .desktop_image {
+        display: none;
+    }
+
     html body.tt-williams-partner-lp [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"] br {
         display: none;
     }
@@ -658,6 +683,19 @@ html body.tt-williams-partner-lp [class*="TextInput_inputStylesRoundedBordersLef
         display: block !important;
         color: #2f3033 !important;
         font-size: 30px;
+        text-wrap: pretty;
+        margin-top: 30px;
+    }
+
+    [class*="hero_heroInnerOffsetRight"] [data-testid="get-started-button-mobile"] span:after {
+        content: "Sign up for free";
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    [class*="hero_heroInnerOffsetRight"] [data-testid="get-started-button-mobile"] span {
+        font-size: 0;
     }
 
     html body.tt-williams-partner-lp .shadow-400.br-pill.m_shadow-none svg {
@@ -712,6 +750,7 @@ html body.tt-williams-partner-lp [class*="TextInput_inputStylesRoundedBordersLef
 
     html body.tt-williams-partner-lp section.thumbtack-section>div h2 {
         text-align: center !important;
+        text-wrap: pretty;
     }
 
     html body.tt-williams-partner-lp [class*="hero_heroCategoryTaxonSearchBox"]+div {
@@ -733,8 +772,7 @@ html body.tt-williams-partner-lp [class*="TextInput_inputStylesRoundedBordersLef
     }
 
     html body.tt-williams-partner-lp #ttsearch-location-input {
-        max-width: 325px;
-        border-radius: 2.5px;
+        width: 90%;
     }
 
     html body.tt-williams-partner-lp .feature-row {
@@ -744,9 +782,15 @@ html body.tt-williams-partner-lp [class*="TextInput_inputStylesRoundedBordersLef
     html body.tt-williams-partner-lp [class*="see-how-different_seeHowDifferentSection"]>div>div {
         padding-top: 20px !important;
     }
+
     html body.tt-williams-partner-lp .thumbtack-section-variation .calculator h2 {
-font-size: 24px;
-}
+        font-size: 24px;
+    }
+
+    html body.tt-williams-partner-lp .thumbtack-section-variation .community a,
+    html body.tt-williams-partner-lp .thumbtack-section-variation .subhead_cta a {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 390px) {
@@ -780,11 +824,49 @@ html body.tt-williams-partner-lp .thumbtack-section.thumbtack-section-variation 
     }
 
     html body.pro-page-updte.tt-williams-partner-lp [class*="see-how-different_featureComparisonTable"] [class*="see-how-different_featureComparisonChart"] tr:first-child {
-        display: block !important;
+        display: flex !important;
+        align-items: center !important;
     }
+
+    html body.pro-page-updte.tt-williams-partner-lp [class*="see-how-different_featureComparisonTable"] [class*="see-how-different_featureComparisonChart"] [class*="see-how-different_tt"] svg {
+        height: 12px;
+    }
+
     html body.tt-williams-partner-lp .section_topimage {
-margin-top: 24px;
-}
+        margin-top: 24px;
+        padding: 0 16px;
+    }
+
+    html body.tt-williams-partner-lp .thumbtack-section-variation .community::before {
+        display: none;
+    }
+
+    [aria-label="Thumbtack Home"]:after {
+        content: " ";
+        background-image: url(https://cdn.optimizely.com/img/20611073899/ab51350b04024adcbb65f72dbf407438.svg);
+        /* height: 30px;
+        width: 149px; */
+        height: 56px;
+        width: 206px;
+        display: inline-block;
+        background-size: cover;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    [aria-label="Open Thumbtack navigation"]:before {
+        content: " ";
+        background-image: url(https://cdn.optimizely.com/img/20611073899/ab51350b04024adcbb65f72dbf407438.svg);
+        /* height: 30px;
+        width: 149px; */
+        height: 56px;
+        width: 206px;
+        display: inline-block;
+        background-size: cover;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
 }
 
 .TT_updatetext {

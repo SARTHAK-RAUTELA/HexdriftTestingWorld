@@ -1,59 +1,111 @@
-html body.cre-t-2-Availability_Badge .availability-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-    font-size: 20px;
-    color: #ffffff;
+html body.home.cre-t-1-updatebanner #hero .e-con-inner>div:nth-child(2) .text-balanced,
+html body.home.cre-t-1-updatebanner [data-settings='{"position":"fixed"}'] .elementor-button.elementor-button-link.elementor-size-sm {
+    display: none;
 }
-html body.cre-t-2-Availability_Badge .availability-badge .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #2ecc71;
-    border-radius: 50%;
+
+html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p:before {
+    content: " ";
+    background-image: url(https://v2.crocdn.com/13SICK/image-test1.svg);
+    height: 39px;
+    width: 156px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+html body.home.cre-t-1-updatebanner .Cre_underlne:after {
     display: inline-block;
-    animation: pulse 1.5s infinite;
-    margin-right: 4px;
-    margin-bottom: 3px;
-}
-html body.cre-t-2-Availability_Badge .availability-badge p b {
-    margin: 0px 2px;
-}
-html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
-    margin-bottom: 0;
-}
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.4);
-        opacity: 0.6;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-@media (min-width: 768px) {
-    html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
-        width: 52%;
-    }
-    html body.cre-t-2-Availability_Badge .availability-badge {
-        display: flex;
-        min-width: 600px;
-    }
-}
-@media (max-width: 768px) {
-    html body.cre-t-2-Availability_Badge .availability-badge {
-        min-width: 327px;
-                margin-bottom: 10px;
-                        line-height: 30px;
-
-    }
+    content: " ";
+    background-image: url(https://v2.crocdn.com/13SICK/VectorT1.svg);
+    height: 10px;
+    /* width: 276px; */
+    min-width: 303px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    bottom: -12px;
 }
 
-html body.cre-t-2-Availability_Badge .availability-badge p {
-    text-wrap: wrap;
+html body.home.cre-t-1-updatebanner .Cre_underlne {
+    position: relative;
+}
+
+html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p {
+    color: #FFF;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Plus Jakarta Sans";
+
+    font-style: normal;
+}
+
+html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p {
+    color: #FFF;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Plus Jakarta Sans";
+
+    font-style: normal;
+}
+
+html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p b,
+html body.home.cre-t-1-updatebanner .Cre_underlne {
+    font-weight: 700;
+}
+
+@media screen and (min-width:768px) {
+
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child,
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) {
+        width: 60%;
+    }
+
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p {
+        font-size: 46px;
+
+        font-weight: 800;
+
+    }
+
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p {
+        font-size: 24px;
+
+        line-height: 37px;
+
+        font-weight: 500;
+    }
+
+    /* html body.cre-t-1-updatebanner #hero .e-con-inner {
+        padding-block-start: 170px;
+    } */
+
+}
+
+@media screen and (max-width:767px) {
+
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p:before {
+        margin: 0 auto;
+        margin-bottom: 10px;
+
+    }
+
+    html body.home.cre-t-1-updatebanner .Cre_underlne:after {
+        width: 186px;
+    }
+
+
+
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) {
+        margin-bottom: 20px;
+    }
+
+    html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
+        margin-bottom: 0px;
+    }
+}
+
+
+html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) p {
+    margin-bottom: 20px;
+}
+
+html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge .availability-badge p {
+    margin-bottom: 0px !important;
 }

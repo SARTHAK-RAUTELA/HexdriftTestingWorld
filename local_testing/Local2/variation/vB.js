@@ -130,55 +130,12 @@
         if (debug) console.log("Badge hidden due to time condition");
       }
 
-      /* ---------------- GA TRACKING ---------------- */
-
-      // Badge Click
-      helper.live(".availability-badge", "click", function () {
-        trackGAEvent(
-          variation_name,
-          "GA_Clicks",
-          "SIC02 - Clicks on Availability Badge"
-        );
-      });
-
-      // Book Telehealth
-      helper.live('#hero .elementor-widget-button [href="https://app.13sick.com.au/request-consult?isTelehealth=true"]', "click", function () {
-        if (isBadgeEligibleTime()) {
-          trackGAEvent(
-            variation_name,
-            "GA_Clicks",
-            "Book Telehealth clicks - Badge Eligible Time"
-          );
-        } else {
-          trackGAEvent(
-            variation_name,
-            "GA_Clicks",
-            "Book Telehealth clicks - Badge NOT Eligible Time"
-          );
-        }
-      });
-
-      // Request Home Visit
-      helper.live('#hero .elementor-widget-button [href="https://app.13sick.com.au/request-consult/?isHomeVisit=true"]', "click", function () {
-        if (isBadgeEligibleTime()) {
-          trackGAEvent(
-            variation_name,
-            "GA_Clicks",
-            "Request Home Visit clicks - Badge Eligible Time"
-          );
-        } else {
-          trackGAEvent(
-            variation_name,
-            "GA_Clicks",
-            "Request Home Visit clicks - Badge NOT Eligible Time"
-          );
-        }
-      });
+    
 
 
 
       // / Button 1: Telehealth
-      helper.live('#hero .elementor-widget-button [href="https://app.13sick.com.au/request-consult?isTelehealth=true"]', "click", function () {
+      helper.live('#hero .elementor-widget-button a[href^="https://app.13sick.com.au/request-consult?isTelehealth=true"]', "click", function () {
         window._conv_q = window._conv_q || [];
         if (isBadgeEligibleTime()) {
           _conv_q.push(["triggerConversion", "100037480"]);
@@ -190,7 +147,7 @@
       });
 
       // Button 2: Home Visit
-      helper.live('#hero .elementor-widget-button [href="https://app.13sick.com.au/request-consult/?isHomeVisit=true"]', "click", function () {
+      helper.live('#hero .elementor-widget-button a[href^="https://app.13sick.com.au/request-consult/?isHomeVisit=true"]', "click", function () {
         window._conv_q = window._conv_q || [];
         if (isBadgeEligibleTime()) {
           _conv_q.push(["triggerConversion", "100037482"]);

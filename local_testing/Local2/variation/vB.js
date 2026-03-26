@@ -48,15 +48,6 @@
     function init() {
       document.body.classList.add(variation_name);
 
-      document.querySelectorAll('#hero > .e-con-inner [data-id="66f5f73"] .elementor-button-text')
-        .forEach(function (el) {
-          el.innerHTML = el.innerHTML.replace('Book Telehealth', 'Speak to a doctor now');
-        });
-
-      document.querySelectorAll('#hero > .e-con-inner [data-id="51ac959"] .elementor-button-text')
-        .forEach(function (el) {
-          el.innerHTML = el.innerHTML.replace('Request Home Visit', 'Request Home Visit now');
-        });
     }
 
     /* ---------------- RUN ---------------- */

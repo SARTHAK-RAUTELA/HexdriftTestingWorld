@@ -17,12 +17,11 @@ html body.home.cre-t-1-updatebanner .Cre_underlne:after {
     content: " ";
     background-image: url(https://v2.crocdn.com/13SICK/VectorT1.svg);
     height: 10px;
-    /* width: 276px; */
-    min-width: 303px;
+    width: 103%;
     background-repeat: no-repeat;
     position: absolute;
     right: 0;
-    bottom: -12px;
+    bottom: -8px;
 }
 
 html body.home.cre-t-1-updatebanner .Cre_underlne {
@@ -33,7 +32,6 @@ html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2)
     color: #FFF;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Plus Jakarta Sans";
-
     font-style: normal;
 }
 
@@ -41,7 +39,6 @@ html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>
     color: #FFF;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Plus Jakarta Sans";
-
     font-style: normal;
 }
 
@@ -59,41 +56,26 @@ html body.home.cre-t-1-updatebanner .Cre_underlne {
 
     html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p {
         font-size: 46px;
-
         font-weight: 800;
-
     }
 
     html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p {
         font-size: 24px;
-
         line-height: 37px;
-
         font-weight: 500;
     }
 
     /* html body.cre-t-1-updatebanner #hero .e-con-inner {
         padding-block-start: 170px;
     } */
-
 }
 
-@media screen and (max-width:767px) {
-
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p:before {
-        margin: 0 auto;
-        margin-bottom: 10px;
-
-    }
-
-    html body.home.cre-t-1-updatebanner .Cre_underlne:after {
-        width: 186px;
-    }
 
 
-
+@media screen and (min-width:768px) {
     html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) {
-        margin-bottom: 20px;
+        margin-top: -18px;
+        margin-bottom: 10px;
     }
 
     html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
@@ -102,10 +84,38 @@ html body.home.cre-t-1-updatebanner .Cre_underlne {
 }
 
 
-html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) p {
-    margin-bottom: 20px;
-}
+@media screen and (max-width:767px) {
 
-html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge .availability-badge p {
-    margin-bottom: 0px !important;
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) {
+        margin-bottom: 20px;
+        margin-top: -6px;
+    }
+
+    html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
+        margin-bottom: 0px;
+    }
+
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p:before {
+        margin: 0 auto;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 30px;
+        width: 113px;
+        margin-bottom: 10px;
+    }
+
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p {
+        font-size: 18px;
+    }
+
+    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p {
+        /* font-size: 24px; */
+        font-size: 26px;
+        text-wrap: pretty;
+    }
+
+    html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge .availability-badge {
+        margin-bottom: 11px;
+    }
+
 }

@@ -1,121 +1,146 @@
-html body.home.cre-t-1-updatebanner #hero .e-con-inner>div:nth-child(2) .text-balanced,
-html body.home.cre-t-1-updatebanner [data-settings='{"position":"fixed"}'] .elementor-button.elementor-button-link.elementor-size-sm {
+html body[data-path="/"].cre-t-97 .oxy-header-container .logo-image:not(.cre-t-97-logo-image),
+html body[data-path="/home/"].cre-t-97 .oxy-header-container .logo-image:not(.cre-t-97-logo-image) {
     display: none;
 }
 
-html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p:before {
-    content: " ";
-    background-image: url(https://v2.crocdn.com/13SICK/image-test1.svg);
-    height: 39px;
-    width: 156px;
-    display: block;
-    margin-bottom: 10px;
+/* ________________________________________________________________________ */
+/* ________________________________________________________________________ */
+
+html body[data-path="/"] .social-proof,
+html body[data-path="/home/"] .social-proof {
+    background-color: #000000;
 }
 
-html body.home.cre-t-1-updatebanner .Cre_underlne:after {
-    display: inline-block;
-    content: " ";
-    background-image: url(https://v2.crocdn.com/13SICK/VectorT1.svg);
-    height: 10px;
-    width: 103%;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0;
-    bottom: -8px;
+html body[data-path="/"] .ct-section h1.home-heading span span.underline,
+html body[data-path="/home/"] .ct-section h1.home-heading span span.underline {
+    box-shadow: inset 0 -15px 0 #cce3fa;
 }
 
-html body.home.cre-t-1-updatebanner .Cre_underlne {
-    position: relative;
+html body[data-path="/"] .ct-link-button.header-quote-button,
+html body[data-path="/home/"] .ct-link-button.header-quote-button {
+    background: #0272e4 !important;
 }
 
-html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p {
-    color: #FFF;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Plus Jakarta Sans";
-    font-style: normal;
+html body[data-path="/"] .filter-options .oxy-tabs-wrapper .oxy-tab[class*="tab-active"],
+html body[data-path="/home/"] .filter-options .oxy-tabs-wrapper .oxy-tab[class*="tab-active"] {
+    background-color: #0272e4;
+    border-top-color: #0272e4;
+    border-right-color: #0272e4;
+    border-bottom-color: #0272e4;
+    border-left-color: #0272e4;
 }
 
-html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p {
-    color: #FFF;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Plus Jakarta Sans";
-    font-style: normal;
+html body[data-path="/"] #comparison-section .see-plans-button,
+html body[data-path="/home/"] #comparison-section .see-plans-button {
+    background: #0272e4 !important;
+    border-radius: 55px !important;
 }
 
-html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p b,
-html body.home.cre-t-1-updatebanner .Cre_underlne {
-    font-weight: 700;
+html body[data-path="/"] #comparison-section .see-plans-button span,
+html body[data-path="/home/"] #comparison-section .see-plans-button span {
+    font-size: 0 !important;
+    line-height: 0;
 }
 
-@media screen and (min-width:768px) {
-
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child,
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) {
-        width: 60%;
-    }
-
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p {
-        font-size: 46px;
-        font-weight: 800;
-    }
-
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p {
-        font-size: 24px;
-        line-height: 37px;
-        font-weight: 500;
-    }
-
-    /* html body.cre-t-1-updatebanner #hero .e-con-inner {
-        padding-block-start: 170px;
-    } */
+html body[data-path="/"] #comparison-section .see-plans-button span::after,
+html body[data-path="/home/"] #comparison-section .see-plans-button span::after {
+    content: "See Plans";
+    font-size: 1.6rem;
+    line-height: 1.1em;
 }
 
-
-
-@media screen and (min-width:768px) {
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) {
-        margin-top: -18px;
-        margin-bottom: 10px;
-    }
-
-    html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
-        margin-bottom: 0px;
-    }
+html body[data-path="/"] #comparison-section .see-plans-button:hover,
+html body[data-path="/home/"] #comparison-section .see-plans-button:hover {
+    background: rgb(2 114 228 / 80%) !important;
 }
 
+html body[data-path="/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child,
+html body[data-path="/home/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child {
+    border: 0;
+    box-shadow: none;
+}
 
-@media screen and (max-width:767px) {
+html body[data-path="/"] #comparison-section .plan-box,
+html body[data-path="/home/"] #comparison-section .plan-box {
+    border: 1px solid;
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+}
 
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) {
-        margin-bottom: 20px;
-        margin-top: -6px;
-    }
+html body[data-path="/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block .plan-box,
+html body[data-path="/home/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block .plan-box {
+    /* box-shadow:
+        0 2px 14px rgba(17, 24, 39, 0.2),
+        0 10px 30px rgba(17, 24, 39, 0.1); */
+    box-shadow: 0 1px 6px rgba(17, 24, 39, 0.16), 0 6px 14px rgba(17, 24, 39, 0.08);
+}
 
-    html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
-        margin-bottom: 0px;
-    }
+html body[data-path="/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child .plan-box,
+html body[data-path="/home/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child .plan-box {
+    box-shadow: none;
+    margin-top: 0;
+}
 
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p:before {
-        margin: 0 auto;
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 30px;
-        width: 113px;
-        margin-bottom: 10px;
-    }
+html body[data-path="/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child,
+html body[data-path="/home/"] #comparison-section [data-unique="comparison-table"]>.ct-div-block:first-child {
+    /* box-shadow:
+        0 2px 14px rgba(17, 24, 39, 0.2),
+        0 10px 30px rgba(17, 24, 39, 0.1); */
+    box-shadow: 0 1px 6px rgba(17, 24, 39, 0.16), 0 6px 14px rgba(17, 24, 39, 0.08);
+    margin-top: 4rem;
+}
 
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:nth-child(2) p {
-        font-size: 18px;
-    }
+html body[data-path="/"] #comparison-section .plan-repeater div:first-of-type .rating-bar,
+html body[data-path="/home/"] #comparison-section .plan-repeater div:first-of-type .rating-bar {
+    border-top-color: #000;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    border-left-color: #000;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+}
 
-    html body.home.cre-t-1-updatebanner #hero>.e-con-inner .e-child>div:first-child>p {
-        /* font-size: 24px; */
-        font-size: 26px;
-        text-wrap: pretty;
-    }
+html body[data-path="/"] #comparison-section .guarantee-container .best-price-label,
+html body[data-path="/home/"] #comparison-section .guarantee-container .best-price-label {
+    color: #383838;
+}
 
-    html body.home.cre-t-1-updatebanner.cre-t-2-Availability_Badge .availability-badge {
-        margin-bottom: 11px;
-    }
+html body[data-path="/"] #comparison-section .guarantee-container .oxy-popover_marker-inner,
+html body[data-path="/home/"] #comparison-section .guarantee-container .oxy-popover_marker-inner {
+    color: #383838 !important;
+}
 
+html body[data-path="/"] #comparison-section .plan-box .number-bubble,
+html body[data-path="/home/"] #comparison-section .plan-box .number-bubble {
+    background-color: #000;
+}
+
+html body[data-path="/"] #comparison-section .plan-box .number-bubble.best-overall-bubble,
+html body[data-path="/home/"] #comparison-section .plan-box .number-bubble.best-overall-bubble {
+    background-color: #0272e4;
+    border-radius: 55px;
+}
+
+html body[data-path="/"] #comparison-section .oxy-read-more-link.oxy-read-more-link,
+html body[data-path="/home/"] #comparison-section .oxy-read-more-link.oxy-read-more-link {
+    background: #f5f5f9 !important;
+    color: #000 !important;
+    border: 1px solid #000;
+    border-radius: 55px !important;
+}
+
+html body[data-path="/"] #comparison-section .oxy-read-more-link.oxy-read-more-link:hover,
+html body[data-path="/home/"] #comparison-section .oxy-read-more-link.oxy-read-more-link:hover {
+    background: #fff !important;
+    color: #0272e4 !important;
+    border: 1px solid #0272e4;
+    border-radius: 55px !important;
 }

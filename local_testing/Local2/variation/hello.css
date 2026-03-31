@@ -6,6 +6,7 @@ html body.cre-t-2-Availability_Badge .availability-badge {
     font-size: 20px;
     color: #ffffff;
 }
+
 html body.cre-t-2-Availability_Badge .availability-badge .dot {
     width: 10px;
     height: 10px;
@@ -13,47 +14,61 @@ html body.cre-t-2-Availability_Badge .availability-badge .dot {
     border-radius: 50%;
     display: inline-block;
     animation: pulse 1.5s infinite;
-    margin-right: 4px;
+    margin-right: 7px;
     margin-bottom: 3px;
+
 }
+
 html body.cre-t-2-Availability_Badge .availability-badge p b {
     margin: 0px 2px;
 }
+
 html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
     margin-bottom: 0;
 }
+
 @keyframes pulse {
     0% {
         transform: scale(1);
         opacity: 1;
     }
+
     50% {
         transform: scale(1.4);
         opacity: 0.6;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
     }
 }
+
 @media (min-width: 768px) {
-    html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
+    html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2):has(.availability-badge) {
         width: 52%;
+        min-height: 110px !important;
     }
+
     html body.cre-t-2-Availability_Badge .availability-badge {
         display: flex;
-        min-width: 600px;
-    }
-}
-@media (max-width: 768px) {
-    html body.cre-t-2-Availability_Badge .availability-badge {
-        min-width: 318px;
-                margin-bottom: 10px;
-                        line-height: 30px;
+        min-width: 730px;
+        margin-bottom: 10px;
 
     }
 }
 
 html body.cre-t-2-Availability_Badge .availability-badge p {
     text-wrap: wrap;
+    line-height: 26px;
+}
+
+@media (max-width: 768px) {
+    html body.cre-t-2-Availability_Badge .availability-badge {
+        font-size: 18px;
+    }
+
+    html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2):has(.availability-badge) {
+        min-height: 122px !important;
+    }
 }

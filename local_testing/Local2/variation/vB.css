@@ -1,71 +1,190 @@
-html body.cre-t-5-Availability_Badge .availability-badge-test5 {
+html body.TT-184 .TT-184-nav.custom-nav {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+html body.TT-184 .TT-184-nav .nav-item {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(103, 109, 115);
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-    font-size: 20px;
-    color: #ffffff;
 }
 
-html body.cre-t-5-Availability_Badge .availability-badge-test5 .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #F59E0B;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 7px;
-    margin-bottom: 3px;
+html body.TT-184 .TT-184-nav .nav-item.active [class*="dropdown-launcher"] svg {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    padding-top: 4px;
+    padding-bottom: 0;
 }
 
-html body.cre-t-5-Availability_Badge .availability-badge-test5 p b {
-    margin: 0px 2px;
+html body.TT-184 .TT-184-nav .nav-item svg {
+    width: 20px;
+    height: 28px;
 }
 
-html body.cre-t-5-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
-    margin-bottom: 0;
+html body.TT-184 .TT-184-nav .nav-item [class*="dropdown-launcher"] svg {
+    color: #676d73;
+    margin-left: 4px;
+    padding-bottom: 4px;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.4);
-        opacity: 0.6;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+html body.TT-184 .TT-184-nav .nav-item span {
+    display: flex;
+    padding: 10px 5px;
 }
 
-@media (min-width: 768px) {
-    html body.cre-t-5-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2):has(.availability-badge-test5) {
-        width: 52%;
-        min-height: 110px !important;
-    }
+/* Dropdown */
+html body.TT-184 .TT-184-nav .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
 
-    html body.cre-t-5-Availability_Badge .availability-badge-test5 {
-        display: flex;
-        min-width: 730px;
-        margin-bottom: 10px;
-    }
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 999;
 }
 
-html body.cre-t-5-Availability_Badge .availability-badge-test5 p {
-    text-wrap: wrap;
-    line-height: 26px;
+html body.TT-184 .TT-184-nav .nav-item span>div {
+    height: 24px;
 }
 
-@media (max-width: 768px) {
-    html body.cre-t-5-Availability_Badge .availability-badge-test5 {
-        font-size: 18px;
-    }
+html body.TT-184 .nav-item.has-dropdown:hover {
+    box-shadow: inset 0 -3px 0 #d3d4d5;
+    outline: none;
+    color: #2f3033;
+}
 
-    html body.cre-t-5-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2):has(.availability-badge-test5) {
-        min-height: 122px !important;
-    }
+
+
+
+html body.TT-184 .TT-184-nav .dropdown a:hover {
+    background: #f5f7fa;
+}
+
+/* Show Dropdown */
+/* html body.TT-184 .TT-184-nav .nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+} */
+
+html body.TT-184 .TT-184-nav .mega-menu {
+    display: flex;
+    width: 520px;
+    padding: 0;
+}
+
+html body.TT-184 .TT-184-nav.menu-left {
+    width: 45%;
+    border-right: 1px solid #eee;
+    background: #fafafa;
+}
+
+html body.TT-184 .TT-184-nav .menu-heading {
+    font-weight: 600;
+    padding: 12px 16px;
+}
+
+html body.TT-184 .TT-184-nav .menu-link {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgb(47, 48, 51);
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+html body.TT-184 .TT-184-nav .menu-link.active,
+html body.TT-184 .TT-184-nav .menu-link:hover {
+    background: #fafafa;
+}
+
+html body.TT-184 .TT-184-nav .menu-right {
+    width: 55%;
+    padding: 10px;
+}
+
+html body.TT-184 .TT-184-nav .menu-content {
+    display: none;
+}
+
+html body.TT-184 .TT-184-nav .menu-content.active {
+    display: block;
+}
+
+html body.TT-184 .TT-184-nav .menu-content a {
+    display: block;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: rgb(47, 48, 51);
+    cursor: pointer;
+}
+
+html body.TT-184 .TT-184-nav .menu-left {
+    width: 300px;
+    padding-top: 16px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 7px;
+    overflow-y: auto;
+}
+
+html body.TT-184 .TT-184-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}
+
+html body.TT-184 .TT-184-nav .nav-item.active .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown show on click */
+html body.TT-184 .TT-184-nav .nav-item .dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+}
+
+html body.TT-184 .TT-184-nav .nav-item.active .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+html body.TT-184 [class*="links_linksContainer"]>a[class*="links_linkBarLink"]:first-child {
+    display: none;
+}
+
+html body.TT-184.TT-184-no-scroll {
+    overflow: hidden;
+}
+
+/* CSS as safety net */
+html body.TT-184.logged_in_users .TT-184-nav {
+    display: none !important;
+}
+
+html body.TT-184.logged_in_users [class*="links_linksContainer"]>a[class*="links_linkBarLink"]:first-child {
+    display: flex;
 }

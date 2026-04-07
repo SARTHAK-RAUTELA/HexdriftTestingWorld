@@ -304,6 +304,7 @@
     let isObserverRegistered = false;
     function init() {
       if (!variation_name || document.body.classList.contains(variation_name)) return;
+      if (document.body.classList.contains("logged_in_users")) return; //
       document.body.classList.add(variation_name);
       if (!isObserverRegistered) {
         observeSelector('[aria-label="Thumbtack Home"]', function (el) {
@@ -347,9 +348,9 @@
         }
         else {
           // Was already open — clean up scroll lock and overlay
-          document.body.classList.remove("TT-184-no-scroll"); // ← ADD THIS
+          document.body.classList.remove("TT-184-no-scroll"); 
           const overlay = document.querySelector(".TT-184-overlay");
-          if (overlay) overlay.remove(); // ← ADD THIS
+          if (overlay) overlay.remove();
         }
         //  OVERLAY CLICK (CLOSE ALL)
         if (e.target.classList.contains("TT-184-overlay")) {

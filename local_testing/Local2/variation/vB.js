@@ -74,237 +74,231 @@
     /*  NAV HTML */
     const topnav = `
 <ul class="custom-nav TT-184-nav">
-  <!-- Interior -->
-  <li class="nav-item has-dropdown">
-    <span>Interior ${svgitem}</span>
-    <div class="dropdown mega-menu">
-      <div class="menu-left">
-        <div class="menu-link active" data-target="repairs">
-          Home Repairs & Maintenance ${subnave}
-        </div>
-        <div class="menu-link" data-target="cleaning">
-          Cleaning & Organization ${subnave}
-        </div>
-        <div class="menu-link" data-target="renovation">
-          Renovations & Upgrades ${subnave}
-        </div>
-      </div>
-      <div class="menu-right">
-        <!-- Repairs -->
-        <div class="menu-content active" id="repairs">
-          <a href="/k/plumbing/near-me">Plumbing</a>
-          <a href="/k/locksmiths/near-me">Locksmiths</a>
-          <a href="/k/appliance-repair/near-me">Appliance Repairs</a>
-          <a href="/k/garage-door-repair/near-me">Garage Door Repairs</a>
-          <a href="/k/handyman/near-me">Handyman</a>
-          <a href="/k/furnace-repair/near-me">Furnace Repairs</a>
-          <a href="/k/hvac/near-me">HVAC</a>
-          <a href="/k/electrical/near-me">Electrical</a>
-          <a href="/k/windows-and-doors/near-me">Windows & Doors</a>
-        </div>
-        <!-- Cleaning -->
-        <div class="menu-content" id="cleaning">
-          <a href="/k/house-cleaning/near-me">House Cleaning</a>
-          <a href="/k/carpet-cleaning/near-me">Carpet Cleaning</a>
-          <a href="/k/upholstery-cleaning/near-me">Upholstery Cleaning</a>
-          <a href="/k/home-organization/near-me">Home Organization</a>
-          <a href="/k/deep-cleaning/near-me">Deep Cleaning</a>
-          <a href="/k/junk-removal/near-me">Junk Removal</a>
-          <a href="/k/duct-and-vent-cleaning/near-me">Duct & Vent Cleaning</a>
-          <a href="/k/pool-cleaning/near-me">Pool Cleaning</a>
-          <a href="/k/commercial-cleaners/near-me">Commercial Cleaners</a>
-        </div>
-        <!-- Renovation -->
-        <div class="menu-content" id="renovation">
-          <a href="/k/general-contracting/near-me">General Contracting</a>
-          <a href="/k/carpenters/near-me">Carpenters</a>
-          <a href="/k/bathroom-remodeling/near-me">Bathroom Remodeling</a>
-          <a href="/k/kitchen-remodeling/near-me">Kitchen Remodeling</a>
-          <a href="/k/flooring-installation/near-me">Flooring Installation</a>
-          <a href="/k/interior-design/near-me">Interior Design</a>
-          <a href="/k/carpet-installation/near-me">Carpet Installation</a>
-          <a href="/k/interior-painting/near-me">Interior Painting</a>
-          <a href="/k/basement-remodeling/near-me">Basement Remodeling</a>
-        </div>
-      </div>
-    </div>
-  </li>
-  
-  <li class="nav-item has-dropdown">
-  <span>Exterior ${svgitem}</span>
-  <div class="dropdown mega-menu">
-    <!-- LEFT SIDE -->
-    <div class="menu-left">
-      <div class="menu-link active" data-target="ext-home">
-        Exterior Home Care ${subnave}
-      </div>
-      <div class="menu-link" data-target="ext-landscape">
-        Landscaping & Outdoor Services ${subnave}
-      </div>
-    </div>
-    <!-- RIGHT SIDE -->
-    <div class="menu-right">
-      <!-- Exterior Home Care -->
-      <div class="menu-content active" id="ext-home">
-        <a href="/k/roofing/near-me">Roofing</a>
-        <a href="/k/house-painting/near-me">House Painting</a>
-        <a href="/k/window-washing/near-me">Window Washing</a>
-        <a href="/k/chimney-sweeps/near-me">Chimney Sweeps</a>
-        <a href="/k/pool-services/near-me">Pools</a>
-        <a href="/k/gutter-cleaning/near-me">Gutter Cleaning</a>
-        <a href="/k/deck-contractors/near-me">Deck Contractors</a>
-        <a href="/k/siding-installation/near-me">Siding</a>
-        <a href="/k/concrete-and-masonry/near-me">Concrete & Masonry</a>
-      </div>
-      <!-- Landscaping -->
-      <div class="menu-content" id="ext-landscape">
-        <a href="/k/lawn-care/near-me">Lawn Care</a>
-        <a href="/k/landscaping-design/near-me">Landscaping Design</a>
-        <a href="/k/gardening/near-me">Gardening</a>
-        <a href="/k/tree-trimming/near-me">Tree Trimming</a>
-        <a href="/k/sprinkler-system-repair/near-me">Sprinkler System Repairs</a>
-        <a href="/k/artificial-turf-installation/near-me">Artificial Turf Installation</a>
-        <a href="/k/stump-grinding/near-me">Stump Grinding</a>
-        <a href="/k/sod-installation/near-me">Sod Installation</a>
-        <a href="/k/arborists/near-me">Arborists</a>
-      </div>
-    </div>
-  </div>
+<!-- Interior -->
+<li class="nav-item has-dropdown">
+<span>Interior ${svgitem}</span>
+<div class="dropdown mega-menu">
+<div class="menu-left">
+<div class="menu-link active" data-target="repairs">
+Home Repairs & Maintenance ${subnave}
+</div>
+<div class="menu-link" data-target="cleaning">
+Cleaning & Organization ${subnave}
+</div>
+<div class="menu-link" data-target="renovation">
+Renovations & Upgrades ${subnave}
+</div>
+</div>
+<div class="tt_menu-right">
+<!-- Repairs -->
+<div class="menu-content active" id="repairs">
+<a href="/k/plumbing/near-me">Plumbing</a>
+<a href="/k/locksmiths/near-me">Locksmiths</a>
+<a href="/k/appliance-repair/near-me">Appliance Repairs</a>
+<a href="/k/garage-door-repair/near-me">Garage Door Repairs</a>
+<a href="/k/handyman/near-me">Handyman</a>
+<a href="/k/furnace-repair/near-me">Furnace Repairs</a>
+<a href="/k/hvac/near-me">HVAC</a>
+<a href="/k/electrical/near-me">Electrical</a>
+<a href="/k/windows-and-doors/near-me">Windows & Doors</a>
+</div>
+<!-- Cleaning -->
+<div class="menu-content" id="cleaning">
+<a href="/k/house-cleaning/near-me">House Cleaning</a>
+<a href="/k/carpet-cleaning/near-me">Carpet Cleaning</a>
+<a href="/k/upholstery-cleaning/near-me">Upholstery Cleaning</a>
+<a href="/k/home-organization/near-me">Home Organization</a>
+<a href="/k/deep-cleaning/near-me">Deep Cleaning</a>
+<a href="/k/junk-removal/near-me">Junk Removal</a>
+<a href="/k/duct-and-vent-cleaning/near-me">Duct & Vent Cleaning</a>
+<a href="/k/pool-cleaning/near-me">Pool Cleaning</a>
+<a href="/k/commercial-cleaners/near-me">Commercial Cleaners</a>
+</div>
+<!-- Renovation -->
+<div class="menu-content" id="renovation">
+<a href="/k/general-contracting/near-me">General Contracting</a>
+<a href="/k/carpenters/near-me">Carpenters</a>
+<a href="/k/bathroom-remodeling/near-me">Bathroom Remodeling</a>
+<a href="/k/kitchen-remodeling/near-me">Kitchen Remodeling</a>
+<a href="/k/flooring-installation/near-me">Flooring Installation</a>
+<a href="/k/interior-design/near-me">Interior Design</a>
+<a href="/k/carpet-installation/near-me">Carpet Installation</a>
+<a href="/k/interior-painting/near-me">Interior Painting</a>
+<a href="/k/basement-remodeling/near-me">Basement Remodeling</a>
+</div>
+</div>
+</div>
 </li>
 <li class="nav-item has-dropdown">
-  <span>More Services ${svgitem}</span>
-  <div class="dropdown mega-menu">
-    <!-- LEFT SIDE -->
-    <div class="menu-left">
-    
-      <div class="menu-link active" data-target="moving">
-        Moving  ${subnave}
-      </div>
-      <div class="menu-link" data-target="installation">
-        Installation & Assembly ${subnave}
-      </div>
-      <div class="menu-link" data-target="pest">
-        Pest Control ${subnave}
-      </div>
-      <div class="menu-link" data-target="trending">
-        Trending Services ${subnave}
-      </div>
-      <div class="menu-link" data-target="events">
-        Events ${subnave}
-      </div>
-      <div class="menu-link" data-target="wellness">
-        Health & Wellness ${subnave}
-      </div>
-    </div>
-    <!-- RIGHT SIDE -->
-    <div class="menu-right">
-      <!-- Moving -->
-      <div class="menu-content active" id="moving">
-        <a href="/k/local-movers/near-me">Local Movers</a>
-        <a href="/k/long-distance-movers/near-me">Long Distance Movers</a>
-        <a href="/k/piano-movers/near-me">Piano Movers</a>
-        <a href="/k/packing-and-unpacking/near-me">Packing & Unpacking</a>
-        <a href="/k/move-in-move-out-cleaning/near-me">Move In & Move Out Cleaning</a>
-        <a href="/k/storage-companies/near-me">Storage Companies</a>
-        <a href="/k/furniture-movers/near-me">Furniture Movers</a>
-      </div>
-      <!-- Installation -->
-      <div class="menu-content" id="installation">
-        <a href="/k/holiday-light-hanging/near-me">Holiday Light Hanging</a>
-        <a href="/k/tv-mounting/near-me">TV Mounting</a>
-        <a href="/k/security-camera-installation/near-me">Security Camera Installation</a>
-        <a href="/k/appliance-installation/near-me">Appliance Installation</a>
-        <a href="/k/furniture-assembly/near-me">Furniture Assembly</a>
-        <a href="/k/ceiling-fan-installation/near-me">Ceiling Fan Installation</a>
-        <a href="/k/generator-installation/near-me">Generator Installation</a>
-        <a href="/k/art-and-picture-hanging/near-me">Art & Picture Hanging</a>
-        <a href="/k/gym-equipment-assembly/near-me">Gym Equipment Assembly</a>
-      </div>
-      <!-- Pest Control -->
-      <div class="menu-content" id="pest">
-        <a href="/k/pest-control/near-me">Pest Control</a>
-        <a href="/k/mosquito-control/near-me">Mosquito Control</a>
-        <a href="/k/rodent-control/near-me">Rodent Control</a>
-        <a href="/k/bee-removal/near-me">Bee Removal</a>
-        <a href="/k/bed-bug-exterminator/near-me">Bed Bug Exterminators</a>
-        <a href="/k/wasp-nest-removal/near-me">Wasp Nest Removal</a>
-        <a href="/k/termite-control/near-me">Termites</a>
-        <a href="/k/dead-animal-removal/near-me">Dead Animal Removal</a>
-      </div>
-      <!-- Trending -->
-      <div class="menu-content" id="trending">
-        <a href="/k/deck-staining/near-me">Deck staining</a>
-        <a href="/k/real-estate-lawyers/near-me">Real estate lawyers</a>
-        <a href="/k/yard-cleaning/near-me">Yard cleaning services</a>
-        <a href="/k/astrologers/near-me">Astrologers</a>
-        <a href="/k/home-theater-installation/near-me">Home theater installation</a>
-        <a href="/k/shrub-removal/near-me">Shrub removal</a>
-      </div>
-      <!-- Events -->
-      <div class="menu-content" id="events">
-        <a href="/k/caterers/near-me">Caterers</a>
-        <a href="/k/makeup-artists/near-me">Makeup Artists</a>
-        <a href="/k/djs/near-me">DJs</a>
-        <a href="/k/photographers/near-me">Photographers</a>
-        <a href="/k/wedding-planners/near-me">Wedding Planners</a>
-        <a href="/k/limo-rentals/near-me">Limo Rentals</a>
-      </div>
-      <!-- Wellness -->
-      <div class="menu-content" id="wellness">
-        <a href="/k/personal-trainers/near-me">Personal Trainers</a>
-        <a href="/k/life-coaches/near-me">Life Coaches</a>
-        <a href="/k/nutritionists/near-me">Nutritionists</a>
-        <a href="/k/yoga/near-me">Yoga</a>
-      </div>
-    </div>
-  </div>
+<span>Exterior ${svgitem}</span>
+<div class="dropdown mega-menu">
+<!-- LEFT SIDE -->
+<div class="menu-left">
+<div class="menu-link active" data-target="ext-home">
+Exterior Home Care ${subnave}
+</div>
+<div class="menu-link" data-target="ext-landscape">
+Landscaping & Outdoor Services ${subnave}
+</div>
+</div>
+<!-- RIGHT SIDE -->
+<div class="tt_menu-right">
+<!-- Exterior Home Care -->
+<div class="menu-content active" id="ext-home">
+<a href="/k/roofing/near-me">Roofing</a>
+<a href="/k/house-painting/near-me">House Painting</a>
+<a href="/k/window-washing/near-me">Window Washing</a>
+<a href="/k/chimney-sweeps/near-me">Chimney Sweeps</a>
+<a href="/k/pool-services/near-me">Pools</a>
+<a href="/k/gutter-cleaning/near-me">Gutter Cleaning</a>
+<a href="/k/deck-contractors/near-me">Deck Contractors</a>
+<a href="/k/siding-installation/near-me">Siding</a>
+<a href="/k/concrete-and-masonry/near-me">Concrete & Masonry</a>
+</div>
+<!-- Landscaping -->
+<div class="menu-content" id="ext-landscape">
+<a href="/k/lawn-care/near-me">Lawn Care</a>
+<a href="/k/landscaping-design/near-me">Landscaping Design</a>
+<a href="/k/gardening/near-me">Gardening</a>
+<a href="/k/tree-trimming/near-me">Tree Trimming</a>
+<a href="/k/sprinkler-system-repair/near-me">Sprinkler System Repairs</a>
+<a href="/k/artificial-turf-installation/near-me">Artificial Turf Installation</a>
+<a href="/k/stump-grinding/near-me">Stump Grinding</a>
+<a href="/k/sod-installation/near-me">Sod Installation</a>
+<a href="/k/arborists/near-me">Arborists</a>
+</div>
+</div>
+</div>
 </li>
 <li class="nav-item has-dropdown">
-  <span>Additional Resources ${svgitem}</span>
-  <div class="dropdown mega-menu">
-    <!-- LEFT SIDE -->
-    <div class="menu-left">
-     
-      <div class="menu-link active" data-target="project-guides">
-        Project Guides ${subnave}
-      </div>
-      <div class="menu-link" data-target="city-guides">
-        City Guides ${subnave}
-      </div>
-    </div>
-    <!-- RIGHT SIDE -->
-    <div class="menu-right">
-      <!-- Project Guides -->
-      <div class="menu-content active" id="project-guides">
-        <a href="/k/cost-guides">Cost Guides</a>
-        <a href="/k/home-resource-center">Home Resource Center</a>
-        <a href="/k/home-maintenance">Home Maintenance</a>
-        <a href="/k/wedding-services">Weddings</a>
-      </div>
-      <!-- City Guides -->
-      <div class="menu-content" id="city-guides">
-        <a href="/near-me/atlanta">Atlanta</a>
-        <a href="/near-me/boston">Boston</a>
-        <a href="/near-me/chicago">Chicago</a>
-        <a href="/near-me/denver">Denver</a>
-        <a href="/near-me/los-angeles">Los Angeles</a>
-        <a href="/near-me/miami">Miami</a>
-        <a href="/near-me/phoenix">Phoenix</a>
-        <a href="/near-me/san-diego">San Diego</a>
-        <a href="/near-me/san-francisco">San Francisco</a>
-        <a href="/near-me/washington-dc">Washington DC</a>
-      </div>
-    </div>
-  </div>
+<span>More Services ${svgitem}</span>
+<div class="dropdown mega-menu">
+<!-- LEFT SIDE -->
+<div class="menu-left">
+<div class="menu-link active" data-target="moving">
+Moving  ${subnave}
+</div>
+<div class="menu-link" data-target="installation">
+Installation & Assembly ${subnave}
+</div>
+<div class="menu-link" data-target="pest">
+Pest Control ${subnave}
+</div>
+<div class="menu-link" data-target="trending">
+Trending Services ${subnave}
+</div>
+<div class="menu-link" data-target="events">
+Events ${subnave}
+</div>
+<div class="menu-link" data-target="wellness">
+Health & Wellness ${subnave}
+</div>
+</div>
+<!-- RIGHT SIDE -->
+<div class="tt_menu-right">
+<!-- Moving -->
+<div class="menu-content active" id="moving">
+<a href="/k/local-movers/near-me">Local Movers</a>
+<a href="/k/long-distance-movers/near-me">Long Distance Movers</a>
+<a href="/k/piano-movers/near-me">Piano Movers</a>
+<a href="/k/packing-and-unpacking/near-me">Packing & Unpacking</a>
+<a href="/k/move-in-move-out-cleaning/near-me">Move In & Move Out Cleaning</a>
+<a href="/k/storage-companies/near-me">Storage Companies</a>
+<a href="/k/furniture-movers/near-me">Furniture Movers</a>
+</div>
+<!-- Installation -->
+<div class="menu-content" id="installation">
+<a href="/k/holiday-light-hanging/near-me">Holiday Light Hanging</a>
+<a href="/k/tv-mounting/near-me">TV Mounting</a>
+<a href="/k/security-camera-installation/near-me">Security Camera Installation</a>
+<a href="/k/appliance-installation/near-me">Appliance Installation</a>
+<a href="/k/furniture-assembly/near-me">Furniture Assembly</a>
+<a href="/k/ceiling-fan-installation/near-me">Ceiling Fan Installation</a>
+<a href="/k/generator-installation/near-me">Generator Installation</a>
+<a href="/k/art-and-picture-hanging/near-me">Art & Picture Hanging</a>
+<a href="/k/gym-equipment-assembly/near-me">Gym Equipment Assembly</a>
+</div>
+<!-- Pest Control -->
+<div class="menu-content" id="pest">
+<a href="/k/pest-control/near-me">Pest Control</a>
+<a href="/k/mosquito-control/near-me">Mosquito Control</a>
+<a href="/k/rodent-control/near-me">Rodent Control</a>
+<a href="/k/bee-removal/near-me">Bee Removal</a>
+<a href="/k/bed-bug-exterminator/near-me">Bed Bug Exterminators</a>
+<a href="/k/wasp-nest-removal/near-me">Wasp Nest Removal</a>
+<a href="/k/termite-control/near-me">Termites</a>
+<a href="/k/dead-animal-removal/near-me">Dead Animal Removal</a>
+</div>
+<!-- Trending -->
+<div class="menu-content" id="trending">
+<a href="/k/deck-staining/near-me">Deck staining</a>
+<a href="/k/real-estate-lawyers/near-me">Real estate lawyers</a>
+<a href="/k/yard-cleaning/near-me">Yard cleaning services</a>
+<a href="/k/astrologers/near-me">Astrologers</a>
+<a href="/k/home-theater-installation/near-me">Home theater installation</a>
+<a href="/k/shrub-removal/near-me">Shrub removal</a>
+</div>
+<!-- Events -->
+<div class="menu-content" id="events">
+<a href="/k/caterers/near-me">Caterers</a>
+<a href="/k/makeup-artists/near-me">Makeup Artists</a>
+<a href="/k/djs/near-me">DJs</a>
+<a href="/k/photographers/near-me">Photographers</a>
+<a href="/k/wedding-planners/near-me">Wedding Planners</a>
+<a href="/k/limo-rentals/near-me">Limo Rentals</a>
+</div>
+<!-- Wellness -->
+<div class="menu-content" id="wellness">
+<a href="/k/personal-trainers/near-me">Personal Trainers</a>
+<a href="/k/life-coaches/near-me">Life Coaches</a>
+<a href="/k/nutritionists/near-me">Nutritionists</a>
+<a href="/k/yoga/near-me">Yoga</a>
+</div>
+</div>
+</div>
 </li>
-  
+<li class="nav-item has-dropdown">
+<span>Additional Resources ${svgitem}</span>
+<div class="dropdown mega-menu">
+<!-- LEFT SIDE -->
+<div class="menu-left">
+<div class="menu-link active" data-target="project-guides">
+Project Guides ${subnave}
+</div>
+<div class="menu-link" data-target="city-guides">
+City Guides ${subnave}
+</div>
+</div>
+<!-- RIGHT SIDE -->
+<div class="tt_menu-right">
+<!-- Project Guides -->
+<div class="menu-content active" id="project-guides">
+<a href="/k/cost-guides">Cost Guides</a>
+<a href="/k/home-resource-center">Home Resource Center</a>
+<a href="/k/home-maintenance">Home Maintenance</a>
+<a href="/k/wedding-services">Weddings</a>
+</div>
+<!-- City Guides -->
+<div class="menu-content" id="city-guides">
+<a href="/near-me/atlanta">Atlanta</a>
+<a href="/near-me/boston">Boston</a>
+<a href="/near-me/chicago">Chicago</a>
+<a href="/near-me/denver">Denver</a>
+<a href="/near-me/los-angeles">Los Angeles</a>
+<a href="/near-me/miami">Miami</a>
+<a href="/near-me/phoenix">Phoenix</a>
+<a href="/near-me/san-diego">San Diego</a>
+<a href="/near-me/san-francisco">San Francisco</a>
+<a href="/near-me/washington-dc">Washington DC</a>
+</div>
+</div>
+</div>
+</li>
 </ul>
 `;
-
     let isObserverRegistered = false;
     function init() {
       if (!variation_name || document.body.classList.contains(variation_name)) return;
-      if (document.body.classList.contains("logged_in_users")) return; //
       document.body.classList.add(variation_name);
       if (!isObserverRegistered) {
         observeSelector('[aria-label="Thumbtack Home"]', function (el) {
@@ -316,20 +310,23 @@
       // CLICK EVENT (instead of mouseover)
       document.addEventListener("click", function (e) {
         const navItem = e.target.closest(".nav-item.has-dropdown");
-
-
-        //  NAV ITEM CLICK (OPEN DROPDOWN)
+        const body = document.body;
+        // NAV ITEM CLICK
         if (navItem) {
-          const allNavItems = document.querySelectorAll(".nav-item.has-dropdown");
           const isAlreadyActive = navItem.classList.contains("active");
-          // Close all
-          allNavItems.forEach(item => {
-            item.classList.remove("active");
-          });
-          // Open current
+          const allNavItems = document.querySelectorAll(".nav-item.has-dropdown");
+          // Close all first
+          allNavItems.forEach(item => item.classList.remove("active"));
+          
+          if (isAlreadyActive) {
+            document.querySelectorAll(".menu-link, .menu-content")
+              .forEach(el => el.classList.remove("active"));
+            document.querySelector(".TT-184-overlay").remove();
+            body.classList.remove("TT-184-menu-open");
+            return;
+          }
+          // OPEN new
           navItem.classList.add("active");
-          // Default active (first item)
-          document.body.classList.add("TT-184-no-scroll");
           const firstLink = navItem.querySelector(".menu-link");
           const firstContentId = firstLink.getAttribute("data-target");
           const firstContent = navItem.querySelector("#" + firstContentId);
@@ -337,7 +334,8 @@
             .forEach(el => el.classList.remove("active"));
           if (firstLink && firstContent) {
             firstLink.classList.add("active");
-            firstContent.classList.add("active");
+            //firstContent.classList.add("active");
+            
           }
           // Overlay add
           if (!document.querySelector(".TT-184-overlay")) {
@@ -345,38 +343,50 @@
             overlay.className = "TT-184-overlay";
             document.body.appendChild(overlay);
           }
+          // Body class add
+          body.classList.add("TT-184-menu-open");
         }
-        else {
-          // Was already open — clean up scroll lock and overlay
-          document.body.classList.remove("TT-184-no-scroll"); 
-          const overlay = document.querySelector(".TT-184-overlay");
-          if (overlay) overlay.remove();
-        }
-        //  OVERLAY CLICK (CLOSE ALL)
+        // OVERLAY CLICK (CLOSE ALL)
         if (e.target.classList.contains("TT-184-overlay")) {
           document.querySelectorAll(".nav-item.has-dropdown, .menu-link, .menu-content")
             .forEach(el => el.classList.remove("active"));
-          document.body.classList.remove("TT-184-no-scroll");
           e.target.remove();
+          document.body.classList.remove("TT-184-menu-open");
+
+          document.querySelectorAll(".tt_menu-right").forEach(el => {
+  el.style.display = "none";
+});
         }
       });
-      document.addEventListener("mouseover", function (e) {
-        const menuLink = e.target.closest(".menu-link");
-        if (!menuLink) return;
-        const parent = menuLink.closest(".mega-menu");
+ document.addEventListener("mouseover", function (e) {
+  const menuLink = e.target.closest(".menu-link");
+  if (!menuLink) return;
 
-        if (menuLink.classList.contains("active")) return;
+  const parent = menuLink.closest(".mega-menu");
+  if (!parent) return;
 
-        parent.querySelectorAll(".menu-link, .menu-content")
-          .forEach(el => el.classList.remove("active"));
-        // Activate current
-        menuLink.classList.add("active");
-        const target = menuLink.getAttribute("data-target");
-        const targetContent = parent.querySelector("#" + target);
-        if (targetContent) {
-          targetContent.classList.add("active");
-        }
-      });
+  // 🔥 SHOW menu-right on hover
+  const menuRight = parent.querySelector(".tt_menu-right");
+  if (menuRight) {
+    menuRight.style.display = "block";
+  }
+
+  // remove active
+  parent.querySelectorAll(".menu-link, .menu-content").forEach(el => {
+    if (el !== menuLink) el.classList.remove("active");
+    if (el.id && el.id !== menuLink.getAttribute("data-target")) el.classList.remove("active");
+  });
+
+  // activate
+  menuLink.classList.add("active");
+
+  const targetId = menuLink.getAttribute("data-target");
+  const targetContent = parent.querySelector("#" + targetId);
+
+  if (targetContent) {
+    targetContent.classList.add("active");
+  }
+});
     }
     waitForElement('body', init);
   } catch (e) {

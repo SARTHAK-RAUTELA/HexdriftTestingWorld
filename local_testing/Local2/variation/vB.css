@@ -1,74 +1,30 @@
-html body.cre-t-2-Availability_Badge .availability-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-    font-size: 20px;
-    color: #ffffff;
+html body.cre-t-3 #hero>.e-con-inner [data-id="51ac959"] {
+    order: 3;
 }
 
-html body.cre-t-2-Availability_Badge .availability-badge .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #2ecc71;
-    border-radius: 50%;
-    display: inline-block;
-    animation: pulse 1.5s infinite;
-    margin-right: 7px;
-    margin-bottom: 3px;
+html body.cre-t-3 #hero>.e-con-inner [data-id="66f5f73"] {
+    order: 2;
 }
 
-html body.cre-t-2-Availability_Badge .availability-badge p b {
-    margin: 0px 2px;
+html body.cre-t-3 #hero>.e-con-inner [data-id="3c5a08f"] {
+    order: 3;
 }
 
-html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2) {
-    margin-bottom: 0;
+html body.cre-t-3 #hero>.e-con-inner [data-id="51ac959"] .yellow-text,
+html body.cre-t-3 #hero>.e-con-inner [data-id="51ac959"] .divider,
+html body.cre-t-3 #hero>.e-con-inner [data-id="66f5f73"] .divider,
+html body.cre-t-3 #hero>.e-con-inner [data-id="66f5f73"] .yellow-text,
+html body.cre-t-3 #hero>.e-con-inner [data-id="3c5a08f"] .yellow-text,
+html body.cre-t-3 #hero>.e-con-inner [data-id="3c5a08f"] .divider {
+    display: none;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
+/* @media screen and (min-width:768px) {
+
+    html body.cre-t-3 #hero>.e-con-inner [data-id="51ac959"],
+    html body.cre-t-3 #hero>.e-con-inner [data-id="66f5f73"],
+    html body.cre-t-3 #hero>.e-con-inner [data-id="3c5a08f"] {
+        max-width: 426px;
     }
 
-    50% {
-        transform: scale(1.4);
-        opacity: 0.6;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@media (min-width: 768px) {
-    html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2):has(.availability-badge) {
-        width: 52%;
-        min-height: 110px !important;
-    }
-
-    html body.cre-t-2-Availability_Badge .availability-badge {
-        display: flex;
-        min-width: 600px;
-    }
-}
-
-@media (max-width: 768px) {
-    html body.cre-t-2-Availability_Badge .availability-badge {
-        min-width: 318px;
-        margin-bottom: 10px;
-        line-height: 30px;
-        font-size: 18px;
-    }
-
-    html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(2):has(.availability-badge) {
-        min-height: 122px !important;
-    }
-}
-
-html body.cre-t-2-Availability_Badge .availability-badge p {
-    text-wrap: wrap;
-    line-height: 26px;
-}
+} */

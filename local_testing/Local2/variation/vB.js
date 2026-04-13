@@ -307,6 +307,8 @@ City Guides ${subnave}
     let isObserverRegistered = false;
     function init() {
       if (!variation_name || document.body.classList.contains(variation_name)) return;
+      // ✅ NEW: Only show nav if login link is present (i.e. user is logged out)
+      if (!document.querySelector('[class*="links_linksContainer"] [href="/login"]')) return;
       document.body.classList.add(variation_name);
       if (!isObserverRegistered) {
         observeSelector('[aria-label="Thumbtack Home"]', function (el) {
@@ -402,7 +404,7 @@ City Guides ${subnave}
       });
     }
 
-    waitForElement('body', init);
+    waitForElement('[class*="links_linksContainer"] [href="/login"]', init);
   } catch (e) {
     if (debug) console.log(e, "error in Test " + variation_name);
   }

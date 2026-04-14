@@ -198,7 +198,7 @@ body.TT-184.TT-184-menu-open {
 }
 
 @media (min-width: 700px) and (max-width: 725px) {
-    html body.TT-184 .TT-184-nav.custom-nav {
-        gap: 0;
+    html body.TT-184 .TT-184-nav .nav-item {
+        font-size: 13px;
     }
 }

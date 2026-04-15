@@ -208,7 +208,7 @@ Health & Wellness ${subnave}
 </div>
 <!-- Installation -->
 <div class="menu-content" id="installation">
-<a href="/k/oliday-lighting-installation/near-me">Holiday Light Hanging</a>
+<a href="/k/holiday-lighting-installation/near-me">Holiday Light Hanging</a>
 <a href="/k/tv-wall-mount-install/near-me">TV Mounting</a>
 <a href="/k/security-camera-install/near-me">Security Camera Installation</a>
 <a href="/k/appliance-installers/near-me">Appliance Installation</a>

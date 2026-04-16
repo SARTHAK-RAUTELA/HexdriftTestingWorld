@@ -1,204 +1,715 @@
-html body.TT-184 .TT-184-nav.custom-nav {
-    display: flex;
-    gap: 10px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+:root {
+    --cre-t-01-primary: #3066c9;
+    --cre-t-01-red: #d03643;
+    --cre-t-01-dark: #383f4d;
+    --cre-t-01-gray: #383f4d;
+    --cre-t-01-light-gray: #9ca3af;
+    --cre-t-01-bg: #f7faff;
 }
 
-html body.TT-184 .TT-184-nav .nav-item {
-    position: relative;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgb(103, 109, 115);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-html body.TT-184 .TT-184-nav .nav-item.active [class*="dropdown-launcher"] svg {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-    padding-top: 4px;
-    padding-bottom: 0;
-}
-
-html body.TT-184 .TT-184-nav .nav-item svg {
-    width: 20px;
-    height: 28px;
-}
-
-html body.TT-184 .TT-184-nav .nav-item [class*="dropdown-launcher"] svg {
-    color: #676d73;
-    margin-left: 4px;
-    padding-bottom: 4px;
-}
-
-html body.TT-184 .TT-184-nav .nav-item span {
-    display: flex;
-    padding: 10px 5px;
-}
-
-/* Dropdown */
-html body.TT-184 .TT-184-nav .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 254px;
-    background: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    padding: 10px 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.25s ease;
-    z-index: 999;
-}
-
-html body.TT-184 .TT-184-nav .nav-item span>div {
-    height: 24px;
-}
-
-html body.TT-184 .nav-item.has-dropdown:hover {
-    box-shadow: inset 0 -3px 0 #d3d4d5;
-    outline: none;
-    color: #2f3033;
-}
-
-html body.TT-184 .TT-184-nav .dropdown a:hover {
-    background: #f5f7fa;
-}
-
-/* Show Dropdown */
-/* html body.TT-184 .TT-184-nav .nav-item:hover .dropdown {
-opacity: 1;
-visibility: visible;
-transform: translateY(0);
-} */
-html body.TT-184 .TT-184-nav .mega-menu {
-    display: flex;
-    padding: 0;
-}
-
-html body.TT-184 .TT-184-nav.menu-left {
-    width: 45%;
-    border-right: 1px solid #eee;
-    background: #fafafa;
-}
-
-html body.TT-184 .TT-184-nav .menu-heading {
-    font-weight: 600;
-    padding: 12px 16px;
-}
-
-html body.TT-184 .TT-184-nav .menu-link {
-    padding: 12px 16px;
-    cursor: pointer;
-    font-size: 14px;
-    color: rgb(47, 48, 51);
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-html body.TT-184 .TT-184-nav .menu-link.active,
-html body.TT-184 .TT-184-nav .menu-link:hover {
-    background: #fafafa;
-}
-
-html body.TT-184 .TT-184-nav .tt_menu-right {
-    width: 212px;
-    padding: 10px;
-}
-
-html body.TT-184 .TT-184-nav .menu-content {
+html body .pca.main-header.pr-hero-v2 .sec-text .sec-ttl {
     display: none;
 }
 
-html body.TT-184 .TT-184-nav .menu-content.active {
-    display: block;
-}
-
-html body.TT-184 .TT-184-nav .menu-content a {
-    display: block;
-    padding: 8px 10px;
-    text-decoration: none;
-    color: rgb(47, 48, 51);
-    cursor: pointer;
-}
-
-html body.TT-184 .TT-184-nav .menu-left {
-    /* width: 300px; */
-    width: 254px;
-    padding-top: 16px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 7px;
-    overflow-y: auto;
-}
-
-html body.TT-184 .TT-184-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 9;
-}
-
-html body.TT-184 .TT-184-nav .nav-item.active .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Dropdown show on click */
-html body.TT-184 .TT-184-nav .nav-item .dropdown {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.25s ease;
-}
-
-html body.TT-184 .TT-184-nav .nav-item.active .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-html body.TT-184 [data-testid="global-header__link-bar"]>div>[tabindex="0"]:nth-child(1) {
+html body .pca.main-header.pr-hero-v2 .sec-text .sec-sub-ttl {
     display: none;
 }
 
-html body.TT-184 [class*="links_linksContainer"]>a[class*="links_linkBarLink"]:first-child {
-    display: none;
-}
-
-body.TT-184.TT-184-menu-open {
+html body .cre-t-01-hero-container {
+    display: flex;
+    justify-content: center;
     overflow: hidden;
 }
 
-.tt_menu-right {
-    display: none;
+html body .cre-t-01-hero-wrapper {
+    max-width: 1120px;
+    width: 100%;
 }
 
-/* CSS as safety net */
-/* html body.TT-184.logged_in_users .TT-184-nav {
-    display: none !important;
-} */
-
-/* html body.TT-184.logged_in_users [class*="links_linksContainer"]>a[class*="links_linkBarLink"]:first-child {
+html body .cre-t-01-hero-main {
     display: flex;
-} */
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 40px; */
+}
 
-@media (max-width: 948px) {
-    html body.TT-184 .TT-184-nav.custom-nav>li:last-child {
-        display: none;
+/* === Left Column: Content === */
+
+html body .cre-t-01-heading {
+    font-size: 76px;
+    font-weight: 400;
+    color: var(--cre-t-01-dark);
+    font-family: Pay, Europa, sans-serif;
+    line-height: 86px;
+    margin: 0 0 25px 0;
+    letter-spacing: -1px;
+}
+
+html body .cre-t-01-heading .cre-t-01-highlight {
+    color: var(--cre-t-01-primary);
+}
+
+html body .cre-t-01-subtext {
+    font-size: 19px;
+    color: var(--cre-t-01-gray);
+    font-family: europa, sans-serif;
+    line-height: 32px;
+    margin: 0 0 16px 0;
+    max-width: 569px;
+}
+
+html body .cre-t-01-subtext strong {
+    color: var(--cre-t-01-gray);
+}
+
+html body .cre-t-01-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 41px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+html body .cre-t-01-benefits li {
+    color: #383f4d;
+    font-family: europa, sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    line-height: var(--line-height-30_8, 30.8px);
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    align-items: center;
+}
+
+html body .cre-t-01-check-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--cre-t-01-primary);
+    margin-top: 2px;
+}
+
+html body .cre-t-01-benefits li svg {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    overflow: visible;
+}
+
+@media (max-width: 1199px) {
+    html body .cre-t-01-heading {
+        font-size: 48px;
+        line-height: 56px;
     }
 }
 
-@media (min-width: 700px) and (max-width: 725px) {
-    html body.TT-184 .TT-184-nav .nav-item {
-        font-size: 13px;
+@media (min-width: 1024px) and (max-width: 1050px) {
+    html body .cre-t-01-benefits li {
+        align-items: flex-start;
+    }
+
+    html body .cre-t-01-benefits li svg {
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 899px) {
+    /* html body .cre-t-01-heading {
+        font-size: 32px;
+        line-height: 40px;
+    } */
+
+    html body .cre-t-01-hero-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    html body .cre-t-01-content {
+        flex: 1;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    html body .cre-t-01-benefits li {
+        /* justify-content: center; */
+        text-align: left;
+    }
+
+    html body .cre-t-01-cta-group {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+
+    html body .cre-t-01-visuals {
+        margin-top: 40px;
+    }
+
+    html body .cre-t-01-subtext,
+    html body .cre-t-01-benefits li {
+        font-size: 18px !important;
+        line-height: 150% !important;
+    }
+}
+
+@media (max-width: 599px) {
+    html body .cre-t-01-benefits li {
+        align-items: flex-start;
+    }
+
+    html body .cre-t-01-benefits li svg {
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    html body .cre-t-01-hero-container {
+        /* padding: 60px 16px; */
+    }
+
+    html body .cre-t-01-cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    html body .cre-t-01-btn {
+        width: 100%;
+    }
+}
+
+/* _______________________________________________________________________________________________________ */
+/* _______________________________________________________________________________________________________ */
+/* _______________________________________________________________________________________________________ */
+html body #content>section.pca.steps-sec {
+    display: none;
+}
+
+html body .cre-t-01-pay-anyone-container {
+    display: block;
+    background: #ffffff;
+    padding: 112px 64px 56px;
+}
+
+html body .cre-t-01-pay-anyone-wrapper {
+    max-width: 1130px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+}
+
+html body .cre-t-01-pay-anyone-header {
+    display: flex;
+    align-items: center;
+}
+
+html body .cre-t-01-pay-anyone-header span {
+    color: #383f4d;
+    text-align: center;
+    font-family: Pay, Europa, sans-serif;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 64px;
+}
+
+html body .cre-t-01-pay-anyone-header span span {
+    color: #3066c9;
+}
+
+html body .cre-t-01-pay-anyone-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 520px) 540px;
+}
+
+html body .cre-t-01-pay-anyone-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+html body .cre-t-01-pay-anyone-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 25px;
+    margin-bottom: 41px;
+}
+
+html body .cre-t-01-pay-anyone-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 17px;
+}
+
+html body .cre-t-01-pay-anyone-item-left {
+    border-radius: 50%;
+    background: linear-gradient(90deg, #3369cb 0%, #2e3e7f 100%);
+    display: flex;
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+html body .cre-t-01-pay-anyone-item-left span {
+    color: #fff;
+    text-align: center;
+    font-family: europa, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 32px;
+}
+
+html body .cre-t-01-pay-anyone-item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 2px;
+}
+
+html body .cre-t-01-pay-anyone-item-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+html body .cre-t-01-pay-anyone-item-header span {
+    color: #383f4d;
+    font-family: Pay, Europa, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+html body .cre-t-01-pay-anyone-item-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+html body .cre-t-01-pay-anyone-item-description span {
+    color: #383f4d;
+    font-family: europa, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.09px;
+}
+
+html body .cre-t-01-pay-anyone-cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 286px;
+    width: 100%;
+    margin-left: 52px;
+    text-align: center;
+}
+
+html body .cre-t-01-pay-anyone-cta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+    background: rgb(208, 54, 67);
+    border: 1px solid rgb(208, 54, 67);
+    color: #fff !important;
+    padding: 14px 24px;
+    gap: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+html body .cre-t-01-pay-anyone-cta-text {
+    color: #fff;
+    font-family: europa, sans-serif;
+    font-size: 17.5px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30.8px;
+}
+
+html body .cre-t-01-pay-anyone-cta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+html body .cre-t-01-pay-anyone-cta-icon svg {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+}
+
+html body .cre-t-01-pay-anyone-cta:hover {
+    background: rgb(152, 0, 28);
+    border-color: rgb(152, 0, 28);
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+html body .cre-t-01-pay-anyone-cta:hover .cre-t-01-pay-anyone-cta-icon {
+    transform: translateX(3px);
+}
+
+html body .cre-t-01-pay-anyone-cta-description {
+    color: #383f4d;
+    text-align: center;
+    font-family: europa, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30.8px;
+}
+
+html body .cre-t-01-pay-anyone-right {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+html body .cre-t-01-pay-anyone-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    right: -1px;
+}
+
+html body .cre-t-01-pay-anyone-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+}
+
+html body .cre-t-01-pay-rewards-container {
+    display: block;
+    background: #ffffff;
+    padding: 56px 64px 112px;
+}
+
+html body .cre-t-01-pay-rewards-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 37px;
+    background: #eaf0fa;
+    max-width: 1143px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+html body .cre-t-01-pay-rewards-main {
+    width: 100%;
+    padding: 30px 45px 65px 70px;
+    display: grid;
+    grid-template-columns: minmax(0, 503px) 503px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+html body .cre-t-01-pay-rewards-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+html body .cre-t-01-pay-rewards-content1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+}
+
+html body .cre-t-01-pay-rewards-content1 span {
+    color: #383f4d;
+    font-family: Pay, Europa, sans-serif;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 42px;
+}
+
+html body .cre-t-01-pay-rewards-content1 span span {
+    color: #3066c9;
+}
+
+html body .cre-t-01-pay-rewards-content2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+html body .cre-t-01-pay-rewards-content2 span {
+    color: #383f4d;
+    font-family: europa, sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30.8px;
+    /* 162.105% */
+}
+
+html body .cre-t-01-pay-rewards-content3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+}
+
+html body .cre-t-01-pay-rewards-content3 span {
+    color: #383f4d;
+    font-family: europa, sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30.8px;
+    /* 162.105% */
+}
+
+html body .cre-t-01-pay-rewards-content4 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+html body .cre-t-01-pay-rewards-cta {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid rgb(48, 102, 201);
+    color: rgb(48, 102, 201);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html body .cre-t-01-pay-rewards-cta span {
+    transition: 0.3s;
+    color: #3066c9;
+    font-family: europa, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30.8px;
+}
+
+html body .cre-t-01-pay-rewards-cta:hover {
+    border-color: rgb(24, 50, 99);
+    color: rgb(24, 50, 99);
+}
+
+html body .cre-t-01-pay-rewards-cta:hover span {
+    color: rgb(24, 50, 99);
+}
+
+html body .cre-t-01-pay-rewards-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+html body .cre-t-01-pay-rewards-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+html body .cre-t-01-pay-rewards-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+@media (max-width: 1280px) {
+    html body .cre-t-01-pay-rewards-main {
+        padding: 48px;
+    }
+}
+
+@media (max-width: 1199px) {
+    html body .cre-t-01-pay-anyone-container {
+        padding: 80px 48px 40px;
+    }
+
+    html body .cre-t-01-pay-rewards-container {
+        padding: 40px 48px 80px;
+    }
+
+    html body .cre-t-01-pay-anyone-body {
+        grid-template-columns: minmax(0, 520px) 455px;
+    }
+
+    html body .cre-t-01-pay-rewards-main {
+        grid-template-columns: minmax(0, 503px) 365px;
+        padding: 40px;
+    }
+
+    html body .cre-t-01-pay-anyone-header span {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    html body cre-t-01-pay-anyone-item-header span {
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    html body .cre-t-01-pay-rewards-content1 span {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+@media (max-width: 1023px) {
+    html body .cre-t-01-pay-anyone-body {
+        grid-template-columns: minmax(0, 520px) 398px;
+    }
+
+    html body .cre-t-01-pay-rewards-main {
+        grid-template-columns: minmax(0, 503px) 358px;
+    }
+}
+
+@media (max-width: 899px) {
+    html body .cre-t-01-pay-anyone-container {
+        padding: 64px 20px 32px;
+    }
+
+    html body .cre-t-01-pay-rewards-container {
+        padding: 32px 20px 64px;
+    }
+
+    html body .cre-t-01-pay-anyone-body {
+        grid-template-columns: 1fr;
+    }
+
+    html body .cre-t-01-pay-rewards-main {
+        grid-template-columns: 1fr;
+        padding: 32px;
+    }
+
+    html body .cre-t-01-pay-anyone-header span {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    html body .cre-t-01-pay-anyone-item-header span {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    html body .cre-t-01-pay-rewards-content2 span {
+        font-size: 16px;
+        letter-spacing: 0.16px;
+        line-height: 150%;
+    }
+
+    html body .cre-t-01-pay-rewards-content3 span {
+        font-size: 16px;
+        letter-spacing: 0.16px;
+        line-height: 150%;
+    }
+
+    html body .cre-t-01-pay-rewards-content1 span {
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    html body .cre-t-01-pay-anyone-cta {
+        padding: 12px 20px;
+    }
+
+    html body .cre-t-01-pay-anyone-cta-text {
+        font-size: 16px;
+        line-height: 160%;
+    }
+
+    html body .cre-t-01-pay-anyone-cta-container {
+        margin: 0 auto;
+    }
+
+    html body .cre-t-01-pay-rewards-cta span {
+        font-size: 16px;
+        line-height: 160%;
+    }
+}
+
+@media (min-width: 568px) and (max-width: 899px) {
+    html body .cre-t-01-pay-anyone-header span {
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+
+@media (max-width: 599px) {
+    html body .cre-t-01-pay-rewards-cta {
+        padding: 7px 15px;
+    }
+
+    html body .cre-t-01-pay-anyone-cta {
+        padding: 12px 16px;
+        font-size: 15px !important;
+        border-radius: 6px;
+    }
+
+    html body .cre-t-01-pay-anyone-cta-text {
+        font-size: 15px;
     }
 }

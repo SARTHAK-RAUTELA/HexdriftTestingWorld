@@ -1,288 +1,104 @@
-if (!window.location.href.includes("https://eweb.afponline.org")) {
-  // Code to execute if the URL does NOT contain "https://eweb.afponline.org"
-  (function () {
-    try {
-      /* main variables */
-      var debug = 0;
-      var variation_name = "cre-t-01";
-      var baseUrl = "https://www.financialprofessionals.org";
-      var navData = [
-        {
-          title: "Membership",
-          subGroups: [
-            {
-              groupTitle: "Membership",
-              menuSubLinks: [
-                { text: "Join AFP", url: "/membership/explore-membership/join" },
-                { text: "Member Benefits", url: "/membership/explore-membership/benefits" },
-                { text: "Pricing", url: "/membership/explore-membership/join#InteriorContent_C089_Col01" },
-                { text: "Convince Your Boss", url: "/membership/explore-membership/convince-your-boss?utm_source=chatgpt.com" },
-                { text: "Corporate Membership", url: "/membership/explore-membership/afp-corporate-membership" },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Certification",
-          subGroups: [
-            {
-              groupTitle: "Certification",
-              menuSubLinks: [
-                { text: "CTP Certification (Treasury)", url: "https://ctpcert.financialprofessionals.org/" },
-                { text: "FPAC Certification (FP&A)", url: "https://fpacert.financialprofessionals.org/" },
-                // { text: "AI for Finance Certificate", url: "/training-resources/afp-learn/ai-for-finance-certificate", badge: "New" },
-                { text: "Compare Certifications", url: "https://fpacert.financialprofessionals.org/certification/finance-certifications" },
-                { text: "Benefits of Certification", url: "/certification/benefits-of-afp-certifications" },
-                { text: "Maintain Your Certification", url: "/certification/already-certified/maintaining-your-credential" },
-                { text: "Submit your Credits", url: "/certification/already-certified/submit-your-credits" }
-              ],
-            },
-          ],
-        },
-        {
-          title: "Conferences",
-          subGroups: [
-            {
-              groupTitle: "Conferences",
-              menuSubLinks: [
-                { text: "AFP 2026", url: "/events/conference/afp-2024" },
-                { text: "FP&A Forum", url: "/events/meetings/afp-fpa-forum" },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Learning",
-          subGroups: [
-            {
-              groupTitle: "Topics",
-              menuSubLinks: [
-                { text: "Treasury", url: "/topics/treasury" },
-                { text: "FP&A", url: "/topics/fp-a-topics/" },
-                { text: "Payments", url: "/topics/payment-topics/" },
-              ],
-            },
-            {
-              groupTitle: "Insights",
-              menuSubLinks: [
-                { text: "Articles", url: "/training-resources/resources/articles" },
-                { text: "Guides", url: "/training-resources/resources/guides" },
-                { text: "Research", url: "/training-resources/resources/survey-research-economic-data" },
-              ],
-            },
-            {
-              groupTitle: "Training",
-              menuSubLinks: [
-                { text: "AI for Finance Certificate", url: "/training-resources/afp-learn/ai-for-finance-certificate", badge: "New" },
-                { text: "AFP Learn", url: "/training-resources/afp-learn" },
-                { text: "Courses", url: "/training-resources/afp-learn/afp-learn-courses" },
-                { text: "Webinars", url: "/training-resources/afp-learn/afp-learn-webinars" },
-                { text: "Badges", url: "/training-resources/afp-learn/afp-learn-badges" },
-                { text: "Events", url: "/training-resources/afp-learn/afp-learn-launch-event-sessions" },
-                { text: "Corporate Training", url: "/training-resources/afp-learn/afp-corporate-training" }
-              ],
-            },
-            {
-              groupTitle: "Professional Tools",
-              menuSubLinks: [
-                { text: "AFP Service Codes", url: "/training-resources/resources/afp-service-codes" },
-                { text: "Marketplace", url: "/training-resources/resources/afp-marketplace" },
-                { text: "Glossary", url: "/glossary" },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Member Hub",
-          subGroups: [
-            {
-              groupTitle: "Getting Started",
-              menuSubLinks: [{ text: "AFP Power Hour", url: "/events/meetings/afp-power-hour--discover-what%27s-possible" }],
-            },
-            {
-              groupTitle: "Training",
-              menuSubLinks: [
-                { text: "AFP Learn", url: "/training-resources/afp-learn" },
-                { text: "Conference Session Recordings", url: "https://conference.financialprofessionals.org/program/sessions/archives" },
-              ],
-            },
-            {
-              groupTitle: "Community",
-              menuSubLinks: [
-                { text: "AFP Collaborate", url: "https://collaborate.financialprofessionals.org/" },
-                { text: "Member Meet-Ups", url: "/events/meetings/virtual-meet-ups" },
-              ],
-            },
-            {
-              groupTitle: "Membership",
-              menuSubLinks: [
-                { text: "Renew Membership", url: "/membership/member-resources/renew" },
-                { text: "Member Tools", url: "/membership/member-resources/member-only-tools" },
-                { text: "Earn Certification Credits", url: "/certification/already-certified/ways-to-earn-credits/more-than-membership" },
-              ],
-            },
-          ],
-        },
-      ];
+(function () {
+  try {
+    /* main variables */
+    var debug = 1;
+    var variation_name = "cre-t-109";
 
-      function formatLink(url) {
-        return url.startsWith("http") ? url : baseUrl + url;
-      }
-      function live(selector, event, callback, context) {
-        if (typeof callback !== "function") return;
-        context = context || document;
-
-        context.addEventListener(event, function (e) {
-          var el = e.target.closest(selector);
-          if (el && context.contains(el)) {
-            callback.call(el, e);
-          }
-        });
-      }
-
-      function addClass(selector, className) {
-        var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-        if (!element) return;
-        if (element.classdivst) element.classdivst.add(className);
-        else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
-          element.className += " " + className;
-        }
-      }
-
-      /* all Pure helper functions */
-      function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
-        var interval = setInterval(function () {
-          if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
-            clearInterval(interval);
-            trigger();
-          }
-        }, delayInterval);
-        setTimeout(function () {
+    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+      var interval = setInterval(function () {
+        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
           clearInterval(interval);
-        }, delayTimeout);
-      }
-
-      var newNav = `
-            <nav class="${variation_name}-afp-nav" aria-label="cre-t-01-Main-Navigation">
-                <div class="${variation_name}-afp-nav-ulList"></div>
-            </nav>`;
-
-      function renderNav(data) {
-        var navulList = document.querySelector(`.${variation_name}-afp-nav-ulList`);
-        if (!navulList) return;
-
-        var newNavhtml = data
-          .map(
-            (item, index) => `
-                <div class="${variation_name}-afp-nav-item topLevel topLevel-list-item-${index + 1}">
-                    <button type="button" class="${variation_name}-afp-nav-Link ${variation_name}-has-sub" aria-expanded="false">
-                    ${item.title}
-                    </button>
-                    <div class="${variation_name}-afp-nav-sub-nav" cre-test-subMenuFor=${item.title.split(" ").join("-").toLowerCase()}>
-                        ${item.subGroups
-                .map(
-                  (group, groupIndex) => `
-                            <div class="${variation_name}-afp-nav-item">
-                                <div class="${variation_name}-afp-nav-Link ${variation_name}-afp-nav-sub-nav-title">
-                                     ${group.groupTitle}
-                                </div>
-                                <div class="${variation_name}-afp-nav-sub-nav">
-                                    ${group.menuSubLinks
-                      .map(
-                        (menuSubLink, linkIndex) => `
-                                        <div class="${variation_name}-afp-nav-item subNavItem${linkIndex + 1}" cre-test-subLinkFor=${menuSubLink.text.split(" ").join("-").toLowerCase()}>
-                                           <a href="${formatLink(menuSubLink.url)}" class="${variation_name}-afp-nav-Link">
-                                             ${menuSubLink.text}
-                                            ${menuSubLink.badge ? `<span class="${variation_name}-nav-badge">${menuSubLink.badge}</span>` : ""}
-                                            </a>
-                                        </div>
-                                    `,
-                      )
-                      .join("")}
-                                </div>
-                            </div>
-                        `,
-                )
-                .join("")}
-                    </div>
-                </div>`,
-          )
-          .join("");
-        navulList.innerHTML = newNavhtml;
-      }
-
-      function newMenu() {
-        var oldNav = document.querySelector(".afp-nav");
-        var alreadyExist = document.querySelector(`.${variation_name}-afp-nav`);
-        if (oldNav && !alreadyExist) {
-          oldNav.insertAdjacentHTML("afterend", newNav);
-          renderNav(navData);
+          trigger();
         }
-      }
-
-      function eventHandler() {
-        live(".cre-t-01-afp-nav-item", "click", function (e) {
-          var btn = e.target.closest(".cre-t-01-afp-nav-Link");
-          if (!btn) return;
-          var subNav = btn.nextElementSibling;
-          if (subNav && subNav.classList.contains("cre-t-01-afp-nav-sub-nav")) {
-            var isOpen = subNav.classList.contains("open");
-            document.querySelectorAll(".cre-t-01-afp-nav-sub-nav.open").forEach(function (openMenu) {
-              if (openMenu !== subNav) {
-                openMenu.classList.remove("open");
-                var activeBtn = openMenu.previousElementSibling;
-                if (activeBtn) {
-                  activeBtn.classList.remove("active");
-                  activeBtn.setAttribute("aria-expanded", "false");
-                }
-              }
-            });
-
-            if (!isOpen) {
-              subNav.classList.add("open");
-              btn.classList.add("active");
-              btn.setAttribute("aria-expanded", "true");
-            } else {
-              subNav.classList.remove("open");
-              btn.classList.remove("active");
-              btn.setAttribute("aria-expanded", "false");
-            }
-          }
-          e.stopPropagation();
-        });
-        live("body", "click", function (e) {
-          var isClickInsideNav = e.target.closest("." + variation_name + "-afp-nav-item");
-          if (!isClickInsideNav) {
-            document.querySelectorAll("." + variation_name + "-afp-nav-sub-nav.open").forEach(function (openMenu) {
-              openMenu.classList.remove("open");
-              var activeBtn = openMenu.previousElementSibling;
-              if (activeBtn) {
-                activeBtn.classList.remove("active");
-                activeBtn.setAttribute("aria-expanded", "false");
-              }
-            });
-          }
-        });
-      }
-
-      /* Variation Init */
-      function init() {
-        if (document.querySelector(".cre-t-01")) return;
-        addClass("body", variation_name);
-        newMenu();
-        if (!window.evnetHandler01) {
-          window.evnetHandler01 = true;
-          eventHandler();
-        }
-        if (debug) console.log(variation_name + " initiadivzed");
-      }
-
-      /* Initiadivse variation */
-      waitForElement(".afp-nav", init, 50, 15000);
-    } catch (e) {
-      if (debug) console.log(e, "error in Test " + variation_name);
+      }, delayInterval);
+      setTimeout(function () {
+        clearInterval(interval);
+      }, delayTimeout);
     }
-  })();
 
+    /**
+     * Inserts HTML content or element after a target element
+     * @param {string|HTMLElement} selector - CSS selector string or target element
+     * @param {string|HTMLElement} html - HTML string to insert or DOM element
+     */
+    function insertAfter(selector, html) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (typeof html === "string") {
+        element.insertAdjacentHTML("afterend", html);
+      } else if (html && html.nodeType === 1) {
+        element.insertAdjacentElement("afterend", html);
+      }
+    }
+    /**
+     * Inserts HTML content or element before a target element
+     * @param {string|HTMLElement} selector - CSS selector string or target element
+     * @param {string|HTMLElement} html - HTML string to insert or DOM element
+     */
+    function insertBefore(selector, html) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (typeof html === "string") {
+        element.insertAdjacentHTML("beforebegin", html);
+      } else if (html && html.nodeType === 1) {
+        element.insertAdjacentElement("beforebegin", html);
+      }
+    }
+    function getQueryVariable(name) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
 
-}
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+
+        if (decodeURIComponent(pair[0]) === name) {
+          return pair[1] ? decodeURIComponent(pair[1].replace(/\+/g, " ")) : "";
+        }
+      }
+
+      return "";
+    }
+
+    function addElement() {
+      var updateName = getQueryVariable("insurer") || "Colonial Penn";
+      var html = `<div class="cre-t-109-container" style="display: none;">
+        <div class="cre-t-109-wrapper">
+          <div class="cre-t-109-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+              <path
+                d="M8.75 14.25H10.25V8.5H8.75V14.25ZM10.073 6.55625C10.2295 6.40142 10.3077 6.20958 10.3077 5.98075C10.3077 5.75192 10.2303 5.56008 10.0755 5.40525C9.92067 5.25058 9.72883 5.17325 9.5 5.17325C9.27117 5.17325 9.07933 5.25058 8.9245 5.40525C8.76967 5.56008 8.69225 5.75192 8.69225 5.98075C8.69225 6.20958 8.7705 6.40142 8.927 6.55625C9.08333 6.71108 9.27433 6.7885 9.5 6.7885C9.72567 6.7885 9.91667 6.71108 10.073 6.55625ZM9.50175 19C8.18775 19 6.95267 18.7507 5.7965 18.252C4.64033 17.7533 3.63467 17.0766 2.7795 16.2218C1.92433 15.3669 1.24725 14.3617 0.74825 13.206C0.249417 12.0503 0 10.8156 0 9.50175C0 8.18775 0.249333 6.95267 0.748 5.7965C1.24667 4.64033 1.92342 3.63467 2.77825 2.7795C3.63308 1.92433 4.63833 1.24725 5.794 0.74825C6.94967 0.249417 8.18442 0 9.49825 0C10.8123 0 12.0473 0.249333 13.2035 0.748C14.3597 1.24667 15.3653 1.92342 16.2205 2.77825C17.0757 3.63308 17.7528 4.63833 18.2518 5.794C18.7506 6.94967 19 8.18442 19 9.49825C19 10.8123 18.7507 12.0473 18.252 13.2035C17.7533 14.3597 17.0766 15.3653 16.2218 16.2205C15.3669 17.0757 14.3617 17.7528 13.206 18.2518C12.0503 18.7506 10.8156 19 9.50175 19ZM9.5 17.5C11.7333 17.5 13.625 16.725 15.175 15.175C16.725 13.625 17.5 11.7333 17.5 9.5C17.5 7.26667 16.725 5.375 15.175 3.825C13.625 2.275 11.7333 1.5 9.5 1.5C7.26667 1.5 5.375 2.275 3.825 3.825C2.275 5.375 1.5 7.26667 1.5 9.5C1.5 11.7333 2.275 13.625 3.825 15.175C5.375 16.725 7.26667 17.5 9.5 17.5Z"
+                fill="#5E1394"
+              />
+            </svg>
+          </div>
+          <div class="cre-t-109-content">
+            <div class="cre-t-109-header">
+              <div class="cre-t-109-hero-title">Looking at ${updateName}?</div>
+            </div>
+            <div class="cre-t-109-subheader">
+              <div class="cre-t-109-subheader-title">We’ve reviewed 85 providers to find the best overall options—many with <span>no medical exam</span> and <span>faster approval.</span> Start with our top picks below.</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+      if (!document.querySelector(".cre-t-109-container")) {
+        insertBefore(".page-description ul", html);
+      }
+    }
+
+    /* Variation Init */
+    function init() {
+      /* start your code here */
+      if (document.body.classList.contains(variation_name)) return;
+
+      document.body.classList.add(variation_name);
+      addElement();
+    }
+
+    /* Init variation */
+    waitForElement(".page-description ul", init);
+  } catch (e) {
+    if (debug) console.log(e, "error in Test " + variation_name);
+  }
+})();

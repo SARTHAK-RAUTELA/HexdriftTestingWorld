@@ -34,6 +34,7 @@ if (!window.location.href.includes("https://eweb.afponline.org")) {
                 { text: "Compare Certifications", url: "https://fpacert.financialprofessionals.org/certification/finance-certifications" },
                 { text: "Benefits of Certification", url: "/certification/benefits-of-afp-certifications" },
                 { text: "Maintain Your Certification", url: "/certification/already-certified/maintaining-your-credential" },
+                { text: "Submit your Credits", url: "/certification/already-certified/submit-your-credits" }
               ],
             },
           ],
@@ -72,11 +73,13 @@ if (!window.location.href.includes("https://eweb.afponline.org")) {
             {
               groupTitle: "Training",
               menuSubLinks: [
+                { text: "AI for Finance Certificate", url: "/training-resources/afp-learn/ai-for-finance-certificate", badge: "New" },
                 { text: "AFP Learn", url: "/training-resources/afp-learn" },
                 { text: "Courses", url: "/training-resources/afp-learn/afp-learn-courses" },
                 { text: "Webinars", url: "/training-resources/afp-learn/afp-learn-webinars" },
                 { text: "Badges", url: "/training-resources/afp-learn/afp-learn-badges" },
                 { text: "Events", url: "/training-resources/afp-learn/afp-learn-launch-event-sessions" },
+                { text: "Corporate Training", url: "/training-resources/afp-learn/afp-corporate-training" }
               ],
             },
             {

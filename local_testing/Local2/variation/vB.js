@@ -1,104 +1,471 @@
 (function () {
   try {
-    /* main variables */
-    var debug = 1;
-    var variation_name = "cre-t-109";
-
-    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+    /* Main variables */
+    var debug = 0;
+    var variation_name = "tt_PHCC_member"; // Variation name for tracking
+    /* All Pure helper functions */
+    // Function to wait for an element to appear in the DOM
+    function waitForElement(selector, trigger, delayInterval, delayTimeout) {
       var interval = setInterval(function () {
+        // Check if the element exists and trigger callback
         if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
           clearInterval(interval);
-          trigger();
+          trigger(); // Call the trigger function once the element is found
         }
-      }, delayInterval);
+      }, delayInterval); // Check every delayInterval milliseconds
       setTimeout(function () {
-        clearInterval(interval);
+        clearInterval(interval); // Stop checking after delayTimeout
       }, delayTimeout);
     }
-
-    /**
-     * Inserts HTML content or element after a target element
-     * @param {string|HTMLElement} selector - CSS selector string or target element
-     * @param {string|HTMLElement} html - HTML string to insert or DOM element
-     */
-    function insertAfter(selector, html) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (typeof html === "string") {
-        element.insertAdjacentHTML("afterend", html);
-      } else if (html && html.nodeType === 1) {
-        element.insertAdjacentElement("afterend", html);
+    // Function to add event listeners that work across all browsers (including IE 8)
+    function live(selector, event, callback, context) {
+      // Helper function to add event listeners for IE 8 and other browsers
+      function addEvent(el, type, handler) {
+        if (el.attachEvent) el.attachEvent("on" + type, handler); // IE 8
+        else el.addEventListener(type, handler); // Other browsers
       }
-    }
-    /**
-     * Inserts HTML content or element before a target element
-     * @param {string|HTMLElement} selector - CSS selector string or target element
-     * @param {string|HTMLElement} html - HTML string to insert or DOM element
-     */
-    function insertBefore(selector, html) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (typeof html === "string") {
-        element.insertAdjacentHTML("beforebegin", html);
-      } else if (html && html.nodeType === 1) {
-        element.insertAdjacentElement("beforebegin", html);
+      // Polyfill for matches method to ensure it works across browsers
+      this &&
+        this.Element &&
+        (function (ElementPrototype) {
+          ElementPrototype.matches =
+            ElementPrototype.matches ||
+            ElementPrototype.matchesSelector ||
+            ElementPrototype.webkitMatchesSelector ||
+            ElementPrototype.msMatchesSelector ||
+            function (selector) {
+              var node = this,
+                nodes = (node.parentNode || node.document).querySelectorAll(selector),
+                i = -1;
+              while (nodes[++i] && nodes[i] != node);
+              return !!nodes[i];
+            };
+        })(Element.prototype);
+      // Live binding helper using matchesSelector
+      function live(selector, event, callback, context) {
+        addEvent(context || document, event, function (e) {
+          var found,
+            el = e.target || e.srcElement;
+          // Loop through parent elements to find a match
+          while (el && el.matches && el !== context && !(found = el.matches(selector))) el = el.parentElement;
+          if (found) callback.call(el, e); // Call the callback if a match is found
+        });
       }
+      live(selector, event, callback, context); // Bind the event
     }
-    function getQueryVariable(name) {
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
+    const itemsection = `
+ <section class="thumbtack-section thumbtack-section-variation">
 
-      for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-
-        if (decodeURIComponent(pair[0]) === name) {
-          return pair[1] ? decodeURIComponent(pair[1].replace(/\+/g, " ")) : "";
-        }
-      }
-
-      return "";
-    }
-
-    function addElement() {
-      var updateName = getQueryVariable("insurer") || "Colonial Penn";
-      var html = `<div class="cre-t-109-container" style="display: none;">
-        <div class="cre-t-109-wrapper">
-          <div class="cre-t-109-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-              <path
-                d="M8.75 14.25H10.25V8.5H8.75V14.25ZM10.073 6.55625C10.2295 6.40142 10.3077 6.20958 10.3077 5.98075C10.3077 5.75192 10.2303 5.56008 10.0755 5.40525C9.92067 5.25058 9.72883 5.17325 9.5 5.17325C9.27117 5.17325 9.07933 5.25058 8.9245 5.40525C8.76967 5.56008 8.69225 5.75192 8.69225 5.98075C8.69225 6.20958 8.7705 6.40142 8.927 6.55625C9.08333 6.71108 9.27433 6.7885 9.5 6.7885C9.72567 6.7885 9.91667 6.71108 10.073 6.55625ZM9.50175 19C8.18775 19 6.95267 18.7507 5.7965 18.252C4.64033 17.7533 3.63467 17.0766 2.7795 16.2218C1.92433 15.3669 1.24725 14.3617 0.74825 13.206C0.249417 12.0503 0 10.8156 0 9.50175C0 8.18775 0.249333 6.95267 0.748 5.7965C1.24667 4.64033 1.92342 3.63467 2.77825 2.7795C3.63308 1.92433 4.63833 1.24725 5.794 0.74825C6.94967 0.249417 8.18442 0 9.49825 0C10.8123 0 12.0473 0.249333 13.2035 0.748C14.3597 1.24667 15.3653 1.92342 16.2205 2.77825C17.0757 3.63308 17.7528 4.63833 18.2518 5.794C18.7506 6.94967 19 8.18442 19 9.49825C19 10.8123 18.7507 12.0473 18.252 13.2035C17.7533 14.3597 17.0766 15.3653 16.2218 16.2205C15.3669 17.0757 14.3617 17.7528 13.206 18.2518C12.0503 18.7506 10.8156 19 9.50175 19ZM9.5 17.5C11.7333 17.5 13.625 16.725 15.175 15.175C16.725 13.625 17.5 11.7333 17.5 9.5C17.5 7.26667 16.725 5.375 15.175 3.825C13.625 2.275 11.7333 1.5 9.5 1.5C7.26667 1.5 5.375 2.275 3.825 3.825C2.275 5.375 1.5 7.26667 1.5 9.5C1.5 11.7333 2.275 13.625 3.825 15.175C5.375 16.725 7.26667 17.5 9.5 17.5Z"
-                fill="#5E1394"
-              />
-            </svg>
-          </div>
-          <div class="cre-t-109-content">
-            <div class="cre-t-109-header">
-              <div class="cre-t-109-hero-title">Looking at ${updateName}?</div>
-            </div>
-            <div class="cre-t-109-subheader">
-              <div class="cre-t-109-subheader-title">We’ve reviewed 85 providers to find the best overall options—many with <span>no medical exam</span> and <span>faster approval.</span> Start with our top picks below.</div>
-            </div>
-          </div>
+  <!-- Testimonials -->
+  <div class="testimonials">
+    <h2>Real results from real pros.</h2>
+    <div class="testimonial-cards">
+      <div class="card">
+        <img src="https://cdn.optimizely.com/img/20611073899/f9f51c0108ce46fd997594c042ff44a4.png " alt="Alex">
+        
+        <p>"In the first year, I went from about $10K in revenue to almost $100K."</p>
+        <span>— Beth B., founder of It’s Just Stuff</span>
+      </div>
+      <div class="card">
+       <img src="https://cdn.optimizely.com/img/20611073899/0ed2c4ff5c404d3491db45c661364429.png" alt="Beth">
+      
+      <p>"When compared with other apps, Thumbtack is the best."</p>
+        <span>— Alex T., Owner of Smart People Moving</span>
+      </div>
+      <div class="card">
+        <img src="https://cdn.optimizely.com/img/20611073899/beb913574a624b4e993664ebe37fd1fa.png" alt="Mehdi">
+        <p>"We invest our marketing budgets in different streams, but the best return we get is from Thumbtack."</p>
+        <span>— Mehdi E., Owner of Step Up Home Improvements</span>
+      </div>
+    </div>
+    <div class="testimonial-line"></div>
+  </div>
+  <!-- Calculator -->
+  <div class="calculator">
+    <h2>See your earning potential.</h2>
+    <p>Use our Growth Calculator* to explore how your business could grow on Thumbtack. Enter your info into the calculator below to gain a clear view of what's possible. 
+</p>
+    <form>
+      <h6> Tell us about your business. </h6>
+       <p>How much do you typically charge per job? </p>
+      <input type="text" placeholder="Enter $ amount">
+      <p>How many jobs do you expect to complete each month?<p>
+      <input type="text" placeholder="Enter number">
+      <div class="earnings">
+        <h5>Potential earnings.* </h5>
+        <div class="item_secotion_price">
+        <div>Projected monthly revenue: <br> <span class="monthly_revenue">$0</span></div>
+        <div>Projected annual revenue: <br><span class="year_revanu">$0</span></div>
         </div>
-      </div>`;
+      </div>
+      <div class="testimonial-line"></div>
+    </form>
+    <div class="subhead_cta">
+    <p>*This tool is for informational purposes only. Actual earnings depend on various factors, including job demand, competition, and business operations and are subject to applicable Platform Fees and/or discounts. Thumbtack does not guarantee any specific earnings outcome.</p>
+    <a href="">Grow with Thumbtack</a>
+    </div>
+  </div>
+  <!-- Community -->
+<div class="community">
+    <h2>Thumbtack’s Pro Community</h2>
+    <p>Join a network of pros sharing tips, insights and strategies to help you win more work — whether you’re just getting started or scaling fast.</p>
+     <a href="https://community.thumbtack.com/">Connect with other pros</a>
+  </div>
 
-      if (!document.querySelector(".cre-t-109-container")) {
-        insertBefore(".page-description ul", html);
-      }
-    }
+   <p class="relative pt6 tc TT-subcopy"><sup class="b">*</sup>To receive up to $100 in free leads, you must activate Thumbtack services, set up targeting preferences including a form of payment, and add a review to your account. Free leads are not refundable. Your Thumbtack balance doesn't expire, has no cash value, and is subject to Thumbtack's <a href="https://www.thumbtack.com/terms">Terms of Use</a>.</p>
+</section>`;
+
+    const thumbtackHTML = `
+  <section class="thumbtack-section">
+    <div class="container">
+      <h2 class="title Type_title1__CjAkY mb5 tl m_tc">How Thumbtack works:</h2>
+      <div class="feature-row">
+        <!-- Feature 1 -->
+        <div class="feature-item">
+          <img src="https://cdn.optimizely.com/img/20611073899/540b70b3ec874af792522999e18f200a.png" alt="Painting by Kay">
+          <h3 class="Type_title6__pMyYO black">No subscription cost.</h3>
+          <p class="ServiceCard_description__JpHs6">There's no charge to join, no annual fees and no membership fees.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-item">
+          <img src="https://cdn.optimizely.com/img/20611073899/f609a1f9b0b34ff49b4f724543282eaa.png" alt="Steve B. chat">
+          <h3 class="Type_title6__pMyYO black">High intent customers.</h3>
+          <p class="ServiceCard_description__JpHs6">You'll receive leads from customers that choose you, with high intent to hire.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-item">
+          <img src="https://cdn.optimizely.com/img/20611073899/cda0bf5fa0e34284b5f2aeba92160196.png" alt="Insights dashboard">
+          <h3 class="Type_title6__pMyYO black">Control and flexibility.</h3>
+          <p class="ServiceCard_description__JpHs6">You control your pricing and budget for leads, which determines how many leads you get.</p>
+        </div>
+      </div>
+       
+    </div>
+   </section>
+`;
+    const itemsection1 = `
+  <h2 class="title Type_title1__CjAkY mb5 tl m_tc Thumbtack_different ">How Thumbtack is different:</h2>
+<tbody class="see-how-different_featureComparisonChart__20mnw shadow-400 pv3 m_pv5">
+   <tr class="see-how-different_chartBorderGray__wlJS2 grid grid-flush bb tl items-end pb2 mh3 m_mh6">
+      <th class="col-4">
+         <p class="Type_text3__wyjTq black-300 ttu b">Features</p>
+      </th>
+      <th class="col-4 tc">
+         <div class="see-how-different_ttLogo__c39ls">
+            <svg aria-label="Thumbtack logo" width="120" height="17" viewBox="0 0 156 21" fill="currentColor">
+               <path fill-rule="evenodd" d="M115.67 17.929c-1.403 0-2.089-.873-2.087-1.777 0-1.183.88-1.775 1.99-1.93l3.781-.54v.685c-.001 2.71-1.858 3.562-3.685 3.562zm.76-12.358c4.344 0 7.108 2.157 7.108 6.395v8.613h-3.996l.016-1.702c-.8 1.202-2.517 2.124-4.642 2.123-3.425-.001-5.511-2.214-5.51-4.612 0-2.741 2.121-4.267 4.796-4.64 0 0 4.393-.52 5.017-.605 0-1.809-1.687-2.219-3.368-2.219-1.722 0-3.091.601-4.15 1.31l-1.567-2.727c1.643-1.162 3.802-1.936 6.296-1.936zm-92.81 1.99c1.09-1.449 2.716-1.962 4.39-1.962 3.475 0 5.954 2.308 5.954 5.702v9.306h-4.122v-8.04c0-2.11-1.105-3.272-2.985-3.272-1.769 0-3.237 1.1-3.237 3.303v8.01h-4.123V0h4.123v7.56zM78.18 11.3v9.306h-4.106v-8.04c0-2.11-1.121-3.272-2.985-3.272-1.769 0-3.238 1.1-3.238 3.303v8.01H63.73v-8.04c0-2.112-1.105-3.273-2.985-3.273-1.768 0-3.237 1.1-3.237 3.303v8.01h-4.122V5.991h4.011V7.71c1.09-1.553 2.764-2.112 4.502-2.112 2.21 0 4.027.95 5.053 2.504 1.185-1.855 3.19-2.504 5.196-2.504 3.6 0 6.033 2.308 6.033 5.702zm18.46 1.99c0 4.39-3.191 7.693-7.408 7.693-2.116 0-3.585-.814-4.58-1.99v1.613h-4.027V.015h4.106v7.5c.995-1.146 2.432-1.916 4.485-1.916 4.233 0 7.423 3.304 7.423 7.693zm-12.028 0c0 2.309 1.596 4.028 3.933 4.028 2.432 0 3.948-1.795 3.948-4.027 0-2.233-1.516-4.027-3.948-4.027-2.337 0-3.933 1.72-3.933 4.027zm54.715-4.931l-2.97 2.368c-.93-.95-1.926-1.463-3.268-1.463-2.132 0-3.838 1.599-3.838 4.027 0 2.443 1.69 4.027 3.822 4.027 1.326 0 2.464-.573 3.332-1.478l2.938 2.398c-1.437 1.765-3.586 2.745-6.143 2.745-4.881 0-8.15-3.258-8.15-7.692 0-4.42 3.269-7.693 8.15-7.693 2.557 0 4.72.996 6.127 2.76zm15.828-2.368l-5.544 5.463L156 20.607h-5.015l-4.264-6.617-1.864 1.84v4.777h-4.122V.015h4.122v11.41l5.338-5.433h4.961zM46.632 19.038C45.542 20.486 43.916 21 42.242 21c-3.475 0-5.954-2.307-5.954-5.701V5.992h4.122v8.039c0 2.111 1.105 3.273 2.985 3.273 1.769 0 3.237-1.101 3.237-3.303V5.99h4.122v14.616h-4.122v-1.569zM97.184 5.992h2.243V1.648h4.107v4.344h4.568v3.5h-4.568v6.183c0 1.023.741 1.644 1.553 1.644.855 0 1.967-.514 1.967-.514l1.328 3.131s-1.411 1.032-4.564 1.032c-2.085 0-4.391-1.507-4.391-4.434V9.49h-2.243v-3.5zm-85.924-.4v9.284c0 1.6-.44 3.173-1.277 4.56l-.926 1.532-.925-1.533a8.815 8.815 0 0 1-1.278-4.56V7.56c1.094-1.453 2.727-1.968 4.406-1.968zM0 3.937V0h18.115v3.937H0z"></path>
+            </svg>
+         </div>
+      </th>
+      <th class="col-4 tc">
+         <div class="Type_title3___voqu  m_db black-300">Other Services</div>
+      </th>
+   </tr>
+   <tr class="see-how-different_featureComparisonChartRow__4ctV6 grid grid-flush">
+      <td class="see-how-different_chartBorderGray__wlJS2 col-4 tl pv4 br pl3 pr3 m_pl6 items-center itemheading">
+         <div class="Type_title5__9a0XV dn m_db">Customers choose pros directly</div>
+         <div class="Type_title7__9t_vN db m_dn">Customers choose pros directly</div>
+      </td>
+      <td class="col-4 tc pv4 items-center crethumbimag">
+        <img src="https://cdn.optimizely.com/img/20611073899/43aa1e79bf8d4c6bbf35482fa60f64d7.svgz">
+      </td>
+      <td class="col-4 tc pv4 pr3 m_pr6 items-center crethumbimag">
+         <img src="https://cdn.optimizely.com/img/20611073899/0faa22d35df54eb8ac543c5a6b374f2e.svgz">
+      </td>
+   </tr>
+   <tr class="see-how-different_featureComparisonChartRow__4ctV6 grid grid-flush itemheading">
+      <td class="see-how-different_chartBorderGray__wlJS2 col-4 tl pv4 br pl3 pr3 m_pl6 items-center">
+         <div class="Type_title5__9a0XV dn m_db">Pros control their pricing</div>
+         <div class="Type_title7__9t_vN db m_dn">Pros control their pricing</div>
+      </td>
+      <td class="col-4 tc pv4 items-center crethumbimag">
+        <img src="https://cdn.optimizely.com/img/20611073899/43aa1e79bf8d4c6bbf35482fa60f64d7.svgz">
+      </td> 
+      <td class="col-4 tc pv4 pr3 m_pr6 items-center crethumbimag">
+         <img src="https://cdn.optimizely.com/img/20611073899/0faa22d35df54eb8ac543c5a6b374f2e.svgz">
+      </td>
+   </tr>
+   <tr class="see-how-different_featureComparisonChartRow__4ctV6 grid grid-flush itemheading">
+      <td class="see-how-different_chartBorderGray__wlJS2 col-4 tl pv4 br pl3 pr3 m_pl6 items-center">
+         <div class="Type_title5__9a0XV dn m_db">Direct customer communication</div>
+         <div class="Type_title7__9t_vN db m_dn">Direct customer communication</div>
+      </td>
+      <td class="col-4 tc pv4 items-center crethumbimag">
+        <img src="https://cdn.optimizely.com/img/20611073899/43aa1e79bf8d4c6bbf35482fa60f64d7.svgz">
+      </td>
+      <td class="col-4 tc pv4 pr3 m_pr6 items-center crethumbimag">
+         <img src="https://cdn.optimizely.com/img/20611073899/0faa22d35df54eb8ac543c5a6b374f2e.svgz">
+      </td>
+   </tr>
+   <tr class="see-how-different_featureComparisonChartRow__4ctV6 grid grid-flush itemheading">
+      <td class="see-how-different_chartBorderGray__wlJS2 col-4 tl pv4 br pl3 pr3 m_pl6 items-center">
+         <div class="Type_title5__9a0XV dn m_db">Limited competition per lead</div>
+         <div class="Type_title7__9t_vN db m_dn">Limited competition per lead</div>
+      </td>
+      <td class="col-4 tc pv4 items-center crethumbimag">
+        <img src="https://cdn.optimizely.com/img/20611073899/43aa1e79bf8d4c6bbf35482fa60f64d7.svgz">
+      </td>
+      <td class="col-4 tc pv4 pr3 m_pr6 items-center crethumbimag">
+         <img src="https://cdn.optimizely.com/img/20611073899/0faa22d35df54eb8ac543c5a6b374f2e.svgz">
+      </td>
+   </tr>
+   <tr class="see-how-different_featureComparisonChartRow__4ctV6 grid grid-flush itemheading">
+      <td class="see-how-different_chartBorderGray__wlJS2 col-4 tl pv4 br pl3 pr3 m_pl6 items-center">
+         <div class="Type_title5__9a0XV dn m_db">No hidden fees or contracts</div>
+         <div class="Type_title7__9t_vN db m_dn">No hidden fees or contracts</div>
+      </td>
+      <td class="col-4 tc pv4 items-center crethumbimag">
+        <img src="https://cdn.optimizely.com/img/20611073899/43aa1e79bf8d4c6bbf35482fa60f64d7.svgz">
+      </td>
+      <td class="col-4 tc pv4 pr3 m_pr6 items-center crethumbimag">
+         <img src="https://cdn.optimizely.com/img/20611073899/0faa22d35df54eb8ac543c5a6b374f2e.svgz">
+      </td>
+   </tr>
+   <tr class="see-how-different_featureComparisonChartRow__4ctV6 grid grid-flush itemheading">
+      <td class="see-how-different_chartBorderGray__wlJS2 col-4 tl pv4 br pl3 pr3 m_pl6 items-center">
+         <div class="Type_title5__9a0XV dn m_db">Free pro community</div>
+         <div class="Type_title7__9t_vN db m_dn">Free pro community</div>
+      </td>
+      <td class="col-4 tc pv4 items-center crethumbimag">
+        <img src="https://cdn.optimizely.com/img/20611073899/43aa1e79bf8d4c6bbf35482fa60f64d7.svgz">
+      </td>
+      <td class="col-4 tc pv4 pr3 m_pr6 items-center crethumbimag">
+         
+         <img src="https://cdn.optimizely.com/img/20611073899/0faa22d35df54eb8ac543c5a6b374f2e.svgz">
+      
+      </td>
+   </tr>
+ 
+   
+</tbody>`
+      ;
 
     /* Variation Init */
     function init() {
-      /* start your code here */
-      if (document.body.classList.contains(variation_name)) return;
 
-      document.body.classList.add(variation_name);
-      addElement();
+      document.querySelector("body").classList.add(variation_name);
+
+      // CHANGE 1: Update page title for browser tab / link preview
+      document.title = "PHCC member-Thumbtack";
+
+      var h1 = document.querySelector('[class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"]');
+      if (h1) {
+        var parts = h1.innerHTML.split('<br>');
+        if (parts.length === 2) {
+          parts[0] = 'Grow your business in ';
+          h1.innerHTML = parts.join('<br>');
+        }
+      }
+      var target = document.querySelector('html body [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"]');
+      var alreadyExists = document.querySelector('.section_topimage');
+
+      if (target && !alreadyExists) {
+        target.insertAdjacentHTML('beforebegin', `
+                  <div class="section_topimage">
+                      <img class="desktop_image" src="https://cdn.optimizely.com/img/20611073899/d508327bdcc04e8591cae24b52e19157.svgz">
+                    </div>
+              `);
+      }
+      const target1 = document.querySelector('[class*="see-how-different_seeHowDifferentSection"] [class*="Wrap_root"] .grid.grid-wide');
+      if (target1 && !document.querySelector('.thumbtack-section')) {
+        target1.insertAdjacentHTML('afterend', thumbtackHTML);
+      }
+      // const inputField = document.querySelector('[placeholder="e.g. House cleaning"]');
+      const inputField = document.querySelector('[placeholder="Enter the service you provide."]');
+      if (inputField) {
+        inputField.setAttribute('placeholder', 'e.g. Plumbing');
+      }
+      const targetTableBody = document.querySelector('[class*="see-how-different_featureComparisonTable"] > tbody');
+      const existingHeading = document.querySelector('.ttheading');
+      if (targetTableBody && !existingHeading) {
+        targetTableBody.insertAdjacentHTML(
+          'beforebegin',
+          '<h2 class="title Type_title1__CjAkY mb5 tl m_tc ttheading">How Thumbtack is different:</h2>'
+        );
+      }
+      waitForElement('[class*="see-how-different_featureComparisonTable"]', function () {
+
+        document.querySelector('[class*="see-how-different_featureComparisonTable"]').innerHTML = itemsection1;
+      }, 100, 15000);
+
+      // waitForElement(
+      //   '[class*="hero_heroInnerContainer"] [class*="hero_heroInnerOffsetRight"] .br-pill [class*="Type_text1"]',
+      //   function() {
+      //     var el = document.querySelector('[class*="hero_heroInnerContainer"] [class*="hero_heroInnerOffsetRight"] .br-pill [class*="Type_text1"]');
+
+      //     if (el) {
+      //       el.innerHTML = 'In partnership with PHCC member. <a href="https://www.thumbtack.com/sales?utm_source=partner&utm_medium=partnerships&utm_campaign=sherwinwilliams">Book a call with our team.</a>';
+      //     }
+      //   },
+      //   100,
+      //   15000
+      // );
+
+
+
+      waitForElement('[class*="hero_heroTitle"] + p', function () {
+
+        document.querySelector('[class*="hero_heroTitle"] + p').innerText = 'Receive up to $100 in free leads when you set up your Thumbtack profile as a PHCC member.*';
+      }, 100, 15000);
+
+
+
+      waitForElement('[class*="see-how-different_seeHowDifferentSection"] > div', function () {
+        const target = document.querySelector('[class*="see-how-different_seeHowDifferentSection"] > div');
+
+        // Check if target exists and button not already added
+        if (target && !document.querySelector('#ttsearch-location-input')) {
+          target.insertAdjacentHTML('afterend', '<div id="ttsearch-location-input">Sign up for free</div>');
+
+          // Add scroll to top on click
+          const cta = document.querySelector('#ttsearch-location-input');
+          if (cta) {
+            cta.addEventListener('click', function () {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+          }
+        }
+      }, 100, 15000);
+
+      waitForElement('[data-testid="get-started-button-mobile"] span', function () {
+        document.querySelector('[data-testid="get-started-button-mobile"] span').innerHTML = "Sign up for free"
+      }, 100, 15000);
+      if (window.innerWidth < 768) {
+        waitForElement('#new-pro-lp-cs', function () {
+          document.querySelector('#new-pro-lp-cs').setAttribute("placeholder", "Enter the service you provide.");
+        }, 100, 15000);
+      }
+
+      // Add the new section after the "See how Thumbtack is different" section
+
+
+      waitForElement('[data-testid="get-started-button-mobile"] span', function () {
+
+        if (!document.querySelector('.thumbtack-section-variation')) {
+          document.querySelector('[class*="see-how-different_seeHowDifferentSection"]').insertAdjacentHTML("afterend", itemsection);
+        }
+
+      }, 100, 15000);
+
+      //   document.querySelector('.tt_clicksignup').addEventListener('click', function () {
+      //     document.querySelector('[class*="get-started_titlePadding"] button').click(); // Trigger the click on the "Get Started" button
+      //   });
+
+
+
+      const perJobInput = document.querySelector('input[placeholder="Enter $ amount"]');
+      const jobsPerMonthInput = document.querySelector('input[placeholder="Enter number"]');
+      const monthlyRevenueEl = document.querySelector('.monthly_revenue');
+      const yearlyRevenueEl = document.querySelector('.year_revanu');
+      const ctaButton = document.querySelector('.subhead_cta a');
+
+      // Create error message elements (but don't show them initially)
+      function createErrorElement(input) {
+        let errorEl = input.nextElementSibling;
+        if (!errorEl || !errorEl.classList.contains('input-error')) {
+          errorEl = document.createElement('div');
+          errorEl.className = 'input-error';
+          errorEl.style.color = 'red';
+          errorEl.style.fontSize = '14px';
+          errorEl.style.marginTop = '5px';
+          errorEl.style.display = 'none'; // Hide initially
+          input.insertAdjacentElement('afterend', errorEl);
+        }
+        return errorEl;
+      }
+
+      const perJobErrorEl = createErrorElement(perJobInput);
+      const jobsErrorEl = createErrorElement(jobsPerMonthInput);
+
+      function cleanCurrencyInput(value) {
+        return parseFloat(value.replace(/[^0-9.]/g, ''));
+      }
+
+      function calculateEarnings() {
+        const perJobValue = perJobInput.value.trim();
+        const jobsValue = jobsPerMonthInput.value.trim();
+
+        let hasError = false;
+
+        // Show error if per job is empty
+        if (perJobValue === '') {
+          perJobErrorEl.textContent = 'Please add value';
+          perJobErrorEl.style.display = 'block';
+          hasError = true;
+        } else {
+          perJobErrorEl.textContent = '';
+          perJobErrorEl.style.display = 'none';
+        }
+
+        // Show error if jobs/month is empty
+        if (jobsValue === '') {
+          jobsErrorEl.textContent = 'Please add value';
+          jobsErrorEl.style.display = 'block';
+          hasError = true;
+        } else {
+          jobsErrorEl.textContent = '';
+          jobsErrorEl.style.display = 'none';
+        }
+
+        if (!hasError) {
+          const perJobCost = cleanCurrencyInput(perJobValue);
+          const jobsPerMonth = parseFloat(jobsValue);
+
+          if (!isNaN(perJobCost) && !isNaN(jobsPerMonth)) {
+            const monthlyRevenue = perJobCost * jobsPerMonth;
+            const yearlyRevenue = monthlyRevenue * 12;
+
+            monthlyRevenueEl.textContent = "$" + monthlyRevenue.toLocaleString();
+            yearlyRevenueEl.textContent = "$" + yearlyRevenue.toLocaleString();
+          } else {
+            monthlyRevenueEl.textContent = "$0";
+            yearlyRevenueEl.textContent = "$0";
+          }
+        } else {
+          monthlyRevenueEl.textContent = "$0";
+          yearlyRevenueEl.textContent = "$0";
+        }
+      }
+
+      // Reset revenue only — no error shown here
+      function resetRevenueOnEmpty() {
+        if (perJobInput.value.trim() === '' || jobsPerMonthInput.value.trim() === '') {
+          monthlyRevenueEl.textContent = "$0";
+          yearlyRevenueEl.textContent = "$0";
+        }
+      }
+
+      // CTA click triggers validation and calculation
+      ctaButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        calculateEarnings();
+      });
+
+      // Input events only clear revenue (no errors)
+      perJobInput.addEventListener('input', resetRevenueOnEmpty);
+      jobsPerMonthInput.addEventListener('input', resetRevenueOnEmpty);
+
+
+
+
+
+
+
+
     }
 
-    /* Init variation */
-    waitForElement(".page-description ul", init);
+    var initInterval = setInterval(function () {
+      if (document.body) {
+        init();
+      }
+    }, 50);
+
+    /* Failsafe timeout after 10 seconds (10,000 milliseconds) */
+    setTimeout(function () {
+      clearInterval(initInterval);
+    }, 10000);
+
   } catch (e) {
-    if (debug) console.log(e, "error in Test " + variation_name);
+    if (debug) console.log(e, "error in Test" + variation_name); // Log errors if debug is enabled
   }
 })();

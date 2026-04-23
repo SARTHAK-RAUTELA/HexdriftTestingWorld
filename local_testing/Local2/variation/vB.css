@@ -1,77 +1,123 @@
-html body.cre-t-2-Availability_Badge .availability-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 22px;
-    /* margin-top: 10px; */
-    font-size: 20px;
-    color: #ffffff;
+html body.cre-t-06 .cre-t-06-doctor-cover,
+html body.cre-t-06 .cre-t-06-after-hours {
+    display: none;
 }
 
-html body.cre-t-2-Availability_Badge .availability-badge .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #2ecc71;
-    border-radius: 50%;
-    display: inline-block;
-    animation: pulse 1.5s infinite;
-    margin-right: 7px;
-    margin-bottom: 3px;
-}
-
-html body.cre-t-2-Availability_Badge .availability-badge p b {
-    margin: 0px 2px;
-}
-
-html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div:nth-child(3) {
-    margin-bottom: 0;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
+@media screen and (max-width: 767px) {
+    html body.cre-t-06 .cre-t-06-hide {
+        display: none;
     }
 
-    50% {
-        transform: scale(1.4);
-        opacity: 0.6;
+    html body.home.cre-t-1-updatebanner.cre-t-06.cre-t-4-banner [data-elementor-post-type="page"] #hero .e-con-inner {
+        padding-top: 324px;
     }
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
+    html body.cre-t-06 [data-elementor-post-type="page"] #first-section {
+        padding-top: 54px;
+        background-image: none;
+        background-color: #fff;
     }
-}
 
-@media (min-width: 768px) {
+    html body.cre-t-06 [data-elementor-post-type="page"] #hero .e-con-inner {
+        padding-bottom: 147px;
+    }
 
-    html body.cre-t-2-Availability_Badge .availability-badge {
+    html body.cre-t-06 .cre-t-06-doctor-cover,
+    html body.cre-t-06 .cre-t-06-after-hours {
+        display: block;
+        width: 100%;
+    }
+
+    html body.cre-t-06 .cre-t-06-after-hours {
+        width: 100vw;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        background-color: #1F4351;
+        order: 999;
+        align-self: center;
+    }
+
+    html body.cre-t-06 .cre-t-06-doctor-cover-inner,
+    html body.cre-t-06 .cre-t-06-after-hours-inner {
         display: flex;
-        min-width: 600px;
+        flex-direction: column;
+        gap: 8px;
+        color: #1B3748;
     }
-}
 
-@media (max-width: 768px) {
-    html body.cre-t-2-Availability_Badge .availability-badge {
-        min-width: 318px;
-        margin-bottom: 10px;
-        line-height: 30px;
-        font-size: 18px;
+    html body.cre-t-06 .cre-t-06-after-hours-inner {
+        padding-top: 36px;
+        padding-bottom: 73px;
     }
-}
 
-@media (max-width: 766px) {
-    html body.cre-t-2-Availability_Badge .availability-badge {
+    html body.cre-t-06 .cre-t-06-doctor-cover-header,
+    html body.cre-t-06 .cre-t-06-after-hours-header {
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-self: center;
+        gap: 3px;
+    }
+
+    html body.cre-t-06 .cre-t-06-doctor-cover-title,
+    html body.cre-t-06 .cre-t-06-after-hours-title {
+        text-align: center;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+
+    html body.cre-t-06 .cre-t-06-doctor-cover-text,
+    html body.cre-t-06 .cre-t-06-after-hours-text {
+        text-align: center;
+        font-size: 14px;
+        line-height: 26px;
+        font-weight: 400;
+    }
+
+    html body.cre-t-06 .cre-t-06-doctor-cover-list {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    html body.cre-t-06 .cre-t-06-doctor-cover-list-wrapper,
+    html body.cre-t-06 .cre-t-06-after-hours-list-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    html body.cre-t-06 .cre-t-06-doctor-cover-list-item {
+        font-size: 14px;
+        line-height: 36px;
+        font-weight: 600;
+    }
+
+    /* After hours */
+    html body.cre-t-06 .cre-t-06-after-hours-inner {
+        color: #fff;
+        gap: 9px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    html body.cre-t-06 .cre-t-06-after-hours-list-item {
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 400;
+    }
+
+    html body.cre-t-06 .cre-t-06-after-hours-list-item-bold {
+        font-weight: 600;
     }
 }
 
-html body.cre-t-2-Availability_Badge .availability-badge p {
-    text-wrap: wrap;
-    line-height: 26px;
-}
+@media screen and (max-width: 340px) {
+    html body.cre-t-06 .cre-t-06-doctor-cover-list {
+        gap: 20px;
+    }
 
-html body.cre-t-2-Availability_Badge #hero>.e-con-inner .e-child>div[data-id='87ecf6c'] {
-    margin-bottom: 10px;
+    html body.cre-t-06 .cre-t-06-doctor-cover-list-item {
+        line-height: 26px;
+    }
 }

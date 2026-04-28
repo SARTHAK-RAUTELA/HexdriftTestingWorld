@@ -1,123 +1,137 @@
-html body.cre-t-06 .cre-t-06-doctor-cover,
-html body.cre-t-06 .cre-t-06-after-hours {
+/* Hiding Variation Navbar On Other devices */
+html body.cre-t-01 .cre-t-01-afp-nav {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  /* Hiding the Original Navbar */
+  html body.cre-t-01 .afp-nav {
     display: none;
+  }
+  /* Showing Variation Navbar on Desktop Device as Per Requirement */
+  html body.cre-t-01 .cre-t-01-afp-nav {
+    display: block;
+  }
+  html body.cre-t-01 nav.cre-t-01-afp-nav {
+    margin-left: auto;
+  }
+  html body.cre-t-01 .cre-t-01-afp-nav-ulList {
+    display: flex;
+    column-gap: 64px;
+    position: relative;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+  }
+  html body.cre-t-01 button.cre-t-01-afp-nav-Link {
+    padding: 30px 0;
+    border: 0;
+    background: none;
+    font-family: GothamNarrowBold, Arial, Helvetica, sans;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: 0;
+    background: none;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+  html body.cre-t-01 .cre-t-01-afp-nav-Link.cre-t-01-has-sub::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    padding: 4px;
+    margin-left: auto;
+    margin-bottom: 3px;
+    transform: rotate(-45deg);
+    transition:
+      transform 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+  }
+  html
+    body.cre-t-01
+    .cre-t-01-afp-nav-ulList
+    > .cre-t-01-afp-nav-item
+    > .cre-t-01-afp-nav-sub-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: #eff0f1;
+    color: #000;
+    display: none;
+  }
+  html body.cre-t-01 .cre-t-01-afp-nav-Link.cre-t-01-afp-nav-sub-nav-title {
+    margin-bottom: 8px;
+    font-family: GothamNarrowMedium, Arial, Helvetica, sans;
+    font-size: 1.125rem;
+  }
+  html body.cre-t-01 a.cre-t-01-afp-nav-Link {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: GothamNarrow, Arial, Helvetica, sans;
+    font-size: 0.9375rem;
+    color: currentColor;
+    display: block;
+    position: relative;
+  }
+  html
+    body.cre-t-01
+    .cre-t-01-afp-nav-ulList
+    > .cre-t-01-afp-nav-item
+    > .cre-t-01-afp-nav-sub-nav.open {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    row-gap: 32px;
+  }
+
+
+
+  html body.cre-t-01 .cre-t-01-afp-nav-ulList > .cre-t-01-afp-nav-item > .cre-t-01-afp-nav-sub-nav.open[cre-test-submenufor="learning"]{
+    min-width: 1000px;
+    transform: translateX(-12%);
 }
 
-@media screen and (max-width: 767px) {
-    html body.cre-t-06 .cre-t-06-hide {
-        display: none;
-    }
 
-    html body.home.cre-t-1-updatebanner.cre-t-06.cre-t-4-banner [data-elementor-post-type="page"] #hero .e-con-inner {
-        padding-top: 324px;
-    }
-
-    html body.cre-t-06 [data-elementor-post-type="page"] #first-section {
-        padding-top: 54px;
-        background-image: none;
-        background-color: #fff;
-    }
-
-    html body.cre-t-06 [data-elementor-post-type="page"] #hero .e-con-inner {
-        padding-bottom: 147px;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover,
-    html body.cre-t-06 .cre-t-06-after-hours {
-        display: block;
-        width: 100%;
-    }
-
-    html body.cre-t-06 .cre-t-06-after-hours {
-        width: 100vw;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        background-color: #1F4351;
-        order: 999;
-        align-self: center;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover-inner,
-    html body.cre-t-06 .cre-t-06-after-hours-inner {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        color: #1B3748;
-    }
-
-    html body.cre-t-06 .cre-t-06-after-hours-inner {
-        padding-top: 36px;
-        padding-bottom: 73px;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover-header,
-    html body.cre-t-06 .cre-t-06-after-hours-header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-self: center;
-        gap: 3px;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover-title,
-    html body.cre-t-06 .cre-t-06-after-hours-title {
-        text-align: center;
-        font-size: 18px;
-        line-height: 24px;
-        font-weight: 700;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover-text,
-    html body.cre-t-06 .cre-t-06-after-hours-text {
-        text-align: center;
-        font-size: 14px;
-        line-height: 26px;
-        font-weight: 400;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover-list {
-        display: flex;
-        justify-content: center;
-        gap: 28px;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover-list-wrapper,
-    html body.cre-t-06 .cre-t-06-after-hours-list-wrapper {
-        display: flex;
-        flex-direction: column;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover-list-item {
-        font-size: 14px;
-        line-height: 36px;
-        font-weight: 600;
-    }
-
-    /* After hours */
-    html body.cre-t-06 .cre-t-06-after-hours-inner {
-        color: #fff;
-        gap: 9px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    html body.cre-t-06 .cre-t-06-after-hours-list-item {
-        font-size: 14px;
-        line-height: 25px;
-        font-weight: 400;
-    }
-
-    html body.cre-t-06 .cre-t-06-after-hours-list-item-bold {
-        font-weight: 600;
-    }
-}
-
-@media screen and (max-width: 340px) {
-    html body.cre-t-06 .cre-t-06-doctor-cover-list {
-        gap: 20px;
-    }
-
-    html body.cre-t-06 .cre-t-06-doctor-cover-list-item {
-        line-height: 26px;
-    }
+  html body.cre-t-01 .cre-t-01-nav-badge {
+    border-radius: 4px;
+    background: #2c8fbf;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    margin-left: 9px;
+    /* font-family: Arial, sans-serif; */
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 11px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  html
+    body.cre-t-01
+    .cre-t-01-afp-nav-ulList
+    .cre-t-01-afp-nav-Link.active:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 8px;
+    background: #0076a8;
+  }
+  html
+    body.cre-t-01
+    .cre-t-01-afp-nav-ulList
+    .cre-t-01-afp-nav-Link.active:after {
+    transform: rotate(135deg);
+  }
+  html body.cre-t-01 .topLevel-list-item-2 .cre-t-01-afp-nav-sub-nav.open[cre-test-submenufor="certification"]{
+    column-gap: unset;
+  }
 }

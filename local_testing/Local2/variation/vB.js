@@ -1,286 +1,288 @@
-if (!window.location.href.includes("https://eweb.afponline.org")) {
-  // Code to execute if the URL does NOT contain "https://eweb.afponline.org"
-  (function () {
-    try {
-      /* main variables */
-      var debug = 0;
-      var variation_name = "cre-t-01";
-      var baseUrl = "https://www.financialprofessionals.org";
-      var navData = [
-        {
-          title: "Membership",
-          subGroups: [
-            {
-              groupTitle: "Membership",
-              menuSubLinks: [
-                { text: "Join AFP", url: "/membership/explore-membership/join" },
-                { text: "Member Benefits", url: "/membership/explore-membership/benefits" },
-                { text: "Pricing", url: "/membership/explore-membership/join#InteriorContent_C089_Col01" },
-                { text: "Convince Your Boss", url: "/membership/explore-membership/convince-your-boss?utm_source=chatgpt.com" },
-                { text: "Corporate Membership", url: "/membership/explore-membership/afp-corporate-membership" },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Certification",
-          subGroups: [
-            {
-              groupTitle: "Certification",
-              menuSubLinks: [
-                { text: "CTP Certification (Treasury)", url: "https://ctpcert.financialprofessionals.org/" },
-                { text: "FPAC Certification (FP&A)", url: "https://fpacert.financialprofessionals.org/" },
-                // { text: "AI for Finance Certificate", url: "/training-resources/afp-learn/ai-for-finance-certificate", badge: "New" },
-                { text: "Compare Certifications", url: "https://fpacert.financialprofessionals.org/certification/finance-certifications" },
-                { text: "Benefits of Certification", url: "/certification/benefits-of-afp-certifications" },
-                { text: "Maintain Your Certification", url: "/certification/already-certified/maintaining-your-credential" },
-                { text: "Submit your Credits", url: "/certification/already-certified/submit-your-credits" },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Conferences",
-          subGroups: [
-            {
-              groupTitle: "Conferences",
-              menuSubLinks: [
-                { text: "AFP 2026", url: "/events/conference/afp-2024" },
-                { text: "FP&A Forum", url: "/events/meetings/afp-fpa-forum" },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Learning",
-          subGroups: [
-            {
-              groupTitle: "Topics",
-              menuSubLinks: [
-                { text: "Treasury", url: "/topics/treasury" },
-                { text: "FP&A", url: "/topics/fp-a-topics/" },
-                { text: "Payments", url: "/topics/payment-topics/" },
-              ],
-            },
-            {
-              groupTitle: "Insights",
-              menuSubLinks: [
-                { text: "Articles", url: "/training-resources/resources/articles" },
-                { text: "Guides", url: "/training-resources/resources/guides" },
-                { text: "Research", url: "/training-resources/resources/survey-research-economic-data" },
-              ],
-            },
-            {
-              groupTitle: "Training",
-              menuSubLinks: [
-                { text: "AI for Finance Certificate", url: "/training-resources/afp-learn/ai-for-finance-certificate", badge: "New" },
-                { text: "AFP Learn", url: "/training-resources/afp-learn" },
-                { text: "Courses", url: "/training-resources/afp-learn/afp-learn-courses" },
-                { text: "Webinars", url: "/training-resources/afp-learn/afp-learn-webinars" },
-                { text: "Badges", url: "/training-resources/afp-learn/afp-learn-badges" },
-                { text: "Events", url: "/training-resources/afp-learn/afp-learn-launch-event-sessions" },
-                { text: "Corporate Training", url: "/training-resources/afp-learn/afp-corporate-training" },
-              ],
-            },
-            {
-              groupTitle: "Professional Tools",
-              menuSubLinks: [
-                { text: "AFP Service Codes", url: "/training-resources/resources/afp-service-codes" },
-                { text: "Marketplace", url: "/training-resources/resources/afp-marketplace" },
-                { text: "Glossary", url: "/glossary" },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Member Hub",
-          subGroups: [
-            {
-              groupTitle: "Getting Started",
-              menuSubLinks: [{ text: "AFP Power Hour", url: "/events/meetings/afp-power-hour--discover-what%27s-possible" }],
-            },
-            {
-              groupTitle: "Training",
-              menuSubLinks: [
-                { text: "AFP Learn", url: "/training-resources/afp-learn" },
-                { text: "Conference Session Recordings", url: "https://conference.financialprofessionals.org/program/sessions/archives" },
-              ],
-            },
-            {
-              groupTitle: "Community",
-              menuSubLinks: [
-                { text: "AFP Collaborate", url: "https://collaborate.financialprofessionals.org/" },
-                { text: "Member Meet-Ups", url: "/events/meetings/virtual-meet-ups" },
-              ],
-            },
-            {
-              groupTitle: "Membership",
-              menuSubLinks: [
-                { text: "Renew Membership", url: "/membership/member-resources/renew" },
-                { text: "Member Tools", url: "/membership/member-resources/member-only-tools" },
-                { text: "Earn Certification Credits", url: "/certification/already-certified/ways-to-earn-credits/more-than-membership" },
-              ],
-            },
-          ],
-        },
-      ];
+(function () {
+  try {
 
-      function formatLink(url) {
-        return url.startsWith("http") ? url : baseUrl + url;
+    function waitForElement(selector, trigger, delayInterval, delayTimeout) {
+      var interval = setInterval(function () {
+        var el = document.querySelector(selector);
+        if (el) { clearInterval(interval); trigger(el); }
+      }, delayInterval);
+      setTimeout(function () { clearInterval(interval); }, delayTimeout);
+    }
+
+    function debounce(func, timeout) {
+      timeout = timeout || 200;
+      var timer;
+      return function () {
+        clearTimeout(timer);
+        var args = arguments;
+        timer = setTimeout(function () { func.apply(null, args); }, timeout);
+      };
+    }
+
+    function observeSelector(selector, callback, options) {
+      options = options || {};
+      var doc = options.document || document;
+      var observeTarget = doc.documentElement || doc.body;
+      var processed = new Map();
+      function handle(el) {
+        if (!processed.has(el)) { processed.set(el, true); callback(el); }
       }
-      function live(selector, event, callback, context) {
-        if (typeof callback !== "function") return;
-        context = context || document;
+      function scan() { doc.querySelectorAll(selector).forEach(handle); }
+      var debouncedScan = debounce(scan, 100);
+      scan();
+      new MutationObserver(function () { debouncedScan(); })
+        .observe(observeTarget, { childList: true, subtree: true });
+    }
 
-        context.addEventListener(event, function (e) {
-          var el = e.target.closest(selector);
-          if (el && context.contains(el)) {
-            callback.call(el, e);
+    function getFormProviderProps(iframeDoc) {
+      var ta = iframeDoc.querySelector('[name="conditionDescription"]');
+      if (!ta) return null;
+      var fk = Object.keys(ta).find(function (k) { return k.startsWith("__reactFiber"); });
+      if (!fk) return null;
+      var f = ta[fk]["re" + "turn"];
+      var i = 0;
+      while (f && i < 80) {
+        i++;
+        var p = f.memoizedProps;
+        if (p && p.setValue && p.handleSubmit && p.getValues) return p;
+        f = f["re" + "turn"];
+      }
+      return null;
+    }
+
+    function getBtnProps(iframeDoc) {
+      var btn = iframeDoc.querySelector('[data-testid="request-consult__next-step-button"]');
+      if (!btn) return null;
+      var bk = Object.keys(btn).find(function (k) { return k.startsWith("__reactProps"); });
+      return bk ? { props: btn[bk], el: btn } : null;
+    }
+
+    function ChangeFrom(iframeDoc) {
+      if (!iframeDoc) return;
+
+      var MIN_LIMIT = 15;
+      var NATIVE_LIMIT = 30;
+      var PAD_CHAR = ".";
+
+      /* ===== CSS ===== */
+      var style = iframeDoc.createElement("style");
+      style.textContent = "header{display:none!important;}.css-1ymu8si{display:none!important;}";
+      iframeDoc.head.appendChild(style);
+
+      /* ===== Clear Mui error ===== */
+      var isClearingError = false;
+      function clearMuiError(textarea) {
+        if (isClearingError) return;
+        isClearingError = true;
+        textarea.removeAttribute("aria-invalid");
+        var muiBase = textarea.closest(".MuiInputBase-root");
+        if (muiBase) muiBase.classList.remove("Mui-error");
+        var fc = textarea.closest(".MuiFormControl-root");
+        if (fc) fc.classList.remove("Mui-error");
+        var wrapper = textarea.closest('[data-testid="condition-description__symptoms-text-input"]');
+        if (wrapper) {
+          var sib = wrapper.parentElement;
+          if (sib) {
+            var lbl = sib.querySelector("label");
+            if (lbl) { lbl.classList.remove("Mui-error"); lbl.style.color = ""; }
           }
+        }
+        setTimeout(function () { isClearingError = false; }, 150);
+      }
+
+      function watchErrors(textarea) {
+        if (textarea._errorWatched) return;
+        textarea._errorWatched = true;
+        var debouncedClear = debounce(function () {
+          if (textarea.value.length >= MIN_LIMIT) clearMuiError(textarea);
+        }, 150);
+        new MutationObserver(function (mutations) {
+          if (isClearingError) return;
+          var hit = mutations.some(function (m) {
+            return m.type === "attributes" && m.attributeName === "class" &&
+              m.target.classList && m.target.classList.contains("Mui-error");
+          });
+          if (hit) debouncedClear();
+        }).observe(iframeDoc.body, {
+          subtree: true, attributes: true, attributeFilter: ["class", "aria-invalid"]
         });
       }
 
-      function addClass(selector, className) {
-        var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-        if (!element) return;
-        if (element.classdivst) element.classdivst.add(className);
-        else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
-          element.className += " " + className;
-        }
-      }
+      /* ===== Character counter ===== */
+      function enhanceTextarea(textarea) {
+        if (textarea.classList.contains("counter-bound")) return;
+        textarea.classList.add("counter-bound");
+        watchErrors(textarea);
 
-      /* all Pure helper functions */
-      function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
-        var interval = setInterval(function () {
-          if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
-            clearInterval(interval);
-            trigger();
+        function initUI() {
+          if (textarea.classList.contains("counter-added")) return;
+          textarea.classList.add("counter-added");
+          var parent = textarea.parentNode;
+          parent.style.position = "relative";
+          parent.insertAdjacentHTML("beforeend",
+            '<div class="custom-char-counter" style="font-size:12px;text-align:right;' +
+            'position:absolute;bottom:3px;right:10px;color:black;pointer-events:none;z-index:10;">' +
+            '0 / ' + MIN_LIMIT + '</div>'
+          );
+          var counter = parent.querySelector(".custom-char-counter");
+          function update() {
+            var len = textarea.value.length;
+            counter.innerText = len + " / " + MIN_LIMIT;
+            counter.style.color = len >= MIN_LIMIT ? "green" : "black";
+            if (len >= MIN_LIMIT) clearMuiError(textarea);
           }
-        }, delayInterval);
-        setTimeout(function () {
-          clearInterval(interval);
-        }, delayTimeout);
-      }
-
-      var newNav = `
-            <nav class="${variation_name}-afp-nav" aria-label="cre-t-01-Main-Navigation">
-                <div class="${variation_name}-afp-nav-ulList"></div>
-            </nav>`;
-
-      function renderNav(data) {
-        var navulList = document.querySelector(`.${variation_name}-afp-nav-ulList`);
-        if (!navulList) return;
-
-        var newNavhtml = data
-          .map(
-            (item, index) => `
-                <div class="${variation_name}-afp-nav-item topLevel topLevel-list-item-${index + 1}">
-                    <button type="button" class="${variation_name}-afp-nav-Link ${variation_name}-has-sub" aria-expanded="false">
-                    ${item.title}
-                    </button>
-                    <div class="${variation_name}-afp-nav-sub-nav" cre-test-subMenuFor=${item.title.split(" ").join("-").toLowerCase()}>
-                        ${item.subGroups
-                          .map(
-                            (group, groupIndex) => `
-                            <div class="${variation_name}-afp-nav-item">
-                                <div class="${variation_name}-afp-nav-Link ${variation_name}-afp-nav-sub-nav-title">
-                                     ${group.groupTitle}
-                                </div>
-                                <div class="${variation_name}-afp-nav-sub-nav">
-                                    ${group.menuSubLinks
-                                      .map(
-                                        (menuSubLink, linkIndex) => `
-                                        <div class="${variation_name}-afp-nav-item subNavItem${linkIndex + 1}" cre-test-subLinkFor=${menuSubLink.text.split(" ").join("-").toLowerCase()}>
-                                           <a href="${formatLink(menuSubLink.url)}" class="${variation_name}-afp-nav-Link">
-                                             ${menuSubLink.text}
-                                            ${menuSubLink.badge ? `<span class="${variation_name}-nav-badge">${menuSubLink.badge}</span>` : ""}
-                                            </a>
-                                        </div>
-                                    `,
-                                      )
-                                      .join("")}
-                                </div>
-                            </div>
-                        `,
-                          )
-                          .join("")}
-                    </div>
-                </div>`,
-          )
-          .join("");
-        navulList.innerHTML = newNavhtml;
-      }
-
-      function newMenu() {
-        var oldNav = document.querySelector(".afp-nav");
-        var alreadyExist = document.querySelector(`.${variation_name}-afp-nav`);
-        if (oldNav && !alreadyExist) {
-          oldNav.insertAdjacentHTML("afterend", newNav);
-          renderNav(navData);
+          textarea.addEventListener("input", update);
+          update();
         }
+        ["focus", "click", "input"].forEach(function (evt) {
+          textarea.addEventListener(evt, initUI);
+        });
       }
 
-      function eventHandler() {
-        live(".cre-t-01-afp-nav-item", "click", function (e) {
-          var btn = e.target.closest(".cre-t-01-afp-nav-Link");
-          if (!btn) return;
-          var subNav = btn.nextElementSibling;
-          if (subNav && subNav.classList.contains("cre-t-01-afp-nav-sub-nav")) {
-            var isOpen = subNav.classList.contains("open");
-            document.querySelectorAll(".cre-t-01-afp-nav-sub-nav.open").forEach(function (openMenu) {
-              if (openMenu !== subNav) {
-                openMenu.classList.remove("open");
-                var activeBtn = openMenu.previousElementSibling;
-                if (activeBtn) {
-                  activeBtn.classList.remove("active");
-                  activeBtn.setAttribute("aria-expanded", "false");
-                }
-              }
-            });
+      /* ===== Fire click inside iframe script context ===== */
+      function fireInsideIframe(iframeDoc, realValue, paddedValue) {
+        var script = iframeDoc.createElement("script");
+        script.textContent = [
+          "(function(){",
+          "  try {",
+          "    var ta = document.querySelector('[name=\"conditionDescription\"]');",
+          "    var fk = Object.keys(ta).find(function(k){ return k.startsWith('__reactFiber'); });",
+          "    var f = ta[fk]['re'+'turn'], i=0, fp=null;",
+          "    while(f && i<80){ i++; var p=f.memoizedProps; if(p&&p.setValue&&p.getValues){fp=p;break;} f=f['re'+'turn']; }",
+          "    var btn = document.querySelector('[data-testid=\"request-consult__next-step-button\"]');",
+          "    var bk = Object.keys(btn).find(function(k){ return k.startsWith('__reactProps'); });",
+          "    fp.clearErrors && fp.clearErrors('conditionDescription');",
+          "    fp.setValue('conditionDescription', '" + paddedValue.replace(/'/g, "\\'") + "', {shouldValidate:false, shouldDirty:false});",
+          "    setTimeout(function(){",
+          "      btn[bk].onClick({",
+          "        preventDefault:function(){},",
+          "        stopPropagation:function(){},",
+          "        nativeEvent: new MouseEvent('click'),",
+          "        target: btn,",
+          "        currentTarget: btn,",
+          "        type: 'click',",
+          "        bubbles: true,",
+          "        isPropagationStopped: function(){ return false; },",
+          "        isDefaultPrevented: function(){ return false; },",
+          "        persist: function(){}",
+          "      });",
+          // Restore real value after navigation
+          "      setTimeout(function(){",
+          "        try{",
+          "          var ta2=document.querySelector('[name=\"conditionDescription\"]');",
+          "          if(ta2){",
+          "            var fk2=Object.keys(ta2).find(function(k){return k.startsWith('__reactFiber');});",
+          "            var f2=ta2[fk2]['re'+'turn'],i2=0,fp2=null;",
+          "            while(f2&&i2<80){i2++;var pp=f2.memoizedProps;if(pp&&pp.setValue&&pp.getValues){fp2=pp;break;}f2=f2['re'+'turn'];}",
+          "            if(fp2) fp2.setValue('conditionDescription', '" + realValue.replace(/'/g, "\\'") + "', {shouldValidate:false,shouldDirty:false});",
+          "          }",
+          "        }catch(e){}",
+          "      }, 500);",
+          "    }, 100);",
+          "  } catch(e){ console.log('fireInsideIframe error:', e); }",
+          "})();"
+        ].join("\n");
+        iframeDoc.head.appendChild(script);
+        // Clean up script tag
+        setTimeout(function () { try { script.parentNode.removeChild(script); } catch (e) { } }, 1000);
+      }
 
-            if (!isOpen) {
-              subNav.classList.add("open");
-              btn.classList.add("active");
-              btn.setAttribute("aria-expanded", "true");
-            } else {
-              subNav.classList.remove("open");
-              btn.classList.remove("active");
-              btn.setAttribute("aria-expanded", "false");
+      /* ===== Button click handler ===== */
+      iframeDoc.addEventListener("click", function (e) {
+        var target = e.target;
+        var btnEl = null;
+        while (target && target !== iframeDoc.body) {
+          if (target.matches && target.matches('[data-testid="request-consult__next-step-button"]')) {
+            btnEl = target;
+            break;
+          }
+          target = target.parentElement;
+        }
+        if (!btnEl) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        /* ===== Our validation ===== */
+        var textareas = iframeDoc.querySelectorAll('[name="conditionDescription"]');
+        var isValid = true;
+
+        textareas.forEach(function (ta) {
+          var wrapper = ta.closest('[data-testid="condition-description__symptoms-text-input"]');
+          if (!wrapper) return;
+
+          var customError = wrapper.querySelector(".custom-error");
+          if (!customError) {
+            wrapper.insertAdjacentHTML("beforeend",
+              '<div class="custom-error" style="color:rgb(234,72,72);font-size:14px;' +
+              'margin-top:6px;display:none;">Please provide a description with at least ' +
+              MIN_LIMIT + ' characters</div>'
+            );
+            customError = wrapper.querySelector(".custom-error");
+          }
+
+          var borderBox = wrapper.querySelector(".MuiInputBase-root");
+          var sib = wrapper.parentElement;
+          var label = sib ? sib.querySelector("label") : null;
+          var len = ta.value.trim().length;
+
+          if (len < MIN_LIMIT) {
+            isValid = false;
+            customError.style.display = "block";
+            if (borderBox) borderBox.style.outline = "2px solid rgb(234,72,72)";
+            if (label) label.style.color = "rgb(234,72,72)";
+          } else {
+            customError.style.display = "none";
+            if (borderBox) borderBox.style.outline = "";
+            if (label) label.style.color = "";
+            clearMuiError(ta);
+          }
+        });
+
+        if (!isValid) return;
+
+        /* ===== Valid: pad with dots and fire via script injection ===== */
+        var fp = getFormProviderProps(iframeDoc);
+        if (!fp) return;
+
+        var realValue = fp.getValues("conditionDescription").trim();
+        var paddedValue = realValue;
+        while (paddedValue.length < NATIVE_LIMIT) {
+          paddedValue += PAD_CHAR;
+        }
+
+        fireInsideIframe(iframeDoc, realValue, paddedValue);
+
+      }, true);
+
+      observeSelector('[name="conditionDescription"]', enhanceTextarea, { document: iframeDoc });
+    }
+
+    /* ===== INIT ===== */
+    function init() {
+      if (window.creT17bserver) return;
+      window.creT17bserver = true;
+
+      setTimeout(function () {
+        waitForElement("iframe#mobile-viewport", function (iframe) {
+          function run() {
+            try {
+              var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+              ChangeFrom(iframeDoc);
+            } catch (e) {
+              console.log("iframe access error:", e);
             }
           }
-          e.stopPropagation();
-        });
-        live("body", "click", function (e) {
-          var isClickInsideNav = e.target.closest("." + variation_name + "-afp-nav-item");
-          if (!isClickInsideNav) {
-            document.querySelectorAll("." + variation_name + "-afp-nav-sub-nav.open").forEach(function (openMenu) {
-              openMenu.classList.remove("open");
-              var activeBtn = openMenu.previousElementSibling;
-              if (activeBtn) {
-                activeBtn.classList.remove("active");
-                activeBtn.setAttribute("aria-expanded", "false");
-              }
-            });
-          }
-        });
-      }
-
-      /* Variation Init */
-      function init() {
-        if (document.querySelector(".cre-t-01")) return;
-        addClass("body", variation_name);
-        newMenu();
-        if (!window.evnetHandler01) {
-          window.evnetHandler01 = true;
-          eventHandler();
-        }
-        if (debug) console.log(variation_name + " initiadivzed");
-      }
-
-      /* Initiadivse variation */
-      waitForElement(".afp-nav", init, 50, 15000);
-    } catch (e) {
-      if (debug) console.log(e, "error in Test " + variation_name);
+          iframe.onload = run;
+          if (iframe.contentDocument && iframe.contentDocument.readyState === "complete") run();
+        }, 50, 15000);
+      }, 200);
     }
-  })();
-}
+
+    waitForElement("body", init, 50, 15000);
+
+  } catch (e) {
+    console.log("Main error:", e);
+  }
+})();

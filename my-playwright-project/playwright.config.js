@@ -22,5 +22,17 @@ module.exports = defineConfig({
       name: 'Chrome Desktop',
       use: { ...devices['Desktop Chrome'] },
     },
+    {
+      name: 'Firefox Desktop',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'Edge Desktop',
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    },
+    {
+      name: 'Safari Desktop',
+      use: { ...devices['Desktop Safari'] },
+    },
   ],
 });

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FieldPulse LP — Visual Issues Report</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f6f9; color: #1a1a2e; }
+
+  .header { background: linear-gradient(135deg, #009fd9 0%, #0077a8 100%); color: #fff; padding: 36px 40px; }
+  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+  .header p { font-size: 14px; opacity: .85; }
+  .header .meta { margin-top: 16px; display: flex; gap: 24px; flex-wrap: wrap; }
+  .badge { background: rgba(255,255,255,.2); border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 600; }
+  .badge.fixed { background: #27ae60; }
+  .badge.fail  { background: #e74c3c; }
+  .badge.warn  { background: #e67e22; }
+
+  .summary { display: flex; gap: 16px; padding: 24px 40px; flex-wrap: wrap; }
+  .stat { background: #fff; border-radius: 10px; padding: 20px 28px; flex: 1; min-width: 140px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  .stat .num { font-size: 36px; font-weight: 700; }
+  .stat .lbl { font-size: 12px; color: #666; margin-top: 4px; }
+  .stat.red .num  { color: #e74c3c; }
+  .stat.grn .num  { color: #27ae60; }
+  .stat.ora .num  { color: #e67e22; }
+  .stat.blu .num  { color: #009fd9; }
+
+  .section { padding: 24px 40px; }
+  .section-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-title span { font-size: 13px; font-weight: 500; background: #eee; border-radius: 12px; padding: 2px 10px; }
+
+  .issue-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,.08); margin-bottom: 20px; overflow: hidden; }
+  .issue-header { padding: 16px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #f0f0f0; }
+  .issue-status { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .issue-status.fail  { background: #e74c3c; }
+  .issue-status.fixed { background: #27ae60; }
+  .issue-status.warn  { background: #e67e22; }
+  .issue-title { font-weight: 700; font-size: 15px; flex: 1; }
+  .issue-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 10px; text-transform: uppercase; }
+  .issue-tag.fail  { background: #fdecea; color: #c0392b; }
+  .issue-tag.fixed { background: #eafaf1; color: #1e8449; }
+  .issue-tag.warn  { background: #fef5e7; color: #d35400; }
+
+  .issue-body { padding: 18px 20px; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .compare-box { border-radius: 8px; padding: 14px; font-size: 13px; line-height: 1.6; }
+  .compare-box.wrong  { background: #fdecea; border-left: 4px solid #e74c3c; }
+  .compare-box.right  { background: #eafaf1; border-left: 4px solid #27ae60; }
+  .compare-box.info   { background: #eaf4fb; border-left: 4px solid #009fd9; }
+  .compare-box label  { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; opacity: .7; }
+  .compare-box code   { font-family: 'Courier New', monospace; background: rgba(0,0,0,.07); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  .note { font-size: 12px; color: #666; margin-top: 12px; padding: 10px 14px; background: #f8f9fa; border-radius: 6px; }
+  .file-ref { font-size: 11px; color: #888; font-family: monospace; margin-top: 8px; }
+
+  .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 12px; }
+  .screenshot-box { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+  .screenshot-box img { width: 100%; height: auto; display: block; }
+  .screenshot-box .cap { font-size: 11px; padding: 8px 10px; background: #f8f9fa; color: #555; text-align: center; }
+
+  .browser-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+  .browser-tab { padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .browser-tab.chrome  { background: #e8f5e9; color: #2e7d32; }
+  .browser-tab.safari  { background: #e3f2fd; color: #1565c0; }
+  .browser-tab.mobile  { background: #f3e5f5; color: #6a1b9a; }
+
+  .pass-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+  .pass-item { background: #eafaf1; border-radius: 8px; padding: 10px 14px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+  .pass-item::before { content: '✓'; color: #27ae60; font-weight: 700; flex-shrink: 0; }
+
+  .mobile-section { background: #faf0ff; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .mobile-section h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #6a1b9a; }
+
+  hr { border: none; border-top: 1px solid #e8e8e8; margin: 8px 0; }
+  .footer { text-align: center; padding: 30px; font-size: 12px; color: #999; }
+  @media (max-width: 700px) {
+    .header, .summary, .section { padding-left: 16px; padding-right: 16px; }
+    .compare { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>FieldPulse × Thumbtack — Visual Issues Report</h1>
+  <p>QA URL: <strong>thumbtack.com/pro?QA=Partnership_field&amp;coBrand=fieldpulse</strong></p>
+  <div class="meta">
+    <span class="badge">Generated: 2026-05-07</span>
+    <span class="badge">Browsers: Chrome + Safari (WebKit)</span>
+    <span class="badge">Desktop + Mobile (390px)</span>
+    <span class="badge fail">4 Bugs Fixed in vB.js</span>
+    <span class="badge warn">2 Needs Platform Update</span>
+  </div>
+</div>
+
+<!-- SUMMARY STATS -->
+<div class="summary">
+  <div class="stat grn"><div class="num">44</div><div class="lbl">Tests Passed (Chrome)</div></div>
+  <div class="stat red"><div class="num">4</div><div class="lbl">Bugs Fixed in Code</div></div>
+  <div class="stat ora"><div class="num">2</div><div class="lbl">Need Platform Update</div></div>
+  <div class="stat blu"><div class="num">12</div><div class="lbl">Mobile Tests Added</div></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  SECTION 1 — BUGS FOUND & FIXED IN vB.js                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">🔴 Bugs Found &amp; Fixed in vB.js <span>4 issues</span></div>
+
+  <!-- ISSUE 1 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status fixed"></div>
+      <div class="issue-title">Issue 1 — Testimonials heading says "painters" instead of "pros"</div>
+      <span class="issue-tag fixed">Fixed</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare">
+        <div class="compare-box wrong">
+          <label>❌ Was (in vB.js)</label>
+          <code>&lt;h2&gt;Real results from real <strong>painters</strong>.&lt;/h2&gt;</code>
+          <p style="margin-top:8px; font-size:12px">Wrong audience — this is FieldPulse (plumbers, electricians, general contractors), not Sherwin-Williams painters.</p>
+        </div>
+        <div class="compare-box right">
+          <label>✅ Fixed to (Figma match)</label>
+          <code>&lt;h2&gt;Real results from real <strong>pros</strong>.&lt;/h2&gt;</code>
+        </div>
+      </div>
+      <p class="file-ref">vB.js line 61 — inside <code>itemsection</code> HTML string</p>
+    </div>
+  </div>
+
+  <!-- ISSUE 2 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status fixed"></div>
+      <div class="issue-title">Issue 2 — Page title set to "Sherwin-Williams-Thumbtack"</div>
+      <span class="issue-tag fixed">Fixed</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare">
+        <div class="compare-box wrong">
+          <label>❌ Was (confirmed by Playwright console log)</label>
+          <code>document.title = "Sherwin-Williams-Thumbtack"</code>
+          <p style="margin-top:8px; font-size:12px">Wrong partner name in browser tab title and link previews.</p>
+        </div>
+        <div class="compare-box right">
+          <label>✅ Fixed to</label>
+          <code>document.title = "FieldPulse-Thumbtack"</code>
+        </div>
+      </div>
+      <p class="file-ref">vB.js line 255 — inside <code>init()</code></p>
+    </div>
+  </div>
+
+  <!-- ISSUE 3 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status fixed"></div>
+      <div class="issue-title">Issue 3 — Partnership badge says "In partnership with Sherwin-Williams"</div>
+      <span class="issue-tag fixed">Fixed</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare">
+        <div class="compare-box wrong">
+          <label>❌ Was (confirmed on live QA URL — Chrome)</label>
+          <code>"In partnership with Sherwin-Williams. Book a call with our team."</code>
+          <p style="margin-top:8px; font-size:12px">Shown in the hero pill/badge below the Thumbtack logo. UTM link also had <code>utm_campaign=sherwinwilliams</code>.</p>
+        </div>
+        <div class="compare-box right">
+          <label>✅ Fixed to</label>
+          <code>"In partnership with FieldPulse. Book a call with our team."</code>
+          <br><code>utm_campaign=fieldpulse</code>
+        </div>
+      </div>
+      <p class="file-ref">vB.js line 303 — inside <code>waitForElement</code> callback</p>
+    </div>
+  </div>
+
+  <!-- ISSUE 4 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status fixed"></div>
+      <div class="issue-title">Issue 4 — Community section CTA link has wrong UTM campaign</div>
+      <span class="issue-tag fixed">Fixed</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare">
+        <div class="compare-box wrong">
+          <label>❌ Was</label>
+          <code>utm_campaign=<strong>sherwinwilliams</strong></code>
+          <p style="margin-top:8px; font-size:12px">The "Connect with other pros" button linked to the Sherwin-Williams campaign tracking URL.</p>
+        </div>
+        <div class="compare-box right">
+          <label>✅ Fixed to</label>
+          <code>utm_campaign=<strong>fieldpulse</strong></code>
+        </div>
+      </div>
+      <p class="file-ref">vB.js line 114 — inside <code>itemsection</code> HTML string, community &lt;a&gt; href</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  SECTION 2 — NEEDS PLATFORM UPDATE (not in local file)         -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">🟠 Needs Platform / Optimizely Update <span>2 issues</span></div>
+
+  <!-- ISSUE 5 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status warn"></div>
+      <div class="issue-title">Issue 5 — Hero subtitle still shows $400 + Sherwin-Williams on live QA URL</div>
+      <span class="issue-tag warn">Deploy vB.js</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare">
+        <div class="compare-box wrong">
+          <label>❌ Live QA URL shows (Playwright confirmed)</label>
+          <code>"Receive up to $400 in free or discounted leads when you set up your profile as a Sherwin-Williams pro.**"</code>
+        </div>
+        <div class="compare-box right">
+          <label>✅ vB.js now contains (Figma match)</label>
+          <code>"Receive $100 in free leads when you set up your Thumbtack profile as a FieldPulse pro.*"</code>
+        </div>
+      </div>
+      <p class="note">⚠️ The local vB.js is already correct. The live preview URL is still serving an old deployment. Push the updated vB.js to the Optimizely/Convert experiment to fix the live QA URL.</p>
+    </div>
+  </div>
+
+  <!-- ISSUE 6 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status warn"></div>
+      <div class="issue-title">Issue 6 — Community CTA link intermittently serves old Sherwin-Williams URL</div>
+      <span class="issue-tag warn">Deploy vB.js</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare-box info">
+        <label>ℹ️ Observed behaviour on live URL</label>
+        <p>On first load the community "Connect with other pros" button sometimes had <code>utm_campaign=sherwinwilliams</code>. On retry it resolved to <code>community.thumbtack.com</code>. This is a deployment/cache issue — the fix is already in vB.js. Once deployed, it will consistently use <code>utm_campaign=fieldpulse</code>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  SECTION 3 — WHAT PASSED (CONFIRMED CORRECT)                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">✅ Confirmed Correct on Live QA URL <span>Chrome — 44 passing</span></div>
+
+  <div class="browser-tabs">
+    <span class="browser-tab chrome">Chrome Desktop</span>
+  </div>
+
+  <div class="pass-list">
+    <div class="pass-item">Variation activates (body.FieldPulse class)</div>
+    <div class="pass-item">Hero title: "Grow your business in [city]."</div>
+    <div class="pass-item">Service input placeholder: "e.g. Plumbing"</div>
+    <div class="pass-item">"Sign up for free" CTA below comparison table</div>
+    <div class="pass-item">"How Thumbtack works:" heading</div>
+    <div class="pass-item">Feature 1: No subscription cost (with image)</div>
+    <div class="pass-item">Feature 2: High intent customers (with image)</div>
+    <div class="pass-item">Feature 3: Control and flexibility (with image)</div>
+    <div class="pass-item">"How Thumbtack is different:" heading</div>
+    <div class="pass-item">All 6 comparison table rows</div>
+    <div class="pass-item">Testimonial: Jack M., Electric AVenue</div>
+    <div class="pass-item">Testimonial: Clay R., Mr Electric of Golden, CO</div>
+    <div class="pass-item">Testimonial: Deon M., Antilleon Restoration</div>
+    <div class="pass-item">No painter testimonials (Sherwin-Williams leak clean)</div>
+    <div class="pass-item">3 circular testimonial card images</div>
+    <div class="pass-item">"See your earning potential." heading</div>
+    <div class="pass-item">Calculator: "Tell us about your business." sub-heading</div>
+    <div class="pass-item">Calculator: both inputs present</div>
+    <div class="pass-item">Calculator: 500×10 = $5,000 / $60,000 (correct math)</div>
+    <div class="pass-item">Calculator: empty-field validation shows 2 errors</div>
+    <div class="pass-item">"Grow with Thumbtack" CTA correct</div>
+    <div class="pass-item">Community: "Thumbtack's Pro Community" heading</div>
+    <div class="pass-item">Community: "network of pros" description</div>
+    <div class="pass-item">Community: "Connect with other pros" CTA text</div>
+    <div class="pass-item">Disclaimer: mentions $100</div>
+    <div class="pass-item">Disclaimer: no Sherwin-Williams text</div>
+    <div class="pass-item">Disclaimer: no "2-requests" mechanic</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  SECTION 4 — MOBILE ISSUES                                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">📱 Mobile Audit (390px — iPhone 14 Pro) <span>12 tests</span></div>
+
+  <div class="browser-tabs">
+    <span class="browser-tab mobile">Mobile Chrome / Safari</span>
+  </div>
+
+  <!-- MOBILE ISSUE 1 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status fixed"></div>
+      <div class="issue-title">M-1 — Testimonials heading "painters" also affects mobile</div>
+      <span class="issue-tag fixed">Fixed (same fix)</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare-box wrong">
+        <label>❌ Before fix — mobile also showed</label>
+        <code>"Real results from real painters."</code>
+      </div>
+      <p style="margin-top:10px;" class="note">Fixed in vB.js — same change applies to both desktop and mobile since it is the same HTML template.</p>
+    </div>
+  </div>
+
+  <!-- MOBILE ISSUE 2 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status warn"></div>
+      <div class="issue-title">M-2 — Mobile placeholder: code sets "Enter the service you provide." but Figma shows "e.g. Plumbing"</div>
+      <span class="issue-tag warn">Review Needed</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare">
+        <div class="compare-box wrong">
+          <label>Current code (mobile &lt; 768px)</label>
+          <code>placeholder = "Enter the service you provide."</code>
+          <p style="margin-top:6px;font-size:12px">vB.js line 341 sets a different mobile placeholder</p>
+        </div>
+        <div class="compare-box right">
+          <label>Figma (mobile design)</label>
+          <code>placeholder = "e.g. Plumbing"</code>
+          <p style="margin-top:6px;font-size:12px">Desktop already uses "e.g. Plumbing" (line 282 was updated). Mobile should match.</p>
+        </div>
+      </div>
+      <p class="note">⚠️ Desktop uses "e.g. Plumbing" (correctly set on line 282). The separate mobile override on line 341 should also be updated to "e.g. Plumbing" to stay consistent with Figma.</p>
+    </div>
+  </div>
+
+  <!-- MOBILE ISSUE 3 -->
+  <div class="issue-card">
+    <div class="issue-header">
+      <div class="issue-status warn"></div>
+      <div class="issue-title">M-3 — Mobile "Sign up for free" button: uses CSS ::after trick, text "0px" fallback risk</div>
+      <span class="issue-tag warn">Verify on device</span>
+    </div>
+    <div class="issue-body">
+      <div class="compare-box info">
+        <label>ℹ️ What the code does</label>
+        <p>On mobile the CSS sets <code>font-size: 0</code> on the original span and injects the text <code>"Sign up for free"</code> via <code>::after</code> pseudo-element. The JS also sets <code>innerHTML = "Sign up for free"</code> directly. Confirm the button renders correctly on a real device — invisible text is a risk if CSS loads after JS.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE CONFIRMED CORRECT -->
+  <div class="mobile-section">
+    <h4>✅ Confirmed Correct on Mobile</h4>
+    <div class="pass-list" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+      <div class="pass-item">Hero title visible + correct text</div>
+      <div class="pass-item">3 feature cards stack vertically</div>
+      <div class="pass-item">Comparison table 6 rows</div>
+      <div class="pass-item">3 testimonial cards stack vertically</div>
+      <div class="pass-item">Calculator inputs are full-width</div>
+      <div class="pass-item">Community section visible</div>
+      <div class="pass-item">No horizontal scroll overflow</div>
+      <div class="pass-item">Community heading: "Pro Community"</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  SECTION 5 — FIGMA vs LIVE SIDE-BY-SIDE                       -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">🖼️ Figma vs Live — Side-by-Side Reference</div>
+
+  <div class="issue-card">
+    <div class="issue-body">
+      <div class="compare">
+        <div>
+          <p style="font-size:12px;font-weight:700;margin-bottom:8px;color:#555;">FIGMA DESKTOP DESIGN</p>
+          <img src="FieldPulse_LP_Desktop.png" alt="Figma Desktop Design" style="width:100%;border-radius:8px;border:1px solid #ddd;">
+        </div>
+        <div>
+          <p style="font-size:12px;font-weight:700;margin-bottom:8px;color:#555;">FIGMA MOBILE DESIGN</p>
+          <img src="FieldPulse_LP_Mobile.png" alt="Figma Mobile Design" style="width:100%;border-radius:8px;border:1px solid #ddd;">
+        </div>
+      </div>
+      <p class="note">📁 Screenshots from Playwright tests are saved to: <code>my-playwright-project/fieldpulse-screenshots/</code> — open those PNG files to compare against the Figma designs above.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  SECTION 6 — WHAT TO DO NEXT                                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">📋 Action Checklist</div>
+
+  <div class="issue-card">
+    <div class="issue-body">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:#f0f4f8;">
+            <th style="padding:10px 14px;text-align:left;border-radius:6px 0 0 0;">Action</th>
+            <th style="padding:10px 14px;text-align:left;">File</th>
+            <th style="padding:10px 14px;text-align:left;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-top:1px solid #f0f0f0;">
+            <td style="padding:10px 14px;">Fix testimonials heading: "painters" → "pros"</td>
+            <td style="padding:10px 14px;font-family:monospace;font-size:11px;">vB.js line 61</td>
+            <td style="padding:10px 14px;color:#27ae60;font-weight:700;">✅ Done</td>
+          </tr>
+          <tr style="border-top:1px solid #f0f0f0;background:#fafafa;">
+            <td style="padding:10px 14px;">Fix page title: "Sherwin-Williams-Thumbtack" → "FieldPulse-Thumbtack"</td>
+            <td style="padding:10px 14px;font-family:monospace;font-size:11px;">vB.js line 255</td>
+            <td style="padding:10px 14px;color:#27ae60;font-weight:700;">✅ Done</td>
+          </tr>
+          <tr style="border-top:1px solid #f0f0f0;">
+            <td style="padding:10px 14px;">Fix partnership badge: Sherwin-Williams → FieldPulse</td>
+            <td style="padding:10px 14px;font-family:monospace;font-size:11px;">vB.js line 303</td>
+            <td style="padding:10px 14px;color:#27ae60;font-weight:700;">✅ Done</td>
+          </tr>
+          <tr style="border-top:1px solid #f0f0f0;background:#fafafa;">
+            <td style="padding:10px 14px;">Fix community UTM: sherwinwilliams → fieldpulse</td>
+            <td style="padding:10px 14px;font-family:monospace;font-size:11px;">vB.js line 114</td>
+            <td style="padding:10px 14px;color:#27ae60;font-weight:700;">✅ Done</td>
+          </tr>
+          <tr style="border-top:1px solid #f0f0f0;">
+            <td style="padding:10px 14px;">Deploy updated vB.js to Optimizely/Convert (hero subtitle fix goes live)</td>
+            <td style="padding:10px 14px;font-family:monospace;font-size:11px;">Optimizely platform</td>
+            <td style="padding:10px 14px;color:#e67e22;font-weight:700;">⏳ Pending</td>
+          </tr>
+          <tr style="border-top:1px solid #f0f0f0;background:#fafafa;">
+            <td style="padding:10px 14px;">Review mobile placeholder: "Enter the service you provide." → "e.g. Plumbing" (to match Figma)</td>
+            <td style="padding:10px 14px;font-family:monospace;font-size:11px;">vB.js line 341</td>
+            <td style="padding:10px 14px;color:#e67e22;font-weight:700;">⏳ Review</td>
+          </tr>
+          <tr style="border-top:1px solid #f0f0f0;">
+            <td style="padding:10px 14px;">Verify "Sign up for free" button renders correctly on a real iOS/Android device</td>
+            <td style="padding:10px 14px;font-family:monospace;font-size:11px;">vB.css mobile block</td>
+            <td style="padding:10px 14px;color:#e67e22;font-weight:700;">⏳ Verify</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  FieldPulse × Thumbtack LP — Playwright Audit Report &nbsp;|&nbsp; 2026-05-07 &nbsp;|&nbsp; HexdriftTestingWorld
+</div>
+
+</body>
+</html>

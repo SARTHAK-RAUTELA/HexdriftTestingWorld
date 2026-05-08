@@ -338,7 +338,7 @@ waitForElement('[class*="see-how-different_seeHowDifferentSection"] > div', func
  }, 100, 15000);
  if (window.innerWidth < 768) {
    waitForElement('#new-pro-lp-cs', function () {
-     document.querySelector('#new-pro-lp-cs').setAttribute("placeholder", "e.g. Plumbing");
+     document.querySelector('#new-pro-lp-cs').setAttribute("placeholder", "Enter the service you provide.");
    }, 100, 15000);
  }
 

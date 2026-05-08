@@ -225,7 +225,7 @@ html body.FieldPulse .thumbtack-section-variation .community h2 {
 }
 
 html body.FieldPulse .thumbtack-section-variation .community p {
-    max-width: 470px;
+    max-width: 536px !important;
     margin: 0 auto;
 }
 
@@ -262,7 +262,8 @@ html body.FieldPulse .thumbtack-section-variation .testimonial-line {
     margin-top: 70px;
     width: 100%;
 }
-html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"] + div {
+
+html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"]+div {
     display: none;
 }
 
@@ -313,7 +314,7 @@ html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"] + div {
     }
 
     html body.FieldPulse [aria-label="Thumbtack Home"]:after {
-         content: " ";
+        content: " ";
         background-image: url(https://cdn.optimizely.com/img/20611073899/039045ef4cde449e970aad9b95e2edc7.svg);
         height: 43px;
         width: 239px;
@@ -322,7 +323,8 @@ html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"] + div {
         margin-top: 0px;
         margin-left: 0px;
     }
-    html body.FieldPulse [aria-label="Thumbtack Home"] svg{
+
+    html body.FieldPulse [aria-label="Thumbtack Home"] svg {
         display: none !important;
     }
 
@@ -396,7 +398,7 @@ html body.FieldPulse [class*="hero_heroInnerOffsetRight"]>[class*="Type_text1"] 
 }
 
 html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"] {
-    padding-bottom: 15px !important;
+    padding-bottom: 50px !important;
     box-shadow: none !important;
     background-color: transparent !important;
 }
@@ -591,7 +593,7 @@ html body.FieldPulse #ttsearch-location-input {
     background-color: #009fd9;
     border-color: #009fd9;
     margin-top: 51px;
-    max-width: 946px;
+    max-width: 946px !important;
     margin: 0 auto;
     margin-top: 0;
     padding: 12px 22px;
@@ -778,7 +780,7 @@ html body.FieldPulse [class*="TextInput_inputStylesRoundedBordersLeft"] {
     }
 
     html body.FieldPulse #ttsearch-location-input {
-        width: 90%;
+        width: 90% !important;
     }
 
     html body.FieldPulse .feature-row {
@@ -795,7 +797,7 @@ html body.FieldPulse [class*="TextInput_inputStylesRoundedBordersLeft"] {
 
     html body.FieldPulse .thumbtack-section-variation .community a,
     html body.FieldPulse .thumbtack-section-variation .subhead_cta a {
-        max-width: 100%;
+        max-width: 100% !important;
     }
 }
 
@@ -839,7 +841,7 @@ html body.FieldPulse .thumbtack-section.thumbtack-section-variation {
     }
 
     html body.FieldPulse .section_topimage {
-        margin-top: 24px;
+        margin-top: 40px;
         padding: 0 16px;
     }
 
@@ -847,13 +849,13 @@ html body.FieldPulse .thumbtack-section.thumbtack-section-variation {
         display: none;
     }
 
-    [aria-label="Thumbtack Home"]:after {
+    html body.FieldPulse [aria-label="Thumbtack Home"]:after {
         content: " ";
-        background-image: url(https://cdn.optimizely.com/img/20611073899/ab51350b04024adcbb65f72dbf407438.svg);
-        /* height: 30px;
-        width: 149px; */
-        height: 56px;
-        width: 206px;
+        background-image: url(https://cdn.optimizely.com/img/20611073899/039045ef4cde449e970aad9b95e2edc7.svg);
+        height: 46px;
+        width: 272px;
+        /* height: 56px;
+        width: 206px; */
         display: inline-block;
         background-size: cover;
         margin-top: 0px;

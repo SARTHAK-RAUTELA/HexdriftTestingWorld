@@ -1,897 +1,315 @@
-html body.FieldPulse .thumbtack-section-variation .tools {
-    text-align: center;
-    margin-bottom: 50px;
+html body.cre-t-07 .banner .banner_contentWrapper {
+	max-width: 100%;
+	padding: 0;
+	justify-content: center;
 }
 
-html body.FieldPulse .thumbtack-section-variation .tools h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    line-height: 40px;
+html body.cre-t-07 .banner .banner_site-logo,
+html body.cre-t-07 .banner .site-logo {
+	margin-bottom: 16px;
 }
 
-html body.FieldPulse .thumbtack-section-variation .tools-logos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
+html body.cre-t-07 .banner .banner_container {
+	width: 100%;
+	gap: 125px;
 }
 
-html body.FieldPulse .thumbtack-section-variation .tools-logos img {
-    max-height: 32px;
+html body.cre-t-07 .banner_content {
+	align-self: center;
+	padding-left: 142px;
+	max-width: 100%;
 }
 
-html body.FieldPulse .thumbtack-section-variation .testimonials {
-    text-align: center;
-    margin-bottom: 60px;
+html body.cre-t-07 .banner .banner_media {
+	display: none;
 }
 
-html body.FieldPulse .thumbtack-section-variation .testimonials h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    line-height: 40px;
+html body.cre-t-07 .banner .banner_buttonArea {
+	display: none;
 }
 
-html body.FieldPulse .thumbtack-section-variation .testimonial-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
+html body.cre-t-07 .banner_contentCopy p {
+	display: none;
 }
 
-html body.FieldPulse .thumbtack-section-variation .card {
-    max-width: 300px;
-    text-align: center;
+html body.cre-t-07 .banner .banner_contentCopy {
+	margin-bottom: 12px;
 }
 
-html body.FieldPulse .thumbtack-section-variation .card img {
-    width: 272px;
-    height: 272px;
-    border-radius: 50%;
-    object-fit: cover;
+html body.cre-t-07 .cre-t-07-description {
+	color: #fff;
 }
 
-html body.FieldPulse .thumbtack-section-variation .subhead_cta a,
-html body.FieldPulse .thumbtack-section-variation .community a {
-    color: #fff;
-    background-color: #009fd9;
-    border-color: #009fd9;
-    max-width: 325px;
-    margin-top: 25px;
-    padding: 14px;
-    border-radius: 6px;
-    box-shadow: none;
-    border: none;
-    font-size: 16px;
-    display: inline-block;
-    width: 100%;
-    font-weight: 700;
+html body.cre-t-07 .cre-t-07-description-container {
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
 }
 
-html body.FieldPulse .thumbtack-section-variation .subhead_cta a:hover,
-html body.FieldPulse .thumbtack-section-variation .community a:hover {
-    color: #fff;
+html body.cre-t-07 .cre-t-07-subheadline {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 25.71px;
+	letter-spacing: 0;
 }
 
-html body.FieldPulse .thumbtack-section-variation .calculator .subhead_cta p {
-    margin: 0 auto;
-    max-width: 961px;
-    margin-top: 51px;
-    font-size: 12px;
-    color: #2F3033;
+html body.cre-t-07 .cre-t-07-bullet-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
-html body.FieldPulse .thumbtack-section-variation .card p {
-    font-size: 16px;
-    margin: 20px 0 10px;
-    line-height: 24px;
+html body.cre-t-07 .cre-t-07-bullet {
+	display: flex;
+	align-items: center;
+	gap: 11px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0;
 }
 
-html body.FieldPulse .thumbtack-section-variation .item_secotion_price div {
-    font-size: 16px;
-    line-height: 24px;
-    color: #2F3033;
-    font-weight: 400;
-    /* margin-bottom: 30px; */
+html body.cre-t-07 .cre-t-07-banner-images {
+	width: 100%;
 }
 
-html body.FieldPulse .thumbtack-section-variation .item_secotion_price div span {
-    font-size: 40px;
-    line-height: 46px;
-    color: #009FD9;
-    margin-top: 12px;
-    display: inline-block;
-    font-weight: 700;
+html body.cre-t-07 .cre-t-07-banner-images-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	gap: 12px;
+	height: 100%;
 }
 
-html body.FieldPulse .thumbtack-section-variation .card span {
-    font-weight: bold;
-    font-size: 16px;
+html body.cre-t-07 .cre-t-07-banner-images-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-html body.FieldPulse .thumbtack-section-variation .calculator {
-    text-align: center;
-    margin-bottom: 60px;
-    margin-top: 60px;
+html body.cre-t-07 .cre-t-07-banner-images-top {
+	display: flex;
+	gap: 12px;
+	flex: 0 1 50%;
 }
 
-html body.FieldPulse .thumbtack-section-variation .calculator h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 9px;
-    line-height: 40px;
+html body.cre-t-07 .cre-t-07-banner-images-left,
+html body.cre-t-07 .cre-t-07-banner-images-right {
+	width: 100%;
 }
 
-html body.FieldPulse .thumbtack-section-variation .calculator>p {
-    max-width: 772px;
-    margin: 0 auto;
-}
-
-html body.FieldPulse .thumbtack-section-variation .calculator p {
-    font-size: 14px;
-    margin-bottom: 30px;
-    color: #2F3033;
-    margin-top: 16px;
-}
-
-html body.FieldPulse .thumbtack-section-variation .calculator form {
-    max-width: 964px;
-    margin: 0 auto;
-    text-align: left;
-    margin-top: 63px;
-}
-
-html body.FieldPulse .thumbtack-section-variation .calculator form h6 {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-}
-
-html body.FieldPulse .thumbtack-section-variation .calculator form p {
-    font-size: 16px;
-    margin-bottom: 9px;
-}
-
-html body.FieldPulse .thumbtack-section-variation .calculator input {
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #676D73;
-    border-radius: 8px;
-    font-size: 14px;
-    width: 100%;
-    height: 55px;
-}
-
-html body.FieldPulse .thumbtack-section-variation .earnings {
-    margin-top: 38px;
-    justify-content: space-between;
-    font-size: 16px;
-    font-weight: bold;
-    color: #3ec6f2;
-}
-
-html body.FieldPulse .thumbtack-section-variation .item_secotion_price {
-    display: flex;
-    gap: 30px;
-}
-
-html body.FieldPulse .thumbtack-section-variation .earnings h5 {
-    font-size: 24px;
-    line-height: 32px;
-    color: #2F3033;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-html body.FieldPulse .thumbtack-section-variation .community {
-    background-image: url(https://cdn.optimizely.com/img/20611073899/0e619b45df8542db88486806dfb6f0ec.jpg);
-    /* Replace with actual image */
-    background-size: cover;
-    background-position: center;
-    padding: 138px 20px;
-    text-align: center;
-    color: white;
-    /* border-radius: 12px; */
-}
-
-html body.FieldPulse .thumbtack-section-variation .community::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    /* overlay color */
-    z-index: 1;
-}
-
-/* Ensure content stays above overlay */
-html body.FieldPulse .thumbtack-section-variation .community * {
-    position: relative;
-    z-index: 2;
-}
-
-html body.FieldPulse .thumbtack-section-variation .community {
-    position: relative;
-}
-
-html body.FieldPulse .thumbtack-section-variation .community h2 {
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 40px;
-    margin-bottom: 12px;
-}
-
-html body.FieldPulse .thumbtack-section-variation .community p {
-    max-width: 536px !important;
-    margin: 0 auto;
-}
-
-html body.FieldPulse .thumbtack-section-variation .community button {
-    background: #00aaff;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-html body.FieldPulse .thumbtack-section-variation .community button:hover {
-    background: #008fcc;
-}
-
-html body.FieldPulse .thumbtack-section-variation section.thumbtack-section {
-    padding-top: 50px;
-}
-
-html body.FieldPulse .thumbtack-section-variation section.thumbtack-section~div {
-    display: none;
-}
-
-html body.FieldPulse .thumbtack-section-variation section.thumbtack-section~div:last-child {
-    display: block;
-}
-
-html body.FieldPulse .thumbtack-section-variation .testimonial-line {
-    border-bottom: 1px solid #D3D4D5;
-    max-width: 978px;
-    margin: 0 auto;
-    margin-top: 70px;
-    width: 100%;
-}
-
-html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"]+div {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    html body.FieldPulse .thumbtack-section-variation .testimonial-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .earnings {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .item_secotion_price {
-        display: block;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .item_secotion_price div:last-child {
-        margin-top: 20px;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .tools-logos.desktoplogo {
-        display: none;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .card img {
-        width: 272px;
-        height: 272px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-
-    html body.FieldPulse [aria-label="Thumbtack Home"] [aria-label="logo"] {
-        display: none !important;
-    }
-}
-
-@media (min-width: 769px) {
-    html body.FieldPulse .section_topimage .mobile_image {
-        display: none;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .tools-logos.mobile_section {
-        display: none;
-    }
-
-    html body.FieldPulse [aria-label="Thumbtack Home"]:after {
-        content: " ";
-        background-image: url(https://cdn.optimizely.com/img/20611073899/039045ef4cde449e970aad9b95e2edc7.svg);
-        height: 43px;
-        width: 239px;
-        display: inline-block;
-        background-size: cover;
-        margin-top: 0px;
-        margin-left: 0px;
-    }
-
-    html body.FieldPulse [aria-label="Thumbtack Home"] svg {
-        display: none !important;
-    }
-
-}
-
-@media screen and (max-width: 600px) {
-
-    html body.FieldPulse .thumbtack-section-variation .tools,
-    html body.FieldPulse .thumbtack-section-variation .testimonials,
-    html body.FieldPulse .thumbtack-section-variation .calculator {
-        padding: 0 15px;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .community {
-        background-image: url(https://cdn.optimizely.com/img/20611073899/8a172aac42ea4df5a1916ac59f347f07.jpg);
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .tools-logos {
-        gap: 20px;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .testimonials {
-        margin-top: 70px;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .community {
-        border-radius: 0px;
-    }
-}
-
-/* Additional styles for better responsiveness */
-html body.FieldPulse [class*="hero_heroInnerOffsetLeft"] {
-    display: none;
-}
-
-@media (min-width: 701px) {
-    html body.FieldPulse [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"] {
-        font-size: 48px !important;
-        line-height: 52px;
-        color: #2F3033 !important;
-        margin-top: 32px;
-    }
-
-    html body.FieldPulse [class*="hero_heroInnerOffsetRight"]>[class*="Type_text1"] {
-        font-size: 32px !important;
-        padding-right: 0 !important;
-        color: #2F3033 !important;
-        margin-top: 15px;
-    }
-
-    [class*="hero_heroInnerContainer"] {
-        padding: 0 20px;
-    }
-
-    html body.FieldPulse [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"] br {
-        display: none;
-    }
-}
-
-html body.FieldPulse [class*="hero_heroInnerContainer"] [class*="hero_heroInnerOffsetRight"] {
-    max-width: 946px;
-    width: 100% !important;
-}
-
-html body.FieldPulse [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"],
-html body.FieldPulse [class*="hero_heroInnerOffsetRight"]>[class*="Type_text1"] {
-    text-align: center;
-    padding-right: 0 !important;
-    display: block !important;
-    line-height: 36px !important;
-}
-
-html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"] {
-    padding-bottom: 50px !important;
-    box-shadow: none !important;
-    background-color: transparent !important;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"]>div p {
-    display: none;
-}
-
-html body.FieldPulse [class*="composable-customer-header_root"]+.bg-gray-200 {
-    background-color: #fff !important;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] [class*="TextInput_inputIconContainer"] svg {
-    fill: #2f3033;
-    width: 21px;
-    height: 28px;
-}
-
-html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"]+div {
-    text-align: center !important;
-    margin-top: 0 !important;
-    margin-bottom: 50px !important;
-}
-
-html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"]+div [class*="Type_text1"] {
-    padding-right: 0 !important
-}
-
-html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"]+div [class*="Type_text1"] * {
-    font-weight: 400 !important;
-}
-
-html body.FieldPulse .section_topimage {
-    text-align: center;
-}
-
-html body.FieldPulse .section_topimage img {
-    width: 100%;
-}
-
-/* section style */
-/* Reset and base styles */
-html body.FieldPulse .thumbtack-section {
-    padding: 25px 0px;
-    text-align: center;
-    padding-bottom: 60px;
-}
-
-html body.FieldPulse .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-html body.FieldPulse .title {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 60px;
-    color: #222;
-}
-
-html body.FieldPulse .feature-row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 80px;
-}
-
-html body.FieldPulse .feature-item {
-    flex: 1 1 30%;
-    max-width: 320px;
-    margin: 0 auto;
-}
-
-html body.FieldPulse .feature-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    margin-bottom: 30px;
-}
-
-html body.FieldPulse .feature-item h3 {
-    font-size: 16px !important;
-    line-height: 24px !important;
-    font-weight: 700 !important;
-}
-
-html body.FieldPulse .feature-item p {
-    font-size: 15px;
-    color: #555;
-    line-height: 1.5;
-}
-
-html body.FieldPulse .see-how-different_seeHowDifferentSection__XzCyL:before {
-    display: none;
-}
-
-html body.FieldPulse [class*="see-how-different_seeHowDifferentSection"] [class*="Wrap_root"]>div>h2,
-html body.FieldPulse [class*="see-how-different_seeHowDifferentSection"] [class*="Wrap_root"]>div>h2+div {
-    display: none !important;
-}
-
-html body.FieldPulse [class*="hero_heroInnerOffsetRight"]>[class*="Type_text1"] span {
-    font-weight: 400 !important;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2 [for="new-pro-lp-cs"]+[class*="TextInput_root"]>div>div:before {
-    content: " ";
-    height: 20px;
-    width: 20px;
-    background-size: contain;
-    background-image: url(https://cdn.optimizely.com/img/20611073899/35159129023748fb818ab5022863bbee.svgz);
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2 [for="new-pro-lp-cs"]+[class*="TextInput_root"]>div>div svg {
-    display: none;
-}
-
-/* style for tabel section */
-html body.FieldPulse [class*="see-how-different_featureComparisonChart"] {
-    box-shadow: none !important;
-    padding-top: 0px !important;
-    padding-bottom: 0 !important;
-    border-radius: 0;
-}
-
-html body.FieldPulse [class*="see-how-different_featureComparisonChart"] td {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-html body.FieldPulse [class*="see-how-different_featureComparisonChart"] tr [class*="see-how-different_chartBorderGray"] {
-    display: flex;
-    padding-left: 12px !important;
-}
-
-html body.FieldPulse .flex.w-100.bg-gray-200.relative {
-    background-color: #fff !important;
-}
-
-html body.FieldPulse [class*="see-how-different_seeHowDifferentSection"] {
-    background-color: #fafafa !important;
-}
-
-html body.FieldPulse [class*="see-how-different_greenThumbsUpIcon"] {
-    color: #009fd9;
-}
-
-html body.FieldPulse [class*="see-how-different_chartBorderGray"] th:first-child p,
-html body.FieldPulse [class*="see-how-different_chartBorderGray"] th:nth-child(3) div {
-    font-size: 16px !important;
-    color: #2F3033 !important;
-}
-
-html body.FieldPulse [class*="see-how-different_chartBorderGray"] {
-    border-bottom: none !important;
-}
-
-html body.FieldPulse [class*="see-how-different_featureComparisonChart"] tr:first-child {
-    background-color: #fafafa;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 12x;
-    padding-right: 0px !important;
-    border-bottom: none !important;
-}
-
-html body.FieldPulse.FieldPulse [class*="see-how-different_featureComparisonChart"] td div {
-    font-size: 16px !important;
-    line-height: 24px !important;
-    font-weight: 400 !important;
-    color: #2F3033;
-}
-
-html body.FieldPulse [class*="see-how-different_featureComparisonChart"] tr:first-child th:first-child {
-    padding-left: 12px !important;
-}
-
-.crethumbimag img {
-    margin-top: 7px;
-}
-
-html body.FieldPulse html body.FieldPulse .thumbtack-section-variation {
-    margin-bottom: 80px !important;
-    text-align: center !important;
-}
-
-html body.FieldPulse #ttsearch-location-input {
-    color: #fff;
-    background-color: #009fd9;
-    border-color: #009fd9;
-    margin-top: 51px;
-    max-width: 946px !important;
-    margin: 0 auto;
-    margin-top: 0;
-    padding: 12px 22px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    margin-bottom: 68px;
-    font-weight: 700;
-    width: 100%;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] input::placeholder,
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] textarea::placeholder {
-    color: #2F3033;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2+.relative.mv2 div>div>div:before {
-    content: " ";
-    height: 20px;
-    width: 20px;
-    background-size: contain;
-    background-image: url(https://cdn.optimizely.com/img/20611073899/59ac46be5ada4f5c911f41170d2eebff.svgz);
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2+.relative.mv2 div>div>div svg {
-    display: none;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2+.relative.mv2 {
-    margin-top: 19px !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2+.relative.mv2+div {
-    margin-top: 11px !important;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2+.relative.mv2+div+div {
-    margin-top: 19px !important;
-}
-
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2+.relative.mv2+div {
-    display: none !important;
-}
-
-html body.FieldPulse [class*="see-how-different_featureComparisonChartRow"]:nth-child(2n+1) {
-    background-color: #fafafa;
-}
-
-html body.FieldPulse [class*="see-how-different_featureComparisonChartRow"]:nth-child(2n) {
-    background-color: transparent !important;
-}
-
-/* Responsive for small screens */
-html body.FieldPulse #new-pro-lp-cs,
-html body.FieldPulse [class*="pro-search-signup_mainWrapper"] .relative.mv2 [class*="TextInput_inputInnerElement"],
-html body.FieldPulse #search-location-input {
-    background-color: #fafafa !important;
-    border-radius: 4px;
-}
-
-html body.FieldPulse [class*="TextInput_inputStylesRoundedBordersLeft"] {
-    border-style: none;
-}
-
-@media screen and (max-width: 768px) {
-    html body.FieldPulse .section_topimage .desktop_image {
-        display: none;
-    }
-
-    html body.FieldPulse [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"] br {
-        display: none;
-    }
-
-    html body.FieldPulse .feature-row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    html body.FieldPulse .feature-item {
-        max-width: 90%;
-    }
-
-    html body.FieldPulse .title {
-        font-size: 26px;
-        margin-bottom: 40px;
-    }
-
-    html body.FieldPulse .section_topimage img {
-        max-width: 100% !important;
-    }
-
-    html body.FieldPulse [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"] {
-        display: block !important;
-        color: #2f3033 !important;
-        font-size: 30px;
-        text-wrap: pretty;
-        margin-top: 30px;
-    }
-
-    [class*="hero_heroInnerOffsetRight"] [data-testid="get-started-button-mobile"] span:after {
-        content: "Sign up for free";
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-    }
-
-    [class*="hero_heroInnerOffsetRight"] [data-testid="get-started-button-mobile"] span {
-        font-size: 0;
-    }
-
-    html body.FieldPulse .shadow-400.br-pill.m_shadow-none svg {
-        display: none !important;
-    }
-
-    [class*="hero_heroCategoryTaxonSearchBox"]+div>p:first-child {
-        display: none;
-    }
-
-    html body.FieldPulse [class*="see-how-different_featureComparisonTable"] [class*="see-how-different_featureComparisonChart"] {
-        background-color: transparent;
-    }
-
-    html body.FieldPulse [class*="see-how-different_featureComparisonTable"] [class*="see-how-different_featureComparisonChart"] tr {
-        margin-bottom: 20px;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation {
-        margin-bottom: 40px !important;
-    }
-
-    html body.FieldPulse.FieldPulse [class*="see-how-different_featureComparisonChart"] td:first-child {
-        padding-right: 12px !important;
-        padding-left: 5px !important;
-        border: none !important;
-    }
-
-    html body.FieldPulse .crethumbimag img {
-        width: 33px;
-    }
-
-    html body.FieldPulse .crethumbimag img {
-        margin-top: 16px;
-    }
-
-    html body.FieldPulse [class*="see-how-different_featureComparisonChart"] tr:first-child th:first-child {
-        padding-left: 5px !important;
-    }
-
-    html body.FieldPulse.FieldPulse [class*="see-how-different_featureComparisonChart"] td div {
-        line-height: 18px !important;
-    }
-
-    html body.FieldPulse [class*="hero_heroInnerOffsetRight"]>[class*="Type_text1"] {
-        margin-bottom: 0 !important;
-        color: #2F3033 !important;
-        font-size: 22px !important;
-        line-height: 30px !important;
-        padding: 0 8px !important;
-    }
-
-    html body.FieldPulse section.thumbtack-section>div h2 {
-        text-align: center !important;
-        text-wrap: pretty;
-    }
-
-    html body.FieldPulse [class*="hero_heroCategoryTaxonSearchBox"]+div {
-        margin-bottom: 0 !important;
-    }
-
-    html body.FieldPulse .shadow-400.br-pill.m_shadow-none {
-        background-color: transparent;
-        box-shadow: none !important;
-    }
-
-    html body.FieldPulse .shadow-400.br-pill.m_shadow-none .dn.m_di {
-        display: inline-block !important;
-        margin-left: 3px;
-    }
-
-    html body.FieldPulse [class*="see-how-different_featureComparisonChartRow"]:nth-child(2n) {
-        background-color: transparent !important;
-    }
-
-    html body.FieldPulse #ttsearch-location-input {
-        width: 90% !important;
-    }
-
-    html body.FieldPulse .feature-row {
-        margin-top: 40px;
-    }
-
-    html body.FieldPulse [class*="see-how-different_seeHowDifferentSection"]>div>div {
-        padding-top: 20px !important;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .calculator h2 {
-        font-size: 24px;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .community a,
-    html body.FieldPulse .thumbtack-section-variation .subhead_cta a {
-        max-width: 100% !important;
-    }
-}
-
-@media screen and (max-width: 390px) {
-    html body.FieldPulse [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"] {
-        margin: 0 20px;
-    }
-}
-
-.thumbtack-section-variation~* {
-    display: none;
-}
-
-.thumbtack-section-variation~*:last-child {
-    display: block;
-}
-
-@media (max-width: 970px) and (min-width: 750px) {
-    html body.FieldPulse .thumbtack-section-variation .calculator form {
-        padding: 0 20px;
-    }
-}
-
-html body.FieldPulse .thumbtack-section.thumbtack-section-variation {
-    padding-top: 80px;
-    padding-bottom: 0;
-}
-
-@media screen and (max-width: 768px) {
-    html body.FieldPulse .title {
-        text-align: center !important;
-    }
-
-    html body.pro-page-updte.FieldPulse [class*="see-how-different_featureComparisonTable"] [class*="see-how-different_featureComparisonChart"] tr:first-child {
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    html body.pro-page-updte.FieldPulse [class*="see-how-different_featureComparisonTable"] [class*="see-how-different_featureComparisonChart"] [class*="see-how-different_tt"] svg {
-        height: 12px;
-    }
-
-    html body.FieldPulse .section_topimage {
-        margin-top: 40px;
-        padding: 0 16px;
-    }
-
-    html body.FieldPulse .thumbtack-section-variation .community::before {
-        display: none;
-    }
-
-    html body.FieldPulse [aria-label="Thumbtack Home"]:after {
-        content: " ";
-        background-image: url(https://cdn.optimizely.com/img/20611073899/039045ef4cde449e970aad9b95e2edc7.svg);
-        height: 46px;
-        width: 272px;
-        /* height: 56px;
-        width: 206px; */
-        display: inline-block;
-        background-size: cover;
-        margin-top: 0px;
-        margin-left: 0px;
-    }
-}
-
-.TT_updatetext {
-    max-width: 690px;
-    margin: 0 auto;
-    padding: 60px 0;
-}
-
-.TT_updatetext p {
-    font-size: 12px;
-}
-
-.subhead_cta {
-    max-width: 690px;
-    margin: 0 auto;
-}
-
-html body.FieldPulse [class*="hero_heroInnerOffsetRight"]>[class*="Type_text1"] {
-    max-width: 812px;
-    margin: 0 auto;
-}
-
-html body.FieldPulse .thumbtack-section-variation~.relative+div {
-    display: none;
-}
-
-.fixed.bottom-0.left-0.right-0.w-100.bg-white.z-1.pa3.b-gray.bt {
-    z-index: 99 !important;
-}
+html body.cre-t-07 .cre-t-07-banner-images-bottom {
+	position: relative;
+	flex: 0 1 auto;
+}
+
+/* Banner quote */
+html body.cre-t-07 .cre-t-07-banner-image-quote {
+	position: absolute;
+	bottom: 32px;
+	width: 100%;
+}
+
+html body.cre-t-07 .cre-t-07-banner-image-quote-inner {
+	background-color: #17040AD1;
+	padding: 18px 15px;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	max-width: 90%;
+	margin: 0 auto;
+}
+ 
+html body.cre-t-07 .cre-t-07-quote-text {
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 1;
+	letter-spacing: 0;
+	text-align: center;
+}
+
+html body.cre-t-07 .cre-t-07-quote-author {
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 1;
+	letter-spacing: 0;
+	text-align: center;
+}
+
+/* Timer */
+html body.cre-t-07 .cre-t-07-timer {
+	transition: opacity 0.5s ease-in-out;
+}
+
+html body.cre-t-07 .cre-t-07-timer.cre-t-07-timer-active {
+	max-height: 100% !important;
+	opacity: 1 !important;
+}
+
+html body.cre-t-07 .cre-t-07-timer.cre-t-07-timer-active .cre-t-07-timer-inner {
+	display: flex;
+}
+
+html body.cre-t-07 .cre-t-07-timer-inner {
+	display: none;
+	align-items: center;
+	gap: 9px;
+	margin-top: 29px;
+	margin-bottom: 15px;
+}
 
-/* new css */
-html body.FieldPulse [class*="hero_heroInnerOffsetRight"] [class*="hero_heroTitle"] {
-    margin-bottom: 18px !important;
+html body.cre-t-07 .cre-t-07-timer-text {
+	font-family: 'gotham-narrow-book', sans-serif;
+	color: #FC0;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 18px;
+}
+
+html body.cre-t-07 .cre-t-07-timer-savings,
+html body.cre-t-07 .cre-t-07-timer-countdown {
+	font-weight: 600;
+    font-family: "gotham-narrow-medium", sans-serif;
+}
+
+/* CTA */
+html body.cre-t-07 .cre-t-07-cta-container {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 13px;
+	margin-top: 15px;
+	align-items: center;
+}
+
+html body.cre-t-07 .cre-t-07-cta-1 {
+	display: flex;
+	max-width: 220px;
+	height: 46px;
+	width: 100%;
+	padding: 10px 40px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 3px;
+	background-color: #FCD426;
+}
+
+html body.cre-t-07 .cre-t-07-cta-1 span {
+	color: #000;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1;
+}
+
+html body.cre-t-07 .cre-t-07-cta-2 {
+	display: flex;
+	max-width: 220px;
+	height: 46px;
+	width: 100%;
+	padding: 10px 40px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 3px;
+	border: 1px solid #FCD426;
+	background-color: transparent;
+}
+
+html body.cre-t-07 .cre-t-07-cta-2 span {
+	color: #FCD426;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1;
+	margin: 0 -1px;
+}
+
+html body.cre-t-07 .cre-t-07-cta-after-text {
+	color: #FC0;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 25.71px;
+}
+
+html body.cre-t-07 .cre-t-07-cta-after-link {
+	color: #FC0;
+	text-decoration: underline;
+}
+
+@media screen and (min-width: 1600px) {
+	html body.cre-t-07 .banner .banner_container {
+		justify-content: center;
+	}
+
+	html body.cre-t-07 .banner .banner_content {
+		max-width: 665px;
+		padding-left: 0px;
+	}
+
+	html body.cre-t-07 .cre-t-07-banner-images {
+		max-width: 676px;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	html body.cre-t-07 .banner_content {
+		padding-left: 32px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	html body.cre-t-07 .banner {
+		background: none !important;
+		background-color: #000 !important;
+	}
+
+	html body.cre-t-07 .banner .banner_bg {
+		top: -60%;
+		height: 110%;
+	}
+
+	html body.cre-t-07 .banner .banner_container {
+		flex-direction: column !important;
+	}
+
+	html body.cre-t-07 .banner .banner_container {
+		gap: 20px;
+	}
+
+	html body.cre-t-07 .banner_content {
+		padding: 0 32px;
+		margin-top: 40px !important;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	html body.cre-t-07 .banner .banner_bg {
+		top: -30%;
+		height: 100%;
+	}
+
+	html body.cre-t-07 .cre-t-07-bullet {
+		align-items: flex-start;
+		line-height: 24px;
+		font-size: 14px;
+	}
+
+	html body.cre-t-07 .cre-t-07-bullet img {
+		width: 16px;
+		margin-top: 4px;
+	}
+
+	html body.cre-t-07 .cre-t-07-cta-container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	html body.cre-t-07 .cre-t-07-cta-1 {
+		max-width: 100%;
+	}
+	html body.cre-t-07 .cre-t-07-cta-2 {
+		max-width: 100%;
+	}
 }

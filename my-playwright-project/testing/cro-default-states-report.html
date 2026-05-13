@@ -1,0 +1,2370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRO-116 Default States Report</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f3f4f6;color:#111;padding:18px}
+.wrap{max-width:1100px;margin:0 auto}
+.hero{background:#1e3a5f;color:#fff;padding:20px 24px;border-radius:10px;margin-bottom:16px}
+.hero h1{font-size:21px;margin-bottom:6px}
+.hero p{font-size:12px;opacity:.8;margin-top:3px}
+.hero a{color:#93c5fd}
+.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:14px 18px;margin-bottom:16px;font-size:13px}
+.info-box h2{font-size:14px;color:#1e40af;margin-bottom:8px}
+.info-box li{margin-left:16px;line-height:1.9}
+h2{font-size:17px;margin:18px 0 8px}
+.st{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;margin-bottom:18px;font-size:13px}
+.st th{background:#f9fafb;padding:8px 10px;text-align:left;border-bottom:2px solid #e5e7eb}
+.st td{padding:7px 10px;border-bottom:1px solid #f3f4f6}
+.card{background:#fff;border:1px solid #d1d5db;border-radius:8px;padding:15px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card.err{border-color:#fca5a5}
+.chdr{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.bname{font-size:15px;font-weight:700;flex:1}
+.emsg{color:#dc2626;font-size:13px;margin-top:6px}
+details{margin-top:8px}
+details>summary{cursor:pointer;font-size:13px;font-weight:600;color:#1d4ed8;padding:5px 0;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+.ttl{font-size:13px;font-weight:600;margin:10px 0 5px;color:#374151}
+.dt{width:100%;border-collapse:collapse;font-size:12px;border:1px solid #e5e7eb;border-radius:5px;overflow:hidden}
+.dt th{background:#f9fafb;padding:6px 9px;text-align:left;border-bottom:1px solid #e5e7eb}
+.dt td{padding:6px 9px;border-bottom:1px solid #f3f4f6}
+tr.ok td{background:#f0fdf4}
+tr.ng td{background:#fff5f5}
+.ct{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px;border:1px solid #e5e7eb;border-radius:5px;overflow:hidden}
+.ct th{background:#f9fafb;padding:7px 10px;text-align:left;width:140px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;font-weight:600}
+.ct td{padding:7px 10px;border-bottom:1px solid #f3f4f6}
+.b{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;color:#fff}
+.b.pass{background:#16a34a}.b.fail{background:#dc2626}.b.na{background:#9ca3af}
+.exp{color:#1d4ed8}.act{color:#111}.miss{color:#dc2626;font-style:italic}
+.mono{font-family:monospace;font-size:11px}
+.sm{font-size:11px}.dim{color:#6b7280}
+.meta{font-size:12px;margin:5px 0}
+.warn{color:#d97706;font-size:12px;padding:4px 0}
+.ok{color:#16a34a;font-size:12px;padding:4px 0}
+.eline{background:#fef2f2;font-size:11px;padding:3px 7px;margin:2px 0;border-radius:3px;font-family:monospace}
+.notfire{background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#92400e;line-height:1.6}
+.gn{color:#16a34a;font-weight:700}.rd{color:#dc2626;font-weight:700}
+footer{text-align:center;font-size:11px;color:#9ca3af;margin-top:22px}
+code{background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:11px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <h1>CRO-116 Default States Audit Report</h1>
+  <p>All Pets / Dogs / Cats — No Breed or ZIP Filters</p>
+  <p>Generated: 13/5/2026, 12:54:13 pm</p>
+  <p style="margin-top:8px">
+    <strong>Variation:</strong> <a href="https://petinsurancegurus.com/?cro_mode=qa&_conv_eforce=100051999.1000255345" target="_blank">https://petinsurancegurus.com/?cro_mode=qa&_conv_eforce=100051999.1000255345</a><br>
+    <strong>Control:</strong> <a href="https://petinsurancegurus.com/?cro_mode=qa&_conv_eforce=100051999.1000255344" target="_blank">https://petinsurancegurus.com/?cro_mode=qa&_conv_eforce=100051999.1000255344</a>
+  </p>
+</div>
+
+<div class="info-box">
+  <h2>What This Test Checks</h2>
+  <ul>
+    <li><strong>Prices (variation)</strong> — <code>span.cre-t-116-price-update</code> shows discounted prices on All Pets, Dogs, Cats tabs</li>
+    <li><strong>Show More</strong> — clicked before price checks to reveal all hidden provider cards</li>
+    <li><strong>Tooltip</strong> — body class <code>cre-t-116-toolTipContentChange</code> present + CSS style tag contains "maximum available deductible"</li>
+    <li><strong>Bottom Copy</strong> — "Firstly…" li text contains "maximum available deductible" (not "$500 deductible")</li>
+    <li><strong>ZIP Guard</strong> — entering ZIP 10001 should deactivate variation (<code>cre-t-116</code> spans removed / body class removed)</li>
+    <li><strong>Control Integrity</strong> — control URL has 0 <code>cre-t-116-price-update</code> spans, no variation body class</li>
+    <li><strong>Browsers</strong> — Chrome, Firefox, Edge, Safari Desktop + Chrome/Safari/Firefox/Edge Mobile</li>
+  </ul>
+</div>
+
+<h2>Summary</h2>
+<table class="st">
+  <thead><tr><th>Browser / Device</th><th>Overall</th><th>Pass</th><th>Fail</th><th>Tooltip</th><th>Bottom Copy</th><th>Control</th></tr></thead>
+  <tbody><tr>
+      <td><strong>Chrome Desktop</strong></td>
+      <td><span class="b pass">PASS</span></td>
+      <td class="gn">30</td>
+      <td class="rd">0</td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+    </tr><tr>
+      <td><strong>Firefox Desktop</strong></td>
+      <td><span class="b pass">PASS</span></td>
+      <td class="gn">30</td>
+      <td class="rd">0</td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+    </tr><tr>
+      <td><strong>Edge Desktop</strong></td>
+      <td><span class="b pass">PASS</span></td>
+      <td class="gn">30</td>
+      <td class="rd">0</td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+    </tr><tr>
+      <td><strong>Safari/WebKit Desktop</strong></td>
+      <td><span class="b pass">PASS</span></td>
+      <td class="gn">30</td>
+      <td class="rd">0</td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+    </tr><tr>
+      <td><strong>Chrome Mobile (Pixel 7)</strong></td>
+      <td><span class="b pass">PASS</span></td>
+      <td class="gn">30</td>
+      <td class="rd">0</td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+    </tr><tr>
+      <td><strong>Safari Mobile (iPhone)</strong></td>
+      <td><span class="b pass">PASS</span></td>
+      <td class="gn">30</td>
+      <td class="rd">0</td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+    </tr><tr>
+      <td><strong>Firefox Mobile</strong></td>
+      <td><span class="b pass">PASS</span></td>
+      <td class="gn">30</td>
+      <td class="rd">0</td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+    </tr><tr>
+      <td><strong>Edge Mobile</strong></td>
+      <td><span class="b pass">PASS</span></td>
+      <td class="gn">30</td>
+      <td class="rd">0</td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody>
+</table>
+
+<h2>Detailed Results</h2>
+<div class="card">
+  <div class="chdr">
+    <span class="bname">Chrome Desktop</span>
+    <span class="b pass">PASS</span>
+    <span class="dim sm">30 pass / 0 fail prices</span>
+    <span class="dim sm">| tooltip:<span class="b pass">PASS</span> bottom:<span class="b pass">PASS</span> control:<span class="b pass">PASS</span></span>
+  </div>
+  
+
+  <details open>
+    <summary>&#9654; Variation Prices</summary>
+    <p class="meta">Show More clicked: <strong>Yes ✓</strong></p>
+    <h4 class="ttl">🐾 All Pets — default/page-load state</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$28.69/mo</td>
+      <td class="act">$28.69/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$37.78/mo</td>
+      <td class="act">$37.78/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$30.66/mo</td>
+      <td class="act">$30.66/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$39.73/mo</td>
+      <td class="act">$39.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$42.96/mo</td>
+      <td class="act">$42.96/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$60.72/mo</td>
+      <td class="act">$60.72/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$36.02/mo</td>
+      <td class="act">$36.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$51.41/mo</td>
+      <td class="act">$51.41/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$32.27/mo</td>
+      <td class="act">$32.27/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$35.02/mo</td>
+      <td class="act">$35.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐕 Dogs Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$32.13/mo</td>
+      <td class="act">$32.13/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$42.33/mo</td>
+      <td class="act">$42.33/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$34.73/mo</td>
+      <td class="act">$34.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$44.20/mo</td>
+      <td class="act">$44.20/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$46.80/mo</td>
+      <td class="act">$46.80/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$70.22/mo</td>
+      <td class="act">$70.22/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$41.23/mo</td>
+      <td class="act">$41.23/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$58.98/mo</td>
+      <td class="act">$58.98/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$35.95/mo</td>
+      <td class="act">$35.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$38.68/mo</td>
+      <td class="act">$38.68/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐈 Cats Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$14.95/mo</td>
+      <td class="act">$14.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$19.59/mo</td>
+      <td class="act">$19.59/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$14.37/mo</td>
+      <td class="act">$14.37/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$21.89/mo</td>
+      <td class="act">$21.89/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$27.58/mo</td>
+      <td class="act">$27.58/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$22.73/mo</td>
+      <td class="act">$22.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$15.16/mo</td>
+      <td class="act">$15.16/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$21.15/mo</td>
+      <td class="act">$21.15/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$17.55/mo</td>
+      <td class="act">$17.55/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$20.39/mo</td>
+      <td class="act">$20.39/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+  </details>
+
+  <details>
+    <summary>&#9654; Tooltip Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Method</th><td>Body class <code>cre-t-116-toolTipContentChange</code> + CSS <code>style.convert-css-100051999</code> contains expected text</td></tr>
+      <tr><th>Body class present</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS has new text</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS snippet</th><td class="mono sm">ar-old pet with the maximum available deductible, based on data collected from all across the country. Learn more at the end of this page.";</td></tr>
+      <tr><th>Note</th><td class="dim">Tooltip text injected via CSS ::after — body class + CSS style content both checked</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Bottom-of-Page Copy &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Must contain</th><td class="exp">"maximum available deductible"</td></tr>
+      <tr><th>Found text</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with the maximum available deductible for the quote.</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; ZIP Filter Guard &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+           <tr><th>After ZIP 10001</th><td>After ZIP 10001: 0 cre-t-116 spans visible, bodyClass=false</td></tr>
+           <tr><th>cre-t-116 spans</th><td>0 (expect 0)</td></tr>
+           <tr><th>Body class</th><td>false (expect false)</td></tr>
+           <tr><th>Result</th><td><span class="b pass">PASS</span></td></tr>
+         </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Control URL Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>cre-t-116 spans</th><td>0 (expect 0) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Body class</th><td>false (expect false) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Bottom copy</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with a $500 deductible for the quote</td></tr>
+      <tr><th>Bottom copy check</th><td><span class="b pass">PASS</span> expects "$500 deductible" NOT "maximum available deductible"</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Console / JS Errors (0 + 0)</summary>
+    <p class="ok">None ✓</p>
+  </details>
+</div>
+<div class="card">
+  <div class="chdr">
+    <span class="bname">Firefox Desktop</span>
+    <span class="b pass">PASS</span>
+    <span class="dim sm">30 pass / 0 fail prices</span>
+    <span class="dim sm">| tooltip:<span class="b pass">PASS</span> bottom:<span class="b pass">PASS</span> control:<span class="b pass">PASS</span></span>
+  </div>
+  
+
+  <details open>
+    <summary>&#9654; Variation Prices</summary>
+    <p class="meta">Show More clicked: <strong>Yes ✓</strong></p>
+    <h4 class="ttl">🐾 All Pets — default/page-load state</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$28.69/mo</td>
+      <td class="act">$28.69/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$37.78/mo</td>
+      <td class="act">$37.78/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$30.66/mo</td>
+      <td class="act">$30.66/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$39.73/mo</td>
+      <td class="act">$39.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$42.96/mo</td>
+      <td class="act">$42.96/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$60.72/mo</td>
+      <td class="act">$60.72/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$36.02/mo</td>
+      <td class="act">$36.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$51.41/mo</td>
+      <td class="act">$51.41/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$32.27/mo</td>
+      <td class="act">$32.27/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$35.02/mo</td>
+      <td class="act">$35.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐕 Dogs Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$32.13/mo</td>
+      <td class="act">$32.13/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$42.33/mo</td>
+      <td class="act">$42.33/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$34.73/mo</td>
+      <td class="act">$34.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$44.20/mo</td>
+      <td class="act">$44.20/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$46.80/mo</td>
+      <td class="act">$46.80/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$70.22/mo</td>
+      <td class="act">$70.22/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$41.23/mo</td>
+      <td class="act">$41.23/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$58.98/mo</td>
+      <td class="act">$58.98/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$35.95/mo</td>
+      <td class="act">$35.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$38.68/mo</td>
+      <td class="act">$38.68/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐈 Cats Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$14.95/mo</td>
+      <td class="act">$14.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$19.59/mo</td>
+      <td class="act">$19.59/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$14.37/mo</td>
+      <td class="act">$14.37/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$21.89/mo</td>
+      <td class="act">$21.89/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$27.58/mo</td>
+      <td class="act">$27.58/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$22.73/mo</td>
+      <td class="act">$22.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$15.16/mo</td>
+      <td class="act">$15.16/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$21.15/mo</td>
+      <td class="act">$21.15/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$17.55/mo</td>
+      <td class="act">$17.55/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$20.39/mo</td>
+      <td class="act">$20.39/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+  </details>
+
+  <details>
+    <summary>&#9654; Tooltip Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Method</th><td>Body class <code>cre-t-116-toolTipContentChange</code> + CSS <code>style.convert-css-100051999</code> contains expected text</td></tr>
+      <tr><th>Body class present</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS has new text</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS snippet</th><td class="mono sm">ar-old pet with the maximum available deductible, based on data collected from all across the country. Learn more at the end of this page.";</td></tr>
+      <tr><th>Note</th><td class="dim">Tooltip text injected via CSS ::after — body class + CSS style content both checked</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Bottom-of-Page Copy &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Must contain</th><td class="exp">"maximum available deductible"</td></tr>
+      <tr><th>Found text</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with the maximum available deductible for the quote.</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; ZIP Filter Guard &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+           <tr><th>After ZIP 10001</th><td>After ZIP 10001: 0 cre-t-116 spans visible, bodyClass=false</td></tr>
+           <tr><th>cre-t-116 spans</th><td>0 (expect 0)</td></tr>
+           <tr><th>Body class</th><td>false (expect false)</td></tr>
+           <tr><th>Result</th><td><span class="b pass">PASS</span></td></tr>
+         </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Control URL Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>cre-t-116 spans</th><td>0 (expect 0) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Body class</th><td>false (expect false) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Bottom copy</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with a $500 deductible for the quote</td></tr>
+      <tr><th>Bottom copy check</th><td><span class="b pass">PASS</span> expects "$500 deductible" NOT "maximum available deductible"</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Console / JS Errors (1 + 0)</summary>
+    <div class="eline">[JavaScript Error: "Cookie “_fbp” has been rejected for invalid domain." {file: "https://petinsurancegurus.com/?cro_mode=qa&_conv_eforce=100051999.1000255345" line: 0}]</div>
+  </details>
+</div>
+<div class="card">
+  <div class="chdr">
+    <span class="bname">Edge Desktop</span>
+    <span class="b pass">PASS</span>
+    <span class="dim sm">30 pass / 0 fail prices</span>
+    <span class="dim sm">| tooltip:<span class="b pass">PASS</span> bottom:<span class="b pass">PASS</span> control:<span class="b pass">PASS</span></span>
+  </div>
+  
+
+  <details open>
+    <summary>&#9654; Variation Prices</summary>
+    <p class="meta">Show More clicked: <strong>Yes ✓</strong></p>
+    <h4 class="ttl">🐾 All Pets — default/page-load state</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$28.69/mo</td>
+      <td class="act">$28.69/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$37.78/mo</td>
+      <td class="act">$37.78/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$30.66/mo</td>
+      <td class="act">$30.66/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$39.73/mo</td>
+      <td class="act">$39.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$42.96/mo</td>
+      <td class="act">$42.96/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$60.72/mo</td>
+      <td class="act">$60.72/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$36.02/mo</td>
+      <td class="act">$36.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$51.41/mo</td>
+      <td class="act">$51.41/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$32.27/mo</td>
+      <td class="act">$32.27/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$35.02/mo</td>
+      <td class="act">$35.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐕 Dogs Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$32.13/mo</td>
+      <td class="act">$32.13/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$42.33/mo</td>
+      <td class="act">$42.33/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$34.73/mo</td>
+      <td class="act">$34.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$44.20/mo</td>
+      <td class="act">$44.20/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$46.80/mo</td>
+      <td class="act">$46.80/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$70.22/mo</td>
+      <td class="act">$70.22/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$41.23/mo</td>
+      <td class="act">$41.23/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$58.98/mo</td>
+      <td class="act">$58.98/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$35.95/mo</td>
+      <td class="act">$35.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$38.68/mo</td>
+      <td class="act">$38.68/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐈 Cats Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$14.95/mo</td>
+      <td class="act">$14.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$19.59/mo</td>
+      <td class="act">$19.59/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$14.37/mo</td>
+      <td class="act">$14.37/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$21.89/mo</td>
+      <td class="act">$21.89/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$27.58/mo</td>
+      <td class="act">$27.58/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$22.73/mo</td>
+      <td class="act">$22.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$15.16/mo</td>
+      <td class="act">$15.16/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$21.15/mo</td>
+      <td class="act">$21.15/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$17.55/mo</td>
+      <td class="act">$17.55/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$20.39/mo</td>
+      <td class="act">$20.39/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+  </details>
+
+  <details>
+    <summary>&#9654; Tooltip Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Method</th><td>Body class <code>cre-t-116-toolTipContentChange</code> + CSS <code>style.convert-css-100051999</code> contains expected text</td></tr>
+      <tr><th>Body class present</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS has new text</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS snippet</th><td class="mono sm">ar-old pet with the maximum available deductible, based on data collected from all across the country. Learn more at the end of this page.";</td></tr>
+      <tr><th>Note</th><td class="dim">Tooltip text injected via CSS ::after — body class + CSS style content both checked</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Bottom-of-Page Copy &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Must contain</th><td class="exp">"maximum available deductible"</td></tr>
+      <tr><th>Found text</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with the maximum available deductible for the quote.</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; ZIP Filter Guard &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+           <tr><th>After ZIP 10001</th><td>After ZIP 10001: 0 cre-t-116 spans visible, bodyClass=false</td></tr>
+           <tr><th>cre-t-116 spans</th><td>0 (expect 0)</td></tr>
+           <tr><th>Body class</th><td>false (expect false)</td></tr>
+           <tr><th>Result</th><td><span class="b pass">PASS</span></td></tr>
+         </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Control URL Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>cre-t-116 spans</th><td>0 (expect 0) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Body class</th><td>false (expect false) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Bottom copy</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with a $500 deductible for the quote</td></tr>
+      <tr><th>Bottom copy check</th><td><span class="b pass">PASS</span> expects "$500 deductible" NOT "maximum available deductible"</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Console / JS Errors (0 + 0)</summary>
+    <p class="ok">None ✓</p>
+  </details>
+</div>
+<div class="card">
+  <div class="chdr">
+    <span class="bname">Safari/WebKit Desktop</span>
+    <span class="b pass">PASS</span>
+    <span class="dim sm">30 pass / 0 fail prices</span>
+    <span class="dim sm">| tooltip:<span class="b pass">PASS</span> bottom:<span class="b pass">PASS</span> control:<span class="b pass">PASS</span></span>
+  </div>
+  
+
+  <details open>
+    <summary>&#9654; Variation Prices</summary>
+    <p class="meta">Show More clicked: <strong>Yes ✓</strong></p>
+    <h4 class="ttl">🐾 All Pets — default/page-load state</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$28.69/mo</td>
+      <td class="act">$28.69/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$37.78/mo</td>
+      <td class="act">$37.78/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$30.66/mo</td>
+      <td class="act">$30.66/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$39.73/mo</td>
+      <td class="act">$39.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$42.96/mo</td>
+      <td class="act">$42.96/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$60.72/mo</td>
+      <td class="act">$60.72/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$36.02/mo</td>
+      <td class="act">$36.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$51.41/mo</td>
+      <td class="act">$51.41/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$32.27/mo</td>
+      <td class="act">$32.27/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$35.02/mo</td>
+      <td class="act">$35.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐕 Dogs Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$32.13/mo</td>
+      <td class="act">$32.13/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$42.33/mo</td>
+      <td class="act">$42.33/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$34.73/mo</td>
+      <td class="act">$34.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$44.20/mo</td>
+      <td class="act">$44.20/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$46.80/mo</td>
+      <td class="act">$46.80/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$70.22/mo</td>
+      <td class="act">$70.22/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$41.23/mo</td>
+      <td class="act">$41.23/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$58.98/mo</td>
+      <td class="act">$58.98/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$35.95/mo</td>
+      <td class="act">$35.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$38.68/mo</td>
+      <td class="act">$38.68/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐈 Cats Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$14.95/mo</td>
+      <td class="act">$14.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$19.59/mo</td>
+      <td class="act">$19.59/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$14.37/mo</td>
+      <td class="act">$14.37/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$21.89/mo</td>
+      <td class="act">$21.89/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$27.58/mo</td>
+      <td class="act">$27.58/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$22.73/mo</td>
+      <td class="act">$22.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$15.16/mo</td>
+      <td class="act">$15.16/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$21.15/mo</td>
+      <td class="act">$21.15/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$17.55/mo</td>
+      <td class="act">$17.55/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$20.39/mo</td>
+      <td class="act">$20.39/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+  </details>
+
+  <details>
+    <summary>&#9654; Tooltip Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Method</th><td>Body class <code>cre-t-116-toolTipContentChange</code> + CSS <code>style.convert-css-100051999</code> contains expected text</td></tr>
+      <tr><th>Body class present</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS has new text</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS snippet</th><td class="mono sm">ar-old pet with the maximum available deductible, based on data collected from all across the country. Learn more at the end of this page.";</td></tr>
+      <tr><th>Note</th><td class="dim">Tooltip text injected via CSS ::after — body class + CSS style content both checked</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Bottom-of-Page Copy &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Must contain</th><td class="exp">"maximum available deductible"</td></tr>
+      <tr><th>Found text</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with the maximum available deductible for the quote.</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; ZIP Filter Guard &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+           <tr><th>After ZIP 10001</th><td>After ZIP 10001: 0 cre-t-116 spans visible, bodyClass=false</td></tr>
+           <tr><th>cre-t-116 spans</th><td>0 (expect 0)</td></tr>
+           <tr><th>Body class</th><td>false (expect false)</td></tr>
+           <tr><th>Result</th><td><span class="b pass">PASS</span></td></tr>
+         </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Control URL Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>cre-t-116 spans</th><td>0 (expect 0) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Body class</th><td>false (expect false) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Bottom copy</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with a $500 deductible for the quote</td></tr>
+      <tr><th>Bottom copy check</th><td><span class="b pass">PASS</span> expects "$500 deductible" NOT "maximum available deductible"</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Console / JS Errors (0 + 0)</summary>
+    <p class="ok">None ✓</p>
+  </details>
+</div>
+<div class="card">
+  <div class="chdr">
+    <span class="bname">Chrome Mobile (Pixel 7)</span>
+    <span class="b pass">PASS</span>
+    <span class="dim sm">30 pass / 0 fail prices</span>
+    <span class="dim sm">| tooltip:<span class="b pass">PASS</span> bottom:<span class="b pass">PASS</span> control:<span class="b pass">PASS</span></span>
+  </div>
+  
+
+  <details open>
+    <summary>&#9654; Variation Prices</summary>
+    <p class="meta">Show More clicked: <strong>Yes ✓</strong></p>
+    <h4 class="ttl">🐾 All Pets — default/page-load state</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$28.69/mo</td>
+      <td class="act">$28.69/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$37.78/mo</td>
+      <td class="act">$37.78/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$30.66/mo</td>
+      <td class="act">$30.66/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$39.73/mo</td>
+      <td class="act">$39.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$42.96/mo</td>
+      <td class="act">$42.96/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$60.72/mo</td>
+      <td class="act">$60.72/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$36.02/mo</td>
+      <td class="act">$36.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$51.41/mo</td>
+      <td class="act">$51.41/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$32.27/mo</td>
+      <td class="act">$32.27/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$35.02/mo</td>
+      <td class="act">$35.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐕 Dogs Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$32.13/mo</td>
+      <td class="act">$32.13/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$42.33/mo</td>
+      <td class="act">$42.33/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$34.73/mo</td>
+      <td class="act">$34.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$44.20/mo</td>
+      <td class="act">$44.20/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$46.80/mo</td>
+      <td class="act">$46.80/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$70.22/mo</td>
+      <td class="act">$70.22/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$41.23/mo</td>
+      <td class="act">$41.23/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$58.98/mo</td>
+      <td class="act">$58.98/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$35.95/mo</td>
+      <td class="act">$35.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$38.68/mo</td>
+      <td class="act">$38.68/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐈 Cats Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$14.95/mo</td>
+      <td class="act">$14.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$19.59/mo</td>
+      <td class="act">$19.59/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$14.37/mo</td>
+      <td class="act">$14.37/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$21.89/mo</td>
+      <td class="act">$21.89/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$27.58/mo</td>
+      <td class="act">$27.58/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$22.73/mo</td>
+      <td class="act">$22.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$15.16/mo</td>
+      <td class="act">$15.16/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$21.15/mo</td>
+      <td class="act">$21.15/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$17.55/mo</td>
+      <td class="act">$17.55/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$20.39/mo</td>
+      <td class="act">$20.39/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+  </details>
+
+  <details>
+    <summary>&#9654; Tooltip Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Method</th><td>Body class <code>cre-t-116-toolTipContentChange</code> + CSS <code>style.convert-css-100051999</code> contains expected text</td></tr>
+      <tr><th>Body class present</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS has new text</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS snippet</th><td class="mono sm">ar-old pet with the maximum available deductible, based on data collected from all across the country. Learn more at the end of this page.";</td></tr>
+      <tr><th>Note</th><td class="dim">Tooltip text injected via CSS ::after — body class + CSS style content both checked</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Bottom-of-Page Copy &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Must contain</th><td class="exp">"maximum available deductible"</td></tr>
+      <tr><th>Found text</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with the maximum available deductible for the quote.</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; ZIP Filter Guard &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+           <tr><th>After ZIP 10001</th><td>After ZIP 10001: 0 cre-t-116 spans visible, bodyClass=false</td></tr>
+           <tr><th>cre-t-116 spans</th><td>0 (expect 0)</td></tr>
+           <tr><th>Body class</th><td>false (expect false)</td></tr>
+           <tr><th>Result</th><td><span class="b pass">PASS</span></td></tr>
+         </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Control URL Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>cre-t-116 spans</th><td>0 (expect 0) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Body class</th><td>false (expect false) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Bottom copy</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with a $500 deductible for the quote</td></tr>
+      <tr><th>Bottom copy check</th><td><span class="b pass">PASS</span> expects "$500 deductible" NOT "maximum available deductible"</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Console / JS Errors (0 + 0)</summary>
+    <p class="ok">None ✓</p>
+  </details>
+</div>
+<div class="card">
+  <div class="chdr">
+    <span class="bname">Safari Mobile (iPhone)</span>
+    <span class="b pass">PASS</span>
+    <span class="dim sm">30 pass / 0 fail prices</span>
+    <span class="dim sm">| tooltip:<span class="b pass">PASS</span> bottom:<span class="b pass">PASS</span> control:<span class="b pass">PASS</span></span>
+  </div>
+  
+
+  <details open>
+    <summary>&#9654; Variation Prices</summary>
+    <p class="meta">Show More clicked: <strong>Yes ✓</strong></p>
+    <h4 class="ttl">🐾 All Pets — default/page-load state</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$28.69/mo</td>
+      <td class="act">$28.69/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$37.78/mo</td>
+      <td class="act">$37.78/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$30.66/mo</td>
+      <td class="act">$30.66/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$39.73/mo</td>
+      <td class="act">$39.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$42.96/mo</td>
+      <td class="act">$42.96/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$60.72/mo</td>
+      <td class="act">$60.72/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$36.02/mo</td>
+      <td class="act">$36.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$51.41/mo</td>
+      <td class="act">$51.41/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$32.27/mo</td>
+      <td class="act">$32.27/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$35.02/mo</td>
+      <td class="act">$35.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐕 Dogs Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$32.13/mo</td>
+      <td class="act">$32.13/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$42.33/mo</td>
+      <td class="act">$42.33/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$34.73/mo</td>
+      <td class="act">$34.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$44.20/mo</td>
+      <td class="act">$44.20/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$46.80/mo</td>
+      <td class="act">$46.80/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$70.22/mo</td>
+      <td class="act">$70.22/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$41.23/mo</td>
+      <td class="act">$41.23/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$58.98/mo</td>
+      <td class="act">$58.98/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$35.95/mo</td>
+      <td class="act">$35.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$38.68/mo</td>
+      <td class="act">$38.68/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐈 Cats Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$14.95/mo</td>
+      <td class="act">$14.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$19.59/mo</td>
+      <td class="act">$19.59/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$14.37/mo</td>
+      <td class="act">$14.37/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$21.89/mo</td>
+      <td class="act">$21.89/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$27.58/mo</td>
+      <td class="act">$27.58/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$22.73/mo</td>
+      <td class="act">$22.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$15.16/mo</td>
+      <td class="act">$15.16/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$21.15/mo</td>
+      <td class="act">$21.15/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$17.55/mo</td>
+      <td class="act">$17.55/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$20.39/mo</td>
+      <td class="act">$20.39/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+  </details>
+
+  <details>
+    <summary>&#9654; Tooltip Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Method</th><td>Body class <code>cre-t-116-toolTipContentChange</code> + CSS <code>style.convert-css-100051999</code> contains expected text</td></tr>
+      <tr><th>Body class present</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS has new text</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS snippet</th><td class="mono sm">ar-old pet with the maximum available deductible, based on data collected from all across the country. Learn more at the end of this page.";</td></tr>
+      <tr><th>Note</th><td class="dim">Tooltip text injected via CSS ::after — body class + CSS style content both checked</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Bottom-of-Page Copy &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Must contain</th><td class="exp">"maximum available deductible"</td></tr>
+      <tr><th>Found text</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with the maximum available deductible for the quote.</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; ZIP Filter Guard &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+           <tr><th>After ZIP 10001</th><td>After ZIP 10001: 0 cre-t-116 spans visible, bodyClass=false</td></tr>
+           <tr><th>cre-t-116 spans</th><td>0 (expect 0)</td></tr>
+           <tr><th>Body class</th><td>false (expect false)</td></tr>
+           <tr><th>Result</th><td><span class="b pass">PASS</span></td></tr>
+         </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Control URL Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>cre-t-116 spans</th><td>0 (expect 0) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Body class</th><td>false (expect false) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Bottom copy</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with a $500 deductible for the quote</td></tr>
+      <tr><th>Bottom copy check</th><td><span class="b pass">PASS</span> expects "$500 deductible" NOT "maximum available deductible"</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Console / JS Errors (0 + 0)</summary>
+    <p class="ok">None ✓</p>
+  </details>
+</div>
+<div class="card">
+  <div class="chdr">
+    <span class="bname">Firefox Mobile</span>
+    <span class="b pass">PASS</span>
+    <span class="dim sm">30 pass / 0 fail prices</span>
+    <span class="dim sm">| tooltip:<span class="b pass">PASS</span> bottom:<span class="b pass">PASS</span> control:<span class="b pass">PASS</span></span>
+  </div>
+  
+
+  <details open>
+    <summary>&#9654; Variation Prices</summary>
+    <p class="meta">Show More clicked: <strong>Yes ✓</strong></p>
+    <h4 class="ttl">🐾 All Pets — default/page-load state</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$28.69/mo</td>
+      <td class="act">$28.69/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$37.78/mo</td>
+      <td class="act">$37.78/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$30.66/mo</td>
+      <td class="act">$30.66/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$39.73/mo</td>
+      <td class="act">$39.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$42.96/mo</td>
+      <td class="act">$42.96/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$60.72/mo</td>
+      <td class="act">$60.72/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$36.02/mo</td>
+      <td class="act">$36.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$51.41/mo</td>
+      <td class="act">$51.41/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$32.27/mo</td>
+      <td class="act">$32.27/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$35.02/mo</td>
+      <td class="act">$35.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐕 Dogs Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$32.13/mo</td>
+      <td class="act">$32.13/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$42.33/mo</td>
+      <td class="act">$42.33/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$34.73/mo</td>
+      <td class="act">$34.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$44.20/mo</td>
+      <td class="act">$44.20/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$46.80/mo</td>
+      <td class="act">$46.80/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$70.22/mo</td>
+      <td class="act">$70.22/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$41.23/mo</td>
+      <td class="act">$41.23/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$58.98/mo</td>
+      <td class="act">$58.98/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$35.95/mo</td>
+      <td class="act">$35.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$38.68/mo</td>
+      <td class="act">$38.68/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐈 Cats Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$14.95/mo</td>
+      <td class="act">$14.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$19.59/mo</td>
+      <td class="act">$19.59/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$14.37/mo</td>
+      <td class="act">$14.37/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$21.89/mo</td>
+      <td class="act">$21.89/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$27.58/mo</td>
+      <td class="act">$27.58/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$22.73/mo</td>
+      <td class="act">$22.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$15.16/mo</td>
+      <td class="act">$15.16/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$21.15/mo</td>
+      <td class="act">$21.15/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$17.55/mo</td>
+      <td class="act">$17.55/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$20.39/mo</td>
+      <td class="act">$20.39/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+  </details>
+
+  <details>
+    <summary>&#9654; Tooltip Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Method</th><td>Body class <code>cre-t-116-toolTipContentChange</code> + CSS <code>style.convert-css-100051999</code> contains expected text</td></tr>
+      <tr><th>Body class present</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS has new text</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS snippet</th><td class="mono sm">ar-old pet with the maximum available deductible, based on data collected from all across the country. Learn more at the end of this page.";</td></tr>
+      <tr><th>Note</th><td class="dim">Tooltip text injected via CSS ::after — body class + CSS style content both checked</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Bottom-of-Page Copy &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Must contain</th><td class="exp">"maximum available deductible"</td></tr>
+      <tr><th>Found text</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with the maximum available deductible for the quote.</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; ZIP Filter Guard &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+           <tr><th>After ZIP 10001</th><td>After ZIP 10001: 0 cre-t-116 spans visible, bodyClass=false</td></tr>
+           <tr><th>cre-t-116 spans</th><td>0 (expect 0)</td></tr>
+           <tr><th>Body class</th><td>false (expect false)</td></tr>
+           <tr><th>Result</th><td><span class="b pass">PASS</span></td></tr>
+         </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Control URL Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>cre-t-116 spans</th><td>0 (expect 0) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Body class</th><td>false (expect false) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Bottom copy</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with a $500 deductible for the quote</td></tr>
+      <tr><th>Bottom copy check</th><td><span class="b pass">PASS</span> expects "$500 deductible" NOT "maximum available deductible"</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Console / JS Errors (1 + 0)</summary>
+    <div class="eline">[JavaScript Error: "Cookie “_fbp” has been rejected for invalid domain." {file: "https://petinsurancegurus.com/?cro_mode=qa&_conv_eforce=100051999.1000255345" line: 0}]</div>
+  </details>
+</div>
+<div class="card">
+  <div class="chdr">
+    <span class="bname">Edge Mobile</span>
+    <span class="b pass">PASS</span>
+    <span class="dim sm">30 pass / 0 fail prices</span>
+    <span class="dim sm">| tooltip:<span class="b pass">PASS</span> bottom:<span class="b pass">PASS</span> control:<span class="b pass">PASS</span></span>
+  </div>
+  
+
+  <details open>
+    <summary>&#9654; Variation Prices</summary>
+    <p class="meta">Show More clicked: <strong>Yes ✓</strong></p>
+    <h4 class="ttl">🐾 All Pets — default/page-load state</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$28.69/mo</td>
+      <td class="act">$28.69/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$37.78/mo</td>
+      <td class="act">$37.78/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$30.66/mo</td>
+      <td class="act">$30.66/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$39.73/mo</td>
+      <td class="act">$39.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$42.96/mo</td>
+      <td class="act">$42.96/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$60.72/mo</td>
+      <td class="act">$60.72/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$36.02/mo</td>
+      <td class="act">$36.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$51.41/mo</td>
+      <td class="act">$51.41/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$32.27/mo</td>
+      <td class="act">$32.27/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$35.02/mo</td>
+      <td class="act">$35.02/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐕 Dogs Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$32.13/mo</td>
+      <td class="act">$32.13/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$42.33/mo</td>
+      <td class="act">$42.33/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$34.73/mo</td>
+      <td class="act">$34.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$44.20/mo</td>
+      <td class="act">$44.20/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$46.80/mo</td>
+      <td class="act">$46.80/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$70.22/mo</td>
+      <td class="act">$70.22/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$41.23/mo</td>
+      <td class="act">$41.23/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$58.98/mo</td>
+      <td class="act">$58.98/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$35.95/mo</td>
+      <td class="act">$35.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$38.68/mo</td>
+      <td class="act">$38.68/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+    <h4 class="ttl">🐈 Cats Tab</h4>
+       <table class="dt"><thead><tr><th>Provider</th><th>data-unique</th><th>Expected</th><th>Actual</th><th></th></tr></thead>
+       <tbody>
+    <tr class="ok">
+      <td><strong>Lemonade</strong></td>
+      <td class="mono">outbound-partner-clicks-Lemonade-Listing-Only</td>
+      <td class="exp">$14.95/mo</td>
+      <td class="act">$14.95/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Figo</strong></td>
+      <td class="mono">outbound-partner-clicks-Figo-Listing-Only</td>
+      <td class="exp">$19.59/mo</td>
+      <td class="act">$19.59/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Odie</strong></td>
+      <td class="mono">outbound-partner-clicks-Odie-Listing-Only</td>
+      <td class="exp">$14.37/mo</td>
+      <td class="act">$14.37/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Fetch</strong></td>
+      <td class="mono">outbound-partner-clicks-Fetch-Listing-Only</td>
+      <td class="exp">$21.89/mo</td>
+      <td class="act">$21.89/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Embrace</strong></td>
+      <td class="mono">outbound-partner-clicks-Embrace-Listing-Only</td>
+      <td class="exp">$27.58/mo</td>
+      <td class="act">$27.58/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Trupanion</strong></td>
+      <td class="mono">outbound-partner-clicks-Trupanion-Listing-Only</td>
+      <td class="exp">$22.73/mo</td>
+      <td class="act">$22.73/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Pumpkin</strong></td>
+      <td class="mono">outbound-partner-clicks-Pumpkin-Listing-Only</td>
+      <td class="exp">$15.16/mo</td>
+      <td class="act">$15.16/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>ASPCA</strong></td>
+      <td class="mono">outbound-partner-clicks-ASPCA-Listing-Only</td>
+      <td class="exp">$21.15/mo</td>
+      <td class="act">$21.15/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>AKC</strong></td>
+      <td class="mono">outbound-partner-clicks-AKC-Listing-Only</td>
+      <td class="exp">$17.55/mo</td>
+      <td class="act">$17.55/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr>
+    <tr class="ok">
+      <td><strong>Liberty Mutual</strong></td>
+      <td class="mono">outbound-partner-clicks-Liberty Mutual-Listing-Only</td>
+      <td class="exp">$20.39/mo</td>
+      <td class="act">$20.39/mo</td>
+      <td><span class="b pass">PASS</span></td>
+    </tr></tbody></table>
+  </details>
+
+  <details>
+    <summary>&#9654; Tooltip Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Method</th><td>Body class <code>cre-t-116-toolTipContentChange</code> + CSS <code>style.convert-css-100051999</code> contains expected text</td></tr>
+      <tr><th>Body class present</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS has new text</th><td><span class="b pass">PASS</span></td></tr>
+      <tr><th>CSS snippet</th><td class="mono sm">ar-old pet with the maximum available deductible, based on data collected from all across the country. Learn more at the end of this page.";</td></tr>
+      <tr><th>Note</th><td class="dim">Tooltip text injected via CSS ::after — body class + CSS style content both checked</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Bottom-of-Page Copy &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>Must contain</th><td class="exp">"maximum available deductible"</td></tr>
+      <tr><th>Found text</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with the maximum available deductible for the quote.</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; ZIP Filter Guard &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+           <tr><th>After ZIP 10001</th><td>After ZIP 10001: 0 cre-t-116 spans visible, bodyClass=false</td></tr>
+           <tr><th>cre-t-116 spans</th><td>0 (expect 0)</td></tr>
+           <tr><th>Body class</th><td>false (expect false)</td></tr>
+           <tr><th>Result</th><td><span class="b pass">PASS</span></td></tr>
+         </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Control URL Check &nbsp;<span class="b pass">PASS</span></summary>
+    <table class="ct">
+      <tr><th>cre-t-116 spans</th><td>0 (expect 0) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Body class</th><td>false (expect false) &nbsp;<span class="b pass">PASS</span></td></tr>
+      <tr><th>Bottom copy</th><td class="act">Firstly, the "average plan cost" shown above is based on the national average of all breeds of dogs and cats using a 2 year old pet with a $500 deductible for the quote</td></tr>
+      <tr><th>Bottom copy check</th><td><span class="b pass">PASS</span> expects "$500 deductible" NOT "maximum available deductible"</td></tr>
+    </table>
+  </details>
+
+  <details>
+    <summary>&#9654; Console / JS Errors (0 + 0)</summary>
+    <p class="ok">None ✓</p>
+  </details>
+</div>
+
+<footer>CRO-116 Default States Audit &mdash; 13/5/2026, 12:54:13 pm</footer>
+</div>
+</body>
+</html>

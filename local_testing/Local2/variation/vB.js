@@ -2,9 +2,47 @@
   try {
     /* main variables */
     var debug = 1;
-    var variation_name = "Control";
+    var variation_name = "cre-t-08";
+
+    function isExitPopupTriggered() {
+      return sessionStorage.getItem("modalTriggered") === "true";
+    }
 
     /* all Pure helper functions */
+
+    /**
+     * Adds a CSS class to an element
+     * @param {string|HTMLElement} selector - CSS selector string or DOM element
+     * @param {string} className - The class name to add (without dot)
+     *
+     * Usage Examples:
+     * addClass(".button", "active");
+     * addClass(document.getElementById("btn"), "active");
+     */
+    function addClass(selector, className) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (element.classList) element.classList.add(className);
+      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
+        element.className += " " + className;
+      }
+    }
+
+    /**
+     * Removes a CSS class from an element
+     * @param {string|HTMLElement} selector - CSS selector string or DOM element
+     * @param {string} className - The class name to remove (without dot)
+     *
+     * Usage Examples:
+     * removeClass(".button", "active");
+     * removeClass(document.getElementById("btn"), "active");
+     */
+    function removeClass(selector, className) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (element.classList) element.classList.remove(className);
+      else element.className = element.className.replace(new RegExp("\b" + className + "\b", "g"), "");
+    }
 
     function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
       var interval = setInterval(function () {
@@ -17,124 +55,230 @@
         clearInterval(interval);
       }, delayTimeout);
     }
-
-    /* Variation functions */
-
-    function setupClinicValidation(iframeDoc) {
-      if (iframeDoc._cret21ControlValidation) return;
-      iframeDoc._cret21ControlValidation = true;
-
-      var BTN_SEL       = '[data-testid="request-consult__next-step-button"]';
-      var INPUT_SEL     = '#practice-search-by-name input[role="combobox"]';
-      var LABEL_SEL     = '#practice-search-by-name #practice-label';
-      var CONTAINER_SEL = '#practice-search-by-name .MuiOutlinedInput-root';
-
-      function injectErrorStyles(iframeDoc) {
-        if (iframeDoc.getElementById("cre-t-21-control-styles")) return;
-        var style = iframeDoc.createElement("style");
-        style.id = "cre-t-21-control-styles";
-        style.textContent = [
-          "#practice-search-by-name .cre-t-21-field-error .MuiOutlinedInput-notchedOutline { border-color: rgb(234,72,72) !important; border-width: 2px !important; }",
-          "#practice-search-by-name .cre-t-21-field-error:hover .MuiOutlinedInput-notchedOutline { border-color: rgb(234,72,72) !important; }",
-          "#practice-search-by-name .cre-t-21-field-error.Mui-focused .MuiOutlinedInput-notchedOutline { border-color: rgb(234,72,72) !important; }",
-          "#practice-search-by-name .cre-t-21-field-error, #practice-search-by-name .cre-t-21-field-error:hover { background-color: transparent !important; }",
-        ].join(" ");
-        iframeDoc.head.appendChild(style);
+    /**
+     * Inserts HTML content or element before a target element
+     * @param {string|HTMLElement} selector - CSS selector string or target element
+     * @param {string|HTMLElement} html - HTML string to insert or DOM element
+     */
+    function insertBeforeEnd(selector, html) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (typeof html === "string") {
+        element.insertAdjacentHTML("beforeend", html);
+      } else if (html && html.nodeType === 1) {
+        element.insertAdjacentElement("beforeend", html);
       }
+    }
 
-      function showError() {
-        injectErrorStyles(iframeDoc);
-        var container = iframeDoc.querySelector(CONTAINER_SEL);
-        var label     = iframeDoc.querySelector(LABEL_SEL);
-        if (container) container.classList.add("cre-t-21-field-error");
-        if (label)     label.style.color = "rgb(234,72,72)";
-        if (debug) console.log(variation_name + " - clinic validation error shown");
-      }
+    /**
+     * Event delegation - Listen for events on dynamically added elements
+     * @param {string} selector - CSS selector to match child elements
+     * @param {string} event - Event type (e.g., "click", "change", "submit")
+     * @param {Function} callback - Function to call when event fires
+     * @param {HTMLElement} context - Parent element to attach listener (default: document)
+     *
+     * Usage Examples:
+     * live(".btn-delete", "click", function(e) { console.log("Delete clicked"); });
+     * live(".menu-item", "click", function(e) { alert(this.textContent); }, document.getElementById("menu"));
+     */
+    function live(selector, event, callback, context) {
+      if (typeof callback !== "function") return;
+      context = context || document;
 
-      function clearError() {
-        var container = iframeDoc.querySelector(CONTAINER_SEL);
-        var label     = iframeDoc.querySelector(LABEL_SEL);
-        if (container) container.classList.remove("cre-t-21-field-error");
-        if (label)     label.style.color = "";
-        if (debug) console.log(variation_name + " - clinic validation error cleared");
-      }
-
-      // Listen for Next button click
-      iframeDoc.addEventListener("click", function (e) {
-        var btn = e.target.closest && e.target.closest(BTN_SEL);
-        if (!btn) return;
-
-        window._conv_q = window._conv_q || [];
-        window._conv_q.push(["triggerConversion", "100037720"]);
-
-        var input = iframeDoc.querySelector(INPUT_SEL);
-        if (!input) return;
-
-        if (input.value.trim().length === 0) {
-          showError();
-
-          // Rules from source: IsNotEmpty (phone), IsDateString (dob = 10 chars DD/MM/YYYY),
-          // Equals(true) for attended + terms. consentToShareWithGP is NOT required.
-          var phone    = iframeDoc.querySelector('input[name="userName"]');
-          var dob      = iframeDoc.querySelector('input[id="secondaryUserName"]');
-          var attended = iframeDoc.querySelector('input[name="hasAttendedPracticeIn12Months"]');
-          var terms    = iframeDoc.querySelector('input[name="termsAndConditionsAccepted"]');
-
-          var reactReady = (
-            phone    && /^04\d{8}$/.test(phone.value.trim()) &&
-            dob      && dob.value.trim().length === 10       &&
-            attended && attended.checked                     &&
-            terms    && terms.checked
-          );
-
-          if (reactReady) {
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-          }
-          return;
+      context.addEventListener(event, function (e) {
+        var el = e.target.closest(selector);
+        if (el && context.contains(el)) {
+          callback.call(el, e);
         }
+      });
+    }
+    /* Variation functions */
+    var modalSectionHtml = `
+      <div class="cre-t-8-modal-overlay" style="display: none;"></div>
+      <div class="cre-t-8-modal-container" style="display: none;">
+        <div class="cre-t-8-modal-wrapper">
+          <div class="cre-t-8-modal-cross">
+            <img src="https://v2.crocdn.com/AFP/test8/cross.svg" alt="close icon" />
+          </div>
+          <div class="cre-t-8-modal-body">
+            <div class="cre-t-8-modal-body-wrapper1">
+              <div class="cre-t-8-modal-content cre-t-8-modal-content1">
+                <div class="cre-t-8-content-1-img">
+                  <img src="https://v2.crocdn.com/AFP/test8/AFPLogo.png" alt="AFP 2026 Finance and Treasury Conference Logo" />
+                </div>
+              </div>
+              <div class="cre-t-8-modal-content cre-t-8-modal-content2">
+                <span>Why people attend AFP 2026</span>
+              </div>
+              <div class="cre-t-8-modal-content cre-t-8-modal-content3">
+                <span>7,000+ attendees · 20+ networking events · 200+ providers</span>
+              </div>
+              <div class="cre-t-8-modal-content cre-t-8-modal-content4">
+                <div class="cre-t-8-content-4-img">
+                  <img src="https://v2.crocdn.com/AFP/test8/Conference.png" alt="AFP 2026 Finance and Treasury Conference" />
+                </div>
+              </div>
+              <div class="cre-t-8-modal-content cre-t-8-modal-content5">
+                <div class="cre-t-8-modal-cards">
+                  <div class="cre-t-8-modal-card cre-t-8-modal-card1">
+                    <div class="cre-t-8-modal-card-img">
+                      <img src="https://v2.crocdn.com/AFP/test8/message.svg" alt="Message icon" />
+                    </div>
+                    <div class="cre-t-8-modal-card-header">See what’s actually working</div>
+                    <div class="cre-t-8-modal-card-description">Hear how teams are handling forecasting, liquidity, risk and AI.</div>
+                  </div>
+                  <div class="cre-t-8-modal-card cre-t-8-modal-card2">
+                    <div class="cre-t-8-modal-card-img">
+                      <img src="https://v2.crocdn.com/AFP/test8/Compare.svg" alt="Compare icon" />
+                    </div>
+                    <div class="cre-t-8-modal-card-header">Compare approaches with peers</div>
+                    <div class="cre-t-8-modal-card-description">Compare systems, tools and providers side by side in one place.</div>
+                  </div>
+                  <div class="cre-t-8-modal-card cre-t-8-modal-card3">
+                    <div class="cre-t-8-modal-card-img">
+                      <img src="https://v2.crocdn.com/AFP/test8/checkmark.svg" alt="Checkmark icon" />
+                    </div>
+                    <div class="cre-t-8-modal-card-header">Bring back better decisions</div>
+                    <div class="cre-t-8-modal-card-description">One useful idea or connection can easily cover the cost of attending.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cre-t-8-modal-content cre-t-8-modal-content6">
+                <div class="cre-t-8-modal-button1">
+                  <a href="/registration" class="cre-t-8-modal-cta-link1">Register Now</a>
+                  <div class="cre-t-8-modal-disclaimer">
+                    <div class="cre-t-8-modal-disclaimer-icon">
+                      <img src="https://v2.crocdn.com/AFP/test8/fire.svg" alt="info icon" />
+                    </div>
+                    <div class="cre-t-8-modal-disclaimer-text">Save $675 before June 26</div>
+                  </div>
+                </div>
+                <div class="cre-t-8-modal-button2">
+                  <a href="/program/overview/schedule" class="cre-t-8-modal-cta-link2">View Program & Pricing</a>
+                </div>
+              </div>
+            </div>
+            <div class="cre-t-8-modal-body-wrapper2">
+              <div class="cre-t-8-modal-review">
+                <div class="cre-t-8-modal-review-img">
+                  <img src="https://v2.crocdn.com/AFP/test8/Cassie.png" alt="Image of a woman named Cassie Wang" />
+                </div>
+                <div class="cre-t-8-modal-review-text">
+                  <div class="cre-t-8-modal-review-text1">“It’s easy to get stuck in your own bubble. I attend AFP Conference to get outside perspectives and connect with top talent.”</div>
+                  <div class="cre-t-8-modal-review-text2">— Cassie Wang, Head of Finance, Lightship Security, Inc.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
 
-        clearError();
-      }, true);
+    function insertModal() {
+      if (!document.querySelector(".cre-t-8-modal-overlay")) {
+        insertBeforeEnd("html body", modalSectionHtml);
+      }
+    }
 
-      // Clear error as soon as user starts typing / selects a value
-      iframeDoc.addEventListener("input", function (e) {
-        var el = e.target.closest && e.target.closest(INPUT_SEL);
-        if (el && el.value.trim().length > 0) clearError();
+    function eventHandler() {
+      live(".cre-t-8-modal-cross", "click", function () {
+        removeClass("body", "cre-t-8-show-modal");
+        // setInStorage();
+      });
+
+      live(".cre-t-8-modal-overlay", "click", function () {
+        removeClass("body", "cre-t-8-show-modal");
+        // setInStorage();
       });
     }
 
-    /* Variation Init */
-    function init() {
-      if (debug) console.log(variation_name + " - body[data-telehealth='step_4_Verify'] detected, starting 5s force interval");
+    // ___________________________________________________________________
+    // ___________________________________________________________________
 
-      var forceInterval = setInterval(function () {
-        var iframe = document.getElementById("mobile-viewport");
-        if (!iframe) return;
+    function getStartTime() {
+      // Retrieve the start time from sessionStorage
+      let startTime = sessionStorage.getItem("startTime");
 
-        var iframeDoc;
-        try {
-          iframeDoc = iframe.contentWindow.document;
-        } catch (e) {
-          if (debug) console.log(variation_name + " - iframe contentWindow access error:", e);
-          return;
-        }
+      // If there's no start time, set it to the current time (current timestamp)
+      if (!startTime) {
+        startTime = Date.now(); // Get the current timestamp in milliseconds
+        sessionStorage.setItem("startTime", startTime); // Store the timestamp
+        console.log("Start time set: " + new Date(startTime).toLocaleTimeString());
+      } else {
+        startTime = parseInt(startTime, 10); // Ensure it's parsed as an integer (timestamp)
+        console.log("Start time already exists: " + new Date(startTime).toLocaleTimeString());
+      }
 
-        if (iframeDoc && iframeDoc.body) {
-          setupClinicValidation(iframeDoc);
-        }
-      }, 100);
-
-      setTimeout(function () {
-        clearInterval(forceInterval);
-        if (debug) console.log(variation_name + " - force interval cleared after 5s");
-      }, 5000);
+      return startTime;
     }
 
-    /* Initialise variation — observe outer body for step_4_Verify */
-    waitForElement('body[data-telehealth="step_4_Verify"]', init);
+    function startModalTimer() {
+      if (isExitPopupTriggered()) return;
+      // Get the start time using the new function
+      const startTime = getStartTime();
 
+      // Calculate the time elapsed since the start time
+      const elapsedTime = Date.now() - startTime;
+      console.log("Elapsed time: " + Math.floor(elapsedTime / 1000) + " seconds");
+
+      // Calculate the remaining time for the 15-second timer
+      const remainingTime = Math.max(0, 15000 - elapsedTime);
+      console.log("Remaining time: " + Math.floor(remainingTime / 1000) + " seconds");
+
+      // If the modal hasn't been triggered yet and the time is up, trigger the modal
+      if (remainingTime === 0) {
+        showModal(); // Show the modal if 15 seconds are up
+        console.log("Modal triggered after 15 seconds");
+      }
+
+      // If the modal hasn't been triggered yet, set a timeout for when to trigger the modal
+      if (remainingTime > 0) {
+        console.log("Setting timeout to trigger modal in " + Math.floor(remainingTime / 1000) + " seconds");
+        setTimeout(() => {
+          showModal();
+          console.log("Modal triggered after timeout");
+        }, remainingTime);
+      }
+    }
+
+    function showModal() {
+      addClass("body", "cre-t-8-show-modal");
+      sessionStorage.setItem("modalTriggered", "true");
+      console.log("Modal displayed (class added to body)");
+
+      // for goal
+      // Add the following snippet to trigger this event
+      window.VWO = window.VWO || [];
+      VWO.event =
+        VWO.event ||
+        function () {
+          VWO.push(["event"].concat([].slice.call(arguments)));
+        };
+
+      VWO.event("afp08ModalFires");
+    }
+
+    // ___________________________________________________________________
+    // ___________________________________________________________________
+
+    /* Variation Init */
+    function init() {
+      if (debug) console.log(variation_name + " initialized");
+      /* start your code here */
+      if (document.body.classList.contains(variation_name)) return;
+      addClass("body", variation_name);
+
+      insertModal();
+      startModalTimer();
+
+      if (!window.cre08eventHandler) {
+        window.cre08eventHandler = true;
+        eventHandler();
+      }
+    }
+
+    /* Initialise variation */
+    waitForElement("body", init, 50, 15000);
   } catch (e) {
     if (debug) console.log(e, "error in Test " + variation_name);
   }

@@ -11,6 +11,7 @@ module.exports = defineConfig({
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
     ['./sic-19-reporter.js'],
+    ['./afp10-reporter.js'],
   ],
   use: {
     headless: true,

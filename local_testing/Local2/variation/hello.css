@@ -1,0 +1,43 @@
+html body.cre-t-10 .cre-t-10-reg {
+    background: #f7921d;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+html body.cre-t-10 .cre-t-10-reg-text1 {
+    color: #fff;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13.2px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.5px;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+    /* margin-bottom: -8px; */
+}
+
+html body.cre-t-10 .cre-t-10-reg-text2 {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: inherit;
+    text-align: left;
+    font-size: 9.5px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.5px;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-transform: capitalize;
+}
+
+@media (max-width: 1199px) {
+    html body.cre-t-10 .cre-t-10-reg {
+        display: none;
+    }
+}

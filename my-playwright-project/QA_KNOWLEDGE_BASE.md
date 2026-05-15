@@ -13,7 +13,8 @@
 3. [SIC-19 — 13sick.com.au A/B Test](#3-sic-19--13sickcomau-ab-test)
 4. [Trakio — Full App Page Audit (trakio.brillmark.com)](#4-trakio--full-app-page-audit)
 5. [AFP10 — Navigation CTA Button A/B Test (financialprofessionals.org)](#5-afp10--navigation-cta-button-ab-test)
-6. [Test Type Checklists (reuse for future tests)](#6-test-type-checklists)
+6. [Correct QA Workflow for A/B Tests](#6-correct-qa-workflow-for-ab-tests)
+7. [Test Type Checklists (reuse for future tests)](#7-test-type-checklists)
 
 ---
 
@@ -347,6 +348,11 @@ The reporter stub structure (`onBegin`, `onTestBegin`, `onStepBegin`, `onStepEnd
 | TC-25 | Variation Screenshot | Visual reference captured at desktop (SKIP on mobile) |
 | TC-26 | Variation Mobile Screenshot | Button hidden state at 375px |
 
+### Bug found during post-run design review
+
+- **Control button text mismatch (HIGH)**: Figma AFP10.png shows the Control button text as **"REGISTER FOR AFP 2026"** but `vB.js` line 31 contains `"Register for FP&A Forum"` — stale copy carried from AFP05 without update. TC-04 was written to match the code's existing value and silently passed. The bug was only caught by manually comparing the code against the Figma after the test run. **Fix:** update `vB.js` line 31 to `REGISTER FOR AFP 2026` and change TC-04 assertion to match.
+- **Root cause of the miss:** Test assertions were written based on what the code already contained, not what the Figma design specified. This means the test confirmed the code's own output, not design compliance. See [Correct QA Workflow](#correct-qa-workflow-for-ab-tests) below.
+
 ### Issues found during development
 
 - **TC-15 and TC-16 count = 2 bug**: The variation's `addButton()` loops through TWO target selectors — `#global-login .global-login__link--join` AND `#global-logout .global-login__link`. The mock HTML contained both a `#global-login` nav and a `#global-logout` nav, so the two-span button was inserted in BOTH locations. A global `.cre-t-10-reg-text1` selector found 2 elements (one per nav). Fix: scope assertions to `#global-login .cre-t-10-reg .cre-t-10-reg-text1` (and `-text2`) to isolate only the logged-out header button.
@@ -377,7 +383,58 @@ TC-10 and TC-24 confirm this works: calling the init function twice results in e
 
 ---
 
-## 6. Test Type Checklists
+## 6. Correct QA Workflow for A/B Tests
+
+> This process was formalised after AFP10, where a content mismatch between the Figma design and the control code was missed because testing started from the code instead of the design.
+
+**Always follow this order — no exceptions:**
+
+### Step 1 — Read the Figma design first
+Before opening any code file, read the design reference image (Figma / PNG / mockup) and extract every expected value:
+- Button/CTA text (exact copy, exact casing)
+- Colors (hex values or visual description)
+- Layout (single-line vs two-line, flex direction, alignment)
+- Link URLs
+- Breakpoints and responsive behavior
+- Any conditional states (logged-in vs logged-out, mobile vs desktop)
+
+Write these down as your **expected values checklist** — this becomes the source of truth for all test assertions.
+
+### Step 2 — Read the variation/control code
+With the Figma spec in hand, read `js.js`, `vB.js`, CSS files and compare against each expected value:
+- Does the button text in code match the Figma? (Most common bug source)
+- Do the colors match?
+- Does the CSS layout match?
+- Are breakpoints correct?
+
+**Flag every mismatch as a bug before writing any tests.** Do not proceed until mismatches are either fixed in the code or acknowledged by the developer.
+
+### Step 3 — Verify against the live/preview URL
+Open the VWO force URL (or preview link) in a real browser:
+- `https://www.financialprofessionals.org/?_vis_preview_data=...` (or equivalent)
+- Confirm the rendered output matches the Figma, not just the code
+- Check mobile vs desktop rendering directly in the browser
+
+### Step 4 — Write tests against the Figma spec
+Test assertions must use the **Figma-specified values** as expected values, not the code's current output. If the code is wrong, the test must fail and surface the bug.
+
+| Wrong approach | Correct approach |
+|---|---|
+| Read code → write TC asserting what code does | Read Figma → write TC asserting what design says → run against code |
+| TC passes if code has "Register for FP&A Forum" | TC fails if code has "Register for FP&A Forum" instead of "REGISTER FOR AFP 2026" |
+
+### AFP10 example (what should have happened)
+
+| Step | Action | Finding |
+|------|--------|---------|
+| Step 1 | Read AFP10.png | Control button text = **REGISTER FOR AFP 2026** |
+| Step 2 | Read vB.js line 31 | Code has `Register for FP&A Forum` → **BUG: content mismatch** |
+| Step 3 | Open force URL | Verify rendered button on live site |
+| Step 4 | Write TC-04 | Assert `"REGISTER FOR AFP 2026"` — test would fail on current code, surfacing the bug |
+
+---
+
+## 7. Test Type Checklists
 
 Use these when starting a new test of a familiar category.
 

@@ -1,3 +1,17 @@
-html body.cre-t-10 .cre-t-10-reg {
-    background: #F7921D;
+.cre-t-15-conference-archive{
+    display: none !important;
+}
+
+.cre-t-15-nav-item-register{
+    position: relative;
+}
+.cre-t-15-tool{
+    position: absolute;
+    right: -30px;
+    top: 11px;
+    background: #2C8FBF;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 0px 10px;
 }

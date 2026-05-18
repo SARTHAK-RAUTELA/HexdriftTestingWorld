@@ -20,7 +20,7 @@ module.exports = defineConfig({
     ignoreHTTPSErrors: true,
     navigationTimeout: 45000,
     actionTimeout: 20000,
-    screenshot: 'on',
+    screenshot: 'only-on-failure',
   },
   projects: [
     // ── Desktop ──────────────────────────────────────────────────

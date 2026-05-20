@@ -1,17 +1,41 @@
-.cre-t-15-conference-archive{
+html body.cre-t-13 #main-nav-wrapper .login .login-link a{
+    background: none !important;
+    padding-top: 32px !important;
+}
+html body.cre-t-13 .cre-t-13-button{
+    margin-left: 20px;
+}
+html body.cre-t-13 #main-nav-wrapper .container{
+    min-width: 1168px !important;
+}
+html body.cre-t-13 .cre-t-13-button-copy-a{
+    border-radius: 1px;
+    background: #FCD426;
+    padding: 10px 14.10px;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-25_71, 25.71px); 
+}
+
+html body.cre-t-13.afpHome .nav-utilities-wrapper{
+    margin: 0px !important;
+    display: flex;
+    align-items: center;
+}
+
+html body.cre-t-13 #main-nav-wrapper .nav-utilities{
     display: none !important;
 }
 
-.cre-t-15-nav-item-register{
-    position: relative;
+html body.cre-t-13 .nav-utilities-wrapper{
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
 }
-.cre-t-15-tool{
-    position: absolute;
-    right: -30px;
-    top: 11px;
-    background: #2C8FBF;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 12px;
-    padding: 0px 10px;
+html body.cre-t-13 #main-nav-wrapper .nav-more-links{
+    padding: 0;
+    margin: 0 !important;
 }
+

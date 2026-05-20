@@ -14,6 +14,7 @@ module.exports = defineConfig({
     ['./afp10-reporter.js'],
     ['./afp15-reporter.js'],
     ['./afp13-reporter.js'],
+    ['./afp09-reporter.js'],
   ],
   use: {
     headless: true,

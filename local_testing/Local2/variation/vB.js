@@ -1,338 +1,627 @@
 (function () {
   try {
-    /* main variables */
     var debug = 1;
-    var variation_name = "cre-t-9";
-
-    function getCookie(name) {
-      var cookies = document.cookie.split("; ");
-      for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].split("=");
-        if (cookie[0] === name) {
-          return decodeURIComponent(cookie[1]);
-        }
-      }
-      return null; // Return null if the cookie is not found
+    function log() {
+      if (debug) console.log.apply(console, arguments);
     }
-
-    function isExitPopupTriggered() {
-      var cookie = getCookie("exit_popup_dismissed");
-      return cookie === "true";
-    }
-
-    // Function to set a cookie with a 7-day expiration when modal is triggered
-    function setInStorage() {
-      document.cookie = "exit_popup_dismissed=true; path=/";
-    }
-
-    /* all Pure helper functions */
-
-    /**
-     * Adds a CSS class to an element
-     * @param {string|HTMLElement} selector - CSS selector string or DOM element
-     * @param {string} className - The class name to add (without dot)
-     *
-     * Usage Examples:
-     * addClass(".button", "active");
-     * addClass(document.getElementById("btn"), "active");
-     */
-    function addClass(selector, className) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (element.classList) element.classList.add(className);
-      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
-        element.className += " " + className;
-      }
-    }
-
-    /**
-     * Removes a CSS class from an element
-     * @param {string|HTMLElement} selector - CSS selector string or DOM element
-     * @param {string} className - The class name to remove (without dot)
-     *
-     * Usage Examples:
-     * removeClass(".button", "active");
-     * removeClass(document.getElementById("btn"), "active");
-     */
-    function removeClass(selector, className) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (element.classList) element.classList.remove(className);
-      else element.className = element.className.replace(new RegExp("\b" + className + "\b", "g"), "");
-    }
-
-    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+    /* ---------- waitForElement ---------- */
+    function waitForElement(selector, trigger, delayInterval, delayTimeout) {
       var interval = setInterval(function () {
-        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
+        var el = document.querySelector(selector);
+        if (el) {
           clearInterval(interval);
-          trigger();
+          trigger(el);
         }
       }, delayInterval);
       setTimeout(function () {
         clearInterval(interval);
+        log("Timeout:", selector);
       }, delayTimeout);
     }
-    /**
-     * Inserts HTML content or element before a target element
-     * @param {string|HTMLElement} selector - CSS selector string or target element
-     * @param {string|HTMLElement} html - HTML string to insert or DOM element
-     */
-    function insertBeforeEnd(selector, html) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (typeof html === "string") {
-        element.insertAdjacentHTML("beforeend", html);
-      } else if (html && html.nodeType === 1) {
-        element.insertAdjacentElement("beforeend", html);
-      }
-    }
-
-    /**
-     * Event delegation - Listen for events on dynamically added elements
-     * @param {string} selector - CSS selector to match child elements
-     * @param {string} event - Event type (e.g., "click", "change", "submit")
-     * @param {Function} callback - Function to call when event fires
-     * @param {HTMLElement} context - Parent element to attach listener (default: document)
-     *
-     * Usage Examples:
-     * live(".btn-delete", "click", function(e) { console.log("Delete clicked"); });
-     * live(".menu-item", "click", function(e) { alert(this.textContent); }, document.getElementById("menu"));
-     */
-    function live(selector, event, callback, context) {
-      if (typeof callback !== "function") return;
-      context = context || document;
-
-      context.addEventListener(event, function (e) {
-        var el = e.target.closest(selector);
-        if (el && context.contains(el)) {
-          callback.call(el, e);
-        }
-      });
-    }
-
-    function preloadImage(imageUrl) {
-      const hiddenImage = new Image();
-      hiddenImage.src = imageUrl;
-    }
-    /* Variation functions */
-    var modalSectionHtml = `
-      <cre09 class="cre-t-9-modal-overlay" style="display: none;"></cre09>
-      <cre09 class="cre-t-9-modal-container" style="display: none;">
-        <div class="cre-t-9-modal-wrapper">
-          <div class="cre-t-9-modal-cross">
-            <img src="https://v2.crocdn.com/AFP/test8/cross.svg" alt="close icon" />
-          </div>
-          <div class="cre-t-9-modal-body">
-            <div class="cre-t-9-modal-body-wrapper1">
-              <div class="cre-t-9-modal-content cre-t-9-modal-content1">
-                <div class="cre-t-9-content-1-img">
-                  <img src="https://v2.crocdn.com/AFP/test8/AFPLogo.png" alt="AFP 2026 Finance and Treasury Conference Logo" />
-                </div>
-              </div>
-              <div class="cre-t-9-modal-content cre-t-9-modal-content2">
-                <span>Why people attend AFP 2026</span>
-              </div>
-              <div class="cre-t-9-modal-content cre-t-9-modal-content3">
-                <span>7,000+ attendees · 20+ networking events · 200+ providers</span>
-              </div>
-              <div class="cre-t-9-modal-content cre-t-9-modal-content4">
-                <div class="cre-t-9-content-4-img">
-                  <img src="https://v2.crocdn.com/AFP/test8/Conference.png" alt="AFP 2026 Finance and Treasury Conference" />
-                </div>
-              </div>
-              <div class="cre-t-9-modal-content cre-t-9-modal-content5">
-                <div class="cre-t-9-modal-cards">
-                  <div class="cre-t-9-modal-card cre-t-9-modal-card1">
-                    <div class="cre-t-9-modal-card-img">
-                      <img src="https://v2.crocdn.com/AFP/test8/message.svg" alt="Message icon" />
-                    </div>
-                    <div class="cre-t-9-modal-card-header">See what’s actually working</div>
-                    <div class="cre-t-9-modal-card-description">Hear how teams are handling forecasting, liquidity, risk and AI.</div>
-                  </div>
-                  <div class="cre-t-9-modal-card cre-t-9-modal-card2">
-                    <div class="cre-t-9-modal-card-img">
-                      <img src="https://v2.crocdn.com/AFP/test8/Compare.svg" alt="Compare icon" />
-                    </div>
-                    <div class="cre-t-9-modal-card-header">Compare approaches with peers</div>
-                    <div class="cre-t-9-modal-card-description">Compare systems, tools and providers side by side in one place.</div>
-                  </div>
-                  <div class="cre-t-9-modal-card cre-t-9-modal-card3">
-                    <div class="cre-t-9-modal-card-img">
-                      <img src="https://v2.crocdn.com/AFP/test8/checkmark.svg" alt="Checkmark icon" />
-                    </div>
-                    <div class="cre-t-9-modal-card-header">Bring back better decisions</div>
-                    <div class="cre-t-9-modal-card-description">One useful idea or connection can easily cover the cost of attending.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="cre-t-9-modal-content cre-t-9-modal-content6">
-                <div class="cre-t-9-modal-button1">
-                  <a href="https://conference.financialprofessionals.org/registration" target="_blank" rel="noopener noreferrer" class="cre-t-9-modal-cta-link1">Register Now</a>
-                  <div class="cre-t-9-modal-disclaimer">
-                    <div class="cre-t-9-modal-disclaimer-icon">
-                      <img src="https://v2.crocdn.com/AFP/test8/fire.svg" alt="info icon" />
-                    </div>
-                    <div class="cre-t-9-modal-disclaimer-text">Save $675 before June 26</div>
-                  </div>
-                </div>
-                <div class="cre-t-9-modal-button2">
-                  <a href="https://conference.financialprofessionals.org/" target="_blank" rel="noopener noreferrer" class="cre-t-9-modal-cta-link2">View Program & Pricing</a>
-                </div>
-              </div>
-            </div>
-            <div class="cre-t-9-modal-body-wrapper2">
-              <div class="cre-t-9-modal-review">
-                <div class="cre-t-9-modal-review-img">
-                  <img src="https://v2.crocdn.com/AFP/test8/Cassie.png" alt="Image of a woman named Cassie Wang" />
-                </div>
-                <div class="cre-t-9-modal-review-text">
-                  <div class="cre-t-9-modal-review-text1">“It’s easy to get stuck in your own bubble. I attend AFP Conference to get outside perspectives and connect with top talent.”</div>
-                  <div class="cre-t-9-modal-review-text2">— Cassie Wang, Head of Finance, Lightship Security, Inc.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </cre09>
-    `;
-
-    function insertModal() {
-      setTimeout(function () {
-        if (!document.querySelector(".cre-t-9-modal-overlay")) {
-          insertBeforeEnd("html body", modalSectionHtml);
-        }
-      }, 2000);
-    }
-
-    function eventHandler() {
-      live(".cre-t-9-modal-cross", "click", function () {
-        removeClass("body", "cre-t-9-show-modal");
-      });
-
-      live(".cre-t-9-modal-overlay", "click", function () {
-        removeClass("body", "cre-t-9-show-modal");
-      });
-    }
-
-    // ___________________________________________________________________
-    // ___________________________________________________________________
-
-    function getStartTime() {
-      // Retrieve the start time from sessionStorage
-      let startTime = sessionStorage.getItem("startTime");
-
-      // If there's no start time, set it to the current time (current timestamp)
-      if (!startTime) {
-        startTime = Date.now();
-        sessionStorage.setItem("startTime", startTime);
-      } else {
-        startTime = parseInt(startTime, 10);
-      }
-
-      return startTime;
-    }
-
-    function startModalTimer() {
-      if (isExitPopupTriggered()) return;
-      // Get the start time using the new function. then Calculate the time elapsed since the start time and Calculate the remaining time for the 15-second timer
-      const startTime = getStartTime();
-      const elapsedTime = Date.now() - startTime;
-      const remainingTime = Math.max(0, 30000 - elapsedTime);
-
-      // If the modal hasn't been triggered yet and the time is up, trigger the modal and If the modal hasn't been triggered yet, set a timeout for when to trigger the modal
-      if (remainingTime === 0) {
-        showModal();
-      }
-      if (remainingTime > 0) {
-        setTimeout(() => {
-          showModal();
-        }, remainingTime);
-      }
-    }
-    // ___________________________________________________________________
-    // ___________________________________________________________________
-    var debouncedMouseLeaveHandler;
-
-    function debounce(func, timeout = 100) {
+    /* ---------- debounce ---------- */
+    function debounce(func, timeout = 200) {
       let timer;
-      return (...args) => {
+      return function () {
         clearTimeout(timer);
-        timer = setTimeout(() => {
-          func.apply(this, args);
+        var args = arguments;
+        timer = setTimeout(function () {
+          func.apply(null, args);
         }, timeout);
       };
     }
-    function handleMouseLeave(event) {
-      if (event.clientY <= 50) {
-        showModal();
+    /* ---------- observeSelector ---------- */
+    function observeSelector(selector, callback, options = {}) {
+      const doc = options.document || document;
+      const processed = new Map();
+      function handle(el) {
+        if (!processed.has(el)) {
+          processed.set(el, true);
+          callback(el);
+        }
       }
+      function scan() {
+        doc.querySelectorAll(selector).forEach(handle);
+      }
+      const debouncedScan = debounce(scan, 100);
+      scan();
+      const observer = new MutationObserver(function () {
+        debouncedScan();
+      });
+      observer.observe(doc, {
+        childList: true,
+        subtree: true,
+      });
     }
-
-    function handleExitIntent() {
-      if (isExitPopupTriggered()) return;
-
-      var debouncedMouseLeaveHandler = debounce(handleMouseLeave, 200);
-      document.addEventListener("mousemove", debouncedMouseLeaveHandler);
+    /* ---------- LIVE EVENT DELEGATION ---------- */
+    function live(selector, event, callback, context) {
+      var doc = context || document;
+      function addEvent(el, type, handler) {
+        if (el.attachEvent) el.attachEvent("on" + type, handler);
+        else el.addEventListener(type, handler);
+      }
+      if (!Element.prototype.matches) {
+        Element.prototype.matches =
+          Element.prototype.matchesSelector ||
+          Element.prototype.webkitMatchesSelector ||
+          Element.prototype.msMatchesSelector ||
+          function (selector) {
+            var nodes = (this.parentNode || document).querySelectorAll(selector);
+            var i = -1;
+            while (nodes[++i] && nodes[i] !== this);
+            return !!nodes[i];
+          };
+      }
+      addEvent(doc, event, function (e) {
+        var el = e.target || e.srcElement;
+        while (el && el !== doc) {
+          if (el.matches && el.matches(selector)) {
+            callback.call(el, e);
+            break;
+          }
+          el = el.parentElement;
+        }
+      });
     }
-
-    // ___________________________________________________________________
-    // ___________________________________________________________________
-
-    function showModal() {
-      if (isExitPopupTriggered()) return;
-      addClass("body", "cre-t-9-show-modal");
-      setInStorage();
-
-      // Add the following snippet to trigger this event
-      window.VWO = window.VWO || [];
-      VWO.event =
-        VWO.event ||
-        function () {
-          VWO.push(["event"].concat([].slice.call(arguments)));
-        };
-
-      VWO.event("afp09ModalFires");
+    /* ====================================================================
+       QUEUE PAGE — NEW DESIGN INJECTION
+      
+    ==================================================================== */
+    function ChangeFrom(iframeDoc) {
+      if (!iframeDoc) return;
+      /* ---------- CSS ---------- */
+      var style = iframeDoc.createElement("style");
+      style.id = "cqb-style";
+      style.innerHTML = `
+     .cqb-card-body_inner {
+    padding: 32px 26px 24px;
+}
+#custom-queue-block {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    height: calc(100% - 30px);
+}
+#custom-queue-block * {
+    box-sizing: border-box;
+}
+/* breadcrumb */
+#custom-queue-block .cqb-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 10px;
+    margin-bottom: 12px;
+    padding: 4px 2px;
+}
+#custom-queue-block .cqb-breadcrumb .cqb-crumb {
+    color: rgb(97, 97, 97);
+}
+#custom-queue-block .cqb-breadcrumb .cqb-crumb.active {
+    color: rgb(60, 60, 60);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: var(--font-weight-400, 400);
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+}
+#custom-queue-block .cqb-breadcrumb .cqb-sep {
+    color: #c6cad0;
+    font-size: 12px;
+}
+/* card */
+#custom-queue-block .cqb-card {
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 8px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(222, 222, 222, 1);
+}
+/* card header */
+#custom-queue-block .cqb-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 14px 26px;
+    font-size: 14px;
+    color: #1a1a1a;
+    border-radius: 6px 6px 0 0;
+    background: #FAFBFA;
+    border-bottom: 1px solid rgba(222, 222, 222, 1);
+    width: 100%;
+}
+#custom-queue-block .cqb-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+    margin-right: 10px;
+}
+#custom-queue-block .cqb-status-title {
+    color: var(--13-sick-com-au-black, var(--color-black-solid, #000));
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: var(--font-size-14, 14px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+    margin-right: 5px;
+}
+#custom-queue-block .cqb-status-sep {
+    color: #949494;
+    margin: 0 2px;
+    font-weight: 900;
+}
+#custom-queue-block .cqb-status-sub {
+    color: #000;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: var(--font-size-14, 14px);
+    font-style: normal;
+    font-weight: var(--font-weight-400, 400);
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+    margin-left: 5px;
+}
+/* card body */
+#custom-queue-block .cqb-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+#custom-queue-block .cqb-check {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(13, 172, 49, 1);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 9px;
+    display: flex;
+}
+#custom-queue-block .cqb-check svg {
+    width: 18px;
+    height: 18px;
+    color: #fff;
+}
+#custom-queue-block .cqb-title {
+    color: var(--color-black-solid, #000);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: var(--font-size-14, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+    margin-bottom: 15px;
+}
+#custom-queue-block .cqb-p {
+    color: var(--color-black-solid, #000);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: var(--font-size-14, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+}
+#custom-queue-block .cqb-p:last-of-type {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+/* card footer / button */
+#custom-queue-block .cqb-card-footer {
+    padding: 32px 26px 24px;
+}
+#custom-queue-block .cqb-leave-btn {
+    display: flex;
+    width: 100%;
+    height: 36px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    border: 1px solid #DEDEDE;
+    background: transparent;
+    color: #949494;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+}
+#custom-queue-block .cqb-leave-btn:hover {
+    background: #fafbfc;
+    border-color: #c8ccd2;
+}
+/* ===== Modal ===== */
+#custom-queue-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 22, 28, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2147483646;
+    padding: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+#custom-queue-modal.cqm-open {
+    display: flex;
+}
+#custom-queue-modal .cqm-dialog {
+    width: 100%;
+    max-width: 365px;
+    padding: 34px 40px 26px 37px;
+    position: relative;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0 8px 24px 0 rgba(16, 24, 40, 0.12);
+    box-sizing: border-box;
+    text-align: center;
+}
+#custom-queue-modal .cqm-close {
+    position: absolute;
+    top: 14px;
+    right: 11px;
+    border: 0;
+    background: transparent;
+    color: rgba(148, 148, 148, 1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+#custom-queue-modal .cqm-close svg {
+    width: 13px;
+    height: 13px;
+}
+#custom-queue-modal .cqm-title {
+    color: #000;
+    text-align: center;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+}
+#custom-queue-modal .cqm-sub {
+    color: #000;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: var(--font-weight-400, 400);
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+    margin-top: 8px;
+}
+#custom-queue-modal .cqm-stay {
+    display: flex;
+    width: 288px;
+    height: 36px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: #0081F9;
+    margin: 15px 0 11px 0;
+    color: #FFF;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+}
+#custom-queue-modal .cqm-stay:hover {
+    background: #0f57db;
+}
+#custom-queue-modal .cqm-leave-link {
+    color: #949494;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height-21, 21px);
+    letter-spacing: var(--letter-spacing-0_13, 0.131px);
+}
+#custom-queue-modal .cqm-leave-link:hover {
+    color: #1a1a1a;
+}
+#custom-queue-modal + div {
+    display: none !important;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
     }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.sic24_test .MuiGrid2-container {
+    background-color: #FAFBFA;
+}
+@media (max-width: 767px) {
+    #custom-queue-block .cqb-card-header,
+    #custom-queue-block .cqb-card-body_inner {
+        padding: 14px 16px;
+    }
+    #custom-queue-block .cqb-card-header {
+        display: inline-block;
+    }
+    #custom-queue-modal .cqm-dialog {
+        padding: 38px 24px 24px 24px;
+    }
+}
 
-    // ___________________________________________________________________
-    // ___________________________________________________________________
 
-    /* Variation Init */
+}
+
+      `;
+      iframeDoc.head.appendChild(style);
+      /* ---------- HTML markup ---------- */
+      var REAL_CANCEL_SELECTOR = "[data-testid='consult-requested__cancel-button']";
+      var html = `
+        <div id="custom-queue-block">
+          <nav class="cqb-breadcrumb" aria-label="Breadcrumb">
+            <span class="cqb-crumb">Consult</span>
+            <span class="cqb-sep">›</span>
+            <span class="cqb-crumb">Reasons</span>
+            <span class="cqb-sep">›</span>
+            <span class="cqb-crumb">Details</span>
+            <span class="cqb-sep">›</span>
+            <span class="cqb-crumb">Verify</span>
+            <span class="cqb-sep">›</span>
+            <span class="cqb-crumb active">Queue</span>
+          </nav>
+          <div class="cqb-card">
+           
+            <div class="cqb-card-body">
+            <div class="cqb-card-body_inner_parent"> 
+            <div class="cqb-card-header">
+              <span class="cqb-dot" aria-hidden="true"></span>
+              <span class="cqb-status-title">In queue</span>
+              <span class="cqb-status-sep">·</span>
+              <span class="cqb-status-sub">Waiting for next available doctor</span>
+            </div>
+            <div class="cqb-card-body_inner">
+              <div class="cqb-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="cqb-title">Thank you, Bruce Richardson.</p>
+              <p class="cqb-p">
+                You&rsquo;re now in the queue to speak with a doctor. You&rsquo;ll be contacted by
+                phone or SMS when your doctor is available, so keep your mobile nearby. You
+                don&rsquo;t need to keep this page open.
+              </p>
+              <p class="cqb-p">
+                Your doctor can help with prescriptions, medical certificates, referrals and
+                general medical advice.
+              </p>
+            </div>
+            
+            </div>
+            <div class="cqb-card-footer">
+              <button type="button" class="cqb-leave-btn" id="cqb-open-modal">Leave Queue</button>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div id="custom-queue-modal" role="dialog" aria-modal="true" aria-labelledby="cqm-title">
+          <div class="cqm-dialog">
+            <button type="button" class="cqm-close" id="cqm-close" aria-label="Close">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"/>
+              </svg>
+            </button>
+            <h3 class="cqm-title" id="cqm-title">Are you sure you want to leave the queue?</h3>
+            <p class="cqm-sub">Leaving now means you&rsquo;ll lose your place.</p>
+            <button type="button" class="cqm-stay" id="cqm-stay">Stay in Queue</button>
+            <button type="button" class="cqm-leave-link" id="cqm-leave">Leave Queue</button>
+          </div>
+        </div>
+      `;
+      /* ---------- REMOVE injected block + class ---------- */
+      function removeBlock() {
+        var existing = iframeDoc.getElementById("custom-queue-block");
+        var existing_item = iframeDoc.getElementById("custom-queue-modal");
+        
+        if (existing) {
+          existing.parentNode.removeChild(existing);
+          log("[CQB] removed ✗ (cancel button gone)");
+        }
+         if (existing_item) {
+          existing_item.parentNode.removeChild(existing_item);
+          log("[CQB] removed ✗ (cancel button gone)");
+        }
+
+
+        if (iframeDoc.body && iframeDoc.body.classList.contains("sic24_test")) {
+          iframeDoc.body.classList.remove("sic24_test");
+        }
+      }
+      /* ---------- INJECTION (with conditions) ---------- */
+      var modalBound = false;
+      function injectBlock() {
+
+        // NEW CONDITION
+        var cancelBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
+
+        if (!cancelBtn) {
+          log("[CQB] cancel button not found");
+          removeBlock();
+          return false;
+        }
+
+        var appBar = iframeDoc.querySelector(".MuiAppBar-positionSticky + .MuiGrid2-container > .MuiBox-root");
+
+        if (!appBar) {
+          log("[CQB] appBar not found yet");
+          return false;
+        }
+
+        // already injected
+        if (iframeDoc.getElementById("custom-queue-block")) {
+          return true;
+        }
+
+        appBar.insertAdjacentHTML("beforebegin", html);
+        iframeDoc.body.classList.add("sic24_test");
+
+        log("[CQB] injected ✓");
+
+        if (!modalBound) {
+          bindModal();
+          modalBound = true;
+        }
+
+        return true;
+      }
+      function startKeepAlive() {
+        var keepAliveObserver = new MutationObserver(debounce(function () {
+          var cancelBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
+
+          if (!cancelBtn) {
+            removeBlock();
+            return;
+          }
+
+          if (!iframeDoc.getElementById("custom-queue-block")) {
+            injectBlock();
+          }
+        }, 150));
+        keepAliveObserver.observe(iframeDoc.body || iframeDoc, {
+          childList: true,
+          subtree: true,
+        });
+      }
+      /* ---------- Modal logic ---------- */
+      function openModal() {
+        var modal = iframeDoc.getElementById("custom-queue-modal");
+        if (modal) modal.classList.add("cqm-open");
+      }
+      function closeModal() {
+        var modal = iframeDoc.getElementById("custom-queue-modal");
+        if (modal) modal.classList.remove("cqm-open");
+      }
+      function triggerCancel() {
+        // Click the actual control's "Cancel Request" CTA
+        var realBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
+        if (realBtn) {
+          realBtn.click();
+        } else {
+          log("Cancel CTA not found for selector:", REAL_CANCEL_SELECTOR);
+        }
+      }
+      function bindModal() {
+        // Open
+        live("#cqb-open-modal", "click", function (e) {
+          e.preventDefault();
+          openModal();
+        }, iframeDoc);
+        // Close via X
+        live("#cqm-close", "click", function (e) {
+          e.preventDefault();
+          closeModal();
+        }, iframeDoc);
+        // Close via "Stay in Queue"
+        live("#cqm-stay", "click", function (e) {
+          e.preventDefault();
+          closeModal();
+        }, iframeDoc);
+        // Click "Leave Queue" link -> trigger real cancel CTA + close modal
+        live("#cqm-leave", "click", function (e) {
+          var realBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
+          if (realBtn) realBtn.click();
+          e.preventDefault();
+          closeModal();
+          triggerCancel();
+        }, iframeDoc);
+        // Click outside dialog closes modal
+        live("#custom-queue-modal", "click", function (e) {
+          if (e.target && e.target.id === "custom-queue-modal") {
+            closeModal();
+          }
+        }, iframeDoc);
+      }
+      /* Try once now, then watch DOM in case appbar mounts later */
+      injectBlock();
+      startKeepAlive();
+    }
+    /* ---------- INIT ---------- */
     function init() {
-      /* start your code here */
-      if (document.body.classList.contains(variation_name)) return;
-      addClass("body", variation_name);
-
-      preloadImage("https://v2.crocdn.com/AFP/test8/cross.svg");
-      preloadImage("https://v2.crocdn.com/AFP/test8/AFPLogo.png");
-      preloadImage("https://v2.crocdn.com/AFP/test8/Conference.png");
-      preloadImage("https://v2.crocdn.com/AFP/test8/message.svg");
-      preloadImage("https://v2.crocdn.com/AFP/test8/Compare.svg");
-      preloadImage("https://v2.crocdn.com/AFP/test8/checkmark.svg");
-      preloadImage("https://v2.crocdn.com/AFP/test8/fire.svg");
-      preloadImage("https://v2.crocdn.com/AFP/test8/Cassie.png");
-
-      insertModal();
-      startModalTimer();
-
-      if (!window.cre09eventHandler) {
-        window.cre09eventHandler = true;
-        eventHandler();
-        handleExitIntent();
-      }
+      setTimeout(function () {
+        waitForElement(
+          "iframe#mobile-viewport",
+          function (iframe) {
+            function run() {
+              try {
+                var iframeDoc =
+                  iframe.contentDocument || iframe.contentWindow.document;
+                ChangeFrom(iframeDoc);
+              } catch (e) {
+                log("iframe access error:", e);
+              }
+            }
+            iframe.onload = run;
+            if (
+              iframe.contentDocument &&
+              iframe.contentDocument.readyState === "complete"
+            ) {
+              run();
+            }
+          },
+          50,
+          15000
+        );
+      }, 200);
     }
-
-    /* Initialise variation */
-    waitForElement(
-      "#site-main",
-      function () {
-        if (isExitPopupTriggered()) return;
-        init();
-      },
-      50,
-      15000,
-    );
+    waitForElement("body", init, 50, 15000);
   } catch (e) {
-    if (debug) console.log(e, "error in Test " + variation_name);
+    console.log("Main error:", e);
   }
 })();

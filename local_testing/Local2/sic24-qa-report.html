@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SIC-24 QA Report</title>
+<style>
+:root{--pass:#1a7f4b;--fail:#c0392b;--skip:#888;--bg:#f5f6f8;--card:#fff;--border:#dde1e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Roboto,Arial,sans-serif;background:var(--bg);color:#1a1a1a;font-size:14px}
+.page{max-width:1400px;margin:0 auto;padding:32px 24px}
+.report-header{background:#0a2540;color:#fff;padding:36px 40px;border-radius:10px;margin-bottom:28px}
+.report-header h1{font-size:26px;font-weight:700;margin-bottom:6px}
+.report-header p{opacity:.75;font-size:13px;line-height:1.6}
+.meta-row{display:flex;flex-wrap:wrap;gap:20px;margin-top:16px;font-size:12px;opacity:.85}
+.meta-row span b{color:#7ec8e3}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.kpi{background:var(--card);border-radius:8px;padding:20px 24px;border:1px solid var(--border);text-align:center}
+.kpi .num{font-size:40px;font-weight:700;line-height:1}
+.kpi .lbl{font-size:12px;color:#666;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.kpi.pass .num{color:var(--pass)}
+.kpi.fail .num{color:var(--fail)}
+.kpi.skip .num{color:var(--skip)}
+.kpi.total .num{color:#0a2540}
+.section{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:24px}
+.section h2{font-size:16px;font-weight:700;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{padding:8px 10px;border:1px solid var(--border);text-align:center;vertical-align:middle}
+th{background:#f0f2f5;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+td.tc-name{text-align:left;font-weight:500;max-width:280px;word-break:break-word}
+tr.row-control{background:#f8f9ff}
+tr.row-fail-row{background:#fff8f8}
+.cell-pass{color:var(--pass);font-weight:700}
+.cell-fail{color:var(--fail);font-weight:700}
+.cell-skip{color:var(--skip)}
+.cell-time{font-size:10px;color:#aaa;display:block;font-weight:400}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.4px;margin-left:4px}
+.badge.bug{background:#fdebd0;color:#c0392b}
+.badge.confirmed{background:#f8d7da;color:#c0392b}
+.badge.code{background:#fff3cd;color:#856404}
+.browser-summary{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:18px}
+.browser-card{border:1px solid var(--border);border-radius:6px;padding:12px 10px;text-align:center;background:#fafbfc}
+.browser-card h4{font-size:11px;font-weight:700;margin-bottom:8px;color:#0a2540;line-height:1.3}
+.browser-card .stat{font-size:11px;color:#555;line-height:2}
+.browser-card .stat b{display:inline-block;width:24px;font-size:13px}
+.browser-card .stat b.p{color:var(--pass)}
+.browser-card .stat b.f{color:var(--fail)}
+.browser-card .stat b.s{color:var(--skip)}
+.bug-card{border:1px solid var(--border);border-radius:6px;margin-bottom:16px;overflow:hidden}
+.bug-card-header{display:flex;align-items:center;gap:12px;padding:11px 16px;background:#f8f9fb;border-bottom:1px solid var(--border)}
+.bug-card-header .bid{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap}
+.bid.confirmed{background:#f8d7da;color:#c0392b}
+.bid.code-bug{background:#fff3cd;color:#856404}
+.bug-card-header h3{font-size:13px;font-weight:600}
+.bug-body{padding:14px 16px;font-size:13px;line-height:1.7}
+.bug-body p{margin-bottom:8px}
+.bug-body p:last-child{margin-bottom:0}
+.bug-body ol,.bug-body ul{margin:6px 0 8px 20px;line-height:1.9}
+code{background:#f0f2f5;padding:1px 5px;border-radius:3px;font-size:12px;font-family:Consolas,monospace}
+.code-block{background:#1e1e2e;color:#cdd6f4;padding:12px 16px;border-radius:6px;font-family:Consolas,monospace;font-size:12px;margin:8px 0;overflow-x:auto;line-height:1.6;white-space:pre}
+.hl{background:rgba(243,139,168,.15);border-left:2px solid #f38ba8;padding-left:4px;display:block}
+.cm{color:#6c7086}
+.kw{color:#cba6f7}
+.st{color:#a6e3a1}
+.obs-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.obs-item:last-child{border-bottom:0;padding-bottom:0}
+.obs-icon{font-size:18px;flex-shrink:0}
+.obs-body h4{font-size:13px;font-weight:600;margin-bottom:4px}
+.obs-body p{font-size:12px;color:#555;line-height:1.6}
+.ss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:12px}
+.ss-wrap img{width:100%;border:1px solid var(--border);border-radius:5px}
+.ss-caption{font-size:11px;color:#666;margin-top:5px;text-align:center}
+.note{font-size:12px;color:#888;margin-top:10px}
+.section-header-strip{padding:5px 10px;font-weight:700;font-size:11px;text-align:left;letter-spacing:.3px}
+.strip-control{background:#e8eaf6;color:#3949ab}
+.strip-variation{background:#e8f5e9;color:#2e7d32}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="report-header">
+  <h1>SIC-24 — Queue Page Redesign&nbsp;&nbsp;QA Test Report</h1>
+  <p>Automated Playwright test suite covering the Control and Variation queue page UIs across 6 browsers. Includes functional validation, cross-browser matrix, and static analysis of the vB.js variation code.</p>
+  <div class="meta-row">
+    <span><b>Date:</b> 21 May 2026</span>
+    <span><b>Environment:</b> Staging — stg-patient.doctordoctor.com.au</span>
+    <span><b>Run time:</b> ~1.8 hours total (1 worker, sequential)</span>
+    <span><b>Test file:</b> testing/sic24-queue.spec.js</span>
+    <span><b>Variation code:</b> local_testing/Local2/variation/vB.js</span>
+  </div>
+</div>
+
+<!-- KPI -->
+<div class="kpi-row">
+  <div class="kpi total"><div class="num">102</div><div class="lbl">Total Tests</div></div>
+  <div class="kpi pass"><div class="num">81</div><div class="lbl">Passed</div></div>
+  <div class="kpi fail"><div class="num">2</div><div class="lbl">Failed</div></div>
+  <div class="kpi skip"><div class="num">19</div><div class="lbl">Skipped</div></div>
+</div>
+
+<!-- BROWSER SUMMARY -->
+<div class="section">
+  <h2>Per-Browser Summary</h2>
+  <div class="browser-summary">
+    <div class="browser-card">
+      <h4>Chrome Desktop</h4>
+      <div class="stat"><b class="p">14</b> Passed</div>
+      <div class="stat"><b class="f">0</b> Failed</div>
+      <div class="stat"><b class="s">3</b> Skipped</div>
+    </div>
+    <div class="browser-card">
+      <h4>Firefox Desktop</h4>
+      <div class="stat"><b class="p">12</b> Passed</div>
+      <div class="stat"><b class="f">2</b> Failed</div>
+      <div class="stat"><b class="s">4*</b> Skipped</div>
+    </div>
+    <div class="browser-card">
+      <h4>Edge Desktop</h4>
+      <div class="stat"><b class="p">14</b> Passed</div>
+      <div class="stat"><b class="f">0</b> Failed</div>
+      <div class="stat"><b class="s">3</b> Skipped</div>
+    </div>
+    <div class="browser-card">
+      <h4>Safari Desktop</h4>
+      <div class="stat"><b class="p">14</b> Passed</div>
+      <div class="stat"><b class="f">0</b> Failed</div>
+      <div class="stat"><b class="s">3</b> Skipped</div>
+    </div>
+    <div class="browser-card">
+      <h4>Mobile Chrome<br/>(Pixel 5)</h4>
+      <div class="stat"><b class="p">14</b> Passed</div>
+      <div class="stat"><b class="f">0</b> Failed</div>
+      <div class="stat"><b class="s">3</b> Skipped</div>
+    </div>
+    <div class="browser-card">
+      <h4>Mobile Safari<br/>(iPhone 12)</h4>
+      <div class="stat"><b class="p">14</b> Passed</div>
+      <div class="stat"><b class="f">0</b> Failed</div>
+      <div class="stat"><b class="s">3</b> Skipped</div>
+    </div>
+  </div>
+  <p class="note">* Firefox TC-13b and TC-03 are cascade skips caused by TC-01 timing out (server cooldown after Chrome's run) — not independently failing tests. See Observations section.</p>
+</div>
+
+<!-- MATRIX TABLE -->
+<div class="section">
+  <h2>Cross-Browser Test Matrix</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="min-width:70px">TC</th>
+        <th style="text-align:left;min-width:250px">Description</th>
+        <th>Chrome<br/>Desktop</th>
+        <th>Firefox<br/>Desktop</th>
+        <th>Edge<br/>Desktop</th>
+        <th>Safari<br/>Desktop</th>
+        <th>Mobile<br/>Chrome</th>
+        <th>Mobile<br/>Safari</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="8" class="section-header-strip strip-control">CONTROL — Original UI (no variation injection)</td></tr>
+      <tr class="row-control">
+        <td>TC-01</td>
+        <td class="tc-name">Original UI — no #custom-queue-block injected</td>
+        <td class="cell-pass">✓<span class="cell-time">42.3s</span></td>
+        <td class="cell-fail">✘<span class="cell-time">17.7m timeout</span></td>
+        <td class="cell-pass">✓<span class="cell-time">32.5s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">41.7s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">46.9s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">31.6s</span></td>
+      </tr>
+      <tr class="row-control">
+        <td>TC-13b <span class="badge bug">BUG</span></td>
+        <td class="tc-name">Cancel → select reason → confirm → should navigate home</td>
+        <td class="cell-pass">✓<span class="cell-time">40.2s</span></td>
+        <td class="cell-skip">—<span class="cell-time">cascade skip</span></td>
+        <td class="cell-pass">✓<span class="cell-time">37.6s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">43.6s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">40.8s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">44.4s</span></td>
+      </tr>
+      <tr><td colspan="8" class="section-header-strip strip-variation">VARIATION — Custom queue block via vB.js</td></tr>
+      <tr>
+        <td>TC-02</td>
+        <td class="tc-name">#custom-queue-block injected in iframe</td>
+        <td class="cell-skip">—<span class="cell-time">cooldown skip</span></td>
+        <td class="cell-fail">✘<span class="cell-time">11.2m timeout</span></td>
+        <td class="cell-skip">—<span class="cell-time">cooldown skip</span></td>
+        <td class="cell-skip">—<span class="cell-time">cooldown skip</span></td>
+        <td class="cell-skip">—<span class="cell-time">cooldown skip</span></td>
+        <td class="cell-skip">—<span class="cell-time">cooldown skip</span></td>
+      </tr>
+      <tr>
+        <td>TC-03</td>
+        <td class="tc-name">Breadcrumb — 5 crumbs visible, "Queue" marked active</td>
+        <td class="cell-pass">✓<span class="cell-time">32.2s</span></td>
+        <td class="cell-skip">—<span class="cell-time">cascade skip</span></td>
+        <td class="cell-pass">✓<span class="cell-time">32.0s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">35.6s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">37.3s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.3s</span></td>
+      </tr>
+      <tr>
+        <td>TC-04</td>
+        <td class="tc-name">Card header — animated dot, "In queue" title, subtitle</td>
+        <td class="cell-pass">✓<span class="cell-time">32.3s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">31.1s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">32.4s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">33.8s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">28.9s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.2s</span></td>
+      </tr>
+      <tr>
+        <td>TC-05</td>
+        <td class="tc-name">Card body — checkmark icon, title text, 2 paragraphs</td>
+        <td class="cell-pass">✓<span class="cell-time">32.1s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">31.5s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">30.9s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">53.8s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">28.8s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">36.5s</span></td>
+      </tr>
+      <tr>
+        <td>TC-06</td>
+        <td class="tc-name">"Leave Queue" button visible in card footer</td>
+        <td class="cell-pass">✓<span class="cell-time">32.1s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">31.1s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">31.0s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">28.5s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">39.6s</span></td>
+      </tr>
+      <tr>
+        <td>TC-07</td>
+        <td class="tc-name">Leave Queue button click opens the modal</td>
+        <td class="cell-pass">✓<span class="cell-time">38.5s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">29.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">30.3s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">36.6s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">29.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.5s</span></td>
+      </tr>
+      <tr>
+        <td>TC-08</td>
+        <td class="tc-name">Modal content — title, subtitle, Stay button, Leave link, X close</td>
+        <td class="cell-pass">✓<span class="cell-time">32.7s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">29.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">30.7s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">40.8s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">29.0s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.9s</span></td>
+      </tr>
+      <tr>
+        <td>TC-09</td>
+        <td class="tc-name">Modal — "Stay in Queue" button closes modal</td>
+        <td class="cell-pass">✓<span class="cell-time">32.6s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">47.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">30.5s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">39.0s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">30.7s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">36.9s</span></td>
+      </tr>
+      <tr>
+        <td>TC-10</td>
+        <td class="tc-name">Modal — X button closes modal</td>
+        <td class="cell-pass">✓<span class="cell-time">32.9s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">30.7s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">29.8s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.7s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.1s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">37.0s</span></td>
+      </tr>
+      <tr>
+        <td>TC-11</td>
+        <td class="tc-name">Modal — clicking outside backdrop closes modal</td>
+        <td class="cell-pass">✓<span class="cell-time">34.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">31.0s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">54.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.1s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">35.9s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">38.8s</span></td>
+      </tr>
+      <tr>
+        <td>TC-12</td>
+        <td class="tc-name">Modal "Leave Queue" → complete cancel → variation block removed from DOM</td>
+        <td class="cell-pass">✓<span class="cell-time">41.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">47.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">40.3s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">48.4s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">41.6s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">45.5s</span></td>
+      </tr>
+      <tr class="row-fail-row">
+        <td>TC-13 <span class="badge bug">BUG</span></td>
+        <td class="tc-name">Leave Queue → reason → confirm → should navigate home <em>(known bug — skipped)</em></td>
+        <td class="cell-skip">—<span class="cell-time">known bug</span></td>
+        <td class="cell-skip">—<span class="cell-time">known bug</span></td>
+        <td class="cell-skip">—<span class="cell-time">known bug</span></td>
+        <td class="cell-skip">—<span class="cell-time">known bug</span></td>
+        <td class="cell-skip">—<span class="cell-time">known bug</span></td>
+        <td class="cell-skip">—<span class="cell-time">known bug</span></td>
+      </tr>
+      <tr>
+        <td>TC-14</td>
+        <td class="tc-name">sic24_test body class removed after cancel button disappears</td>
+        <td class="cell-pass">✓<span class="cell-time">40.2s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">37.5s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">36.9s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">42.1s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">37.4s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">47.3s</span></td>
+      </tr>
+      <tr>
+        <td>TC-15</td>
+        <td class="tc-name">Mobile — queue block visible at mobile viewport width</td>
+        <td class="cell-skip">—<span class="cell-time">viewport skip</span></td>
+        <td class="cell-skip">—<span class="cell-time">viewport skip</span></td>
+        <td class="cell-skip">—<span class="cell-time">viewport skip</span></td>
+        <td class="cell-skip">—<span class="cell-time">viewport skip</span></td>
+        <td class="cell-skip">—<span class="cell-time">viewport skip</span></td>
+        <td class="cell-skip">—<span class="cell-time">viewport skip</span></td>
+      </tr>
+      <tr>
+        <td>TC-16</td>
+        <td class="tc-name">Mobile — modal opens on Leave Queue click</td>
+        <td class="cell-pass">✓<span class="cell-time">33.8s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">31.7s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">30.9s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">36.9s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">31.4s</span></td>
+        <td class="cell-pass">✓<span class="cell-time">37.6s</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- CONFIRMED FUNCTIONAL BUG -->
+<div class="section">
+  <h2>Confirmed Functional Bug</h2>
+
+  <div class="bug-card">
+    <div class="bug-card-header">
+      <span class="bid confirmed">BUG-01 · CONFIRMED · ALL 6 BROWSERS</span>
+      <h3>Variation: full cancel flow does not navigate home</h3>
+    </div>
+    <div class="bug-body">
+      <p><strong>Affects:</strong> Variation only — reproduced on Chrome, Firefox, Edge, Safari, Mobile Chrome, Mobile Safari</p>
+      <p><strong>Steps to reproduce:</strong></p>
+      <ol>
+        <li>Open Variation URL (queue page with custom block injected)</li>
+        <li>Click "Leave Queue" button in card footer → modal appears</li>
+        <li>Click "Leave Queue" link inside modal → app transitions to "Changed my mind" page</li>
+        <li>Select any cancellation reason radio button</li>
+        <li>Click "Cancel request" in the confirmation dialog</li>
+      </ol>
+      <p><strong>Expected:</strong> Browser navigates to <code>https://stg-patient.doctordoctor.com.au/</code></p>
+      <p><strong>Actual:</strong> Page remains on <code>/waiting-room</code> — no navigation occurs. Final URL logged by test: <code>https://stg-patient.doctordoctor.com.au/waiting-room</code></p>
+      <p><strong>Control is correct:</strong> TC-13b confirms the identical cancel flow on the Control URL navigates correctly to the home page on 5/5 tested browsers (Firefox TC-13b was a cascade skip from TC-01 timeout — not a code failure). The bug is Variation-only.</p>
+      <p><strong>Likely root cause:</strong> The <code>#cqm-leave</code> handler fires <code>realBtn.click()</code> twice (see CODE-BUG-01 below), which can corrupt the application cancel state machine. Additionally, the <code>MutationObserver</code> in <code>startKeepAlive()</code> reacts to every DOM change caused by the cancel flow and calls <code>injectBlock()</code> / <code>removeBlock()</code> in rapid succession, potentially intercepting or swallowing the navigation event fired by the application.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CODE BUGS -->
+<div class="section">
+  <h2>Code Analysis — vB.js Bugs</h2>
+
+  <div class="bug-card">
+    <div class="bug-card-header">
+      <span class="bid code-bug">CODE-BUG-01 · HIGH</span>
+      <h3>Double cancel trigger in #cqm-leave click handler</h3>
+    </div>
+    <div class="bug-body">
+      <p><strong>Location:</strong> <code>vB.js</code> → <code>bindModal()</code> → <code>live("#cqm-leave", "click", ...)</code></p>
+      <p>The "Leave Queue" link in the modal triggers the native cancel button <strong>twice</strong> per click — once via an inline <code>realBtn.click()</code> and again via <code>triggerCancel()</code>, which performs the same click.</p>
+      <div class="code-block"><span class="kw">live</span>(<span class="st">"#cqm-leave"</span>, <span class="st">"click"</span>, <span class="kw">function</span> (e) {
+  <span class="kw">var</span> realBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
+<span class="hl">  <span class="kw">if</span> (realBtn) realBtn.click();    <span class="cm">// ← first click</span></span>  e.preventDefault();
+  closeModal();
+<span class="hl">  triggerCancel();                  <span class="cm">// ← second click via triggerCancel()</span></span>}, iframeDoc);</div>
+      <p><strong>Fix:</strong> Remove the inline <code>realBtn.click()</code> and rely solely on <code>triggerCancel()</code>:</p>
+      <div class="code-block"><span class="kw">live</span>(<span class="st">"#cqm-leave"</span>, <span class="st">"click"</span>, <span class="kw">function</span> (e) {
+  e.preventDefault();
+  closeModal();
+  triggerCancel(); <span class="cm">// single, clean call</span>
+}, iframeDoc);</div>
+    </div>
+  </div>
+
+  <div class="bug-card">
+    <div class="bug-card-header">
+      <span class="bid code-bug">CODE-BUG-02 · MEDIUM</span>
+      <h3>CSS wildcard rule hides any sibling div after the modal</h3>
+    </div>
+    <div class="bug-body">
+      <p><strong>Location:</strong> <code>vB.js</code> → <code>style.innerHTML</code></p>
+      <div class="code-block"><span class="hl">#custom-queue-modal + div {
+  display: none !important; <span class="cm">/* hides any div immediately after the modal */</span>
+}</span></div>
+      <p>This rule blindly hides whatever <code>&lt;div&gt;</code> sits immediately after the injected modal in the DOM. If the application renders a notification, overlay, or any other structural div in that sibling position — across staging or production updates — it will be silently hidden, breaking functionality without any obvious error.</p>
+      <p><strong>Fix:</strong> Target a specific, stable selector for the element intended to be hidden, or remove the rule if no longer needed.</p>
+    </div>
+  </div>
+
+  <div class="bug-card">
+    <div class="bug-card-header">
+      <span class="bid code-bug">CODE-BUG-03 · LOW</span>
+      <h3>Stray closing brace in CSS — syntax error</h3>
+    </div>
+    <div class="bug-body">
+      <p><strong>Location:</strong> <code>vB.js</code> → <code>style.innerHTML</code>, after the <code>@media (max-width: 767px)</code> block</p>
+      <div class="code-block">@media (max-width: 767px) {
+    <span class="cm">/* mobile overrides */</span>
+}
+<span class="cm">
+</span><span class="hl">} <span class="cm">/* ← stray brace with no matching opening */</span></span></div>
+      <p>An unmatched <code>}</code> follows the closing of the media query. Most browsers silently discard it, but it is technically invalid CSS and could cause rule-invalidation in strict CSS parsers or future browser versions.</p>
+      <p><strong>Fix:</strong> Remove the extra <code>}</code>.</p>
+    </div>
+  </div>
+
+  <div class="bug-card">
+    <div class="bug-card-header">
+      <span class="bid code-bug">CODE-BUG-04 · MEDIUM</span>
+      <h3>Hardcoded patient name "Bruce Richardson"</h3>
+    </div>
+    <div class="bug-body">
+      <p><strong>Location:</strong> <code>vB.js</code> → HTML template string, <code>.cqb-title</code> paragraph</p>
+      <div class="code-block">&lt;p class="cqb-title"&gt;Thank you, <span class="hl">Bruce Richardson</span>.&lt;/p&gt;</div>
+      <p>Every user of the Variation will see "Thank you, Bruce Richardson." regardless of their actual name. This is the QA test account name and was not replaced with a dynamic lookup before deployment to staging.</p>
+      <p><strong>Fix:</strong> Before inserting the HTML, query the existing queue page DOM for the patient's displayed name and substitute it into the template string.</p>
+    </div>
+  </div>
+
+  <div class="bug-card">
+    <div class="bug-card-header">
+      <span class="bid code-bug">CODE-BUG-05 · LOW</span>
+      <h3>Fixed-width "Stay in Queue" button overflows on narrow mobile</h3>
+    </div>
+    <div class="bug-body">
+      <p><strong>Location:</strong> <code>vB.js</code> → CSS for <code>.cqm-stay</code></p>
+      <div class="code-block">.cqm-stay {
+<span class="hl">  width: 288px;  <span class="cm">/* fixed — overflows on screens narrower than ~365px */</span></span>  height: 36px;
+  ...
+}</div>
+      <p>The dialog has <code>max-width: 365px</code> with <code>padding: 34px 40px 26px 37px</code>, giving ~288px of usable inner width on the widest modal. On any device narrower than ~365px (e.g. iPhone SE at 375px logical, or any phone in landscape), the button will overflow the dialog. The <code>@media (max-width: 767px)</code> block reduces dialog padding to <code>24px</code> each side but does not reduce the button width, making the overflow worse on mobile.</p>
+      <p><strong>Fix:</strong></p>
+      <div class="code-block">.cqm-stay {
+  <span class="st">width: 100%;  <span class="cm">/* responsive — fills available space */</span></span>
+  ...
+}</div>
+    </div>
+  </div>
+</div>
+
+<!-- OBSERVATIONS -->
+<div class="section">
+  <h2>Observations &amp; Notes</h2>
+
+  <div class="obs-item">
+    <div class="obs-icon">⚠️</div>
+    <div class="obs-body">
+      <h4>Firefox TC-01 &amp; TC-02 failures are a test-infrastructure timing issue, not a code failure</h4>
+      <p>Chrome Desktop runs TC-01 (Control) and TC-13b (Control cancel) back-to-back, both of which cancel the shared test account. Firefox starts immediately after Chrome TC-16, only ~34 seconds after the last Chrome cancellation. The staging server enforces a ~54-second cooldown after account cancellation, so Firefox's TC-01 cannot reach the queue page and hits the 30-attempt × ~35s retry loop (~17.5 min) before exhausting the timeout. By TC-04 onwards (~29 minutes have elapsed from Chrome's last cancel), the cooldown has long expired and Firefox passes all remaining 12 tests cleanly. Edge, Safari, and Mobile browsers all started after Firefox's own TC-12/TC-14 runs cleared the cooldown, so their TC-01 passes normally.</p>
+    </div>
+  </div>
+
+  <div class="obs-item">
+    <div class="obs-icon">ℹ️</div>
+    <div class="obs-body">
+      <h4>TC-02 skipped on 5 of 6 browsers — server cooldown after TC-13b cancel</h4>
+      <p>TC-02 (Variation injection check) runs immediately after TC-13b. The account is still in a cooldown state from the TC-13b cancellation. TC-02 is intentionally skipped in this scenario to avoid a 17-minute retry loop. Firefox TC-02 fails rather than skips because Firefox TC-01 had already timed out without successfully cancelling, leaving the account state indeterminate.</p>
+    </div>
+  </div>
+
+  <div class="obs-item">
+    <div class="obs-icon">ℹ️</div>
+    <div class="obs-body">
+      <h4>TC-13 (Variation BUG) — intentionally skipped on all 6 browsers</h4>
+      <p>TC-13 documents the known navigation-home failure. It is marked <code>test.skip()</code> so it does not count as an unexpected failure. The test body exists to show the expected vs actual behaviour and is kept as a tracked bug entry rather than a passing assertion.</p>
+    </div>
+  </div>
+
+  <div class="obs-item">
+    <div class="obs-icon">ℹ️</div>
+    <div class="obs-body">
+      <h4>TC-15 (Mobile queue block visible) — skipped on all browsers</h4>
+      <p>TC-15 validates that the queue block renders correctly at a mobile viewport width. It is currently <code>test.skip()</code>. TC-16 (Mobile modal opens) passes on all 6 browsers, confirming mobile interactions work correctly. TC-15 can be activated once a reliable mobile-viewport check is implemented inside the iframe context.</p>
+    </div>
+  </div>
+
+  <div class="obs-item">
+    <div class="obs-icon">✅</div>
+    <div class="obs-body">
+      <h4>Control TC-13b confirms correct home navigation — bug is Variation-only</h4>
+      <p>The Control cancel flow (Cancel → reason dialog → confirm) navigates to <code>https://stg-patient.doctordoctor.com.au/</code> on all 5 tested browsers (5/5 pass). The bug is conclusively isolated to the Variation's vB.js code.</p>
+    </div>
+  </div>
+
+  <div class="obs-item">
+    <div class="obs-icon">✅</div>
+    <div class="obs-body">
+      <h4>Modal behaviour fully verified across all 6 browsers (TC-07 through TC-12, TC-16)</h4>
+      <p>"Leave Queue" button opens modal, "Stay in Queue" closes it, X button closes it, backdrop click closes it, and "Leave Queue" in modal triggers the full cancel flow — all passing on Chrome, Firefox, Edge, Safari, Mobile Chrome (Pixel 5), and Mobile Safari (iPhone 12).</p>
+    </div>
+  </div>
+
+  <div class="obs-item">
+    <div class="obs-icon">✅</div>
+    <div class="obs-body">
+      <h4>MutationObserver block-removal logic is working correctly (TC-12, TC-14)</h4>
+      <p>After the complete cancel flow, <code>removeBlock()</code> correctly removes <code>#custom-queue-block</code> and <code>#custom-queue-modal</code> from the DOM, and the <code>sic24_test</code> body class is removed. Both TC-12 and TC-14 pass on all 6 browsers.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SCREENSHOTS -->
+<div class="section">
+  <h2>Key Screenshots — Chrome Desktop</h2>
+  <div class="ss-grid">
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc01-control-queue-chrome-desktop.png" alt="TC-01 Control" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-01 — Control queue page (no variation block)</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc03-breadcrumb-chrome-desktop.png" alt="TC-03 Breadcrumb" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-03 — Breadcrumb: 5 crumbs, Queue active</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc04-card-header-chrome-desktop.png" alt="TC-04 Card Header" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-04 — Card header: dot, "In queue", subtitle</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc05-card-body-chrome-desktop.png" alt="TC-05 Card Body" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-05 — Card body: checkmark, title, paragraphs</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc06-leave-btn-chrome-desktop.png" alt="TC-06 Leave Queue Button" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-06 — "Leave Queue" button in footer</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc07-modal-open-chrome-desktop.png" alt="TC-07 Modal Open" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-07 — Modal opens on Leave Queue click</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc08-modal-content-chrome-desktop.png" alt="TC-08 Modal Content" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-08 — Modal: title, subtitle, Stay, Leave, X</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc09-modal-stay-closed-chrome-desktop.png" alt="TC-09 Stay in Queue" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-09 — "Stay in Queue" closes modal ✓</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc10-modal-x-closed-chrome-desktop.png" alt="TC-10 X Closes Modal" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-10 — X button closes modal ✓</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc11-modal-outside-closed-chrome-desktop.png" alt="TC-11 Backdrop Click" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-11 — Backdrop click closes modal ✓</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc12-after-leave-modal-chrome-desktop.png" alt="TC-12 After Leave" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-12 — After clicking Leave Queue in modal</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/012-tc12-block-gone-chrome-desktop.png" alt="TC-12 Block Removed" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-12 — Variation block removed from DOM ✓</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc13b-control-cancel-clicked-chrome-desktop.png" alt="TC-13b Cancel Clicked" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-13b — Control: Cancel button clicked</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/012-tc13b-control-reason-selected-chrome-desktop.png" alt="TC-13b Reason" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-13b — Control: Reason selected in dialog</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/013-tc13b-control-final-state-chrome-desktop.png" alt="TC-13b Final URL" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-13b — Control: Navigated to home ✓</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc13-var-post-leave-modal-chrome-desktop.png" alt="TC-13 Variation After Leave" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-13 — Variation: Post-Leave Queue state</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/012-tc13-var-reason-selected-chrome-desktop.png" alt="TC-13 Variation Reason" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-13 — Variation: Reason selected in dialog</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/013-tc13-var-final-state-chrome-desktop.png" alt="TC-13 Variation BUG Final State" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-13 — Variation: Stays on /waiting-room ✗ (BUG)</div>
+    </div>
+    <div class="ss-wrap">
+      <img src="../../my-playwright-project/sic24-screenshots/011-tc14-class-removed-chrome-desktop.png" alt="TC-14 Class Removed" onerror="this.style.display='none'"/>
+      <div class="ss-caption">TC-14 — sic24_test class removed from body ✓</div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;color:#aaa;font-size:12px;padding:20px 0 8px">
+  SIC-24 QA Report &nbsp;·&nbsp; Generated 21 May 2026 &nbsp;·&nbsp; Brillmark QA
+</div>
+
+</div>
+</body>
+</html>

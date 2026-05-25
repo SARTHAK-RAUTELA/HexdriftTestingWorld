@@ -1,71 +1,117 @@
-if(!window.location.href.includes("https://eweb.afponline.org")) {
-  // Code to execute if the URL does NOT contain "https://eweb.afponline.org"
-  (function() {
+// Request cancellation goal on waiting room page For test 24
+if (window.location.href.includes('/waiting-room')) {
+  (function () {
     try {
-      /* main variables */
-      var debug=0;
-      var variation_name="cre-t-10";
+      var debug = 0;
+      var variation_name = "test-24-cancellation-goal";
 
-      /* all Pure helper functions */
-      function addClass(selector,className) {
-        var element=typeof selector==="string"? document.querySelector(selector):selector;
-        if(!element) return;
-        if(element.classList) element.classList.add(className);
-        else if(!element.className.match(new RegExp("\b"+className+"\b"))) {
-          element.className+=" "+className;
-        }
-      }
-      function waitForElement(selector,trigger,delayInterval=50,delayTimeout=15000) {
-        var interval=setInterval(function() {
-          if(document&&document.querySelector(selector)&&document.querySelectorAll(selector).length>0) {
+      function waitForElement(selector, trigger) {
+        var interval = setInterval(function () {
+          if (
+            document &&
+            document.querySelector(selector) &&
+            document.querySelectorAll(selector).length > 0
+          ) {
             clearInterval(interval);
             trigger();
           }
-        },delayInterval);
-        setTimeout(function() {
+        }, 50);
+        setTimeout(function () {
           clearInterval(interval);
-        },delayTimeout);
+        }, 15000);
       }
-      function addButton() {
-        var buttonHtml=`<a class="cre-t-10-reg global-login__link" href="https://conference.financialprofessionals.org/">
-        <span class="global-login__link-text cre-t-10-reg-text1 ">REGISTER FOR AFP 2026 </span>
-        <span class="global-login__link-text cre-t-10-reg-text2 ">Early pricing ends June 26</span>
-      </a>`;
 
-        // Target elements for insertion
-        const targetSelectors=["#global-login .global-login__link--join","#global-logout .global-login__link"];
-
-        // Loop through each target and insert the button if it doesn't already exist at that specific target
-        for(let i=0;i<targetSelectors.length;i++) {
-          const targetButton=document.querySelector(targetSelectors[i]);
-
-          // Ensure the target button exists and check if the button hasn't been inserted at that location
-          if(targetButton&&!targetButton.closest(".cre-t-10-reg")) {
-            targetButton.insertAdjacentHTML("beforebegin",buttonHtml);
+      function waitForElementInDoc(doc, selector, callback, delayInterval = 50, delayTimeout = 15000) {
+        var interval = setInterval(function () {
+          var el = doc.querySelector(selector);
+          if (el) {
+            clearInterval(interval);
+            callback(el);
           }
+        }, delayInterval);
+
+        setTimeout(function () {
+          clearInterval(interval);
+        }, delayTimeout);
+      }
+
+      function triggerGoal(conversionId) {
+        if (conversionId) {
+          window._conv_q = window._conv_q || [];
+          window._conv_q.push(["triggerConversion", conversionId]);
         }
       }
 
-      function changeText() {
-        var changeText=document.querySelector("#global-login .global-login__link--join .global-login__link-text");
-        if(changeText) {
-          changeText.textContent="JOIN AFP";
+      function addGoalOnCancellation() {
+
+        let body = document.querySelector('body');
+        if (body.getAttribute('data-telehealth') === "step_8_Waiting_Room") {
+          console.log('step_8_Waiting_Room detected --------- test24 cancellation goal')
+          waitForElement('iframe#mobile-viewport', function () {
+            let iframe = document.querySelector('iframe#mobile-viewport')
+            let iframeDoc = iframe?.contentDocument || iframe?.contentWindow?.document;
+            if (!iframeDoc) return;
+            console.log('iframe is available --------- test24 cancellation goal')
+            waitForElementInDoc(iframeDoc, '[data-testid="consult-requested__cancel-button"]', (el) => {
+              console.log('cancel button available on the DOM ---- test24 cancellation goal')
+              el.addEventListener('mousedown', function () {
+                //console.log('click on the cancel button detected --- test 24 cancellation goal')
+                triggerGoal('100037737');
+              });
+            });
+            //Variation SIC24 - Clicks on the “Cancel Request / Leave Queue” Button
+            waitForElementInDoc(iframeDoc, '#cqm-leave', (el) => {
+              console.log('cancel variation button ---- test24 cancellation goal')
+              el.addEventListener('mousedown', function () {
+                //console.log('click on the cancel button detected --- test 24 cancellation goal')
+                triggerGoal('100037746');
+              });
+            });
+            // Control SIC24 - Clicks on the “Cancel Request / Leave Queue” Button
+            waitForElementInDoc(iframeDoc, '[data-testid="consult-requested__cancel-button"]', (el) => {
+              console.log('cancel variation button ---- test24 cancellation goal')
+              el.addEventListener('mousedown', function () {
+                //console.log('click on the cancel button detected --- test 24 cancellation goal')
+                triggerGoal('100037746');
+              });
+            });
+
+
+            // Variation SIC24 - Visits Next Step of the Cancellation Process
+            waitForElementInDoc(iframeDoc, '#cqb-open-modal', (el) => {
+              console.log('Visits Next Step of the Cancellation Process')
+              el.addEventListener('mousedown', function () {
+                //console.log('click on the cancel button detected --- test 24 cancellation goal')
+                triggerGoal('100037747');
+              });
+            });
+
+            // Control SIC24 - Visits Next Step of the Cancellation Process
+            waitForElementInDoc(iframeDoc, '[data-testid="consult-requested__cancel-button"]', (el) => {
+              console.log('Visits Next Step of the Cancellation Process')
+              el.addEventListener('mousedown', function () {
+                //console.log('click on the cancel button detected --- test 24 cancellation goal')
+                triggerGoal('100037747');
+              });
+            });
+
+            // Control Variation SIC24 - Completed Cancellations
+            waitForElementInDoc(iframeDoc, '.MuiDialogContent-root .MuiDialogActions-spacing  button:nth-child(2)', (el) => {
+              console.log('Completed Cancellations --- test24 cancellation goal')
+              el.addEventListener('mousedown', function () {
+                //console.log('click on the cancel button detected --- test 24 cancellation goal')
+                triggerGoal('100037745');
+              });
+            });
+
+          })
         }
       }
 
-      /* Variation Init */
-      function init() {
-        if(document.body.classList.contains("cre-t-10")) return;
-        addClass("body",variation_name);
-        addButton();
+      waitForElement('[data-telehealth="step_8_Waiting_Room"]', addGoalOnCancellation);
 
-        waitForElement("#global-login .global-login__link--join",changeText,50,25000);
-      }
-
-      /* Init variation */
-      waitForElement("#global-login .global-login__link--join",init,50,25000);
-    } catch(e) {
-      if(debug) console.log(e,"error in Test "+variation_name);
+    } catch (e) {
+      if (debug) console.log(e, "error in Test " + variation_name);
     }
   })();
 }

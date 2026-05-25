@@ -84,7 +84,8 @@
     }
     /* ====================================================================
        QUEUE PAGE — NEW DESIGN INJECTION
-      
+       - Inject HTML after `.MuiAppBar-positionSticky`
+    
     ==================================================================== */
     function ChangeFrom(iframeDoc) {
       if (!iframeDoc) return;
@@ -92,10 +93,10 @@
       var style = iframeDoc.createElement("style");
       style.id = "cqb-style";
       style.innerHTML = `
-     .cqb-card-body_inner {
+    [data-telehealth="step_8_Waiting_Room"] .cqb-card-body_inner {
     padding: 32px 26px 24px;
 }
-#custom-queue-block {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block {
     font-family: Roboto, Helvetica, Arial, sans-serif;
     padding: 16px;
     box-sizing: border-box;
@@ -104,11 +105,11 @@
     margin: 0 auto;
     height: calc(100% - 30px);
 }
-#custom-queue-block * {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block * {
     box-sizing: border-box;
 }
 /* breadcrumb */
-#custom-queue-block .cqb-breadcrumb {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-breadcrumb {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -117,10 +118,10 @@
     margin-bottom: 12px;
     padding: 4px 2px;
 }
-#custom-queue-block .cqb-breadcrumb .cqb-crumb {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-breadcrumb .cqb-crumb {
     color: rgb(97, 97, 97);
 }
-#custom-queue-block .cqb-breadcrumb .cqb-crumb.active {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-breadcrumb .cqb-crumb.active {
     color: rgb(60, 60, 60);
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 10px;
@@ -129,12 +130,12 @@
     line-height: var(--line-height-21, 21px);
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
 }
-#custom-queue-block .cqb-breadcrumb .cqb-sep {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-breadcrumb .cqb-sep {
     color: #c6cad0;
     font-size: 12px;
 }
 /* card */
-#custom-queue-block .cqb-card {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-card {
     background: #ffffff;
     border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 8px rgba(0, 0, 0, 0.04);
@@ -146,7 +147,7 @@
     border: 1px solid rgba(222, 222, 222, 1);
 }
 /* card header */
-#custom-queue-block .cqb-card-header {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-card-header {
     display: flex;
     align-items: center;
     gap: 0;
@@ -158,7 +159,7 @@
     border-bottom: 1px solid rgba(222, 222, 222, 1);
     width: 100%;
 }
-#custom-queue-block .cqb-dot {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-dot {
     width: 10px;
     height: 10px;
     background-color: #2ecc71;
@@ -167,7 +168,7 @@
     animation: pulse 1.5s infinite;
     margin-right: 10px;
 }
-#custom-queue-block .cqb-status-title {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-status-title {
     color: var(--13-sick-com-au-black, var(--color-black-solid, #000));
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: var(--font-size-14, 14px);
@@ -177,12 +178,12 @@
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
     margin-right: 5px;
 }
-#custom-queue-block .cqb-status-sep {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-status-sep {
     color: #949494;
     margin: 0 2px;
     font-weight: 900;
 }
-#custom-queue-block .cqb-status-sub {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-status-sub {
     color: #000;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: var(--font-size-14, 14px);
@@ -193,13 +194,13 @@
     margin-left: 5px;
 }
 /* card body */
-#custom-queue-block .cqb-card-body {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
-#custom-queue-block .cqb-check {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-check {
     width: 26px;
     height: 26px;
     border-radius: 50%;
@@ -209,12 +210,12 @@
     margin-bottom: 9px;
     display: flex;
 }
-#custom-queue-block .cqb-check svg {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-check svg {
     width: 18px;
     height: 18px;
     color: #fff;
 }
-#custom-queue-block .cqb-title {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-title {
     color: var(--color-black-solid, #000);
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: var(--font-size-14, 14px);
@@ -224,7 +225,7 @@
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
     margin-bottom: 15px;
 }
-#custom-queue-block .cqb-p {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-p {
     color: var(--color-black-solid, #000);
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: var(--font-size-14, 14px);
@@ -233,15 +234,15 @@
     line-height: var(--line-height-21, 21px);
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
 }
-#custom-queue-block .cqb-p:last-of-type {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-p:last-of-type {
     margin-bottom: 0;
     margin-top: 20px;
 }
 /* card footer / button */
-#custom-queue-block .cqb-card-footer {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-card-footer {
     padding: 32px 26px 24px;
 }
-#custom-queue-block .cqb-leave-btn {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-leave-btn {
     display: flex;
     width: 100%;
     height: 36px;
@@ -260,12 +261,12 @@
     line-height: var(--line-height-21, 21px);
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
 }
-#custom-queue-block .cqb-leave-btn:hover {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-leave-btn:hover {
     background: #fafbfc;
     border-color: #c8ccd2;
 }
 /* ===== Modal ===== */
-#custom-queue-modal {
+  [data-telehealth="step_8_Waiting_Room"] #custom-queue-modal {
     position: fixed;
     inset: 0;
     background: rgba(20, 22, 28, 0.45);
@@ -276,10 +277,10 @@
     padding: 16px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-#custom-queue-modal.cqm-open {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal.cqm-open {
     display: flex;
 }
-#custom-queue-modal .cqm-dialog {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-dialog {
     width: 100%;
     max-width: 365px;
     padding: 34px 40px 26px 37px;
@@ -290,7 +291,7 @@
     box-sizing: border-box;
     text-align: center;
 }
-#custom-queue-modal .cqm-close {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-close {
     position: absolute;
     top: 14px;
     right: 11px;
@@ -303,11 +304,11 @@
     justify-content: center;
     padding: 0;
 }
-#custom-queue-modal .cqm-close svg {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-close svg {
     width: 13px;
     height: 13px;
 }
-#custom-queue-modal .cqm-title {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-title {
     color: #000;
     text-align: center;
     font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -317,7 +318,7 @@
     line-height: var(--line-height-21, 21px);
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
 }
-#custom-queue-modal .cqm-sub {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-sub {
     color: #000;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -327,7 +328,7 @@
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
     margin-top: 8px;
 }
-#custom-queue-modal .cqm-stay {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-stay {
     display: flex;
     width: 288px;
     height: 36px;
@@ -346,10 +347,10 @@
     line-height: var(--line-height-21, 21px);
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
 }
-#custom-queue-modal .cqm-stay:hover {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-stay:hover {
     background: #0f57db;
 }
-#custom-queue-modal .cqm-leave-link {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-leave-link {
     color: #949494;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -358,10 +359,10 @@
     line-height: var(--line-height-21, 21px);
     letter-spacing: var(--letter-spacing-0_13, 0.131px);
 }
-#custom-queue-modal .cqm-leave-link:hover {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-leave-link:hover {
     color: #1a1a1a;
 }
-#custom-queue-modal + div {
+[data-telehealth="step_8_Waiting_Room"] #custom-queue-modal + div {
     display: none !important;
 }
 @keyframes pulse {
@@ -378,18 +379,18 @@
         opacity: 1;
     }
 }
-.sic24_test .MuiGrid2-container {
+[data-telehealth="step_8_Waiting_Room"] .sic24_test .MuiGrid2-container {
     background-color: #FAFBFA;
 }
 @media (max-width: 767px) {
-    #custom-queue-block .cqb-card-header,
-    #custom-queue-block .cqb-card-body_inner {
+    [data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-card-header,
+    [data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-card-body_inner {
         padding: 14px 16px;
     }
-    #custom-queue-block .cqb-card-header {
+    [data-telehealth="step_8_Waiting_Room"] #custom-queue-block .cqb-card-header {
         display: inline-block;
     }
-    #custom-queue-modal .cqm-dialog {
+    [data-telehealth="step_8_Waiting_Room"] #custom-queue-modal .cqm-dialog {
         padding: 38px 24px 24px 24px;
     }
 }
@@ -400,71 +401,149 @@
       `;
       iframeDoc.head.appendChild(style);
       /* ---------- HTML markup ---------- */
+      // NOTE: replace `.cancel` below with the real cancel-request CTA selector
+      // from the underlying control once you have it.
       var REAL_CANCEL_SELECTOR = "[data-testid='consult-requested__cancel-button']";
-      var html = `
-        <div id="custom-queue-block">
-          <nav class="cqb-breadcrumb" aria-label="Breadcrumb">
-            <span class="cqb-crumb">Consult</span>
-            <span class="cqb-sep">›</span>
-            <span class="cqb-crumb">Reasons</span>
-            <span class="cqb-sep">›</span>
-            <span class="cqb-crumb">Details</span>
-            <span class="cqb-sep">›</span>
-            <span class="cqb-crumb">Verify</span>
-            <span class="cqb-sep">›</span>
-            <span class="cqb-crumb active">Queue</span>
-          </nav>
-          <div class="cqb-card">
-           
-            <div class="cqb-card-body">
-            <div class="cqb-card-body_inner_parent"> 
+  
+      /* ---------- HTML markup ---------- */
+// NOTE: replace `.cancel` below with the real cancel-request CTA selector
+// from the underlying control once you have it.
+var REAL_CANCEL_SELECTOR = "[data-testid='consult-requested__cancel-button']";
+
+function getHTML(userName) {
+  return `
+    <div id="custom-queue-block">
+      <nav class="cqb-breadcrumb" aria-label="Breadcrumb">
+        <span class="cqb-crumb">Consult</span>
+        <span class="cqb-sep">›</span>
+        <span class="cqb-crumb">Reasons</span>
+        <span class="cqb-sep">›</span>
+        <span class="cqb-crumb">Details</span>
+        <span class="cqb-sep">›</span>
+        <span class="cqb-crumb">Verify</span>
+        <span class="cqb-sep">›</span>
+        <span class="cqb-crumb active">Queue</span>
+      </nav>
+
+      <div class="cqb-card">
+
+        <div class="cqb-card-body">
+
+          <div class="cqb-card-body_inner_parent">
+
             <div class="cqb-card-header">
               <span class="cqb-dot" aria-hidden="true"></span>
               <span class="cqb-status-title">In queue</span>
               <span class="cqb-status-sep">·</span>
-              <span class="cqb-status-sub">Waiting for next available doctor</span>
+              <span class="cqb-status-sub">
+                Waiting for next available doctor
+              </span>
             </div>
+
             <div class="cqb-card-body_inner">
+
               <div class="cqb-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4"
-                        stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5 12.5l4.5 4.5L19 7.5"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
-              <p class="cqb-title">Thank you, Bruce Richardson.</p>
-              <p class="cqb-p">
-                You&rsquo;re now in the queue to speak with a doctor. You&rsquo;ll be contacted by
-                phone or SMS when your doctor is available, so keep your mobile nearby. You
-                don&rsquo;t need to keep this page open.
+
+              <p class="cqb-title">
+                ${userName}.
               </p>
+
               <p class="cqb-p">
-                Your doctor can help with prescriptions, medical certificates, referrals and
+                You&rsquo;re now in the queue to speak with a doctor.
+                You&rsquo;ll be contacted by phone or SMS when your doctor
+                is available, so keep your mobile nearby.
+                You don&rsquo;t need to keep this page open.
+              </p>
+
+              <p class="cqb-p">
+                Your doctor can help with prescriptions,
+                medical certificates, referrals and
                 general medical advice.
               </p>
+
             </div>
-            
-            </div>
-            <div class="cqb-card-footer">
-              <button type="button" class="cqb-leave-btn" id="cqb-open-modal">Leave Queue</button>
-            </div>
+
           </div>
-          </div>
-        </div>
-        <div id="custom-queue-modal" role="dialog" aria-modal="true" aria-labelledby="cqm-title">
-          <div class="cqm-dialog">
-            <button type="button" class="cqm-close" id="cqm-close" aria-label="Close">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round"/>
-              </svg>
+
+          <div class="cqb-card-footer">
+            <button
+              type="button"
+              class="cqb-leave-btn"
+              id="cqb-open-modal"
+            >
+              Leave Queue
             </button>
-            <h3 class="cqm-title" id="cqm-title">Are you sure you want to leave the queue?</h3>
-            <p class="cqm-sub">Leaving now means you&rsquo;ll lose your place.</p>
-            <button type="button" class="cqm-stay" id="cqm-stay">Stay in Queue</button>
-            <button type="button" class="cqm-leave-link" id="cqm-leave">Leave Queue</button>
           </div>
+
         </div>
-      `;
+
+      </div>
+    </div>
+
+    <div
+      id="custom-queue-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cqm-title"
+    >
+      <div class="cqm-dialog">
+
+        <button
+          type="button"
+          class="cqm-close"
+          id="cqm-close"
+          aria-label="Close"
+        >
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 6l12 12M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <h3 class="cqm-title" id="cqm-title">
+          Are you sure you want to leave the queue?
+        </h3>
+
+        <p class="cqm-sub">
+          Leaving now means you&rsquo;ll lose your place.
+        </p>
+
+        <button
+          type="button"
+          class="cqm-stay"
+          id="cqm-stay"
+        >
+          Stay in Queue
+        </button>
+
+        <button
+          type="button"
+          class="cqm-leave-link"
+          id="cqm-leave"
+        >
+          Leave Queue
+        </button>
+
+      </div>
+    </div>
+  `;
+}
       /* ---------- REMOVE injected block + class ---------- */
       function removeBlock() {
         var existing = iframeDoc.getElementById("custom-queue-block");
@@ -486,41 +565,56 @@
       }
       /* ---------- INJECTION (with conditions) ---------- */
       var modalBound = false;
-      function injectBlock() {
+     function injectBlock() {
 
-        // NEW CONDITION
-        var cancelBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
+  var cancelBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
 
-        if (!cancelBtn) {
-          log("[CQB] cancel button not found");
-          removeBlock();
-          return false;
-        }
+  // agar cancel button nahi hai to humara block remove kar do
+  if (!cancelBtn) {
+    log("[CQB] cancel button not found");
+    removeBlock();
+    return false;
+  }
 
-        var appBar = iframeDoc.querySelector(".MuiAppBar-positionSticky + .MuiGrid2-container > .MuiBox-root");
+  var appBar = iframeDoc.querySelector(
+    ".MuiAppBar-positionSticky + .MuiGrid2-container > .MuiBox-root"
+  );
 
-        if (!appBar) {
-          log("[CQB] appBar not found yet");
-          return false;
-        }
+  if (!appBar) {
+    log("[CQB] appBar not found yet");
+    return false;
+  }
 
-        // already injected
-        if (iframeDoc.getElementById("custom-queue-block")) {
-          return true;
-        }
+  // 👇 Dynamic username
+  var userName = "";
 
-        appBar.insertAdjacentHTML("beforebegin", html);
-        iframeDoc.body.classList.add("sic24_test");
+  var headingEl = iframeDoc.querySelector("h1.MuiTypography-h1");
 
-        log("[CQB] injected ✓");
+  if (headingEl && headingEl.textContent.trim()) {
+    userName = headingEl.textContent.trim();
+  }
 
-        if (!modalBound) {
-          bindModal();
-          modalBound = true;
-        }
+  // already injected
+  if (iframeDoc.getElementById("custom-queue-block")) {
+    return true;
+  }
 
-        return true;
-      }
+  // 👇 Inject dynamic HTML
+  appBar.insertAdjacentHTML("beforebegin", getHTML(userName));
+
+  iframeDoc.body.classList.add("sic24_test");
+
+  log("[CQB] injected ");
+
+  if (!modalBound) {
+    bindModal();
+    modalBound = true;
+  }
+
+  return true;
+}
+      /* ---------- KEEP-ALIVE: re-inject if React removes our block,---------- */
+                                
       function startKeepAlive() {
         var keepAliveObserver = new MutationObserver(debounce(function () {
           var cancelBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
@@ -575,8 +669,7 @@
         }, iframeDoc);
         // Click "Leave Queue" link -> trigger real cancel CTA + close modal
         live("#cqm-leave", "click", function (e) {
-          var realBtn = iframeDoc.querySelector(REAL_CANCEL_SELECTOR);
-          if (realBtn) realBtn.click();
+          
           e.preventDefault();
           closeModal();
           triggerCancel();

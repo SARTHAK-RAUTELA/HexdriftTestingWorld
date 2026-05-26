@@ -1,117 +1,79 @@
-// Request cancellation goal on waiting room page For test 24
-if (window.location.href.includes('/waiting-room')) {
-  (function () {
-    try {
-      var debug = 0;
-      var variation_name = "test-24-cancellation-goal";
+(function () {
+  try {
+    /* main variables */
+    var debug = 1;
+    var variation_name = "cre-t-08";
 
-      function waitForElement(selector, trigger) {
-        var interval = setInterval(function () {
-          if (
-            document &&
-            document.querySelector(selector) &&
-            document.querySelectorAll(selector).length > 0
-          ) {
-            clearInterval(interval);
-            trigger();
-          }
-        }, 50);
-        setTimeout(function () {
+    /* all Pure helper functions */
+
+    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+      var interval = setInterval(function () {
+        if (document && document.querySelector(selector)) {
           clearInterval(interval);
-        }, 15000);
-      }
-
-      function waitForElementInDoc(doc, selector, callback, delayInterval = 50, delayTimeout = 15000) {
-        var interval = setInterval(function () {
-          var el = doc.querySelector(selector);
-          if (el) {
-            clearInterval(interval);
-            callback(el);
-          }
-        }, delayInterval);
-
-        setTimeout(function () {
-          clearInterval(interval);
-        }, delayTimeout);
-      }
-
-      function triggerGoal(conversionId) {
-        if (conversionId) {
-          window._conv_q = window._conv_q || [];
-          window._conv_q.push(["triggerConversion", conversionId]);
+          trigger();
         }
-      }
-
-      function addGoalOnCancellation() {
-
-        let body = document.querySelector('body');
-        if (body.getAttribute('data-telehealth') === "step_8_Waiting_Room") {
-          console.log('step_8_Waiting_Room detected --------- test24 cancellation goal')
-          waitForElement('iframe#mobile-viewport', function () {
-            let iframe = document.querySelector('iframe#mobile-viewport')
-            let iframeDoc = iframe?.contentDocument || iframe?.contentWindow?.document;
-            if (!iframeDoc) return;
-            console.log('iframe is available --------- test24 cancellation goal')
-            waitForElementInDoc(iframeDoc, '[data-testid="consult-requested__cancel-button"]', (el) => {
-              console.log('cancel button available on the DOM ---- test24 cancellation goal')
-              el.addEventListener('mousedown', function () {
-                //console.log('click on the cancel button detected --- test 24 cancellation goal')
-                triggerGoal('100037737');
-              });
-            });
-            //Variation SIC24 - Clicks on the “Cancel Request / Leave Queue” Button
-            waitForElementInDoc(iframeDoc, '#cqm-leave', (el) => {
-              console.log('cancel variation button ---- test24 cancellation goal')
-              el.addEventListener('mousedown', function () {
-                //console.log('click on the cancel button detected --- test 24 cancellation goal')
-                triggerGoal('100037746');
-              });
-            });
-            // Control SIC24 - Clicks on the “Cancel Request / Leave Queue” Button
-            waitForElementInDoc(iframeDoc, '[data-testid="consult-requested__cancel-button"]', (el) => {
-              console.log('cancel variation button ---- test24 cancellation goal')
-              el.addEventListener('mousedown', function () {
-                //console.log('click on the cancel button detected --- test 24 cancellation goal')
-                triggerGoal('100037746');
-              });
-            });
-
-
-            // Variation SIC24 - Visits Next Step of the Cancellation Process
-            waitForElementInDoc(iframeDoc, '#cqb-open-modal', (el) => {
-              console.log('Visits Next Step of the Cancellation Process')
-              el.addEventListener('mousedown', function () {
-                //console.log('click on the cancel button detected --- test 24 cancellation goal')
-                triggerGoal('100037747');
-              });
-            });
-
-            // Control SIC24 - Visits Next Step of the Cancellation Process
-            waitForElementInDoc(iframeDoc, '[data-testid="consult-requested__cancel-button"]', (el) => {
-              console.log('Visits Next Step of the Cancellation Process')
-              el.addEventListener('mousedown', function () {
-                //console.log('click on the cancel button detected --- test 24 cancellation goal')
-                triggerGoal('100037747');
-              });
-            });
-
-            // Control Variation SIC24 - Completed Cancellations
-            waitForElementInDoc(iframeDoc, '.MuiDialogContent-root .MuiDialogActions-spacing  button:nth-child(2)', (el) => {
-              console.log('Completed Cancellations --- test24 cancellation goal')
-              el.addEventListener('mousedown', function () {
-                //console.log('click on the cancel button detected --- test 24 cancellation goal')
-                triggerGoal('100037745');
-              });
-            });
-
-          })
-        }
-      }
-
-      waitForElement('[data-telehealth="step_8_Waiting_Room"]', addGoalOnCancellation);
-
-    } catch (e) {
-      if (debug) console.log(e, "error in Test " + variation_name);
+      }, delayInterval);
+      setTimeout(function () {
+        clearInterval(interval);
+      }, delayTimeout);
     }
-  })();
-}
+
+    function addClass(selector, className) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (element.classList) element.classList.add(className);
+      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
+        element.className += " " + className;
+      }
+    }
+
+    // Main logic function
+    function hideSection() {
+      var allheadings = document.querySelectorAll(".elementor-heading-title");
+      allheadings.forEach(function (el) {
+        console.log("test Heading text found:", el.textContent.trim());
+        if (el.textContent.trim() === "How does it work?") {
+          var parentElement = el.closest(".elementor-element.e-con.e-parent");
+          if (parentElement) {
+            parentElement.classList.add("cre-t-08-decluttering");
+          }
+        }
+        if (el.textContent.trim() === "Book a Telehealth Consultation") {
+          var parentElement = el.closest(".elementor-element.e-con.e-parent");
+          if (parentElement) {
+            parentElement.classList.add("cre-t-08-decluttering");
+          }
+        }
+
+        if (el.textContent.trim() === "Incredible Ways Telehealth Improves Urgent Care") {
+          var newparentElement = el.closest(".elementor-element.e-child");
+          if (newparentElement) {
+            newparentElement.classList.add("cre-t-08-decluttering-child");
+          }
+        }
+
+        if (el.textContent.trim().includes("Common health")) {
+          var parentContainer = el.closest('.elementor-element[data-element_type="container"]');
+          if (parentContainer) {
+            var topParent = parentContainer.parentElement.closest('.elementor-element[data-element_type="container"]');
+            var finalElement = topParent ? topParent : parentContainer;
+            finalElement.classList.add("cre-t-08-decluttering-child-common");
+          }
+        }
+      });
+    }
+
+    /* Variation Init */
+    function init() {
+      addClass("body", variation_name);
+      hideSection();
+
+      if (debug) console.log(variation_name + " initialized");
+    }
+
+    /* Initialise variation */
+    waitForElement(".elementor-heading-title", init, 50, 15000);
+  } catch (e) {
+    if (debug) console.log(e, "error in Test " + variation_name);
+  }
+})();

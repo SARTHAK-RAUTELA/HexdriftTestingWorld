@@ -2,7 +2,14 @@
   try {
     /* main variables */
     var debug = 1;
-    var variation_name = "cre-t-27";
+    var variation_name = "cre-t-07";
+    var config = {
+      bannerLeft: "http://v2.crocdn.com/AFP/test7/cre-07-banner-left.jpg",
+      bannerRight: "http://v2.crocdn.com/AFP/test7/cre-07-banner-right.jpeg",
+      bannerBottom: "http://v2.crocdn.com/AFP/test7/cre-07-banner-bottom.jpeg",
+      fireIcon: "http://v2.crocdn.com/AFP/test7/cre-07-fire-icon.svg",
+      checkCircle: "http://v2.crocdn.com/AFP/test7/cre-07-check-circle.svg"
+    };
 
     /* all Pure helper functions */
 
@@ -18,228 +25,206 @@
       }, delayTimeout);
     }
 
+    function addClass(selector, className) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (element.classList) element.classList.add(className);
+      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
+        element.className += " " + className;
+      }
+    }
+
+    function insertAfter(selector, html) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (typeof html === "string") {
+        element.insertAdjacentHTML("afterend", html);
+      } else if (html && html.nodeType === 1) {
+        element.insertAdjacentElement("afterend", html);
+      }
+    }
+
     /* Variation functions */
+    var newDescription = `
+    <div class="cre-t-07-description">
+      <div class="cre-t-07-description-container">
+        <div class="cre-t-07-subheadline">
+          Join 7,000+ treasury and finance professionals to step outside your day-to-day, reconnect with peers, and see how others are tackling the same challenges.
+        </div>
 
-    function injectIframeStyles(iframeDoc) {
-      if (iframeDoc.getElementById("cre-t-27-injected-styles")) return;
-      var style = iframeDoc.createElement("style");
-      style.id = "cre-t-27-injected-styles";
-      style.textContent = [
-        "#practice-search-by-name { display: none !important; }",
-        "#practice-search-by-postcode { display: none !important; }",
-        "#practice-search-by-postcode-subscribing { display: block !important; }",
-        "#practice-search-by-postcode .MuiAutocomplete-endAdornment { display: none !important; }",
-        "#practice-search-by-postcode-subscribing .MuiAutocomplete-endAdornment { display: none !important; }",
-        "#practice-search-by-postcode-subscribing .MuiOutlinedInput-root { height: 52px !important; }",
-        "#cre-t-27-clinic-hint { margin-bottom: 18px !important; }",
-        "#practice-search-by-postcode-subscribing .cre-t-27-field-error .MuiOutlinedInput-notchedOutline { border-color: rgb(234,72,72) !important; border-width: 2px !important; }",
-        "#practice-search-by-postcode-subscribing .cre-t-27-field-error:hover .MuiOutlinedInput-notchedOutline { border-color: rgb(234,72,72) !important; }",
-        "#practice-search-by-postcode-subscribing .cre-t-27-field-error.Mui-focused .MuiOutlinedInput-notchedOutline { border-color: rgb(234,72,72) !important; }",
-        "#practice-search-by-postcode-subscribing .cre-t-27-field-error, #practice-search-by-postcode-subscribing .cre-t-27-field-error:hover { background-color: transparent !important; }",
-        "#cre-t-27-attended-checkbox, #cre-t-27-attended-checkbox + p { display: none !important; }",
-      ].join(" ");
-      iframeDoc.head.appendChild(style);
-      if (debug) console.log(variation_name + " - iframe styles injected");
+        <div class="cre-t-07-bullet-list">
+          <div class="cre-t-07-bullet">
+            <img src="${config.checkCircle}" alt="check-circle">
+            <div class="cre-t-07-bullet-text">140+ practitioner-led sessions and networking opportunities</div>
+          </div>
+          <div class="cre-t-07-bullet">
+            <img src="${config.checkCircle}" alt="check-circle">
+            <div class="cre-t-07-bullet-text">Ask other teams what worked and what didn’t</div>
+          </div>
+          <div class="cre-t-07-bullet">
+            <img src="${config.checkCircle}" alt="check-circle">
+            <div class="cre-t-07-bullet-text">Bring back ideas you can actually use</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+
+    var newTimer = `
+    <div class="cre-t-07-timer" style="max-height: 0; opacity: 0">
+      <div class="cre-t-07-timer-inner">
+        <img src="${config.fireIcon}" alt="fire-icon">
+        <div class="cre-t-07-timer-text">
+          <span class="cre-t-07-timer-savings">Save $675</span> · Ends in <span class="cre-t-07-timer-countdown"></span>
+        </div>
+      </div>
+    </div>
+    `;
+
+    var newCTA = `
+    <div class="cre-t-07-ctas">
+      <div class="cre-t-07-cta-container">
+        <a class="cre-t-07-cta-1" href="https://conference.financialprofessionals.org/registration">
+          <span class="cre-t-07-cta-text">Register Now</span>
+        </a>
+        <a class="cre-t-07-cta-2" href="https://conference.financialprofessionals.org/program/overview/schedule">
+          <span class="cre-t-07-cta-text">View Schedule</span>
+        </a>
+      </div>
+      <div class="cre-t-07-cta-after-text">
+        Need approval? <a class="cre-t-07-cta-after-link" href="https://conference.financialprofessionals.org/general-information/experience/convince">Make the case</a>
+      </div>
+    </div>
+    `;
+
+    var newBannerImages = `
+    <div class="cre-t-07-banner-images">
+      <div class="cre-t-07-banner-images-container">
+        <div class="cre-t-07-banner-images-top">
+          <div class="cre-t-07-banner-images-left">
+            <img src="${config.bannerLeft}" alt="banner-left" fetchpriority="high">
+          </div>
+
+          <div class="cre-t-07-banner-images-right">
+            <img src="${config.bannerRight}" alt="banner-right" fetchpriority="high">
+          </div>
+        </div>
+
+        <div class="cre-t-07-banner-images-bottom">
+          <img src="${config.bannerBottom}" alt="banner-bottom" fetchpriority="high">
+          <div class="cre-t-07-banner-image-quote">
+            <div class="cre-t-07-banner-image-quote-inner">
+              <span class="cre-t-07-quote-text">“My day at work is busy. It's nonstop. This is the only opportunity where I get to learn, grow and develop.”</span>
+              <span class="cre-t-07-quote-author">— Lora Burton, CTP, Managing Director, Treasury</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+
+    function changeHeadline() {
+      var headlineElement = document.querySelector(".banner .banner_contentCopy h1");
+      if (headlineElement) {
+        headlineElement.textContent = "The biggest event in treasury & finance";
+      }
     }
 
-    function updateIframeCopy(iframeDoc) {
-      if (iframeDoc._cret27CopyDone) return;
-      var label = iframeDoc.querySelector("#practice-search-by-postcode-subscribing #practice-label");
-      if (!label) return;
-
-      if (label.textContent !== "Select a clinic") {
-        label.textContent = "Select a clinic";
-        if (debug) console.log(variation_name + " - label copy updated to 'Select a clinic'");
+    function changeDescription() {
+      var targetPosition = document.querySelector('.banner .banner_contentCopy');
+      var existingDescription = document.querySelector(".cre-t-07-description");
+      if (!existingDescription && targetPosition) {
+        insertAfter(targetPosition, newDescription);
       }
-
-      var postcodeInput = iframeDoc.querySelector("#practice-search-by-postcode-subscribing input[role='combobox']");
-      if (postcodeInput && postcodeInput.placeholder !== "Search clinic name or postcode") {
-        postcodeInput.placeholder = "Search clinic name or postcode";
-        if (debug) console.log(variation_name + " - postcode input placeholder updated");
-      }
-
-      var termsLink = iframeDoc.querySelector('a[href="/terms"]');
-      if (termsLink) {
-        var termsP = termsLink.closest("p");
-        if (termsP && termsP.firstChild && termsP.firstChild.nodeType === 3) {
-          if (termsP.firstChild.textContent.indexOf("agree") === -1) {
-            termsP.firstChild.textContent = "I agree to the ";
-            if (debug) console.log(variation_name + " - terms label copy updated");
-          }
-        }
-      }
-
-      if (!iframeDoc.getElementById("cre-t-27-clinic-hint")) {
-        var hint = iframeDoc.createElement("p");
-        hint.id = "cre-t-27-clinic-hint";
-        hint.textContent = "Select a clinic you've visited within the last 12 months to continue with bulk billing.";
-        label.parentNode.insertBefore(hint, label);
-        if (debug) console.log(variation_name + " - clinic hint text inserted");
-      }
-
-      iframeDoc._cret27CopyDone = true;
     }
 
-    function setupClinicValidation(iframeDoc) {
-      if (iframeDoc._cret27ClinicValidation) return;
-      iframeDoc._cret27ClinicValidation = true;
-
-      var BTN_SEL = '[data-testid="request-consult__next-step-button"]';
-      var INPUT_SEL = '#practice-search-by-postcode-subscribing input[role="combobox"]';
-      var LABEL_SEL = "#practice-search-by-postcode-subscribing #practice-label";
-      var CONTAINER_SEL = "#practice-search-by-postcode-subscribing .MuiOutlinedInput-root";
-
-      function showError() {
-        var container = iframeDoc.querySelector(CONTAINER_SEL);
-        var label = iframeDoc.querySelector(LABEL_SEL);
-        if (container) container.classList.add("cre-t-27-field-error");
-        if (label) label.style.color = "rgb(234,72,72)";
-        if (debug) console.log(variation_name + " - clinic validation error shown");
+    function changeCTA() {
+      var timerElement = document.querySelector(".cre-t-07-timer");
+      var targetPosition = document.querySelector('.banner .banner_buttonArea');
+      var existingCTA = document.querySelector(".cre-t-07-ctas");
+      
+      if (timerElement) {
+        targetPosition = timerElement;
       }
-
-      function clearError() {
-        var container = iframeDoc.querySelector(CONTAINER_SEL);
-        var label = iframeDoc.querySelector(LABEL_SEL);
-        if (container) container.classList.remove("cre-t-27-field-error");
-        if (label) label.style.color = "";
-        if (debug) console.log(variation_name + " - clinic validation error cleared");
+      
+      if (!existingCTA && targetPosition) {
+        insertAfter(targetPosition, newCTA);
       }
-
-      // Listen for Next button click
-      iframeDoc.addEventListener(
-        "click",
-        function (e) {
-          var btn = e.target.closest && e.target.closest(BTN_SEL);
-          if (!btn) return;
-
-          window._conv_q = window._conv_q || [];
-          window._conv_q.push(["triggerConversion", "100037720"]);
-
-          var input = iframeDoc.querySelector(INPUT_SEL);
-          if (!input) return;
-
-          if (input.value.trim().length === 0) {
-            showError();
-
-            // Check if React's required fields are already satisfied
-            // Rules from source: IsNotEmpty (phone), IsDateString (dob = 10 chars DD/MM/YYYY),
-            // Equals(true) for attended + terms. consentToShareWithGP is NOT required.
-            var phone = iframeDoc.querySelector('input[name="userName"]');
-            var dob = iframeDoc.querySelector('input[id="secondaryUserName"]');
-            var attended = iframeDoc.querySelector('input[name="hasAttendedPracticeIn12Months"]');
-            var terms = iframeDoc.querySelector('input[name="termsAndConditionsAccepted"]');
-
-            var reactReady = phone && /^04\d{8}$/.test(phone.value.trim()) && dob && dob.value.trim().length === 10 && attended && attended.checked && terms && terms.checked;
-
-            if (reactReady) {
-              // React would navigate — block it until clinic is selected
-              e.preventDefault();
-              e.stopPropagation();
-              e.stopImmediatePropagation();
-            }
-            // else: React has its own errors to show — let it handle them
-            return;
-          }
-
-          clearError();
-        },
-        true,
-      );
-
-      // Clear error as soon as user starts typing / selects a value
-      iframeDoc.addEventListener("input", function (e) {
-        var el = e.target.closest && e.target.closest(INPUT_SEL);
-        if (el && el.value.trim().length > 0) clearError();
-      });
     }
 
-    function preselectAttendedCheckbox(iframeDoc) {
-      var checkbox = iframeDoc.querySelector('input[name="hasAttendedPracticeIn12Months"]');
-      if (!checkbox) return;
-
-      if (!checkbox.checked) {
-        checkbox.click();
-        if (debug) console.log(variation_name + " - attended checkbox pre-selected");
+    function changeBannerImage() {
+      var existingBannerImages = document.querySelector(".cre-t-07-banner-images");
+      var targetPosition = document.querySelector('.banner .banner_media');
+      if (!existingBannerImages && targetPosition) {
+        insertAfter(targetPosition, newBannerImages);
       }
-
-      // Persistent watcher — re-check if React resets it on re-render
-      if (iframeDoc._cret27AttendedWatcher) return;
-      iframeDoc._cret27AttendedWatcher = true;
-
-      var span = checkbox.closest(".MuiCheckbox-root") || checkbox.parentNode;
-      var MO = (iframeDoc.defaultView || window).MutationObserver;
-      var obs = new MO(function () {
-        var cb = iframeDoc.querySelector('input[name="hasAttendedPracticeIn12Months"]');
-        if (cb && !cb.checked) {
-          cb.click();
-          if (debug) console.log(variation_name + " - attended checkbox re-selected by watcher");
-        }
-      });
-
-      obs.observe(span, { attributes: true, attributeFilter: ["class"] });
     }
 
-    function addIdsToInputParents(iframeDoc) {
-      if (iframeDoc._cret27IdsDone) return;
+    function updateCountdown() {
+      var countdownParent = document.querySelector(".cre-t-07-timer");
+      var countdown = document.querySelector(".cre-t-07-timer-countdown");
+      if (!countdownParent || !countdown) return;
 
-      var inputMappings = [
-        { selector: 'input[name="userName"]', parentId: "cre-t-27-mobile-field" },
-        { selector: 'input[id="secondaryUserName"]', parentId: "cre-t-27-dob-field" },
-        { selector: 'input[name="hasAttendedPracticeIn12Months"]', parentId: "cre-t-27-attended-checkbox" },
-        { selector: 'input[name="consentToShareWithGP"]', parentId: "cre-t-27-consent-checkbox" },
-        { selector: 'input[name="termsAndConditionsAccepted"]', parentId: "cre-t-27-terms-checkbox" },
-      ];
+      // Midnight at the end of 26 June 2026 in New York.
+      // June is EDT, so the offset is -04:00.
+      var target = new Date("2026-06-27T00:00:00-04:00").getTime();
 
-      var allDone = true;
-      inputMappings.forEach(function (mapping) {
-        var input = iframeDoc.querySelector(mapping.selector);
-        if (!input) {
-          allDone = false;
-          return;
-        }
-        var parent = input.closest(".MuiBox-root");
-        if (parent && !parent.id) {
-          parent.id = mapping.parentId;
-          if (debug) console.log(variation_name + " - Added id '" + mapping.parentId + "' to parent of " + mapping.selector);
-        }
-      });
+      var now = Date.now();
+      var diff = target - now;
 
-      if (allDone) iframeDoc._cret27IdsDone = true;
+      if (diff <= 0) {
+        countdownParent.remove();
+        clearInterval(window.cre_07_timer);
+        return;
+      }
+
+      var totalMinutes = Math.floor(diff / 1000 / 60);
+
+      var days = Math.floor(totalMinutes / (60 * 24));
+      var hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+      var minutes = totalMinutes % 60;
+
+      countdown.textContent = `${days}d ${hours}h ${minutes}m`;
+      countdownParent.classList.add("cre-t-07-timer-active");
+    }
+
+    function addTimer() {
+      var ctaContainer = document.querySelector(".banner .banner_buttonArea");
+      var existingTimer = document.querySelector(".cre-t-07-timer");
+      if (ctaContainer && !existingTimer) {
+        insertAfter(ctaContainer, newTimer);
+      }
+
+      if (!window.cre_07_timer) {
+        window.cre_07_timer = setInterval(updateCountdown, 1000);
+      }
     }
 
     /* Variation Init */
     function init() {
-      if (debug) console.log(variation_name + " - body[data-telehealth='step_4_Verify'] detected, starting 5s force interval");
+      /* start your code here */
+      // Your logic here
+      if (debug) console.log(variation_name + " initialized");
+      addClass("body", "cre-t-07");
+      
+      // Change Headline
+      waitForElement(".banner .banner_contentCopy h1", changeHeadline);
 
-      var forceInterval = setInterval(function () {
-        var iframe = document.getElementById("mobile-viewport");
-        if (!iframe) return;
+      // Add description
+      waitForElement(".banner .banner_contentCopy p", changeDescription);
 
-        var iframeDoc;
-        try {
-          iframeDoc = iframe.contentWindow.document;
-        } catch (e) {
-          if (debug) console.log(variation_name + " - iframe contentWindow access error:", e);
-          return;
-        }
+      // Add timer 
+      waitForElement(".banner .banner_buttonArea", addTimer);
 
-        if (iframeDoc && iframeDoc.body) {
-          injectIframeStyles(iframeDoc);
-          updateIframeCopy(iframeDoc);
-          preselectAttendedCheckbox(iframeDoc);
-          setupClinicValidation(iframeDoc);
-          addIdsToInputParents(iframeDoc);
-        }
-      }, 100);
+      // Change CTA
+      waitForElement(".banner .banner_buttonArea", changeCTA);
 
-      setTimeout(function () {
-        clearInterval(forceInterval);
-        if (debug) console.log(variation_name + " - force interval cleared after 5s");
-      }, 5000);
+      // Change banner image
+      waitForElement(".banner .banner_media", changeBannerImage);
     }
 
-    /* Initialise variation — observe outer body for step_4_Verify */
-    waitForElement('body[data-telehealth="step_4_Verify"]', init);
+    /* Initialise variation */
+    waitForElement(".banner .banner_container", init, 50, 15000);
   } catch (e) {
     if (debug) console.log(e, "error in Test " + variation_name);
   }

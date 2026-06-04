@@ -2,74 +2,60 @@
   try {
     /* main variables */
     var debug = 0;
-    var variation_name = "cre-t-132";
-    var config = {
-      phoneIcon: "http://v2.crocdn.com/SwiftTest/test132/cre-132-phone-icon.svg"
-    };
-
-    /* all Pure helper functions */
-
-    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
-      var interval = setInterval(function () {
-        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
-          clearInterval(interval);
-          trigger();
-        }
-      }, delayInterval);
-      setTimeout(function () {
-        clearInterval(interval);
-      }, delayTimeout);
-    }
-
-    function insertAfter(selector, html) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (typeof html === "string") {
-        element.insertAdjacentHTML("afterend", html);
-      } else if (html && html.nodeType === 1) {
-        element.insertAdjacentElement("afterend", html);
-      }
-    }
-
-    function addClass(selector, className) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (element.classList) element.classList.add(className);
-      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
-        element.className += " " + className;
-      }
-    }
-    /* Variation functions */
-    var phoneNumber = `
-    <li class="cre-t-132-phone-container">
-      <img src="${config.phoneIcon}" alt="Phone Icon" class="cre-t-132-phone-icon" fetchpriority="high">
-      <a href="tel:+18006933529" class="cre-t-132-phone-link">+1 (800) 693-3529</a>
-    </li>
-    `;
+    var variation_name = "cre-t-18";
+    var targetSelector = '.main-nav a[href="/general-information/experience/convince"]';
 
     /* Variation Init */
     function init() {
-      /* start your code here */
-      // Your logic here
+      // Global flag to prevent duplicate execution during client-side navigation
+      if (document.body.classList.contains('cre-t-18')) {
+        return;
+      }
+      
+      document.body.classList.add('cre-t-18');
+
       if (debug) console.log(variation_name + " initialized");
 
-      if (document.body.classList.contains("cre-t-132")) return;
-      addClass("body", "cre-t-132");
+      // Find all instances of the "Convince Your Boss" anchor tag
+      var targetAnchors = document.querySelectorAll(targetSelector);
 
-      var menuItems = document.querySelectorAll(".header-nav .menu-item");
-      menuItems.forEach(function (item) {
-        if (item.textContent.includes("Contact")) {
-          var existingPhone = document.querySelector(".cre-t-132-phone-container");
-          if (item && !existingPhone) {
-            addClass(item, "cre-t-132-contact-item");
-            insertAfter(item, phoneNumber);
-          }
+      targetAnchors.forEach(function (targetAnchor) {
+        // Traverse up to the parent list item
+        var parentLi = targetAnchor.closest('.main-nav__links-column-list-item');
+
+        if (parentLi) {
+          // HTML string for the new list item
+          // NOTE: Replace href="#" with your actual target="_blank" link later
+          var newLinkHtml = `
+            <li class="main-nav__links-column-list-item cre-t-18-new-item">
+                <a href="https://v2.crocdn.com/AFP/test18/AFP_2026_Conference_Summary-cre-t-18.pdf" target="_blank" class="main-nav__links-column-list-link cre-t-18-new-link">
+                    Download One-Page Conference Summary
+                </a>
+            </li>
+          `;
+
+          // Insert the new list item directly after the current "Convince Your Boss" item
+          parentLi.insertAdjacentHTML('afterend', newLinkHtml);
         }
       });
     }
 
-    /* Initialise variation */
-    waitForElement(".header-nav .menu-item", init, 50, 15000);
+    /* Custom Polling Logic for 2 Elements */
+    var pollInterval = setInterval(function () {
+      var elements = document.querySelectorAll(targetSelector);
+      
+      // Wait specifically for both links to be rendered
+      if (elements && elements.length >= 2) {
+        clearInterval(pollInterval);
+        init();
+      }
+    }, 250); // 250ms interval
+
+    // Clear interval after 5000ms fallback
+    setTimeout(function () {
+      clearInterval(pollInterval);
+    }, 5000);
+
   } catch (e) {
     if (debug) console.log(e, "error in Test " + variation_name);
   }

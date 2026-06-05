@@ -20,6 +20,7 @@ module.exports = defineConfig({
     ['./sic27-reporter.js'],
     ['./sic132-reporter.js'],
     ['./afp18-reporter.js'],
+    ['./sea316-reporter.js'],
   ],
   use: {
     headless: true,

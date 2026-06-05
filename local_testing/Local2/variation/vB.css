@@ -1,7 +1,69 @@
-@media (max-width: 1024px) {
-  
- .cre-t-18-new-item {
-    display: none !important;
- }
-  
+.cre-t-316-product-price__price {
+	display: none;
+}
+
+html body.cre-t-316 .cre-t-316-has-price-per-day-hide.product-price__price {
+	display: none;
+}
+
+html body.cre-t-316 .cre-t-316-product-price__price {
+	display: flex;
+	flex-flow: column-reverse;
+	margin-left: auto;
+	position: relative;
+	column-gap: 4px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+html body.cre-t-316 .cre-t-316-product-price__price-container {
+	display: flex;
+}
+
+html body.cre-t-316 .cre-t-316-product-price__price--strikethrough {
+	margin-left: auto;
+	flex: 0;
+	margin-top: 0px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: red;
+	text-decoration: line-through;
+	align-self: center;
+}
+
+html body.cre-t-316 .cre-t-316-product-price__price-amount, 
+html body.cre-t-316 .cre-t-316-product-price__currency-symbol {
+	font-size: 18px;
+	line-height: 24px;
+	font-family: "Poppins Medium",sans-serif;
+	font-weight: 400;
+	color: #050d11;
+}
+
+html body.cre-t-316 .cre-t-316-product-price__price-term {
+	margin-left: 2px;
+	font-family: "Poppins Regular",sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: #050d11;
+	margin-top: 3px;
+	align-self: center;
+}
+
+@media screen and (min-width: 1024px) {
+	html body.cre-t-316 .cre-t-316-product-price__price-amount, 
+	html body.cre-t-316 .cre-t-316-product-price__currency-symbol {
+		font-family: "Poppins Semibold",sans-serif;
+    font-weight: 400;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	html body.cre-t-316 .cre-t-316-product-price__price-amount, 
+	html body.cre-t-316 .cre-t-316-product-price__currency-symbol {
+		font-size: 22px;
+		line-height: 32px;
+	}
 }

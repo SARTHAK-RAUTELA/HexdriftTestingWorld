@@ -1,0 +1,430 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="UTF-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word">
+<meta name=Originator content="Microsoft Word">
+<title>Fanorate QA Report</title>
+<style>
+  body { font-family: Calibri, sans-serif; font-size: 11pt; color: #000; margin: 72pt; line-height: 1.4; }
+  h1 { font-size: 22pt; font-weight: bold; color: #1e3a5f; border-bottom: 3pt solid #1e3a5f; padding-bottom: 6pt; margin-top: 0; margin-bottom: 6pt; }
+  h2 { font-size: 14pt; font-weight: bold; color: #1e3a5f; margin-top: 18pt; margin-bottom: 4pt; border-bottom: 1pt solid #c9d6e3; padding-bottom: 3pt; }
+  h3 { font-size: 12pt; font-weight: bold; color: #0f4c81; margin-top: 12pt; margin-bottom: 3pt; }
+  h4 { font-size: 11pt; font-weight: bold; color: #374151; margin-top: 8pt; margin-bottom: 2pt; }
+  p { margin: 4pt 0 6pt 0; }
+  table { border-collapse: collapse; width: 100%; margin: 8pt 0 12pt 0; font-size: 10pt; }
+  th { background-color: #1e3a5f; color: #ffffff; padding: 5pt 8pt; text-align: left; font-size: 10pt; border: 1pt solid #1e3a5f; }
+  td { padding: 4pt 8pt; border: 1pt solid #d1d5db; vertical-align: top; }
+  tr:nth-child(even) td { background-color: #f8fafc; }
+  .page-break { page-break-before: always; }
+  .cover { text-align: center; padding: 80pt 40pt; border: 2pt solid #1e3a5f; margin-bottom: 40pt; background-color: #f0f7ff; }
+  .cover h1 { border: none; font-size: 28pt; margin-bottom: 12pt; }
+  .cover .subtitle { font-size: 14pt; color: #374151; margin-bottom: 20pt; }
+  .cover .meta { font-size: 10pt; color: #6b7280; }
+  .cover .score-box { display: inline-block; background: #1e3a5f; color: #fbbf24; font-size: 36pt; font-weight: bold; padding: 12pt 24pt; border-radius: 8pt; margin: 16pt 0; }
+  .critical { background-color: #fef2f2; border-left: 4pt solid #dc2626; padding: 6pt 10pt; margin: 4pt 0; }
+  .warning { background-color: #fff7ed; border-left: 4pt solid #ea580c; padding: 6pt 10pt; margin: 4pt 0; }
+  .caution { background-color: #fefce8; border-left: 4pt solid #ca8a04; padding: 6pt 10pt; margin: 4pt 0; }
+  .ok { background-color: #f0fdf4; border-left: 4pt solid #16a34a; padding: 6pt 10pt; margin: 4pt 0; }
+  .info { background-color: #eff6ff; border-left: 4pt solid #2563eb; padding: 6pt 10pt; margin: 4pt 0; }
+  .badge-red { background-color: #dc2626; color: white; padding: 1pt 5pt; font-size: 9pt; font-weight: bold; }
+  .badge-orange { background-color: #ea580c; color: white; padding: 1pt 5pt; font-size: 9pt; font-weight: bold; }
+  .badge-yellow { background-color: #ca8a04; color: white; padding: 1pt 5pt; font-size: 9pt; font-weight: bold; }
+  .badge-green { background-color: #16a34a; color: white; padding: 1pt 5pt; font-size: 9pt; font-weight: bold; }
+  .pass { color: #16a34a; font-weight: bold; }
+  .fail { color: #dc2626; font-weight: bold; }
+  .warn { color: #ca8a04; font-weight: bold; }
+  ul { margin: 4pt 0 8pt 16pt; }
+  li { margin: 2pt 0; font-size: 10.5pt; }
+  .priority-num { font-weight: bold; color: white; background: #dc2626; padding: 2pt 6pt; margin-right: 6pt; font-size: 10pt; }
+  .priority-num-2 { background: #ea580c; }
+  .priority-num-3 { background: #ca8a04; }
+  blockquote { border-left: 3pt solid #cbd5e1; margin: 8pt 0 8pt 20pt; padding: 4pt 8pt; color: #374151; font-style: italic; font-size: 10.5pt; }
+  .verdict { background-color: #1e3a5f; color: white; padding: 16pt 20pt; margin-top: 12pt; }
+  .verdict h2 { color: #fbbf24; border-color: #3b5a8a; }
+  .verdict p { color: #e2e8f0; }
+  .two-col { column-count: 2; column-gap: 20pt; }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <h1>Fanorate.com<br>Full Website QA Report</h1>
+  <div class="subtitle">Soccer 2026 World Cup Editorial Site<br>Homepage + 13 Match Preview Pages</div>
+  <div class="score-box">5.0 / 10</div>
+  <p><strong>Overall Site Score</strong></p>
+  <table style="width:auto; margin:16pt auto; font-size:10pt;" border="0">
+    <tr>
+      <td style="border:none; padding:4pt 16pt; text-align:center;"><strong>14</strong><br><span style="color:#6b7280;">Pages Tested</span></td>
+      <td style="border:none; padding:4pt 16pt; text-align:center;"><strong>15</strong><br><span style="color:#6b7280;">Site-Wide Bugs</span></td>
+      <td style="border:none; padding:4pt 16pt; text-align:center;"><strong>10</strong><br><span style="color:#6b7280;">Priority Fixes</span></td>
+      <td style="border:none; padding:4pt 16pt; text-align:center;"><strong>June 6, 2026</strong><br><span style="color:#6b7280;">Test Date</span></td>
+    </tr>
+  </table>
+  <div class="meta">
+    Prepared by: Sarthak &nbsp;|&nbsp; sarthak@brillmark.com<br>
+    Scope: Desktop + Mobile + Accessibility + SEO + Content + Functionality
+  </div>
+</div>
+
+<!-- URLS TESTED -->
+<h2>Pages Tested</h2>
+<p><em>14 URLs audited — Desktop · Mobile · SEO · Accessibility · Content · Forms · Navbar · Footer</em></p>
+<table>
+  <tr><th>#</th><th>Page Name</th><th>URL</th><th>Score</th></tr>
+  <tr><td>1</td><td>Homepage</td><td>https://www.fanorate.com/</td><td><strong style="color:#dc2626;">4.0</strong></td></tr>
+  <tr><td>2</td><td>Mexico vs South Africa</td><td>https://www.fanorate.com/soccer-2026/match-previews/mexico-vs-south-africa-match-preview/</td><td><strong style="color:#16a34a;">6.0</strong></td></tr>
+  <tr><td>3</td><td>Korea Republic vs Czechia</td><td>https://www.fanorate.com/soccer-2026/match-previews/korea-republic-vs-czechia-match-preview/</td><td><strong style="color:#ea580c;">5.0</strong></td></tr>
+  <tr><td>4</td><td>Canada vs Bosnia Herzegovina</td><td>https://www.fanorate.com/soccer-2026/match-previews/canada-vs-bosnia-herzegovina-match-preview/</td><td><strong style="color:#ca8a04;">5.5</strong></td></tr>
+  <tr><td>5</td><td>USA vs Paraguay</td><td>https://www.fanorate.com/soccer-2026/match-previews/usa-vs-paraguay-match-preview/</td><td><strong style="color:#ca8a04;">5.5</strong></td></tr>
+  <tr><td>6</td><td>Brazil vs Morocco</td><td>https://www.fanorate.com/soccer-2026/match-previews/brazil-vs-morocco-match-preview/</td><td><strong style="color:#ea580c;">5.0</strong></td></tr>
+  <tr><td>7</td><td>Qatar vs Switzerland</td><td>https://www.fanorate.com/soccer-2026/match-previews/qatar-vs-switzerland-match-preview/</td><td><strong style="color:#dc2626;">4.0</strong></td></tr>
+  <tr><td>8</td><td>Haiti vs Scotland</td><td>https://www.fanorate.com/soccer-2026/match-previews/haiti-vs-scotland-match-preview/</td><td><strong style="color:#16a34a;">6.0</strong></td></tr>
+  <tr><td>9</td><td>Australia vs Türkiye</td><td>https://www.fanorate.com/soccer-2026/match-previews/australia-vs-turkiye-match-preview/</td><td><strong style="color:#ea580c;">5.0</strong></td></tr>
+  <tr><td>10</td><td>Germany vs Curaçao</td><td>https://www.fanorate.com/soccer-2026/match-previews/germany-vs-curacao-match-preview/</td><td><strong style="color:#ca8a04;">5.5</strong></td></tr>
+  <tr><td>11</td><td>Netherlands vs Japan</td><td>https://www.fanorate.com/soccer-2026/match-previews/netherlands-vs-japan-match-preview/</td><td><strong style="color:#dc2626;">4.0</strong></td></tr>
+  <tr><td>12</td><td>Ivory Coast vs Ecuador</td><td>https://www.fanorate.com/soccer-2026/match-previews/ivory-coast-vs-ecuador-match-preview/</td><td><strong style="color:#ca8a04;">5.5</strong></td></tr>
+  <tr><td>13</td><td>Sweden vs Tunisia</td><td>https://www.fanorate.com/soccer-2026/match-previews/sweden-vs-tunisia-match-preview/</td><td><strong style="color:#ea580c;">5.0</strong></td></tr>
+</table>
+
+<!-- TABLE OF CONTENTS -->
+<h2>Table of Contents</h2>
+<p>1. Executive Summary</p>
+<p>2. Site-Wide Critical Issues</p>
+<p>3. Navbar Analysis</p>
+<p>4. Footer Analysis</p>
+<p>5. Forms Analysis</p>
+<p>6. Mobile Responsiveness</p>
+<p>7. SEO Analysis</p>
+<p>8. Accessibility Analysis</p>
+<p>9. Content Quality Analysis</p>
+<p>10. Per-Page Scores &amp; Findings</p>
+<p>11. Top 10 Priority Fixes</p>
+<p>12. Additional Recommendations</p>
+<p>13. Final Verdict</p>
+
+<!-- SECTION 1: EXECUTIVE SUMMARY -->
+<div class="page-break"></div>
+<h2>1. Executive Summary</h2>
+
+<div class="info"><strong>Content Quality:</strong> Match preview articles average 2,500–3,500 words, are well-researched, and deliver genuine value to World Cup 2026 fans. The editorial foundation is solid. However, technical implementation is critically deficient in four areas that prevent good content from being discovered.</div>
+
+<div class="critical"><strong>SEO &amp; Social Sharing — Critical:</strong> 13 of 14 pages have zero meta descriptions, zero Open Graph tags, zero Twitter Card tags, and zero canonical tags simultaneously. Every social share on Facebook, Twitter/X, LinkedIn, or WhatsApp renders as a plain bare URL — no image, no title, no description. The site is actively suppressing its own traffic.</div>
+
+<div class="warning"><strong>Mobile — Critical:</strong> Viewport meta tag missing/unconfirmed on most pages. No hamburger menu on 12 of 14 pages. A navbar with 35+ links and no collapse mechanism is completely unusable on smartphones — which is where the majority of sports fans browse.</div>
+
+<div class="warning"><strong>Accessibility — Persistent WCAG Level A failures:</strong> Logo alt text missing on all 14 pages. 60%+ of content images lack alt text. All newsletter forms lack proper label elements. ARIA roles and attributes absent throughout.</div>
+
+<div class="caution"><strong>Placeholder Content in Production:</strong> "Photo · TBC" captions on 4+ pages, "Form: TBC · verify" live in squad tables, "Awaiting FIFA confirmation" text published, and an entirely empty content section on the Mexico vs South Africa page.</div>
+
+<!-- SECTION 2: SITE-WIDE CRITICAL ISSUES -->
+<div class="page-break"></div>
+<h2>2. Site-Wide Critical Issues</h2>
+<p><em>These problems appear on every page — fixing them in one place fixes all 14 pages.</em></p>
+
+<table>
+  <tr><th>#</th><th>Issue</th><th>Severity</th><th>Affects</th></tr>
+  <tr><td>1</td><td><strong>No Open Graph Tags</strong> — og:title, og:description, og:image missing. Every social share = bare URL.</td><td><span class="badge-red">CRITICAL</span></td><td>13/14 pages</td></tr>
+  <tr><td>2</td><td><strong>No Twitter Card Tags</strong> — Zero visual on X/Twitter shares.</td><td><span class="badge-red">CRITICAL</span></td><td>13/14 pages</td></tr>
+  <tr><td>3</td><td><strong>No Meta Description</strong> — Google auto-generates bad SERP snippets.</td><td><span class="badge-red">CRITICAL</span></td><td>13/14 pages</td></tr>
+  <tr><td>4</td><td><strong>No Canonical Tag</strong> — Duplicate content risk across URL variants.</td><td><span class="badge-red">CRITICAL</span></td><td>13/14 pages</td></tr>
+  <tr><td>5</td><td><strong>Logo alt="" missing</strong> — WCAG 2.1 SC 1.1.1 Level A failure on every page.</td><td><span class="badge-red">CRITICAL</span></td><td>All 14 pages</td></tr>
+  <tr><td>6</td><td><strong>"Editorial Team" footer = href='#'</strong> — Dead placeholder link, clicks do nothing.</td><td><span class="badge-orange">HIGH</span></td><td>All 14 pages</td></tr>
+  <tr><td>7</td><td><strong>No Social Media Links in Footer</strong> — No Twitter/X, Instagram, Facebook, YouTube anywhere.</td><td><span class="badge-orange">HIGH</span></td><td>All 14 pages</td></tr>
+  <tr><td>8</td><td><strong>/wp-login.php in Public Navbar</strong> — Shows as "Sign in". Exposes WP login to bots.</td><td><span class="badge-orange">HIGH</span></td><td>Multiple pages</td></tr>
+  <tr><td>9</td><td><strong>Newsletter Privacy Policy = href='#'</strong> — Consent link goes nowhere. GDPR risk.</td><td><span class="badge-orange">HIGH</span></td><td>Multiple pages</td></tr>
+  <tr><td>10</td><td><strong>No JSON-LD Structured Data on any page</strong> — Ineligible for Google rich results.</td><td><span class="badge-orange">HIGH</span></td><td>All 14 pages</td></tr>
+  <tr><td>11</td><td><strong>No Hamburger Menu</strong> — 35+ nav links with zero mobile collapse. Nav broken on phones.</td><td><span class="badge-red">CRITICAL</span></td><td>12/14 pages</td></tr>
+  <tr><td>12</td><td><strong>Viewport Meta Tag Missing</strong> — Mobile browsers render desktop layout at 980px width.</td><td><span class="badge-red">CRITICAL</span></td><td>Most pages</td></tr>
+  <tr><td>13</td><td><strong>"Photo · TBC" Live in Production</strong> — Incomplete placeholder visible to all users.</td><td><span class="badge-orange">HIGH</span></td><td>4+ pages</td></tr>
+  <tr><td>14</td><td><strong>"All Stories" Footer → Homepage "/"</strong> — Misleading navigation label.</td><td><span class="badge-yellow">MEDIUM</span></td><td>All 14 pages</td></tr>
+  <tr><td>15</td><td><strong>Related Article Card Images Missing Alt Text</strong> — Appear on 6+ pages without alt attributes.</td><td><span class="badge-orange">HIGH</span></td><td>6+ pages</td></tr>
+</table>
+
+<!-- SECTION 3: NAVBAR -->
+<div class="page-break"></div>
+<h2>3. Navbar Analysis</h2>
+
+<table>
+  <tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+  <tr><td>Logo present</td><td><span class="pass">✓ YES</span></td><td>Present on all 14 pages</td></tr>
+  <tr><td>Logo alt text</td><td><span class="fail">✗ MISSING</span></td><td>No alt attribute on any page — WCAG SC 1.1.1 Level A failure × 14</td></tr>
+  <tr><td>Mobile hamburger menu</td><td><span class="fail">✗ MISSING</span></td><td>Only 2 of 14 pages have confirmed hamburger. 35+ links with no toggle = broken mobile nav.</td></tr>
+  <tr><td>Sticky/fixed header</td><td><span class="warn">⚠ Not confirmed</span></td><td>No position:sticky confirmed on any page. Users lose nav on 3,500-word articles.</td></tr>
+  <tr><td>/wp-login.php exposed</td><td><span class="fail">✗ ISSUE</span></td><td>Appears as "Sign in" in public nav. Reveals WP admin URL to all visitors and bots. Remove immediately.</td></tr>
+  <tr><td>Nav architecture consistency</td><td><span class="warn">⚠ INCONSISTENT</span></td><td>Homepage/Korea/Sweden = 4–5 links only. Brazil/Qatar/Haiti = 14+ flat links. Mexico = full mega-menu (best implementation).</td></tr>
+  <tr><td>URL format in nav links</td><td><span class="warn">⚠ INCONSISTENT</span></td><td>Mix of relative /match-previews/... and absolute https://www.fanorate.com/match-previews/...</td></tr>
+  <tr><td>ARIA roles on nav</td><td><span class="fail">✗ MISSING</span></td><td>No role="navigation" or aria-label="Primary navigation" confirmed on any page</td></tr>
+  <tr><td>Group data error in nav</td><td><span class="fail">✗ BUG</span></td><td>Canada vs Bosnia labeled Group F in mega-menu but Group B in fixture list on the same page — one is factually wrong</td></tr>
+  <tr><td>Nav sub-label placeholder</td><td><span class="fail">✗ BUG</span></td><td>Mexico vs South Africa sub-label says "Mexico City Stadium" — rest of page says "Estadio Azteca"</td></tr>
+</table>
+
+<!-- SECTION 4: FOOTER -->
+<div class="page-break"></div>
+<h2>4. Footer Analysis</h2>
+
+<h3>What Works Correctly</h3>
+<div class="ok">Copyright "© 2026 Fanorate. Published by Brillmark LLC" — year is correct for June 2026</div>
+<div class="ok">Legal pages present: Privacy Policy, Terms of Use, Cookie Policy, Affiliate Disclosure, Our Methodology</div>
+<div class="ok">Multi-column layout (Editorial / About / Trust) is clean and well-organized</div>
+
+<h3>What Is Broken</h3>
+<div class="critical">"Editorial Team" link → href='#' — Dead link on ALL 14 pages. Clicks go nowhere. Must be fixed or removed.</div>
+<div class="critical">No social media links anywhere in the footer on any page — no Twitter/X, Instagram, Facebook, YouTube. Critical gap for a sports publication.</div>
+<div class="warning">"All Stories" → points to "/" (homepage), not a stories archive. Misleading label for all visitors.</div>
+<div class="warning">No GDPR/cookie consent banner despite Cookie Policy link existing. Potential EU compliance violation.</div>
+<div class="caution">No RSS feed link — missed opportunity for feed subscribers on a news/editorial site.</div>
+
+<!-- SECTION 5: FORMS -->
+<div class="page-break"></div>
+<h2>5. Forms Analysis</h2>
+
+<h3>Newsletter Signup (Contact Form 7 — all pages)</h3>
+<table>
+  <tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+  <tr><td>Form present</td><td><span class="pass">✓ All pages</span></td><td>Newsletter email form present sitewide</td></tr>
+  <tr><td>Email input label</td><td><span class="fail">✗ MISSING</span></td><td>No &lt;label&gt; element on any page. Uses placeholder text only — WCAG SC 1.3.1 failure</td></tr>
+  <tr><td>Submit button</td><td><span class="pass">✓ Present</span></td><td>Submit button exists but label text unconfirmed on most pages</td></tr>
+  <tr><td>Privacy policy link</td><td><span class="fail">✗ BROKEN</span></td><td>Links to href='#' on multiple pages — GDPR compliance risk. Must point to /privacy-policy/</td></tr>
+  <tr><td>Form action URL</td><td><span class="warn">⚠ Unconfirmed</span></td><td>Could not confirm on most pages where submissions are sent</td></tr>
+  <tr><td>CAPTCHA / bot protection</td><td><span class="fail">✗ Missing</span></td><td>No spam protection mechanism detected on any page</td></tr>
+  <tr><td>Success/error states</td><td><span class="warn">⚠ Unconfirmed</span></td><td>No validation feedback confirmed on any page</td></tr>
+</table>
+
+<h3>Site Search Form</h3>
+<div class="caution">The "US · EN" element in the header has ambiguous UX — unclear if it functions as a search bar, a locale switcher, or both. Only the Mexico vs South Africa page confirms aria-label="Search" on the input. All other pages unconfirmed.</div>
+
+<h3>WordPress Login Link ("Sign in")</h3>
+<div class="critical">The /wp-login.php link in the public navbar is not a form but functions as a login entry point. Remove from public navigation immediately — it exposes the CMS platform to attackers and regular readers cannot log into WordPress admin.</div>
+
+<!-- SECTION 6: MOBILE -->
+<div class="page-break"></div>
+<h2>6. Mobile Responsiveness</h2>
+
+<table>
+  <tr><th>Mobile Check</th><th>Status</th><th>Pages Affected</th></tr>
+  <tr><td>Viewport meta tag</td><td><span class="fail">✗ Missing/unconfirmed</span></td><td>~10 of 14 pages</td></tr>
+  <tr><td>Mobile hamburger menu</td><td><span class="fail">✗ Missing</span></td><td>12 of 14 pages</td></tr>
+  <tr><td>Images with loading="lazy"</td><td><span class="fail">✗ Not detected</span></td><td>All 14 pages</td></tr>
+  <tr><td>Images with srcset (responsive)</td><td><span class="fail">✗ Not confirmed</span></td><td>All 14 pages</td></tr>
+  <tr><td>Data tables responsive</td><td><span class="warn">⚠ Not confirmed</span></td><td>Head-to-Head + lineup tables</td></tr>
+  <tr><td>Image format (WebP)</td><td><span class="warn">⚠ All .png only</span></td><td>All 14 pages (25–35% size saving missed)</td></tr>
+  <tr><td>Touch target sizes (44×44px)</td><td><span class="warn">⚠ Not verified</span></td><td>All 14 pages</td></tr>
+</table>
+
+<div class="critical"><strong>Critical Mobile Impact:</strong> Without a viewport meta tag, every mobile browser renders the page at ~980px wide — users must pinch-zoom to read anything. Without a hamburger menu, a 35-link navbar physically overflows the screen on a phone. Sports content is consumed predominantly on mobile — this is the primary audience being failed.</div>
+
+<div class="caution"><strong>Performance Note:</strong> The Mexico vs South Africa page loads 27 separate CSS files as render-blocking resources. All pages serve PNG images without lazy loading or srcset. WordPress caching plugin and CDN configuration should be verified before World Cup traffic peaks.</div>
+
+<!-- SECTION 7: SEO -->
+<div class="page-break"></div>
+<h2>7. SEO Analysis</h2>
+
+<table>
+  <tr><th>SEO Element</th><th>Homepage</th><th>Mexico (best page)</th><th>Other 12 pages</th></tr>
+  <tr><td>Meta Description</td><td><span class="fail">✗ Missing</span></td><td><span class="warn">⚠ og:description only</span></td><td><span class="fail">✗ Missing on all 12</span></td></tr>
+  <tr><td>Canonical Tag</td><td><span class="fail">✗ Missing</span></td><td><span class="pass">✓ Present</span></td><td><span class="fail">✗ Missing on all 12</span></td></tr>
+  <tr><td>Open Graph Tags</td><td><span class="fail">✗ Missing</span></td><td><span class="pass">✓ Present</span></td><td><span class="fail">✗ Missing on all 12</span></td></tr>
+  <tr><td>Twitter Card Tags</td><td><span class="fail">✗ Missing</span></td><td><span class="pass">✓ Present</span></td><td><span class="fail">✗ Missing on all 12</span></td></tr>
+  <tr><td>JSON-LD Structured Data</td><td><span class="fail">✗ Missing</span></td><td><span class="warn">⚠ Basic Yoast only</span></td><td><span class="fail">✗ Missing on all 12</span></td></tr>
+  <tr><td>H1 Tag Count</td><td><span class="fail">✗ ~10 H1 tags</span></td><td><span class="pass">✓ Exactly 1</span></td><td><span class="pass">✓ Exactly 1 on all</span></td></tr>
+  <tr><td>Page Title</td><td><span class="pass">✓ Present</span></td><td><span class="warn">⚠ Duplicate &lt;title&gt; tag</span></td><td><span class="pass">✓ Well-formed on all</span></td></tr>
+  <tr><td>Breadcrumb Navigation</td><td>N/A</td><td><span class="pass">✓ Present</span></td><td><span class="pass">✓ Most pages</span></td></tr>
+</table>
+
+<div class="warning"><strong>Yoast SEO Note (Mexico page):</strong> The theme independently emits a second &lt;title&gt; tag alongside Yoast, producing invalid HTML. Yoast reports wordCount as 6 for a 3,200-word article — all content is in Gutenberg blocks not being counted. Twitter card shows "1 minute" read time; actual is 13 minutes. Configure Yoast globally across all pages to resolve the 12-page gap in one pass.</div>
+
+<!-- SECTION 8: ACCESSIBILITY -->
+<div class="page-break"></div>
+<h2>8. Accessibility Analysis (WCAG 2.1)</h2>
+
+<table>
+  <tr><th>WCAG Criterion</th><th>Level</th><th>Status</th><th>Detail</th></tr>
+  <tr><td>1.1.1 Non-text Content — Logo alt</td><td><span class="badge-red">A</span></td><td><span class="fail">FAIL × 14</span></td><td>Logo img missing alt attribute on every page</td></tr>
+  <tr><td>1.1.1 Non-text Content — Images</td><td><span class="badge-red">A</span></td><td><span class="fail">FAIL</span></td><td>60%+ of content images missing alt text. Germany (6/6), Qatar (4/5), Australia (3/4)</td></tr>
+  <tr><td>1.3.1 Info &amp; Relationships — Forms</td><td><span class="badge-red">A</span></td><td><span class="fail">FAIL × 14</span></td><td>Newsletter email input has no &lt;label&gt; element on any page</td></tr>
+  <tr><td>2.4.1 Bypass Blocks — Skip link</td><td><span class="badge-red">A</span></td><td><span class="pass">PASS</span></td><td>#wp--skip-link--target present on all WordPress pages ✅</td></tr>
+  <tr><td>2.4.2 Page Titled</td><td><span class="badge-red">A</span></td><td><span class="pass">PASS</span></td><td>Title tags present on all pages ✅</td></tr>
+  <tr><td>3.1.1 Language of Page</td><td><span class="badge-red">A</span></td><td><span class="warn">⚠ UNCONFIRMED</span></td><td>lang="en" on &lt;html&gt; not confirmed — screen readers need this attribute</td></tr>
+  <tr><td>4.1.2 Name, Role, Value — Nav</td><td><span class="badge-orange">AA</span></td><td><span class="fail">FAIL</span></td><td>Nav dropdowns missing aria-expanded, aria-haspopup, aria-controls on most pages</td></tr>
+  <tr><td>4.1.2 — Hamburger button</td><td><span class="badge-orange">AA</span></td><td><span class="fail">FAIL</span></td><td>Mobile toggle not confirmed to have aria-label or aria-expanded</td></tr>
+  <tr><td>2.5.5 Target Size — Touch</td><td><span class="badge-orange">AA</span></td><td><span class="warn">⚠ UNVERIFIED</span></td><td>Minimum 44×44px not confirmed for nav links and buttons</td></tr>
+  <tr><td>Lineup pitch accessible alt</td><td><span class="badge-orange">AA</span></td><td><span class="fail">FAIL</span></td><td>Mexico page: pitch is aria-hidden with no text alternative. Screen readers get zero info.</td></tr>
+  <tr><td>FAQ accordion ARIA</td><td><span class="badge-orange">AA</span></td><td><span class="fail">FAIL</span></td><td>FAQ items lack role="button", aria-expanded, aria-controls on multiple pages</td></tr>
+</table>
+
+<!-- SECTION 9: CONTENT QUALITY -->
+<div class="page-break"></div>
+<h2>9. Content Quality Analysis</h2>
+<p><em>Based on detailed editorial review of 4 key pages (Mexico vs South Africa, USA vs Paraguay, Netherlands vs Japan, Ivory Coast vs Ecuador) plus structural analysis of all 14 pages.</em></p>
+
+<div class="info"><strong>Overall:</strong> The writing quality is genuinely good. Articles are well-crafted, fan-focused, and topically rich. The voice is consistent — authoritative yet accessible, written for engaged football fans. Sections like "Five Storylines", "Key Players", "Squad Breakdown", and "Bold Prediction" follow a strong, engaging template. However, several pages contain factual errors and placeholder text that undermine credibility.</div>
+
+<h3>Content Quality Scores (Reviewed Pages)</h3>
+<table>
+  <tr><th>Page</th><th>Content Score</th><th>Summary</th></tr>
+  <tr><td>USA vs Paraguay</td><td>7.5 / 10</td><td>Strongest narrative drive, best tactical depth, excellent closing paragraph. Minor formatting artifact in "Secondary Angles" section.</td></tr>
+  <tr><td>Mexico vs South Africa</td><td>7.0 / 10</td><td>Best atmosphere writing, strong opener. Questionable factual claim about South Africa's World Cup record. Empty historical facts section.</td></tr>
+  <tr><td>Ivory Coast vs Ecuador</td><td>7.0 / 10</td><td>Strong Ecuador characterisation. Two factual errors (Singo's position, Ecuador's 2022 tournament description).</td></tr>
+  <tr><td>Netherlands vs Japan</td><td>6.5 / 10</td><td>Flattest writing, broken lineup section (jersey numbers only — no player names). Five Storylines underdeveloped.</td></tr>
+</table>
+
+<h3>What Works Well</h3>
+<ul>
+  <li>Consistent, engaging article template across all previews (Fixture → Storylines → Squad → Key Players → Lineups → Prediction → FAQ)</li>
+  <li>Writing is fan-oriented and reads like genuine sports journalism — not AI-generic filler</li>
+  <li>Match statistics and historical context are well-researched and specific</li>
+  <li>FAQ sections target real fan questions ("When does it kick off?", "How to watch?", "Who are the key players?")</li>
+  <li>Word counts are strong (2,500–3,500 words) — appropriate depth for SEO and reader value</li>
+  <li>Bold prediction sections are specific and memorable, not vague hedging</li>
+  <li>Breadcrumb navigation present and correct on most pages</li>
+</ul>
+
+<h3>Content Issues Found</h3>
+<table>
+  <tr><th>Page</th><th>Issue</th><th>Type</th></tr>
+  <tr><td>Netherlands vs Japan</td><td>Only ~220 words — all other pages are 2,500–3,500 words. No images. Not production-ready.</td><td><span class="badge-red">CRITICAL</span></td></tr>
+  <tr><td>Netherlands vs Japan</td><td>Predicted lineup shows only jersey numbers (1 2 3 4 5 6 8 14 10 9 7) — player names never filled in. Template artifact.</td><td><span class="badge-red">Bug</span></td></tr>
+  <tr><td>Ivory Coast vs Ecuador</td><td>Sangaré listed twice in lineup (as GK and as midfielder). Factual error.</td><td><span class="badge-red">Factual</span></td></tr>
+  <tr><td>Ivory Coast vs Ecuador</td><td>Nicolas Pépé listed as key winger despite retiring from international football.</td><td><span class="badge-red">Factual</span></td></tr>
+  <tr><td>Ivory Coast vs Ecuador</td><td>Wilfried Singo described as "center-back" — he is a fullback/right-back. Positional error.</td><td><span class="badge-red">Factual</span></td></tr>
+  <tr><td>Ivory Coast vs Ecuador</td><td>"Ecuador narrowly missed Round of 16 in 2022" — factually wrong. Ecuador finished 3rd in group and were eliminated.</td><td><span class="badge-red">Factual</span></td></tr>
+  <tr><td>Mexico vs South Africa</td><td>"Bafana Bafana haven't won a World Cup match since 1998" — suspect, given 2010 home tournament. Needs verification.</td><td><span class="badge-orange">Factual Check</span></td></tr>
+  <tr><td>Mexico vs South Africa</td><td>Empty "Fun Historical Facts" section — heading present, zero content items. Visually broken.</td><td><span class="badge-red">Bug</span></td></tr>
+  <tr><td>Mexico vs South Africa</td><td>Duplicate pull quote: "If you only watch one match this week, this is the one." appears twice consecutively.</td><td><span class="badge-orange">Error</span></td></tr>
+  <tr><td>USA vs Paraguay</td><td>"Secondary Angles" section contains raw unformatted probability fragments ("USA clean sheet: Moderate", "Margin (median): +1") — unedited template data left in article.</td><td><span class="badge-orange">Template</span></td></tr>
+  <tr><td>Canada vs Bosnia Herzegovina</td><td>"Awaiting FIFA confirmation" text published live in the article.</td><td><span class="badge-orange">Placeholder</span></td></tr>
+  <tr><td>Brazil vs Morocco</td><td>"Form: TBC · verify" in squad comparison tables — published with unfilled data fields.</td><td><span class="badge-orange">Placeholder</span></td></tr>
+  <tr><td>Qatar vs Switzerland</td><td>"Photo · TBC" caption live on featured image.</td><td><span class="badge-orange">Placeholder</span></td></tr>
+  <tr><td>Sweden vs Tunisia</td><td>"Photo · TBC" caption live on featured stadium image.</td><td><span class="badge-orange">Placeholder</span></td></tr>
+  <tr><td>All pages</td><td>Match probability percentages stated without citing source or methodology — reduces editorial credibility.</td><td><span class="badge-yellow">Credibility</span></td></tr>
+  <tr><td>Multiple pages</td><td>"Ivory Coast" vs "Côte d'Ivoire" used inconsistently across titles, H1s, nav links, and article bodies.</td><td><span class="badge-yellow">Inconsistency</span></td></tr>
+  <tr><td>All articles</td><td>"Five Storylines" section reads like section headers rather than developed narrative — each storyline gets only 1–3 sentences across all pages.</td><td><span class="badge-yellow">Depth</span></td></tr>
+</table>
+
+<!-- SECTION 10: PER-PAGE SCORES -->
+<div class="page-break"></div>
+<h2>10. Per-Page Scores</h2>
+
+<table>
+  <tr><th>Page</th><th>Score</th><th>Top Issues</th></tr>
+  <tr><td>Homepage</td><td><strong style="color:#dc2626;">4.0/10</strong></td><td>~10 H1 tags (should be 1); no meta desc/OG/canonical; viewport not confirmed; /wp-login.php in nav</td></tr>
+  <tr><td>Mexico vs South Africa</td><td><strong style="color:#16a34a;">6.0/10</strong></td><td>Duplicate &lt;title&gt; tag; empty historical facts section; duplicate pull quote; Group B vs F data conflict in nav</td></tr>
+  <tr><td>Korea Republic vs Czechia</td><td><strong style="color:#ea580c;">5.0/10</strong></td><td>Lineup widget broken (jersey numbers only); no OG/Twitter/canonical; no hamburger menu; /wp-login.php exposed</td></tr>
+  <tr><td>Canada vs Bosnia Herzegovina</td><td><strong style="color:#ca8a04;">5.5/10</strong></td><td>Possible wrong stadium image (Arrowhead on BMO Field page); "Awaiting FIFA confirmation" live; 20+ H2s for 4k words</td></tr>
+  <tr><td>USA vs Paraguay</td><td><strong style="color:#ca8a04;">5.5/10</strong></td><td>No JSON-LD despite strong FAQ section; "TBC" photo credit live; data tables not responsive for mobile</td></tr>
+  <tr><td>Brazil vs Morocco</td><td><strong style="color:#ea580c;">5.0/10</strong></td><td>"Form: TBC · verify" in squad tables (live!); 3/4 images missing alt; no viewport meta; no OG tags</td></tr>
+  <tr><td>Qatar vs Switzerland</td><td><strong style="color:#dc2626;">4.0/10</strong></td><td>4/5 images missing alt text; no viewport meta; "Photo · TBC" live; no OG/Twitter/canonical/meta desc</td></tr>
+  <tr><td>Haiti vs Scotland</td><td><strong style="color:#16a34a;">6.0/10</strong></td><td>Newsletter consent → href='#'; Ivory Coast/Côte d'Ivoire naming inconsistency; viewport not confirmed</td></tr>
+  <tr><td>Australia vs Türkiye</td><td><strong style="color:#ea580c;">5.0/10</strong></td><td>Hero image has no alt text; 3/4 images missing alt; no viewport meta; no lazy loading on any image</td></tr>
+  <tr><td>Germany vs Curaçao</td><td><strong style="color:#ca8a04;">5.5/10</strong></td><td>6/6 images missing alt text (100%!); logo alt="" explicitly empty; lineup diagrams also no alt</td></tr>
+  <tr><td>Netherlands vs Japan</td><td><strong style="color:#dc2626;">4.0/10</strong></td><td>Only ~220 words content; no images; lineup shows jersey numbers only; no author; no skip-to-content</td></tr>
+  <tr><td>Ivory Coast vs Ecuador</td><td><strong style="color:#ca8a04;">5.5/10</strong></td><td>Sangaré duplicate in lineup; Pépé listed (retired); title="Ivory Coast" vs H1="Côte d'Ivoire"; Singo position wrong</td></tr>
+  <tr><td>Sweden vs Tunisia</td><td><strong style="color:#ea580c;">5.0/10</strong></td><td>No viewport meta; "Photo · TBC" live; "Match Previews" nav link has no href; no OG/canonical</td></tr>
+</table>
+
+<!-- SECTION 11: TOP 10 PRIORITIES -->
+<div class="page-break"></div>
+<h2>11. Top 10 Priority Fixes</h2>
+<p><em>Ordered by impact — fix these first for maximum gain before the World Cup traffic window closes.</em></p>
+
+<p><span class="priority-num">1</span> <strong>Implement sitewide Open Graph + Twitter Card tags on all 14 pages</strong></p>
+<p style="margin-left:40pt; color:#374151;">Add og:title, og:description, og:image (1200×630px), og:url, og:type=article, twitter:card=summary_large_image, twitter:title, twitter:description, twitter:image. Every social share is currently a blank URL. Single highest-ROI fix — deploy via Yoast SEO template globally in one pass.</p>
+
+<p><span class="priority-num">2</span> <strong>Add unique meta descriptions to all 13 pages currently missing one</strong></p>
+<p style="margin-left:40pt; color:#374151;">150–160 characters per page targeting match keywords. Directly controls SERP snippet text and click-through rate. Can reuse the og:description text from Mexico page as a template.</p>
+
+<p><span class="priority-num">3</span> <strong>Add canonical tags to all 13 pages missing them</strong></p>
+<p style="margin-left:40pt; color:#374151;">Point to definitive HTTPS www URL with trailing slash. Deploy sitewide via Yoast. Also fix duplicate &lt;title&gt; tag on Mexico page (theme + Yoast both emitting it).</p>
+
+<p><span class="priority-num">4</span> <strong>Confirm and enforce viewport meta tag in theme header.php</strong></p>
+<p style="margin-left:40pt; color:#374151;">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; — without this, every mobile user sees a 980px desktop layout. Critical Google mobile-usability ranking factor.</p>
+
+<p><span class="priority-num">5</span> <strong>Implement mobile hamburger menu across all pages</strong></p>
+<p style="margin-left:40pt; color:#374151;">Accessible toggle: aria-label="Open navigation menu", aria-expanded state, keyboard operable via Enter/Space/Escape. Current 35-link navbar with no collapse = broken on all phones.</p>
+
+<p><span class="priority-num priority-num-2">6</span> <strong>Fix logo alt text sitewide</strong></p>
+<p style="margin-left:40pt; color:#374151;">Add alt="Fanorate" to the logo img in the theme header. 5-minute fix. WCAG 2.1 Level A failure (SC 1.1.1) repeated on every single page of the site.</p>
+
+<p><span class="priority-num priority-num-2">7</span> <strong>Deploy JSON-LD structured data sitewide</strong></p>
+<p style="margin-left:40pt; color:#374151;">Minimum: Article schema (author, datePublished, publisher), FAQPage schema (for FAQ sections), BreadcrumbList schema, SportsEvent schema (match date, venue, teams). Currently ineligible for all Google rich results.</p>
+
+<p><span class="priority-num priority-num-2">8</span> <strong>Fix image alt text across the site</strong></p>
+<p style="margin-left:40pt; color:#374151;">(a) Logo. (b) Fix the two recurring related-article card images appearing without alt on 6+ pages — configure WordPress related-posts block. (c) Fix hero/featured images on Germany (6/6 missing), Qatar (4/5), Australia (3/4), Brazil (3/4).</p>
+
+<p><span class="priority-num priority-num-3">9</span> <strong>Remove all placeholder content + fix factual errors</strong></p>
+<p style="margin-left:40pt; color:#374151;">Replace "Photo · TBC" (4 pages), "Form: TBC · verify" (Brazil), "Awaiting FIFA confirmation" (Canada). Fix: Group B vs F conflict; Sangaré duplicate (Ivory Coast); remove Pépé if retired; fill empty fun-facts section (Mexico); fix jersey-numbers-only lineup (Netherlands); remove raw "Secondary Angles" fragments (USA).</p>
+
+<p><span class="priority-num priority-num-3">10</span> <strong>Footer/nav housekeeping pass</strong></p>
+<p style="margin-left:40pt; color:#374151;">Remove /wp-login.php from nav. Add social links to footer (Twitter/X, Instagram minimum). Fix "Editorial Team" href='#'. Fix newsletter privacy policy link → /privacy-policy/. Fix "All Stories" → proper archive URL. Add GDPR cookie consent banner.</p>
+
+<!-- SECTION 12: ADDITIONAL RECOMMENDATIONS -->
+<div class="page-break"></div>
+<h2>12. Additional Recommendations</h2>
+
+<h3>Performance</h3>
+<ul>
+  <li>Convert all PNG images to WebP format (25–35% file size reduction at equivalent quality)</li>
+  <li>Add loading="lazy" attribute to all below-fold images to improve Largest Contentful Paint</li>
+  <li>Mexico page: 27 separate CSS files loaded as render-blocking resources — consolidate into bundles</li>
+  <li>Add srcset and sizes attributes for responsive image delivery across device sizes</li>
+  <li>Verify CDN is configured and caching plugin active before World Cup traffic peaks</li>
+  <li>Add &lt;link rel="preload"&gt; for hero images to improve LCP score</li>
+</ul>
+
+<h3>UX Improvements</h3>
+<ul>
+  <li>Add sticky navbar — users lose navigation while scrolling 3,500-word articles</li>
+  <li>Add table of contents with anchor links at the top of all long articles</li>
+  <li>Add overflow-x:auto wrapper on Head-to-Head comparison tables and lineup tables (prevent horizontal scroll on mobile)</li>
+  <li>Add player names to the lineup pitch visual — currently shows only jersey numbers, which tells users nothing</li>
+  <li>Standardize team name: either "Ivory Coast" or "Côte d'Ivoire" — pick one and use it everywhere</li>
+  <li>Give "Match Previews", "Venue Guides", "Team Guides" top-level nav items their own href</li>
+</ul>
+
+<h3>Content Improvements</h3>
+<ul>
+  <li>Build out Netherlands vs Japan page to the same depth as other pages (it has only ~220 words)</li>
+  <li>Expand "Five Storylines" sections — currently reads like bullet-point headers, not developed narrative</li>
+  <li>Add methodology citation for match probability percentages on all pages</li>
+  <li>Add author bio links with credentials to all pages (supports Google E-E-A-T evaluation)</li>
+  <li>Create and link the "Editorial Team" page referenced in the footer</li>
+</ul>
+
+<h3>Legal &amp; Compliance</h3>
+<ul>
+  <li>Add GDPR-compliant cookie consent banner with accessible controls for EU visitors</li>
+  <li>Fix newsletter form privacy policy link on all pages (currently href='#')</li>
+  <li>Consider hreflang tags if the site plans to serve international audiences</li>
+</ul>
+
+<!-- SECTION 13: FINAL VERDICT -->
+<div class="page-break"></div>
+<h2>13. Final Verdict</h2>
+
+<div class="verdict">
+  <h2>Overall Score: 5.0 / 10</h2>
+  <p>Fanorate.com has a strong editorial foundation — the match preview content is substantive, well-researched, and genuinely useful for a World Cup 2026 audience. The core value proposition (long-form fan guides for the 2026 tournament) is clearly realized in the content itself. The writing voice is consistent, confident, and fan-friendly.</p>
+  <p style="margin-top:10pt;">However, the site is failing at the three things that determine whether good content gets found: it <strong>cannot be shared effectively</strong> (no OG/Twitter tags on 13/14 pages), it <strong>cannot be indexed efficiently</strong> (no canonical, no meta descriptions, no structured data on 13/14 pages), and it <strong>does not render correctly on mobile</strong> (no viewport meta, no hamburger menu on 12/14 pages).</p>
+  <p style="margin-top:10pt;">With the World Cup 2026 underway (June 6, 2026), the window to capture peak traffic is narrow. Priorities 1–3 (OG tags, meta descriptions, canonical tags) can be deployed sitewide in a single Yoast SEO configuration update and template change, delivering <strong>immediate, measurable impact on social sharing and search rankings</strong>. The mobile and accessibility fixes require more development effort but are equally urgent.</p>
+  <p style="margin-top:10pt; color:#93c5fd; font-size:10pt;">The 5.0/10 score reflects strong content quality offset by critical technical gaps that are preventing that content from reaching its intended audience at scale. With the priority fixes applied, this site is capable of scoring 8.0+ and performing strongly for the remainder of the 2026 tournament.</p>
+</div>
+
+<br>
+<table style="margin-top:20pt; font-size:9pt; color:#6b7280;" border="0">
+  <tr>
+    <td style="border:none; padding:4pt 0;"><strong>Report prepared by:</strong> Sarthak</td>
+    <td style="border:none; padding:4pt 0;"><strong>Email:</strong> sarthak@brillmark.com</td>
+  </tr>
+  <tr>
+    <td style="border:none; padding:4pt 0;"><strong>Date:</strong> June 6, 2026</td>
+    <td style="border:none; padding:4pt 0;"><strong>Pages tested:</strong> 14 (Homepage + 13 Match Previews)</td>
+  </tr>
+  <tr>
+    <td style="border:none; padding:4pt 0;" colspan="2"><strong>Scope:</strong> Desktop · Mobile · Accessibility (WCAG 2.1) · SEO · Content Quality · Forms · Navbar · Footer · Functionality</td>
+  </tr>
+</table>
+
+</body>
+</html>

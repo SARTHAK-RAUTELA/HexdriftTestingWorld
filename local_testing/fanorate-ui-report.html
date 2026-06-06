@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fanorate.com — UI Issues Report | June 2026</title>
+<style>
+  :root {
+    --red: #dc2626; --red-bg: #fef2f2; --red-border: #fca5a5;
+    --orange: #ea580c; --orange-bg: #fff7ed; --orange-border: #fdba74;
+    --yellow: #ca8a04; --yellow-bg: #fefce8; --yellow-border: #fde047;
+    --green: #16a34a; --green-bg: #f0fdf4; --green-border: #86efac;
+    --blue: #2563eb; --blue-bg: #eff6ff; --blue-border: #93c5fd;
+    --purple: #7c3aed; --purple-bg: #f5f3ff; --purple-border: #c4b5fd;
+    --gray: #4b5563; --light: #f9fafb; --border: #e5e7eb;
+    --dark: #111827; --nav: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; color: var(--dark); background: #f1f5f9; line-height: 1.6; }
+
+  /* TOP NAV */
+  .top-nav { background: var(--nav); color: #fff; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.4); }
+  .top-nav .brand { font-size: 17px; font-weight: 700; letter-spacing: -.3px; }
+  .top-nav .brand span { color: #38bdf8; }
+  .top-nav .meta { font-size: 12px; color: #94a3b8; }
+
+  /* LAYOUT */
+  .wrapper { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0369a1 100%); color: #fff; border-radius: 16px; padding: 40px 48px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; right: -20px; top: -20px; width: 220px; height: 220px; background: rgba(56,189,248,.07); border-radius: 50%; }
+  .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+  .hero .subtitle { color: #93c5fd; font-size: 14px; margin-bottom: 24px; }
+  .hero-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .hero-stat { background: rgba(255,255,255,.1); border-radius: 10px; padding: 16px 12px; text-align: center; }
+  .hero-stat .val { font-size: 28px; font-weight: 800; color: #38bdf8; display: block; }
+  .hero-stat .lbl { font-size: 10px; color: #93c5fd; text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
+
+  /* TOC */
+  .toc-card { background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .toc-card h2 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--dark); display: flex; align-items: center; gap: 8px; }
+  .toc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border); text-decoration: none; color: var(--dark); font-size: 12px; transition: background .15s; }
+  .toc-item:hover { background: var(--light); }
+  .toc-num { width: 22px; height: 22px; border-radius: 6px; background: var(--nav); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .toc-count { margin-left: auto; font-size: 11px; font-weight: 700; color: var(--red); background: var(--red-bg); border: 1px solid var(--red-border); border-radius: 20px; padding: 1px 7px; }
+
+  /* PAGE SECTION */
+  .page-section { background: #fff; border-radius: 14px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.08); overflow: hidden; }
+  .page-header { background: linear-gradient(135deg, #0f172a, #1e3a5f); color: #fff; padding: 20px 28px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+  .page-header-left { flex: 1; }
+  .page-num-badge { display: inline-block; background: rgba(56,189,248,.2); color: #38bdf8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; padding: 2px 8px; border-radius: 20px; margin-bottom: 6px; }
+  .page-header h2 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .page-header .page-url { font-size: 11px; color: #93c5fd; word-break: break-all; }
+  .page-header .page-url a { color: #38bdf8; text-decoration: none; }
+  .page-header .page-url a:hover { text-decoration: underline; }
+  .issue-count-bubble { background: rgba(220,38,38,.8); color: #fff; font-size: 20px; font-weight: 800; border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .issue-count-bubble span { font-size: 10px; font-weight: 600; display: block; text-align: center; line-height: 1; margin-top: 2px; }
+
+  /* ISSUES LIST */
+  .issues-list { padding: 20px 28px; }
+  .issue-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .issue-item:last-child { border-bottom: none; }
+  .issue-num { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; flex-shrink: 0; color: #fff; margin-top: 1px; }
+  .sev-critical { background: #dc2626; }
+  .sev-high { background: #ea580c; }
+  .sev-medium { background: #ca8a04; }
+  .sev-low { background: #16a34a; }
+  .issue-body { flex: 1; }
+  .issue-body .issue-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .issue-body .issue-desc { font-size: 12px; color: var(--gray); line-height: 1.55; }
+  .issue-body .issue-location { font-size: 11px; color: #6b7280; margin-top: 4px; padding: 2px 8px; background: var(--light); border-radius: 4px; border: 1px solid var(--border); display: inline-block; }
+
+  /* SEVERITY BADGES */
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; flex-shrink: 0; }
+  .badge-critical { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .badge-high { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-border); }
+  .badge-medium { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .badge-low { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-info { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+
+  /* CATEGORY CHIPS */
+  .cat { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 4px; margin-left: 4px; }
+  .cat-spacing { background: #ede9fe; color: #6d28d9; }
+  .cat-missing { background: #fee2e2; color: #991b1b; }
+  .cat-layout { background: #fef3c7; color: #92400e; }
+  .cat-style { background: #dbeafe; color: #1e40af; }
+  .cat-placeholder { background: #fce7f3; color: #9d174d; }
+  .cat-nav { background: #d1fae5; color: #065f46; }
+
+  /* LEGEND */
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; padding: 14px 28px; background: var(--light); border-top: 1px solid var(--border); }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--gray); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+
+  /* SUMMARY TABLE */
+  .summary-card { background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .summary-card h2 { font-size: 15px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: var(--light); font-weight: 600; text-align: left; padding: 9px 12px; border-bottom: 2px solid var(--border); color: var(--gray); font-size: 11px; text-transform: uppercase; letter-spacing: .4px; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--light); }
+
+  /* FOOTER */
+  .report-footer { text-align: center; color: var(--gray); font-size: 12px; padding: 28px 0 16px; }
+
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: repeat(3, 1fr); }
+    .toc-grid { grid-template-columns: 1fr; }
+    .page-header { flex-direction: column; }
+    .issue-count-bubble { display: none; }
+    .hero { padding: 24px; }
+    .top-nav { padding: 12px 20px; }
+    .wrapper { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="brand">Fanorate<span>.com</span> — UI Issues Report</div>
+  <div class="meta">Date: June 6, 2026 &nbsp;|&nbsp; Pages: 13 &nbsp;|&nbsp; Focus: Spacing · Missing Elements · Layout</div>
+</nav>
+
+<div class="wrapper">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>UI Issues Audit — fanorate.com</h1>
+    <div class="subtitle">URL-by-URL breakdown of spacing gaps, missing elements, layout problems, and visual inconsistencies</div>
+    <div class="hero-grid">
+      <div class="hero-stat"><span class="val">13</span><span class="lbl">Pages Audited</span></div>
+      <div class="hero-stat"><span class="val">67</span><span class="lbl">UI Issues Found</span></div>
+      <div class="hero-stat"><span class="val">13</span><span class="lbl">Photo TBC Placeholders</span></div>
+      <div class="hero-stat"><span class="val">9</span><span class="lbl">Missing Images</span></div>
+      <div class="hero-stat"><span class="val">18</span><span class="lbl">Spacing Problems</span></div>
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="toc-card">
+    <h2>Severity Legend</h2>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:16px;">
+      <div class="legend-item"><div class="legend-dot" style="background:#dc2626;"></div><strong style="color:#dc2626;">Critical</strong> — Broken layout, missing images in hero/primary sections, content completely missing</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ea580c;"></div><strong style="color:#ea580c;">High</strong> — TBC placeholders live in production, major spacing gaps, broken navigation</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ca8a04;"></div><strong style="color:#ca8a04;">Medium</strong> — Inconsistent styling, misaligned cards, uneven columns</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div><strong style="color:#16a34a;">Low</strong> — Minor typography, hover states, small padding issues</div>
+    </div>
+    <h2 style="margin-bottom:12px;">Category Tags</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="cat cat-missing">Missing Element</span>
+      <span class="cat cat-placeholder">Placeholder</span>
+      <span class="cat cat-spacing">Spacing</span>
+      <span class="cat cat-layout">Layout</span>
+      <span class="cat cat-style">Styling</span>
+      <span class="cat cat-nav">Navigation</span>
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc-card">
+    <h2>Pages Tested — Jump to Section</h2>
+    <div class="toc-grid">
+      <a href="#page-1" class="toc-item"><div class="toc-num">1</div><div><div style="font-weight:700;">Homepage</div><div style="color:#6b7280;font-size:11px;">fanorate.com/</div></div><span class="toc-count">6 issues</span></a>
+      <a href="#page-2" class="toc-item"><div class="toc-num">2</div><div><div style="font-weight:700;">Mexico vs South Africa</div><div style="color:#6b7280;font-size:11px;">match-previews/mexico-vs-south-africa/</div></div><span class="toc-count">6 issues</span></a>
+      <a href="#page-3" class="toc-item"><div class="toc-num">3</div><div><div style="font-weight:700;">Korea Republic vs Czechia</div><div style="color:#6b7280;font-size:11px;">match-previews/korea-republic-vs-czechia/</div></div><span class="toc-count">4 issues</span></a>
+      <a href="#page-4" class="toc-item"><div class="toc-num">4</div><div><div style="font-weight:700;">Canada vs Bosnia Herzegovina</div><div style="color:#6b7280;font-size:11px;">match-previews/canada-vs-bosnia-herzegovina/</div></div><span class="toc-count">8 issues</span></a>
+      <a href="#page-5" class="toc-item"><div class="toc-num">5</div><div><div style="font-weight:700;">USA vs Paraguay</div><div style="color:#6b7280;font-size:11px;">match-previews/usa-vs-paraguay/</div></div><span class="toc-count">5 issues</span></a>
+      <a href="#page-6" class="toc-item"><div class="toc-num">6</div><div><div style="font-weight:700;">Brazil vs Morocco</div><div style="color:#6b7280;font-size:11px;">match-previews/brazil-vs-morocco/</div></div><span class="toc-count">10 issues</span></a>
+      <a href="#page-7" class="toc-item"><div class="toc-num">7</div><div><div style="font-weight:700;">Qatar vs Switzerland</div><div style="color:#6b7280;font-size:11px;">match-previews/qatar-vs-switzerland/</div></div><span class="toc-count">4 issues</span></a>
+      <a href="#page-8" class="toc-item"><div class="toc-num">8</div><div><div style="font-weight:700;">Haiti vs Scotland</div><div style="color:#6b7280;font-size:11px;">match-previews/haiti-vs-scotland/</div></div><span class="toc-count">5 issues</span></a>
+      <a href="#page-9" class="toc-item"><div class="toc-num">9</div><div><div style="font-weight:700;">Australia vs Türkiye</div><div style="color:#6b7280;font-size:11px;">match-previews/australia-vs-turkiye/</div></div><span class="toc-count">4 issues</span></a>
+      <a href="#page-10" class="toc-item"><div class="toc-num">10</div><div><div style="font-weight:700;">Germany vs Curaçao</div><div style="color:#6b7280;font-size:11px;">match-previews/germany-vs-curacao/</div></div><span class="toc-count">5 issues</span></a>
+      <a href="#page-11" class="toc-item"><div class="toc-num">11</div><div><div style="font-weight:700;">Netherlands vs Japan</div><div style="color:#6b7280;font-size:11px;">match-previews/netherlands-vs-japan/</div></div><span class="toc-count">5 issues</span></a>
+      <a href="#page-12" class="toc-item"><div class="toc-num">12</div><div><div style="font-weight:700;">Ivory Coast vs Ecuador</div><div style="color:#6b7280;font-size:11px;">match-previews/ivory-coast-vs-ecuador/</div></div><span class="toc-count">6 issues</span></a>
+      <a href="#page-13" class="toc-item"><div class="toc-num">13</div><div><div style="font-weight:700;">Sweden vs Tunisia</div><div style="color:#6b7280;font-size:11px;">match-previews/sweden-vs-tunisia/</div></div><span class="toc-count">5 issues</span></a>
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 1: HOMEPAGE ======================== -->
+  <div class="page-section" id="page-1">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 1 of 13</div>
+        <h2>Homepage</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/" target="_blank">https://www.fanorate.com/</a></div>
+      </div>
+      <div>
+        <div class="issue-count-bubble">6<span>issues</span></div>
+      </div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> Missing Hero Image — No Fallback<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The main hero section references an external Unsplash image (<code>photo-1522778119026-d647f0596c20</code>) with caption "Hero photo · real fans, real setting." No fallback color, skeleton, or placeholder is defined if this external asset fails to load. If Unsplash CDN is slow or blocked, the entire hero area renders as a blank white band.</div>
+          <span class="issue-location">Section: Hero banner at page top</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Newsletter Section — No Form UI<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The Newsletter section displays headline text and messaging but contains no visible email input field, submit button, or form element. Users see the newsletter copy but have no way to subscribe. The form UI is completely absent, making the entire section non-functional.</div>
+          <span class="issue-location">Section: Newsletter subscription block</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Player Collections — All Links Point to "#"<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The "Player Collections" section shows four player cards (Messi, Mbappé, Bellingham, Davies) with two CTAs each: "Player guide →" and "Shop kit." Both links use <code>href="#"</code> on all four cards — clicking any of them scrolls to the top of the page and does nothing. Eight dead links in a single section.</div>
+          <span class="issue-location">Section: Player Collections, all 4 player cards</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Match Preview Cards — Inconsistent Heights<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The "Match Previews" card grid shows articles with varying read-time lengths (11–13 min) but no fixed-height constraint. Cards with shorter excerpts have noticeably less height than adjacent cards, breaking column alignment in the multi-column grid. The bottom of each column is visually uneven.</div>
+          <span class="issue-location">Section: Match Previews card grid</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Canada vs Bosnia Featured Thumbnail — May Not Render<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The featured card for "Canada vs Bosnia-Herzegovina" pulls a thumbnail from <code>/wp-content/uploads/2026/06/canada-vs-bosnia-herzegovina-featured-768x432.png</code>. This image path has not been confirmed as resolvable, meaning the card could show a broken image icon on homepage for a prominently featured match.</div>
+          <span class="issue-location">Section: Featured match card — Canada vs Bosnia</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">6</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Arrowhead Stadium Guide Image — Unverified Asset<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The venue guide card for Arrowhead Stadium references <code>/wp-content/uploads/2026/06/arrowhead-stadium-hero-768x439.png</code>. If this asset is unavailable, the venue card renders without an image, leaving a broken placeholder in a prominent homepage feature section.</div>
+          <span class="issue-location">Section: Venue guide feature card — Arrowhead Stadium</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 2: MEXICO vs SOUTH AFRICA ======================== -->
+  <div class="page-section" id="page-2">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 2 of 13</div>
+        <h2>Mexico vs South Africa Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/mexico-vs-south-africa-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/mexico-vs-south-africa-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">6<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" Caption Live in Production<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue featured image section under the Estadio Azteca image explicitly shows "Photo · TBC" as the caption text. This placeholder text is visible to all visitors, signals incomplete production, and degrades the professional appearance of the page header.</div>
+          <span class="issue-location">Section: Venue featured image — Estadio Azteca</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Fixture List — Inconsistent Section Margins<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The three "Fixture Set" sections have uneven spacing between list items and their section headers. The top margin above each fixture group differs, creating a visual hierarchy that is confusing — some groups appear detached from their heading while others sit too close below it.</div>
+          <span class="issue-location">Section: Fixture sets 1, 2, and 3</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Q&amp;A Section — Inconsistent Vertical Spacing<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The three Q&amp;A blocks have uneven spacing between them. The third Q&amp;A item appears noticeably closer to the subsequent content section than the first two are to each other, disrupting the reading rhythm and making the section feel unfinished.</div>
+          <span class="issue-location">Section: Q&amp;A blocks (items 1–3)</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Team Guide Rankings — Inconsistent Formatting<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">In the "Team Guides" sidebar, ranking entries are formatted inconsistently — flag emoji, team name, and ranking number are fused together without consistent spacing (e.g., "🇫🇷France1" vs "🇪🇸Spain5"). There is no visual separator between the name and the number, making the data difficult to read at a glance.</div>
+          <span class="issue-location">Section: Team Guides sidebar rankings list</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> CTA Arrow Styling Inconsistent<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">"Read preview →" and "Team guide →" links use different arrow characters and spacing even though both are navigation CTAs serving the same purpose. One uses a thin arrow, the other a bolder arrow, with unequal padding — visually inconsistent within the same page.</div>
+          <span class="issue-location">Section: Featured content links throughout page</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-low">6</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-low">Low</span> Breadcrumb — Dense Packing, No Visual Separator<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The breadcrumb trail (Home › Soccer 2026 › Match Previews › page title) is densely packed with minimal visual margin between items. The separator character "›" has no padding on either side, making the path hard to scan, especially at smaller font sizes on mobile.</div>
+          <span class="issue-location">Section: Breadcrumb navigation at top of content</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 3: KOREA vs CZECHIA ======================== -->
+  <div class="page-section" id="page-3">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 3 of 13</div>
+        <h2>Korea Republic vs Czechia Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/korea-republic-vs-czechia-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/korea-republic-vs-czechia-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">4<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — Estadio Akron Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The featured image section under the Estadio Akron photo displays "Photo · TBC" as the live caption. This placeholder text signals unpublished photography and creates dead visual space at a prominent location just below the hero headline.</div>
+          <span class="issue-location">Section: Venue featured image — Estadio Akron</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> Predicted Lineups — No Pitch Visualization Rendering<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The "Predicted Lineups" section shows two formations (Korea 4-2-3-1 vs Czechia 4-2-3-1) but the visual soccer pitch/field diagram is not rendering. Only position numbers ("1 2 3 4 5 6 8 7 10 11 9") appear in a flat list without any field background, position markers, or player name overlays. The entire visual component is missing — the section looks broken.</div>
+          <span class="issue-location">Section: Predicted Lineups — both teams</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> "In This Preview" Nav — Insufficient Top Padding<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The "Fixture at a glance" metadata box and the "In this preview" internal navigation links sit too close to the hero section above them. There is insufficient vertical padding separating the hero from this navigation, making the opening content area feel cramped.</div>
+          <span class="issue-location">Section: Post-hero metadata / jump-links navigation</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Related Article Cards — Missing Thumbnails<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The "Keep Reading" section at page bottom shows three related article cards (Germany vs Curaçao, Haiti vs Scotland, Ivory Coast vs Ecuador) without thumbnail images. Each card displays as a text-only block, visually incomplete compared to how these cards appear on other pages with thumbnails loaded.</div>
+          <span class="issue-location">Section: "Keep Reading" related articles at page bottom</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 4: CANADA vs BOSNIA ======================== -->
+  <div class="page-section" id="page-4">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 4 of 13</div>
+        <h2>Canada vs Bosnia Herzegovina Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/canada-vs-bosnia-herzegovina-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/canada-vs-bosnia-herzegovina-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">8<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — BMO Field Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The hero featured image section under the BMO Field venue photo displays "Photo · TBC." The placeholder caption is live and visible to all visitors at the page's most prominent visual position immediately below the match headline.</div>
+          <span class="issue-location">Section: Venue featured image — BMO Field</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Kickoff Time Placeholder Visible to Users<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The match metadata block shows kickoff time as <strong>"Afternoon ET · awaiting confirmation"</strong> — this staging-only placeholder text is live in production and visible to all page visitors. Users cannot determine the actual match time, which is a key piece of information for a match preview page.</div>
+          <span class="issue-location">Section: Fixture at a glance — kickoff time field</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Venue Guide Card — Missing Thumbnail Image<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The featured Arrowhead Stadium venue guide card has no visible thumbnail image loaded. The card renders as a text-only block, creating an inconsistency with the featured match preview card directly above it which does show an image.</div>
+          <span class="issue-location">Section: Featured venue guide card — Arrowhead Stadium</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Excessive White Space in "Five Storylines" Section<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">There is excessive white space between the "Five storylines" section heading and the numbered story cards (01–05) below it. The gap is noticeably larger than the spacing between the heading and content in all other sections on this page, making the section look visually broken.</div>
+          <span class="issue-location">Section: "Five Storylines" numbered cards block</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Fixture Sets — Compressed Set 1 vs Sets 2 &amp; 3<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The three fixture set lists have inconsistent vertical spacing between match items. Fixture Set 1 appears compressed with tighter line spacing than Sets 2 and 3. All three sets should have identical spacing since they share the same component type.</div>
+          <span class="issue-location">Section: Fixture sets 1, 2, and 3 listing</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">6</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Squad Breakdown — Inconsistent Header Font Weight<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">The "Canada" and "Bosnia and Herzegovina" section titles in the Squad Breakdown block use different font weights — one appears bold and the other regular. This makes the two team sections look visually unequal even though they are the same component type.</div>
+          <span class="issue-location">Section: Squad Breakdown — team name headers</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">7</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Player Names — Inconsistent Bold Formatting<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">Within the same squad section, some player names are bolded (Davies, David, Džeko) while others are in regular weight. There is no apparent rule for which names are bolded — it appears random, creating a visually inconsistent list.</div>
+          <span class="issue-location">Section: Squad Breakdown — player name list</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-low">8</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-low">Low</span> Related Articles — Date Stamps Misaligned<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The "Keep Reading" article cards show date stamps ("Jun 4, 2026") that appear misaligned relative to the card content area width. On cards with longer titles, the date wraps awkwardly and sits at a different vertical position than on cards with shorter titles.</div>
+          <span class="issue-location">Section: "Keep Reading" related articles — date stamps</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 5: USA vs PARAGUAY ======================== -->
+  <div class="page-section" id="page-5">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 5 of 13</div>
+        <h2>USA vs Paraguay Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/usa-vs-paraguay-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/usa-vs-paraguay-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">5<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — SoFi Stadium Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The featured image section under SoFi Stadium displays "Photo · TBC" as a live caption visible to all visitors. The placeholder occupies the primary visual area immediately below the match headline, signaling unpublished photography.</div>
+          <span class="issue-location">Section: Venue featured image — SoFi Stadium</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> "Keep Reading" Thumbnails — Empty Slots<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The "Keep Reading" related article cards at page bottom may display broken image placeholders if the related match preview thumbnail assets haven't been uploaded. The cards appear as text-only blocks, visually incomplete compared to the featured content cards higher on the page.</div>
+          <span class="issue-location">Section: "Keep Reading" related articles</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Headline Spacing — Breadcrumb Too Close to H1<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The breadcrumb navigation (Home &gt; Soccer 2026 &gt; Match Previews) appears cramped directly above the main match headline. The top margin between the breadcrumb and the H1 is too small, compressing the visual hierarchy of the page opening and reducing readability.</div>
+          <span class="issue-location">Section: Breadcrumb → H1 headline transition</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> "Keep Reading" Cards — Uneven Column Heights<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The "Keep Reading" card grid has columns of inconsistent heights due to varying text excerpt lengths. Cards with shorter titles and excerpts visually mismatch against cards with longer content in the same row, breaking the grid alignment.</div>
+          <span class="issue-location">Section: "Keep Reading" article card grid</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Pull Quote — Inconsistent Font Weight<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">The pull quote styling in the "Why this match matters" section uses a different font weight than pull quotes elsewhere on the page. Some block quotes appear in bold while others in this section are regular weight, creating visual hierarchy confusion within the same content type.</div>
+          <span class="issue-location">Section: "Why this match matters" — pull quote block</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 6: BRAZIL vs MOROCCO ======================== -->
+  <div class="page-section" id="page-6">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 6 of 13</div>
+        <h2>Brazil vs Morocco Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/brazil-vs-morocco-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/brazil-vs-morocco-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">10<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> Main Match Hero Image — Broken / Missing<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The primary match hero image (<code>brazil-vs-morocco-hero.png</code>) does not render — it displays as a broken image in the hero area. This is the most visible element on the page and it is completely absent, leaving the page header visually empty and unprofessional.</div>
+          <span class="issue-location">Section: Hero image area at very top of page</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — MetLife Stadium Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue featured image section under MetLife Stadium shows "Photo · TBC" as a live caption. Combined with the broken hero image above, this page's entire visual top-half is non-functional.</div>
+          <span class="issue-location">Section: Venue featured image — MetLife Stadium</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> Predicted Lineups — Player Name Overlays Missing<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The pitch visualization section shows jersey numbers (1–14) on the field but has no player name overlays rendering. Readers see positions as anonymous numbers with no context on who is playing where. The player name layer of the lineup diagram is entirely absent.</div>
+          <span class="issue-location">Section: Predicted Lineups — both Brazil and Morocco diagrams</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Team Form Fields — "TBC · verify" Live in Production<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">Both Brazil and Morocco "Recent form" data table rows contain "TBC · verify" text that is visible to all visitors. This internal staging notation has not been replaced with actual form data before publishing.</div>
+          <span class="issue-location">Section: Squad Breakdown — Recent form tables (both teams)</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Match Probability — Bar Visualizations Absent<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The match probability section shows percentage numbers but the visual bar chart/progress bar elements are not rendering. Users see raw numbers without the visual representation that gives context to the percentages. The entire visual component is missing.</div>
+          <span class="issue-location">Section: Match probability / editorial prediction stats</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">6</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> "Five Storylines" — Excessive Top Padding Before Cards<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The numbered story cards (01–05) have excessive top padding before the first card, creating an awkward whitespace gap between the section's intro text and the actual content cards. The gap is disproportionate compared to other sectioned content on this page.</div>
+          <span class="issue-location">Section: "Five Storylines" numbered cards block</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">7</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Key Players Grid — Last Card Isolated / Misaligned<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The "Decisive Five" key players grid has the last player card (Amrabat) sitting isolated and left-aligned in a new row by itself rather than being centered or redistributed. The visual result is an unfinished-looking bottom row with one card floating on the left.</div>
+          <span class="issue-location">Section: "The Decisive Five" key players grid</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">8</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Squad Breakdown — Uneven Right Column Spacing<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The Brazil/Morocco comparison layout has uneven vertical spacing between the two team columns — the Morocco (right) column appears visually compressed compared to the Brazil (left) column, despite containing similar amounts of content.</div>
+          <span class="issue-location">Section: Squad Breakdown two-column layout</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">9</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> "What's at Stake" — Mixed Typographic Hierarchy<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">The "What's at stake" list uses lettered items (A–D) with a different font weight than the numbered storyline cards (01–05) used elsewhere on the same page. The two list types should share consistent typographic hierarchy but currently look like different component designs.</div>
+          <span class="issue-location">Section: "What's at Stake" lettered list</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-low">10</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-low">Low</span> Breadcrumb — No Visual Separator Between Items<span class="cat cat-nav">Navigation</span></div>
+          <div class="issue-desc">The breadcrumb trail lacks a visible separator character or divider between path items. The items run together without "›" or "/" delimiters, making the breadcrumb path harder to scan at a glance.</div>
+          <span class="issue-location">Section: Breadcrumb navigation at top of content area</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 7: QATAR vs SWITZERLAND ======================== -->
+  <div class="page-section" id="page-7">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 7 of 13</div>
+        <h2>Qatar vs Switzerland Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/qatar-vs-switzerland-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/qatar-vs-switzerland-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">4<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — Levi's Stadium Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue featured image section under Levi's Stadium displays "Photo · TBC" as a live caption visible to all users. This is the primary visual element in the venue section and the placeholder makes the section look incomplete.</div>
+          <span class="issue-location">Section: Venue featured image — Levi's Stadium</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> "Schedule · Opening Weekend" — Section Heading Detached from Content<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The "Schedule · Opening Weekend" section heading appears visually disconnected from the match card list below it. The margin between the heading and its content is substantially larger than the margins between other section headings and their content, making it look like the cards belong to the previous section.</div>
+          <span class="issue-location">Section: "Schedule · Opening Weekend" match listing</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Predicted Lineups — Formation Diagrams Overlap on Mobile<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The two pitch diagrams (Qatar 5-3-2 and Switzerland 3-4-2-1) are displayed side-by-side but may overlap or misalign on tablet and mobile viewports. Player position markers and formation numbers are not tested for responsive reflow, creating a potential broken layout on smaller screens.</div>
+          <span class="issue-location">Section: Predicted Lineups — two-column pitch diagram layout</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-low">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-low">Low</span> Team Guide Sidebar — Flag Emojis May Cause Inconsistent Wrapping<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">Team guide links in the sidebar use flag emojis followed by team name and ranking number (e.g., "🇶🇦Qatar"). On narrow viewports these items wrap inconsistently — the emoji stays on one line while the name wraps, or the number wraps separately, breaking the visual rhythm of the list.</div>
+          <span class="issue-location">Section: Team Guide sidebar links</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 8: HAITI vs SCOTLAND ======================== -->
+  <div class="page-section" id="page-8">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 8 of 13</div>
+        <h2>Haiti vs Scotland Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/haiti-vs-scotland-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/haiti-vs-scotland-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">5<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> Hero Image — Renders as Broken Placeholder, No Fallback<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The match hero image (<code>haiti-vs-scotland-hero.png</code>) displays as a broken image at the top of the page. No fallback color, gradient, or alternative visual is defined. The hero area shows a broken image icon, making the opening of the page look broken and unprofessional.</div>
+          <span class="issue-location">Section: Hero image at very top of page</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — Gillette Stadium Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue featured image under Gillette Stadium shows "Photo · TBC" as a live caption. On this page, the hero is also broken, meaning both the primary match image and the venue image sections are visually non-functional simultaneously.</div>
+          <span class="issue-location">Section: Venue featured image — Gillette Stadium</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> "Keep Reading" — All Three Related Cards Missing Thumbnails<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The "Keep Reading" section at the bottom shows three related article cards (Germany vs Curaçao, Ivory Coast vs Ecuador, Korea Republic vs Czechia) with no thumbnail images. All three cards are text-only, creating visible gaps in the card layout design.</div>
+          <span class="issue-location">Section: "Keep Reading" related articles — all 3 cards</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Excessive Vertical Margin — "Five Storylines" to "Squad Breakdown"<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">There is a disproportionately large vertical margin between the "Five Storylines" section and the "Squad Breakdown" section that follows. The gap is significantly larger than between any other adjacent sections on the page, creating awkward dead space that interrupts the content flow.</div>
+          <span class="issue-location">Section: Gap between "Five Storylines" and "Squad Breakdown"</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-low">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-low">Low</span> Flag Emoji Icons — No Fallback for Rendering Failures<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">Team listing items use flag emoji icons (🇭🇹, 🏴󠁧󠁢󠁳󠁣󠁴󠁿) to represent Haiti and Scotland. Emoji render inconsistently across browsers and operating systems, and on some environments they may display as boxes or code points. No fallback SVG or text alternative is provided.</div>
+          <span class="issue-location">Section: Team guide listings and sidebar flags</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 9: AUSTRALIA vs TÜRKIYE ======================== -->
+  <div class="page-section" id="page-9">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 9 of 13</div>
+        <h2>Australia vs Türkiye Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/australia-vs-turkiye-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/australia-vs-turkiye-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">4<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — BC Place Venue Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue section for BC Place, Vancouver displays "Photo · TBC" as a live caption under the featured image. The placeholder text is visible to all users in a prominent section of the article, signaling incomplete editorial assets.</div>
+          <span class="issue-location">Section: Venue featured image — BC Place, Vancouver</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Predicted Lineups — Diagrams Appear Cramped, Header Too Close<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The pitch diagram area for Australia (4-3-3) and Türkiye (4-2-3-1) appears cramped — the gap between the section heading and the visual pitch elements is insufficient, making the lineup section feel compressed and hard to read. Position markers overlap visually.</div>
+          <span class="issue-location">Section: Predicted Lineups — pitch diagram area</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Q&amp;A Section — Toggle Elements May Not Render on Mobile<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The three Q&amp;A items are formatted with expandable toggle indicators ("+" or "→"). These toggle elements have not been confirmed to render correctly across responsive breakpoints — on mobile viewports the interactive expand/collapse may be misaligned or non-functional, leaving questions with no answer visible.</div>
+          <span class="issue-location">Section: Q&amp;A expandable items (3 items)</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Newsletter Footer — Privacy Policy Link Points to "#"<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The newsletter signup area in the footer references a privacy policy consent link that uses <code>href="#"</code> — clicking it scrolls the user to the top of the page instead of opening the privacy policy. This is both a UX problem and a potential GDPR compliance issue.</div>
+          <span class="issue-location">Section: Newsletter signup footer — privacy policy link</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 10: GERMANY vs CURAÇAO ======================== -->
+  <div class="page-section" id="page-10">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 10 of 13</div>
+        <h2>Germany vs Curaçao Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/germany-vs-curacao-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/germany-vs-curacao-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">5<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — NRG Stadium Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue section under NRG Stadium shows "Photo · TBC" as a live caption visible to all page visitors. The placeholder occupies the primary image area in the venue section, leaving a visually incomplete featured image block.</div>
+          <span class="issue-location">Section: Venue featured image — NRG Stadium</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Q&amp;A Cards (01, 02, 03) — Uneven Vertical Spacing<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The three numbered Q&amp;A cards have inconsistent vertical spacing between them. The gap between cards 01 and 02 is noticeably different from the gap between 02 and 03. All three cards are the same component type and should have identical spacing.</div>
+          <span class="issue-location">Section: Q&amp;A numbered cards 01, 02, 03</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Predicted Lineups — May Misalign on Smaller Screens<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The two-column formation layout (4-2-3-1 Germany vs 5-4-1 Curaçao) has not been confirmed to handle responsive reflow correctly. On tablet and phone viewports, the side-by-side pitch diagrams may overlap, truncate, or stack incorrectly.</div>
+          <span class="issue-location">Section: Predicted Lineups — two-column formation diagram</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> "Five Storylines" — Inconsistent Padding vs Adjacent Sections<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The numbered storyline cards (01–05) appear to have different internal padding compared to the "Tale of the Tape" and "Squad Breakdown" sections below them. The inconsistency makes the page rhythm uneven — the storylines section feels looser than the rest of the content.</div>
+          <span class="issue-location">Section: "Five Storylines" numbered cards vs adjacent sections</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-low">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-low">Low</span> Newsletter Signup — Insufficient Separation from "Trending Topics" Text<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The newsletter signup section near the footer is placed with insufficient vertical separation from the "Trending topics" descriptive text above it. The two distinct content blocks appear to run together without a clear visual boundary between them.</div>
+          <span class="issue-location">Section: Newsletter signup / Trending topics boundary</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 11: NETHERLANDS vs JAPAN ======================== -->
+  <div class="page-section" id="page-11">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 11 of 13</div>
+        <h2>Netherlands vs Japan Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/netherlands-vs-japan-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/netherlands-vs-japan-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">5<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — AT&amp;T Stadium Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue section under AT&amp;T Stadium displays "Photo · TBC" as a live caption. The placeholder text is visible to all visitors in the primary venue image section, indicating incomplete production assets.</div>
+          <span class="issue-location">Section: Venue featured image — AT&amp;T Stadium</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Predicted Lineups — Two Formations Lack Clear Visual Separation<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The Netherlands (4-3-3) and Japan (3-4-2-1) pitch diagrams are displayed adjacently with insufficient visual separation between them. Player position markers from one formation visually bleed into the other, making it difficult to distinguish which positions belong to which team.</div>
+          <span class="issue-location">Section: Predicted Lineups — Netherlands vs Japan diagrams</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> "Five Storylines" — Inconsistent Vertical Spacing Between Cards<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The five numbered story cards (01–05) have inconsistent vertical spacing between individual cards. Some gaps are tighter than others despite being the same component type, creating uneven visual rhythm in the section.</div>
+          <span class="issue-location">Section: "Five Storylines" numbered cards</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Footer — Trust Section Links Cramped vs Editorial Section<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The footer "Trust" column link list appears visually cramped compared to the "Editorial" column above it. The line-height and padding of Trust section links is tighter, creating an imbalanced footer layout where one column looks condensed relative to the others.</div>
+          <span class="issue-location">Section: Footer — "Trust" column vs "Editorial" column</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Match Probability — Inconsistent Visual Weight<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">The match probability percentages in the "Fanorate editorial prediction" section use a different visual weight (font size, color) than the secondary probability angles shown alongside. The two types of the same data point are styled differently, creating a confusing hierarchy within the same module.</div>
+          <span class="issue-location">Section: Match probability / editorial prediction block</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 12: IVORY COAST vs ECUADOR ======================== -->
+  <div class="page-section" id="page-12">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 12 of 13</div>
+        <h2>Ivory Coast vs Ecuador Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/ivory-coast-vs-ecuador-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/ivory-coast-vs-ecuador-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">6<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — Lincoln Financial Field Hero<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue hero image section for Lincoln Financial Field displays "Photo · TBC" as a live caption visible to all users. This placeholder is in the primary visual content position of the article.</div>
+          <span class="issue-location">Section: Venue hero image — Lincoln Financial Field</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> Predicted Lineups — Only Jersey Numbers, No Player Names or Position Labels<span class="cat cat-missing">Missing Element</span></div>
+          <div class="issue-desc">The predicted lineup pitch visualizations display only jersey numbers (1–14) without any player name labels, position text, or formation overlay. The section is essentially empty of meaningful content — a reader cannot determine who is playing in any position from the current state of the lineup visualization.</div>
+          <span class="issue-location">Section: Predicted Lineups — both teams</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Predicted Lineups Section — Insufficient Top Padding<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The pitch diagram area lacks adequate vertical padding above it — the section heading sits too close to the formation visualizations below, creating a cramped appearance and visual imbalance compared to other sections on the page.</div>
+          <span class="issue-location">Section: Predicted Lineups — section heading to diagram spacing</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> "Keep Reading" Cards — Uneven Heights Due to Thumbnail/Text Variation<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The three related article cards in "Keep Reading" display at uneven heights. Cards with preview text that wraps to two lines are taller than single-line cards, and thumbnail image presence/absence creates additional height variation, resulting in a misaligned three-column grid.</div>
+          <span class="issue-location">Section: "Keep Reading" related articles — card grid</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Author Attribution — "AM" vs "Abdullah Mashuk" Inconsistency<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">The opening byline shows the author initials "AM" while the "Final Thoughts" section later in the same page shows "Abdullah Mashuk" as a full name. The two different author identification formats on the same article create an inconsistent and confusing author attribution system.</div>
+          <span class="issue-location">Section: Opening byline vs "Final Thoughts" byline</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-low">6</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-low">Low</span> Breadcrumb — No Visible Hover or Focus States<span class="cat cat-nav">Navigation</span></div>
+          <div class="issue-desc">The breadcrumb navigation (Home › Soccer 2026 › Match Previews) has no visible interactive states for hover or keyboard focus. Clicking or tabbing through breadcrumb items gives no visual feedback, making it feel unresponsive.</div>
+          <span class="issue-location">Section: Breadcrumb navigation at top of content</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================== PAGE 13: SWEDEN vs TUNISIA ======================== -->
+  <div class="page-section" id="page-13">
+    <div class="page-header">
+      <div class="page-header-left">
+        <div class="page-num-badge">Page 13 of 13</div>
+        <h2>Sweden vs Tunisia Match Preview</h2>
+        <div class="page-url"><a href="https://www.fanorate.com/soccer-2026/match-previews/sweden-vs-tunisia-match-preview/" target="_blank">https://www.fanorate.com/soccer-2026/match-previews/sweden-vs-tunisia-match-preview/</a></div>
+      </div>
+      <div><div class="issue-count-bubble">5<span>issues</span></div></div>
+    </div>
+    <div class="issues-list">
+
+      <div class="issue-item">
+        <div class="issue-num sev-critical">1</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-critical">Critical</span> "Photo · TBC" — Estadio BBVA Featured Image<span class="cat cat-placeholder">Placeholder</span></div>
+          <div class="issue-desc">The venue section for Estadio BBVA shows "Photo · TBC" as a live caption visible to all visitors. The placeholder occupies the primary venue image area and has not been replaced with actual stadium photography before publication.</div>
+          <span class="issue-location">Section: Venue featured image — Estadio BBVA</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">2</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> "Fixture at a Glance" — Heading Too Close to Data Table<span class="cat cat-spacing">Spacing</span></div>
+          <div class="issue-desc">The "Fixture at a glance" section heading has insufficient vertical spacing between itself and the structured data table below it. The heading appears to sit on top of the table content, creating a cramped appearance and making the section harder to read.</div>
+          <span class="issue-location">Section: "Fixture at a Glance" heading → data table</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-high">3</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-high">High</span> Predicted Lineups — No Pitch Diagram Background, Minimal Separation<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">Both Sweden and Tunisia 4-3-3 formations are displayed side-by-side with minimal visual separation between them and no pitch/field background rendering. The numbered position markers appear as floating numbers without context, making the tactical formations unreadable.</div>
+          <span class="issue-location">Section: Predicted Lineups — both team formations</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">4</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> "Keep Reading" Cards — Inconsistent Heights in Three-Column Grid<span class="cat cat-layout">Layout</span></div>
+          <div class="issue-desc">The three related article cards at page bottom (Germany vs Curaçao, Haiti vs Scotland, Ivory Coast vs Ecuador) display varying content heights. Differing title lengths and excerpt counts cause misalignment across the three columns, resulting in an uneven card grid.</div>
+          <span class="issue-location">Section: "Keep Reading" three-column card grid</span>
+        </div>
+      </div>
+
+      <div class="issue-item">
+        <div class="issue-num sev-medium">5</div>
+        <div class="issue-body">
+          <div class="issue-title"><span class="badge badge-medium">Medium</span> Byline Author Credits — Inconsistent Font Size and Weight<span class="cat cat-style">Styling</span></div>
+          <div class="issue-desc">Author attribution for "Abdullah Mashuk" and publication dates appear at inconsistent font sizes and weights across multiple sections of the page — the byline in the article header uses a different style than the same byline appearing in the related articles section at page bottom.</div>
+          <span class="issue-location">Section: Article byline vs related-article bylines</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ISSUE SUMMARY TABLE -->
+  <div class="summary-card">
+    <h2>Issue Summary by Page</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Page</th>
+          <th>Critical</th>
+          <th>High</th>
+          <th>Medium</th>
+          <th>Low</th>
+          <th>Total</th>
+          <th>Most Impactful Issue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><a href="#page-1">Homepage</a></td><td style="color:#dc2626;font-weight:700;">0</td><td style="color:#ea580c;font-weight:700;">2</td><td style="color:#ca8a04;font-weight:700;">3</td><td style="color:#16a34a;font-weight:700;">0</td><td><strong>5</strong></td><td>Newsletter section has no form UI — zero way to subscribe</td></tr>
+        <tr><td>2</td><td><a href="#page-2">Mexico vs South Africa</a></td><td style="color:#dc2626;font-weight:700;">1</td><td style="color:#ea580c;font-weight:700;">1</td><td style="color:#ca8a04;font-weight:700;">3</td><td style="color:#16a34a;font-weight:700;">1</td><td><strong>6</strong></td><td>"Photo · TBC" live in venue featured image</td></tr>
+        <tr><td>3</td><td><a href="#page-3">Korea Republic vs Czechia</a></td><td style="color:#dc2626;font-weight:700;">2</td><td style="color:#ea580c;font-weight:700;">1</td><td style="color:#ca8a04;font-weight:700;">1</td><td style="color:#16a34a;font-weight:700;">0</td><td><strong>4</strong></td><td>Pitch lineup diagrams not rendering — section looks broken</td></tr>
+        <tr><td>4</td><td><a href="#page-4">Canada vs Bosnia Herzegovina</a></td><td style="color:#dc2626;font-weight:700;">1</td><td style="color:#ea580c;font-weight:700;">3</td><td style="color:#ca8a04;font-weight:700;">3</td><td style="color:#16a34a;font-weight:700;">1</td><td><strong>8</strong></td><td>Kickoff time shows "awaiting confirmation" to all visitors</td></tr>
+        <tr><td>5</td><td><a href="#page-5">USA vs Paraguay</a></td><td style="color:#dc2626;font-weight:700;">1</td><td style="color:#ea580c;font-weight:700;">1</td><td style="color:#ca8a04;font-weight:700;">3</td><td style="color:#16a34a;font-weight:700;">0</td><td><strong>5</strong></td><td>"Photo · TBC" in primary venue image area</td></tr>
+        <tr><td>6</td><td><a href="#page-6">Brazil vs Morocco</a></td><td style="color:#dc2626;font-weight:700;">3</td><td style="color:#ea580c;font-weight:700;">3</td><td style="color:#ca8a04;font-weight:700;">3</td><td style="color:#16a34a;font-weight:700;">1</td><td><strong>10</strong></td><td>Hero image broken + "TBC · verify" in live data tables</td></tr>
+        <tr><td>7</td><td><a href="#page-7">Qatar vs Switzerland</a></td><td style="color:#dc2626;font-weight:700;">1</td><td style="color:#ea580c;font-weight:700;">1</td><td style="color:#ca8a04;font-weight:700;">1</td><td style="color:#16a34a;font-weight:700;">1</td><td><strong>4</strong></td><td>"Photo · TBC" + schedule heading detached from content</td></tr>
+        <tr><td>8</td><td><a href="#page-8">Haiti vs Scotland</a></td><td style="color:#dc2626;font-weight:700;">2</td><td style="color:#ea580c;font-weight:700;">2</td><td style="color:#ca8a04;font-weight:700;">0</td><td style="color:#16a34a;font-weight:700;">1</td><td><strong>5</strong></td><td>Hero image broken + all 3 "Keep Reading" thumbnails missing</td></tr>
+        <tr><td>9</td><td><a href="#page-9">Australia vs Türkiye</a></td><td style="color:#dc2626;font-weight:700;">1</td><td style="color:#ea580c;font-weight:700;">1</td><td style="color:#ca8a04;font-weight:700;">2</td><td style="color:#16a34a;font-weight:700;">0</td><td><strong>4</strong></td><td>Privacy policy link points to "#" in newsletter</td></tr>
+        <tr><td>10</td><td><a href="#page-10">Germany vs Curaçao</a></td><td style="color:#dc2626;font-weight:700;">1</td><td style="color:#ea580c;font-weight:700;">1</td><td style="color:#ca8a04;font-weight:700;">2</td><td style="color:#16a34a;font-weight:700;">1</td><td><strong>5</strong></td><td>Q&amp;A cards with uneven spacing throughout</td></tr>
+        <tr><td>11</td><td><a href="#page-11">Netherlands vs Japan</a></td><td style="color:#dc2626;font-weight:700;">1</td><td style="color:#ea580c;font-weight:700;">2</td><td style="color:#ca8a04;font-weight:700;">2</td><td style="color:#16a34a;font-weight:700;">0</td><td><strong>5</strong></td><td>Two lineup formations lack visual separation</td></tr>
+        <tr><td>12</td><td><a href="#page-12">Ivory Coast vs Ecuador</a></td><td style="color:#dc2626;font-weight:700;">2</td><td style="color:#ea580c;font-weight:700;">2</td><td style="color:#ca8a04;font-weight:700;">1</td><td style="color:#16a34a;font-weight:700;">1</td><td><strong>6</strong></td><td>Lineup section shows only numbers — no player names at all</td></tr>
+        <tr><td>13</td><td><a href="#page-13">Sweden vs Tunisia</a></td><td style="color:#dc2626;font-weight:700;">1</td><td style="color:#ea580c;font-weight:700;">2</td><td style="color:#ca8a04;font-weight:700;">2</td><td style="color:#16a34a;font-weight:700;">0</td><td><strong>5</strong></td><td>No pitch diagram rendering — formations unreadable</td></tr>
+        <tr style="background:#f9fafb;font-weight:700;">
+          <td colspan="2"><strong>TOTALS</strong></td>
+          <td style="color:#dc2626;">17</td>
+          <td style="color:#ea580c;">20</td>
+          <td style="color:#ca8a04;">26</td>
+          <td style="color:#16a34a;">7</td>
+          <td><strong>67</strong></td>
+          <td style="color:var(--gray);">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-footer">
+    Fanorate.com UI Issues Report &nbsp;·&nbsp; June 6, 2026 &nbsp;·&nbsp; Tester: Sarthak &nbsp;·&nbsp; 13 pages · 67 issues documented
+  </div>
+
+</div>
+</body>
+</html>

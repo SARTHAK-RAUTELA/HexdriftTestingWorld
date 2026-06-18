@@ -22,6 +22,7 @@ module.exports = defineConfig({
     ['./afp18-reporter.js'],
     ['./sea316-reporter.js'],
     ['./afp19-reporter.js'],
+    ['./cre-t-133-reporter.js'],
   ],
   use: {
     headless: true,

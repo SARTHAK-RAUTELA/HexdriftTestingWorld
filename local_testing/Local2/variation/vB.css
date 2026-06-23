@@ -1,349 +1,114 @@
-html body.cre-t-133-modal-active .exit-modal {
-  display: none !important;
-  visibility: hidden !important;
+html body.cre-t-123 .page-description ul {
+    opacity: 0;
+    visibility: hidden;
 }
 
-html body.cre-t-133 .cre-t-133-overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(19, 22, 47, 0.45);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 9999;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
+html body .cre-t-123-container {
+    opacity: 0;
+    visibility: hidden;
 }
 
-html body.cre-t-133 .cre-t-133-overlay[hidden] {
-  display: none;
+html body .cre-t-123-container {
+    display: block !important;
+    visibility: visible;
+    animation: cre-t-123-fade-in 0.4s ease forwards;
+    margin-top: 30px;
 }
 
-
-
-html body.cre-t-133 .cre-t-133-card {
-  position: relative;
-  width: 690px;
-  max-width: 100%;
-  max-height: calc(100vh - 48px);
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 3px 8px 0px rgba(19, 19, 20, 0.12);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 45px 0 40px;
-  text-align: center;
-  overflow-y: auto;
+html body.cre-t-123 .page-description ul {
+    display: none;
 }
 
-html body.cre-t-133 .cre-t-133-close {
-  position: absolute;
-  top: 22px;
-  right: 21px;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  color: #9a9a9a;
-  line-height: 0;
+@keyframes cre-t-123-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-html body.cre-t-133 .cre-t-133-close:hover {
-  color: #6b6b6b;
-}
-
-html body.cre-t-133 .cre-t-133-close svg {
-  width: 24px;
-  height: 24px;
-  display: block;
-}
-
-html body.cre-t-133 .cre-t-133-hero {
-  width: 183px;
-  height: 169px;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-html body.cre-t-133 .cre-t-133-heading {
-  margin: 13px 0 0;
-  width: 591px;
-  max-width: 100%;
-  font-weight: 700;
-  font-size: 31px;
-  line-height: 42px;
-  color: #000000;
-  text-align: center;
-}
-
-html body.cre-t-133 .cre-t-133-subtext {
-  margin: 9px 0 0;
-  width: 539px;
-  max-width: 100%;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  color: #13162f;
-  text-align: center;
-}
-
-html body.cre-t-133 .cre-t-133-form {
-  width: 450px;
-  max-width: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-html body.cre-t-133 .cre-t-133-field {
-  position: relative;
-  width: 450px;
-  max-width: 100%;
-  height: 54px;
-  margin-top: 32px;
-}
-
-html body.cre-t-133 .cre-t-133-field-pin {
-  position: absolute;
-  left: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 20px;
-  color: #c5c5c5;
-  pointer-events: none;
-  line-height: 0;
-}
-
-html body.cre-t-133 .cre-t-133-input {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #c5c5c5;
-  border-radius: 99px;
-  padding: 0 24px 0 55px;
-  font-weight: 500;
-  font-size: 16px;
-  color: #13162f;
-  background: #ffffff;
-  outline: none;
-}
-
-html body.cre-t-133 .cre-t-133-input::placeholder {
-  color: #c5c5c5;
-  font-weight: 500;
-  opacity: 1;
-}
-
-html body.cre-t-133 .cre-t-133-input:focus {
-  border-color: #0272e4;
-}
-
-html body.cre-t-133 .cre-t-133-submit {
-  position: relative;
-  width: 450px;
-  max-width: 100%;
-  height: 54px;
-  margin-top: 14px;
-  border: 0;
-  border-radius: 99px;
-  background: #0272e4;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-html body.cre-t-133 .cre-t-133-submit:hover {
-  background: #0263c6;
-}
-
-html body.cre-t-133 .cre-t-133-submit-label {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 17.6px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-html body.cre-t-133 .cre-t-133-submit-arrow {
-  width: 14px;
-  height: 14px;
-  line-height: 0;
-  color: #ffffff;
-  margin-top: -3px;
-}
-
-html body.cre-t-133 .cre-t-133-submit-arrow svg {
-  display: block;
-  width: 14px;
-  height: 14px;
-}
-
-html body.cre-t-133 .cre-t-133-logos {
-  margin-top: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  max-width: 100%;
-}
-
-html body.cre-t-133 .cre-t-133-logo {
-  display: block;
-  flex: none;
-}
-
-html body.cre-t-133 .cre-t-133-logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-}
-
-html body.cre-t-133 .cre-t-133-logo--fetch     { width: 55px; }
-html body.cre-t-133 .cre-t-133-logo--aspca     { width: 75px; }
-html body.cre-t-133 .cre-t-133-logo--lemonade  { width: 77px; }
-html body.cre-t-133 .cre-t-133-logo--embrace   { width: 83px; }
-html body.cre-t-133 .cre-t-133-logo--trupanion { width: 89px; }
-
-html body.cre-t-133 .cre-t-133-logo--fetch img {
-  width: 115.93%;
-  height: 324.86%;
-  object-fit: fill;
-  position: relative;
-  left: -8.77%;
-  top: -102.26%;
-}
-
-html body.cre-t-133 .cre-t-133-logo--trupanion img {
-  width: 100%;
-  height: 233.33%;
-  object-fit: fill;
-  position: relative;
-  left: 0;
-  top: -70%;
-}
-
-html body.cre-t-133 .cre-t-133-more {
-  margin: 12px 0 0;
-  width: 100%;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 27px;
-  color: #13162f;
-  text-align: center;
-}
-
-@media (max-width: 767px) {
-  html body.cre-t-133 .cre-t-133-field  { width: 100%; }
-  html body.cre-t-133 .cre-t-133-submit { width: 100%; }
-}
-
-@media (max-width: 740px) {
-  html body.cre-t-133 .cre-t-133-overlay {
-    padding: 16px;
-    align-items: flex-start;
-    overflow-y: auto;
-  }
-  html body.cre-t-133 .cre-t-133-card {
+html body .cre-t-123-wrapper {
+    border-radius: 10px;
+    background: #FEF3D1;
     width: 100%;
-    max-width: 480px;
-    height: auto;
-    margin: auto;
-    padding: 28px 24px 36px;
-  }
-  html body.cre-t-133 .cre-t-133-close  { top: 16px; right: 16px; }
-  html body.cre-t-133 .cre-t-133-heading {
-    width: 100%;
-    margin-top: 8px;
-    font-size: 26px;
-    line-height: 34px;
-  }
-  html body.cre-t-133 .cre-t-133-heading br { display: none; }
-  html body.cre-t-133 .cre-t-133-subtext {
-    width: 100%;
-    margin-top: 8px;
-    font-size: 16px;
+    padding: 25px 33px;
+    display: flex;
+    gap: 9px;
+    position: relative;
+}
+
+html body .cre-t-123-hero-title {
+    color: #000;
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
     line-height: 24px;
-  }
-  html body.cre-t-133 .cre-t-133-form   { width: 100%; }
-  html body.cre-t-133 .cre-t-133-field  { width: 100%; margin-top: 22px; }
-  html body.cre-t-133 .cre-t-133-submit { width: 100%; }
-  html body.cre-t-133 .cre-t-133-logos  {
-    margin-top: 16px;
-    gap: 10px;
-    transform: scale(0.86);
-    transform-origin: center;
-  }
 }
 
-@media (max-width: 430px) {
-  html body.cre-t-133 .cre-t-133-card      { padding: 26px 18px 32px; }
-  html body.cre-t-133 .cre-t-133-hero      { width: 150px; height: 138px; }
-  html body.cre-t-133 .cre-t-133-heading   { font-size: 23px; line-height: 30px; }
-  html body.cre-t-133 .cre-t-133-subtext   { font-size: 15px; line-height: 22px; }
-  html body.cre-t-133 .cre-t-133-input     { padding: 0 18px 0 50px; font-size: 15px; }
-  html body.cre-t-133 .cre-t-133-field-pin { left: 20px; }
-  html body.cre-t-133 .cre-t-133-logos     { transform: scale(0.72); gap: 8px; }
+html body .cre-t-123-subheader-title {
+    color: #000;
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-right: 40px;
+    margin-top: 7.41px;
 }
 
-@media (max-width: 389px) {
-  html body.cre-t-133 .cre-t-133-card    { padding-left: 24px; padding-right: 24px; }
-  html body.cre-t-133 .cre-t-133-form    { width: 100%; padding: 0 16px; }
-  html body.cre-t-133 .cre-t-133-field   { width: 100%; }
-  html body.cre-t-133 .cre-t-133-submit  { width: 100%; }
+html body .cre-t-123-subheader-title span {
+    font-weight: 600;
 }
 
-@media (max-width: 375px) {
-  html body.cre-t-133 .cre-t-133-overlay      { padding: 12px; }
-  html body.cre-t-133 .cre-t-133-card         { padding: 22px 16px 28px; }
-  html body.cre-t-133 .cre-t-133-close        { top: 12px; right: 12px; }
-  html body.cre-t-133 .cre-t-133-hero         { width: 128px; height: 118px; }
-  html body.cre-t-133 .cre-t-133-heading      { margin-top: 6px; font-size: 21px; line-height: 28px; }
-  html body.cre-t-133 .cre-t-133-subtext      { margin-top: 6px; font-size: 14px; line-height: 20px; }
-  html body.cre-t-133 .cre-t-133-field        { margin-top: 18px; height: 50px; }
-  html body.cre-t-133 .cre-t-133-input        { font-size: 14px; }
-  html body.cre-t-133 .cre-t-133-submit       { height: 50px; }
-  html body.cre-t-133 .cre-t-133-submit-label { font-size: 15px; }
-  html body.cre-t-133 .cre-t-133-logos        { margin-top: 14px; transform: scale(0.64); gap: 7px; }
-  html body.cre-t-133 .cre-t-133-more         { margin-top: 8px; }
+html body .cre-t-123-icon {
+    width: 19px;
+    height: 19px;
+    margin-top: 2px;
 }
 
-@media (max-height: 700px) {
-  html body.cre-t-133 .cre-t-133-overlay {
-    align-items: flex-start;
-  }
-  html body.cre-t-133 .cre-t-133-card {
-    max-height: none;
-    margin: auto;
-    padding: 36px 0 30px;
-    overflow-y: visible;
-  }
-  html body.cre-t-133 .cre-t-133-hero {
-    width: 120px;
-    height: 111px;
-  }
-  html body.cre-t-133 .cre-t-133-heading {
-    margin-top: 8px;
-    font-size: 26px;
-    line-height: 34px;
-  }
-  html body.cre-t-133 .cre-t-133-field  { margin-top: 20px; }
-  html body.cre-t-133 .cre-t-133-logos  { margin-top: 14px; }
-  html body.cre-t-133 .cre-t-133-more   { margin-top: 8px; }
+html body .cre-t-123-close-icon {
+    position: absolute;
+    right: 19px;
+    top: 18px;
+    cursor: pointer;
 }
 
-@media (hover: none) {
-  html body.cre-t-133 .cre-t-133-submit:hover { background: #0272e4; }
-  html body.cre-t-133 .cre-t-133-close:hover  { color: #9a9a9a; }
+html body .cre-t-123-subheader-title span {
+    font-weight: 600;
+}
+
+@media screen and (max-width:767px) {
+    html body .cre-t-123-wrapper {
+        padding: 25px 20px;
+    }
+
+    html body .cre-t-123-icon {
+        margin-top: 3px;
+        width: 17px;
+        height: 17px;
+    }
+
+    html body .cre-t-123-hero-title {
+        font-size: 16px;
+    }
+
+    html body .cre-t-123-subheader-title {
+        padding-right: 10px;
+        font-size: 16px;
+    }
+}
+
+html body .cre-t-123-icon svg {
+    overflow: visible;
+}
+
+@media screen and (max-width:767px) {
+    html body .cre-t-123-close-icon {
+        right: 14px;
+        top: 10px;
+
+    }
 }

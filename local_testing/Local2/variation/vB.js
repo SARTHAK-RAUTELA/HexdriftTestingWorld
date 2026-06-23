@@ -1,22 +1,11 @@
 (function () {
   try {
-    var debug = 0;
-    var variation_name = "cre-t-133";
+    /* main variables */
+    var debug = 1;
+    var variation_name = "cre-t-123";
+    var cookie_name = "cre-t-123-cookie";
 
-    /* helpers */
-
-    function setNativeValue(element, value) {
-      var lastValue = element.value;
-      element.value = value;
-      var event = new Event("input", { bubbles: true });
-      var tracker = element._valueTracker;
-      if (tracker) tracker.setValue(lastValue);
-      element.dispatchEvent(event);
-    }
-
-    function waitForElement(selector, trigger, delayInterval, delayTimeout) {
-      delayInterval = delayInterval || 50;
-      delayTimeout = delayTimeout || 15000;
+    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
       var interval = setInterval(function () {
         if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
           clearInterval(interval);
@@ -28,194 +17,111 @@
       }, delayTimeout);
     }
 
-    function setCookie(name, value) {
-      document.cookie = name + "=" + encodeURIComponent(value) + "; path=/";
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+      }
+      return "";
     }
 
-    function getCookie(name) {
-      var match = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1") + "=([^;]*)"));
-      return match ? decodeURIComponent(match[1]) : null;
+    function setBmCookie() {
+      document.cookie = cookie_name + "=cre-t-123-variation; path=/";
     }
 
     function live(selector, event, callback, context) {
-      function addEvent(el, type, handler) {
-        if (el.attachEvent) el.attachEvent("on" + type, handler);
-        else el.addEventListener(type, handler);
-      }
-      this.Element &&
-        (function (ElementPrototype) {
-          ElementPrototype.matches =
-            ElementPrototype.matches ||
-            ElementPrototype.matchesSelector ||
-            ElementPrototype.webkitMatchesSelector ||
-            ElementPrototype.msMatchesSelector ||
-            function (selector) {
-              var node = this,
-                nodes = (node.parentNode || node.document).querySelectorAll(selector),
-                i = -1;
-              while (nodes[++i] && nodes[i] != node);
-              return !!nodes[i];
-            };
-        })(Element.prototype);
-
-      function live(selector, event, callback, context) {
-        addEvent(context || document, event, function (e) {
-          var found,
-            el = e.target || e.srcElement;
-          while (el && el.matches && el !== context && !(found = el.matches(selector)))
-            el = el.parentElement;
-          if (found) callback.call(el, e);
-        });
-      }
-      live(selector, event, callback, context);
+      if (typeof callback !== "function") return;
+      context = context || document;
+      context.addEventListener(event, function (e) {
+        var el = e.target.closest(selector);
+        if (el && context.contains(el)) {
+          callback.call(el, e);
+        }
+      });
     }
 
-    function track(goalId) {
-      window._conv_q = window._conv_q || [];
-      window._conv_q.push(["triggerConversion", goalId]);
+    function getQueryVariable(name) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+
+        if (decodeURIComponent(pair[0]) === name) {
+          return pair[1] ? decodeURIComponent(pair[1].replace(/\+/g, " ")) : "";
+        }
+      }
+
+      return "";
     }
 
-    /* modal markup */
+    function addElement() {
+      var updateName = getQueryVariable("insurer") || "Colonial Penn";
 
-    var modalHTML = `
-      <div class="cre-t-133-overlay" role="dialog" aria-modal="true" aria-labelledby="cre-t-133-heading">
-        <div class="cre-t-133-card">
-          <button type="button" class="cre-t-133-close" aria-label="Close">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </button>
-          <img class="cre-t-133-hero"
-               src="https://v2.crocdn.com/SwiftTest/swf133/dogs.png"
-               alt="A cat and a dog" />
-          <h2 class="cre-t-133-heading" id="cre-t-133-heading">Enter your ZIP for <br>pet insurance prices in your area</h2>
-          <p class="cre-t-133-subtext">We'll show prices and rankings based on your location</p>
-          <form class="cre-t-133-form" novalidate>
-            <div class="cre-t-133-field">
-              <span class="cre-t-133-field-pin" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20" fill="none">
-                  <path d="M8 10C8.55 10 9.02083 9.80415 9.4125 9.41255C9.80417 9.02083 10 8.55 10 8C10 7.45 9.80417 6.97917 9.4125 6.5875C9.02083 6.19583 8.55 6 8 6C7.45 6 6.97917 6.19583 6.5875 6.5875C6.19583 6.97917 6 7.45 6 8C6 8.55 6.19583 9.02083 6.5875 9.41255C6.97917 9.80415 7.45 10 8 10ZM8 17.35C10.0333 15.4833 11.5417 13.7875 12.525 12.2625C13.5083 10.7376 14 9.38335 14 8.2C14 6.38333 13.4208 4.89583 12.2625 3.7375C11.1042 2.57917 9.68333 2 8 2C6.31667 2 4.89583 2.57917 3.7375 3.7375C2.57917 4.89583 2 6.38333 2 8.2C2 9.38335 2.49167 10.7376 3.475 12.2625C4.45833 13.7875 5.96667 15.4833 8 17.35ZM8 20C5.31667 17.7167 3.3125 15.5958 1.9875 13.6375C0.6625 11.6792 0 9.86665 0 8.2C0 5.7 0.804167 3.70833 2.4125 2.225C4.02083 0.74167 5.88333 0 8 0C10.1167 0 11.9792 0.74167 13.5875 2.225C15.1958 3.70833 16 5.7 16 8.2C16 9.86665 15.3375 11.6792 14.0125 13.6375C12.6875 15.5958 10.6833 17.7167 8 20Z" fill="#13162F"/>
-                </svg>
-              </span>
-              <input class="cre-t-133-input" name="zip" type="text"
-                     inputmode="numeric" autocomplete="postal-code" maxlength="5"
-                     placeholder="Enter ZIP Code" aria-label="Enter ZIP Code" />
-            </div>
-            <button type="submit" class="cre-t-133-submit">
-              <span class="cre-t-133-submit-label">Show my prices</span>
-              <span class="cre-t-133-submit-arrow" aria-hidden="true">
-                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </button>
-          </form>
-          <div class="cre-t-133-logos" aria-label="Compared insurers">
-            <span class="cre-t-133-logo cre-t-133-logo--fetch">
-              <img src="https://v2.crocdn.com/SwiftTest/swf133/Fetch.png" alt="Fetch" />
-            </span>
-            <span class="cre-t-133-logo cre-t-133-logo--aspca">
-              <img src="https://v2.crocdn.com/SwiftTest/swf133/ASPCA.png" alt="ASPCA Pet Health Insurance" />
-            </span>
-            <span class="cre-t-133-logo cre-t-133-logo--lemonade">
-              <img src="https://v2.crocdn.com/SwiftTest/swf133/Lemonade.png" alt="Lemonade" />
-            </span>
-            <span class="cre-t-133-logo cre-t-133-logo--embrace">
-              <img src="https://v2.crocdn.com/SwiftTest/swf133/embrace.png" alt="Embrace" />
-            </span>
-            <span class="cre-t-133-logo cre-t-133-logo--trupanion">
-              <img src="https://v2.crocdn.com/SwiftTest/swf133/trupanion.png" alt="Trupanion" />
-            </span>
+      var html = `<div class="cre-t-123-container" style="display: none;">
+
+        <div class="cre-t-123-wrapper">
+        <div class="cre-t-123-close-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+  <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" fill="#8C8EA0"/>
+</svg></div>
+          <div class="cre-t-123-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+  <path d="M8.75 14.25H10.25V8.5H8.75V14.25ZM10.073 6.55625C10.2295 6.40142 10.3077 6.20958 10.3077 5.98075C10.3077 5.75192 10.2303 5.56008 10.0755 5.40525C9.92067 5.25058 9.72883 5.17325 9.5 5.17325C9.27117 5.17325 9.07933 5.25058 8.9245 5.40525C8.76967 5.56008 8.69225 5.75192 8.69225 5.98075C8.69225 6.20958 8.7705 6.40142 8.927 6.55625C9.08333 6.71108 9.27433 6.7885 9.5 6.7885C9.72567 6.7885 9.91667 6.71108 10.073 6.55625ZM9.50175 19C8.18775 19 6.95267 18.7507 5.7965 18.252C4.64033 17.7533 3.63467 17.0766 2.7795 16.2218C1.92433 15.3669 1.24725 14.3617 0.74825 13.206C0.249417 12.0503 0 10.8156 0 9.50175C0 8.18775 0.249333 6.95267 0.748 5.7965C1.24667 4.64033 1.92342 3.63467 2.77825 2.7795C3.63308 1.92433 4.63833 1.24725 5.794 0.74825C6.94967 0.249417 8.18442 0 9.49825 0C10.8123 0 12.0473 0.249333 13.2035 0.748C14.3597 1.24667 15.3653 1.92342 16.2205 2.77825C17.0757 3.63308 17.7528 4.63833 18.2518 5.794C18.7506 6.94967 19 8.18442 19 9.49825C19 10.8123 18.7507 12.0473 18.252 13.2035C17.7533 14.3597 17.0766 15.3653 16.2218 16.2205C15.3669 17.0757 14.3617 17.7528 13.206 18.2518C12.0503 18.7506 10.8156 19 9.50175 19ZM9.5 17.5C11.7333 17.5 13.625 16.725 15.175 15.175C16.725 13.625 17.5 11.7333 17.5 9.5C17.5 7.26667 16.725 5.375 15.175 3.825C13.625 2.275 11.7333 1.5 9.5 1.5C7.26667 1.5 5.375 2.275 3.825 3.825C2.275 5.375 1.5 7.26667 1.5 9.5C1.5 11.7333 2.275 13.625 3.825 15.175C5.375 16.725 7.26667 17.5 9.5 17.5Z" fill="#0272E4"/>
+</svg>
           </div>
-          <p class="cre-t-133-more">...and many more</p>
+          <div class="cre-t-123-content">
+            <div class="cre-t-123-header">
+              <div class="cre-t-123-hero-title">Looking at ${updateName}?</div>
+            </div>
+            <div class="cre-t-123-subheader">
+              <div class="cre-t-123-subheader-title">We’ve reviewed 29 pet insurance providers to bring you the top 10—many with <span>instant online approval</span> and <span>fast claim payouts</span>. Start with our top picks below (${updateName} didn’t make the list).</div>
+            </div>
+          </div>
         </div>
       </div>`;
 
-    /* variation functions */
-
-    function closeModal(overlay) {
-      track("100037880");
-      track("100037881");
-      if (!document.querySelector(".exit-modal")) {
-        document.body.classList.remove("cre-t-133-modal-active");
+      if (!document.querySelector(".cre-t-123-container")) {
+        document.querySelector(`#comparison-section .ct-section-inner-wrap [data-unique="comparison-table"]`).insertAdjacentHTML("afterbegin", html);
       }
-      overlay.setAttribute("hidden", "");
-      setCookie("cre-t-133-seen", "1");
     }
 
+    /* Variation Init */
     function init() {
-      if (getCookie("cre-t-133-seen")) { track("100037881"); return; }
-      if (document.querySelector(".cre-t-133-overlay")) return;
-       document.body.classList.add("cre-t-133");
+      // 1. Check if the dismiss cookie already exists. If yes, exit.
+      if (getCookie(cookie_name) === "cre-t-123-variation") return;
 
+      document.body.classList.add(variation_name);
+
+      // Something our element remove so thats why use interval
+      var addElementInterval = setInterval(function () {
+        addElement();
+      }, 250);
       setTimeout(function () {
-        if (window.location.href.toLowerCase().indexOf("zip") !== -1) return;
-        document.body.insertAdjacentHTML("beforeend", modalHTML);
-        track("100037876");
-        document.body.classList.add("cre-t-133-modal-active");
-
-        var overlay  = document.querySelector(".cre-t-133-overlay");
-        var card     = overlay.querySelector(".cre-t-133-card");
-        var form     = overlay.querySelector(".cre-t-133-form");
-        var borderError = false;
-        var zipEngaged = false;
-        var submitClicked = false;
-
-        live(".cre-t-133-close", "click", function () {
-          closeModal(overlay);
-        });
-
-        live(".cre-t-133-overlay", "mousedown", function (e) {
-          if (!card.contains(e.target)) closeModal(overlay);
-        });
-
-        live(".cre-t-133-input", "input", function () {
-          if (!zipEngaged) { zipEngaged = true; track("100037877"); }
-          var cleaned = this.value.replace(/\D/g, "").slice(0, 5);
-          if (cleaned !== this.value) this.value = cleaned;
-          if (borderError) {
-            this.style.borderColor = "";
-            borderError = false;
-          }
-        });
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          if (!submitClicked) { submitClicked = true; track("100037878"); }
-          var zipInput = overlay.querySelector(".cre-t-133-input");
-          var value = zipInput.value.trim();
-          if (!/^\d{5}$/.test(value)) {
-            zipInput.style.borderColor = "#e02424";
-            zipInput.focus();
-            borderError = true;
-            return;
-          }
-
-          track("100037879");
-          track("100037881");
-          setCookie("cre-t-133-seen", "1");
-
-          var pageZip = document.querySelector('[placeholder="Enter Zip Code"]');
-          if (pageZip) {
-            setNativeValue(pageZip, value);
-            var pageForm = pageZip.closest("form");
-            if (pageForm) {
-              var pageSubmit = pageForm.querySelector('[type="submit"]');
-              if (pageSubmit) {
-                pageSubmit.click();
-              } else {
-                pageForm.submit();
-              }
-            }
-          }
-
-          closeModal(overlay);
-        });
+        clearInterval(addElementInterval);
       }, 1000);
+
+      if (!window.cre_t_123_event) {
+        window.cre_t_123_event = true;
+
+        // Handle Dismiss Click
+        live(".cre-t-123-close-icon", "click", function () {
+          setBmCookie();
+          document.body.classList.remove(variation_name);
+
+          var container = document.querySelector(".cre-t-123-container");
+          if (container) {
+            container.remove();
+          }
+        });
+      }
     }
 
-    /* init */
-    waitForElement("body", init, 50, 15000);
+    /* Init variation */
+    waitForElement(`#comparison-section .ct-section-inner-wrap [data-unique="comparison-table"]`, init);
   } catch (e) {
     if (debug) console.log(e, "error in Test " + variation_name);
   }

@@ -31,7 +31,7 @@ html body.cre-t-123 .page-description ul {
 
 html body .cre-t-123-wrapper {
     border-radius: 10px;
-    background: #FEF3D1;
+    background: #fef3d1;
     width: 100%;
     padding: 25px 33px;
     display: flex;
@@ -51,7 +51,7 @@ html body .cre-t-123-hero-title {
 html body .cre-t-123-subheader-title {
     color: #000;
     font-family: inherit;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
@@ -80,13 +80,13 @@ html body .cre-t-123-subheader-title span {
     font-weight: 600;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     html body .cre-t-123-wrapper {
         padding: 25px 20px;
     }
 
     html body .cre-t-123-icon {
-        margin-top: 3px;
+        margin-top: 2.5px;
         width: 17px;
         height: 17px;
     }
@@ -105,10 +105,16 @@ html body .cre-t-123-icon svg {
     overflow: visible;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     html body .cre-t-123-close-icon {
-        right: 14px;
-        top: 10px;
+        right: 10px;
+        top: 8px;
+    }
+}
 
+@media screen and (max-width: 500px) {
+
+    html body .cre-t-123-close-icon svg {
+        width: 12px;
     }
 }

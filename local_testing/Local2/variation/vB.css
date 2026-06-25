@@ -1,491 +1,370 @@
-/* Hiding original Trustpilot logo as per client requirement */
-html body #comparison-section .ct-image.trustpilot-image {
-    display: none;
+.Landing_hero__Nmlzn {
+	height: 571px;
+
 }
 
-html body .cre-t-76-container {
-    position: relative;
-    font-family: "Montserrat", arial, sans-serif;
+.tt_footer_max_width {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 946px;
 }
 
-html body .cre-t-76-wrapper {
-    display: block;
+.tt_subhead_copy {
+	font-size: 14px !important;
+	line-height: 20px !important;
+	font-weight: 700 !important;
+  margin-bottom: 8px;
 }
 
-html body .cre-t-76-reviews {
-    display: block;
-    cursor: pointer;
+.tt_subhead_copy_inner {
+	color: #676d73;
+	display: inline-block;
+	font-size: 12px !important;
+	line-height: 18px !important;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	text-decoration: none;
 }
 
-html body .cre-t-76-review-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 2px;
+.tt_item_section ol,
+.tt_item_section ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-html body .cre-t-76-top-content1 {
-    color: #000;
-    text-align: center;
-    font-family: inherit;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
+.tt_secondnav_section {
+	flex: 1 0;
 }
 
-html body .cre-t-76-total {
-    position: relative;
-    top: -1px;
+.tt_item_section a:active,
+.tt_item_section a:hover {
+	color: #009fd9;
 }
 
-html body .cre-t-76-star {
-    width: 17px;
-    height: 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.tt_toggle_cta {
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
+	color: #009fd9;
+	font-weight: 600;
+	padding-left: 0;
 }
 
-html body .cre-t-76-star svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
+.section_b_black {
+	font-size: 14px;
+	line-height: 20px !important;
+	font-weight: 700;
+
 }
 
-html body .cre-t-76-classification {
-    position: relative;
-    top: -1px;
+.tt_secondnav_section ul {
+	padding-left: 0;
+	list-style: none;
 }
 
-html body .cre-t-76-top-content2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4px;
+[class*="Landing_neighborhoodsSection"] [class*="Landing_neighborhoodChip"] {
+	pointer-events: none;
 }
 
-html body .cre-t-76-top-content2-text {
-    color: #000;
-    text-align: right;
-    font-family: inherit;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    /* line-height: 21px; */
-    line-height: 16px;
+.TT-global-footer+[class*="Landing_linksSection"] {
+	display: none;
 }
 
-html body .cre-t-76-top-content2-icon {
-    width: 7px;
-    height: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(0deg);
-    transition: transform 0.3s;
+@media screen and (max-width:768px) {
+	.TT-global-footer {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.tt_secondnav_section>div+.section-links {
+		display: none;
+	}
+
+	.tt_secondnav_section>div.isactive+.section-links {
+		display: block;
+	}
+
+	.tt_secondnav_section:last-child {
+		padding-bottom: 20px;
+	}
+
+	.global-footer .is-active .section-arrow {
+		transform: rotate(180deg);
+		position: relative;
+		top: -4px;
+
+	}
 }
 
-html body .cre-t-76-top-content2-icon svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
+.TT-services-swiper {
+	padding-bottom: 8px !important;
 }
 
-html body .cre-t-76-top-content1 .cre-t-76-top-content2-icon {
-    display: none;
+.TT-services-swiper .swiper-slide {
+	height: auto;
+	width: auto !important;
 }
 
-html body .cre-t-76-review-dropdown {
-    display: none;
-    position: absolute;
-    right: 0px;
-    top: calc(100% + 18px);
-    z-index: 1000;
-    width: 287px;
+.TT-service-card {
+	display: flex !important;
+	align-items: center;
+	padding: 10px 18px;
+	border-radius: 6px;
+	border: 1px solid #d8d8d8 !important;
+	text-decoration: none;
+	color: #333;
+	background: #fff;
+	white-space: nowrap;
+	transition: background 0.15s, box-shadow 0.15s;
 }
 
-html body .cre-t-76-dropdown-wrapper {
-    border-radius: 4px;
-    position: relative;
+.TT-service-card:hover {
+	background: #f5f5f5;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-html body .cre-t-76-dropdown-top {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+.TT-reviews-section>div:first-child {
+
+	position: relative;
 }
 
-html body .cre-t-76-dropdown-content {
-    width: 100%;
-    padding: 16px 24px;
+.TT-reviews-section [aria-label="Next slide"] {
+	width: 28px;
+	height: 28px;
+	right: -16px;
+	border-radius: 50%;
+	box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, .04), 0 1px 2px 0 rgba(0, 0, 0, .16);
+	background-color: #fff;
+	z-index: 5;
 }
 
-html body .cre-t-76-dropdown-content1 {
-    background: #441771;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+.TT-reviews-section [aria-label="Previous slide"] {
+	width: 28px;
+	height: 28px;
+	left: -16px;
+	border-radius: 50%;
+	box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, .04), 0 1px 2px 0 rgba(0, 0, 0, .16);
+	background-color: #fff;
+	z-index: 5;
 }
 
-html body .cre-t-76-dropdown-content2 {
-    background: #551e8e;
+.TT-services-section .TT-swiper-btn {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, .04), 0 1px 2px 0 rgba(0, 0, 0, .16);
+	background-color: #fff;
+	z-index: 5;
+	top: 110px;
 }
 
-html body .cre-t-76-dropdown-content3 {
-    background: #441771;
+.TT-services-section .TT-swiper-btn[aria-label="Previous slide"] {
+	left: -16px;
 }
 
-html body .cre-t-76-dropdown-info1 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 7px;
-    margin-bottom: 4px;
+.TT-services-section .TT-swiper-btn[aria-label="Next slide"] {
+
+	right: -16px;
 }
 
-html body .cre-t-76-dropdown-info1-icon {
-    width: 14px;
-    min-width: 14px;
-    height: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.TT-reviews-section .TT-swiper-btn::after,
+.TT-services-section .TT-swiper-btn::after {
+	font-size: 13px !important;
+	font-weight: bold;
+	color: #000000;
+	font-weight: 900;
 }
 
-html body .cre-t-76-dropdown-info1-icon svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
+.swiper-button-prev.TT-swiper-btn.swiper-button-disabled {
+	display: none;
 }
 
-html body .cre-t-76-dropdown-info1-text {
-    color: #fff;
-    font-family: inherit;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
+.TT-services-section>div:first-child {
+	position: relative;
 }
 
-html body .cre-t-76-dropdown-info2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-bottom: 2px;
+.TT-services-swiper {
+	padding-bottom: 8px !important;
 }
 
-html body .cre-t-76-dropdown-info2-bar {
-    display: block;
-    height: 6px;
-    border-radius: 4px;
-    background: #fff;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
+.TT-services-swiper .swiper-slide {
+	height: auto;
+	width: auto !important;
 }
 
-html body .cre-t-76-dropdown-bar {
-    display: block;
-    height: 6px;
-    border-radius: 4px;
-    animation-name: animation-aba0gy;
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(0.66, 0.01, 0.41, -0.1);
-    animation-delay: 0s;
+.TT-service-card {
+	display: flex !important;
+	align-items: center;
+	padding: 10px 18px;
+	border-radius: 6px;
+	border: 1px solid #d8d8d8 !important;
+	text-decoration: none;
+	color: #333;
+	background: #fff;
+	white-space: nowrap;
+	transition: background 0.15s, box-shadow 0.15s;
 }
 
-@keyframes animation-aba0gy {
-    0% {
-        width: 0px;
-    }
+.TT-service-card:hover {
+	background: #f5f5f5;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-html body .cre-t-76-dropdown-info2-score {
-    color: #fff;
-    font-family: inherit;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
+
+.TT-reviews-swiper {
+	padding-bottom: 40px !important;
 }
 
-html body .cre-t-76-dropdown-info3 {
-    color: #fff;
-    font-family: inherit;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    /* line-height: 21px; */
-    line-height: 14px;
+.TT-reviews-swiper .swiper-slide {
+	height: auto;
 }
 
-html body .cre-t-76-dropdown-content1 .cre-t-76-dropdown-bar {
-    background: #eea650;
+.TT-review-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 24px;
+	border: 1px solid #d8d8d8;
+	border-radius: 8px;
+	text-decoration: none;
+	color: inherit;
+	background: #fff;
+	box-sizing: border-box;
+	transition: box-shadow 0.2s;
 }
 
-html body .cre-t-76-dropdown-content2 .cre-t-76-dropdown-bar {
-    background: #5dc087;
+.TT-review-card:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-html body .cre-t-76-dropdown-content3 .cre-t-76-dropdown-bar {
-    background: #5aacf5;
+.TT-review-from {
+	font-size: 13px;
+	color: #555;
+	margin: 0 0 10px;
 }
 
-html body .cre-t-76-dropdown-bottom {
-    padding: 10px 24px 12px 24px;
-    background: #551e8e;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    color: #fff;
-    font-family: inherit;
-    font-size: 9.5px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
+.TT-review-pro {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
-html body .cre-t-76-dropdown-bottom span {
+.TT-review-pro-img {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 8px;
+	flex-shrink: 0;
+}
+
+.TT-review-pro-name {
+	    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: 700 !important;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.TT-review-card:hover {
     color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    -webkit-text-decoration-skip: ink;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
-    cursor: pointer;
+}
+
+.TT-review-stars {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.TT-review-text {
+	    font-size: 14px;
+    overflow-y: hidden;
+    position: relative;
+    line-height: 20px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    text-overflow: ellipsis;
+    max-height: 60px;
+}
+
+.TT-swiper-btn {
+	color: #009fd9 !important;
+}
+
+.TT-swiper-btn::after {
+	font-size: 20px !important;
+	font-weight: bold;
+}
+
+.TT-swiper-pagination .swiper-pagination-bullet-active {
+	background: #009fd9 !important;
 }
 
 
-/* cross icon hide on desktop */
-html body .cre-t-76-cross {
-    width: 13.308px;
-    min-width: 13.308px;
-    height: 13.308px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding-top: 10px;
-    padding-right: 11.69px;
-    box-sizing: content-box;
+.TT-review-stars [fill="#FBB500"] {
+	fill: #2db783;
 }
 
-html body .cre-t-76-cross svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
+.TT-review-stars [fill="#D3D3D3"] {
+	fill: #d3d4d5;
+	;
+}
+.hero_header.pre-line {
+    padding-right: 0 !important;
 }
 
-/* hiding average text on desktop */
-html body .cre-t-76-top-content1-mobile .cre-t-76-classification {
-    display: none;
+.tt_item_section ul li {
+    font-size: 12px !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
 }
 
-html body .cre-t-76-container-parent {
-    margin-bottom: 25px;
-    margin-top: 25px;
+.formatted-content a {
+    font-weight: 700;
 }
-
-html body .cre-t-76-dropdown-content1 .cre-t-76-dropdown-info1 {
-    align-items: flex-start;
+.disable .hero_section .mt3 button[data-test="hero-filters-cta"] {
+      color: #fff;
+    background-color: #79d2f2;
+    border-color: #79d2f2;
+	pointer-events: none;
 }
-
-html body .cre-t-76-dropdown-content3 .cre-t-76-dropdown-info1 {
-    align-items: flex-end;
+.disable #uniqueId2 [class*="TextInput_inputStylesRoundedBordersLeft"]{
+	border-color: #ff5a5f;
 }
-
-html body .cre-t-76-top-content1-text {
-    color: inherit;
-    text-align: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
+.disable #uniqueId2 [fill="currentColor"]{
+  fill: #ff5a5f;
 }
-
-@media (min-width: 992px) {
-    html body .cre-t-76-reviews:hover .cre-t-76-review-dropdown {
-        display: block;
-    }
-
-    html body .cre-t-76-reviews:hover .cre-t-76-top-content2-icon {
-        transform: rotate(180deg);
-    }
-
-    html body .cre-t-76-reviews:hover .cre-t-76-review-top::after {
-        content: "";
-        width: 100%;
-        height: 20px;
-        display: block;
-        background: #ffffff;
-        position: absolute;
-        top: calc(100% - 1px);
-    }
+.disable #uniqueId2 #tt-zip-error{
+  color: #ff5a5f;
 }
-
-@media (max-width: 991px) {
-    html body .cre-t-76-dropdown-active .cre-t-76-review-dropdown {
-        display: block;
-    }
-
-    html body .cre-t-76-dropdown-active .cre-t-76-top-content2-icon {
-        transform: rotate(180deg);
-    }
-
-    html body .cre-t-76-cross {
-        display: flex;
-    }
+.disable #uniqueId2 [fill="currentColor"] + div{
+  color: #ff5a5f;
 }
-
-@media (max-width: 767px) {
-    html body .cre-t-76-top-content1 .cre-t-76-top-content2-icon {
-        display: flex;
-        width: 6px;
-        height: 6px;
-        position: relative;
-        top: 0px;
-    }
-
-    html body .cre-t-76-top-content1-text .cre-t-76-classification {
-        top: 0;
-    }
-
-    html body .cre-t-76-top-content1-mobile {
-        display: none;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
-    }
-
-    html body .cre-t-76-top-content1-mobile .cre-t-76-classification {
-        color: #000;
-        font-family: inherit;
-        font-size: 11px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 21px;
-        display: flex;
-        align-items: center;
-    }
-
-    html body .cre-t-76-total {
-        top: 0;
-    }
-
-    html body .cre-t-76-container-parent {
-        margin-bottom: 18px;
-        margin-top: 18px;
-        gap: 7px;
-    }
-
-    html body .cre-t-76-review-dropdown {
-        top: calc(100% + 11px);
-    }
-
-    html body .cre-t-76-star {
-        width: 14px;
-        height: 14px;
-        top: 2px;
-    }
-
-    html body .cre-t-76-top-content1 {
-        font-size: 13px;
-    }
-
-    html body .cre-t-76-top-content2-text {
-        font-size: 8px;
-        line-height: 11px;
-    }
-
-    html body .cre-t-76-review-top {
-        gap: 0;
-    }
+.disable #uniqueId2 input[name="zip_code"]::placeholder {
+    color: #da3a3a;
+    opacity: 1;
 }
-
-@media (max-width: 370px) {
-    html body .cre-t-76-star {
-        width: 12px;
-        height: 12px;
-        top: 2px;
-    }
-
-    html body .cre-t-76-top-content1 {
-        font-size: 11px;
-    }
-
-    html body .cre-t-76-top-content2-text {
-        font-size: 8px;
-        line-height: 11px;
-    }
-}
-
-@media (max-width: 360px) {
-    html body .cre-t-76-review-dropdown {
-        right: -20px;
-        width: 280px;
-    }
-}
-
-@media (max-width: 319px) {
-    html body .cre-t-76-review-dropdown {
-        width: 240px;
-    }
-
-    html body .cre-t-76-dropdown-info3 {
-        font-size: 9px;
-    }
-
-    html body .cre-t-76-dropdown-bottom {
-        font-size: 7.5px;
-    }
-}
-
-
-
-/* Changes for Test Test 135 */
-
-html body .cre-t-76-container .cre-t-76-wrapper .cre-t-76-reviews:hover .cre-t-76-review-dropdown {
+.swiper-button-next.TT-swiper-btn.swiper-button-disabled {
     display: none;
 }
-
-html body .cre-t-76-container .cre-t-76-wrapper .cre-t-76-top-content2-icon {
-    display: none;
+@media screen and (max-width: 768px) {
+  [class*=" hero-header_heroContainer"] img{
+  height: 232px;
 }
-
-
-html body .cre-t-76-container .cre-t-76-wrapper .cre-t-76-dropdown-active .cre-t-76-review-dropdown {
-    display: none !important;
+.TT-services-section .TT-swiper-btn[aria-label="Next slide"] , 
+.TT-reviews-section [aria-label="Next slide"],
+.TT-reviews-section [aria-label="Previous slide"],
+.TT-services-section .TT-swiper-btn[aria-label="Previous slide"]{
+  display: none;
 }
-
-html body .cre-t-76-container .cre-t-76-wrapper .cre-t-76-reviews {
-    cursor: default;
+.TT-services-section.mb5 {
+    margin-top: 50px;
 }
-
-@media (max-width: 991px) {
-    html body .cre-t-76-dropdown-active .cre-t-76-review-dropdown {
-        display: none !important;
-    }
-}
-
-@media screen and (max-width:767px) {
-    html body .cre-t-76-container .cre-t-76-wrapper .cre-t-76-top-content2 {
-        display: none;
-    }
 }

@@ -1,0 +1,751 @@
+<title>Code Review — vB.js / vB.css · Thumbtack San Antonio Roofing</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #f3f5f7;
+  --surface:   #ffffff;
+  --ink:       #1a1d23;
+  --ink-mid:   #4a5060;
+  --ink-faint: #8a919e;
+  --rule:      #dde1e7;
+  --header-bg: #1c1f26;
+
+  --c-crit:    #c92a2a;
+  --c-high:    #d9480f;
+  --c-med:     #e67700;
+  --c-low:     #1971c2;
+  --c-conf:    #2f9e44;
+  --c-struct:  #2c4a7c;
+
+  --c-crit-bg: #fff5f5;
+  --c-high-bg: #fff4ee;
+  --c-med-bg:  #fffbe6;
+  --c-low-bg:  #e8f3ff;
+  --c-conf-bg: #ebfbee;
+  --c-code-bg: #0d1117;
+
+  --font-serif: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  --font-sans:  system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:  'Cascadia Code', 'Fira Code', 'Consolas', 'Courier New', monospace;
+
+  --radius: 3px;
+  --spine:  5px;
+}
+
+html { background: var(--bg); }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 13.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Page wrapper ── */
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 20px 64px;
+}
+
+/* ── Report header ── */
+.report-head {
+  background: var(--header-bg);
+  border-radius: var(--radius);
+  padding: 26px 30px 22px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #5a6170;
+  margin-bottom: 7px;
+}
+
+.report-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: normal;
+  font-style: italic;
+  color: #e8eaf0;
+  line-height: 1.28;
+  margin-bottom: 10px;
+  text-wrap: balance;
+}
+
+.report-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  font-size: 12px;
+  color: #626874;
+}
+
+/* ── Scorecard strip ── */
+.scorecard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.score-cell {
+  flex: 1 1 100px;
+  background: var(--surface);
+  padding: 13px 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.score-num {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.score-cell.crit  .score-num { color: var(--c-crit); }
+.score-cell.high  .score-num { color: var(--c-high); }
+.score-cell.med   .score-num { color: var(--c-med); }
+.score-cell.low   .score-num { color: var(--c-low); }
+.score-cell.total .score-num { color: var(--c-struct); }
+
+/* ── Section label ── */
+.section-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── Finding cards ── */
+.finding {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+/* Left severity spine */
+.spine {
+  width: var(--spine);
+  flex-shrink: 0;
+}
+.finding.crit  .spine { background: var(--c-crit); }
+.finding.high  .spine { background: var(--c-high); }
+.finding.med   .spine { background: var(--c-med); }
+.finding.low   .spine { background: var(--c-low); }
+
+.finding-inner {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Card header */
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.card-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  padding-top: 3px;
+  min-width: 22px;
+}
+
+.card-title-group { flex: 1; min-width: 0; }
+
+.card-summary {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 3px;
+}
+
+.card-summary code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  background: #f0f2f5;
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.card-loc {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+
+/* Severity + verdict badges */
+.badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.badge-crit     { background: var(--c-crit-bg); color: var(--c-crit); }
+.badge-high     { background: var(--c-high-bg); color: var(--c-high); }
+.badge-med      { background: var(--c-med-bg);  color: #b45309; }
+.badge-low      { background: var(--c-low-bg);  color: var(--c-low); }
+.badge-conf     { background: var(--c-conf-bg); color: var(--c-conf); }
+.badge-plaus    { background: #e8f3ff;          color: #0c5fa0; }
+
+/* Card body */
+.card-body {
+  padding: 14px 18px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 106px 1fr;
+  gap: 4px 14px;
+  font-size: 13px;
+}
+
+.dl {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: 2px;
+  line-height: 1.6;
+}
+
+.dv {
+  color: var(--ink-mid);
+  line-height: 1.65;
+}
+
+.dv code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: #f0f2f5;
+  padding: 1px 5px;
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+/* Code block */
+.code-wrap { overflow-x: auto; border-radius: var(--radius); }
+
+.code-block {
+  background: var(--c-code-bg);
+  padding: 13px 16px;
+  border-radius: var(--radius);
+  min-width: 100%;
+  width: max-content;
+}
+
+.code-block pre {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.75;
+  color: #c9d1d9;
+  margin: 0;
+  white-space: pre;
+}
+
+.ln  { color: #3d4450; user-select: none; display: inline-block; width: 3ch; margin-right: 12px; text-align: right; }
+.kw  { color: #ff7b72; }
+.fn  { color: #79c0ff; }
+.str { color: #a5d6a7; }
+.cm  { color: #484f58; font-style: italic; }
+.num { color: #f2cc60; }
+.hl  { background: rgba(255, 80, 80, .12); display: block; margin: 0 -16px; padding: 0 16px; }
+
+/* Fix box */
+.fix-box {
+  background: #f3fbf5;
+  border-left: 3px solid var(--c-conf);
+  padding: 10px 13px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.fix-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--c-conf);
+  margin-bottom: 3px;
+}
+
+.fix-text {
+  font-size: 12.5px;
+  color: #1a3d22;
+  line-height: 1.6;
+}
+
+.fix-text code {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  background: #d8f5e2;
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+/* Footer */
+.report-foot {
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 11.5px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .card-head { flex-wrap: wrap; }
+  .badges { flex-direction: row; align-items: center; }
+  .detail { grid-template-columns: 1fr; }
+  .dl { padding-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+
+<div class="page">
+
+  <!-- ── Report header ── -->
+  <header class="report-head">
+    <div class="eyebrow">Code Review · vB.js &amp; vB.css</div>
+    <h1 class="report-title">Thumbtack San Antonio Roofing — Variation Code Review</h1>
+    <div class="report-meta">
+      <span>Date: 2026-06-25</span>
+      <span>Files: local_testing/Local2/variation/vB.js · vB.css</span>
+      <span>Effort: High &nbsp;·&nbsp; 8 finder angles &nbsp;·&nbsp; 10 verifiers</span>
+    </div>
+  </header>
+
+  <!-- ── Scorecard ── -->
+  <div class="scorecard" role="region" aria-label="Finding counts by severity">
+    <div class="score-cell crit">
+      <span class="score-num">2</span>
+      <span class="score-label">Critical</span>
+    </div>
+    <div class="score-cell high">
+      <span class="score-num">1</span>
+      <span class="score-label">High</span>
+    </div>
+    <div class="score-cell med">
+      <span class="score-num">3</span>
+      <span class="score-label">Medium</span>
+    </div>
+    <div class="score-cell low">
+      <span class="score-num">2</span>
+      <span class="score-label">Low / Plausible</span>
+    </div>
+    <div class="score-cell total">
+      <span class="score-num">8</span>
+      <span class="score-label">Total Findings</span>
+    </div>
+  </div>
+
+  <p class="section-label">Findings &mdash; ranked by severity</p>
+
+  <!-- ════════════════════════════════════════════════
+       Finding 1 — CRITICAL
+  ════════════════════════════════════════════════ -->
+  <article class="finding crit">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="finding-inner">
+      <div class="card-head">
+        <span class="card-num">#1</span>
+        <div class="card-title-group">
+          <div class="card-summary"><code>setInterval</code> fires <code>init()</code> ~60&times; &mdash; all <code>document</code> event listeners stack on every tick</div>
+          <div class="card-loc">vB.js &middot; lines&nbsp;1047&ndash;1052 &amp; 884&ndash;976</div>
+        </div>
+        <div class="badges">
+          <span class="badge badge-crit">Critical</span>
+          <span class="badge badge-conf">Confirmed</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail">
+          <span class="dl">Root Cause</span>
+          <span class="dv">The bootstrap runs a <code>setInterval</code> at 50&thinsp;ms for 3&thinsp;s (~60 ticks). Each tick calls <code>waitForElement("body", init, 50, 15000)</code>. Because <code>body</code> is always present, <code>waitForElement</code> fires <code>init()</code> on its very first inner tick, clears its inner interval, and returns. The outer 50&thinsp;ms interval continues — spawning a new <code>waitForElement</code> every 50&thinsp;ms, each immediately firing <code>init()</code> again. There is no re-entry guard in <code>init()</code>.</span>
+        </div>
+        <div class="detail">
+          <span class="dl">Impact</span>
+          <span class="dv">Every <code>document.addEventListener</code> inside <code>init()</code> — <code>input</code> (line 884), <code>focus</code> (line 896), <code>blur</code> (line 903), <code>click</code> via <code>live()</code> (line 922, 934), <code>submit</code> (line 976) — is registered up to 60&thinsp;times. One Enter keypress in the ZIP field fires ~60 concurrent redirect attempts via <code>window.location.href</code>. Every blur shows the error up to 60 times; every click potentially triggers 60 analytics events.</span>
+        </div>
+        <div class="code-wrap"><div class="code-block"><pre><span class="ln">1047</span><span class="kw">var</span> testsignals = <span class="fn">setInterval</span>(<span class="kw">function</span> () {
+<span class="ln">1048</span>    <span class="fn">waitForElement</span>(<span class="str">"body"</span>, init, <span class="num">50</span>, <span class="num">15000</span>);  <span class="cm">// body always present → init() fires every tick</span>
+<span class="ln">1049</span>}, <span class="num">50</span>);
+<span class="ln">1050</span><span class="fn">setTimeout</span>(<span class="kw">function</span> () {
+<span class="ln">1051</span>    <span class="fn">clearInterval</span>(testsignals);  <span class="cm">// stops after 3 s, but init() already ran ~60×</span>
+<span class="ln">1052</span>}, <span class="num">3000</span>);
+
+<span class="cm">// Inside init() — no guard, registered once per outer tick:</span>
+<span class="hl"><span class="ln"> 884</span>document.<span class="fn">addEventListener</span>(<span class="str">'input'</span>,  <span class="kw">function</span>(e) { … });        <span class="cm">// stacks 60×</span>
+<span class="ln"> 976</span>document.<span class="fn">addEventListener</span>(<span class="str">'submit'</span>, <span class="kw">function</span>(e) { … });       <span class="cm">// stacks 60×</span></span></pre></div></div>
+        <div class="fix-box">
+          <div class="fix-label">Fix</div>
+          <div class="fix-text">Add a one-time guard at the top of <code>init()</code>: <code>if (window.TT_INIT_DONE) return; window.TT_INIT_DONE = true;</code>. This lets the setInterval fallback tick safely while guaranteeing listener registration happens exactly once. Alternatively, call <code>clearInterval(testsignals)</code> from inside <code>init()</code> on its first successful run.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ════════════════════════════════════════════════
+       Finding 2 — CRITICAL
+  ════════════════════════════════════════════════ -->
+  <article class="finding crit">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="finding-inner">
+      <div class="card-head">
+        <span class="card-num">#2</span>
+        <div class="card-title-group">
+          <div class="card-summary">Synchronous <code>querySelector('.global-footer')</code> inside composable-header callback &mdash; null on slow SPA silently skips all section injection</div>
+          <div class="card-loc">vB.js &middot; line&nbsp;829</div>
+        </div>
+        <div class="badges">
+          <span class="badge badge-crit">Critical</span>
+          <span class="badge badge-conf">Confirmed</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail">
+          <span class="dl">Root Cause</span>
+          <span class="dv">Inside the <code>waitForElement('div[class*="composable-customer-header"]', …)</code> callback, the banner is injected first, then <code>document.querySelector('.global-footer')</code> is called immediately (line 829) — no polling, no wait. On a Next.js SPA, <code>.global-footer</code> is not guaranteed to be in the DOM at the same moment as the site header. The separate <code>waitForElement('.global-footer', …)</code> at line 874 only handles the custom footer nav links — it does not retry section injection.</span>
+        </div>
+        <div class="detail">
+          <span class="dl">Impact</span>
+          <span class="dv">When <code>bannerEl</code> is <code>null</code>, the <code>if (bannerEl)</code> block at lines 831–870 is skipped entirely. The Related Services carousel, FAQ accordion, Reviews swiper, and Why-Hire section are never injected. The page renders with just the hero banner and no body content — a silent, complete failure with no console warning.</span>
+        </div>
+        <div class="code-wrap"><div class="code-block"><pre><span class="ln"> 824</span><span class="fn">waitForElement</span>(<span class="str">'div[class*="composable-customer-header"]'</span>, <span class="kw">function</span>() {
+<span class="ln"> 825</span>    <span class="kw">if</span> (!document.<span class="fn">querySelector</span>(<span class="str">'.Cre_banner'</span>)) {
+<span class="ln"> 826</span>        <span class="cm">// banner injected …</span>
+<span class="hl"><span class="ln"> 829</span>        <span class="kw">var</span> bannerEl = document.<span class="fn">querySelector</span>(<span class="str">'.global-footer'</span>); <span class="cm">// ← no wait, may be null</span></span>
+<span class="ln"> 831</span>        <span class="kw">if</span> (bannerEl) {   <span class="cm">// ← ALL section injections gated here</span>
+<span class="ln"> 832</span>            <span class="cm">// services, FAQ, reviews, why_hire …</span>
+<span class="hl"><span class="ln"> 870</span>        }  <span class="cm">// ← silently skipped when .global-footer not yet in DOM</span></span>
+<span class="ln"> 871</span>    }
+<span class="ln"> 872</span>}, <span class="num">100</span>, <span class="num">15000</span>);</pre></div></div>
+        <div class="fix-box">
+          <div class="fix-label">Fix</div>
+          <div class="fix-text">Move all four section injections (services, FAQ, reviews, why-hire) inside a <code>waitForElement('.global-footer', function() { … }, 100, 15000)</code> callback. This gives the SPA time to render the footer before the injection runs, regardless of which element (header vs. footer) appears first.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ════════════════════════════════════════════════
+       Finding 3 — HIGH
+  ════════════════════════════════════════════════ -->
+  <article class="finding high">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="finding-inner">
+      <div class="card-head">
+        <span class="card-num">#3</span>
+        <div class="card-title-group">
+          <div class="card-summary"><code>loadSwiper</code> has no in-flight flag &mdash; two identical CDN <code>&lt;script&gt;</code> tags injected when called twice in one <code>init()</code></div>
+          <div class="card-loc">vB.js &middot; lines&nbsp;613&ndash;630, 837, 858</div>
+        </div>
+        <div class="badges">
+          <span class="badge badge-high">High</span>
+          <span class="badge badge-conf">Confirmed</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail">
+          <span class="dl">Root Cause</span>
+          <span class="dv"><code>loadSwiper</code> guards only against <code>if (window.Swiper)</code>. Both calls at line 837 (services) and line 858 (reviews) run synchronously in the same <code>init()</code> execution. At line 858, the first <code>&lt;script&gt;</code> tag has been appended but its <code>onload</code> has not fired — <code>window.Swiper</code> is still <code>undefined</code>. Both calls fall through to script injection, appending two identical Swiper CDN tags.</span>
+        </div>
+        <div class="detail">
+          <span class="dl">Impact</span>
+          <span class="dv">Two CDN scripts race to define <code>window.Swiper</code>. Both <code>onload</code> callbacks fire, calling <code>initRelatedServicesSwiper()</code> and <code>initReviewsSwiper()</code> twice each against the same DOM nodes. This produces duplicate Swiper instances, broken arrow navigation, doubled pagination bullets, and unpredictable slide counts.</span>
+        </div>
+        <div class="code-wrap"><div class="code-block"><pre><span class="ln"> 613</span><span class="kw">function</span> <span class="fn">loadSwiper</span>(callback) {
+<span class="ln"> 614</span>    <span class="kw">if</span> (window.Swiper) { callback(); <span class="kw">return</span>; }  <span class="cm">// ← only guard, no in-flight check</span>
+<span class="ln"> 626</span>    <span class="kw">var</span> js = document.<span class="fn">createElement</span>(<span class="str">'script'</span>);
+<span class="ln"> 627</span>    js.src = <span class="str">'…/swiper-bundle.min.js'</span>;
+<span class="ln"> 628</span>    js.onload = callback;
+<span class="hl"><span class="ln"> 629</span>    document.head.<span class="fn">appendChild</span>(js);  <span class="cm">// ← appended twice in the same init() run</span></span>
+<span class="ln"> 630</span>}
+
+<span class="ln"> 837</span><span class="fn">loadSwiper</span>(<span class="kw">function</span>() { <span class="fn">initRelatedServicesSwiper</span>(); }); <span class="cm">// call 1</span>
+<span class="hl"><span class="ln"> 858</span><span class="fn">loadSwiper</span>(<span class="kw">function</span>() { <span class="fn">initReviewsSwiper</span>(); });         <span class="cm">// call 2 — window.Swiper still undefined</span></span></pre></div></div>
+        <div class="fix-box">
+          <div class="fix-label">Fix</div>
+          <div class="fix-text">Add a pending-callback queue: <code>var _swiperCbs = []; var _swiperLoading = false;</code>. In <code>loadSwiper</code>: push the callback to <code>_swiperCbs</code>; if <code>!_swiperLoading</code>, set <code>_swiperLoading = true</code>, inject the single script, and on <code>onload</code> drain the queue by calling each callback. This ensures exactly one script tag and correct sequential initialization.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ════════════════════════════════════════════════
+       Finding 4 — MEDIUM
+  ════════════════════════════════════════════════ -->
+  <article class="finding med">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="finding-inner">
+      <div class="card-head">
+        <span class="card-num">#4</span>
+        <div class="card-title-group">
+          <div class="card-summary"><code>buildInstantResultsUrl</code> always appends <code>&amp;encoded_answers=</code> with empty value</div>
+          <div class="card-loc">vB.js &middot; lines&nbsp;799&ndash;803</div>
+        </div>
+        <div class="badges">
+          <span class="badge badge-med">Medium</span>
+          <span class="badge badge-conf">Confirmed</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail">
+          <span class="dl">Root Cause</span>
+          <span class="dv">The URL template appends the literal string <code>'&amp;encoded_answers='</code> on line 802 with no value. The ternary on line 803 conditionally appends <code>&amp;project_pk=…</code> but never fills in <code>encoded_answers</code>. The parameter name exists; its value is permanently empty on every redirect.</span>
+        </div>
+        <div class="detail">
+          <span class="dl">Impact</span>
+          <span class="dv">Every CTA redirect URL carries <code>&amp;encoded_answers=</code>. If the Thumbtack instant-results endpoint interprets a blank pre-answer as a submitted empty filter, search results may be silently miscategorized or filtered. At minimum, URLs diverge unexpectedly from the control page's redirect pattern, affecting result-set comparability.</span>
+        </div>
+        <div class="code-wrap"><div class="code-block"><pre><span class="ln"> 799</span><span class="kw">return</span> <span class="str">'https://www.thumbtack.com/instant-results/?keyword_pk='</span> + keyword_pk +
+<span class="ln"> 800</span>    <span class="str">'&amp;zip_code='</span> + (zip || <span class="str">''</span>) +
+<span class="ln"> 801</span>    <span class="str">'&amp;ir_referrer=FRONT_DOOR_SEARCH'</span> +
+<span class="hl"><span class="ln"> 802</span>    <span class="str">'&amp;encoded_answers='</span> +     <span class="cm">// ← value never assigned</span></span>
+<span class="ln"> 803</span>    (project_pk ? <span class="str">'&amp;project_pk='</span> + project_pk : <span class="str">''</span>);</pre></div></div>
+        <div class="fix-box">
+          <div class="fix-label">Fix</div>
+          <div class="fix-text">Either remove <code>&amp;encoded_answers=</code> entirely if not needed, or populate it conditionally: <code>(cta.encodedAnswers ? '&amp;encoded_answers=' + encodeURIComponent(cta.encodedAnswers) : '')</code>. Check which property name the Thumbtack <code>cta</code> object uses — it may be <code>cta.encoded_answers</code> or <code>cta.encodedAnswers</code>.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ════════════════════════════════════════════════
+       Finding 5 — MEDIUM
+  ════════════════════════════════════════════════ -->
+  <article class="finding med">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="finding-inner">
+      <div class="card-head">
+        <span class="card-num">#5</span>
+        <div class="card-title-group">
+          <div class="card-summary">ZIP validation checks length only &mdash; non-digit 5-char strings (e.g. <code>"AAAAA"</code>) pass and trigger a redirect</div>
+          <div class="card-loc">vB.js &middot; line&nbsp;984 (submit handler) &amp; line&nbsp;949 (click handler)</div>
+        </div>
+        <div class="badges">
+          <span class="badge badge-med">Medium</span>
+          <span class="badge badge-conf">Confirmed</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail">
+          <span class="dl">Root Cause</span>
+          <span class="dv">Both handlers check <code>if (zip.length &lt; 5)</code>. The HTML attributes <code>inputmode="numeric"</code> and <code>pattern="[0-9]*"</code> do not prevent letter input on desktop: <code>inputmode</code> only changes the virtual keyboard on mobile; <code>pattern</code> only runs on native form validation, which is bypassed here by <code>e.preventDefault()</code> in both handlers.</span>
+        </div>
+        <div class="detail">
+          <span class="dl">Impact</span>
+          <span class="dv">A desktop user who types any five non-digit characters and submits is redirected to <code>/instant-results/?…&amp;zip_code=AAAAA&amp;…</code>, which returns empty or error results instead of showing a validation message. The user sees a broken results page with no explanation.</span>
+        </div>
+        <div class="code-wrap"><div class="code-block"><pre><span class="cm">// submit handler (line 984) — same pattern in click handler (line 949)</span>
+<span class="hl"><span class="ln"> 984</span><span class="kw">if</span> (zip.length &lt; <span class="num">5</span>) {   <span class="cm">// ← "AAAAA".length === 5 → passes validation</span></span>
+<span class="ln"> 985</span>    <span class="cm">// show error …</span>
+<span class="ln"> 994</span>    <span class="kw">return</span>;
+<span class="ln"> 995</span>}
+<span class="ln"> 999</span><span class="kw">var</span> url = <span class="fn">buildInstantResultsUrl</span>(zip); <span class="cm">// ← called with "AAAAA"</span>
+<span class="ln">1001</span>window.location.href = url;</pre></div></div>
+        <div class="fix-box">
+          <div class="fix-label">Fix</div>
+          <div class="fix-text">Replace <code>zip.length &lt; 5</code> with <code>!/^\d{5}$/.test(zip)</code> in both the click and submit handlers. Consider extracting to a shared helper to eliminate the current triplication: <code>function isValidZip(z) { return /^\d{5}$/.test(z); }</code></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ════════════════════════════════════════════════
+       Finding 6 — MEDIUM
+  ════════════════════════════════════════════════ -->
+  <article class="finding med">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="finding-inner">
+      <div class="card-head">
+        <span class="card-num">#6</span>
+        <div class="card-title-group">
+          <div class="card-summary">Silent <code>console.info</code> catch when <code>__NEXT_DATA__</code> chain is undefined &mdash; user gets no error, no redirect</div>
+          <div class="card-loc">vB.js &middot; lines&nbsp;999&ndash;1004 &amp; 969&ndash;972</div>
+        </div>
+        <div class="badges">
+          <span class="badge badge-med">Medium</span>
+          <span class="badge badge-conf">Confirmed</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail">
+          <span class="dl">Root Cause</span>
+          <span class="dv"><code>buildInstantResultsUrl</code> accesses <code>window.__NEXT_DATA__.props.pageProps.frontDoorPage.heroSection.filterSubsection.cta</code> with no optional chaining or null guards. If any step is <code>undefined</code> — SSR payload changes, test environment, page variant — a TypeError is thrown and caught silently with <code>console.info</code>. Both the click and submit handlers share this pattern.</span>
+        </div>
+        <div class="detail">
+          <span class="dl">Impact</span>
+          <span class="dv">A user enters a valid ZIP and presses Enter or clicks "Find a pro" — nothing happens. No error message, no redirect, no visual feedback. The failure is only discoverable via DevTools. In a production scenario where Thumbtack's SSR payload diverges from the expected shape, the CTA silently breaks for all users.</span>
+        </div>
+        <div class="code-wrap"><div class="code-block"><pre><span class="ln"> 999</span><span class="kw">try</span> {
+<span class="ln">1000</span>    <span class="kw">var</span> url = <span class="fn">buildInstantResultsUrl</span>(zip);
+<span class="ln">1001</span>    window.location.href = url;
+<span class="ln">1002</span>} <span class="kw">catch</span> (err) {
+<span class="hl"><span class="ln">1003</span>    console.<span class="fn">info</span>(<span class="str">'TT: could not build URL'</span>, err); <span class="cm">// ← silent, no user feedback</span></span>
+<span class="ln">1004</span>}</pre></div></div>
+        <div class="fix-box">
+          <div class="fix-label">Fix</div>
+          <div class="fix-text">In the catch, show the <code>#tt-zip-error</code> element with a fallback message: <code>"Something went wrong — please try again."</code>. Also add optional chaining in <code>buildInstantResultsUrl</code>: <code>var cta = window?.__NEXT_DATA__?.props?.pageProps?.frontDoorPage?.heroSection?.filterSubsection?.cta; if (!cta) throw new Error('cta missing');</code></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ════════════════════════════════════════════════
+       Finding 7 — LOW / PLAUSIBLE
+  ════════════════════════════════════════════════ -->
+  <article class="finding low">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="finding-inner">
+      <div class="card-head">
+        <span class="card-num">#7</span>
+        <div class="card-title-group">
+          <div class="card-summary">Submit handler missing <code>e.stopPropagation()</code> &mdash; other <code>document</code>-level submit listeners will still fire</div>
+          <div class="card-loc">vB.js &middot; line&nbsp;976 vs. click handler line&nbsp;934</div>
+        </div>
+        <div class="badges">
+          <span class="badge badge-low">Low</span>
+          <span class="badge badge-plaus">Plausible</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail">
+          <span class="dl">Root Cause</span>
+          <span class="dv">The click handler (line 934) calls both <code>e.preventDefault()</code> and <code>e.stopPropagation()</code>. The submit handler (line 976) calls only <code>e.preventDefault()</code>. Both are registered on <code>document</code>. Any other <code>document</code>-level <code>submit</code> listener — Next.js analytics, third-party tags, future routing integration — will still receive this event.</span>
+        </div>
+        <div class="detail">
+          <span class="dl">Impact</span>
+          <span class="dv">Harmless on the current page where no competing submit listener is known to exist. Becomes a risk if analytics scripts or a router integration adds a document-level submit handler — potentially firing a spurious analytics event or triggering a route change. Also creates a maintenance inconsistency with the click handler.</span>
+        </div>
+        <div class="code-wrap"><div class="code-block"><pre><span class="ln"> 934</span><span class="fn">live</span>(<span class="str">'[data-test="hero-filters-cta"]'</span>, <span class="str">'click'</span>, <span class="kw">function</span>(e) {
+<span class="ln">   </span>    …
+<span class="ln"> 940</span>    e.<span class="fn">preventDefault</span>();
+<span class="ln"> 941</span>    e.<span class="fn">stopPropagation</span>();    <span class="cm">// ← present in click handler</span>
+<span class="ln"> 942</span>    …
+<span class="ln"> 973</span>});
+
+<span class="ln"> 976</span>document.<span class="fn">addEventListener</span>(<span class="str">'submit'</span>, <span class="kw">function</span>(e) {
+<span class="ln"> 977</span>    <span class="kw">if</span> (!e.target || e.target.id !== <span class="str">'uniqueId2'</span>) <span class="kw">return</span>;
+<span class="ln"> 978</span>    e.<span class="fn">preventDefault</span>();
+<span class="hl"><span class="ln">   </span>    <span class="cm">// e.stopPropagation() — missing</span></span>
+<span class="ln"> 979</span>    …
+<span class="ln">1005</span>});</pre></div></div>
+        <div class="fix-box">
+          <div class="fix-label">Fix</div>
+          <div class="fix-text">Add <code>e.stopPropagation();</code> immediately after <code>e.preventDefault();</code> at line 978 to match the click handler's defensive pattern and prevent any document-level submit listener from receiving this event.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ════════════════════════════════════════════════
+       Finding 8 — LOW
+  ════════════════════════════════════════════════ -->
+  <article class="finding low">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="finding-inner">
+      <div class="card-head">
+        <span class="card-num">#8</span>
+        <div class="card-title-group">
+          <div class="card-summary"><code>max-height: 60px</code> overridden by <code>max-height: 120px</code> four lines later in same <code>.TT-review-text</code> ruleset</div>
+          <div class="card-loc">vB.css &middot; lines&nbsp;287 &amp; 295</div>
+        </div>
+        <div class="badges">
+          <span class="badge badge-low">Low</span>
+          <span class="badge badge-conf">Confirmed</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail">
+          <span class="dl">Root Cause</span>
+          <span class="dv">The <code>.TT-review-text</code> ruleset contains two <code>max-height</code> declarations. The first (60&thinsp;px, line 287) is overridden by the second (120&thinsp;px, line 295). The first declaration is dead code. The intended clamp is 3 lines × 20&thinsp;px line-height = 60&thinsp;px, set via <code>-webkit-line-clamp: 3</code>.</span>
+        </div>
+        <div class="detail">
+          <span class="dl">Impact</span>
+          <span class="dv">In browsers that support <code>-webkit-line-clamp</code>, the clamp wins and max-height is irrelevant. In browsers that do not support it, the fallback cap is 120&thinsp;px (6 lines) instead of the intended 60&thinsp;px (3 lines), showing more review text than designed and breaking card height uniformity in the swiper.</span>
+        </div>
+        <div class="code-wrap"><div class="code-block"><pre><span class="ln"> 283</span>.TT-review-text {
+<span class="ln"> 284</span>    font-size: <span class="num">14px</span>;
+<span class="ln"> 285</span>    overflow-y: hidden;
+<span class="ln"> 286</span>    position: relative;
+<span class="hl"><span class="ln"> 287</span>    max-height: <span class="num">60px</span>;      <span class="cm">/* ← dead — overridden below */</span></span>
+<span class="ln"> 288</span>    line-height: <span class="num">20px</span>;
+<span class="ln"> 289</span>    overflow: hidden;
+<span class="ln"> 290</span>    -webkit-box-orient: vertical;
+<span class="ln"> 291</span>    display: -webkit-box;
+<span class="ln"> 292</span>    -webkit-line-clamp: <span class="num">3</span>;
+<span class="ln"> 293</span>    line-clamp: <span class="num">3</span>;
+<span class="ln"> 294</span>    text-overflow: ellipsis;
+<span class="hl"><span class="ln"> 295</span>    max-height: <span class="num">120px</span>;    <span class="cm">/* ← this wins; fallback is 6 lines, not 3 */</span></span>
+<span class="ln"> 296</span>}</pre></div></div>
+        <div class="fix-box">
+          <div class="fix-label">Fix</div>
+          <div class="fix-text">Remove the first <code>max-height: 60px</code> declaration (line 287). Verify whether 60&thinsp;px or 120&thinsp;px is the intended non-clamp fallback — if Figma shows 3-line clamp, the fallback should be 60&thinsp;px, so remove line 295 instead and keep line 287.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="report-foot">
+    Code Review &middot; Thumbtack San Antonio Roofing &middot; vB.js + vB.css &middot; 2026-06-25 &middot; 8 findings (2 critical, 1 high, 3 medium, 2 low)
+  </footer>
+
+</div>

@@ -107,81 +107,43 @@
 
             footerCols: [
                 {
-                    heading: "Related cost information",
+                    heading: "Roofing in Texas",
                     links: [
-                        { label: "Roof cleaning cost",                  href: "/p/roof-cleaning-cost" },
-                        { label: "Power washing prices",                href: "/p/power-washing-prices" },
-                        { label: "Home inspection cost",                href: "/p/home-inspection-cost" },
-                        { label: "Gutter cleaning prices",              href: "/p/gutter-cleaning-prices" },
-                        { label: "Roof replacement cost",               href: "/p/roof-replacement-cost" },
-                        { label: "Dryer vent installation cost",        href: "/p/dryer-vent-installation-cost" },
-                        { label: "How much general contractors charge", href: "/p/how-much-general-contractors-charge" },
-                        { label: "Art installation cost",               href: "/p/art-installation-cost" },
-                        { label: "Sink repair cost",                    href: "/p/sink-repair-cost" },
-                        { label: "Furniture assembly cost",             href: "/p/furniture-assembly-cost" },
-                        { label: "Christmas light installation prices", href: "/p/christmas-light-installation-prices" },
-                        { label: "AC service cost",                     href: "/p/ac-service-cost" },
-                        { label: "Patio cost",                          href: "/p/patio-cost" },
-                        { label: "Bed frame assembly cost",             href: "/p/bed-frame-assembly-cost" },
-                        { label: "Handyman prices",                     href: "/p/handyman-prices" }
+                        { label: "Houston",    href: "/tx/houston/roofing" },
+                        { label: "Dallas",     href: "/tx/dallas/roofing" },
+                        { label: "Austin",     href: "/tx/austin/roofing" },
+                        { label: "Fort Worth", href: "/tx/fort-worth/roofing" },
+                        { label: "El Paso",    href: "/tx/el-paso/roofing" },
+                        { label: "Arlington",  href: "/tx/arlington/roofing" }
                     ]
                 },
                 {
-                    heading: "Popular in San Antonio",
+                    heading: "Services in San Antonio",
                     links: [
-                        { label: "Electricians San Antonio",                 href: "/tx/san-antonio/electricians" },
-                        { label: "Movers San Antonio",                       href: "/tx/san-antonio/movers" },
-                        { label: "Cheap lawn care services San Antonio",     href: "/tx/san-antonio/cheap-lawn-care-services" },
-                        { label: "Duct cleaning San Antonio",                href: "/tx/san-antonio/duct-cleaning" },
-                        { label: "Window air conditioner repair San Antonio",href: "/tx/san-antonio/window-air-conditioner-repair" },
-                        { label: "Private investigators San Antonio",        href: "/tx/san-antonio/private-investigators" },
-                        { label: "Appliance repair San Antonio",             href: "/tx/san-antonio/appliance-repair" },
-                        { label: "House cleaning San Antonio",               href: "/tx/san-antonio/house-cleaning" },
-                        { label: "Fitness equipment assembly San Antonio",   href: "/tx/san-antonio/fitness-equipment-assembly" },
-                        { label: "Appliance installers San Antonio",         href: "/tx/san-antonio/appliance-installers" },
-                        { label: "Affordable photographers San Antonio",     href: "/tx/san-antonio/affordable-photographers" },
-                        { label: "Packing services San Antonio",             href: "/tx/san-antonio/packing-services" },
-                        { label: "Water softener installation San Antonio",  href: "/tx/san-antonio/water-softener-installation" },
-                        { label: "Frigidaire repair San Antonio",            href: "/tx/san-antonio/frigidaire-repair" },
-                        { label: "Shrub trimming San Antonio",               href: "/tx/san-antonio/shrub-trimming" }
+                        { label: "House Cleaning", href: "/tx/san-antonio/house-cleaning" },
+                        { label: "HVAC",           href: "/tx/san-antonio/hvac" },
+                        { label: "Lawn Care",      href: "/tx/san-antonio/lawn-care" },
+                        { label: "Painting",       href: "/tx/san-antonio/painting" },
+                        { label: "Handyman",       href: "/tx/san-antonio/handyman" },
+                        { label: "Plumbing",       href: "/tx/san-antonio/plumbing" }
                     ]
                 },
                 {
-                    heading: "You might also like",
+                    heading: "Thumbtack",
                     links: [
-                        { label: "Roofing near me",                     href: "/k/roofing/near-me" },
-                        { label: "Roof repair near me",                 href: "/k/roof-repair/near-me" },
-                        { label: "Soffit and fascia near me",           href: "/k/soffit-and-fascia/near-me" },
-                        { label: "Roof cleaning near me",               href: "/k/roof-cleaning/near-me" },
-                        { label: "Metal roof contractors near me",      href: "/k/metal-roof-contractors/near-me" },
-                        { label: "General contractors near me",         href: "/k/general-contractors/near-me" },
-                        { label: "Rain gutter installers near me",      href: "/k/rain-gutter-installers/near-me" },
-                        { label: "Gutter cleaning near me",             href: "/k/gutter-cleaning/near-me" },
-                        { label: "Commercial roofing near me",          href: "/k/commercial-roofing/near-me" },
-                        { label: "Appraisers near me",                  href: "/k/appraisers/near-me" },
-                        { label: "Seamless gutter installation near me",href: "/k/seamless-gutter-installation/near-me" },
-                        { label: "Gutters near me",                     href: "/k/gutters/near-me" },
-                        { label: "Home inspection near me",             href: "/k/home-inspection/near-me" },
-                        { label: "Pressure washing near me",            href: "/k/pressure-washing/near-me" },
-                        { label: "Gutter repair near me",               href: "/k/gutter-repair/near-me" }
+                        { label: "About us", href: "/about" },
+                        { label: "Careers",  href: "/careers" },
+                        { label: "Press",    href: "/press" },
+                        { label: "Blog",     href: "/blog" }
                     ]
                 },
                 {
-                    heading: "In other nearby areas",
+                    heading: "Support",
                     links: [
-                        { label: "Schertz roofing",        href: "/tx/schertz/roofing" },
-                        { label: "New Braunfels roofing",  href: "/tx/new-braunfels/roofing" },
-                        { label: "Seguin roofing",         href: "/tx/seguin/roofing" },
-                        { label: "San Marcos roofing",     href: "/tx/san-marcos/roofing" },
-                        { label: "Kerrville roofing",      href: "/tx/kerrville/roofing" },
-                        { label: "Circle C Ranch roofing", href: "/tx/circle-c-ranch/roofing" },
-                        { label: "Austin roofing",         href: "/tx/austin/roofing" },
-                        { label: "Uvalde roofing",         href: "/tx/uvalde/roofing" },
-                        { label: "Cedar Park roofing",     href: "/tx/cedar-park/roofing" },
-                        { label: "Pflugerville roofing",   href: "/tx/pflugerville/roofing" },
-                        { label: "Round Rock roofing",     href: "/tx/round-rock/roofing" },
-                        { label: "Georgetown roofing",     href: "/tx/georgetown/roofing" },
-                        { label: "Victoria roofing",       href: "/tx/victoria/roofing" }
+                        { label: "Help center",        href: "/help" },
+                        { label: "Terms of use",       href: "/tos" },
+                        { label: "Privacy policy",     href: "/privacy-policy" },
+                        { label: "Do not sell my info",href: "/do-not-sell" }
                     ]
                 }
             ]
@@ -304,17 +266,14 @@
         }
 
         /* 7 ── Footer link columns */
-        var FOOTER_SHOW = 5;
         function buildFooterCols() {
-            var cols = sectionData.footerCols.map(function (col, ci) {
-                var lis = col.links.map(function (lnk, li) {
-                    var hidden = li >= FOOTER_SHOW ? ' class="tt-cr-hidden"' : '';
-                    return '<li' + hidden + '><a href="' + lnk.href + '">' + lnk.label + '</a></li>';
+            var cols = sectionData.footerCols.map(function (col) {
+                var lis = col.links.map(function (lnk) {
+                    return '<li><a href="' + lnk.href + '">' + lnk.label + '</a></li>';
                 }).join("");
                 return '<div class="tt-cr-footer-col">' +
                     '<h3>' + col.heading + '</h3>' +
-                    '<ul data-tt-fcol="' + ci + '">' + lis + '</ul>' +
-                    '<button class="tt-cr-toggle-cta" data-tt-fcol="' + ci + '" data-tt-fexp="false">Show more</button>' +
+                    '<ul>' + lis + '</ul>' +
                     '</div>';
             }).join("");
             return '<div class="tt-cr-footer">' +
@@ -350,26 +309,6 @@
             });
         }
 
-        /* ─── Init footer show more/less ─────────────────────────────────── */
-        function initFooterToggles() {
-            var footer = document.querySelector(".tt-cr-footer");
-            if (!footer) return;
-            footer.addEventListener("click", function (e) {
-                var btn = e.target.closest ? e.target.closest(".tt-cr-toggle-cta") : null;
-                if (!btn) return;
-                var ci = btn.getAttribute("data-tt-fcol");
-                var expanded = btn.getAttribute("data-tt-fexp") === "true";
-                var ul = footer.querySelector('ul[data-tt-fcol="' + ci + '"]');
-                if (!ul) return;
-                var hiddenItems = ul.querySelectorAll(".tt-cr-hidden");
-                for (var i = 0; i < hiddenItems.length; i++) {
-                    if (expanded) hiddenItems[i].classList.remove("tt-cr-visible");
-                    else hiddenItems[i].classList.add("tt-cr-visible");
-                }
-                btn.setAttribute("data-tt-fexp", String(!expanded));
-                btn.textContent = expanded ? "Show more" : "Show less";
-            });
-        }
 
         /* ═══════════════════════════════════════════════════════════════════
            EXISTING CONSTS FROM TEMPLATE
@@ -531,7 +470,6 @@
                     var globalFooter = document.querySelector('.global-footer');
                     globalFooter.insertAdjacentHTML('beforebegin', buildAllSections());
                     initFAQ();
-                    initFooterToggles();
                 }
             }, 100, 15000);
 

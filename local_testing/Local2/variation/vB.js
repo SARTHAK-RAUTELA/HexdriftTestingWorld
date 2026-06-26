@@ -172,8 +172,16 @@
         /* 1 ── Related Services */
         function buildRelatedServices() {
             var pillChevron = '<svg class="tt-cr-pill-chevron" height="16" width="16" fill="currentColor" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M6.764 14.646L13 9 6.725 3.311a1 1 0 00-1.482 1.342L10 9l-4.699 4.285c-.187.2-.301.435-.301.715a1 1 0 001 1c.306 0 .537-.151.764-.354z"/></svg>';
+            var serviceLinks = {
+                "Gutter Cleaning": "/tx/san-antonio/gutter-cleaning",
+                "Siding": "/tx/san-antonio/siding",
+                "Roof Painting": "/tx/san-antonio/roof-painting",
+                "Storm Damage": "/tx/san-antonio/roof-damage-repair",
+                "Handyman": "/tx/san-antonio/handyman"
+            };
             var pills = sectionData.relatedServices.map(function (s) {
-                return '<a href="#" class="tt-cr-service-pill">' + s + pillChevron + '</a>';
+                var href = serviceLinks[s] || '#';
+                return '<a href="' + href + '" class="tt-cr-service-pill">' + s + pillChevron + '</a>';
             }).join("");
             return '<div class="tt-cr-section">' +
                 '<div class="tt-cr-section-title">Check out some related services</div>' +
@@ -326,7 +334,7 @@
             <div class="pv3 relative z-1 m_dn white hero_header_parent_mobile flex flex-column items-start justify-center hero-header_heroHeaderHeight__nr0jz">
                <h2 class="Type_title2__gGlGa mb3 hero_header_mobile pre-line">Find a roofing professional in your area</h2>
                <p class="tt-hero-sub mb3">San Antonio pros ready for hail damage, storm repair, and full replacements. Get matched with verified local roofers — not out-of-town storm chasers.</p>
-               <div class="b dib nowrap white bg-indigo  br-pill pv2 ph3 mv2"><button class="plain_plain__uVCE8 plain_plainThemeInherit__ruRRY plain_plainWidthAuto__gL9F8" type="button">17 near you</button></div>
+               <div class="b dib nowrap white bg-indigo  br-pill pv2 ph3 mv2"><button class="plain_plain__uVCE8 plain_plainThemeInherit__ruRRY plain_plainWidthAuto__gL9F8" data-test="hero-filters-cta" type="button">17 near you</button></div>
             </div>
          </div>
       </div>
@@ -511,34 +519,44 @@
                 }
             }, true);
 
-            /* ── Hero CTA: ZIP validation + redirect ── */
+            /* ── Hero CTA: "Find me a pro" (ZIP validation) + "17 near you" (direct redirect) ── */
             live('[data-test="hero-filters-cta"]', 'click', function (e) {
-                if (!this.closest('.mt3')) return;
                 if (!this.closest('.Cre_banner')) return;
                 e.preventDefault();
                 e.stopPropagation();
 
-                var zipInput = document.querySelector('#uniqueId2 [autocomplete="postal-code"]');
-                var zip = zipInput ? zipInput.value.trim() : '';
-                var errorEl = document.getElementById('tt-zip-error');
+                /* "Find me a pro" button — inside .mt3, requires valid ZIP */
+                if (this.closest('.mt3')) {
+                    var zipInput = document.querySelector('#uniqueId2 [autocomplete="postal-code"]');
+                    var zip = zipInput ? zipInput.value.trim() : '';
+                    var errorEl = document.getElementById('tt-zip-error');
 
-                if (zip.length < 5) {
-                    if (!errorEl) {
-                        errorEl = document.createElement('div');
-                        errorEl.id = 'tt-zip-error';
-                        errorEl.style.cssText = 'color:#d9232d;font-size:13px;margin-top:6px;font-weight:500;';
-                        errorEl.textContent = 'Please enter a valid 5-digit ZIP code.';
-                        if (zipInput) zipInput.parentNode.insertAdjacentElement('afterend', errorEl);
+                    if (zip.length < 5) {
+                        if (!errorEl) {
+                            errorEl = document.createElement('div');
+                            errorEl.id = 'tt-zip-error';
+                            errorEl.style.cssText = 'color:#d9232d;font-size:13px;margin-top:6px;font-weight:500;';
+                            errorEl.textContent = 'Please enter a valid 5-digit ZIP code.';
+                            if (zipInput) zipInput.parentNode.insertAdjacentElement('afterend', errorEl);
+                        }
+                        return;
+                    }
+                    if (errorEl) errorEl.remove();
+                    try {
+                        if (debug) console.log('TT URL (Find me a pro):', buildInstantResultsUrl(zip));
+                        window.location.href = buildInstantResultsUrl(zip);
+                    } catch (err) {
+                        console.info('TT: could not build URL', err);
                     }
                     return;
                 }
 
-                if (errorEl) errorEl.remove();
-
+                /* "17 near you" button — redirect using filled ZIP or SA default */
                 try {
-                    var url = buildInstantResultsUrl(zip);
-                    if (debug) console.log('TT URL:', url);
-                    window.location.href = url;
+                    var zipInput = document.querySelector('#uniqueId2 [autocomplete="postal-code"]');
+                    var zip = (zipInput && zipInput.value.trim().length >= 5) ? zipInput.value.trim() : '78201';
+                    if (debug) console.log('TT URL (17 near you):', buildInstantResultsUrl(zip));
+                    window.location.href = buildInstantResultsUrl(zip);
                 } catch (err) {
                     console.info('TT: could not build URL', err);
                 }

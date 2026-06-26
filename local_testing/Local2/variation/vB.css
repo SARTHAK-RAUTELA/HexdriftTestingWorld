@@ -281,14 +281,6 @@
 }
 
 
-.TT-review-stars [fill="#FBB500"] {
-	fill: #2db783;
-}
-
-.TT-review-stars [fill="#D3D3D3"] {
-	fill: #d3d4d5;
-	;
-}
 .hero_header.pre-line {
     padding-right: 0 !important;
 }
@@ -402,7 +394,7 @@
 
 /* ── Pricing ── */
 .tt-cr-pricing-section {
-  padding: 20px 0px;
+  padding: 30px 0px;
   border-bottom: 1px solid #e8e8e8;
 }
 
@@ -777,7 +769,7 @@ body.Antonio_Roofing div#__next{
 }
 
 .tt-cr-footer-col ul li a:hover {
-  color: #00acc1;
+  color: #009fd9;
   text-decoration: underline;
 }
 

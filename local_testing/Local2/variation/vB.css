@@ -1036,12 +1036,11 @@ html body.Antonio_Roofing .Wrap_root__YXWM_{
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(100%);
 }
 .Cre_banner_overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.35));
+  background: linear-gradient(90deg, rgba(0,0,0,.72) 0, rgba(0,0,0,.35) 60%, rgba(0,0,0,.1));
 }
 .Cre_banner_content {
   position: relative;
@@ -1068,6 +1067,9 @@ html body.Antonio_Roofing .Wrap_root__YXWM_{
   align-items: center;
   gap: 10px;
   max-width: 560px;
+}
+.Cre_banner_row .mt3 {
+  margin-top: 0;
 }
 .Cre_banner_form {
   flex: 1;

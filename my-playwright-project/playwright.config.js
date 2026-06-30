@@ -10,7 +10,6 @@ module.exports = defineConfig({
   reporter: [
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
-    ['./sic-19-reporter.js'],
     ['./afp10-reporter.js'],
     ['./afp15-reporter.js'],
     ['./afp13-reporter.js'],

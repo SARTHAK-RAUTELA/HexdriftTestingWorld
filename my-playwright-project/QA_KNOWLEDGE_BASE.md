@@ -21,8 +21,15 @@
 11. [SIC-27 — 13sick Step 4 Verify Clinic Field A/B Test (app.13sick.com.au)](#11-sic-27--13sick-step-4-verify-clinic-field-ab-test)
 12. [SIC132 — Pet Insurance Gurus Phone Number in Header Nav (petinsurancegurus.com)](#12-sic132--pet-insurance-gurus-phone-number-in-header-nav)
 13. [AFP18 — Download One-Page Conference Summary Nav Link (conference.financialprofessionals.org)](#13-afp18--download-one-page-conference-summary-nav-link)
-14. [Correct QA Workflow for A/B Tests](#14-correct-qa-workflow-for-ab-tests)
-15. [Test Type Checklists (reuse for future tests)](#15-test-type-checklists)
+14. [SEA316 — SeaWorld Orlando Tickets Price Display (seaworldentertainment.com)](#14-sea316--seaworld-orlando-tickets-price-display)
+15. [CRE-T-133 — Pet Insurance Gurus ZIP Code Pop-up Modal (petinsurancegurus.com)](#15-cre-t-133--pet-insurance-gurus-zip-code-pop-up-modal)
+16. [CRE-T-123 — Pet Insurance Gurus Insurer Alert Box (petinsurancegurus.com)](#16-cre-t-123--pet-insurance-gurus-insurer-alert-box)
+17. [SWF135 — Pet Insurance Gurus Badge Overlay Removal (petinsurancegurus.com)](#17-swf135--pet-insurance-gurus-badge-overlay-removal)
+18. [Thumbtack SA Roofing — Landing Page Section Injection (thumbtack.com preview)](#18-thumbtack-sa-roofing--landing-page-section-injection)
+19. [CRE-T-08 — pay.com.au Timed Pop-up Modal](#19-cre-t-08--paycomau-timed-pop-up-modal)
+20. [CRE-T-09 — pay.com.au Navbar CTA "Create free account"](#20-cre-t-09--paycomau-navbar-cta-create-free-account)
+21. [Correct QA Workflow for A/B Tests](#21-correct-qa-workflow-for-ab-tests)
+22. [Test Type Checklists (reuse for future tests)](#22-test-type-checklists)
 
 ---
 
@@ -1100,7 +1107,323 @@ Two types of navbar-focused screenshots are captured in addition to full-page sh
 
 ---
 
-## 14. Correct QA Workflow for A/B Tests
+## 14. SEA316 — SeaWorld Orlando Tickets Price Display
+
+**Site:** seaworldentertainment.com  
+**Spec:** `testing/sea316-pricing.spec.js`  
+**Reporter:** `sea316-reporter.js`  
+**Screenshots:** `sea316-screenshots/`  
+**Report:** `local_testing/Local2/sea316-qa-report.html`  
+**Result:** 24 TCs × 6 browsers (144 total runs)
+
+### What was tested
+
+SeaWorld Orlando tickets page — multi-day and `/ea` (per-adult) price display in the variation vs. control. The variation reformats the price layout and shows a per-day breakdown.
+
+| TC | Category | What it checks |
+|----|----------|----------------|
+| TC-01 | Control | No variation markup in DOM on control URL |
+| TC-02 | Variation | `body.sea-316` class added after injection |
+| TC-03 | Price element | `/ea` label injected for per-adult prices |
+| TC-04 | Multi-day | Per-day breakdown price element present |
+| TC-05 | Layout | Flex container direction and alignment |
+| TC-06–10 | Content | Price values, labels, formatting match Figma |
+| TC-11–14 | Responsive | Layout at 375px, 768px, 1024px, 1440px |
+| TC-15–18 | Cross-page | Variation active on inner ticket pages |
+| TC-19–21 | CSS guard | Removing body class reverts price display |
+| TC-22–24 | Sitewide screenshots | Navbar screenshots across 3 pages |
+
+### Key technical notes
+
+- **CSP workaround**: SeaWorld's Content Security Policy blocked `page.addStyleTag()` with inline content; workaround was to write CSS to a temp file and use `{ path: ... }` option instead of `{ content: ... }`.
+- **`waitForSelector` on price elements**: Price elements are injected asynchronously after the variation JS runs; use `waitForSelector` with timeout, not fixed delay.
+- **Firefox headless dedup issue**: Firefox occasionally runs `onTestEnd` twice for the same test (Playwright headless bug). Reporter deduplicates by test title + browser name to prevent doubled screenshot entries in the HTML report.
+
+---
+
+## 15. CRE-T-133 — Pet Insurance Gurus ZIP Code Pop-up Modal
+
+**Site:** petinsurancegurus.com  
+**Spec:** `testing/cre-t-133-zip-modal.spec.js`  
+**Reporter:** `cre-t-133-reporter.js` + `generate-cre-t-133-report.js`  
+**Screenshots:** `cre-t-133-screenshots/`  
+**Report:** `local_testing/Local2/cre-t-133-qa-report.html`  
+**Result:** 20 TCs × 6 browsers = 120/120 passed, 0 failed, 0 skipped
+
+### What was tested
+
+A/B test with two variations:
+- **V1** — ZIP code pop-up modal with a close (×) button
+- **V2** — ZIP code pop-up modal without a close button (forced entry)
+
+Both variations share the same base modal; the close button is conditionally rendered.
+
+| TC | Category | What it checks |
+|----|----------|----------------|
+| TC-01 | Control | Modal absent on control URL after 6s wait |
+| TC-02 | V1 | Modal injected + body class present |
+| TC-03 | V2 | Modal injected + body class present (different class) |
+| TC-04 | V1 | Close (×) button present and clickable |
+| TC-05 | V2 | Close button ABSENT in DOM |
+| TC-06 | V1 | Clicking × closes modal (display:none or removed) |
+| TC-07 | V1/V2 | ZIP input field present and accepts input |
+| TC-08 | V1/V2 | Submit button text matches design |
+| TC-09 | V1/V2 | Modal shows on page load (no timer) |
+| TC-10 | V1/V2 | `body.cre-t-133` class added (V1) / `body.cre-t-133-v2` (V2) |
+| TC-11–14 | Responsive | Modal correct at 375px, 768px, 1024px, 1440px |
+| TC-15–16 | CSS | Overlay present; modal z-index above page content |
+| TC-17–18 | Sitewide | Modal on `/compare/` and `/reviews/` pages |
+| TC-19–20 | Dedup | Re-running JS does not inject second modal |
+
+### Key technical notes
+
+- **Two-variation test**: Both V1 and V2 are tested in the same spec file by injecting different JS/CSS per test.
+- **Generate script**: `generate-cre-t-133-report.js` is a standalone script (not a Playwright reporter class) — run with `node generate-cre-t-133-report.js` separately after the test run.
+- **Close button selector**: `.cre-t-133-close` — verified both presence (V1) and absence (V2) via `page.$()` returning null.
+
+---
+
+## 16. CRE-T-123 — Pet Insurance Gurus Insurer Alert Box
+
+**Site:** petinsurancegurus.com/compare/  
+**Spec:** `testing/cre-t-123-insurer-alert.spec.js`  
+**Reporter:** `cre-t-123-reporter.js`  
+**Screenshots:** `cre-t-123-screenshots/`  
+**Report:** `local_testing/Local2/cre-t-123-qa-report.html`  
+**Result:** 20 TCs × 6 browsers = 120/120 passed, 0 failed, 0 skipped  
+**Primary URL:** `https://www.petinsurancegurus.com/compare/?insurer=nationwide`
+
+### What was tested
+
+Dismissible alert box injected above the comparison table when an `?insurer=` query parameter is present. The alert box names the specific insurer and can be dismissed.
+
+| TC | Category | What it checks |
+|----|----------|----------------|
+| TC-01 | Control | No alert when `?insurer=` param absent |
+| TC-02 | Variation | Alert injected when `?insurer=nationwide` present |
+| TC-03 | Text | Alert text contains insurer name (Nationwide) |
+| TC-04 | Apostrophe | Curly apostrophe `'` renders correctly (not HTML entity or straight quote) |
+| TC-05 | Dismiss | Clicking × removes alert from DOM |
+| TC-06 | Persist | Alert does NOT reappear after dismiss (same session) |
+| TC-07–10 | Other insurers | `?insurer=lemonade`, `?insurer=spot`, `?insurer=figo` each show correct insurer name |
+| TC-11–14 | Responsive | Alert visible at 375px, 768px, 1024px, 1440px |
+| TC-15–16 | CSS | Correct background color, border, icon |
+| TC-17–18 | Position | Alert above comparison table in DOM order |
+| TC-19–20 | Dedup | Second JS injection does not add second alert |
+
+### Key bugs found and fixed
+
+- **Curly apostrophe**: Original JS used a straight apostrophe `'` in "Don't" — Figma showed a curly `'`. Fixed in `js.js` and `vB.js`.
+- **Insurer name capitalization**: `?insurer=nationwide` was displaying as "nationwide" (lowercase). Fixed to capitalize first letter via `charAt(0).toUpperCase() + slice(1)`.
+
+### Key technical notes
+
+- **`?insurer=` parameter testing**: Each insurer value is tested by navigating to `BASE_URL + '?insurer=<name>'` — no variation flag injection needed; the parameter itself triggers the variation.
+- **Dismiss persistence**: After clicking dismiss, checked that `sessionStorage` key `cre-t-123-dismissed` is set and alert is not re-injected on `page.reload()`.
+
+---
+
+## 17. SWF135 — Pet Insurance Gurus Badge Overlay Removal
+
+**Site:** petinsurancegurus.com  
+**Spec:** `testing/swf135-badge-overlay.spec.js`  
+**Reporter:** `swf135-reporter.js`  
+**Screenshots:** `swf135-screenshots/`  
+**Report:** `local_testing/Local2/swf135-qa-report.html`  
+**Result:** 30 TCs × 6 browsers = 138/138 passed (+ 42 expected skips), 0 failed
+
+### What was tested
+
+Variation removes the badge/ribbon overlay images from insurer card thumbnails on the comparison and listing pages. The control shows badges (e.g. "Editor's Choice", "Best Value"); the variation hides them via CSS.
+
+| TC | Category | What it checks |
+|----|----------|----------------|
+| TC-01–02 | Control/Variation | Body class absent/present |
+| TC-03–06 | Badge elements | `.badge-overlay` computed display:none in variation |
+| TC-07–10 | CSS specificity | Badge hidden even when insurer card is hovered |
+| TC-11–15 | Sitewide | Badge hidden on `/`, `/compare/`, `/reviews/`, `/best-pet-insurance/`, `/cat-insurance/` |
+| TC-16–20 | Card content | Insurer name, logo, star rating, price still visible after badge removal |
+| TC-21–24 | Responsive | Badge hidden at all viewports (375px – 1440px) |
+| TC-25–28 | CSS guard | Removing body class restores badge display |
+| TC-29–30 | Dedup | JS re-run doesn't add duplicate class or elements |
+
+### Key technical notes
+
+- **30 TCs but 138 (not 180) runs**: Several TCs are skipped on Mobile Chrome / Mobile Safari (touch devices) because badge hover states don't apply. This is expected — those skips are documented in the report.
+- **CSS only**: No DOM element injection — variation is pure CSS hide via `html body.swf-135 .badge-overlay { display: none !important; }`. Tests confirm via `getComputedStyle`.
+- **`swf-135` body class** (hyphenated, not underscore) — match exactly in all selectors.
+
+---
+
+## 18. Thumbtack SA Roofing — Landing Page Section Injection
+
+**Site:** Thumbtack preview environment  
+**Spec:** N/A (manual + automated audit)  
+**Report:** `local_testing/Local2/thumbtack-roofing-qa-report.html`  
+**Result:** 26 TCs, 7 bugs found and fixed before sign-off
+
+### What was tested
+
+SA Roofing landing page sections (hero, services, testimonials, CTA, footer) injected onto a Thumbtack preview page via variation JS. The test verified each section rendered correctly and matched the Figma.
+
+| TC range | Category |
+|----------|----------|
+| TC-01–05 | Section presence (hero, services, testimonials, CTA, footer in DOM) |
+| TC-06–10 | Content — headings, body text, button labels match Figma exactly |
+| TC-11–14 | Images — src correct, alt text set, images loaded (naturalWidth > 0) |
+| TC-15–18 | Links — CTA hrefs correct, tel: link correct |
+| TC-19–22 | Responsive — layout at 375px and 1280px |
+| TC-23–26 | Visual — screenshots for each section at desktop + mobile |
+
+### Bugs found and fixed (7)
+
+1. Hero heading had wrong casing ("SA roofing" vs "SA Roofing")
+2. Services section missing third card (only 2 of 3 rendered)
+3. Testimonial star rating was 4/5 in code vs 5/5 in Figma
+4. CTA button text "Get a Quote" vs "Get Your Free Quote" in Figma
+5. Footer phone number format `(800) 555-1234` vs `800-555-1234` in Figma
+6. Hero image `alt` attribute missing
+7. Mobile layout — services cards stacked incorrectly (flex-direction not set for mobile)
+
+---
+
+## 19. CRE-T-08 — pay.com.au Timed Pop-up Modal
+
+**Site:** pay.com.au  
+**Spec:** `testing/cre-t-08-pay-modal.spec.js`  
+**Reporter:** `cre-t-08-reporter.js`  
+**Screenshots:** `cre-t-08-screenshots/`  
+**Report:** `local_testing/Local2/cre-t-08-qa-report.html`  
+**Result:** 20 TCs × 6 browsers = 120/120 passed, 0 failed, 0 skipped
+
+### CRITICAL deployment note
+
+`vB.js` contains `MODAL_DELAY_SECONDS = 3` for local testing. **Restore to `30` before pushing to Optimizely.** A 3-second delay in production would show the modal before users have read any content.
+
+### What was tested
+
+Timed pop-up modal appears after N seconds on pay.com.au. Uses `sessionStorage` to show once per session.
+
+| TC | Category | What it checks |
+|----|----------|----------------|
+| TC-01 | Control | Modal absent after 10s wait on control URL |
+| TC-02 | Variation | `body.cre-t-08` class added |
+| TC-03 | Timer | Modal hidden before threshold |
+| TC-04 | Timer | Modal visible after threshold |
+| TC-05 | SessionStorage | `startTime` key set on page load |
+| TC-06 | SessionStorage | `startTime` not reset on same-domain navigation |
+| TC-07 | Cross-page | Modal fires on page 2 if timer expired on page 1 |
+| TC-08 | One-time flag | `modalTriggered` prevents re-fire after close |
+| TC-09 | Close button | × closes modal |
+| TC-10 | Overlay | Clicking overlay closes modal |
+| TC-11–13 | Content | Logo, headline, body text, CTAs rendered and match Figma |
+| TC-14–15 | CTA hrefs | Register and login CTAs have correct URLs |
+| TC-16 | Responsive | Modal hidden on mobile (<768px) |
+| TC-17 | Responsive | Modal visible on desktop (≥768px) |
+| TC-18 | Max-width | Modal max-width capped and horizontally centered |
+| TC-19 | Dedup | Re-running JS does not inject second modal |
+| TC-20 | Analytics | GA / dataLayer event fires when modal shows |
+
+### Key technical notes
+
+- **`MODAL_DELAY_SECONDS` constant**: Defined at the top of `vB.js`. Set to `3` for testing; must be `30` for production.
+- **`sessionStorage` cross-page test (TC-07)**: Uses two `page.goto()` calls in sequence within the same browser context to simulate multi-page session behavior.
+- **Overlay click (TC-10)**: Click the overlay element directly — do not use `page.click()` on the modal (would click inside it). Use `overlay.click()` after selecting by class.
+
+---
+
+## 20. CRE-T-09 — pay.com.au Navbar CTA "Create free account"
+
+**Site:** pay.com.au  
+**Spec:** `testing/cre-t-09-nav-cta.spec.js`  
+**Reporter:** `cre-t-09-reporter.js`  
+**Screenshots:** `cre-t-09-screenshots/`  
+**Report:** `local_testing/Local2/cre-t-09-qa-report.html`  
+**Result:** 20 TCs × 6 browsers = 118 passed / 0 failed / 2 skipped (TC-19 on mobile viewports — expected)
+
+### What was tested
+
+Variation changes desktop navbar CTA, mobile sticky CTA, mobile hamburger menu CTA, and footer CTA to read "Create free account" using a CSS `::before` pseudo-element technique (preserves original href and tracking attributes).
+
+| TC | Selector | What it checks |
+|----|----------|----------------|
+| TC-01 | `body` | `body.cre-t-09` class added after injection |
+| TC-02 | Desktop CTA | `::before` content = `"Create free account"` [screenshot] |
+| TC-03 | Desktop CTA | `font-size: 0px` on element (original text hidden) |
+| TC-04 | Desktop CTA | `href` contains "register" (URL preserved) |
+| TC-05 | Desktop CTA | `display:flex; align-items:center` |
+| TC-06 | Mobile sticky | `::before` content = `"Create free account"` [screenshot] |
+| TC-07 | Mobile sticky | `href` preserved |
+| TC-08 | Mobile menu | `::before` content = `"Create free account"` [screenshot] |
+| TC-09 | Mobile menu | `href` preserved |
+| TC-10 | Footer CTA | `::before` content = `"Create free account"` |
+| TC-11 | Footer CTA | `href` preserved |
+| TC-12 | Sitewide | How It Works page — CTA text correct |
+| TC-13 | Sitewide | Pricing page — CTA text correct |
+| TC-14 | Sitewide | Solutions page — CTA text correct |
+| TC-15 | PAY05 coexistence | CRE-T-05 active alongside CRE-T-09: nav-link `font-size:15px` at 1199px |
+| TC-16 | CSS guard | Removing `body.cre-t-09` reverts `::before` content (CDN blocked) |
+| TC-17 | JS errors | No uncaught JS errors on page |
+| TC-18 | Desktop CTA | `::before` `font-size: 16px` |
+| TC-19 | Footer CTA | `::before` `font-size: 15px` — **SKIP on mobile** (element not shown) |
+| TC-20 | Mobile 390×844 | Full viewport screenshot |
+
+### Key selectors
+
+```javascript
+DESKTOP_CTA   = '.pca-header .pay-new-nav .nav-actions .emp'
+MOB_STICKY    = '.pca-header .nav-links .sticky-get-started #mob-get-started'
+MOB_MENU_CTA  = '#pay-new-nav .nav-mobile-cta'
+FOOTER_CTA    = 'a.pane-footer-cta[href*="register"]'
+BASE_URL      = 'https://pay.com.au/?cre=qa'
+```
+
+### Key bugs found and fixed during testing
+
+1. **TC-16 — Optimizely CDN interference**: Live CDN independently injects CSS that ignores our `body.cre-t-09` guard. Fix: `page.route('**/cdn.optimizely.com/**', route => route.abort())` before navigation in TC-16.
+2. **TC-13 Edge Desktop flake**: Edge Desktop's heavy Optimizely scripts cause ~20–40s load times; CSS hadn't settled before assertion. Fix: `waitForFunction` polling until `::before` content equals expected value (10s timeout, `.catch(() => {})`).
+
+### CSS `::before` technique
+
+```css
+html body.cre-t-09 .nav-actions .emp {
+    font-size: 0px !important;    /* hide original text */
+}
+html body.cre-t-09 .nav-actions .emp::before {
+    content: "Create free account";
+    font-size: 16px;
+    /* ... other styles */
+}
+```
+Advantage: preserves `href`, `onclick`, `data-*` tracking attributes on the anchor element.
+
+### PAY05 (CRE-T-05) coexistence
+
+When both CRE-T-05 and CRE-T-09 are active, `vB.js` detects `.cre-t-05-how-it-works` and adds `body.cre-t-05`. The CSS then adjusts nav-link font sizes:
+
+| Breakpoint | Font size |
+|------------|-----------|
+| 1199px | 15px |
+| 1310px | 17px |
+| 1450px | 18px |
+
+### `::before` verification helper
+
+```javascript
+async function getBeforeContent(page, selector) {
+    return page.evaluate((sel) => {
+        const el = document.querySelector(sel);
+        if (!el) return null;
+        return window.getComputedStyle(el, '::before').content;
+    }, selector);
+}
+// Returns value WITH quotes: '"Create free account"'
+// Assert: expect(result).toBe('"Create free account"')
+```
+
+---
+
+## 21. Correct QA Workflow for A/B Tests
 
 > This process was formalised after AFP10, where a content mismatch between the Figma design and the control code was missed because testing started from the code instead of the design.
 
@@ -1151,7 +1474,7 @@ Test assertions must use the **Figma-specified values** as expected values, not 
 
 ---
 
-## 15. Test Type Checklists
+## 22. Test Type Checklists
 
 Use these when starting a new test of a familiar category.
 
@@ -1359,4 +1682,191 @@ npx playwright test --project="Chrome Desktop"   ← single browser
 
 ---
 
-*Last updated: 2026-06-04*
+### G — Price Display / Multi-day Pricing (like SEA316)
+
+**Core tests (always include):**
+- [ ] Control: no variation markup in DOM on control URL
+- [ ] Body gets variation identifier class on init
+- [ ] `/ea` or per-unit label injected and visible
+- [ ] Per-day / per-person breakdown element present
+- [ ] Price values match Figma spec (do not assert live pricing — it changes)
+- [ ] Layout: flex direction, alignment, spacing correct (computed style)
+- [ ] Responsive: layout correct at 375px, 768px, 1024px, 1440px
+- [ ] Inner pages: variation active on all targeted ticket/pricing pages
+- [ ] CSS guard: removing body class reverts price display to control
+- [ ] No duplication: re-running JS does not add extra price elements
+
+**Extra tests to consider:**
+- [ ] Price element ordering (e.g. per-day BEFORE total, not after)
+- [ ] Currency symbol format and locale ($ vs USD vs au$)
+- [ ] Price elements accessible to screen readers (aria-label or visible text)
+- [ ] CSP check: if `addStyleTag({ content: ... })` throws, switch to `{ path: ... }` (SeaWorld pattern)
+
+---
+
+### H — ZIP Code / Location Pop-up Modal (like CRE-T-133)
+
+**Core tests (always include):**
+- [ ] Control: modal absent after 6s wait on control URL
+- [ ] Variation: modal present on page load (immediate, no timer)
+- [ ] Body class added (`body.cre-t-NNN`)
+- [ ] Modal has input field for ZIP / location entry
+- [ ] Submit button text matches design
+- [ ] V1 (with close): close button present; clicking × hides modal
+- [ ] V2 (no close): close button absent from DOM
+- [ ] Modal overlay present (covers page content)
+- [ ] Responsive: modal renders correctly at mobile and desktop viewports
+- [ ] No duplication: modal injected exactly once
+
+**Extra tests to consider:**
+- [ ] ZIP validation: invalid ZIP shows error message
+- [ ] After submit: modal dismissed and correct content/page shown
+- [ ] `sessionStorage` key set after dismiss (prevents repeat on reload)
+- [ ] ARIA `role="dialog"` and `aria-modal="true"` on modal element
+- [ ] Focus trapped inside modal when open
+
+---
+
+### I — Dismissible Alert / Banner (like CRE-T-123)
+
+**Core tests (always include):**
+- [ ] Control: alert absent when trigger parameter is not present
+- [ ] Variation: alert injected when `?param=value` is in URL
+- [ ] Alert text contains the parameterized value (insurer name, location, etc.)
+- [ ] Exact text match (check curly apostrophes, capitalisation, punctuation)
+- [ ] Dismiss button present (×)
+- [ ] Clicking dismiss removes alert from DOM
+- [ ] After dismiss: alert does NOT reappear on page reload in same session
+- [ ] Multiple parameter values: each shows the correct text (test ≥3 values)
+- [ ] Position: alert above the main content element (DOM order check)
+- [ ] No duplication: re-running JS does not add second alert
+
+**Extra tests to consider:**
+- [ ] `sessionStorage` key written after dismiss — verify key name and value
+- [ ] Alert does not appear when `?param=` is empty string (no value)
+- [ ] Alert background color, border, and icon match design (computed style)
+- [ ] Alert is keyboard-dismissible (ESC key)
+- [ ] Screen reader announces alert (aria-live="polite" or role="alert")
+
+---
+
+### J — Element Removal / Hide via CSS (like SWF135)
+
+**Core tests (always include):**
+- [ ] Control: target element visible on control URL (computed display ≠ none)
+- [ ] Variation: target element hidden via CSS (computed display:none or visibility:hidden)
+- [ ] Body class present on variation
+- [ ] Removal applies on all target pages (sitewide check)
+- [ ] Surrounding content remains intact and correctly laid out after removal
+- [ ] Removal applies at all tested viewports (mobile + desktop)
+- [ ] CSS guard: removing body class restores element visibility
+- [ ] No DOM element injection (pure CSS — verify no new elements added)
+
+**Extra tests to consider:**
+- [ ] Hover state: element still hidden when parent is hovered
+- [ ] Image alt text / aria attributes on sibling elements unaffected
+- [ ] No layout shift caused by removal (adjacent elements fill space correctly)
+- [ ] Removal consistent across all 6 browsers (especially WebKit)
+
+---
+
+### K — Landing Page Section Injection (like Thumbtack SA Roofing)
+
+**Core tests (always include):**
+- [ ] Each section present in DOM (hero, services, testimonials, CTA, footer)
+- [ ] Heading text exact match to Figma (case, punctuation, wording)
+- [ ] Body text exact match
+- [ ] Button / CTA label exact match
+- [ ] All images loaded: `naturalWidth > 0` for each `<img>`
+- [ ] Image `alt` text set (non-empty)
+- [ ] CTA `href` values correct (absolute URLs, `tel:` format correct)
+- [ ] Responsive: sections stack correctly at 375px and render at 1280px
+- [ ] Screenshot of each section at desktop + mobile
+
+**Extra tests to consider:**
+- [ ] Star ratings / numeric values match Figma exactly
+- [ ] Service card count matches Figma (easy to miss if injection is partial)
+- [ ] Phone number format matches Figma character-for-character (dashes vs parentheses)
+- [ ] `flex-direction: column` on mobile for card grids
+- [ ] No JS console errors during injection
+
+---
+
+### L — Timed Pop-up Modal with External Site (like CRE-T-08)
+
+**Core tests (always include):**
+- [ ] Control: modal absent after timer threshold + buffer on control URL
+- [ ] Body class added on variation
+- [ ] `sessionStorage` key (`startTime`) set on page load
+- [ ] Modal hidden before timer threshold
+- [ ] Modal visible after timer threshold
+- [ ] `startTime` NOT reset on same-domain page navigation (persists in session)
+- [ ] Cross-page: modal fires on page 2 if timer expired on page 1
+- [ ] One-time flag (`modalTriggered`) prevents re-show after close
+- [ ] Close button (×) closes modal
+- [ ] Overlay click closes modal
+- [ ] All content (logo, headline, body, CTAs) present and match Figma
+- [ ] CTA hrefs correct
+- [ ] Modal hidden on mobile (below breakpoint)
+- [ ] Modal visible on desktop (above breakpoint)
+- [ ] Max-width cap and horizontal centering
+- [ ] No duplication (modal injected once)
+
+**CRITICAL pre-deploy check:**
+- [ ] `MODAL_DELAY_SECONDS` constant reset from test value (3s) to production value (30s) before Optimizely push
+
+**Extra tests to consider:**
+- [ ] ESC key closes modal
+- [ ] Analytics / dataLayer event fires when modal shows
+- [ ] Z-index: modal above all page content
+- [ ] Scroll lock on body while modal open
+
+---
+
+### M — Navbar CTA via CSS `::before` (like CRE-T-09)
+
+**Core tests (always include):**
+- [ ] Body class added on injection (`body.cre-t-NNN`)
+- [ ] `::before` content of target CTA = exact expected copy (with outer quotes in assertion)
+- [ ] Original element `font-size: 0px` (original text visually hidden)
+- [ ] Original `href` preserved (URL not overwritten)
+- [ ] `display:flex; align-items:center` on element (for icon + text layout)
+- [ ] Mobile sticky CTA: `::before` content correct
+- [ ] Mobile menu CTA: `::before` content correct
+- [ ] Footer CTA: `::before` content correct (if applicable)
+- [ ] Sitewide: CTA correct on ≥3 inner pages
+- [ ] CSS guard: removing body class reverts `::before` to original / `none` — **block Optimizely CDN** via `page.route()` before navigation
+- [ ] `font-size` of `::before` matches design (16px desktop, check mobile)
+- [ ] No uncaught JS errors on page
+- [ ] No duplication: second JS run leaves exactly one class on body
+
+**Coexistence tests (if another test runs simultaneously):**
+- [ ] Other test's body class still added alongside this test's class
+- [ ] CSS breakpoint overrides apply correctly when both body classes present
+
+**`::before` assertion pattern:**
+```javascript
+// getComputedStyle returns value WITH outer quotes
+expect(await getBeforeContent(page, selector)).toBe('"Create free account"')
+```
+
+**Optimizely CDN block pattern (for TC-16 equivalent):**
+```javascript
+await page.route('**/cdn.optimizely.com/**', route => route.abort())
+await page.route('**/logx.optimizely.com/**', route => route.abort())
+// THEN navigate — block BEFORE goto, not after
+await page.goto(BASE_URL)
+```
+
+**CSS settle polling pattern (for sitewide TCs on slow browsers):**
+```javascript
+await page.waitForFunction((sel) => {
+    const el = document.querySelector(sel)
+    if (!el) return true
+    return window.getComputedStyle(el, '::before').content === '"Create free account"'
+}, SELECTOR, { timeout: 10000 }).catch(() => {})
+```
+
+---
+
+*Last updated: 2026-06-30*

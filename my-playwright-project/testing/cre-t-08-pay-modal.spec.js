@@ -112,12 +112,27 @@ async function gotoAndInject(page, url = BASE_URL) {
   } catch (e) {
     if (!e.message || (!e.message.includes('Content-Security-Policy') && !e.message.includes('violates the following'))) throw e;
   }
+  // Verify the injection actually ran — vB.js adds cre-t-08 to body within ~50 ms.
+  // If the class is missing after 1 s the addScriptTag was silently rejected by a CSP
+  // violation from a third-party pixel firing at the same instant; retry once.
+  await page.waitForFunction(() => document.body.classList.contains('cre-t-08'), { timeout: 1000 })
+    .catch(async () => {
+      try { await page.addStyleTag({ content: VB_CSS }); } catch { /* ok */ }
+      try { await page.addScriptTag({ content: VB_JS }); } catch { /* ok */ }
+    });
 }
 
 async function waitForModal(page) {
   // 3 s delay + buffer; MODAL_DELAY_SECONDS set to 3 in local vB.js.
-  // 18 s gives slower Firefox/Edge/WebKit runs enough headroom without waiting forever.
-  await page.waitForSelector(`${MODAL_MAIN}.active`, { state: 'attached', timeout: 18000 });
+  // 40 s gives WebKit/Safari enough headroom when it runs late in a long suite and
+  // network latency pushes the page load well past 30 s.
+  await page.waitForSelector(`${MODAL_MAIN}.active`, { state: 'attached', timeout: 40000 });
+  // Clear the CDN's sessionStorage timer key now that the modal has already fired.
+  // The CDN's handleModalTiming() interval is still ticking with the same key; if it
+  // fires showModal() after our test dismisses the modal it re-adds .active and the
+  // freeze class, causing TC-07 / TC-12 failures in Firefox and WebKit. Clearing here
+  // makes subsequent interval ticks read null → NaN → condition never true → no re-fire.
+  await page.evaluate(() => sessionStorage.removeItem('cre-t-08-target-time'));
   await page.waitForTimeout(300);
 
   // Attach a single document-level capture-phase listener for all close triggers.
@@ -438,8 +453,12 @@ test.describe('CRE-T-08 — pay.com.au — Timed Pop-up Modal', () => {
   test('TC-16 | Three feature icons load successfully (not broken)', async ({ page }) => {
     await gotoAndInject(page);
     await waitForModal(page);
-    // Wait a moment for SVG resources to fetch
-    await page.waitForTimeout(1500);
+    // Poll until all 3 icon images are complete — a fixed 1500 ms wait is too short
+    // for Firefox/Edge/Mobile Chrome where the CDN SVGs load slower under load.
+    await page.waitForFunction(() => {
+      const imgs = [...document.querySelectorAll('.cre-t-08-icon-box img')];
+      return imgs.length >= 3 && imgs.every(img => img.complete);
+    }, { timeout: 8000 }).catch(() => { /* still check naturalWidth below */ });
     const iconStatuses = await page.evaluate(() => {
       const imgs = document.querySelectorAll('.cre-t-08-icon-box img');
       return Array.from(imgs).map(img => ({

@@ -1,7 +1,7 @@
 (function () {
     try {
         /* ─── Main variables ─────────────────────────────────────────────── */
-        var debug = 0;
+        var debug = false;
         var variation_name = "Antonio_Roofing";
 
         /* ─── Helper: waitForElement ─────────────────────────────────────── */
@@ -23,8 +23,7 @@
                 if (el.attachEvent) el.attachEvent("on" + type, handler);
                 else el.addEventListener(type, handler);
             }
-            this &&
-                this.Element &&
+            window.Element &&
                 (function (ElementPrototype) {
                     ElementPrototype.matches =
                         ElementPrototype.matches ||
@@ -131,8 +130,8 @@
             reviewsTitle: "Reviews for San Antonio roofing professionals on Thumbtack",
             reviews: [
                 { name: "Ashley B.", company: "Lone Star Roofing Solutions", stars: 5, date: "March 2026",    avatar: "https://fastly.picsum.photos/id/64/48/48.jpg?hmac=uVydLcT-BCqbwY70bLRQZCEbJD5-N4XVHGH1HjLk5Dc", text: "After the April hailstorm I had no idea where to start. Found Lone Star on Thumbtack and within 24 hours they were at my house. They handled the insurance claim, did the full replacement, and cleaned up perfectly. Couldn’t recommend more highly." },
-                { name: "Marcus T.", company: "J. Stevens Roofing Co.",       stars: 4, date: "February 2026", avatar: " https://fastly.picsum.photos/id/458/48/48.jpg?hmac=kXwHutV-RrPnlJUkY4U_6Vgy3D9Qwz19bu67STYxiOI", text: "The storm chasers were everywhere in my neighborhood after the hailstorm — knocking on doors, pressuring homeowners. J. Stevens was the only local company I could find. They were honest, professional, and actually based here in SA." },
-                { name: "Linda R.",  company: "Legacy Home Improvements",     stars: 5, date: "January 2026",  avatar: " https://fastly.picsum.photos/id/174/48/48.jpg?hmac=PefeAm5oiSJkl6KK7Z0jAnmkUwluJRDQuFX85OYGrcs", text: "Legacy caught hail damage from a storm two years ago that my previous roofer missed. Their documentation was so thorough that my insurance approved the full replacement with no pushback. Incredibly professional." },
+                { name: "Marcus T.", company: "J. Stevens Roofing Co.",       stars: 4, date: "February 2026", avatar: "https://fastly.picsum.photos/id/458/48/48.jpg?hmac=kXwHutV-RrPnlJUkY4U_6Vgy3D9Qwz19bu67STYxiOI", text: "The storm chasers were everywhere in my neighborhood after the hailstorm — knocking on doors, pressuring homeowners. J. Stevens was the only local company I could find. They were honest, professional, and actually based here in SA." },
+                { name: "Linda R.",  company: "Legacy Home Improvements",     stars: 5, date: "January 2026",  avatar: "https://fastly.picsum.photos/id/174/48/48.jpg?hmac=PefeAm5oiSJkl6KK7Z0jAnmkUwluJRDQuFX85OYGrcs", text: "Legacy caught hail damage from a storm two years ago that my previous roofer missed. Their documentation was so thorough that my insurance approved the full replacement with no pushback. Incredibly professional." },
                 { name: "David K.",  company: "Fast Storm Pro-Roofing",       stars: 5, date: "March 2026",    avatar: "https://fastly.picsum.photos/id/108/48/48.jpg?hmac=xXbvlwgU70zLRiR2JsbuUV7ip8KWHD7Iygaa3j6fEl8",  text: "Emergency call at 10pm — they tarped my roof within 2 hours of calling. Had me fully repaired by the end of the next day. These guys are the real deal for emergency storm response in San Antonio." }
             ],
 
@@ -320,7 +319,7 @@
             var cards = sectionData.reviews.map(function (r) {
                 return '<div class="tt-cr-review-card">' +
                     '<div class="tt-cr-review-header">' +
-                    '<div class="tt-cr-review-avatar"><img src="' + r.avatar + '" alt="' + r.name + '" /></div>' +
+                    '<div class="tt-cr-review-avatar"><img src="' + r.avatar + '" alt="' + r.name + '" loading="lazy" /></div>' +
                     '<div class="tt-cr-review-meta">' +
                     '<span class="tt-cr-review-name">' + r.name + '</span>' +
                     '<span class="tt-cr-review-company">' + r.company + '</span>' +
@@ -358,8 +357,8 @@
         /* 6 ── FAQ */
         function buildFAQ() {
             var items = sectionData.faqs.map(function (f, i) {
-                return '<div class="tt-cr-faq-item' + (f.open ? ' open' : '') + '" data-tt-faq="' + i + '">' +
-                    '<div class="tt-cr-faq-question">' +
+                return '<div class="tt-cr-faq-item" data-tt-faq="' + i + '">' +
+                    '<div class="tt-cr-faq-question" tabindex="0" role="button" aria-expanded="false">' +
                     '<span class="tt-cr-faq-question-text">' + f.q + '</span>' +
                     '<span class="tt-cr-faq-chevron">' + chevronSVG() + '</span>' +
                     '</div>' +
@@ -413,14 +412,35 @@
         function initFAQ() {
             var list = document.getElementById("tt-cr-faq-list");
             if (!list) return;
-            list.addEventListener("click", function (e) {
-                var question = e.target.closest ? e.target.closest(".tt-cr-faq-question") : null;
-                if (!question) return;
+
+            function toggleFAQ(question) {
                 var item = question.parentElement;
                 var isOpen = item.classList.contains("open");
                 var allItems = list.querySelectorAll(".tt-cr-faq-item");
-                for (var i = 0; i < allItems.length; i++) allItems[i].classList.remove("open");
-                if (!isOpen) item.classList.add("open");
+                for (var i = 0; i < allItems.length; i++) {
+                    allItems[i].classList.remove("open");
+                    var q = allItems[i].querySelector(".tt-cr-faq-question");
+                    if (q) q.setAttribute("aria-expanded", "false");
+                }
+                if (!isOpen) {
+                    item.classList.add("open");
+                    question.setAttribute("aria-expanded", "true");
+                }
+            }
+
+            list.addEventListener("click", function (e) {
+                var question = e.target.closest ? e.target.closest(".tt-cr-faq-question") : null;
+                if (!question) return;
+                toggleFAQ(question);
+            });
+
+            list.addEventListener("keydown", function (e) {
+                if (e.key === "Enter" || e.key === " ") {
+                    var question = e.target.closest ? e.target.closest(".tt-cr-faq-question") : null;
+                    if (!question) return;
+                    e.preventDefault();
+                    toggleFAQ(question);
+                }
             });
         }
 
@@ -544,7 +564,14 @@
 
         /* ─── Shared URL builder ─────────────────────────────────────────── */
         function buildInstantResultsUrl(zip) {
-            var cta = window.__NEXT_DATA__.props.pageProps.frontDoorPage.heroSection.filterSubsection.cta;
+            var nd  = window.__NEXT_DATA__;
+            var fps = nd && nd.props && nd.props.pageProps;
+            var cta = fps &&
+                      fps.frontDoorPage &&
+                      fps.frontDoorPage.heroSection &&
+                      fps.frontDoorPage.heroSection.filterSubsection &&
+                      fps.frontDoorPage.heroSection.filterSubsection.cta;
+            if (!cta) { throw new Error('TT: __NEXT_DATA__ shape mismatch'); }
             var keyword_pk = cta.keywordPk;
             var project_pk = cta.projectPk || cta.project_pk || '';
             return 'https://www.thumbtack.com/instant-results/?keyword_pk=' + keyword_pk +
@@ -558,7 +585,7 @@
            VARIATION INIT
         ═══════════════════════════════════════════════════════════════════ */
         function init() {
-            document.querySelector("body").classList.add(variation_name);
+            document.body.classList.add(variation_name);
 
            
 
@@ -635,7 +662,7 @@
                 e.stopPropagation();
 
                 var zipInput = document.querySelector('#uniqueId2 [autocomplete="postal-code"]');
-                var zip = zipInput ? zipInput.value.trim() : '';
+                var zip = zipInput ? zipInput.value.trim() : '';    
                 var errorEl = document.getElementById('tt-zip-error');
 
                 if (zip.length < 5) {

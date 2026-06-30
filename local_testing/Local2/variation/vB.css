@@ -1069,7 +1069,10 @@ html body.Antonio_Roofing .Wrap_root__YXWM_{
   max-width: 560px;
 }
 .Cre_banner_row .mt3 {
-  margin-top: 0;
+  margin-top: 0 !important;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 .Cre_banner_form {
   flex: 1;

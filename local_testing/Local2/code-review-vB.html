@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Review — vB (Antonio Roofing)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0f172a;
+    --navy-mid:#1e293b;
+    --navy-lt: #334155;
+    --bg:      #f1f5f9;
+    --surface: #ffffff;
+    --border:  #e2e8f0;
+    --text:    #1e293b;
+    --muted:   #64748b;
+    --code-bg: #f8fafc;
+    --critical:#dc2626; --critical-bg:#fef2f2; --critical-bd:#fca5a5;
+    --warn:    #d97706; --warn-bg:    #fffbeb; --warn-bd:    #fcd34d;
+    --info:    #2563eb; --info-bg:    #eff6ff; --info-bd:    #93c5fd;
+    --dead:    #64748b; --dead-bg:    #f8fafc; --dead-bd:    #cbd5e1;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    min-height: 100vh;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    background: var(--navy);
+    padding: 28px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .sb-brand {
+    padding: 0 20px 22px;
+    border-bottom: 1px solid var(--navy-lt);
+    margin-bottom: 16px;
+  }
+  .sb-brand .eyebrow { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #475569; margin-bottom: 4px; }
+  .sb-brand .name    { font-size: 13.5px; font-weight: 700; color: #f1f5f9; }
+  .sb-brand .date    { font-size: 11px; color: #475569; margin-top: 2px; }
+
+  .nav-group { padding: 0 10px; margin-bottom: 4px; }
+  .nav-group-lbl { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #475569; padding: 0 8px; margin: 14px 0 4px; }
+  .nav-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 8px; border-radius: 5px;
+    text-decoration: none; color: #94a3b8; font-size: 12.5px;
+    transition: background .1s, color .1s;
+  }
+  .nav-link:hover { background: var(--navy-lt); color: #f1f5f9; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .d-c { background: var(--critical); }
+  .d-w { background: var(--warn); }
+  .d-i { background: var(--info); }
+  .d-d { background: #475569; }
+
+  /* ── Stats bar ── */
+  .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 32px; }
+  .stat { background: var(--surface); border-radius: 10px; padding: 16px 18px; border: 1px solid var(--border); }
+  .stat .n { font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 4px; font-variant-numeric: tabular-nums; }
+  .stat .l { font-size: 11.5px; color: var(--muted); font-weight: 500; }
+  .stat.c .n { color: var(--critical); }
+  .stat.w .n { color: var(--warn); }
+  .stat.i .n { color: var(--info); }
+  .stat.d .n { color: var(--dead); }
+
+  /* ── Main ── */
+  .main { padding: 36px 44px 64px; max-width: 880px; }
+
+  .page-hd { margin-bottom: 28px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
+  .page-hd h1 { font-size: 21px; font-weight: 700; margin-bottom: 5px; }
+  .page-hd .meta { font-size: 12.5px; color: var(--muted); }
+  .page-hd .meta span { margin-right: 14px; }
+
+  /* ── Section heads ── */
+  .sec-hd { display: flex; align-items: center; gap: 10px; margin: 40px 0 14px; }
+  .sec-hd h2 { font-size: 15px; font-weight: 700; }
+  .fc { font-size: 11px; font-family: 'Courier New', monospace; background: var(--navy-mid); color: #94a3b8; padding: 3px 8px; border-radius: 4px; }
+  .cc { font-size: 11px; font-weight: 600; background: var(--border); color: var(--muted); padding: 2px 7px; border-radius: 10px; margin-left: auto; }
+
+  /* ── Finding cards ── */
+  .finding { background: var(--surface); border-radius: 10px; border: 1px solid var(--border); margin-bottom: 10px; overflow: hidden; }
+
+  .fhd { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; }
+  .badge {
+    font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;
+  }
+  .bc { background: var(--critical-bg); color: var(--critical); border: 1px solid var(--critical-bd); }
+  .bw { background: var(--warn-bg);     color: var(--warn);     border: 1px solid var(--warn-bd); }
+  .bi { background: var(--info-bg);     color: var(--info);     border: 1px solid var(--info-bd); }
+  .bd { background: var(--dead-bg);     color: var(--dead);     border: 1px solid var(--dead-bd); }
+
+  .ftitle { font-size: 13.5px; font-weight: 600; color: var(--text); flex: 1; line-height: 1.4; }
+  .floc { font-size: 11px; font-family: 'Courier New', monospace; color: var(--muted); background: var(--bg); padding: 2px 7px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; align-self: flex-start; margin-top: 2px; }
+
+  .fbody { padding: 0 16px 16px; border-top: 1px solid var(--border); }
+  .fbody p { color: var(--muted); font-size: 13px; margin-top: 12px; line-height: 1.65; }
+  code { font-family: 'Courier New', monospace; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; font-size: 12px; border: 1px solid var(--border); }
+
+  pre {
+    background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px;
+    padding: 12px 14px; margin-top: 10px; overflow-x: auto;
+    font-size: 12px; font-family: 'Courier New', Courier, monospace; line-height: 1.55; color: #334155;
+  }
+  .lb { background: #fef2f2; color: #991b1b; display: block; margin: 0 -14px; padding: 0 14px; }
+  .lg { background: #f0fdf4; color: #166534; display: block; margin: 0 -14px; padding: 0 14px; }
+  .ln { color: #94a3b8; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* ── Summary table ── */
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+  .tbl th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--border); background: var(--bg); }
+  .tbl td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl tr:hover td { background: var(--bg); }
+
+  .overview { font-size: 13.5px; color: var(--muted); line-height: 1.75; max-width: 720px; }
+  .overview strong { color: var(--text); }
+
+  .legend { font-size: 11px; color: var(--muted); margin-top: 8px; }
+
+  @media (max-width: 800px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .main { padding: 20px 16px 48px; }
+    .stats { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <nav class="sidebar">
+    <div class="sb-brand">
+      <div class="eyebrow">Code Review</div>
+      <div class="name">vB — Antonio Roofing</div>
+      <div class="date">2026-06-30</div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-lbl">Jump to</div>
+      <a href="#overview"     class="nav-link"><span class="dot d-i"></span>Overview</a>
+      <a href="#js-critical"  class="nav-link"><span class="dot d-c"></span>JS — Critical (3)</a>
+      <a href="#js-medium"    class="nav-link"><span class="dot d-w"></span>JS — Medium (2)</a>
+      <a href="#js-low"       class="nav-link"><span class="dot d-i"></span>JS — Low (4)</a>
+      <a href="#css-critical" class="nav-link"><span class="dot d-c"></span>CSS — Critical (2)</a>
+      <a href="#css-medium"   class="nav-link"><span class="dot d-w"></span>CSS — Medium (3)</a>
+      <a href="#css-low"      class="nav-link"><span class="dot d-i"></span>CSS — Low (5)</a>
+      <a href="#css-dead"     class="nav-link"><span class="dot d-d"></span>CSS — Dead Code (1)</a>
+      <a href="#all"          class="nav-link"><span class="dot d-i"></span>All Findings</a>
+    </div>
+  </nav>
+
+  <!-- ── Main ── -->
+  <main class="main">
+
+    <!-- Page header -->
+    <div class="page-hd">
+      <h1>Code Review — vB (Antonio Roofing Variation)</h1>
+      <div class="meta">
+        <span>Reviewed: 2026-06-30</span>
+        <span>Files: vB.js &middot; vB.css</span>
+        <span>Variation: Antonio_Roofing</span>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat c"><div class="n">5</div><div class="l">Critical / Bugs</div></div>
+      <div class="stat w"><div class="n">5</div><div class="l">Medium / Quality</div></div>
+      <div class="stat i"><div class="n">9</div><div class="l">Low / Style</div></div>
+      <div class="stat d"><div class="n">1</div><div class="l">Dead Code blocks</div></div>
+    </div>
+
+    <!-- Overview -->
+    <div id="overview">
+      <div class="sec-hd"><h2>Overview</h2></div>
+      <p class="overview">
+        The variation is well-structured — the IIFE wrapping, hydration guard, and event-delegation pattern are solid.
+        Issues cluster in three areas: <strong>two runtime bugs that will visibly break the UI</strong> (broken avatar images, page-wide overflow hidden),
+        <strong>a silent CTA failure</strong> if Thumbtack's Next.js data shape shifts,
+        and <strong>~15 dead CSS rule blocks</strong> copied from the template that add weight and risk unintended host-page collisions.
+        Colour and style inconsistencies (two different brand blues, two different error reds) should be cleaned up in the same pass.
+      </p>
+    </div>
+
+    <hr>
+
+    <!-- ════════ JS CRITICAL ════════ -->
+    <div class="sec-hd" id="js-critical">
+      <h2>JavaScript — Critical</h2>
+      <span class="fc">vB.js</span>
+      <span class="cc">3 findings</span>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bc">Bug</span>
+        <span class="ftitle">Leading whitespace in two avatar URLs — images will break</span>
+        <span class="floc">vB.js : 134–135</span>
+      </div>
+      <div class="fbody">
+        <p>Two of the four review avatar <code>src</code> values start with a space character before <code>https://</code>. Browsers treat the leading space as part of the URL and the fetch fails — the reviewer avatars render as broken images.</p>
+        <pre><span class="lb">avatar: " https://fastly.picsum.photos/id/458/48/48.jpg?hmac=..."  // Marcus T.</span>
+<span class="lb">avatar: " https://fastly.picsum.photos/id/174/48/48.jpg?hmac=..."  // Linda R.</span>
+
+<span class="lg">// Fix: remove the leading space from both strings</span>
+<span class="lg">avatar: "https://fastly.picsum.photos/id/458/48/48.jpg?hmac=..."</span>
+<span class="lg">avatar: "https://fastly.picsum.photos/id/174/48/48.jpg?hmac=..."</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bc">Bug</span>
+        <span class="ftitle">No null-guard on <code>window.__NEXT_DATA__</code> — CTA silently breaks on shape change</span>
+        <span class="floc">vB.js : 547–554</span>
+      </div>
+      <div class="fbody">
+        <p><code>buildInstantResultsUrl()</code> reads deep into <code>window.__NEXT_DATA__.props.pageProps.frontDoorPage.heroSection.filterSubsection.cta</code> with no check at any level. If Thumbtack ships a page where that chain differs (page-type change, their own A/B test), this throws a TypeError. The outer IIFE catch swallows it silently and the "Find me a pro" button stops working with no visible error.</p>
+        <pre><span class="lb">// Will throw if any level is missing</span>
+<span class="lb">var cta = window.__NEXT_DATA__.props.pageProps.frontDoorPage</span>
+<span class="lb">              .heroSection.filterSubsection.cta;</span>
+
+<span class="lg">// Add an explicit guard before using cta</span>
+<span class="lg">var nd  = window.__NEXT_DATA__;</span>
+<span class="lg">var fps = nd &amp;&amp; nd.props &amp;&amp; nd.props.pageProps;</span>
+<span class="lg">var cta = fps &amp;&amp; fps.frontDoorPage &amp;&amp;</span>
+<span class="lg">          fps.frontDoorPage.heroSection &amp;&amp;</span>
+<span class="lg">          fps.frontDoorPage.heroSection.filterSubsection &amp;&amp;</span>
+<span class="lg">          fps.frontDoorPage.heroSection.filterSubsection.cta;</span>
+<span class="lg">if (!cta) { console.info('TT: __NEXT_DATA__ shape mismatch'); return; }</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bc">Bug</span>
+        <span class="ftitle"><code>this &amp;&amp; this.Element</code> polyfill guard is wrong — should use <code>window.Element</code></span>
+        <span class="floc">vB.js : 26–41</span>
+      </div>
+      <div class="fbody">
+        <p>Inside <code>live()</code>, the guard <code>this &amp;&amp; this.Element</code> happens to work in sloppy mode (where <code>this</code> is the global object), but would fail silently under strict mode where <code>this</code> is <code>undefined</code>. Use <code>window.Element</code> explicitly.</p>
+        <pre><span class="lb">this &amp;&amp;</span>
+<span class="lb">    this.Element &amp;&amp;</span>
+<span class="lb">    (function (ElementPrototype) { ... })(Element.prototype);</span>
+
+<span class="lg">window.Element &amp;&amp;</span>
+<span class="lg">    (function (ElementPrototype) { ... })(Element.prototype);</span></pre>
+      </div>
+    </div>
+
+    <!-- ════════ JS MEDIUM ════════ -->
+    <div class="sec-hd" id="js-medium">
+      <h2>JavaScript — Medium</h2>
+      <span class="fc">vB.js</span>
+      <span class="cc">2 findings</span>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bw">Quality</span>
+        <span class="ftitle">FAQ builder checks <code>f.open</code> but no FAQ object defines it — dead branch</span>
+        <span class="floc">vB.js : 361</span>
+      </div>
+      <div class="fbody">
+        <p>The builder conditionally adds the <code>open</code> class via <code>(f.open ? ' open' : '')</code>, but none of the objects in <code>sectionData.faqs</code> have an <code>open</code> key. The expression always evaluates to <code>''</code>. If a default-open item is needed, add <code>open: true</code> to the relevant FAQ object. Otherwise remove the dead conditional.</p>
+        <pre><span class="lb">// f.open is always undefined → always ''</span>
+<span class="lb">return '&lt;div class="tt-cr-faq-item' + (f.open ? ' open' : '') + '"...'</span>
+
+<span class="lg">// Remove the conditional, or add open: true to the desired FAQ object</span>
+<span class="lg">return '&lt;div class="tt-cr-faq-item" data-tt-faq="' + i + '"&gt;'</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bw">Accessibility</span>
+        <span class="ftitle">FAQ accordion has no keyboard support or ARIA state</span>
+        <span class="floc">vB.js : 359–425</span>
+      </div>
+      <div class="fbody">
+        <p>The FAQ toggle responds only to mouse clicks. Keyboard users cannot activate items (no <code>tabindex</code>, no Enter/Space handler). Screen readers also receive no state update because <code>aria-expanded</code> is never toggled.</p>
+        <pre><span class="lb">&lt;!-- Generated: no tabindex, no aria-expanded --&gt;</span>
+<span class="lb">&lt;div class="tt-cr-faq-question"&gt;</span>
+
+<span class="lg">&lt;!-- Add tabindex and aria-expanded --&gt;</span>
+<span class="lg">&lt;div class="tt-cr-faq-question" tabindex="0" aria-expanded="false"&gt;</span>
+
+<span class="ln">// In initFAQ(), add a keydown handler alongside the click handler:</span>
+<span class="lg">list.addEventListener("keydown", function (e) {</span>
+<span class="lg">    if (e.key === "Enter" || e.key === " ") {</span>
+<span class="lg">        var q = e.target.closest(".tt-cr-faq-question");</span>
+<span class="lg">        if (q) { e.preventDefault(); q.click(); }</span>
+<span class="lg">    }</span>
+<span class="lg">});</span>
+<span class="ln">// Also set aria-expanded="true"/"false" when toggling</span></pre>
+      </div>
+    </div>
+
+    <!-- ════════ JS LOW ════════ -->
+    <div class="sec-hd" id="js-low">
+      <h2>JavaScript — Low</h2>
+      <span class="fc">vB.js</span>
+      <span class="cc">4 findings</span>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Style</span>
+        <span class="ftitle">Mixed <code>var</code>/<code>const</code> and string concat/template literals throughout</span>
+        <span class="floc">vB.js : 4, 452, 479</span>
+      </div>
+      <div class="fbody">
+        <p>The file uses <code>var</code> for ES5 compatibility everywhere except <code>bannersection</code> and <code>roofingsection</code> which are declared with <code>const</code>. Similarly, <code>buildRelatedServices()</code> uses template literals while every other builder uses string concatenation. Pick one style. Since template literals are already present, it's fine to commit to ES6+ and migrate everything.</p>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Style</span>
+        <span class="ftitle"><code>document.querySelector("body")</code> → use <code>document.body</code></span>
+        <span class="floc">vB.js : 561</span>
+      </div>
+      <div class="fbody">
+        <p><code>document.body</code> is a direct property — no selector engine needed. Minor readability and micro-performance improvement.</p>
+        <pre><span class="lb">document.querySelector("body").classList.add(variation_name);</span>
+<span class="lg">document.body.classList.add(variation_name);</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Performance</span>
+        <span class="ftitle">Review avatar images missing <code>loading="lazy"</code></span>
+        <span class="floc">vB.js : 323</span>
+      </div>
+      <div class="fbody">
+        <p>The reviews section is injected below the fold. Without <code>loading="lazy"</code>, all four avatar fetches fire immediately on inject rather than when the section scrolls into view.</p>
+        <pre><span class="lb">'&lt;img src="' + r.avatar + '" alt="' + r.name + '" /&gt;'</span>
+<span class="lg">'&lt;img src="' + r.avatar + '" alt="' + r.name + '" loading="lazy" /&gt;'</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Style</span>
+        <span class="ftitle"><code>debug = 0</code> should be <code>debug = false</code></span>
+        <span class="floc">vB.js : 4</span>
+      </div>
+      <div class="fbody">
+        <p>Used as a boolean guard throughout (<code>if (debug) console.log(...)</code>). Declaring it as <code>0</code> signals numeric intent. Use <code>false</code> so future engineers flip it to <code>true</code>, not <code>1</code>.</p>
+        <pre><span class="lb">var debug = 0;</span>
+<span class="lg">var debug = false;</span></pre>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- ════════ CSS CRITICAL ════════ -->
+    <div class="sec-hd" id="css-critical">
+      <h2>CSS — Critical</h2>
+      <span class="fc">vB.css</span>
+      <span class="cc">2 findings</span>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bc">Bug</span>
+        <span class="ftitle">Page-wide <code>overflow: hidden</code> on <code>#__next</code> will clip sticky elements and modals</span>
+        <span class="floc">vB.css : 708–710</span>
+      </div>
+      <div class="fbody">
+        <p>This rule was almost certainly added to suppress horizontal scroll during the FAQ max-height animation, but it sets overflow hidden on the <em>entire</em> Next.js root element. Any sticky header, dropdown, tooltip, or modal that overflows its parent will be clipped. It also breaks <code>position: sticky</code> for any descendant inside <code>#__next</code>.</p>
+        <pre><span class="lb">/* Too broad — hides ALL overflow on the entire page root */</span>
+<span class="lb">body.Antonio_Roofing div#__next {</span>
+<span class="lb">  overflow: hidden !important;</span>
+<span class="lb">}</span>
+
+<span class="lg">/* Option A: scope to the injected wrapper only */</span>
+<span class="lg">.tt-cr-injected {</span>
+<span class="lg">  overflow: hidden;</span>
+<span class="lg">}</span>
+
+<span class="lg">/* Option B: only block horizontal scroll on body */</span>
+<span class="lg">body.Antonio_Roofing {</span>
+<span class="lg">  overflow-x: hidden;</span>
+<span class="lg">}</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bc">Bug</span>
+        <span class="ftitle">Duplicate <code>[class*="ir-header_mainHeader"]</code> — first rule silently dead</span>
+        <span class="floc">vB.css : 999 &amp; 1054</span>
+      </div>
+      <div class="fbody">
+        <p>The same selector appears twice with different <code>margin-top</code> values. The second declaration (18px + <code>!important</code>) wins; the first (15px at line 999) is completely ignored. Merge into one rule.</p>
+        <pre><span class="lb">/* Line 999 — dead, overridden */</span>
+<span class="lb">[class*="ir-header_mainHeader"] { margin-top: 15px; }</span>
+
+<span class="lb">/* ... many lines later ... */</span>
+
+<span class="lb">/* Line 1054 — wins */</span>
+<span class="lb">[class*="ir-header_mainHeader"] { margin-top: 18px !important; }</span>
+
+<span class="lg">/* Keep only one */</span>
+<span class="lg">[class*="ir-header_mainHeader"] { margin-top: 18px; }</span></pre>
+      </div>
+    </div>
+
+    <!-- ════════ CSS MEDIUM ════════ -->
+    <div class="sec-hd" id="css-medium">
+      <h2>CSS — Medium</h2>
+      <span class="fc">vB.css</span>
+      <span class="cc">3 findings</span>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bw">Quality</span>
+        <span class="ftitle">Two different brand blues — <code>#009fd9</code> vs <code>#00acc1</code> in footer toggles</span>
+        <span class="floc">vB.css : 826, 840</span>
+      </div>
+      <div class="fbody">
+        <p>Every interactive element — pills, prices, focus ring, ZIP input border — uses Thumbtack blue <code>#009fd9</code>. The footer "Show more / Show less" buttons and hover colour use <code>#00acc1</code> (a noticeably different teal). Align both to <code>#009fd9</code>.</p>
+        <pre><span class="lb">.tt-cr-footer-col ul li a:hover { color: #00acc1; }  /* wrong */</span>
+<span class="lb">.tt-cr-toggle-cta              { color: #00acc1; }  /* wrong */</span>
+
+<span class="lg">.tt-cr-footer-col ul li a:hover { color: #009fd9; }</span>
+<span class="lg">.tt-cr-toggle-cta              { color: #009fd9; }</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bw">Quality</span>
+        <span class="ftitle">Error colour mismatch between CSS (<code>#ff5a5f</code>) and JS inline style (<code>#d9232d</code>)</span>
+        <span class="floc">vB.css : 344 &amp; vB.js : 619, 644</span>
+      </div>
+      <div class="fbody">
+        <p>When the ZIP is invalid, the CSS <code>.disable</code> state turns the border <code>#ff5a5f</code> (a light pink-red). The JS-injected error message div uses inline <code>color: #d9232d</code> (a darker red). The border and text error colours visually disagree. Pick one error red and apply it consistently — ideally move the error message styling into a CSS class and keep the colour in one place.</p>
+        <pre><span class="lb">/* vB.css — lighter red on border */</span>
+<span class="lb">.disable .Cre_zip_wrap { border-color: #ff5a5f; }</span>
+
+<span class="lb">/* vB.js — darker red on error text */</span>
+<span class="lb">errorEl.style.cssText = 'color:#d9232d;font-size:13px;...';</span>
+
+<span class="lg">/* Move error message to a CSS class, pick one red */</span>
+<span class="lg">.tt-zip-error-msg { color: #d9232d; font-size: 13px; font-weight: 500; margin-top: 6px; }</span>
+<span class="lg">.disable .Cre_zip_wrap { border-color: #d9232d; }</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bw">Quality</span>
+        <span class="ftitle">Five inconsistent responsive breakpoints with no defined system</span>
+        <span class="floc">vB.css : multiple</span>
+      </div>
+      <div class="fbody">
+        <p>The stylesheet uses <code>500px</code>, <code>700px</code>, <code>768px</code>, <code>900px</code>, and <code>1120px</code> — five thresholds with no pattern. This makes it hard to reason about what fires at what width. Consolidate to two or three values (e.g. <code>640px</code> mobile, <code>768px</code> tablet, <code>1120px</code> wide).</p>
+        <table class="tbl" style="margin-top:10px;">
+          <thead><tr><th>Breakpoint</th><th>Currently used for</th></tr></thead>
+          <tbody>
+            <tr><td><code>500px</code></td><td>Footer grid → single column</td></tr>
+            <tr><td><code>700px</code></td><td>Pricing, reviews, why-section, neighborhoods grids</td></tr>
+            <tr><td><code>768px</code></td><td>Template styles, banner, roofing section layout</td></tr>
+            <tr><td><code>900px</code></td><td>Footer grid → two columns</td></tr>
+            <tr><td><code>1120px</code></td><td>Container side padding</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ════════ CSS LOW ════════ -->
+    <div class="sec-hd" id="css-low">
+      <h2>CSS — Low</h2>
+      <span class="fc">vB.css</span>
+      <span class="cc">5 findings</span>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Quality</span>
+        <span class="ftitle">Four rule blocks duplicated verbatim — swiper card &amp; slide styles</span>
+        <span class="floc">vB.css : 103–128 &amp; 190–215</span>
+      </div>
+      <div class="fbody">
+        <p>The rules for <code>.TT-services-swiper</code>, <code>.TT-services-swiper .swiper-slide</code>, <code>.TT-service-card</code>, and <code>.TT-service-card:hover</code> are written out identically at lines 103–128 and again at lines 190–215. Delete one copy entirely.</p>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Quality</span>
+        <span class="ftitle"><code>.TT-review-text</code> has two dead declarations — conflicting overflow and max-height</span>
+        <span class="floc">vB.css : 284–297</span>
+      </div>
+      <div class="fbody">
+        <p><code>overflow-y: hidden</code> is overridden by the subsequent <code>overflow: hidden</code> shorthand. <code>max-height: 60px</code> is overridden by <code>max-height: 120px</code>. The first value in each pair is dead.</p>
+        <pre><span class="lb">.TT-review-text {</span>
+<span class="lb">  overflow-y: hidden;   /* dead — overridden by shorthand */</span>
+<span class="lb">  max-height: 60px;     /* dead — overridden below */</span>
+<span class="lb">  overflow: hidden;     /* wins */</span>
+<span class="lb">  max-height: 120px;    /* wins */</span>
+<span class="lb">}</span>
+
+<span class="lg">.TT-review-text {</span>
+<span class="lg">  overflow: hidden;</span>
+<span class="lg">  max-height: 120px;</span>
+<span class="lg">}</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Quality</span>
+        <span class="ftitle">Two <code>font-weight</code> declarations on swiper button pseudo-element</span>
+        <span class="floc">vB.css : 177–179</span>
+      </div>
+      <div class="fbody">
+        <p><code>font-weight: bold</code> is declared immediately before <code>font-weight: 900</code>. The first is dead. Remove <code>font-weight: bold</code>.</p>
+        <pre><span class="lb">.TT-reviews-section .TT-swiper-btn::after,</span>
+<span class="lb">.TT-services-section .TT-swiper-btn::after {</span>
+<span class="lb">  font-weight: bold;  /* dead */</span>
+<span class="lb">  font-weight: 900;   /* wins */</span>
+<span class="lb">}</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Quality</span>
+        <span class="ftitle">Double semicolon in <code>[fill="#D3D3D3"]</code></span>
+        <span class="floc">vB.css : 317–320</span>
+      </div>
+      <div class="fbody">
+        <p>A stray second semicolon after the <code>fill</code> value. Browsers tolerate it but linters flag it.</p>
+        <pre><span class="lb">.TT-review-stars [fill="#D3D3D3"] { fill: #d3d4d5;; }</span>
+<span class="lg">.TT-review-stars [fill="#D3D3D3"] { fill: #d3d4d5; }</span></pre>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bi">Quality</span>
+        <span class="ftitle">Overuse of <code>!important</code> — 20+ declarations, most are avoidable</span>
+        <span class="floc">vB.css : throughout</span>
+      </div>
+      <div class="fbody">
+        <p>Over 20 <code>!important</code> overrides are scattered across the file. Most are fighting the host page's specificity rather than being genuinely necessary. This causes a maintenance death-spiral: when something doesn't apply, the default becomes "add !important" rather than fixing specificity. Prefix variation-specific rules with the body class (<code>.Antonio_Roofing .rule</code>) to win specificity cleanly, then audit which <code>!important</code>s can be removed.</p>
+      </div>
+    </div>
+
+    <!-- ════════ CSS DEAD CODE ════════ -->
+    <div class="sec-hd" id="css-dead">
+      <h2>CSS — Dead Code</h2>
+      <span class="fc">vB.css</span>
+      <span class="cc">1 finding</span>
+    </div>
+
+    <div class="finding">
+      <div class="fhd">
+        <span class="badge bd">Dead code</span>
+        <span class="ftitle">~15 unused template rule blocks not referenced by any injected HTML</span>
+        <span class="floc">vB.css : 1–175, 218–300, 322, 381</span>
+      </div>
+      <div class="fbody">
+        <p>The following selectors exist in the CSS but have no corresponding HTML generated by <code>vB.js</code>. They appear to be carried over from the shared test template and should be removed. The stylesheet would shrink from ~1248 lines to roughly 750.</p>
+        <table class="tbl" style="margin-top:10px;">
+          <thead><tr><th>Class / Selector</th><th>Lines</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><code>.tt_footer_max_width</code></td><td>6–11</td><td>Not used anywhere in JS builders</td></tr>
+            <tr><td><code>.tt_subhead_copy</code>, <code>.tt_subhead_copy_inner</code></td><td>13–30</td><td>No matching HTML injected</td></tr>
+            <tr><td><code>.tt_item_section</code>, <code>.tt_secondnav_section</code>, <code>.tt_toggle_cta</code>, <code>.section_b_black</code></td><td>32–67</td><td>Template nav — not used in this variation</td></tr>
+            <tr><td><code>.TT-global-footer + [class*="Landing_linksSection"]</code></td><td>73–75</td><td>References <code>.TT-global-footer</code> which is not injected</td></tr>
+            <tr><td><code>.TT-services-swiper</code>, <code>.TT-service-card</code>, all <code>.TT-services-section</code></td><td>103–175</td><td>Swiper carousel — JS injects no swiper component</td></tr>
+            <tr><td><code>.TT-reviews-swiper</code>, <code>.TT-review-card</code>, <code>.TT-review-from</code>, <code>.TT-review-pro</code>, etc.</td><td>218–300</td><td>Swiper review carousel — not used</td></tr>
+            <tr><td><code>.hero_header.pre-line</code></td><td>322–324</td><td>No such element injected by JS</td></tr>
+            <tr><td><code>.tt-cr-reviewsTitle</code></td><td>381–383</td><td>Class name never output by any builder function</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- All findings table -->
+    <div class="sec-hd" id="all">
+      <h2>All Findings at a Glance</h2>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="tbl">
+        <thead>
+          <tr><th>#</th><th>File</th><th>Severity</th><th>Finding</th><th>Location</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>JS</td><td><span class="badge bc">Bug</span></td><td>Leading whitespace breaks two avatar URLs</td><td>134–135</td></tr>
+          <tr><td>2</td><td>JS</td><td><span class="badge bc">Bug</span></td><td>No null-guard on <code>window.__NEXT_DATA__</code> chain</td><td>547–554</td></tr>
+          <tr><td>3</td><td>JS</td><td><span class="badge bc">Bug</span></td><td><code>this &amp;&amp; this.Element</code> → should be <code>window.Element</code></td><td>26–41</td></tr>
+          <tr><td>4</td><td>JS</td><td><span class="badge bw">Quality</span></td><td><code>f.open</code> in FAQ builder never set — dead branch</td><td>361</td></tr>
+          <tr><td>5</td><td>JS</td><td><span class="badge bw">A11y</span></td><td>FAQ accordion: no keyboard support, no aria-expanded</td><td>359–425</td></tr>
+          <tr><td>6</td><td>JS</td><td><span class="badge bi">Style</span></td><td>Mixed var/const and string concat/template literals</td><td>Throughout</td></tr>
+          <tr><td>7</td><td>JS</td><td><span class="badge bi">Style</span></td><td><code>document.querySelector("body")</code> → <code>document.body</code></td><td>561</td></tr>
+          <tr><td>8</td><td>JS</td><td><span class="badge bi">Perf</span></td><td>Avatar images missing <code>loading="lazy"</code></td><td>323</td></tr>
+          <tr><td>9</td><td>JS</td><td><span class="badge bi">Style</span></td><td><code>debug = 0</code> → should be <code>debug = false</code></td><td>4</td></tr>
+          <tr><td>10</td><td>CSS</td><td><span class="badge bc">Bug</span></td><td>Page-wide <code>overflow: hidden</code> on <code>#__next</code></td><td>708</td></tr>
+          <tr><td>11</td><td>CSS</td><td><span class="badge bc">Bug</span></td><td>Duplicate <code>[class*="ir-header_mainHeader"]</code> — first rule dead</td><td>999 &amp; 1054</td></tr>
+          <tr><td>12</td><td>CSS</td><td><span class="badge bw">Quality</span></td><td>Two brand blues: <code>#009fd9</code> vs <code>#00acc1</code></td><td>826, 840</td></tr>
+          <tr><td>13</td><td>CSS</td><td><span class="badge bw">Quality</span></td><td>Error colour mismatch CSS vs JS inline style</td><td>CSS:344 / JS:619</td></tr>
+          <tr><td>14</td><td>CSS</td><td><span class="badge bw">Quality</span></td><td>Five inconsistent responsive breakpoints</td><td>Throughout</td></tr>
+          <tr><td>15</td><td>CSS</td><td><span class="badge bi">Quality</span></td><td>Four swiper rule blocks duplicated verbatim</td><td>103–215</td></tr>
+          <tr><td>16</td><td>CSS</td><td><span class="badge bi">Quality</span></td><td>Conflicting overflow &amp; max-height in <code>.TT-review-text</code></td><td>284–297</td></tr>
+          <tr><td>17</td><td>CSS</td><td><span class="badge bi">Quality</span></td><td>Two font-weight values on swiper button pseudo-element</td><td>177–179</td></tr>
+          <tr><td>18</td><td>CSS</td><td><span class="badge bi">Quality</span></td><td>Double semicolon in <code>[fill="#D3D3D3"]</code></td><td>319</td></tr>
+          <tr><td>19</td><td>CSS</td><td><span class="badge bi">Quality</span></td><td><code>!important</code> overuse — 20+ declarations</td><td>Throughout</td></tr>
+          <tr><td>20</td><td>CSS</td><td><span class="badge bd">Dead code</span></td><td>~15 unused template rule blocks</td><td>1–175, 218–300, 322, 381</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:32px;font-size:12px;color:var(--muted);">Generated by Claude Code &middot; Hexdrift Testing World &middot; 2026-06-30</p>
+
+  </main>
+</div>
+
+</body>
+</html>

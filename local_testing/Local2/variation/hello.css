@@ -1,68 +1,45 @@
-@media(min-width:1199px) {
-
-    html body.cre-t-09.cre-t-05 .pca-header .nav-links ul .header-ttl,
-    html body.cre-t-09.cre-t-05 nav#pay-new-nav .cre-t-05-how-it-works {
-
-        font-size: 15px !important;
-    }
+html body .cre-t-137-vetApprovedLink {
+    cursor: pointer;
 }
 
-@media(min-width:1310px) {
-
-    html body.cre-t-09.cre-t-05 .pca-header .nav-links ul .header-ttl,
-    html body.cre-t-09.cre-t-05 nav#pay-new-nav .cre-t-05-how-it-works {
-        font-size: 17px !important;
-    }
+html body .cre-t-137-vetApprovedLink:hover {
+    background: #ffffff !important;
+    color: #0272E4 !important;
 }
 
-@media(min-width:1450px) {
-
-    html body.cre-t-09.cre-t-05 .pca-header .nav-links ul .header-ttl,
-    html body.cre-t-09.cre-t-05 nav#pay-new-nav .cre-t-05-how-it-works {
-        font-size: 18px !important;
-    }
-}
-
-
-html body.cre-t-09 .pca-header .nav-links .sticky-get-started #mob-get-started,
-html body.cre-t-09 #pay-new-nav .nav-mobile-cta,
-html body.cre-t-09 a.pane-footer-cta[href*="register"],
-html body.cre-t-09 .pca-header .pay-new-nav .nav-actions .emp {
-    font-size: 0 !important;
+html body .cre-t-137-accordion_header {
+    background-color: rgba(0, 0, 0, 0);
+    color: #000000;
+    padding-top: 2rem;
+    padding-left: 0rem;
+    padding-bottom: 2rem;
+    padding-right: 0rem;
+    color: inherit;
+    cursor: pointer;
+    font-size: .7em;
+    letter-spacing: .1em;
+    transition: all var(--extras-accordion-duration);
+    text-transform: uppercase;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-family: inherit;
 }
 
-
-html body.cre-t-09 a.pane-footer-cta[href*="register"]::before,
-html body.cre-t-09 .pca-header .pay-new-nav .nav-actions .emp::before,
-html body.cre-t-09 .pca-header .nav-links .sticky-get-started #mob-get-started::before,
-html body.cre-t-09 #pay-new-nav .nav-mobile-cta::before {
-    content: 'Create free account';
-    font-size: 16px !important;
+html body .cre-t-137-accordion_toggle-icon {
+    fill: currentColor;
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+    transition: transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);
+    -webkit-transition: -webkit-transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);
 }
 
-html body.cre-t-09 a.pane-footer-cta[href*="register"]::before {
-    font-size: 15px !important;
-}
-
-
-
-@media(max-width:450px) {
-    html body.cre-t-09 .pca-header .nav-links .sticky-get-started #mob-get-started {
-        margin-right: 0;
-    }
-}
-
-@media(max-width:1198px) {
-
-    html body.cre-t-09 #pay-new-nav .nav-mobile-cta::before,
-    html body.cre-t-09 .pca-header .nav-links .sticky-get-started #mob-get-started::before,
-    html body.cre-t-09 #pay-new-nav .nav-mobile-cta::before,
-    html body.cre-t-09.cre-t-05 a.pane-footer-cta[href*="register"]::before,
-    html body.cre-t-09 a.pane-footer-cta[href*="register"]::before {
-        font-size: 16px !important;
-    }
-
-
+html body .cre-t-137-accordion_item.active .cre-t-137-accordion_header,
+html body .cre-t-137-accordion_item .cre-t-137-accordion_header:hover {
+    color: #0272e4 !important;
 }

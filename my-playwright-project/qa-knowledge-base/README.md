@@ -1,0 +1,84 @@
+# QA Knowledge Base
+
+> **Purpose:** Single reference for all A/B test and website QA automation done in this repo.
+> When starting a new test: **(1)** open the client's folder and read `_client-notes.md` for site quirks,
+> **(2)** look up the test TYPE in the [Test Type Index](#test-type-index-cross-client-lookup) below and read
+> the matching past tests — **even if they were for a different client** (a modal is a modal: the timer/cookie/
+> overlay lessons from AFP or pay.com.au apply on Pet Insurance Gurus too), **(3)** pick the matching checklist
+> in [`_shared/test-type-checklists.md`](_shared/test-type-checklists.md), and **(4)** follow
+> [`_shared/qa-workflow.md`](_shared/qa-workflow.md) (Figma first → code → live URL → tests → all browsers → HTML report).
+
+## Structure
+
+```
+qa-knowledge-base/
+├── README.md                  ← this index
+├── _shared/
+│   ├── qa-workflow.md         ← the correct QA workflow (Figma-first)
+│   └── test-type-checklists.md← reusable checklists A–M by test type + Playwright config reference
+├── <client>/
+│   ├── _client-notes.md       ← cross-test site quirks (WAF, modals, banners, platform)
+│   └── <test-id>-<slug>.md    ← one file per A/B test or audit
+```
+
+Each per-test file contains: **feature description** ("What this test does"), **test scenarios / regression
+checklist** (TC table — rerun it for regressions), **previous bugs** ("Bugs found"), **edge cases + future
+ideas** ("Additional test cases to consider"), **lessons learned / browser & environment quirks**
+("Issues found during development"), **force URLs, variation classes, report + screenshot locations**.
+
+## Clients & Tests
+
+| Client / Site | Platform | Tests |
+|---|---|---|
+| [AFP — financialprofessionals.org](afp/_client-notes.md) | VWO | [AFP08](afp/afp08-timed-modal.md) · [AFP09](afp/afp09-timed-modal-exit-intent.md) · [AFP10](afp/afp10-nav-cta-button.md) · [AFP13](afp/afp13-register-save-button.md) · [AFP15](afp/afp15-events-nav.md) · [AFP18](afp/afp18-download-summary-link.md) · [AFP19](afp/afp19-compensation-survey-hero.md) |
+| [13sick / DoctorDoctor — app.13sick.com.au](13sick/_client-notes.md) | Convert.com | [SIC-19](13sick/sic19-ab-test.md) · [SIC-21](13sick/sic21-form-validation.md) · [SIC-24](13sick/sic24-queue-page.md) · [SIC-27](13sick/sic27-verify-clinic-field.md) |
+| [Pet Insurance Gurus — petinsurancegurus.com](pet-insurance-gurus/_client-notes.md) | Convert.com | [SWF128](pet-insurance-gurus/swf128-filter-icon.md) · [SIC132](pet-insurance-gurus/sic132-phone-header-nav.md) · [SWF135](pet-insurance-gurus/swf135-badge-overlay.md) · [CRE-T-123](pet-insurance-gurus/cre-t-123-insurer-alert.md) · [CRE-T-133](pet-insurance-gurus/cre-t-133-zip-modal.md) · [CRE-T-137](pet-insurance-gurus/cre-t-137-vet-faq-nav.md) |
+| Renters Insurance Gurus — rentersinsurancegurus.com | Convert.com | [CRE-T-136](renters-insurance-gurus/cre-t-136-insurer-alert.md) *(cloned from CRE-T-123 — see clone-artifact bugs inside)* |
+| [pay.com.au](pay-com-au/_client-notes.md) | Optimizely | [CRE-T-08](pay-com-au/cre-t-08-timed-modal.md) · [CRE-T-09](pay-com-au/cre-t-09-navbar-cta.md) |
+| SeaWorld — seaworldentertainment.com | — | [SEA316](seaworld/sea316-price-display.md) |
+| Thumbtack — thumbtack.com (preview) | — | [SA Roofing landing section](thumbtack/sa-roofing-landing-section.md) |
+| Trakio — trakio.brillmark.com (internal app) | — | [Full app audit](trakio/trakio-full-app-audit.md) |
+| Fanorate — fanorate.com | — | [Full site audit](fanorate/fanorate-site-audit.md) |
+
+## Test Type Index (cross-client lookup)
+
+> **Use this when starting a new test.** The client folder tells you about the *site*; this table tells you
+> which past tests — on ANY client — match the *type* of thing you're building. Read both.
+
+| Test type | Checklist | Past tests (all clients) |
+|---|---|---|
+| Timed / triggered pop-up modal | [A](_shared/test-type-checklists.md) + [L](_shared/test-type-checklists.md) | [AFP08](afp/afp08-timed-modal.md) (15s, sessionStorage guard) · [AFP09](afp/afp09-timed-modal-exit-intent.md) (30s + exit intent, cookie guard) · [CRE-T-08](pay-com-au/cre-t-08-timed-modal.md) (Optimizely site) |
+| Location / ZIP-gate pop-up modal | [H](_shared/test-type-checklists.md) | [CRE-T-133](pet-insurance-gurus/cre-t-133-zip-modal.md) (V2 has no close button!) |
+| In-app flow modal (confirm/leave) | — | [SIC-24](13sick/sic24-queue-page.md) (Leave Queue modal, iframe app) |
+| Dismissible alert / banner (dynamic content from URL param) | [I](_shared/test-type-checklists.md) | [CRE-T-123](pet-insurance-gurus/cre-t-123-insurer-alert.md) · [CRE-T-136](renters-insurance-gurus/cre-t-136-insurer-alert.md) (clone of 123 — clone-artifact bugs) |
+| Nav CTA button injection | [D](_shared/test-type-checklists.md) | [AFP10](afp/afp10-nav-cta-button.md) · [AFP13](afp/afp13-register-save-button.md) |
+| Nav CTA via CSS `::before` | [M](_shared/test-type-checklists.md) | [CRE-T-09](pay-com-au/cre-t-09-navbar-cta.md) |
+| Nav link / phone injection in header | [E](_shared/test-type-checklists.md) | [SIC132](pet-insurance-gurus/sic132-phone-header-nav.md) · [CRE-T-137 V2](pet-insurance-gurus/cre-t-137-vet-faq-nav.md) |
+| Nav dropdown items injection | [F](_shared/test-type-checklists.md) | [AFP15](afp/afp15-events-nav.md) · [AFP18](afp/afp18-download-summary-link.md) |
+| Form field validation | [B](_shared/test-type-checklists.md) | [SIC-21](13sick/sic21-form-validation.md) · [SIC-27](13sick/sic27-verify-clinic-field.md) |
+| FAQ / accordion item injection | — | [CRE-T-137](pet-insurance-gurus/cre-t-137-vet-faq-nav.md) |
+| Icon / label injection near existing element | — | [SWF128](pet-insurance-gurus/swf128-filter-icon.md) |
+| Element removal / hide via CSS | [J](_shared/test-type-checklists.md) | [SWF135](pet-insurance-gurus/swf135-badge-overlay.md) |
+| Price display / multi-day pricing | [G](_shared/test-type-checklists.md) | [SEA316](seaworld/sea316-price-display.md) |
+| Hero / page section replacement | — | [AFP19](afp/afp19-compensation-survey-hero.md) |
+| Landing page section injection | [K](_shared/test-type-checklists.md) | [Thumbtack SA Roofing](thumbtack/sa-roofing-landing-section.md) |
+| Full app / website audit | [C](_shared/test-type-checklists.md) | [Trakio](trakio/trakio-full-app-audit.md) · [Fanorate](fanorate/fanorate-site-audit.md) |
+
+**Adding a new test?** Add it to BOTH tables: the client row above and its test-type row here (create a new type row if none fits — and add a matching checklist in `_shared/test-type-checklists.md`).
+
+## Deleted source files (July 9, 2026)
+
+All spec files (`testing/*.spec.js`), custom reporters (`*-reporter.js`), fanorate scripts, and raw screenshot
+folders were **deleted after being documented here**. Generated HTML reports (screenshots embedded) live in
+`local_testing/Local2/`. Recover any deleted file from git history (commit `ceb8b12` or later). The reusable
+custom-reporter pattern is preserved in
+[renters-insurance-gurus/cre-t-136-insurer-alert.md](renters-insurance-gurus/cre-t-136-insurer-alert.md).
+
+## Conventions
+
+- One file per test, named `<test-id>-<short-slug>.md`, inside the client's folder.
+- New client → new folder + `_client-notes.md` (platform, force-URL pattern, site quirks).
+- After finishing a test: add its file, update the client's `_client-notes.md` if a new site-wide quirk was found, and add a row to the table above.
+- `_shared/` files are cross-client: update the checklist file when a new test *type* appears.
+
+*Last updated: 2026-07-09*

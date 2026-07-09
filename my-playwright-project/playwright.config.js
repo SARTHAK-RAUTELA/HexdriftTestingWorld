@@ -7,27 +7,11 @@ module.exports = defineConfig({
   retries: 0,
   workers: 1,       // sequential — avoids WAF rate-limiting on app.13sick.com.au
   fullyParallel: false,
+  // Custom per-test reporters were removed 2026-07-09 after documenting them in
+  // QA_KNOWLEDGE_BASE.md (section 24 has the reusable reporter pattern).
   reporter: [
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
-    ['./afp10-reporter.js'],
-    ['./afp15-reporter.js'],
-    ['./afp13-reporter.js'],
-    ['./afp09-reporter.js'],
-    ['./sic24-reporter.js'],
-    ['./swf128-reporter.js'],
-    ['./sic27-reporter.js'],
-    ['./sic132-reporter.js'],
-    ['./afp18-reporter.js'],
-    ['./sea316-reporter.js'],
-    ['./afp19-reporter.js'],
-    ['./cre-t-133-reporter.js'],
-    ['./cre-t-123-reporter.js'],
-    ['./swf135-reporter.js'],
-    ['./cre-t-08-reporter.js'],
-    ['./cre-t-09-reporter.js'],
-    ['./cre-t-137-reporter.js'],
-    ['./cre-t-136-reporter.js'],
   ],
   use: {
     headless: true,

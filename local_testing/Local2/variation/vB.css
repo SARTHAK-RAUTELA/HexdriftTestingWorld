@@ -1,117 +1,15 @@
-html body.cre-t-136 .page-description ul {
-    opacity: 0;
-    visibility: hidden;
+html body.cre-t-202.cre-t-253 .cro-subtotal-line {
+    order: 2;
 }
 
-html body .cre-t-136-container {
-    opacity: 0;
-    visibility: hidden;
-}
-
-html body .cre-t-136-container {
-    display: block !important;
-    visibility: visible;
-    animation: cre-t-136-fade-in 0.4s ease forwards;
-    margin-top: 30px;
-}
-
-html body.cre-t-136 .page-description ul {
-    display: none;
-}
-
-@keyframes cre-t-136-fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-html body .cre-t-136-wrapper {
-    border-radius: 10px;
-    background: #fef3d1;
-    width: 100%;
-    padding: 25px 33px;
-    display: flex;
-    gap: 9px;
-    position: relative;
-}
-
-html body .cre-t-136-hero-title {
-    color: #000;
+html body.cre-t-253 .cro-subtotal-line {
+    color: #fff;
     font-family: inherit;
-    font-size: 18px;
+    font-size: 15px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
-}
-
-html body .cre-t-136-subheader-title {
-    color: #000;
-    font-family: inherit;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    padding-right: 18px;
-    margin-top: 7.41px;
-}
-
-html body .cre-t-136-subheader-title span {
-    font-weight: 600;
-}
-
-html body .cre-t-136-icon {
-    width: 19px;
-    height: 19px;
-    margin-top: 2px;
-}
-
-html body .cre-t-136-close-icon {
-    position: absolute;
-    right: 19px;
-    top: 18px;
-    cursor: pointer;
-}
-
-html body .cre-t-136-subheader-title span {
-    font-weight: 600;
-}
-
-@media screen and (max-width: 767px) {
-    html body .cre-t-136-wrapper {
-        padding: 25px 20px;
-    }
-
-    html body .cre-t-136-icon {
-        margin-top: 2px;
-        width: 17px;
-        height: 17px;
-    }
-
-    html body .cre-t-136-hero-title {
-        font-size: 16px;
-    }
-
-    html body .cre-t-136-subheader-title {
-        padding-right: 10px;
-    }
-}
-
-html body .cre-t-136-icon svg {
-    overflow: visible;
-}
-
-@media screen and (max-width: 767px) {
-    html body .cre-t-136-close-icon {
-        right: 10px;
-        top: 10px;
-        display: flex;
-    }
-}
-
-html body.cre-t-136 .plan-repeater div.rating-bar{
-    display: flex !important;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 17px;
+    margin: 14px 0;
+    text-align: center;
 }

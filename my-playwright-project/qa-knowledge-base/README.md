@@ -34,9 +34,10 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 | [13sick / DoctorDoctor — app.13sick.com.au](13sick/_client-notes.md) | Convert.com | [SIC-19](13sick/sic19-ab-test.md) · [SIC-21](13sick/sic21-form-validation.md) · [SIC-24](13sick/sic24-queue-page.md) · [SIC-27](13sick/sic27-verify-clinic-field.md) |
 | [Pet Insurance Gurus — petinsurancegurus.com](pet-insurance-gurus/_client-notes.md) | Convert.com | [SWF128](pet-insurance-gurus/swf128-filter-icon.md) · [SIC132](pet-insurance-gurus/sic132-phone-header-nav.md) · [SWF135](pet-insurance-gurus/swf135-badge-overlay.md) · [CRE-T-123](pet-insurance-gurus/cre-t-123-insurer-alert.md) · [CRE-T-133](pet-insurance-gurus/cre-t-133-zip-modal.md) · [CRE-T-137](pet-insurance-gurus/cre-t-137-vet-faq-nav.md) |
 | Renters Insurance Gurus — rentersinsurancegurus.com | Convert.com | [CRE-T-136](renters-insurance-gurus/cre-t-136-insurer-alert.md) *(cloned from CRE-T-123 — see clone-artifact bugs inside)* |
-| [pay.com.au](pay-com-au/_client-notes.md) | Optimizely | [CRE-T-08](pay-com-au/cre-t-08-timed-modal.md) · [CRE-T-09](pay-com-au/cre-t-09-navbar-cta.md) |
+| [pay.com.au](pay-com-au/_client-notes.md) | Optimizely | [CRE-T-08](pay-com-au/cre-t-08-timed-modal.md) · [CRE-T-08 (vB)](pay-com-au/cre-t-08-vB-exit-intent-mobile-timer.md) *(trigger logic was missing, now fixed via Experiment JS wiring — see BUG-01/BUG-02)* · [CRE-T-09](pay-com-au/cre-t-09-navbar-cta.md) |
 | SeaWorld — seaworldentertainment.com | — | [SEA316](seaworld/sea316-price-display.md) |
-| Thumbtack — thumbtack.com (preview) | — | [SA Roofing landing section](thumbtack/sa-roofing-landing-section.md) |
+| [Thumbtack — thumbtack.com](thumbtack/_client-notes.md) | Optimizely | [SA Roofing landing section](thumbtack/sa-roofing-landing-section.md) · [Pro_landing_page_phase_1 hero header](thumbtack/pro-landing-page-phase1-hero-header.md) *(mobile-only H1 never targeted — BUG-01)* |
+| [WinkBeds — winkbeds.com](winkbeds/_client-notes.md) | Convert.com | [cre-t-253 Buy Box sub-total line](winkbeds/cre-t-253-buybox-subtotal.md) *(needs `navigator.webdriver` override to run Playwright — see client notes; 60/60 passing across 6 browsers; BUG-01 addon price not reflected in badge)* |
 | Trakio — trakio.brillmark.com (internal app) | — | [Full app audit](trakio/trakio-full-app-audit.md) |
 | Fanorate — fanorate.com | — | [Full site audit](fanorate/fanorate-site-audit.md) |
 
@@ -47,7 +48,7 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 
 | Test type | Checklist | Past tests (all clients) |
 |---|---|---|
-| Timed / triggered pop-up modal | [A](_shared/test-type-checklists.md) + [L](_shared/test-type-checklists.md) | [AFP08](afp/afp08-timed-modal.md) (15s, sessionStorage guard) · [AFP09](afp/afp09-timed-modal-exit-intent.md) (30s + exit intent, cookie guard) · [CRE-T-08](pay-com-au/cre-t-08-timed-modal.md) (Optimizely site) |
+| Timed / triggered pop-up modal | [A](_shared/test-type-checklists.md) + [L](_shared/test-type-checklists.md) | [AFP08](afp/afp08-timed-modal.md) (15s, sessionStorage guard) · [AFP09](afp/afp09-timed-modal-exit-intent.md) (30s + exit intent, cookie guard) · [CRE-T-08](pay-com-au/cre-t-08-timed-modal.md) (Optimizely site) · [CRE-T-08 (vB)](pay-com-au/cre-t-08-vB-exit-intent-mobile-timer.md) (desktop exit-intent + mobile 20s spec — trigger logic entirely missing from code) |
 | Location / ZIP-gate pop-up modal | [H](_shared/test-type-checklists.md) | [CRE-T-133](pet-insurance-gurus/cre-t-133-zip-modal.md) (V2 has no close button!) |
 | In-app flow modal (confirm/leave) | — | [SIC-24](13sick/sic24-queue-page.md) (Leave Queue modal, iframe app) |
 | Dismissible alert / banner (dynamic content from URL param) | [I](_shared/test-type-checklists.md) | [CRE-T-123](pet-insurance-gurus/cre-t-123-insurer-alert.md) · [CRE-T-136](renters-insurance-gurus/cre-t-136-insurer-alert.md) (clone of 123 — clone-artifact bugs) |
@@ -59,8 +60,8 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 | FAQ / accordion item injection | — | [CRE-T-137](pet-insurance-gurus/cre-t-137-vet-faq-nav.md) |
 | Icon / label injection near existing element | — | [SWF128](pet-insurance-gurus/swf128-filter-icon.md) |
 | Element removal / hide via CSS | [J](_shared/test-type-checklists.md) | [SWF135](pet-insurance-gurus/swf135-badge-overlay.md) |
-| Price display / multi-day pricing | [G](_shared/test-type-checklists.md) | [SEA316](seaworld/sea316-price-display.md) |
-| Hero / page section replacement | — | [AFP19](afp/afp19-compensation-survey-hero.md) |
+| Price display / multi-day pricing | [G](_shared/test-type-checklists.md) | [SEA316](seaworld/sea316-price-display.md) · [WinkBeds cre-t-253](winkbeds/cre-t-253-buybox-subtotal.md) (running sub-total; site needs `navigator.webdriver` override for Playwright) |
+| Hero / page section replacement | — | [AFP19](afp/afp19-compensation-survey-hero.md) · [Thumbtack Pro hero header](thumbtack/pro-landing-page-phase1-hero-header.md) (2 separate desktop/mobile `<h1>` elements — variation only targeted one) |
 | Landing page section injection | [K](_shared/test-type-checklists.md) | [Thumbtack SA Roofing](thumbtack/sa-roofing-landing-section.md) |
 | Full app / website audit | [C](_shared/test-type-checklists.md) | [Trakio](trakio/trakio-full-app-audit.md) · [Fanorate](fanorate/fanorate-site-audit.md) |
 

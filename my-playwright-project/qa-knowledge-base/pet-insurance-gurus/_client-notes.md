@@ -2,7 +2,7 @@
 
 **Sites:** `petinsurancegurus.com` (sister site: `rentersinsurancegurus.com` — see `../renters-insurance-gurus/`)
 **A/B platform:** Convert.com — force URLs: `?cro_mode=qa&_conv_eforce=<experiment>.<variation>`
-**Tests done:** SWF128, SIC132, SWF135, CRE-T-123, CRE-T-133, CRE-T-137
+**Tests done:** SWF128, SIC132, SWF135, CRE-T-123, CRE-T-133, CRE-T-137, CRE-T-144 (SWF144)
 
 ## Environment / site quirks (apply to every PIG test)
 
@@ -28,3 +28,4 @@ Tests get cloned between this site and Renters Insurance Gurus (CRE-T-123 → CR
 | CRE-T-123 — Insurer alert box | [cre-t-123-insurer-alert.md](cre-t-123-insurer-alert.md) |
 | CRE-T-133 — ZIP code pop-up modal | [cre-t-133-zip-modal.md](cre-t-133-zip-modal.md) |
 | CRE-T-137 — Vet FAQ + Vet Approved nav link | [cre-t-137-vet-faq-nav.md](cre-t-137-vet-faq-nav.md) |
+| CRE-T-144 — Vet FAQ moved to TOP (SWF137 clone) | [cre-t-144-vet-faq-top.md](cre-t-144-vet-faq-top.md) |

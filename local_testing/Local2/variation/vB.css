@@ -1,495 +1,320 @@
-/* Hiding original Trustpilot logo as per client requirement */
-html body #comparison-section .ct-image.trustpilot-image {
-    display: none;
-}
-
-html body .cre-t-76-container {
-    display: none;
-}
-
-html body .cre-t-135-container {
-    position: relative;
-    font-family: "Montserrat", arial, sans-serif;
-}
-
-html body .cre-t-135-wrapper {
-    display: block;
-}
-
-html body .cre-t-135-reviews {
-    display: block;
-    cursor: pointer;
-}
-
-html body .cre-t-135-review-top {
+/* cre-t-249 : Sort feature (Best Rated / Lowest Price) */
+html body.cre-t-150 #comparison-section .rt-sort-bar {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    gap: 2px;
-}
-
-html body .cre-t-135-top-content1 {
-    color: #000;
-    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 0px;
+    margin-bottom: 16px;
+    background: #f5f5f5;
     font-family: inherit;
+    padding-top: 0;
+    width: 100%;
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-size: 16px;
-    font-style: normal;
+    color: #000;
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-value {
     font-weight: 700;
-    line-height: 17.6px;
 }
 
-html body .cre-t-135-total {
-    position: relative;
-    top: -1px;
-}
-
-html body .cre-t-135-star {
-    width: 17px;
-    height: 16px;
+/* "i" tooltip -> smooth scrolls to ranking methodology */
+html body.cre-t-150 #comparison-section .rt-sort-tooltip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-}
-
-html body .cre-t-135-star svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-html body .cre-t-135-classification {
-    position: relative;
-    top: -1px;
-}
-
-html body .cre-t-135-top-content2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4px;
-}
-
-html body .cre-t-135-top-content2-text {
-    color: #000;
-    text-align: right;
-    font-family: inherit;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    background: transparent;
+    color: #888;
     font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    /* line-height: 21px; */
-    line-height: 16px;
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
 }
 
-html body .cre-t-135-top-content2-icon {
-    width: 7px;
-    height: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(0deg);
-    transition: transform 0.3s;
+html body.cre-t-150 #comparison-section .rt-sort-tooltip:hover {
+    background: #e8e8e8;
 }
 
-html body .cre-t-135-top-content2-icon svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-html body .cre-t-135-top-content1 .cre-t-135-top-content2-icon {
-    display: none;
-}
-
-html body .cre-t-135-review-dropdown {
-    display: none;
-    position: absolute;
-    right: 0px;
-    top: calc(100% + 18px);
-    z-index: 1000;
-    width: 287px;
-}
-
-html body .cre-t-135-dropdown-wrapper {
-    border-radius: 4px;
+/* Dropdown - style to match the existing filter fields on the site.
+   Colors/border-radius below are placeholders, adjust to your brand tokens. */
+html body.cre-t-150 #comparison-section .rt-sort-dropdown {
     position: relative;
-}
-
-html body .cre-t-135-dropdown-top {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-html body .cre-t-135-dropdown-content {
-    width: 100%;
-    padding: 16px 24px;
-}
-
-html body .cre-t-135-dropdown-content1 {
-    background: #441771;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-html body .cre-t-135-dropdown-content2 {
-    background: #551e8e;
-}
-
-html body .cre-t-135-dropdown-content3 {
-    background: #441771;
-}
-
-html body .cre-t-135-dropdown-info1 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 7px;
-    margin-bottom: 4px;
-}
-
-html body .cre-t-135-dropdown-info1-icon {
-    width: 14px;
-    min-width: 14px;
-    height: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-html body .cre-t-135-dropdown-info1-icon svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-html body .cre-t-135-dropdown-info1-text {
-    color: #fff;
-    font-family: inherit;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
-}
-
-html body .cre-t-135-dropdown-info2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-bottom: 2px;
-}
-
-html body .cre-t-135-dropdown-info2-bar {
-    display: block;
-    height: 6px;
-    border-radius: 4px;
-    background: #fff;
-    background-color: rgb(255, 255, 255);
+    max-width: 242px;
     width: 100%;
 }
 
-html body .cre-t-135-dropdown-bar {
-    display: block;
-    height: 6px;
-    border-radius: 4px;
-    animation-name: animation-aba0gy;
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(0.66, 0.01, 0.41, -0.1);
-    animation-delay: 0s;
+html body.cre-t-150 #comparison-section .svg_icon {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    flex-shrink: 0;
+    fill: currentcolor;
+    font-size: 1.5rem;
+    top: calc(50% - 0.5em);
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.54);
+    right: 7px;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes animation-aba0gy {
-    0% {
-        width: 0px;
-    }
-}
-
-html body .cre-t-135-dropdown-info2-score {
-    color: #fff;
-    font-family: inherit;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
-}
-
-html body .cre-t-135-dropdown-info3 {
-    color: #fff;
-    font-family: inherit;
-    font-size: 10px;
-    font-style: normal;
+html body.cre-t-150 #comparison-section .rt-sort-toggle {
+    font-family: Montserrat, arial, sans-serif;
     font-weight: 400;
-    /* line-height: 21px; */
-    line-height: 14px;
-}
-
-html body .cre-t-135-dropdown-content1 .cre-t-135-dropdown-bar {
-    background: #eea650;
-}
-
-html body .cre-t-135-dropdown-content2 .cre-t-135-dropdown-bar {
-    background: #5dc087;
-}
-
-html body .cre-t-135-dropdown-content3 .cre-t-135-dropdown-bar {
-    background: #5aacf5;
-}
-
-html body .cre-t-135-dropdown-bottom {
-    padding: 10px 24px 12px 24px;
-    background: #551e8e;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    color: #fff;
-    font-family: inherit;
-    font-size: 9.5px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-}
-
-html body .cre-t-135-dropdown-bottom span {
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    -webkit-text-decoration-skip: ink;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
-    cursor: pointer;
-}
-
-
-/* cross icon hide on desktop */
-html body .cre-t-135-cross {
-    width: 13.308px;
-    min-width: 13.308px;
-    height: 13.308px;
-    display: none;
+    line-height: 1.4375em;
+    color: rgba(0, 0, 0, 0.87) !important;
+    box-sizing: border-box;
+    cursor: text;
+    display: inline-flex;
+    -webkit-box-align: center;
     align-items: center;
-    justify-content: center;
+    position: relative;
+    height: 50px;
+    background-color: white;
+    border-radius: 99px;
+    padding: 0 14px 0 16px;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 99px;
+    width: 100%;
+    /* gap: 6px; */
     cursor: pointer;
+    justify-content: space-between;
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-toggle-label {
+    font-weight: 600;
+    font-size: 1.6rem !important;
+    margin-right: 0px;
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-toggle-value {
+    margin-left: 0;
+    font-size: 1.6rem !important;
+    font-weight: 600;
+    width: 110px;
+    display: flex;
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-dropdown svg {
+    color: #555;
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+    /* margin-left: 4px; */
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-dropdown svg {
+    max-width: 20px;
+    overflow: initial !important;
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-dropdown.is-open svg {
+    transform: rotate(180deg);
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-menu {
     position: absolute;
-    top: 0;
+    top: calc(100% + -10px);
     right: 0;
-    padding-top: 10px;
-    padding-right: 11.69px;
-    box-sizing: content-box;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    transform: none;
+    min-width: 230px;
+    transition: opacity 310ms cubic-bezier(0.4, 0, 0.2, 1), transform 206ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: 125px 195.32px;
 }
 
-html body .cre-t-135-cross svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
+html body.cre-t-150 #comparison-section .rt-sort-dropdown.is-open .rt-sort-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 99;
+    padding: 0;
+    overflow-x: hidden;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
 }
 
-/* hiding average text on desktop */
-html body .cre-t-135-top-content1-mobile .cre-t-135-classification {
-    display: none;
-}
-
-html body .cre-t-135-container-parent {
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-
-html body .cre-t-135-dropdown-content1 .cre-t-135-dropdown-info1 {
-    align-items: flex-start;
-}
-
-html body .cre-t-135-dropdown-content3 .cre-t-135-dropdown-info1 {
-    align-items: flex-end;
-}
-
-html body .cre-t-135-top-content1-text {
+html body.cre-t-150 #comparison-section .rt-sort-option {
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 15px;
+    color: #222;
+    background: #fff;
+    cursor: pointer;
+    list-style: none;
+    font-size: 1.6rem !important;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
     color: inherit;
-    text-align: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
+    font-family: Montserrat, arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    /* min-height: 48px; */
+    padding: 6px 16px;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
-@media (min-width: 992px) {
-    html body .cre-t-135-reviews:hover .cre-t-135-review-dropdown {
-        display: block;
+html body.cre-t-150 #comparison-section .rt-sort-option:hover {
+    background: #0272E4 !important;
+    color: #fff;
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-check {
+    width: 14px;
+    display: inline-block;
+    font-size: 12px;
+    visibility: hidden;
+}
+
+html body.cre-t-150 #comparison-section .rt-sort-option.is-selected .rt-sort-check {
+    visibility: visible;
+}
+
+/* Brief sort animation: fade/slide the listings out, reorder in JS, fade back in */
+html body.cre-t-150 #comparison-section .rt-sorting>* {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+html body.cre-t-150 #comparison-section .rt-sorted-in>* {
+    animation: rtSortFadeIn 0.4s ease;
+}
+
+html body.cre-t-150 .ct-section-inner-wrap {
+    padding-top: 30px;
+}
+
+@keyframes rtSortFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
     }
 
-    html body .cre-t-135-reviews:hover .cre-t-135-top-content2-icon {
-        transform: rotate(180deg);
-    }
-
-    html body .cre-t-135-reviews:hover .cre-t-135-review-top::after {
-        content: "";
-        width: 100%;
-        height: 20px;
-        display: block;
-        background: #ffffff;
-        position: absolute;
-        top: calc(100% - 1px);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 991px) {
-    html body .cre-t-135-dropdown-active .cre-t-135-review-dropdown {
-        display: block;
-    }
-
-    html body .cre-t-135-dropdown-active .cre-t-135-top-content2-icon {
-        transform: rotate(180deg);
-    }
-
-    html body .cre-t-135-cross {
-        display: flex;
-    }
-}
-
+/* Mobile: keep the copy and the dropdown on the same row */
 @media (max-width: 767px) {
-    html body .cre-t-135-top-content1 .cre-t-135-top-content2-icon {
-        display: flex;
-        width: 6px;
-        height: 6px;
-        position: relative;
-        top: 0px;
+    html body.cre-t-150 #comparison-section .rt-sort-dropdown {
+        max-width: 219px;
     }
 
-    html body .cre-t-135-top-content1-text .cre-t-135-classification {
-        top: 0;
+    html body.cre-t-150 #comparison-section .rt-sort-bar {
+        padding: 0px 0px 30px 0;
+        gap: 8px;
     }
 
-    html body .cre-t-135-top-content1-mobile {
-        display: none;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
-    }
-
-    html body .cre-t-135-top-content1-mobile .cre-t-135-classification {
-        color: #000;
-        font-family: inherit;
-        font-size: 11px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 21px;
-        display: flex;
-        align-items: center;
-    }
-
-    html body .cre-t-135-total {
-        top: 0;
-    }
-
-    html body .cre-t-135-container-parent {
-        margin-bottom: 18px;
-        margin-top: 18px;
-        gap: 7px;
-    }
-
-    html body .cre-t-135-review-dropdown {
-        top: calc(100% + 11px);
-    }
-
-    html body .cre-t-135-star {
-        width: 14px;
-        height: 14px;
-        top: 2px;
-    }
-
-    html body .cre-t-135-top-content1 {
+    .rt-sort-info {
         font-size: 13px;
+        flex: 1 1 auto;
+        min-width: 0;
     }
 
-    html body .cre-t-135-top-content2-text {
-        font-size: 8px;
-        line-height: 11px;
+    html body.cre-t-150 #comparison-section .rt-sort-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
-    html body .cre-t-135-review-top {
-        gap: 0;
+    html body.cre-t-150 #comparison-section .rt-sort-toggle {
+        min-width: 0;
+        padding: 8px 10px;
+        font-size: 13px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    html body.cre-t-150 #comparison-section .rt-sort-menu {
+        min-width: 214px;
+    }
+
+    html body.cre-t-150 #comparison-section .rt-sort-info {
+        margin-left: 5px;
     }
 }
 
-@media (max-width: 370px) {
-    html body .cre-t-135-star {
+
+@media (max-width: 465px) {
+
+    html body.cre-t-150 #comparison-section .rt-sort-info {
+        font-size: 12px;
+    }
+
+    html body.cre-t-150 #comparison-section .rt-sort-toggle-label {
+        font-size: 12px !important;
+    }
+
+    html body.cre-t-150 #comparison-section .rt-sort-toggle-value {
+        font-size: 12px !important;
+        padding-left: 3px;
+    }
+
+    html body.cre-t-150 #comparison-section .rt-sort-option {
+        font-size: 12px !important;
+    }
+
+    html body.cre-t-150 #comparison-section .rt-sort-tooltip {
         width: 12px;
         height: 12px;
-        top: 2px;
     }
 
-    html body .cre-t-135-top-content1 {
-        font-size: 11px;
+    html body.cre-t-150 #comparison-section .rt-sort-tooltip img {
+        height: 12px;
     }
 
-    html body .cre-t-135-top-content2-text {
-        font-size: 8px;
-        line-height: 11px;
-    }
-}
-
-@media (max-width: 360px) {
-    html body .cre-t-135-review-dropdown {
-        right: -20px;
-        width: 280px;
-    }
-}
-
-@media (max-width: 319px) {
-    html body .cre-t-135-review-dropdown {
-        width: 240px;
+    html body.cre-t-150 #comparison-section .rt-sort-dropdown svg {
+        max-width: 16px;
     }
 
-    html body .cre-t-135-dropdown-info3 {
-        font-size: 9px;
+    html body.cre-t-150 #comparison-section .rt-sort-dropdown {
+        max-width: 168px;
     }
 
-    html body .cre-t-135-dropdown-bottom {
-        font-size: 7.5px;
+    html body.cre-t-150 #comparison-section .rt-sort-toggle {
+        padding: 10px 8px;
+        height: 38px;
     }
-}
 
-
-
-/* Changes for Test Test 135 */
-
-html body .cre-t-135-container .cre-t-135-wrapper .cre-t-135-reviews:hover .cre-t-135-review-dropdown {
-    display: none;
-}
-
-html body .cre-t-135-container .cre-t-135-wrapper .cre-t-135-top-content2-icon {
-    display: none;
-}
-
-
-html body .cre-t-135-container .cre-t-135-wrapper .cre-t-135-dropdown-active .cre-t-135-review-dropdown {
-    display: none !important;
-}
-
-html body .cre-t-135-container .cre-t-135-wrapper .cre-t-135-reviews {
-    cursor: default;
-}
-
-@media (max-width: 991px) {
-    html body .cre-t-135-dropdown-active .cre-t-135-review-dropdown {
-        display: none !important;
+    html body.cre-t-150 #comparison-section .rt-sort-menu {
+        min-width: 168px;
     }
-}
 
-@media screen and (max-width:767px) {
-    html body .cre-t-135-container .cre-t-135-wrapper .cre-t-135-top-content2 {
-        display: none;
-    }
 }

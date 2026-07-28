@@ -1,257 +1,70 @@
-html body .cre-t-76-container,
-html body .cre-t-135-container {
-    display: none !important;
-}
-/* ____________________________________________________________________________________ */
-/* Hiding original Trustpilot logo as per client requirement */
-html body #comparison-section .ct-image.trustpilot-image {
-    display: none;
-}
-
-html body .cre-t-146-container {
-    position: relative;
-    font-family: "Montserrat", arial, sans-serif;
-}
-
-html body .cre-t-146-wrapper {
-    display: block;
-}
-
-html body .cre-t-146-reviews {
-    display: block;
+html body .cre-t-144-vetApprovedLink {
     cursor: pointer;
+    color: #000000;
 }
 
-html body .cre-t-146-review-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 2px;
+html body .cre-t-144-vetApprovedLink:hover {
+    background: #ffffff !important;
+    color: #0272E4 !important;
 }
 
-html body .cre-t-146-top-content1 {
-    color: #000;
-    text-align: center;
-    font-family: inherit;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
-}
-
-html body .cre-t-146-total {
-    position: relative;
-    top: -1px;
-}
-
-html body .cre-t-146-star {
-    width: 17px;
-    height: 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-html body .cre-t-146-star svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-html body .cre-t-146-classification {
-    position: relative;
-    top: -1px;
-}
-
-html body .cre-t-146-top-content2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4px;
-}
-
-html body .cre-t-146-top-content2-text {
-    color: #000;
-    text-align: right;
-    font-family: inherit;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    /* line-height: 21px; */
-    line-height: 16px;
-}
-
-html body .cre-t-146-top-content2-icon {
-    width: 7px;
-    height: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(0deg);
-    transition: transform 0.3s;
-}
-
-html body .cre-t-146-top-content2-icon svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-html body .cre-t-146-top-content1 .cre-t-146-top-content2-icon {
-    display: none;
-}
-
-/* hiding average text on desktop */
-html body .cre-t-146-top-content1-mobile .cre-t-146-classification {
-    display: none;
-}
-
-html body .cre-t-146-container-parent {
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-
-html body .cre-t-146-top-content1-text {
+html body .cre-t-144-accordion_header {
+    background-color: rgba(0, 0, 0, 0);
+    color: #000000;
+    padding-top: 2rem;
+    padding-left: 0rem;
+    padding-bottom: 2rem;
+    padding-right: 0rem;
     color: inherit;
-    text-align: inherit;
+    cursor: pointer;
+    font-size: .7em;
+    letter-spacing: .1em;
+    transition: all var(--extras-accordion-duration);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    text-align: left;
     font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
 }
 
-@media (min-width: 992px) {
-    html body .cre-t-146-reviews:hover .cre-t-146-top-content2-icon {
-        transform: rotate(180deg);
-    }
-
-    html body .cre-t-146-reviews:hover .cre-t-146-review-top::after {
-        content: "";
-        width: 100%;
-        height: 20px;
-        display: block;
-        background: #ffffff;
-        position: absolute;
-        top: calc(100% - 1px);
-    }
+html body .cre-t-144-accordion_toggle-icon {
+    fill: currentColor;
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+    transition: transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);
+    -webkit-transition: -webkit-transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);
 }
 
-@media (max-width: 767px) {
-    html body .cre-t-146-top-content1 .cre-t-146-top-content2-icon {
-        display: flex;
-        width: 6px;
-        height: 6px;
-        position: relative;
-        top: 0px;
-    }
+html body .cre-t-144-accordion_item.active .cre-t-144-accordion_header,
+html body .cre-t-144-accordion_item .cre-t-144-accordion_header:hover {
+    color: #0272e4 !important;
+}
 
-    html body .cre-t-146-top-content1-text .cre-t-146-classification {
-        top: 0;
-    }
-
-    html body .cre-t-146-top-content1-mobile {
-        display: none;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
-    }
-
-    html body .cre-t-146-top-content1-mobile .cre-t-146-classification {
-        color: #000;
-        font-family: inherit;
-        font-size: 11px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 21px;
-        display: flex;
-        align-items: center;
-    }
-
-    html body .cre-t-146-total {
-        top: 0;
-    }
-
-    html body .cre-t-146-container-parent {
-        margin-bottom: 18px;
-        margin-top: 18px;
-        gap: 7px;
-    }
-
-    html body .cre-t-146-star {
-        width: 14px;
-        height: 14px;
-        top: 2px;
-    }
-
-    html body .cre-t-146-top-content1 {
-        font-size: 13px;
-    }
-
-    html body .cre-t-146-top-content2-text {
-        font-size: 8px;
-        line-height: 11px;
-    }
-
-    html body .cre-t-146-review-top {
-        gap: 0;
+@media screen and (max-width: 1060px) and (min-width:991px) {
+    html body .oxy-header-left img {
+        width: 350px !important;
     }
 }
 
-@media (max-width: 370px) {
-    html body .cre-t-146-star {
-        width: 12px;
-        height: 12px;
-        top: 2px;
+@media screen and (max-width: 768px) {
+    html body .cre-t-144-vetApprovedLink {
+        font-size: 14px !important;
     }
 
-    html body .cre-t-146-top-content1 {
-        font-size: 11px;
-    }
-
-    html body .cre-t-146-top-content2-text {
-        font-size: 8px;
-        line-height: 11px;
+    html body .oxy-header-right nav li {
+        margin-right: 10px !important;
     }
 }
 
-/* Changes for Test Test 135 */
+@media screen and (max-width: 370px) {
 
-html body .cre-t-146-container .cre-t-146-wrapper .cre-t-146-top-content2-icon {
-    display: none;
-}
-
-html body .cre-t-146-container .cre-t-146-wrapper .cre-t-146-reviews {
-    cursor: default;
-}
-
-@media screen and (max-width: 767px) {
-    html body .cre-t-146-container .cre-t-146-wrapper .cre-t-146-top-content2 {
-        display: none;
-    }
-}
-@media (max-width: 410px) {
-    html body [data-unique="comparison-table"] a.provider-link {
-        width: 50%;
-    }
-}
-
-@media (max-width: 330px) {
-    html body [data-unique="comparison-table"] a.provider-link {
-        width: 55%;
-    }
-    html body .cre-t-146-container {
-        max-width: 79px;
-    }
-
-    html body .cre-t-146-container[crodataclassification="Exceptional"] {
-        max-width: 85px;
-    }
-    html body .cre-t-146-container[crodataclassification="Very Good"] {
-        max-width: 82px;
+    html body .oxy-header-right nav li a,
+    html body .cre-t-144-vetApprovedLink {
+        font-size: 12px !important;
     }
 }

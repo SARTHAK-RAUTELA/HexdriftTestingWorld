@@ -7,6 +7,9 @@
 > overlay lessons from AFP or pay.com.au apply on Pet Insurance Gurus too), **(3)** pick the matching checklist
 > in [`_shared/test-type-checklists.md`](_shared/test-type-checklists.md), and **(4)** follow
 > [`_shared/qa-workflow.md`](_shared/qa-workflow.md) (Figma first → code → live URL → tests → all browsers → HTML report).
+>
+> **A live test reported as "changes don't show"?** That's a different problem from the above — go straight to
+> [`_shared/troubleshooting-changes-not-showing.md`](_shared/troubleshooting-changes-not-showing.md).
 
 ## Structure
 
@@ -15,7 +18,8 @@ qa-knowledge-base/
 ├── README.md                  ← this index
 ├── _shared/
 │   ├── qa-workflow.md         ← the correct QA workflow (Figma-first)
-│   └── test-type-checklists.md← reusable checklists A–M by test type + Playwright config reference
+│   ├── test-type-checklists.md← reusable checklists A–M by test type + Playwright config reference
+│   └── troubleshooting-changes-not-showing.md ← debugging playbook for "it's live but doesn't show"
 ├── <client>/
 │   ├── _client-notes.md       ← cross-test site quirks (WAF, modals, banners, platform)
 │   └── <test-id>-<slug>.md    ← one file per A/B test or audit
@@ -32,7 +36,7 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 |---|---|---|
 | [AFP — financialprofessionals.org](afp/_client-notes.md) | VWO | [AFP08](afp/afp08-timed-modal.md) · [AFP09](afp/afp09-timed-modal-exit-intent.md) · [AFP10](afp/afp10-nav-cta-button.md) · [AFP13](afp/afp13-register-save-button.md) · [AFP15](afp/afp15-events-nav.md) · [AFP18](afp/afp18-download-summary-link.md) · [AFP19](afp/afp19-compensation-survey-hero.md) |
 | [13sick / DoctorDoctor — app.13sick.com.au](13sick/_client-notes.md) | Convert.com | [SIC-19](13sick/sic19-ab-test.md) · [SIC-21](13sick/sic21-form-validation.md) · [SIC-24](13sick/sic24-queue-page.md) · [SIC-27](13sick/sic27-verify-clinic-field.md) |
-| [Pet Insurance Gurus — petinsurancegurus.com](pet-insurance-gurus/_client-notes.md) | Convert.com | [SWF128](pet-insurance-gurus/swf128-filter-icon.md) · [SIC132](pet-insurance-gurus/sic132-phone-header-nav.md) · [SWF135](pet-insurance-gurus/swf135-badge-overlay.md) · [CRE-T-123](pet-insurance-gurus/cre-t-123-insurer-alert.md) · [CRE-T-133](pet-insurance-gurus/cre-t-133-zip-modal.md) · [CRE-T-137](pet-insurance-gurus/cre-t-137-vet-faq-nav.md) · [SWF139](pet-insurance-gurus/swf139-info-icon-scroll.md) |
+| [Pet Insurance Gurus — petinsurancegurus.com](pet-insurance-gurus/_client-notes.md) | Convert.com | [SWF128](pet-insurance-gurus/swf128-filter-icon.md) · [SIC132](pet-insurance-gurus/sic132-phone-header-nav.md) · [SWF135](pet-insurance-gurus/swf135-badge-overlay.md) · [CRE-T-123](pet-insurance-gurus/cre-t-123-insurer-alert.md) · [CRE-T-133](pet-insurance-gurus/cre-t-133-zip-modal.md) · [CRE-T-137](pet-insurance-gurus/cre-t-137-vet-faq-nav.md) · [SWF139](pet-insurance-gurus/swf139-info-icon-scroll.md) · [CRE-T-144/SWF144](pet-insurance-gurus/cre-t-144-vet-faq-top.md) *(post-launch "changes don't show" bug — BUG-E, fixed & verified live 2026-07-28)* |
 | [Renters Insurance Gurus — rentersinsurancegurus.com](renters-insurance-gurus/_client-notes.md) | Convert.com | [CRE-T-136](renters-insurance-gurus/cre-t-136-insurer-alert.md) *(cloned from CRE-T-123 — see clone-artifact bugs inside)* · [SWF146](renters-insurance-gurus/swf146-badge-restyle.md) *(TrustScore badge restyle, SWF135-style; variation not yet published to Convert.com at test time)* |
 | [pay.com.au](pay-com-au/_client-notes.md) | Optimizely | [CRE-T-08](pay-com-au/cre-t-08-timed-modal.md) · [CRE-T-08 (vB)](pay-com-au/cre-t-08-vB-exit-intent-mobile-timer.md) *(trigger logic was missing, now fixed via Experiment JS wiring — see BUG-01/BUG-02)* · [CRE-T-09](pay-com-au/cre-t-09-navbar-cta.md) |
 | SeaWorld — seaworldentertainment.com | — | [SEA316](seaworld/sea316-price-display.md) |

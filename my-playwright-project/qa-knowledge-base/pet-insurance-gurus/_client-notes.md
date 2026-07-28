@@ -19,6 +19,18 @@
 - **The site's "Showing prices for …" line** is `div.search-details`, rendered only once a filter is active, and its text ends with a **trailing space** (`"Showing prices for Cats "`). Appending copy to it without trimming that node renders as `"Cats . …"`.
 - **"Ranking Methodology" is an `<h3>`** here (it is an `<h2>` on Renters Insurance Gurus) — scroll-to-methodology code cloned between the sites must scan `h2, h3, h4`.
 - **Duplication test pattern:** re-run the variation JS via `page.evaluate` to simulate console paste; injected element count must stay 1.
+- **Watch for missing default args on `waitForElement`/`waitForjQuery`-style polling helpers.** CRE-T-144's
+  `waitForjQuery(trigger, delayInterval, delayTimeout)` was called with only `trigger` — the missing
+  `delayInterval`/`delayTimeout` resolved to `undefined`, which `setInterval`/`setTimeout` treat as ~0ms,
+  racing the poll against its own cleanup timer. Symptom in production: worked on the force-preview link,
+  didn't show on a real bare-page visit, "fixed itself" once the user interacted with a filter (a different,
+  unrelated code path re-ran). See [cre-t-144-vet-faq-top.md](cre-t-144-vet-faq-top.md) BUG-E and
+  [_shared/troubleshooting-changes-not-showing.md](../_shared/troubleshooting-changes-not-showing.md) for the
+  full diagnostic playbook — this pattern is likely cloned into other tests on this site/template family.
+- **A long-lived, heavily-reused Chrome tab can give a false "never works" result** on this site due to stale
+  Convert bucketing cookies from prior QA sessions. If a bug won't reproduce consistently in your regular test
+  browser, re-check in a fresh Playwright `browser.newContext()` (or a private window) before concluding
+  anything about the code.
 
 ## Cross-site clone risk
 

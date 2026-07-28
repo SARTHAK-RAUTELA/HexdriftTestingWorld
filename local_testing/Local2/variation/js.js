@@ -10,6 +10,9 @@
     var FILTERS_ROW_SELECTOR = ".filter-options"; // pet-type tabs + breed + zip row
     var FILTERS_FIELDS_SELECTOR = ".filter-options .additional-filters"; // breed + zip group; sort field goes here
     var SITE_COPY_PREFIX = "showing prices for"; // existing line we append our copy to
+    var SITE_COPY_CLASS = "search-details"; // the site's own class for that line - borrowed when standalone
+    var HEADER_ROW_SELECTOR = ".filter-label-icon-container"; // "Personalize prices" row, above the filters
+    var HEADER_COPY_MIN_WIDTH = 992; // at/above this the copy sits top-right instead of under the filters
     var ZIP_INPUT_SELECTOR = ".zip-textinput input";
     var ZIP_SHORT_PLACEHOLDER = "ZIP code"; // shortened on mobile so 3 fields fit one row
     var ZIP_SHORT_MAX_WIDTH = 767;
@@ -104,6 +107,25 @@
     }
 
     /* ---- Sort-feature logic ---- */
+    function isVisible(el) {
+      if (!el) return false;
+      var style = window.getComputedStyle(el);
+      return style.display !== "none" && style.visibility !== "hidden" && style.opacity !== "0";
+    }
+    /**
+     * Text of an element counting only the children the user can actually see. Other live tests on
+     * this site (e.g. the price-override test) inject a second price element next to the original
+     * and hide the original with CSS - plain textContent would return BOTH numbers and we would
+     * end up sorting on the hidden one.
+     */
+    function getVisibleText(el) {
+      if (!el.children.length) return el.textContent;
+      var out = "";
+      for (var i = 0; i < el.children.length; i++) {
+        if (isVisible(el.children[i])) out += " " + el.children[i].textContent;
+      }
+      return out.trim() ? out : el.textContent;
+    }
     // Pulls the numeric price out of the "Average Plan Cost" column, e.g. "$23.44/mo" -> 23.44
     function getPrice(item) {
       var columns = item.querySelectorAll(".plan-detail-column");
@@ -112,7 +134,7 @@
         if (heading && heading.textContent.trim().toLowerCase().indexOf("average plan cost") !== -1) {
           var contentEl = columns[i].querySelector(".plan-detail-content");
           if (contentEl) {
-            var match = contentEl.textContent.replace(/,/g, "").match(/[\d.]+/);
+            var match = getVisibleText(contentEl).replace(/,/g, "").match(/[\d.]+/);
             return match ? parseFloat(match[0]) : Infinity;
           }
         }
@@ -340,27 +362,61 @@
       }
       return match;
     }
+    /**
+     * The site's line ends in a trailing space ("Showing prices for <strong>Cats</strong> ").
+     * Left alone that renders as "Cats . Sorted by ..." once our copy is appended, so strip any
+     * trailing whitespace off the last real text node first.
+     */
+    function trimTrailingSpace(container) {
+      var node = container.lastChild;
+      if (node === copyEl) node = node.previousSibling;
+      while (node) {
+        if (node.nodeType !== 3) return; // last meaningful node is an element - nothing to trim
+        var trimmed = node.nodeValue.replace(/\s+$/, "");
+        if (trimmed !== node.nodeValue) node.nodeValue = trimmed;
+        if (trimmed) return;
+        node = node.previousSibling; // node was whitespace-only, keep walking back
+      }
+    }
     // Appends our copy to the site's line ("... in 90210. Sorted by best rated.") when that line
     // exists, otherwise renders it as its own line directly under the filters. React re-renders
     // wipe the appended node, which is why this is re-run from the observer.
     function ensureCopy() {
       if (!copyEl) copyEl = buildCopy();
+
+      // Desktop: the copy sits top-right on the "Personalize prices" row, flush with the right
+      // edge of the listings (client-approved layout). Below that it goes back to continuing the
+      // site's own "Showing prices for ..." sentence under the filters.
+      var headerRow = document.querySelector(HEADER_ROW_SELECTOR);
+      if (headerRow && window.innerWidth >= HEADER_COPY_MIN_WIDTH) {
+        if (copyEl.parentNode !== headerRow) headerRow.appendChild(copyEl);
+        copyEl.classList.add("rt-sort-copy--header");
+        copyEl.classList.remove("rt-sort-copy--standalone");
+        copyEl.classList.remove(SITE_COPY_CLASS);
+        updateSortCopy(currentMode);
+        return;
+      }
+      copyEl.classList.remove("rt-sort-copy--header");
+
       var siteLine = findSiteCopyLine();
       if (siteLine) {
-        if (copyEl.parentNode !== siteLine) {
-          try {
-            siteLine.appendChild(copyEl);
-          } catch (appendError) {
-            if (debug) console.log(appendError, "could not append copy in " + variation_name);
-          }
+        try {
+          trimTrailingSpace(siteLine);
+          if (copyEl.parentNode !== siteLine) siteLine.appendChild(copyEl);
+        } catch (appendError) {
+          if (debug) console.log(appendError, "could not append copy in " + variation_name);
         }
         copyEl.classList.remove("rt-sort-copy--standalone");
+        // SITE_COPY_CLASS is only worn while standalone, so the clone picks up the site's own
+        // typography for that line; inline it would be a duplicate of the real one.
+        copyEl.classList.remove(SITE_COPY_CLASS);
       } else {
         var filters = document.querySelector(SECTION_SELECTOR + " " + FILTERS_ROW_SELECTOR);
         if (filters && copyEl.previousElementSibling !== filters) {
           filters.insertAdjacentElement("afterend", copyEl);
         }
         copyEl.classList.add("rt-sort-copy--standalone");
+        copyEl.classList.add(SITE_COPY_CLASS);
       }
       updateSortCopy(currentMode);
     }
@@ -451,6 +507,7 @@
         resizeTimer = setTimeout(function () {
           syncFieldHeight();
           syncZipPlaceholder();
+          ensureCopy(); // the copy moves between the header row and the filter line on resize
         }, 150);
       });
       // The pet-type / breed / zip filters re-render the whole listing list, which detaches every

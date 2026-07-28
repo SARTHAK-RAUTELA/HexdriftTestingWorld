@@ -1,539 +1,391 @@
-html body.cre-t-139 .cre-t-135-container {
-    display: none;
-}
+/* cre-t-151 : Sort feature (Best Rated / Lowest Price) - Pet Insurance Gurus
+   Clone of cre-t-150, re-targeted to petinsurancegurus.com where the sort field is integrated
+   into the existing pet-type / breed / zip filter row instead of living in its own bar. */
 
-/* Hiding original Trustpilot logo as per client requirement */
-html body #comparison-section .ct-image.trustpilot-image {
-    display: none;
-}
+/* ---------------------------------------------------------------------------
+   1. Filter row layout - make room for the sort field
+   --------------------------------------------------------------------------- */
 
-html body .cre-t-76-container {
-    display: none;
-}
-
-html body .cre-t-139-container {
-    position: relative;
-    font-family: "Montserrat", arial, sans-serif;
-}
-
-html body .cre-t-139-wrapper {
-    display: block;
-}
-
-html body .cre-t-139-reviews {
-    display: block;
-    cursor: pointer;
-}
-
-html body .cre-t-139-review-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+/* .filter-options carries inline styles from the site (display:flex; flex-flow:wrap; gap:10px).
+   We only need vertical centring plus a growing field group so the sort pill can be pushed
+   flush to the right edge of the listings below. */
+html body.cre-t-151 #comparison-section .filter-options {
     align-items: center;
-    gap: 2px;
 }
 
-html body .cre-t-139-top-content1 {
-    color: #000;
-    text-align: center;
-    font-family: inherit;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
+html body.cre-t-151 #comparison-section .additional-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
-html body .cre-t-139-total {
+/* Desktop: right-align the sort field to the right edge of the listings. This intentionally
+   leaves a gap between the ZIP field and the sort field (per client direction). */
+html body.cre-t-151 #comparison-section .rt-sort-dropdown {
     position: relative;
-    top: -1px;
+    flex: 0 0 auto;
+    margin-left: auto;
 }
 
-html body .cre-t-139-star {
-    width: 17px;
-    height: 16px;
+/* ---------------------------------------------------------------------------
+   2. The sort pill - matched to the site's MUI filter fields
+   --------------------------------------------------------------------------- */
+
+/* --rt-sort-field-h is measured from the real ZIP/breed field at runtime, so the pill is always
+   exactly as tall as its neighbours. 50px is only the pre-measurement fallback. */
+html body.cre-t-151 #comparison-section .rt-sort-toggle {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: auto;
+    height: var(--rt-sort-field-h, 50px);
+    padding: 0 12px 0 18px;
+    background-color: #fff;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 99px;
+    font-family: Montserrat, arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4375em;
+    color: rgba(0, 0, 0, 0.87);
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-toggle:focus-visible {
+    outline: 2px solid #0272e4;
+    outline-offset: 2px;
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-toggle-label,
+html body.cre-t-151 #comparison-section .rt-sort-toggle-value {
+    font-size: inherit;
+    font-weight: 600;
+    color: inherit;
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-caret {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    fill: currentColor;
+    color: rgba(0, 0, 0, 0.54);
+    overflow: initial !important;
+    transition: transform 0.15s ease;
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-dropdown.is-open .rt-sort-caret {
+    transform: rotate(180deg);
+}
+
+/* ---------------------------------------------------------------------------
+   3. Dropdown menu - MUI-select look, only the two values (no "Sort by:" prefix)
+   --------------------------------------------------------------------------- */
+
+html body.cre-t-151 #comparison-section .rt-sort-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 99;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    transition: opacity 310ms cubic-bezier(0.4, 0, 0.2, 1), transform 206ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-dropdown.is-open .rt-sort-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-option {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 20px 10px 14px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    font-family: Montserrat, arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #222;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-option:hover {
+    background: #0272e4 !important;
+    color: #fff;
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-check {
+    display: inline-block;
+    width: 14px;
+    font-size: 12px;
+    visibility: hidden;
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-option.is-selected .rt-sort-check {
+    visibility: visible;
+}
+
+/* ---------------------------------------------------------------------------
+   4. "Sorted by ___" copy - appended to the site's existing "Showing prices for..." line
+   --------------------------------------------------------------------------- */
+
+html body.cre-t-151 #comparison-section .rt-sort-copy {
+    font: inherit;
+    color: inherit;
+}
+
+/* Standalone mode: used only when the site hasn't rendered its own copy line yet
+   (e.g. the default "All Pets" state with no breed/zip chosen). */
+html body.cre-t-151 #comparison-section .rt-sort-copy--standalone {
+    display: block;
+    margin-top: 6px;
+    font-family: Montserrat, arial, sans-serif;
+    font-size: 16px;
+    color: #13162f;
+}
+
+/* The leading full stop only makes sense when we're continuing the site's sentence. */
+html body.cre-t-151 #comparison-section .rt-sort-copy--standalone .rt-sort-copy-sep {
+    display: none;
+}
+
+html body.cre-t-151 #comparison-section .rt-sort-value {
+    font-weight: 700;
+}
+
+/* "i" icon -> smooth scrolls to the ranking methodology section */
+html body.cre-t-151 #comparison-section .rt-sort-tooltip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-}
-
-html body .cre-t-139-star svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-html body .cre-t-139-classification {
-    position: relative;
-    top: -1px;
-}
-
-html body .cre-t-139-top-content2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4px;
-}
-
-html body .cre-t-139-top-content2-text {
-    color: #000;
-    text-align: right;
-    font-family: inherit;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    /* line-height: 21px; */
-    line-height: 16px;
-}
-
-html body .cre-t-139-top-content2-icon {
-    width: 7px;
-    height: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(0deg);
-    transition: transform 0.3s;
-}
-
-html body .cre-t-139-top-content2-icon svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-html body .cre-t-139-top-content1 .cre-t-139-top-content2-icon {
-    display: none;
-}
-
-html body .cre-t-139-review-dropdown {
-    display: none;
-    position: absolute;
-    right: 0px;
-    top: calc(100% + 18px);
-    z-index: 1000;
-    width: 287px;
-}
-
-html body .cre-t-139-dropdown-wrapper {
-    border-radius: 4px;
-    position: relative;
-}
-
-html body .cre-t-139-dropdown-top {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-html body .cre-t-139-dropdown-content {
-    width: 100%;
-    padding: 16px 24px;
-}
-
-html body .cre-t-139-dropdown-content1 {
-    background: #441771;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-html body .cre-t-139-dropdown-content2 {
-    background: #551e8e;
-}
-
-html body .cre-t-139-dropdown-content3 {
-    background: #441771;
-}
-
-html body .cre-t-139-dropdown-info1 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 7px;
-    margin-bottom: 4px;
-}
-
-html body .cre-t-139-dropdown-info1-icon {
-    width: 14px;
-    min-width: 14px;
-    height: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-html body .cre-t-139-dropdown-info1-icon svg {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-html body .cre-t-139-dropdown-info1-text {
-    color: #fff;
-    font-family: inherit;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
-}
-
-html body .cre-t-139-dropdown-info2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-bottom: 2px;
-}
-
-html body .cre-t-139-dropdown-info2-bar {
-    display: block;
-    height: 6px;
-    border-radius: 4px;
-    background: #fff;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-}
-
-html body .cre-t-139-dropdown-bar {
-    display: block;
-    height: 6px;
-    border-radius: 4px;
-    animation-name: animation-aba0gy;
-    animation-duration: 0.6s;
-    animation-timing-function: cubic-bezier(0.66, 0.01, 0.41, -0.1);
-    animation-delay: 0s;
-}
-
-@keyframes animation-aba0gy {
-    0% {
-        width: 0px;
-    }
-}
-
-html body .cre-t-139-dropdown-info2-score {
-    color: #fff;
-    font-family: inherit;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17.6px;
-}
-
-html body .cre-t-139-dropdown-info3 {
-    color: #fff;
-    font-family: inherit;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    /* line-height: 21px; */
-    line-height: 14px;
-}
-
-html body .cre-t-139-dropdown-content1 .cre-t-139-dropdown-bar {
-    background: #eea650;
-}
-
-html body .cre-t-139-dropdown-content2 .cre-t-139-dropdown-bar {
-    background: #5dc087;
-}
-
-html body .cre-t-139-dropdown-content3 .cre-t-139-dropdown-bar {
-    background: #5aacf5;
-}
-
-html body .cre-t-139-dropdown-bottom {
-    padding: 10px 24px 12px 24px;
-    background: #551e8e;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    color: #fff;
-    font-family: inherit;
-    font-size: 9.5px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-}
-
-html body .cre-t-139-dropdown-bottom span {
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    -webkit-text-decoration-skip: ink;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
+    width: 15px;
+    height: 15px;
+    margin: 0 0 -2px 5px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #8c8ea0;
     cursor: pointer;
+    vertical-align: baseline;
 }
 
-/* cross icon hide on desktop */
-html body .cre-t-139-cross {
-    width: 13.308px;
-    min-width: 13.308px;
-    height: 13.308px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding-top: 10px;
-    padding-right: 11.69px;
-    box-sizing: content-box;
-}
-
-html body .cre-t-139-cross svg {
+html body.cre-t-151 #comparison-section .rt-sort-tooltip svg {
     width: 100%;
     height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-
-/* hiding average text on desktop */
-html body .cre-t-139-top-content1-mobile .cre-t-139-classification {
-    display: none;
-}
-
-html body .cre-t-139-container-parent {
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-
-html body .cre-t-139-dropdown-content1 .cre-t-139-dropdown-info1 {
-    align-items: flex-start;
-}
-
-html body .cre-t-139-dropdown-content3 .cre-t-139-dropdown-info1 {
-    align-items: flex-end;
-}
-
-html body .cre-t-139-top-content1-text {
-    color: inherit;
-    text-align: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-}
-
-html body .cre-t-139-top-content2-text-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-}
-
-html body .cre-t-139-classification-wrap .cre-t-139-info-icon {
-    display: none;
-}
-
-html body .cre-t-139-top-content2-text-wrap .cre-t-139-info-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10px;
-    min-width: 10px;
-    height: 10px;
-    cursor: pointer;
-}
-html body .cre-t-139-top-content2-text-wrap .cre-t-139-info-icon svg {
+    fill: currentColor;
     overflow: visible;
 }
 
-html body .cre-t-139-top-content2 .cre-t-139-top-content2-text {
-    cursor: pointer;
-    padding-right: 4px;
+html body.cre-t-151 #comparison-section .rt-sort-tooltip:hover {
+    color: #13162f;
 }
 
-@media (min-width: 992px) {
-    html body .cre-t-139-reviews:hover .cre-t-139-review-dropdown {
-        display: block;
+/* ---------------------------------------------------------------------------
+   5. Sort animation - fade/slide the listings out, reorder in JS, fade back in
+   --------------------------------------------------------------------------- */
+
+html body.cre-t-151 #comparison-section .plan-repeater.rt-sorting > * {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+html body.cre-t-151 #comparison-section .plan-repeater.rt-sorted-in > * {
+    animation: rtSortFadeIn 0.4s ease;
+}
+
+@keyframes rtSortFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
     }
 
-    html body .cre-t-139-reviews:hover .cre-t-139-top-content2-icon {
-        transform: rotate(180deg);
-    }
-
-    html body .cre-t-139-reviews:hover .cre-t-139-review-top::after {
-        content: "";
-        width: 100%;
-        height: 20px;
-        display: block;
-        background: #ffffff;
-        position: absolute;
-        top: calc(100% - 1px);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 991px) {
-    html body .cre-t-139-dropdown-active .cre-t-139-review-dropdown {
-        display: block;
-    }
-
-    html body .cre-t-139-dropdown-active .cre-t-139-top-content2-icon {
-        transform: rotate(180deg);
-    }
-
-    html body .cre-t-139-cross {
-        display: flex;
-    }
-}
+/* ---------------------------------------------------------------------------
+   6. Mobile - breed + ZIP + sort share the second row
+   --------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
-    html body .cre-t-139-top-content1 .cre-t-139-top-content2-icon {
-        display: flex;
-        width: 6px;
-        height: 6px;
-        position: relative;
-        top: 0px;
+    html body.cre-t-151 #comparison-section .additional-filters {
+        flex: 1 1 100%;
+        width: 100%;
+        gap: 6px;
+        flex-wrap: nowrap;
     }
 
-    html body .cre-t-139-top-content1-text .cre-t-139-classification {
-        top: 0;
+    /* The inline divider between breed and ZIP costs ~11px we need for the third field.
+       These are inline styles on the element, so !important is required to beat them. */
+    html body.cre-t-151 #comparison-section .breed-select {
+        flex: 1 1 36%;
+        min-width: 0;
+        padding-right: 0 !important;
+        border-right: 0 !important;
     }
 
-    html body .cre-t-139-top-content1-mobile {
+    html body.cre-t-151 #comparison-section .zip-textinput {
+        flex: 1 1 30%;
+        min-width: 0;
+    }
+
+    html body.cre-t-151 #comparison-section .breed-select .MuiBox-root,
+    html body.cre-t-151 #comparison-section .breed-select .MuiFormControl-root,
+    html body.cre-t-151 #comparison-section .breed-select .MuiInputBase-root,
+    html body.cre-t-151 #comparison-section .zip-textinput .MuiFormControl-root,
+    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputBase-root {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Tighten the two native fields so three pills fit a 360-390px row. */
+    html body.cre-t-151 #comparison-section .breed-select .MuiSelect-select {
+        padding: 12px 24px 12px 12px !important;
+        font-size: 13px !important;
+    }
+
+    html body.cre-t-151 #comparison-section .breed-select .MuiSelect-icon {
+        right: 2px !important;
+    }
+
+    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputBase-input {
+        padding-left: 4px !important;
+        padding-right: 6px !important;
+        font-size: 13px !important;
+        min-width: 0;
+    }
+
+    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputAdornment-root {
+        margin-right: 2px;
+    }
+
+    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputAdornment-root svg {
+        width: 12px;
+        height: 16px;
+    }
+
+    /* Sort pill: drop the "Sort by:" label on mobile - the value plus the "Sorted by ___" copy
+       underneath already say what the field does, and it buys ~60px for the other two fields. */
+    html body.cre-t-151 #comparison-section .rt-sort-dropdown {
+        flex: 0 1 auto;
+        min-width: 0;
+        margin-left: 0;
+    }
+
+    html body.cre-t-151 #comparison-section .rt-sort-toggle-label {
         display: none;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
     }
 
-    html body .cre-t-139-top-content1-mobile .cre-t-139-classification {
-        color: #000;
-        font-family: inherit;
-        font-size: 11px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 21px;
-        display: flex;
-        align-items: center;
-    }
-
-    html body .cre-t-139-total {
-        top: 0;
-    }
-
-    html body .cre-t-139-container-parent {
-        margin-bottom: 18px;
-        margin-top: 18px;
-        gap: 7px;
-    }
-
-    html body .cre-t-139-review-dropdown {
-        top: calc(100% + 11px);
-    }
-
-    html body .cre-t-139-star {
-        width: 14px;
-        height: 14px;
-        top: 2px;
-    }
-
-    html body .cre-t-139-top-content1 {
+    html body.cre-t-151 #comparison-section .rt-sort-toggle {
+        gap: 2px;
+        padding: 0 4px 0 12px;
         font-size: 13px;
     }
 
-    html body .cre-t-139-top-content2-text {
-        font-size: 8px;
-        line-height: 11px;
+    html body.cre-t-151 #comparison-section .rt-sort-caret {
+        width: 18px;
+        height: 18px;
     }
 
-    html body .cre-t-139-review-top {
-        gap: 0;
+    html body.cre-t-151 #comparison-section .rt-sort-option {
+        padding: 10px 16px 10px 12px;
+        font-size: 14px;
     }
 
-    html body .cre-t-139-classification-wrap {
-        display: inline-flex;
-        gap: 4px;
-        align-items: center;
-        justify-content: center;
+    html body.cre-t-151 #comparison-section .rt-sort-copy--standalone {
+        font-size: 13px;
     }
 
-    html body .cre-t-139-classification-wrap .cre-t-139-info-icon {
-        display: inline-flex;
-        width: 10px;
-        min-width: 10px;
-        height: 10px;
-        cursor: pointer;
+    html body.cre-t-151 #comparison-section .rt-sort-tooltip {
+        width: 13px;
+        height: 13px;
+        margin-left: 4px;
     }
 }
 
-@media (max-width: 370px) {
-    html body .cre-t-139-star {
-        width: 12px;
-        height: 12px;
-        top: 2px;
+/* Narrow phones: shave a little more before we allow the row to break. */
+@media (max-width: 400px) {
+    html body.cre-t-151 #comparison-section .additional-filters {
+        gap: 5px;
     }
 
-    html body .cre-t-139-top-content1 {
-        font-size: 11px;
+    html body.cre-t-151 #comparison-section .breed-select .MuiSelect-select {
+        padding: 12px 22px 12px 8px !important;
+        font-size: 12px !important;
     }
 
-    html body .cre-t-139-top-content2-text {
-        font-size: 8px;
-        line-height: 11px;
+    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputBase-input {
+        font-size: 12px !important;
     }
-}
 
-@media (max-width: 360px) {
-    html body .cre-t-139-review-dropdown {
-        right: -20px;
-        width: 280px;
+    html body.cre-t-151 #comparison-section .rt-sort-toggle {
+        padding: 0 2px 0 9px;
+        font-size: 12px;
     }
 }
 
-@media (max-width: 319px) {
-    html body .cre-t-139-review-dropdown {
-        width: 240px;
+/* Smallest phones: rather than squeezing three unreadable pills onto one row, let the sort field
+   fall to a third line full-width. Graceful fallback the client already signed off on. */
+@media (max-width: 359px) {
+    html body.cre-t-151 #comparison-section .additional-filters {
+        flex-wrap: wrap;
     }
 
-    html body .cre-t-139-dropdown-info3 {
-        font-size: 9px;
+    html body.cre-t-151 #comparison-section .breed-select {
+        flex: 1 1 55%;
     }
 
-    html body .cre-t-139-dropdown-bottom {
-        font-size: 7.5px;
+    html body.cre-t-151 #comparison-section .zip-textinput {
+        flex: 1 1 40%;
     }
-}
 
-/* Changes for Test Test 135 */
-
-html body .cre-t-139-container .cre-t-139-wrapper .cre-t-139-reviews:hover .cre-t-139-review-dropdown {
-    display: none;
-}
-
-html body .cre-t-139-container .cre-t-139-wrapper .cre-t-139-top-content2-icon {
-    display: none;
-}
-
-html body .cre-t-139-container .cre-t-139-wrapper .cre-t-139-dropdown-active .cre-t-139-review-dropdown {
-    display: none !important;
-}
-
-html body .cre-t-139-container .cre-t-139-wrapper .cre-t-139-reviews {
-    cursor: default;
-}
-
-@media (max-width: 991px) {
-    html body .cre-t-139-dropdown-active .cre-t-139-review-dropdown {
-        display: none !important;
+    html body.cre-t-151 #comparison-section .rt-sort-dropdown {
+        flex: 1 1 100%;
+        width: 100%;
     }
-}
 
-@media screen and (max-width: 767px) {
-    html body .cre-t-139-container .cre-t-139-wrapper .cre-t-139-top-content2 {
-        display: none;
+    html body.cre-t-151 #comparison-section .rt-sort-toggle {
+        width: 100%;
+    }
+
+    html body.cre-t-151 #comparison-section .rt-sort-toggle-label {
+        display: inline;
+    }
+
+    html body.cre-t-151 #comparison-section .rt-sort-menu {
+        left: 0;
+        right: auto;
+        width: 100%;
     }
 }

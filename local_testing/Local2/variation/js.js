@@ -9,6 +9,7 @@
     var BEST_OVERALL_MARKER = ".best-overall-bubble"; // marks the pinned card that must never be sorted
     var FILTERS_ROW_SELECTOR = ".filter-options"; // pet-type tabs + breed + zip row
     var FILTERS_FIELDS_SELECTOR = ".filter-options .additional-filters"; // breed + zip group; sort field goes here
+    var INNER_WRAP_SELECTOR = ".ct-section-inner-wrap"; // the site's copy line is a direct child of this
     var SITE_COPY_PREFIX = "showing prices for"; // existing line we append our copy to
     var SITE_COPY_CLASS = "search-details"; // the site's own class for that line - borrowed when standalone
     var HEADER_ROW_SELECTOR = ".filter-label-icon-container"; // "Personalize prices" row, above the filters
@@ -35,6 +36,7 @@
     var refreshTimer = null;
     var resizeTimer = null;
     var isApplying = false; // true while we are the ones mutating the DOM
+    var lastPriceFingerprint = null; // detects data-only re-renders (see refresh())
 
     /* all Pure helper functions */
     function waitFor(check, trigger, delayInterval, delayTimeout) {
@@ -140,6 +142,15 @@
         }
       }
       return Infinity;
+    }
+    /**
+     * Joined prices in the order they currently sit in `originalOrder`. Used to spot the case where
+     * the filters re-render with the SAME element objects but different prices - see refresh().
+     */
+    function priceFingerprint(items) {
+      var out = [];
+      for (var i = 0; i < items.length; i++) out.push(getPrice(items[i]));
+      return out.join("|");
     }
     // Finds a leaf element inside `scope` whose exact text matches one of the given labels
     // (case-insensitive). Fallback for locating the pinned card's badge without relying on a class.
@@ -351,12 +362,18 @@
     // the filters, but only once a filter is active. Returns the deepest element holding that copy -
     // querySelectorAll is in document order, so the last match is the innermost one.
     function findSiteCopyLine() {
-      var scope = document.querySelector(SECTION_SELECTOR) || document.body;
-      var nodes = scope.querySelectorAll("div, p, span");
+      // Direct children of the section's inner wrap only. The site renders this line as a sibling
+      // of .filter-options, so a deep scan is unnecessary: querySelectorAll("div, p, span") over
+      // the whole section walks ~750 elements and ~275k characters of listing copy every refresh
+      // (measured 2.23ms on desktop, and this runs on every filter change). The narrow scan checks
+      // 4 elements in 0.155ms and was verified to return the identical element.
+      var wrap = document.querySelector(SECTION_SELECTOR + " " + INNER_WRAP_SELECTOR);
+      if (!wrap) return null;
+      var kids = wrap.children;
       var match = null;
-      for (var i = 0; i < nodes.length; i++) {
-        var el = nodes[i];
-        if (el.id === "rt-sort-copy" || el.closest("#rt-sort-copy")) continue;
+      for (var i = 0; i < kids.length; i++) {
+        var el = kids[i];
+        if (el === copyEl) continue; // never match our own copy
         if ((el.textContent || "").trim().toLowerCase().indexOf(SITE_COPY_PREFIX) !== 0) continue;
         match = el;
       }
@@ -455,8 +472,27 @@
           }
         }
       }
-      if (!isFreshRender) return; // just our own re-ordering - nothing to redo
-      captureOrder(items);
+      if (isFreshRender) {
+        captureOrder(items);
+        lastPriceFingerprint = priceFingerprint(originalOrder);
+        applySort(currentMode, true);
+        return;
+      }
+
+      // Same element objects, so the check above saw nothing - but a ZIP/breed change makes React
+      // reuse every listing node and swap only the DATA inside it. Verified live: sorting by
+      // lowest price at 90210 then switching to 60630 left the list showing $33.83 first and
+      // $22.29 sixth. Re-apply the sort whenever the prices move.
+      //
+      // Deliberately NOT re-capturing originalOrder here: the elements keep their provider, so the
+      // site's best-rated sequence is still valid, and re-capturing from an already-sorted DOM
+      // would overwrite it with our own order and break switching back to "Best Rated".
+      //
+      // The fingerprint is also what stops an infinite observer loop: re-ordering does not change
+      // any price, so the next pass computes the same fingerprint and returns here.
+      var fingerprint = priceFingerprint(originalOrder);
+      if (fingerprint === lastPriceFingerprint) return;
+      lastPriceFingerprint = fingerprint;
       applySort(currentMode, true);
     }
     function scheduleRefresh() {

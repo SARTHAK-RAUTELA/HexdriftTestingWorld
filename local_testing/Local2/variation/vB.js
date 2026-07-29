@@ -9,7 +9,9 @@
     var BEST_OVERALL_MARKER = ".best-overall-bubble"; // marks the pinned card that must never be sorted
     var FILTERS_ROW_SELECTOR = ".filter-options"; // pet-type tabs + breed + zip row
     var FILTERS_FIELDS_SELECTOR = ".filter-options .additional-filters"; // breed + zip group; sort field goes here
-    var SITE_COPY_PREFIX = "showing prices for"; // existing line we append our copy to
+    // "Showing prices for {breed}..." when a breed is picked, "Showing prices in {zip}" when only
+    // ZIP is set (no breed) - match on the invariant "showing prices" so both variants are found.
+    var SITE_COPY_PREFIX = "showing prices";
     var SITE_COPY_CLASS = "search-details"; // the site's own class for that line - borrowed when standalone
     var HEADER_ROW_SELECTOR = ".filter-label-icon-container"; // "Personalize prices" row, above the filters
     var HEADER_COPY_MIN_WIDTH = 992; // at/above this the copy sits top-right instead of under the filters
@@ -30,12 +32,7 @@
     var sortAnchor = null; // node the sorted items are inserted before, so "Show More" + pinned card stay put
     var bestOverallBadge = null; // badge on the pinned card - its text swaps with the active mode
     var bestOverallCard = null; // the pinned card element itself
-    // Snapshots of its two content columns as the site rendered them (best-rated pick). NOT the
-    // whole .plan-box - .number-bubble.best-overall-bubble (the badge itself) is plan-box's THIRD
-    // child, a sibling of these columns, and must never be touched by the content swap below.
-    var bestOverallOriginalCol1HTML = null;
-    var bestOverallOriginalCol2HTML = null;
-    var bestOverallOriginalDataUnique = null; // its own data-unique, restored when back on Best Rated
+    var bestOverallSyncedDataUnique = null; // data-unique of whichever item the clone currently mirrors
     var copyEl = null; // our "Sorted by ___" copy + "i" icon
     var originalZipPlaceholder = null;
     var sortAnimationTimeouts = []; // pending timeout IDs for the in-flight sort animation
@@ -245,6 +242,9 @@
       originalOrder = [];
       cachedSiteLine = null; // stale after a fresh render - force findSiteCopyLine() to re-query
       bestOverallCard = null;
+      // A fresh render means bestOverallCard is a brand-new, pristine element - force the next
+      // syncBestOverallCardContent call to clone into it regardless of what was synced before.
+      bestOverallSyncedDataUnique = null;
       items.forEach(function (el) {
         if (el.querySelector(BEST_OVERALL_MARKER)) bestOverallCard = el;
         else originalOrder.push(el);
@@ -257,16 +257,7 @@
         ? bestOverallCard.querySelector(".best-overall-text") ||
           findBadgeByText(bestOverallCard, [BEST_OVERALL_DEFAULT_LABEL, BEST_OVERALL_LOWEST_PRICE_LABEL])
         : null;
-      // The site's own pinned card is always a duplicate of whichever insurer it considers "best
-      // overall" (in practice, the best-rated #1) - this is the DOM the site hands us on every
-      // fresh render, so snapshot it now while it's still in that pristine state. Restored verbatim
-      // when the user switches back to Best Rated; replaced with the current cheapest item's own
-      // content while Lowest Price is active (see syncBestOverallCardContent below).
-      var col1 = bestOverallCard ? bestOverallCard.querySelector(".plan-box .plan-col-1") : null;
-      var col2 = bestOverallCard ? bestOverallCard.querySelector(".plan-box .plan-col-2") : null;
-      bestOverallOriginalCol1HTML = col1 ? col1.innerHTML : null;
-      bestOverallOriginalCol2HTML = col2 ? col2.innerHTML : null;
-      bestOverallOriginalDataUnique = bestOverallCard ? bestOverallCard.getAttribute("data-unique") : null;
+      bestOverallSyncedDataUnique = null; // fresh render - any clone from before belongs to a discarded element
     }
     // Replaces cloned ids (e.g. Oxygen's popover trigger buttons) so the page never ends up with
     // two elements sharing one id - the source card keeps its own at its live position.
@@ -275,50 +266,63 @@
         el.removeAttribute("id");
       });
     }
-    // Keeps the pinned card's actual content (logo, reviews, price, description, button) in sync
-    // with whichever insurer is #1 under the active sort, not just its badge label. Without this,
-    // switching to Lowest Price relabels the pinned card "Lowest Price" while it keeps showing the
-    // old Best Rated #1's details underneath - misleading when that insurer isn't actually cheapest.
-    // Only ever touches plan-col-1/plan-col-2 - never the whole .plan-box, whose THIRD child is
-    // .number-bubble.best-overall-bubble (the badge itself, handled separately above).
+    // Best Rated: the pinned card must behave EXACTLY like the original control - so this NEVER
+    // writes into the real .plan-col-1/.plan-col-2, and NEVER touches the outer data-unique
+    // attribute either. Earlier versions mutated the real nodes directly (innerHTML overwrite) or
+    // restored a one-time attribute snapshot, both of which fought with the site's own React
+    // rendering / multi-stage pet-type transition and let content and identity drift out of sync
+    // (confirmed live: outer data-unique, a nested crodatalabel, and the visible logo each ended up
+    // naming a different insurer, in different combinations depending on exact timing). Instead, a
+    // separate hidden CLONE of the current #1 item's two content columns is built once and toggled
+    // visible only while Lowest Price is active - the real original node and its own attributes are
+    // never written to in EITHER mode, which is what makes Best Rated genuinely untouched.
     function syncBestOverallCardContent(mode, ordered) {
       if (!bestOverallCard) return;
-      var col1 = bestOverallCard.querySelector(".plan-box .plan-col-1");
-      var col2 = bestOverallCard.querySelector(".plan-box .plan-col-2");
-      if (!col1 || !col2) return;
-      var targetCol1HTML, targetCol2HTML, targetDataUnique, stripAfterWrite;
-      if (mode === "lowest-price") {
-        var cheapest = ordered[0];
-        var sourceCol1 = cheapest ? cheapest.querySelector(".plan-col-1") : null;
-        var sourceCol2 = cheapest ? cheapest.querySelector(".plan-col-2") : null;
-        if (!sourceCol1 || !sourceCol2) return;
-        targetCol1HTML = sourceCol1.innerHTML;
-        targetCol2HTML = sourceCol2.innerHTML;
-        // Re-read on every call (not cached) - this is what keeps the pinned card's identity
-        // dynamic across filter/breed/zip changes, not just across a sort-mode click.
-        targetDataUnique = cheapest.getAttribute("data-unique");
-        stripAfterWrite = true;
-      } else {
-        if (bestOverallOriginalCol1HTML === null || bestOverallOriginalCol2HTML === null) return;
-        targetCol1HTML = bestOverallOriginalCol1HTML;
-        targetCol2HTML = bestOverallOriginalCol2HTML;
-        targetDataUnique = bestOverallOriginalDataUnique;
-        stripAfterWrite = false;
+      var box = bestOverallCard.querySelector(".plan-box");
+      if (!box) return;
+      var origCol1 = box.querySelector(".plan-col-1:not(.rt-best-overall-clone)");
+      var origCol2 = box.querySelector(".plan-col-2:not(.rt-best-overall-clone)");
+      if (!origCol1 || !origCol2) return;
+      var cloneCol1 = box.querySelector(".plan-col-1.rt-best-overall-clone");
+      var cloneCol2 = box.querySelector(".plan-col-2.rt-best-overall-clone");
+
+      if (mode !== "lowest-price") {
+        origCol1.style.display = "";
+        origCol2.style.display = "";
+        if (cloneCol1) cloneCol1.style.display = "none";
+        if (cloneCol2) cloneCol2.style.display = "none";
+        return;
       }
-      if (col1.innerHTML !== targetCol1HTML) {
-        col1.innerHTML = targetCol1HTML;
-        if (stripAfterWrite) stripIds(col1);
+
+      var top = ordered[0];
+      if (!top) return;
+      var sourceCol1 = top.querySelector(".plan-col-1");
+      var sourceCol2 = top.querySelector(".plan-col-2");
+      if (!sourceCol1 || !sourceCol2) return;
+      if (!cloneCol1) {
+        cloneCol1 = document.createElement("div");
+        cloneCol1.className = "ct-div-block plan-col-1 rt-best-overall-clone";
+        cloneCol1.style.display = "none";
+        origCol1.insertAdjacentElement("afterend", cloneCol1);
       }
-      if (col2.innerHTML !== targetCol2HTML) {
-        col2.innerHTML = targetCol2HTML;
-        if (stripAfterWrite) stripIds(col2);
+      if (!cloneCol2) {
+        cloneCol2 = document.createElement("div");
+        cloneCol2.className = "ct-div-block plan-col-2 rt-best-overall-clone";
+        cloneCol2.style.display = "none";
+        origCol2.insertAdjacentElement("afterend", cloneCol2);
       }
-      // Keeps the pinned card's own identity attribute (e.g. which insurer's outbound link this
-      // is tracked as) matching whichever content it's currently showing, not stuck on whatever
-      // insurer the site originally placed in this slot.
-      if (targetDataUnique && bestOverallCard.getAttribute("data-unique") !== targetDataUnique) {
-        bestOverallCard.setAttribute("data-unique", targetDataUnique);
+      var topDataUnique = top.getAttribute("data-unique");
+      if (topDataUnique !== bestOverallSyncedDataUnique) {
+        cloneCol1.innerHTML = sourceCol1.innerHTML;
+        stripIds(cloneCol1);
+        cloneCol2.innerHTML = sourceCol2.innerHTML;
+        stripIds(cloneCol2);
+        bestOverallSyncedDataUnique = topDataUnique;
       }
+      origCol1.style.display = "none";
+      origCol2.style.display = "none";
+      cloneCol1.style.display = "";
+      cloneCol2.style.display = "";
     }
     // Sets textContent only when the value actually differs. textContent's setter always tears
     // down and rebuilds the element's child text node - even when the string is unchanged - which

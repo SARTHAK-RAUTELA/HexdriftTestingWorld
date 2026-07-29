@@ -1,0 +1,77 @@
+you have to build the test we are workng as A/B testing so need to inject the test i will provide you the code hte method of injectingth  code to the website should be same as my code i have build half of the test.
+  test js code is in: d:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\local_testing\Local2\variation\vB.js
+  test css is in: d:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\local_testing\Local2\variation\vB.css
+  we are maully activating the test through convertA/b test glboal  tool  it's code is in: d:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\local_testing\Local2\variation\global.js
+  this is the test description:
+  Custom settings
+
+  Only trigger when users engage with the image carousel (open the lightbox carousel on desktop, or scroll to the first carousel image on mobile).
+
+  Variations
+
+  We’re adding 5 new images into the existing image carousel (which is the lightbox carousel on desktop, and on-page carousel on mobile).
+
+  Fire the test only when users engage with the carousel.
+
+  Insert the 5 images immediately after image 4.
+
+  The custom goals should trigger at the relevant image number differently for control and variations e.g. “WIN252 - Scroll to image 6” would trigger on this image on the control, and these images on the variations.                      
+                                                                                                                                                                                                                                             
+  so on our code we have placed the new images on there places but then we asked client few question:                                                                                                                                        
+   We are currently in the QA process and have a few additional questions that need clarification. Could you please take a look at them when you have a chance?                                                                              
+                                                                                                                                                                                                                                             
+  1 ) Image carousel changes:  desktop, we are showing the changes only when the modal/lightbox is opened, with the new images added to the carousel inside the lightbox. Img.png                                                            
+  For mobile, should we also add the new images to the on-page image carousel (including the thumbnails)? Could you please confirm. Img.png & 'c:\Users\Sarthak Rautela\OneDrive\Pictures\Screenshots\Screenshot 2026-07-29 062634.png'      
+                                                                                                                                                                                                                                             
+  2 ) Triggering the test on mobile: On desktop, the test is triggered when the modal/lightbox is opened, and we've already implemented that.                                                                                                
+  For mobile, you mentioned that the test should trigger when users "scroll to the first carousel image." Could you clarify what you mean by this?                                                                                           
+                                                                                                                                                                                                                                             
+  If you mean triggering when the user swipes/slides the carousel (either by dragging the main image or selecting a thumbnail), this would likely cause a noticeable flicker when the new images are injected.                               
+                                                                                                                                                                                                                                             
+  If you mean triggering when the user scrolls down the page until the image carousel first comes into view, this is a little challenging because, on many mobile devices with taller screens, the image carousel is already visible when    
+  the page initially loads.                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                             
+  Because of this, our current thought is to trigger the test on page load on mobile, so the new images are available immediately and users don't experience any flicker.                                                                    
+                                                                                                                                                                                                                                             
+  Fire the test only when users engage with the carousel.                                                                                                                                                                                    
+                                                                                                                                                                                                                                             
+  Insert the 5 images immediately after image 4.                                                                                                                                                                                             
+                                                                                                                                                                                                                                             
+  The custom goals should trigger at the relevant image number differently for control and variations e.g. “WIN252 - Scroll to image 6” would trigger on this image on the control, and these images on the variations.                      
+                                                                                                                                                                                                                                             
+  so on our code we have placed the new images on there places but then we asked client few question:                                                                                                                                        
+   We are currently in the QA process and have a few additional questions that need clarification. Could you please take a look at them when you have a chance?                                                                              
+                                                                                                                                                                                                                                             
+  1 ) Image carousel changes:  desktop, we are showing the changes only when the modal/lightbox is opened, with the new images added to the carousel inside the lightbox. Img.png                                                            
+  For mobile, should we also add the new images to the on-page image carousel (including the thumbnails)? Could you please confirm. Img.png & 'c:\Users\Sarthak Rautela\OneDrive\Pictures\Screenshots\Screenshot 2026-07-29 062634.png'      
+                                                                                                                                                                                                                                             
+  2 ) Triggering the test on mobile: On desktop, the test is triggered when the modal/lightbox is opened, and we've already implemented that.                                                                                                
+  For mobile, you mentioned that the test should trigger when users "scroll to the first carousel image." Could you clarify what you mean by this?                                                                                           
+                                                                                                                                                                                                                                             
+  If you mean triggering when the user swipes/slides the carousel (either by dragging the main image or selecting a thumbnail), this would likely cause a noticeable flicker when the new images are injected.                               
+                                                                                                                                                                                                                                             
+  If you mean triggering when the user scrolls down the page until the image carousel first comes into view, this is a little challenging because, on many mobile devices with taller screens, the image carousel is already visible when    
+  the page initially loads.                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                             
+  Because of this, our current thought is to trigger the test on page load on mobile, so the new images are available immediately and users don't experience any flicker.                                                                    
+  Please let us know your thoughts or if you have a different approach in mind.                                                                                                                                                              
+  so client replied:                                                                                                                                                                                                                         
+  Image carousel changes:  desktop, we are showing the changes only when the modal/lightbox is opened, with the new images added to the carousel inside the lightbox. Img.png                                                                
+  For mobile, should we also add the new images to the on-page image carousel (including the thumbnails)?                                                                                                                                    
+                                                                                                                                                                                                                                             
+  Yes, the images should be added to both the lightbox and the on-page carousel on mobile. Please also add to the on-page carousel on desktop (sorry, it wasn’t clear from the brief that this should be the case).                          
+                                                                                                                                                                                                                                             
+  If you mean triggering when the user swipes/slides the carousel (either by dragging the main image or selecting a thumbnail), this would likely cause a noticeable flicker when the new images are injected.                               
+                                                                                                                                                                                                                                             
+  This is what I had intended, subject to your feedback. Given the images are added after image 4, could we not trigger the test with engagement with either the lightbox or on-page carousel, and have time to insert the images before the 
+  user gets to the new images?                                                                                                                                                                                                               
+                                                                                                                                                                                                                                             
+  Because of this, our current thought is to trigger the test on page load on mobile, so the new images are available immediately and users don't experience any flicker.                                                                    
+                                                                                                                                                                                                                                             
+  We can do this, if needed. But only if we’ve ruled out the approach I suggested above.                                                                                                                                                     
+  now we have to add the images in desktop in this carousel also:& 'c:\Users\Sarthak Rautela\OneDrive\Pictures\Screenshots\Screenshot 2026-07-29 062818.png' and add additional activation in gloal js that test should activate if user     
+  dragand slides the image or using the next button and the modal or lightbox one activation is already placed for desktop                                                                                                                   
+  for mobile also the changes willa also be visible in on page carousel and thumbnails and the activation also same if user drag slides or clciks in thumbnail the experiment activates                                                      
+                                                                                                                                                                                                                                             
+  here is the target page: https://www.winkbeds.com/pages/shop-winkbed                                                                                                                                                                       
+  in this file you will find the mobile bodt and desktop body and for both secton where we have to add: d:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\local_testing\Local2\variation\experiment-js.js       

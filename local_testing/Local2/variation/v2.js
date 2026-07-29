@@ -19,7 +19,7 @@
     var FIELD_HEIGHT_REF_SELECTOR = ".zip-textinput .MuiInputBase-root, .breed-select .MuiInputBase-root";
     var BEST_OVERALL_DEFAULT_LABEL = "Best Overall";
     var BEST_OVERALL_LOWEST_PRICE_LABEL = "Lowest Price";
-    var DEFAULT_SORT_MODE = "best-rated"; // what the page should show on first load
+    var DEFAULT_SORT_MODE = "lowest-price"; // what the page should show on first load
     var LABELS = { "best-rated": "Best Rated", "lowest-price": "Lowest Price" };
     var COPY_LABELS = { "best-rated": "best rated", "lowest-price": "lowest price" };
 
@@ -496,12 +496,7 @@
       ].join("");
       return el;
     }
-    // The site prints "Showing prices for Cats" / "Showing prices for Devon Rexs in 90210" under
-    // the filters, but only once a filter is active. Returns the deepest element holding that copy -
-    // querySelectorAll is in document order, so the last match is the innermost one.
-    // Memoized (invalidated in captureOrder on every fresh render) since ensureCopy() runs on
-    // every refresh and a full "div, p, span" scan of the section on each call is wasted work
-    // once the line has already been found and is still attached.
+     // once the line has already been found and is still attached.
     function findSiteCopyLine() {
       if (cachedSiteLine && cachedSiteLine.isConnected) return cachedSiteLine;
       var scope = document.querySelector(SECTION_SELECTOR) || document.body;
@@ -664,9 +659,6 @@
           ensureCopy(); // the copy moves between the header row and the filter line on resize
         }, 150);
       });
-      // The pet-type / breed / zip filters re-render the whole listing list, which detaches every
-      // element we captured. Watch the repeater (not the whole section) and re-apply the active
-      // sort on each new render - scoping to the repeater means our own DOM writes into the
       // filters row (sort field, copy line) never end up inside the observed subtree at all.
       var repeater = document.querySelector(SECTION_SELECTOR + " " + REPEATER_SELECTOR);
       var observeTarget = repeater || document.querySelector(SECTION_SELECTOR);
@@ -699,17 +691,7 @@
       if (debug) console.log(variation_name + " initialized");
     }
 
-    // Waits for the filter fields to exist AND the listings to have rendered before running init().
-    // Uses observeSelector() instead of a setInterval poll: no CPU spent checking on a timer, and
-    // it reacts the instant the DOM is actually ready. We don't pass options.once here because that
-    // would stop watching as soon as FILTERS_FIELDS_SELECTOR appears even if listings aren't ready
-    // yet - instead the callback re-checks both conditions on every debounced pass and calls the
-    // returned done() itself, only once init() has actually run (init() is also idempotent via the
-    // window.cre_151_initialized guard, so any redundant callback firings before that are harmless).
-    // Guard against setting up a second observeSelector() watcher if this script ever runs twice
-    // on the same page (duplicate injection, SPA re-fire, etc.) - without this, each run would
-    // spin up its own whole-document MutationObserver, doubling the mutation-handling cost for no
-    // benefit (the first one alone is enough to eventually call init(), which is itself idempotent).
+      // benefit (the first one alone is enough to eventually call init(), which is itself idempotent).
     if (!window.CRE_151_OBSERVER) {
       window.CRE_151_OBSERVER = true;
       var stopWaitingForReady = observeSelector(SECTION_SELECTOR + " " + FILTERS_FIELDS_SELECTOR, function () {

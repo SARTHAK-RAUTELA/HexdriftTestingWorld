@@ -23,11 +23,13 @@ html body.cre-t-151 #comparison-section .plan-repeater.cre-t-151-sorting {
    order - which CSS `order` never changes. These two re-point that pair at cre-t-151-is-top, the card
    reorder() puts in visual slot 1. Both outrank the site's rules on #comparison-section alone.
    Keyed on cre-t-151-listing, never on data-unique: the pinned Best Overall card is given the top
-   listing's data-unique and has to keep the site's own behaviour. */
-html body.cre-t-151 #comparison-section .plan-repeater .cre-t-151-listing .rating-bar {
+   listing's data-unique and has to keep the site's own behaviour.
+   Both are gated on body.cre-t-151-sorted, which markTopListing() adds only once a card really
+   carries cre-t-151-is-top - so a swallowed throw in reorder() leaves the site's own bar alone. */
+html body.cre-t-151.cre-t-151-sorted #comparison-section .plan-repeater .cre-t-151-listing .rating-bar {
     display: none !important;
 }
-html body.cre-t-151 #comparison-section .plan-repeater .cre-t-151-listing.cre-t-151-is-top .rating-bar {
+html body.cre-t-151.cre-t-151-sorted #comparison-section .plan-repeater .cre-t-151-listing.cre-t-151-is-top .rating-bar {
     display: flex !important;
 }
 /* ---- 1. Filter row layout - make room for the sort field ---- */

@@ -32,6 +32,7 @@
     // it at these two classes instead.
     var LISTING_CLASS = "cre-t-151-listing"; // every sortable listing, so the CSS can hide the rest
     var TOP_LISTING_CLASS = "cre-t-151-is-top"; // the one card sitting in visual slot 1
+    var SORTED_BODY_CLASS = "cre-t-151-sorted"; // arms the hide rule, once a top card is really marked
     // Matching on aria-label catches both tooltip triggers on a card (the "?" beside Average Plan
     // Cost and the "i" beside the money-back guarantee) without depending on either structure.
     var POPOVER_TRIGGER_SELECTOR = 'button[aria-label="Open popover"]';
@@ -387,15 +388,21 @@
        modes: our hide rule covers every listing, so an unmarked list would show no bar at all. */
     function markTopListing(ranked) {
       var top = ranked[0];
+      // Without a top card every listing would end up unmarked, i.e. no rating bar anywhere - so keep
+      // whatever good state is already on the page rather than stripping it.
+      if (!top) return;
+      // The winner is marked BEFORE the losers are cleared, so a throw part-way through the loop below
+      // can never leave the list with every bar hidden and no re-show target.
+      if (!top.classList.contains(LISTING_CLASS)) top.classList.add(LISTING_CLASS);
+      if (!top.classList.contains(TOP_LISTING_CLASS)) top.classList.add(TOP_LISTING_CLASS);
       originalOrder.forEach(function (el) {
         // Guarded so a re-render that changed nothing writes no class attribute for the observer.
         if (!el.classList.contains(LISTING_CLASS)) el.classList.add(LISTING_CLASS);
-        var isTop = el === top;
-        if (isTop !== el.classList.contains(TOP_LISTING_CLASS)) {
-          if (isTop) el.classList.add(TOP_LISTING_CLASS);
-          else el.classList.remove(TOP_LISTING_CLASS);
-        }
+        if (el !== top && el.classList.contains(TOP_LISTING_CLASS)) el.classList.remove(TOP_LISTING_CLASS);
       });
+      // Arms the hide rule only now the re-show rule is guaranteed a target. A throw anywhere above
+      // leaves it unarmed, so the page keeps the site's own bar instead of showing none at all.
+      if (document.body) document.body.classList.add(SORTED_BODY_CLASS);
     }
     // Ranks the listings visually and renumbers the rank bubbles. "lowest-price" assigns each child
     // a CSS `order`; "best-rated" removes them, dropping back to DOM order - the control, untouched.
@@ -449,13 +456,16 @@
     // "the site re-rendered". try/finally so a throw can never leave it stuck on.
     function applySort(mode) {
       if (!originalOrder.length) return;
+      // Saved and restored rather than forced back to false: refresh() now holds the flag for its
+      // whole run, and an unconditional reset here would drop that guard halfway through.
+      var wasApplying = isApplying;
       isApplying = true;
       try {
         reorder(mode);
       } catch (sortError) {
         if (debug) console.log(sortError, "error while sorting in " + variation_name);
       } finally {
-        isApplying = false;
+        isApplying = wasApplying;
       }
     }
     /* Fade out, re-rank while invisible, fade back in. Called ONLY on a real click - refresh() uses
@@ -733,17 +743,27 @@
     // when nothing has moved, which is what stops the observer from re-triggering itself forever.
     function refresh() {
       if (isApplying) return;
-      ensureSortField();
-      ensureBusyObserver(); // before ensureCopy, so the busy state is known when the copy is placed
-      ensureCopy();
-      syncFieldHeight();
-      syncZipPlaceholder();
-      var items = getListingItems();
-      if (!items.length) return;
-      // Has to re-run every tick: per-provider prices keep arriving after the initial render, so
-      // Lowest Price must re-rank against whatever is displayed now.
-      captureOrder(items);
-      applySort(currentMode);
+      // Held for the WHOLE run, not just the sort: every ensure* below also writes inside the observed
+      // section, so this is what keeps a future non-idempotent write from looping the observer.
+      isApplying = true;
+      try {
+        // Everything else here self-heals, so the body class has to as well - all of the CSS and both
+        // Convert goals hang off it. classList.add is a no-op while it is already present.
+        if (document.body) document.body.classList.add(variation_name);
+        ensureSortField();
+        ensureBusyObserver(); // before ensureCopy, so the busy state is known when the copy is placed
+        ensureCopy();
+        syncFieldHeight();
+        syncZipPlaceholder();
+        var items = getListingItems();
+        if (!items.length) return;
+        // Has to re-run every tick: per-provider prices keep arriving after the initial render, so
+        // Lowest Price must re-rank against whatever is displayed now.
+        captureOrder(items);
+        applySort(currentMode);
+      } finally {
+        isApplying = false;
+      }
     }
     function scheduleRefresh() {
       if (isApplying) return;
@@ -820,26 +840,28 @@
           scheduleRefresh();
         });
         domObserver.observe(observeTarget, { childList: true, subtree: true });
-        // The observer must live as long as the section, so the page going away is the only sound
-        // disconnect. pagehide, not unload - unload is unreliable and blocks the bfcache.
-        window.addEventListener("pagehide", function () {
-          if (domObserver) {
-            domObserver.disconnect();
-            domObserver = null;
-          }
-          clearTimeout(refreshTimer);
-          clearTimeout(resizeTimer);
-          if (busyObserver) {
-            busyObserver.disconnect();
-            busyObserver = null;
-            busyObserverTarget = null;
-          }
-          clearTimeout(fadeTimer);
-          clearTimeout(fadeEndTimer);
-          clearTimeout(busyMaxTimer);
-          if (copyFrame) cancelAnimationFrame(copyFrame);
-        });
       }
+      /* Deliberately OUTSIDE the block above: busyObserver and every timer below are created by
+         refresh() whether or not domObserver exists, so nesting this left them with no cleanup.
+         The observers must live as long as the section, so the page going away is the only sound
+         disconnect. pagehide, not unload - unload is unreliable and blocks the bfcache. */
+      window.addEventListener("pagehide", function () {
+        if (domObserver) {
+          domObserver.disconnect();
+          domObserver = null;
+        }
+        if (busyObserver) {
+          busyObserver.disconnect();
+          busyObserver = null;
+          busyObserverTarget = null;
+        }
+        clearTimeout(refreshTimer);
+        clearTimeout(resizeTimer);
+        clearTimeout(fadeTimer);
+        clearTimeout(fadeEndTimer);
+        clearTimeout(busyMaxTimer);
+        if (copyFrame) cancelAnimationFrame(copyFrame);
+      });
     }
 
     /* Variation Init */

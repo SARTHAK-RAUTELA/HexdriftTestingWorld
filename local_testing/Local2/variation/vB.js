@@ -177,18 +177,20 @@
       return style.display !== "none" && style.visibility !== "hidden" && style.opacity !== "0";
     }
     /**
-     * Text of an element counting only the children the user can actually see. Other live tests on
-     * this site (e.g. the price-override test) inject a second price element next to the original
-     * and hide the original with CSS - plain textContent would return BOTH numbers and we would
-     * end up sorting on the hidden one.
+     * Reads the currently-displayed price text for a plan. Two independent, concurrently-live tests
+     * on this site each inject their own labeled price span and hide the site's own .ct-span when
+     * active - cre-t-111 (.cre-t-111-price-update) and cre-t-116 (.cre-t-116-price-update). Checking
+     * these specific classes by name (rather than "whichever child happens to be visible") stays
+     * correct regardless of which of the two tests is running, or neither. Priority when more than
+     * one is present: cre-t-111 > cre-t-116 > the site's own control price.
      */
-    function getVisibleText(el) {
-      if (!el.children.length) return el.textContent;
-      var out = "";
-      for (var i = 0; i < el.children.length; i++) {
-        if (isVisible(el.children[i])) out += " " + el.children[i].textContent;
-      }
-      return out.trim() ? out : el.textContent;
+    function getDisplayedPriceText(contentEl) {
+      var t111 = contentEl.querySelector(".cre-t-111-price-update");
+      if (t111 && isVisible(t111)) return t111.textContent;
+      var t116 = contentEl.querySelector(".cre-t-116-price-update");
+      if (t116 && isVisible(t116)) return t116.textContent;
+      var control = contentEl.querySelector(".ct-span") || contentEl;
+      return control.textContent;
     }
     // Signature of the user's current filter selection (pet type + breed + zip). Used instead of a
     // per-item price/data-unique fingerprint - confirmed live 2026-07-29 that per-item content isn't
@@ -218,7 +220,7 @@
         if (heading && heading.textContent.trim().toLowerCase().indexOf("average plan cost") !== -1) {
           var contentEl = columns[i].querySelector(".plan-detail-content");
           if (contentEl) {
-            var match = getVisibleText(contentEl).replace(/,/g, "").match(/[\d.]+/);
+            var match = getDisplayedPriceText(contentEl).replace(/,/g, "").match(/[\d.]+/);
             return match ? parseFloat(match[0]) : Infinity;
           }
         }
@@ -689,10 +691,59 @@
     // one nativeOrderCache ends up holding for this combo (see captureOrder()'s comment for why
     // this repeated re-deriving is safe while in best-rated mode, and why the settle window's LAST
     // tick, not its first, is what nativeOrderLocked commits once it closes).
+    // Whether ensureCopy() would actually move copyEl to a new parent/position right now - mirrors
+    // that function's own three branches without performing the move, so fadeCopyForFilterChange()
+    // below can decide whether a fade is even warranted (skip it when nothing's about to move, so
+    // the copy isn't flickering on every debounced tick - only on the ones that truly reposition it).
+    function copyNeedsReposition() {
+      var headerRow = document.querySelector(HEADER_ROW_SELECTOR);
+      if (headerRow && window.innerWidth >= HEADER_COPY_MIN_WIDTH) {
+        return copyEl.parentNode !== headerRow;
+      }
+      var siteLine = findSiteCopyLine();
+      if (siteLine) return copyEl.parentNode !== siteLine;
+      var filters = document.querySelector(SECTION_SELECTOR + " " + FILTERS_ROW_SELECTOR);
+      return !!filters && copyEl.previousElementSibling !== filters;
+    }
+    // Smooths the "Sorted by ___" copy's repositioning when the site's OWN filters (pet type /
+    // breed / ZIP) reload the control content - client-reported flash/flicker, most noticeable on
+    // mobile where the copy sits directly under the filters and visibly jumps as the site's
+    // "Showing prices for ..." sentence it's attached to gets torn down and rebuilt. Fades the copy
+    // out, lets `reposition` (ensureCopy) run while it's invisible, then fades it back in - mirrors
+    // the existing listing-reorder fade (rt-sorting/rt-sorted-in) instead of inventing a new pattern.
+    // Called on every refresh() tick (not gated to "first tick of a detected filter change" like an
+    // earlier version) because the site's own content reload can keep repositioning the copy across
+    // several debounced ticks, not just the first one - copyNeedsReposition() is what keeps this
+    // cheap/silent on the (common) ticks where nothing actually needs to move.
+    var copyFadeTimeouts = []; // pending timeout IDs for the in-flight copy fade transition
+    var copyFadeToken = 0; // guards against a stale fade-in firing after a newer cycle already restarted it
+    function fadeCopyForFilterChange(reposition) {
+      copyFadeTimeouts.forEach(function (id) {
+        clearTimeout(id);
+      });
+      copyFadeTimeouts = [];
+      if (!copyEl || !copyNeedsReposition()) {
+        reposition();
+        return;
+      }
+      var token = ++copyFadeToken;
+      addClass(copyEl, "rt-copy-fading");
+      var outTimeoutId = setTimeout(function () {
+        reposition();
+        // A short buffer so the browser actually paints the invisible/repositioned state before
+        // the class removal below transitions back to opacity:1 - without it the two style
+        // changes can get coalesced into a single paint and the fade-in never becomes visible.
+        var inTimeoutId = setTimeout(function () {
+          if (token === copyFadeToken) removeClass(copyEl, "rt-copy-fading");
+        }, 30);
+        copyFadeTimeouts.push(inTimeoutId);
+      }, 220); // matches the CSS transition duration on .rt-sort-copy
+      copyFadeTimeouts.push(outTimeoutId);
+    }
     function refresh() {
       if (isApplying) return;
       ensureSortField();
-      ensureCopy();
+      fadeCopyForFilterChange(ensureCopy);
       syncFieldHeight();
       syncZipPlaceholder();
       var items = getListingItems();
@@ -701,10 +752,17 @@
       if (currentFilterState !== knownFilterState) {
         knownFilterState = currentFilterState;
         filterSettleDeadline = Date.now() + 3000;
-      }
-      if (Date.now() >= filterSettleDeadline) {
-        nativeOrderLocked[knownFilterState] = true; // settle window closed - stop re-deriving for this combo
-        return;
+      } else if (Date.now() >= filterSettleDeadline && !nativeOrderLocked[knownFilterState]) {
+        // Settle window closed for this combo - lock its native order so captureOrder() stops
+        // re-deriving it from DOM position (see that function's comment). This must NOT skip the
+        // rest of refresh() below: confirmed live 2026-07-29 that returning here instead left
+        // Lowest Price mode (and the pinned-card clone, re-synced inside applySort()->reorder())
+        // permanently frozen on whatever prices were true at the instant the window closed, if the
+        // site's real per-provider price data was still arriving even a little after that - no
+        // fixed duration is guaranteed long enough for a live quote engine. captureOrder() simply
+        // stops re-deriving raw position once locked; applySort() must keep running on every tick,
+        // forever, so Lowest Price (and the clone) keep tracking whatever price is CURRENTLY live.
+        nativeOrderLocked[knownFilterState] = true;
       }
       captureOrder(items);
       applySort(currentMode, true);

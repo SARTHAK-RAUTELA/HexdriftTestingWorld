@@ -577,7 +577,12 @@
       ].join("");
       return el;
     }
-     // once the line has already been found and is still attached.
+    // The site prints "Showing prices for Cats" / "Showing prices for Devon Rexs in 90210" under
+    // the filters, but only once a filter is active. Returns the deepest element holding that copy -
+    // querySelectorAll is in document order, so the last match is the innermost one.
+    // Memoized (invalidated in captureOrder on every fresh render) since ensureCopy() runs on
+    // every refresh and a full "div, p, span" scan of the section on each call is wasted work
+    // once the line has already been found and is still attached.
     function findSiteCopyLine() {
       if (cachedSiteLine && cachedSiteLine.isConnected) return cachedSiteLine;
       var scope = document.querySelector(SECTION_SELECTOR) || document.body;
@@ -812,13 +817,15 @@
           ensureCopy(); // the copy moves between the header row and the filter line on resize
         }, 150);
       });
-      // filters row (sort field, copy line) never end up inside the observed subtree at all. Widened
-      // to document.body - the one ancestor guaranteed to never itself be replaced short of a genuine
-      // full page reload (which resets all of this script's state anyway via the cre_151_initialized
-      // guard) - as a defensive measure while chasing the pet-type sort-order bug; the actual root
-      // cause of that bug turned out to be refresh()'s old identity-based freshness check (see its
-      // comment), not this observer's scope, but there's no reason to narrow this back down now that
-      // refresh() itself is unconditional and cheap on every debounced firing.
+      // The pet-type / breed / zip filters rewrite the listing content. This was originally scoped
+      // to just the repeater element (not the whole section, let alone the page) to keep our own DOM
+      // writes into the filters row (sort field, copy line) from triggering redundant refresh cycles.
+      // Widened to document.body - the one ancestor guaranteed to never itself be replaced short of a
+      // genuine full page reload (which resets all of this script's state anyway via the
+      // cre_151_initialized guard) - as a defensive measure while chasing the pet-type sort-order bug;
+      // the actual root cause of that bug turned out to be refresh()'s old identity-based freshness
+      // check (see its comment), not this observer's scope, but there's no reason to narrow this back
+      // down now that refresh() itself is unconditional and cheap on every debounced firing.
       if (window.MutationObserver) {
         domObserver = new MutationObserver(scheduleRefresh);
         domObserver.observe(document.body, { childList: true, subtree: true });
@@ -848,7 +855,17 @@
       if (debug) console.log(variation_name + " initialized");
     }
 
-      // benefit (the first one alone is enough to eventually call init(), which is itself idempotent).
+    // Waits for the filter fields to exist AND the listings to have rendered before running init().
+    // Uses observeSelector() instead of a setInterval poll: no CPU spent checking on a timer, and
+    // it reacts the instant the DOM is actually ready. We don't pass options.once here because that
+    // would stop watching as soon as FILTERS_FIELDS_SELECTOR appears even if listings aren't ready
+    // yet - instead the callback re-checks both conditions on every debounced pass and calls the
+    // returned done() itself, only once init() has actually run (init() is also idempotent via the
+    // window.cre_151_initialized guard, so any redundant callback firings before that are harmless).
+    // Guard against setting up a second observeSelector() watcher if this script ever runs twice
+    // on the same page (duplicate injection, SPA re-fire, etc.) - without this, each run would
+    // spin up its own whole-document MutationObserver, doubling the mutation-handling cost for no
+    // benefit (the first one alone is enough to eventually call init(), which is itself idempotent).
     if (!window.CRE_151_OBSERVER) {
       window.CRE_151_OBSERVER = true;
       var stopWaitingForReady = observeSelector(SECTION_SELECTOR + " " + FILTERS_FIELDS_SELECTOR, function () {

@@ -194,24 +194,14 @@ html body.cre-t-151 #comparison-section .rt-sort-copy--standalone .rt-sort-copy-
 html body.cre-t-151 .rt-sort-value {
     font-weight: 700;
 }
-/* Smooths the copy's repositioning when the site's OWN filters (pet type / breed / ZIP) reload the
-   control content - client-reported flash/flicker, most noticeable on mobile. JS fades this out,
-   repositions it while invisible, then fades it back in - see fadeCopyForFilterChange() in vB.js. */
-html body.cre-t-151 .rt-sort-copy {
-    transition: opacity 0.22s ease, transform 0.22s ease;
-}
-html body.cre-t-151 .rt-sort-copy.rt-copy-fading {
-    opacity: 0;
-    transform: translateY(4px);
-}
 /* "i" icon -> smooth scrolls to the ranking methodology section */
 html body.cre-t-151 .rt-sort-tooltip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 15px;
-    height: 15px;
-    margin: 0 0 0 5px;
+    width: 17px;
+    height: 17px;
+    margin: 0 0 0 2px;
     padding: 0;
     border: 0;
     background: transparent;

@@ -1,469 +1,204 @@
-/* cre-t-151 : Sort feature (Best Rated / Lowest Price) - Pet Insurance Gurus
-   Clone of cre-t-150, re-targeted to petinsurancegurus.com where the sort field is integrated
-   into the existing pet-type / breed / zip filter row instead of living in its own bar. */
-/* ---------------------------------------------------------------------------
-   1. Filter row layout - make room for the sort field
-   --------------------------------------------------------------------------- */
-/* .filter-options carries inline styles from the site (display:flex; flex-flow:wrap; gap:10px).
-   We only need vertical centring plus a growing field group so the sort pill can be pushed
-   flush to the right edge of the listings below. */
-html body.cre-t-151 #comparison-section .filter-options {
-    align-items: center;
+html body.cre-t-14 .main-header .sec-wrap {
+    display: none;
 }
-html body.cre-t-151 #comparison-section .additional-filters {
+
+html body.cre-t-14 .cre-t-14-main {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+html body.cre-t-14 .main-header {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+html body.cre-t-14 .cre-t-14-left-side {
+    max-width: 650px;
+    width: 100%;
+}
+
+html body.cre-t-14 .cre-t-header-content {
+    color: #383F4D;
+    font-style: normal;
+    line-height: 64px;
+    padding-bottom: 20px;
+    font-family: Pay, Europa, sans-serif;
+    font-weight: 400;
+    font-size: 56px;
+}
+
+html body.cre-t-14 .cre-t-subHeader-content {
+    color: #383f4d;
+    font-family: "Europa", Arial, sans-serif;
+    font-size: 18.5px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.09px;
+    padding-bottom: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    max-width: 600px;
+}
+
+html body.cre-t-14 .cre-t-14-create-button {
+    border-radius: 8px;
+    background: #D03643;
+    display: flex;
+    width: 280px;
+    padding: 14px 25px;
+    justify-content: center;
     align-items: center;
     gap: 10px;
-    flex: 1 1 auto;
-    min-width: 0;
-}
-/* Right-align the sort field to the right edge of the listings. This intentionally leaves a gap
-   between the ZIP field and the sort field on desktop (per client direction). */
-html body.cre-t-151 #comparison-section .rt-sort-dropdown {
-    position: relative;
-    flex: 0 0 auto;
-    margin-left: auto;
-}
-/* ---------------------------------------------------------------------------
-   2. The sort pill - matched to the site's MUI filter fields
-   --------------------------------------------------------------------------- */
-/* --rt-sort-field-h is measured from the real ZIP/breed field at runtime, so the pill is always
-   exactly as tall as its neighbours. 50px is only the pre-measurement fallback. */
-html body.cre-t-151 #comparison-section .rt-sort-toggle {
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    width: 224px;
-    height: var(--rt-sort-field-h, 50px);
-    padding: 0 7px 0 12px;
-    background-color: #fff;
-    border: 1px solid rgb(209, 209, 209);
-    border-radius: 99px;
-    font-family: Montserrat, arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.4375em;
-    color: rgba(0, 0, 0, 0.87);
-    white-space: nowrap;
+    color: #FFF;
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: var(--line-height-30_8, 30.8px);
     cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
 }
-html body.cre-t-151 #comparison-section .rt-sort-toggle:focus-visible {
-    outline: 2px solid #0272e4;
-    outline-offset: 2px;
-}
-html body.cre-t-151 #comparison-section .rt-sort-toggle-label,
-html body.cre-t-151 #comparison-section .rt-sort-toggle-value {
-    font-size: inherit;
-    font-weight: 600;
-    color: inherit;
-}
-/* Fixed value width - without it the whole pill (and the gap before it) jumps when the user
-   switches between "Best Rated" and the longer "Lowest Price". */
-html body.cre-t-151 #comparison-section .rt-sort-toggle-value {
-    display: inline-block;
-    min-width: 94px;
-    text-align: left;
-}
-html body.cre-t-151 #comparison-section .rt-sort-caret {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    max-width: 20px;
-    fill: currentColor;
-    color: rgba(0, 0, 0, 0.54);
-    overflow: initial !important;
-    transition: transform 0.15s ease;
-}
-html body.cre-t-151 #comparison-section .rt-sort-dropdown.is-open .rt-sort-caret {
-    transform: rotate(180deg);
-}
-/* ---------------------------------------------------------------------------
-   3. Dropdown menu - MUI-select look, only the two values (no "Sort by:" prefix)
-   --------------------------------------------------------------------------- */
-html body.cre-t-151 #comparison-section .rt-sort-menu {
-    position: absolute;
-    top: calc(100% + 6px);
-    right: 0;
-    z-index: 99;
-    min-width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-4px);
-    border-radius: 4px;
-    background-color: rgb(255, 255, 255);
-    overflow-x: hidden;
-    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-    transition: opacity 310ms cubic-bezier(0.4, 0, 0.2, 1), transform 206ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-html body.cre-t-151 #comparison-section .rt-sort-dropdown.is-open .rt-sort-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-html body.cre-t-151 #comparison-section .rt-sort-option {
+
+html body.cre-t-14 .cre-t-14-see-button {
+    border-radius: 8px;
+    border: 1px solid #3066C9;
     display: flex;
+    width: 240px;
+    padding: 14px 25px;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-    position: relative;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 10px 20px 10px 14px;
-    border: 0;
-    border-radius: 0;
-    background-color: transparent;
-    font-family: Montserrat, arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #222;
-    white-space: nowrap;
+    gap: 10px;
+    color: #3066C9;
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: var(--line-height-30_8, 30.8px);
     cursor: pointer;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
 }
-html body.cre-t-151 #comparison-section .rt-sort-option:hover {
-    background: #0272e4 !important;
-    color: #fff;
+
+html body.cre-t-14 .cre-t-button-main {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
 }
-html body.cre-t-151 #comparison-section .rt-sort-check {
-    display: inline-block;
-    width: 14px;
-    font-size: 12px;
-    visibility: hidden;
-}
-html body.cre-t-151 #comparison-section .rt-sort-option.is-selected .rt-sort-check {
-    visibility: visible;
-}
-/* ---------------------------------------------------------------------------
-   4. "Sorted by ___" copy - appended to the site's existing "Showing prices for..." line
-   --------------------------------------------------------------------------- */
-/* Not scoped to #comparison-section: on desktop this copy lives in the "Personalize prices"
-   header row, which sits in the section above. These classes only exist on our own element. */
-html body.cre-t-151 .rt-sort-copy {
-    font: inherit;
-    color: inherit;
-}
-/* Desktop placement (client-approved mock): top-right of the "Personalize prices" row, right
-   edge flush with the listings. .filter-label-container is already a full-width flex column
-   whose right edge matches .filter-options (both 1120px), so widening the icon row to 100% and
-   pushing our copy with margin-left:auto lands it exactly on the listing edge. */
-/* display:block, NOT inline-flex - as a flex container the whitespace text nodes around
-   <strong> collapse away and it renders "Sorted bybest rated." margin-left:auto still works
-   because this element is itself a flex item of the header row. */
-html body.cre-t-151 .rt-sort-copy--header {
-    display: block;
-    margin-left: auto;
-    padding-left: 16px;
-    white-space: nowrap;
+
+html body.cre-t-14 .cre-t-14-button-text-bottom {
+    color: #383f4d;
+    font-family: inherit;
     font-size: 16px;
-    font-weight: 400;
-    color: #000;
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-30_8, 30.8px);
 }
-html body.cre-t-151 .rt-sort-copy--header .rt-sort-copy-sep {
-    display: none;
+
+html body.cre-t-14 .cre-t-14-earn-points {
+    color: #3066C9;
 }
-@media (min-width: 992px) {
-    html body.cre-t-151 .filter-label-icon-container {
-        width: 100%;
-    }
+
+html body.cre-t-14 .cre-t-14-right-side {
+    max-width: 470px;
 }
-/* Standalone mode: used when the site hasn't rendered its own copy line (the default "All Pets"
-   state with no breed/zip chosen). .ct-section-inner-wrap is a centred flex column, so without
-   the full width + stretch the copy floats in the middle of the page instead of sitting flush
-   left where the site's own line appears. Deliberately no font rules here - the element also
-   wears the site's .search-details class, so it inherits exactly what the real line would. */
-html body.cre-t-151 #comparison-section .rt-sort-copy--standalone {
-    display: block;
-    width: 100%;
-    align-self: stretch;
-    text-align: left;
-    margin-top: 10px;
-}
-/* The leading full stop only makes sense when we're continuing the site's sentence. */
-html body.cre-t-151 #comparison-section .rt-sort-copy--standalone .rt-sort-copy-sep {
-    display: none;
-}
-html body.cre-t-151 .rt-sort-value {
+
+html body.cre-t-14 .cre-t-14-trusted-points,
+html body.cre-t-14 .cre-t-14-free {
     font-weight: 700;
 }
-/* "i" icon -> smooth scrolls to the ranking methodology section */
-html body.cre-t-151 .rt-sort-tooltip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 15px;
-    height: 15px;
-    margin: 0 0 0 5px;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: #8c8ea0;
-    cursor: pointer;
-    vertical-align: -0.15em;
-}
-html body.cre-t-151 .rt-sort-tooltip svg {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-    overflow: visible;
-}
-html body.cre-t-151 .rt-sort-tooltip:hover {
-    color: #13162f;
-}
-/* ---------------------------------------------------------------------------
-   5. Sort animation - fade/slide the listings out, reorder in JS, fade back in
-   --------------------------------------------------------------------------- */
-html body.cre-t-151 #comparison-section .plan-repeater.rt-sorting > * {
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    opacity: 0;
-    transform: translateY(6px);
-}
-html body.cre-t-151 #comparison-section .plan-repeater.rt-sorted-in > * {
-    animation: rtSortFadeIn 0.4s ease;
-}
-@keyframes rtSortFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
+
+
+@media screen and (min-width: 899px) and (max-width: 1108px) {
+    html body.cre-t-14 .cre-t-header-content {
+        font-size: 40px;
+        line-height: 50px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    html body.cre-t-14 .cre-t-subHeader-content {
+        margin: 0 auto;
+    }
+
+    html body.cre-t-14 .cre-t-14-see-button {
+        width: 280px;
     }
 }
-/* ---------------------------------------------------------------------------
-   6. Desktop - keep tabs + breed + ZIP + sort on ONE row
-   Measured on the live page: the row is 1120px wide at a 1440 viewport and the control uses
-   373 (tabs) + 261 (breed) + 230 (ZIP), leaving 247px. The pill at its natural width plus the
-   gap overflows that, which dropped the whole field group onto a second row and pushed the
-   tabs onto a line of their own. Capping the two native fields and slimming the pill fits all
-   four in 1043px. Client explicitly allowed resizing these fields.
-   The 1180px floor: the one row needs 1062px and container = viewport - 95, so 1180 leaves 23px
-   section 7 takes over. flex-basis must be an explicit px value here - with `auto` the breed
-   field collapses to its 137px content width.
-   --------------------------------------------------------------------------- */
-@media (min-width: 1180px) {
-    html body.cre-t-151 #comparison-section .breed-select {
-        flex: 0 1 230px;
-        max-width: 230px;
-        min-width: 0;
+
+@media screen and (max-width: 898px) {
+    html body.cre-t-14 .cre-t-14-main {
+        flex-direction: column;
+        text-align: center;
     }
-    html body.cre-t-151 #comparison-section .zip-textinput {
-        flex: 0 1 205px;
-        max-width: 205px;
-        min-width: 0;
+
+    html body.cre-t-14 .cre-t-header-content {
+        font-size: 48px;
+        line-height: 58px;
     }
-    html body.cre-t-151 #comparison-section .breed-select .MuiBox-root,
-    html body.cre-t-151 #comparison-section .breed-select .MuiFormControl-root,
-    html body.cre-t-151 #comparison-section .breed-select .MuiInputBase-root,
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiFormControl-root,
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputBase-root {
+
+    html body.cre-t-14 .main-header {
+        padding-top: 30px;
+    }
+
+    html body.cre-t-14 .cre-t-button-main {
+        justify-content: center;
+    }
+
+    html body.cre-t-14 .cre-t-14-see-button {
+        width: 280px;
+    }
+
+    html body.cre-t-14 .cre-t-subHeader-content {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    html body.cre-t-14 .cre-t-14-main {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    html body.cre-t-14 .cre-t-header-content {
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 44px;
+        line-height: 48px;
+        font-weight: 400 !important;
+    }
+
+    html body.cre-t-14 .cre-t-subHeader-content {
+        padding-bottom: 30px;
+    }
+
+    html body.cre-t-14 .cre-t-button-main {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    html body.cre-t-14 .cre-t-14-see-button {
         width: 100%;
-        min-width: 0;
+        max-height: 58.8px;
     }
-    /* No padding override here - the base 0 7px 0 12px applies at this width. */
-    html body.cre-t-151 #comparison-section .rt-sort-toggle {
-        gap: 6px;
-        font-size: 15px;
-    }
-    /* 100px holds the longer "Lowest Price" label - at 90px the whole pill grew 9px when the
-       user switched option, shifting the field next to it. */
-    html body.cre-t-151 #comparison-section .rt-sort-toggle-value {
-        min-width: 100px;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-caret {
-        width: 18px;
-        height: 18px;
-    }
-}
-/* ---------------------------------------------------------------------------
-   7. Tablet / small laptop - tabs on row 1, the three fields share row 2
-   flex-basis 0 (not auto) so breed and ZIP split the row evenly; with `auto` the ZIP field's
-   wider intrinsic content made it 262px against breed's 169px.
-   --------------------------------------------------------------------------- */
-@media (max-width: 1179px) {
-    html body.cre-t-151 #comparison-section .additional-filters {
-        flex: 1 1 100%;
+
+    html body.cre-t-14 .cre-t-14-create-button {
         width: 100%;
     }
-    html body.cre-t-151 #comparison-section .breed-select {
-        flex: 1 1 0;
-        max-width: 340px;
-        min-width: 0;
+
+    html body.cre-t-14 .cre-t-subHeader-content {
+        margin: 0 auto;
     }
-    html body.cre-t-151 #comparison-section .zip-textinput {
-        flex: 1 1 0;
-        max-width: 300px;
-        min-width: 0;
-    }
-    html body.cre-t-151 #comparison-section .breed-select .MuiBox-root,
-    html body.cre-t-151 #comparison-section .breed-select .MuiFormControl-root,
-    html body.cre-t-151 #comparison-section .breed-select .MuiInputBase-root,
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiFormControl-root,
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputBase-root {
-        width: 100%;
-        min-width: 0;
-    }
-    /* Still right-aligned, but the capped breed/ZIP absorb most of the row so the pill sits a
-       comfortable ~57px from the ZIP field rather than stranded across a 270px void. */
-    html body.cre-t-151 #comparison-section .rt-sort-dropdown {
-        flex: 0 0 auto;
-        margin-left: auto;
+
+    html body.cre-t-14 .cre-t-14-button-text-bottom {
+        line-height: 22px;
     }
 }
-/* ---------------------------------------------------------------------------
-   8. Mobile - breed + ZIP + sort share the second row
-   --------------------------------------------------------------------------- */
-@media (max-width: 767px) {
-    /* flex-direction:row is load-bearing. The site's own stylesheet has
-       `@media (max-width:389px){ .additional-filters{flex-direction:column} }`, which stacks
-       breed and ZIP vertically and full-width. Without this override the 3-across row silently
-       falls apart below 390px. */
-    html body.cre-t-151 #comparison-section .additional-filters {
-        gap: 6px;
-        flex-direction: row;
-        flex-wrap: nowrap;
-    }
-    /* The inline divider between breed and ZIP costs ~11px we need for the third field.
-       These are inline styles on the element, so !important is required to beat them. */
-    html body.cre-t-151 #comparison-section .breed-select {
-        flex: 1 1 36%;
-        padding-right: 0 !important;
-        border-right: 0 !important;
-    }
-    html body.cre-t-151 #comparison-section .zip-textinput {
-        flex: 1 1 30%;
-    }
-    /* Tighten the two native fields so three pills fit a 360-390px row. */
-    html body.cre-t-151 #comparison-section .breed-select .MuiSelect-select {
-        padding: 12px 24px 12px 12px !important;
-        font-size: 13px !important;
-    }
-    html body.cre-t-151 #comparison-section .breed-select .MuiSelect-icon {
-        right: 2px !important;
-    }
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputBase-input {
-        padding-left: 4px !important;
-        padding-right: 6px !important;
-        font-size: 13px !important;
-        min-width: 0;
-    }
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputAdornment-root {
-        margin-right: 2px;
-    }
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputAdornment-root svg {
-        width: 12px;
-        height: 16px;
-    }
-    /* Sort pill: drop the "Sort by:" label on mobile - the value plus the "Sorted by ___" copy
-       underneath already say what the field does, and it buys ~60px for the other two fields. */
-    html body.cre-t-151 #comparison-section .rt-sort-dropdown {
-        flex: 0 1 auto;
-        min-width: 0;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-toggle-label {
-        display: none;
-    }
-    /* width:auto here - the fixed 224px desktop pill would blow out the 3-across mobile row. */
-    html body.cre-t-151 #comparison-section .rt-sort-toggle {
-        gap: 2px;
-        width: auto;
-        padding: 0 4px 0 12px;
-        font-size: 13px;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-toggle-value {
-        min-width: 78px;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-caret {
-        width: 18px;
-        height: 18px;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-option {
-        padding: 10px 16px 10px 12px;
-        font-size: 14px;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-copy--standalone {
-        margin-top: 8px;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-tooltip {
-        width: 16px;
-        height: 16px;
-        margin-left: 2px;
-    }
-}
-/* Narrow phones: shave a little more before we allow the row to break. */
-@media (max-width: 400px) {
-    html body.cre-t-151 #comparison-section .additional-filters {
-        gap: 5px;
-    }
-    html body.cre-t-151 #comparison-section .breed-select .MuiSelect-select {
-        padding: 12px 22px 12px 8px !important;
-        font-size: 12px !important;
-    }
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputBase-input {
-        font-size: 12px !important;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-toggle {
-        padding: 0 2px 0 9px;
-        font-size: 12px;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-toggle-value {
-        min-width: 72px;
-    }
-}
-/* Smallest phones (<=374px): three pills on one row stops being legible, so breed + ZIP keep the
-   row and the sort field drops to a line of its own, full width. 375px is the floor for the
-   3-across layout - signed off at 389px and it holds down to 375. */
-@media (max-width: 374.98px) {
-    /* Still row + wrap, not the site's column: breed and ZIP share line 1, sort takes line 2. */
-    html body.cre-t-151 #comparison-section .additional-filters {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 6px;
-    }
-    html body.cre-t-151 #comparison-section .breed-select {
-        flex: 1 1 55%;
-    }
-    html body.cre-t-151 #comparison-section .zip-textinput {
-        flex: 1 1 40%;
-    }
-    /* Two fields to a row instead of three means the text can go back up to 13px. */
-    html body.cre-t-151 #comparison-section .breed-select .MuiSelect-select {
-        padding: 12px 24px 12px 12px !important;
-        font-size: 13px !important;
-    }
-    html body.cre-t-151 #comparison-section .zip-textinput .MuiInputBase-input {
-        font-size: 13px !important;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-dropdown {
-        flex: 1 1 100%;
-        width: 100%;
-    }
-    /* Full-width pill on its own line, so the "Sort by:" label comes back and it can breathe. */
-    html body.cre-t-151 #comparison-section .rt-sort-toggle {
-        width: 100%;
-        gap: 6px;
-        padding: 0 8px 0 14px;
-        font-size: 13px;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-toggle-label {
-        display: inline;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-toggle-value {
-        flex: 1 1 auto;
-        min-width: 0;
-    }
-    html body.cre-t-151 #comparison-section .rt-sort-menu {
-        left: 0;
-        right: auto;
-        width: 100%;
+
+
+@media screen and (max-width: 390px) {
+    html body.cre-t-14 .cre-t-header-content {
+        font-size: 40px;
+        line-height: 42px;
     }
 }

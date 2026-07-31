@@ -8,8 +8,6 @@
     var LISTING_ITEM_SELECTOR = '[data-unique$="-Listing-Only"]'; // each provider block
     var BEST_OVERALL_MARKER = ".best-overall-bubble"; // marks the pinned card that must never be sorted
     var FILTERS_ROW_SELECTOR = ".filter-options"; // pet-type tabs + breed + zip row
-    var PET_TYPE_TAB_SELECTOR = ".oxy-tab"; // each All Pets/Cats/Dogs tab, inside FILTERS_ROW_SELECTOR
-    var BREED_SELECT_SELECTOR = ".breed-select [role='combobox']"; // its displayed value, e.g. "All Breeds"
     var FILTERS_FIELDS_SELECTOR = ".filter-options .additional-filters"; // breed + zip group; sort field goes here
     // "Showing prices for {breed}..." when a breed is picked, "Showing prices in {zip}" when only
     // ZIP is set (no breed) - match on the invariant "showing prices" so both variants are found.
@@ -23,28 +21,25 @@
     var FIELD_HEIGHT_REF_SELECTOR = ".zip-textinput .MuiInputBase-root, .breed-select .MuiInputBase-root";
     var BEST_OVERALL_DEFAULT_LABEL = "Best Overall";
     var BEST_OVERALL_LOWEST_PRICE_LABEL = "Lowest Price";
-    var DEFAULT_SORT_MODE = "lowest-price"; // what the page should show on first load
+    var DEFAULT_SORT_MODE = "best-rated"; // what the page should show on first load
     var LABELS = { "best-rated": "Best Rated", "lowest-price": "Lowest Price" };
     var COPY_LABELS = { "best-rated": "best rated", "lowest-price": "lowest price" };
 
     /* ---- state ---- */
     var currentMode = DEFAULT_SORT_MODE;
     var originalOrder = []; // sortable listings only, in the order the site rendered them
-    var knownFilterState = null; // filterStateSignature() as of the last detected filter change
-    var filterSettleDeadline = 0; // Date.now() timestamp; refresh() keeps re-capturing until this passes
-    var nativeOrderCache = {}; // filterStateSignature() -> [data-unique,...] in TRUE native order
-    var nativeOrderLocked = {}; // filterStateSignature() -> true once its cache entry is trusted
-    // forever and stops being re-derived from DOM position - see captureOrder()'s comment for why.
+    var knownItems = []; // every listing block seen for the current render (incl. the pinned card)
     var sortAnchor = null; // node the sorted items are inserted before, so "Show More" + pinned card stay put
     var bestOverallBadge = null; // badge on the pinned card - its text swaps with the active mode
     var bestOverallCard = null; // the pinned card element itself
+    var bestOverallSyncedDataUnique = null; // data-unique of whichever item the clone currently mirrors
     var copyEl = null; // our "Sorted by ___" copy + "i" icon
     var originalZipPlaceholder = null;
     var sortAnimationTimeouts = []; // pending timeout IDs for the in-flight sort animation
     var refreshTimer = null;
     var resizeTimer = null;
     var isApplying = false; // true while we are the ones mutating the DOM
-    var domObserver = null; // the MutationObserver instance
+    var domObserver = null; // the MutationObserver instance, so we can (re)target it
     var cachedSiteLine = null; // memoized result of findSiteCopyLine(), invalidated on fresh render
 
     /* all Pure helper functions */
@@ -192,26 +187,6 @@
       var control = contentEl.querySelector(".ct-span") || contentEl;
       return control.textContent;
     }
-    // Signature of the user's current filter selection (pet type + breed + zip). Used instead of a
-    // per-item price/data-unique fingerprint - confirmed live 2026-07-29 that per-item content isn't
-    // a safe freshness signal either, since the independent, live cre-t-116 price-override test can
-    // rewrite a card's displayed price on its own schedule with no filter change involved at all,
-    // which then falsely looked like "the site re-rendered" and re-captured our OWN already-sorted
-    // DOM order as if it were the site's native one. The filter inputs themselves only change when
-    // the user actually picks a different pet type / breed / ZIP, which is the one thing refresh()
-    // actually needs to react to - and reorder()/syncBestOverallCardContent() never touch any of them.
-    function filterStateSignature() {
-      var tabsScope = document.querySelector(SECTION_SELECTOR + " " + FILTERS_ROW_SELECTOR);
-      var tabs = tabsScope ? tabsScope.querySelectorAll(PET_TYPE_TAB_SELECTOR) : [];
-      var tabSig = Array.prototype.map
-        .call(tabs, function (tab) {
-          return tab.textContent.trim() + ":" + (/active/i.test(tab.className) ? "1" : "0");
-        })
-        .join("|");
-      var breedEl = document.querySelector(SECTION_SELECTOR + " " + BREED_SELECT_SELECTOR);
-      var zipEl = document.querySelector(SECTION_SELECTOR + " " + ZIP_INPUT_SELECTOR);
-      return tabSig + "||" + (breedEl ? breedEl.textContent.trim() : "") + "||" + (zipEl ? zipEl.value : "");
-    }
     // Pulls the numeric price out of the "Average Plan Cost" column, e.g. "$23.44/mo" -> 23.44
     function getPrice(item) {
       var columns = item.querySelectorAll(".plan-detail-column");
@@ -262,69 +237,19 @@
         return el.matches && el.matches(LISTING_ITEM_SELECTOR);
       });
     }
-    // Snapshots the site's own (best-rated) order. Runs on first load and again whenever refresh()
-    // detects a genuine filter change (see refresh()'s comment). Trusting the listings' CURRENT DOM
-    // POSITION at that moment is NOT enough on its own: confirmed live 2026-07-29 that this site
-    // never repositions these persistent nodes itself (it only patches new content into whatever
-    // physical slots already exist), so once ANY non-default sort has ever physically reordered
-    // them, every later capture - even for a completely different pet type/breed/ZIP - inherits
-    // that leftover position instead of a genuine native order for the newly-active filter combo.
-    // nativeOrderCache/nativeOrderLocked close that gap: for a given combo's OWN settle window
-    // (see refresh()), this keeps re-deriving nativeOrderCache fresh from CURRENT DOM position on
-    // every tick - safe to repeat, because while the default (best-rated) mode is active, reorder()
-    // never physically moves anything (it just re-applies the same sequence it was given), so
-    // there's nothing for repeated re-derivation to self-poison yet. Once that combo's settle
-    // window closes, refresh() locks it: from then on captureOrder() stops re-deriving and instead
-    // reconstructs originalOrder from the LOCKED sequence (mapped onto whichever live elements
-    // currently hold each data-unique, so content/price still stays fresh), which is what keeps a
-    // later revisit correct even after a non-default sort has since physically rearranged position
-    // for a completely different combo. Confirmed live 2026-07-29 that locking on the very FIRST
-    // tick instead (rather than the settle window's LAST tick) breaks this: the pet-type tab's
-    // active class can flip before the site's own content finishes arriving, so an immediate lock
-    // can freeze a transitional, not-yet-final arrangement forever. The one gap this still can't
-    // close: if a combo's OWN first-ever settle window starts while a non-default sort is ALREADY
-    // active from a different combo, every tick during that window is itself re-deriving from
-    // already-corrupted position - there's no client-side way to recover a combo's true order once
-    // its first-ever capture happens under already-disturbed position.
+    // Snapshots the site's own (best-rated) order. Runs on first load and again every time the
+    // pet-type / breed / zip filters re-render the list, since the old element references die then.
     function captureOrder(items) {
+      knownItems = items.slice();
       originalOrder = [];
       cachedSiteLine = null; // stale after a fresh render - force findSiteCopyLine() to re-query
       bestOverallCard = null;
-      var regularItems = [];
+      // A fresh render means bestOverallCard is a brand-new, pristine element - force the next
+      // syncBestOverallCardContent call to clone into it regardless of what was synced before.
+      bestOverallSyncedDataUnique = null;
       items.forEach(function (el) {
         if (el.querySelector(BEST_OVERALL_MARKER)) bestOverallCard = el;
-        else regularItems.push(el);
-      });
-      var cacheKey = knownFilterState;
-      if (!nativeOrderLocked[cacheKey]) {
-        nativeOrderCache[cacheKey] = regularItems.map(function (el) {
-          return el.getAttribute("data-unique");
-        });
-      }
-      // Queues, not single values: this site can render more than one element sharing the exact
-      // same data-unique (confirmed live 2026-07-29, a hidden duplicate Trupanion card alongside
-      // the real one) - a plain value map would let one silently overwrite the other. Matching
-      // same-data-unique elements up in document order instead correctly keeps both.
-      var byDataUnique = {};
-      regularItems.forEach(function (el) {
-        var key = el.getAttribute("data-unique");
-        (byDataUnique[key] || (byDataUnique[key] = [])).push(el);
-      });
-      nativeOrderCache[cacheKey].forEach(function (dataUnique) {
-        var queue = byDataUnique[dataUnique];
-        var el = queue && queue.shift();
-        if (el) originalOrder.push(el);
-      });
-      // Any element with no queue entry left (a provider added since the cache was captured, or an
-      // extra duplicate beyond how many the cached sequence accounted for) - append rather than
-      // silently drop it.
-      regularItems.forEach(function (el) {
-        var key = el.getAttribute("data-unique");
-        var queue = byDataUnique[key];
-        if (queue && queue.indexOf(el) !== -1) {
-          queue.splice(queue.indexOf(el), 1);
-          originalOrder.push(el);
-        }
+        else originalOrder.push(el);
       });
       // Sorted items get inserted before whatever directly follows the last sortable listing -
       // usually the "Show More" link, then the pinned card. Appending instead would drag the
@@ -334,6 +259,7 @@
         ? bestOverallCard.querySelector(".best-overall-text") ||
           findBadgeByText(bestOverallCard, [BEST_OVERALL_DEFAULT_LABEL, BEST_OVERALL_LOWEST_PRICE_LABEL])
         : null;
+      bestOverallSyncedDataUnique = null; // fresh render - any clone from before belongs to a discarded element
     }
     // Replaces cloned ids (e.g. Oxygen's popover trigger buttons) so the page never ends up with
     // two elements sharing one id - the source card keeps its own at its live position.
@@ -387,15 +313,14 @@
         cloneCol2.style.display = "none";
         origCol2.insertAdjacentElement("afterend", cloneCol2);
       }
-      // Always re-clone rather than skipping when top's data-unique matches the last-synced value -
-      // the same provider can stay ranked #1 across a pet-type/filter change while its own price
-      // content differs (confirmed live 2026-07-29: Pumpkin stayed cheapest across Cats/Dogs/All
-      // Pets, so the identity-based skip left the clone frozen on whichever price was true the FIRST
-      // time Pumpkin became #1, never updating again even though the real per-pet-type price moved).
-      cloneCol1.innerHTML = sourceCol1.innerHTML;
-      stripIds(cloneCol1);
-      cloneCol2.innerHTML = sourceCol2.innerHTML;
-      stripIds(cloneCol2);
+      var topDataUnique = top.getAttribute("data-unique");
+      if (topDataUnique !== bestOverallSyncedDataUnique) {
+        cloneCol1.innerHTML = sourceCol1.innerHTML;
+        stripIds(cloneCol1);
+        cloneCol2.innerHTML = sourceCol2.innerHTML;
+        stripIds(cloneCol2);
+        bestOverallSyncedDataUnique = topDataUnique;
+      }
       origCol1.style.display = "none";
       origCol2.style.display = "none";
       cloneCol1.style.display = "";
@@ -667,98 +592,25 @@
       var next = window.innerWidth <= ZIP_SHORT_MAX_WIDTH ? ZIP_SHORT_PLACEHOLDER : originalZipPlaceholder;
       if (input.getAttribute("placeholder") !== next) input.setAttribute("placeholder", next);
     }
-    // Re-syncs everything after the React filters swap the listings out. Originally gated
-    // captureOrder()/applySort() behind an identity check (items.length changed, or any item not a
-    // reference already seen before) to skip redundant work on our own reorder() mutations. That
-    // check is unusable on this site: confirmed live 2026-07-29 that the pet-type tabs (All
-    // Pets/Cats/Dogs) patch the SAME persistent DOM node objects in place (rewriting each one's
-    // logo/price/data-unique) rather than creating new elements - so an identity check never finds
-    // a "fresh" item after the very first render. A per-item price/data-unique fingerprint was
-    // tried next and also confirmed unsafe: the live, independent cre-t-116 price-override test
-    // rewrites a card's displayed price on its own schedule with no filter change involved, which
-    // still looked like "the site re-rendered." filterStateSignature() - the pet type/breed/ZIP
-    // inputs themselves, not anything derived from the listings - is the one signal that only
-    // changes when the user actually changes a filter, which is the one thing this needs to react
-    // to. filterSettleDeadline keeps re-checking for a short window after a detected change,
-    // because the pet-type tab's active class can flip before the matching price data finishes
-    // arriving in a separate, later mutation burst - captureOrder() runs on every tick within that
-    // window, not just the first, so whichever tick lands after the data actually settles is the
-    // one nativeOrderCache ends up holding for this combo (see captureOrder()'s comment for why
-    // this repeated re-deriving is safe while in best-rated mode, and why the settle window's LAST
-    // tick, not its first, is what nativeOrderLocked commits once it closes).
-    // Whether ensureCopy() would actually move copyEl to a new parent/position right now - mirrors
-    // that function's own three branches without performing the move, so fadeCopyForFilterChange()
-    // below can decide whether a fade is even warranted (skip it when nothing's about to move, so
-    // the copy isn't flickering on every debounced tick - only on the ones that truly reposition it).
-    function copyNeedsReposition() {
-      var headerRow = document.querySelector(HEADER_ROW_SELECTOR);
-      if (headerRow && window.innerWidth >= HEADER_COPY_MIN_WIDTH) {
-        return copyEl.parentNode !== headerRow;
-      }
-      var siteLine = findSiteCopyLine();
-      if (siteLine) return copyEl.parentNode !== siteLine;
-      var filters = document.querySelector(SECTION_SELECTOR + " " + FILTERS_ROW_SELECTOR);
-      return !!filters && copyEl.previousElementSibling !== filters;
-    }
-    // Smooths the "Sorted by ___" copy's repositioning when the site's OWN filters (pet type /
-    // breed / ZIP) reload the control content - client-reported flash/flicker, most noticeable on
-    // mobile where the copy sits directly under the filters and visibly jumps as the site's
-    // "Showing prices for ..." sentence it's attached to gets torn down and rebuilt. Fades the copy
-    // out, lets `reposition` (ensureCopy) run while it's invisible, then fades it back in - mirrors
-    // the existing listing-reorder fade (rt-sorting/rt-sorted-in) instead of inventing a new pattern.
-    // Called on every refresh() tick (not gated to "first tick of a detected filter change" like an
-    // earlier version) because the site's own content reload can keep repositioning the copy across
-    // several debounced ticks, not just the first one - copyNeedsReposition() is what keeps this
-    // cheap/silent on the (common) ticks where nothing actually needs to move.
-    var copyFadeTimeouts = []; // pending timeout IDs for the in-flight copy fade transition
-    var copyFadeToken = 0; // guards against a stale fade-in firing after a newer cycle already restarted it
-    function fadeCopyForFilterChange(reposition) {
-      copyFadeTimeouts.forEach(function (id) {
-        clearTimeout(id);
-      });
-      copyFadeTimeouts = [];
-      if (!copyEl || !copyNeedsReposition()) {
-        reposition();
-        return;
-      }
-      var token = ++copyFadeToken;
-      addClass(copyEl, "rt-copy-fading");
-      var outTimeoutId = setTimeout(function () {
-        reposition();
-        // A short buffer so the browser actually paints the invisible/repositioned state before
-        // the class removal below transitions back to opacity:1 - without it the two style
-        // changes can get coalesced into a single paint and the fade-in never becomes visible.
-        var inTimeoutId = setTimeout(function () {
-          if (token === copyFadeToken) removeClass(copyEl, "rt-copy-fading");
-        }, 30);
-        copyFadeTimeouts.push(inTimeoutId);
-      }, 220); // matches the CSS transition duration on .rt-sort-copy
-      copyFadeTimeouts.push(outTimeoutId);
-    }
-    function refresh() {
+    // Re-syncs everything after the React filters swap the listings out.
+    function refresh(force) {
       if (isApplying) return;
       ensureSortField();
-      fadeCopyForFilterChange(ensureCopy);
+      ensureCopy();
       syncFieldHeight();
       syncZipPlaceholder();
       var items = getListingItems();
       if (!items.length) return;
-      var currentFilterState = filterStateSignature();
-      if (currentFilterState !== knownFilterState) {
-        knownFilterState = currentFilterState;
-        filterSettleDeadline = Date.now() + 3000;
-      } else if (Date.now() >= filterSettleDeadline && !nativeOrderLocked[knownFilterState]) {
-        // Settle window closed for this combo - lock its native order so captureOrder() stops
-        // re-deriving it from DOM position (see that function's comment). This must NOT skip the
-        // rest of refresh() below: confirmed live 2026-07-29 that returning here instead left
-        // Lowest Price mode (and the pinned-card clone, re-synced inside applySort()->reorder())
-        // permanently frozen on whatever prices were true at the instant the window closed, if the
-        // site's real per-provider price data was still arriving even a little after that - no
-        // fixed duration is guaranteed long enough for a live quote engine. captureOrder() simply
-        // stops re-deriving raw position once locked; applySort() must keep running on every tick,
-        // forever, so Lowest Price (and the clone) keep tracking whatever price is CURRENTLY live.
-        nativeOrderLocked[knownFilterState] = true;
+      var isFreshRender = !!force || items.length !== knownItems.length;
+      if (!isFreshRender) {
+        for (var i = 0; i < items.length; i++) {
+          if (knownItems.indexOf(items[i]) === -1) {
+            isFreshRender = true;
+            break;
+          }
+        }
       }
+      if (!isFreshRender) return; // just our own re-ordering - nothing to redo
       captureOrder(items);
       applySort(currentMode, true);
     }
@@ -766,9 +618,10 @@
       if (isApplying) return;
       clearTimeout(refreshTimer);
       refreshTimer = setTimeout(function () {
-        refresh();
+        refresh(false);
       }, 150);
     }
+
     function eventListeners() {
       // toggle dropdown open/close
       live("#rt-sort-toggle", "click", function (e) {
@@ -812,16 +665,12 @@
           ensureCopy(); // the copy moves between the header row and the filter line on resize
         }, 150);
       });
-      // filters row (sort field, copy line) never end up inside the observed subtree at all. Widened
-      // to document.body - the one ancestor guaranteed to never itself be replaced short of a genuine
-      // full page reload (which resets all of this script's state anyway via the cre_151_initialized
-      // guard) - as a defensive measure while chasing the pet-type sort-order bug; the actual root
-      // cause of that bug turned out to be refresh()'s old identity-based freshness check (see its
-      // comment), not this observer's scope, but there's no reason to narrow this back down now that
-      // refresh() itself is unconditional and cheap on every debounced firing.
-      if (window.MutationObserver) {
+      // filters row (sort field, copy line) never end up inside the observed subtree at all.
+      var repeater = document.querySelector(SECTION_SELECTOR + " " + REPEATER_SELECTOR);
+      var observeTarget = repeater || document.querySelector(SECTION_SELECTOR);
+      if (observeTarget && window.MutationObserver) {
         domObserver = new MutationObserver(scheduleRefresh);
-        domObserver.observe(document.body, { childList: true, subtree: true });
+        domObserver.observe(observeTarget, { childList: true, subtree: true });
       }
     }
 
@@ -840,7 +689,7 @@
       ensureCopy();
       syncFieldHeight();
       syncZipPlaceholder();
-      refresh(); // captures the site order and applies the default sort
+      refresh(true); // captures the site order and applies the default sort
       if (!window.cre_151_events) {
         window.cre_151_events = true;
         eventListeners();

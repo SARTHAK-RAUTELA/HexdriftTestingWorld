@@ -9,8 +9,8 @@
        here too.
        Sort field UI + "Lowest Price" ordering + the pinned card mirroring
        whichever listing is currently #1.
-       Still deliberately excluded from this build: the fade transition on
-       re-order.
+       Choosing a sort option fades the listings the same way the site itself
+       does when a control filter is applied - see SORT_FADE_CLASS below.
        In "Best Rated" mode nothing is re-ranked and the pinned card shows the
        site's own content, so the page behaves exactly like the control.
        Every class/id/attribute/custom-property this script injects is
@@ -26,8 +26,6 @@
     // ZIP is set (no breed) - match on the invariant "showing prices" so both variants are found.
     var SITE_COPY_PREFIX = "showing prices";
     var SITE_COPY_CLASS = "search-details"; // the site's own class for that line - borrowed when standalone
-    var HEADER_ROW_SELECTOR = ".filter-label-icon-container"; // "Personalize prices" row, above the filters
-    var HEADER_COPY_MIN_WIDTH = 992; // at/above this the copy sits top-right instead of under the filters
     var ZIP_INPUT_SELECTOR = ".zip-textinput input";
     var ZIP_SHORT_PLACEHOLDER = "ZIP code"; // shortened on mobile so 3 fields fit one row
     var ZIP_SHORT_MAX_WIDTH = 767;
@@ -60,12 +58,60 @@
       { bodyClass: "cre-t-111-toolTipContentChange", priceClass: "cre-t-111-price-update" },
       { bodyClass: "cre-t-116-toolTipContentChange", priceClass: "cre-t-116-price-update" },
     ];
+    /* ---- re-order transition ----
+       The site already fades its own listing container whenever a control filter (pet type, breed,
+       ZIP) is applied: it toggles `loading` then `reload` on .plan-repeater, and that element
+       carries `transition: all 0.5s ease`, so the opacity change animates. Measured on the live
+       page: 1 -> 0.6 -> 0, then 0 -> 1 once the new cards are in, ~0.5s per leg.
+       The site also drifts the list down ~50px as it fades and back up as it returns (its `reload`
+       class animates margin-top on the same curve).
+       Choosing a sort option now does the same thing, so our filter feels like the site's own: fade
+       and slide the container out, re-rank while nothing is visible, then fade and slide it back in.
+       Client asked for a longer, smoother version of it than the site's own 0.5s ease, so we have to
+       declare the duration/easing ourselves - and that is why there are TWO classes rather than one.
+       Putting `transition` on .plan-repeater directly would replace the site's `transition: all
+       0.5s ease`, which is what animates the site's OWN filter fade, so every pet-type/breed/ZIP
+       change inside the variation would silently inherit our timing too. Instead
+       SORT_FADE_ENABLE_CLASS carries the transition and is only on the element while our sort
+       animates; the moment both legs are done it comes off and the site's own transition is back in
+       charge, byte-identical to the control.
+       0.7s per leg, so a sort takes ~1.4s end to end - the same overall length as the control's own
+       filter transition, which spends most of its 1.4s waiting on the network rather than fading.
+       SORT_FADE_MS must stay equal to the duration in the CSS: it is both how long we wait before
+       re-ranking (so the re-order lands at the END of the fade-out rather than visibly during it)
+       and how long we then wait before handing the transition back. */
+    /* ---- waiting for the site's own filter transition ----
+       Client-reported flashing, second pass. The site does not rewrite its "Showing prices for ..."
+       sentence until its card transition has finished - measured live, the text only changes at
+       ~1.08s, at the very end of its loading -> reload sequence. Our copy is put back into that line
+       within a frame (see scheduleCopySync), so on its own that means the user reads our "Sorted by
+       ..." beside the OLD sentence and then watches the sentence change underneath it. Holding our
+       copy back until the site is done fixes the order: sentence settles first, then our copy appears
+       beside the finished text, once.
+       We watch the site's own `loading` / `reload` markers instead of hard-coding ~1.4s, so we wait
+       exactly as long as the control actually takes - longer on a slow connection, shorter on a fast
+       one. SITE_BUSY_MAX_MS is a safety cap: if those classes ever stick, the copy comes back anyway
+       rather than staying hidden for the rest of the session. */
+    var SITE_BUSY_CLASSES = ["loading", "reload"];
+    var COPY_BUSY_CLASS = "cre-t-151-copy-busy";
+    var SITE_BUSY_MAX_MS = 3000;
+
+    var SORT_FADE_CLASS = "cre-t-151-sorting"; // the opacity target
+    var SORT_FADE_ENABLE_CLASS = "cre-t-151-fading"; // carries our duration + easing, briefly
+    var SORT_FADE_MS = 700;
+
     /* ---- state ---- */
     var currentMode = DEFAULT_SORT_MODE;
     var copyEl = null; // our "Sorted by ___" copy + "i" icon
     var originalZipPlaceholder = null;
     var refreshTimer = null;
     var resizeTimer = null;
+    var fadeTimer = null; // pending re-rank at the end of the fade-out
+    var fadeEndTimer = null; // pending hand-back of the transition once the fade-in has finished
+    var copyFrame = null; // pending leading-edge copy re-attach (see scheduleCopySync)
+    var busyObserver = null; // watches the site's loading/reload markers on the repeater
+    var busyObserverTarget = null; // the repeater that observer is currently attached to
+    var busyMaxTimer = null; // SITE_BUSY_MAX_MS safety cap
     var domObserver = null; // the MutationObserver instance
     var cachedSiteLine = null; // memoized result of findSiteCopyLine()
     var lastSiteLineText = null; // the site's own sentence text as of the last ensureCopy() pass
@@ -507,6 +553,51 @@
         isApplying = false;
       }
     }
+    /**
+     * The user-facing sort: fade the listings out, re-rank while they are invisible, fade back in.
+     *
+     * Called ONLY from selectSortOption(), i.e. an actual click on an option. refresh() keeps
+     * calling applySort() directly, with no fade - it runs on every site re-render (the observer
+     * fires on each filter change and on each late-arriving price), so fading there would leave the
+     * list strobing on its own.
+     *
+     * The classes are toggled on the site's own .plan-repeater, which our MutationObserver watches
+     * with childList only - no `attributes: true` - so this cannot feed back into scheduleRefresh().
+     * try/finally guarantees the opacity class comes off even if the re-rank throws; leaving it on
+     * would strand the listings at opacity 0, which is exactly how the equivalent code in cre-t-150
+     * once blanked the list. Both timers are cleared up front so double-clicking two options in
+     * quick succession cancels the pending re-rank instead of running two overlapping fades.
+     */
+    function applySortAnimated(mode) {
+      var container = originalOrder.length ? originalOrder[0].parentElement : null;
+      // No container, or the user has asked the OS for reduced motion: re-rank straight away. Doing
+      // the reduced-motion case in CSS instead would snap the list to opacity 0 and leave it
+      // invisible for the whole SORT_FADE_MS, which is worse than the fade it replaces.
+      if (!container || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+        applySort(mode);
+        return;
+      }
+      clearTimeout(fadeTimer);
+      clearTimeout(fadeEndTimer);
+      container.classList.add(SORT_FADE_ENABLE_CLASS);
+      // Forced reflow, same trick as playCopyFade(): commits the transition declaration as its own
+      // style change, so the opacity below is guaranteed to be seen as a transitionable change
+      // rather than as part of the same recalc that introduced the transition.
+      void container.offsetWidth;
+      container.classList.add(SORT_FADE_CLASS);
+      fadeTimer = setTimeout(function () {
+        try {
+          applySort(mode);
+        } finally {
+          container.classList.remove(SORT_FADE_CLASS); // fades back in over the same duration
+          // Hand the transition back to the site only once the fade-in has actually finished -
+          // removing it early would cut the fade-in short at the site's own 0.5s.
+          fadeEndTimer = setTimeout(function () {
+            container.classList.remove(SORT_FADE_ENABLE_CLASS);
+          }, SORT_FADE_MS);
+        }
+      }, SORT_FADE_MS);
+    }
 
     /* ---- selection state ---- */
     function closeMenu() {
@@ -536,7 +627,7 @@
       setTextIfChanged(valueEl, LABELS[mode]);
       closeMenu();
       updateSortCopy(mode);
-      applySort(mode);
+      applySortAnimated(mode);
     }
 
     /* ---- injection / DOM sync ---- */
@@ -587,7 +678,11 @@
       el.id = "cre-t-151-sort-copy";
       el.innerHTML = [
         '<span class="cre-t-151-sort-copy-sep">.</span> Sorted by ',
-        '<strong class="cre-t-151-sort-value">' + COPY_LABELS[DEFAULT_SORT_MODE] + "</strong>.",
+        '<strong class="cre-t-151-sort-value">' + COPY_LABELS[DEFAULT_SORT_MODE] + "</strong>",
+        // Both full stops are spans, not bare text, purely so CSS can drop them per placement: the
+        // leading one only makes sense mid-sentence, and the trailing one only when we are finishing
+        // the site's sentence. Standing on its own the line is not a sentence, so it gets neither.
+        '<span class="cre-t-151-sort-copy-end">.</span>',
         '<button type="button" class="cre-t-151-sort-tooltip" data-cre-t-151-tooltip aria-label="View ranking methodology">',
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">',
         '<path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"></path>',
@@ -653,6 +748,54 @@
         node = node.previousSibling; // node was whitespace-only, keep walking back
       }
     }
+    // True while the site is mid-filter-transition, i.e. its own copy line has not settled yet.
+    function isSiteBusy() {
+      var repeater = document.querySelector(SECTION_SELECTOR + " " + REPEATER_SELECTOR);
+      if (!repeater) return false;
+      for (var i = 0; i < SITE_BUSY_CLASSES.length; i++) {
+        if (repeater.classList.contains(SITE_BUSY_CLASSES[i])) return true;
+      }
+      return false;
+    }
+    /**
+     * Hides our copy while the site's filter transition is running and reveals it, once, when the
+     * transition ends - see the SITE_BUSY_CLASSES notes above for why.
+     * The busy === wasBusy early-out is what keeps this idempotent: it is called from the observer
+     * and from every ensureCopy() pass, and without it the reveal fade would restart on every tick.
+     */
+    function syncCopyBusy() {
+      if (!copyEl) return;
+      var busy = isSiteBusy();
+      var wasBusy = copyEl.classList.contains(COPY_BUSY_CLASS);
+      if (busy === wasBusy) return;
+      clearTimeout(busyMaxTimer);
+      if (busy) {
+        copyEl.classList.add(COPY_BUSY_CLASS);
+        busyMaxTimer = setTimeout(function () {
+          if (!copyEl) return;
+          copyEl.classList.remove(COPY_BUSY_CLASS);
+          playCopyFade();
+          if (debug) console.log(variation_name + " site stayed busy for " + SITE_BUSY_MAX_MS + "ms - showing the copy anyway");
+        }, SITE_BUSY_MAX_MS);
+        return;
+      }
+      copyEl.classList.remove(COPY_BUSY_CLASS);
+      playCopyFade();
+    }
+    // Keeps that class watch pointed at the live repeater - the site can replace the element on a
+    // re-render, and an observer left on a detached node would never fire again. Cheap and
+    // idempotent: re-observes only when the repeater is genuinely a different element.
+    function ensureBusyObserver() {
+      if (!window.MutationObserver) return;
+      var repeater = document.querySelector(SECTION_SELECTOR + " " + REPEATER_SELECTOR);
+      if (!repeater || repeater === busyObserverTarget) return;
+      if (busyObserver) busyObserver.disconnect();
+      busyObserverTarget = repeater;
+      busyObserver = new MutationObserver(syncCopyBusy);
+      // Attributes only, and only `class` - this must not react to the site patching card content,
+      // and it deliberately ignores our own cre-t-151-sorting / -fading classes on the same element.
+      busyObserver.observe(repeater, { attributes: true, attributeFilter: ["class"] });
+    }
     // Appends our copy to the site's line ("... in 90210. Sorted by best rated.") when that line
     // exists, otherwise renders it as its own line directly under the filters. React re-renders
     // wipe the appended node, which is why this is re-run from the observer.
@@ -661,20 +804,10 @@
       // rather than injecting a second one.
       if (!copyEl) copyEl = document.getElementById("cre-t-151-sort-copy") || buildCopy();
 
-      // Desktop: the copy sits top-right on the "Personalize prices" row, flush with the right
-      // edge of the listings (client-approved layout). Below that it goes back to continuing the
-      // site's own "Showing prices for ..." sentence under the filters.
-      var headerRow = document.querySelector(HEADER_ROW_SELECTOR);
-      if (headerRow && window.innerWidth >= HEADER_COPY_MIN_WIDTH) {
-        if (copyEl.parentNode !== headerRow) headerRow.appendChild(copyEl);
-        copyEl.classList.add("cre-t-151-sort-copy--header");
-        copyEl.classList.remove("cre-t-151-sort-copy--standalone");
-        copyEl.classList.remove(SITE_COPY_CLASS);
-        updateSortCopy(currentMode);
-        return;
-      }
-      copyEl.classList.remove("cre-t-151-sort-copy--header");
-
+      // One layout at every width (client request): our copy always continues the site's own
+      // "Showing prices for ..." sentence under the filters. An earlier build moved it top-right of
+      // the "Personalize prices" header row at >=992px - that placement is gone, desktop now reads
+      // exactly like mobile.
       var siteLine = findSiteCopyLine();
       if (siteLine) {
         var siteText = siteLineTextWithoutCopy(siteLine);
@@ -710,6 +843,9 @@
         lastSiteLineText = null; // the site renders no sentence in this state - nothing to compare
       }
       updateSortCopy(currentMode);
+      // Last, so a copy that was just (re)attached mid-transition starts out hidden rather than
+      // appearing beside the site's not-yet-updated sentence.
+      syncCopyBusy();
     }
     // Matches the sort pill's height to the real filter fields instead of hardcoding a value.
     function syncFieldHeight() {
@@ -735,6 +871,7 @@
     function refresh() {
       if (isApplying) return;
       ensureSortField();
+      ensureBusyObserver(); // before ensureCopy, so the busy state is known when the copy is placed
       ensureCopy();
       syncFieldHeight();
       syncZipPlaceholder();
@@ -750,6 +887,40 @@
       if (isApplying) return;
       clearTimeout(refreshTimer);
       refreshTimer = setTimeout(refresh, 150);
+    }
+    /**
+     * Puts our copy back into the site's sentence on the LEADING edge of a re-render, instead of
+     * waiting for refresh().
+     *
+     * Client-reported flashing: changing a pet type / breed / ZIP made the site's own "Showing
+     * prices for Dogs in 90210" appear on its own first, with our "Sorted by ..." arriving well
+     * after it. Measured on the live page, that gap was ~1.4s - because scheduleRefresh() debounces
+     * 150ms behind the LAST mutation, and the site's re-render burst runs for about that long
+     * (its loading -> reload -> clear sequence). So the copy could only ever land after the burst
+     * ended. Worse, for part of that window the copy sat standalone under the filters while the
+     * site's sentence was already on screen, reading as two separate lines.
+     *
+     * This runs off the same observer but on a requestAnimationFrame, so the copy is back in the
+     * sentence within a frame of it being rebuilt. The querySelector before ensureCopy() is what
+     * keeps it cheap enough to sit in the observer path: during a long burst this is one O(1) lookup
+     * per frame, and the expensive part (ensureCopy -> findSiteCopyLine's text scan) only runs on
+     * the frames where the copy genuinely is not in the line yet.
+     * The :not() matters - our own element wears the site's `search-details` class while standalone,
+     * so without it we would match ourselves and never re-attach.
+     */
+    function scheduleCopySync() {
+      if (copyFrame || isApplying || !copyEl) return;
+      copyFrame = requestAnimationFrame(function () {
+        copyFrame = null;
+        if (isApplying || !copyEl) return;
+        var line = document.querySelector(
+          SECTION_SELECTOR + " ." + SITE_COPY_CLASS + ":not(#cre-t-151-sort-copy)"
+        );
+        // No sentence rendered yet, or we are already inside it - nothing to do. The standalone
+        // fallback stays with refresh(), which is where it belongs: it is not time-critical.
+        if (!line || copyEl.parentNode === line) return;
+        ensureCopy();
+      });
     }
 
     function eventListeners() {
@@ -792,7 +963,7 @@
         resizeTimer = setTimeout(function () {
           syncFieldHeight();
           syncZipPlaceholder();
-          ensureCopy(); // the copy moves between the header row and the filter line on resize
+          ensureCopy(); // cheap idempotent re-assert - re-attaches the copy if a resize re-rendered the line
         }, 150);
       });
       // Scoped to the section rather than the document: this only needs to notice the site's own
@@ -800,7 +971,13 @@
       // unrelated mutation on the page.
       var observeTarget = document.querySelector(SECTION_SELECTOR);
       if (observeTarget && window.MutationObserver) {
-        domObserver = new MutationObserver(scheduleRefresh);
+        // Two speeds off one observer: the copy goes back into the site's sentence on the next frame
+        // (scheduleCopySync), while the heavier re-assert - sort field, field height, re-rank - stays
+        // debounced behind the burst (scheduleRefresh).
+        domObserver = new MutationObserver(function () {
+          scheduleCopySync();
+          scheduleRefresh();
+        });
         domObserver.observe(observeTarget, { childList: true, subtree: true });
         // This observer has to live as long as the section does - the site re-renders it on every
         // filter change - so the page going away is the only sound disconnect condition. Without
@@ -813,6 +990,15 @@
           }
           clearTimeout(refreshTimer);
           clearTimeout(resizeTimer);
+          if (busyObserver) {
+            busyObserver.disconnect();
+            busyObserver = null;
+            busyObserverTarget = null;
+          }
+          clearTimeout(fadeTimer);
+          clearTimeout(fadeEndTimer);
+          clearTimeout(busyMaxTimer);
+          if (copyFrame) cancelAnimationFrame(copyFrame);
         });
       }
     }

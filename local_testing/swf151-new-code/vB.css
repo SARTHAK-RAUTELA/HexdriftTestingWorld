@@ -3,7 +3,8 @@
    breakpoint. Re-ordering itself is done in JS and needs no styling - this stylesheet never
    targets the listing cards or the "Average Plan Cost" column, only the filter row and our own
    elements. Every class we inject ourselves is prefixed `cre-t-151-`.
-   Not in this build yet: the fade transition on re-order. */
+   The one exception to "never targets the listing cards" is section 0's fade on the listing
+   container, which is what gives a sort change the same transition the site's own filters have. */
 /* ---------------------------------------------------------------------------
    0. Listing container - required for the Lowest Price ranking
    --------------------------------------------------------------------------- */
@@ -15,6 +16,40 @@ html body.cre-t-151 #comparison-section .plan-repeater {
     display: flex;
     flex-direction: column;
 }
+/* Re-order transition - the same fade the site plays when a control filter is applied, slowed down
+   and smoothed out per the client.
+   The site dims and fades this very element on every pet-type / breed / ZIP change (it toggles its
+   own `loading` and `reload` classes: opacity 0.6 then 0, then back to 1), riding the
+   `transition: all .5s ease` it already carries. We want a longer, softer version of that for a sort
+   change, so the duration and easing have to be ours - but they are deliberately NOT declared on
+   .plan-repeater itself, because that would replace the site's `all .5s ease` and quietly restyle
+   the control's own filter fade inside the variation. So the transition rides a second class that
+   applySortAnimated() only keeps on the element for the ~3s our fade lasts, then removes.
+   0.7s each way (~1.4s per sort, the same overall length as the control's own filter transition);
+   keep it equal to SORT_FADE_MS in vB.js, which is when the re-rank fires.
+   cubic-bezier(.4, 0, .2, 1) is the site's own MUI easing - eases in and out instead of the flat
+   `ease`, which is what makes it read as smoother than the control's.
+   The slide: the control does not just fade, it also drifts the list down as it goes and back up as
+   it returns. Measured on the live page, its `reload` class animates margin-top 0 -> ~50px on the
+   same 0.5s ease as the opacity (its `all` transition covers both). We reproduce the same 50px of
+   travel with translateY instead of margin-top: identical on screen, but it animates on the
+   compositor rather than reflowing a ~2800px list of cards on every frame, and it leaves the page
+   below the listings exactly where it is instead of shoving it down 50px and back.
+   BOTH properties must be named in the transition below. This class deliberately narrows the site's
+   `transition: all .5s ease` down to what we animate, so anything not listed here changes instantly -
+   which would snap the list down 50px and snap it back rather than sliding.
+   Nothing that affects layout - no display/visibility/height/margin - so the list keeps its box and
+   the page cannot jump or scroll under the user mid-sort. */
+html body.cre-t-151 #comparison-section .plan-repeater.cre-t-151-fading {
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html body.cre-t-151 #comparison-section .plan-repeater.cre-t-151-sorting {
+    opacity: 0;
+    transform: translateY(50px);
+}
+/* Reduced motion is handled in vB.js instead of here: killing the transition in CSS alone would
+   snap the list to opacity 0 and leave it invisible for the full SORT_FADE_MS, which is worse than
+   the fade. applySortAnimated() skips the animated path entirely and re-ranks immediately. */
 /* ---------------------------------------------------------------------------
    1. Filter row layout - make room for the sort field
    --------------------------------------------------------------------------- */
@@ -23,6 +58,7 @@ html body.cre-t-151 #comparison-section .plan-repeater {
    flush to the right edge of the listings below. */
 html body.cre-t-151 #comparison-section .filter-options {
     align-items: center;
+    margin-bottom: 1rem;
 }
 html body.cre-t-151 #comparison-section .additional-filters {
     display: flex;
@@ -159,35 +195,12 @@ html body.cre-t-151 #comparison-section .cre-t-151-sort-option.cre-t-151-is-sele
 /* ---------------------------------------------------------------------------
    4. "Sorted by ___" copy - appended to the site's existing "Showing prices for..." line
    --------------------------------------------------------------------------- */
-/* Not scoped to #comparison-section: on desktop this copy lives in the "Personalize prices"
-   header row, which sits in the section above. These classes only exist on our own element. */
+/* Left unscoped from #comparison-section on purpose - these classes only ever exist on our own
+   element, and keeping them global means the copy still styles correctly if the site ever renders
+   its "Showing prices for ..." line just outside the section wrapper. */
 html body.cre-t-151 .cre-t-151-sort-copy {
     font: inherit;
     color: inherit;
-}
-/* Desktop placement (client-approved mock): top-right of the "Personalize prices" row, right
-   edge flush with the listings. .filter-label-container is already a full-width flex column
-   whose right edge matches .filter-options (both 1120px), so widening the icon row to 100% and
-   pushing our copy with margin-left:auto lands it exactly on the listing edge. */
-/* display:block, NOT inline-flex - as a flex container the whitespace text nodes around
-   <strong> collapse away and it renders "Sorted bybest rated." margin-left:auto still works
-   because this element is itself a flex item of the header row. */
-html body.cre-t-151 .cre-t-151-sort-copy--header {
-    display: block;
-    margin-left: auto;
-    padding-left: 16px;
-    white-space: nowrap;
-    font-size: 16px;
-    font-weight: 400;
-    color: #000;
-}
-html body.cre-t-151 .cre-t-151-sort-copy--header .cre-t-151-sort-copy-sep {
-    display: none;
-}
-@media (min-width: 992px) {
-    html body.cre-t-151 .filter-label-icon-container {
-        width: 100%;
-    }
 }
 /* Standalone mode: used when the site hasn't rendered its own copy line (the default "All Pets"
    state with no breed/zip chosen). .ct-section-inner-wrap is a centred flex column, so without
@@ -199,33 +212,48 @@ html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone {
     width: 100%;
     align-self: stretch;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 0px;
 }
-/* The leading full stop only makes sense when we're continuing the site's sentence. */
-html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone .cre-t-151-sort-copy-sep {
+/* Neither full stop belongs here: standing on its own the copy is a label, not a sentence, so it
+   reads "Sorted by best rated" with no leading separator and no closing period (client request).
+   Both are still there when we are appended to the site's own "Showing prices ..." sentence. */
+html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone .cre-t-151-sort-copy-sep,
+html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone .cre-t-151-sort-copy-end {
     display: none;
 }
 html body.cre-t-151 .cre-t-151-sort-value {
     font-weight: 700;
+}
+/* Held back while the site's own filter transition is still running - the site does not rewrite its
+   "Showing prices for ..." sentence until the very end of that transition, so showing our copy any
+   earlier means it sits beside the old sentence and the user watches the text change underneath it.
+   syncCopyBusy() in vB.js adds this class while the site's repeater carries `loading` / `reload`, and
+   removes it (with one fade-in) once the sentence has settled.
+   display:none, not visibility/opacity: the copy is the tail of a left-aligned sentence, and holding
+   its width would reserve a blank run of space - enough to wrap the line to a second, apparently
+   empty row on narrow screens.
+   !important because the standalone rule above sets `display: block` from an ID-scoped selector,
+   which would otherwise win on specificity and leave the copy visible in that state. */
+html body.cre-t-151 .cre-t-151-sort-copy.cre-t-151-copy-busy {
+    display: none !important;
 }
 /* Placeholder marking where a real (Oxygen-bound) tooltip trigger belongs while it is on loan to
    the mirrored bottom card - see movePopoverTriggers() in vB.js. Must never occupy any space. */
 html body.cre-t-151 .cre-t-151-popover-slot {
     display: none !important;
 }
-/* Smooths the flicker the client reported on mobile: every pet-type / breed / ZIP change makes the
-   site rebuild its "Showing prices in ..." sentence, and our copy - which rides that sentence below
-   992px - gets torn out and popped straight back. JS re-adds .cre-t-151-copy-animate on each of
-   those updates (see playCopyFade()) so the copy fades back in instead.
-   Scoped to <992px because that is exactly where the copy is attached to the site's sentence; at
-   992px and up it lives in the "Personalize prices" header row, which the filters never re-render.
+/* Smooths the flicker the client reported: every pet-type / breed / ZIP change makes the site
+   rebuild its "Showing prices in ..." sentence, and our copy - which rides that sentence - gets
+   torn out and popped straight back. JS re-adds .cre-t-151-copy-animate on each of those updates
+   (see playCopyFade()) so the copy fades back in instead.
+   Unscoped by width: the copy now rides the site's sentence at every breakpoint, so the same fade
+   has to cover desktop too (it used to be capped at <992px, where the old header-row placement did
+   not need it).
    Opacity only, no transform: the copy is an inline <span> inside the site's sentence, and inline
    elements ignore transform - making it inline-block to fix that would let the whole phrase wrap
    to its own line. */
-@media (max-width: 991.98px) {
-    html body.cre-t-151 .cre-t-151-sort-copy.cre-t-151-copy-animate {
-        animation: creT151CopyFadeIn 0.3s ease-out both;
-    }
+html body.cre-t-151 .cre-t-151-sort-copy.cre-t-151-copy-animate {
+    animation: creT151CopyFadeIn 0.3s ease-out both;
 }
 @keyframes creT151CopyFadeIn {
     from {
@@ -295,9 +323,11 @@ html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
         width: 100%;
         min-width: 0;
     }
-    /* No padding override here - the base 0 7px 0 12px applies at this width. */
+    /* Client asked for more breathing room on the left of the pill, desktop only (the tablet and
+       mobile rows are too tight to give any away, so they keep the base padding). */
     html body.cre-t-151 #comparison-section .cre-t-151-sort-toggle {
         gap: 6px;
+        padding: 0 15px 0 17px;
         font-size: 15px;
     }
     /* 100px holds the longer "Lowest Price" label - at 90px the whole pill grew 9px when the
@@ -416,9 +446,7 @@ html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
         padding: 10px 16px 10px 12px;
         font-size: 14px;
     }
-    html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone {
-        margin-top: 8px;
-    }
+
     html body.cre-t-151 #comparison-section .cre-t-151-sort-tooltip {
         width: 16px;
         height: 16px;

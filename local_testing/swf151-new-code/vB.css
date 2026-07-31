@@ -1,5 +1,5 @@
 /* cre-t-151 : Sort feature (Best Rated / Lowest Price) - Pet Insurance Gurus. Styles the sort pill,
-   its menu and the copy line; only section 0 touches the listing container. */
+   its menu and the copy line; only sections 0 and 0b touch the listing container. */
 /* ---- 0. Listing container - required for the Lowest Price ranking ---- */
 /* `order` is ignored outside a flex/grid container. The site already sets both inline, so this only
    guarantees the ranking cannot break if that inline style ever goes away. */
@@ -18,6 +18,18 @@ html body.cre-t-151 #comparison-section .plan-repeater.cre-t-151-sorting {
 }
 /* Reduced motion is handled in vB.js: killing the transition here would leave the list invisible
    for the full SORT_FADE_MS instead of fading. */
+/* ---- 0b. Rating bar - follow the VISUAL #1 instead of the DOM #1 ---- */
+/* The site shows one rating bar, via `.plan-repeater div:first-of-type .rating-bar`, so it tracks DOM
+   order - which CSS `order` never changes. These two re-point that pair at cre-t-151-is-top, the card
+   reorder() puts in visual slot 1. Both outrank the site's rules on #comparison-section alone.
+   Keyed on cre-t-151-listing, never on data-unique: the pinned Best Overall card is given the top
+   listing's data-unique and has to keep the site's own behaviour. */
+html body.cre-t-151 #comparison-section .plan-repeater .cre-t-151-listing .rating-bar {
+    display: none !important;
+}
+html body.cre-t-151 #comparison-section .plan-repeater .cre-t-151-listing.cre-t-151-is-top .rating-bar {
+    display: flex !important;
+}
 /* ---- 1. Filter row layout - make room for the sort field ---- */
 /* .filter-options carries inline styles from the site. We only add vertical centring plus a growing
    field group, so the pill can sit flush right of the listings below. */

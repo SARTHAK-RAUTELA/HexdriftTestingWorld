@@ -28,6 +28,10 @@
     var BEST_OVERALL_DEFAULT_LABEL = "Best Overall"; // what the site itself puts there
     var BEST_OVERALL_LOWEST_PRICE_LABEL = "Lowest Price"; // what it reads while Lowest Price is active
     var RANK_BUBBLE_SELECTOR = ".plan-number"; // the 1 / 2 / 3 ... bubble on each listing
+    // The site's rating bar tracks DOM order, which `order` cannot move - v2.css section 0b re-points
+    // it at these two classes instead.
+    var LISTING_CLASS = "cre-t-151-listing"; // every sortable listing, so the CSS can hide the rest
+    var TOP_LISTING_CLASS = "cre-t-151-is-top"; // the one card sitting in visual slot 1
     // Matching on aria-label catches both tooltip triggers on a card (the "?" beside Average Plan
     // Cost and the "i" beside the money-back guarantee) without depending on either structure.
     var POPOVER_TRIGGER_SELECTOR = 'button[aria-label="Open popover"]';
@@ -379,6 +383,20 @@
       dataUniqueOverridden = true;
       setTextIfChanged(badge, BEST_OVERALL_LOWEST_PRICE_LABEL);
     }
+    /* Hands the rating bar to whichever card is in visual slot 1 (v2.css section 0b). Runs in BOTH
+       modes: our hide rule covers every listing, so an unmarked list would show no bar at all. */
+    function markTopListing(ranked) {
+      var top = ranked[0];
+      originalOrder.forEach(function (el) {
+        // Guarded so a re-render that changed nothing writes no class attribute for the observer.
+        if (!el.classList.contains(LISTING_CLASS)) el.classList.add(LISTING_CLASS);
+        var isTop = el === top;
+        if (isTop !== el.classList.contains(TOP_LISTING_CLASS)) {
+          if (isTop) el.classList.add(TOP_LISTING_CLASS);
+          else el.classList.remove(TOP_LISTING_CLASS);
+        }
+      });
+    }
     // Ranks the listings visually and renumbers the rank bubbles. "lowest-price" assigns each child
     // a CSS `order`; "best-rated" removes them, dropping back to DOM order - the control, untouched.
     function reorder(mode) {
@@ -395,6 +413,7 @@
         originalOrder.forEach(function (item, index) {
           setTextIfChanged(item.querySelector(RANK_BUBBLE_SELECTOR), String(index + 1));
         });
+        markTopListing(originalOrder);
         syncBestOverallCard(mode, originalOrder);
         return;
       }
@@ -423,6 +442,7 @@
       sorted.forEach(function (item, index) {
         setTextIfChanged(item.querySelector(RANK_BUBBLE_SELECTOR), String(index + 1));
       });
+      markTopListing(sorted);
       syncBestOverallCard(mode, sorted);
     }
     // isApplying is what stops our own DOM writes from coming back through the MutationObserver as

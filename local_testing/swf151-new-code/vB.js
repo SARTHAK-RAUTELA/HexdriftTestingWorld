@@ -2,24 +2,14 @@
   var variation_name = "cre-t-151";
   var debug = 1;
   try {
-    /* =========================================================================
-       Sort field UI + "Lowest Price" ordering + the pinned card mirroring
-       whichever listing is currently #1.
-       Choosing a sort option fades the listings the same way the site itself
-       does when a control filter is applied - see SORT_FADE_CLASS below.
-       In "Best Rated" mode nothing is re-ranked and the pinned card shows the
-       site's own content, so the page behaves exactly like the control.
-       Every class/id/attribute/custom-property this script injects is
-       prefixed `cre-t-151-` so nothing can collide with the site or with the
-       other live tests on this page.
-       ========================================================================= */
+    /* Sort field UI + "Lowest Price" ordering + the pinned card mirroring whichever listing is #1.
+       Best Rated re-ranks nothing, so that state is the control. Everything injected is `cre-t-151-`. */
 
     /* ---- config (edit these selectors if the markup changes) ---- */
     var SECTION_SELECTOR = "#comparison-section";
     var FILTERS_ROW_SELECTOR = ".filter-options"; // pet-type tabs + breed + zip row
     var FILTERS_FIELDS_SELECTOR = ".filter-options .additional-filters"; // breed + zip group; sort field goes here
-    // "Showing prices for {breed}..." when a breed is picked, "Showing prices in {zip}" when only
-    // ZIP is set (no breed) - match on the invariant "showing prices" so both variants are found.
+    // Matches both "Showing prices for {breed}..." and "Showing prices in {zip}".
     var SITE_COPY_PREFIX = "showing prices";
     var SITE_COPY_CLASS = "search-details"; // the site's own class for that line - borrowed when standalone
     var ZIP_INPUT_SELECTOR = ".zip-textinput input";
@@ -38,63 +28,26 @@
     var BEST_OVERALL_DEFAULT_LABEL = "Best Overall"; // what the site itself puts there
     var BEST_OVERALL_LOWEST_PRICE_LABEL = "Lowest Price"; // what it reads while Lowest Price is active
     var RANK_BUBBLE_SELECTOR = ".plan-number"; // the 1 / 2 / 3 ... bubble on each listing
-    // Both tooltip triggers on a card: the "?" beside Average Plan Cost (button.plan-cost-tooltip,
-    // wrapped in .oxy-popover) and the "i" beside the money-back guarantee (button.oxy-popover_marker,
-    // not wrapped). Matching on the aria-label covers both without depending on either structure.
+    // Matching on aria-label catches both tooltip triggers on a card (the "?" beside Average Plan
+    // Cost and the "i" beside the money-back guarantee) without depending on either structure.
     var POPOVER_TRIGGER_SELECTOR = 'button[aria-label="Open popover"]';
     var POPOVER_SLOT_CLASS = "cre-t-151-popover-slot"; // placeholder marking where a trigger belongs
     var PRICE_COLUMN_HEADING = "average plan cost"; // identifies the price column by its heading text
-    // Two other tests run live at 100% traffic on this site, and each one ADDS its own price span
-    // next to the site's control price rather than replacing it - the control `.ct-span` stays in
-    // the DOM underneath. So which price the user actually sees is decided by a class on <body>,
-    // and that is what gets checked first; the span's presence alone would not tell us. In practice
-    // cre-t-116 renders on the pet-type filters with no breed/ZIP applied, and cre-t-111 renders
-    // once a breed or a ZIP is applied. Order matters: cre-t-111 wins if both are ever present.
+    // Two live 100%-traffic tests ADD a price span beside the control `.ct-span` rather than replace
+    // it, so a <body> class decides which one shows. cre-t-111 wins if both are ever present.
     var PRICE_OVERRIDE_TESTS = [
       { bodyClass: "cre-t-111-toolTipContentChange", priceClass: "cre-t-111-price-update" },
       { bodyClass: "cre-t-116-toolTipContentChange", priceClass: "cre-t-116-price-update" },
     ];
-    /* ---- re-order transition ----
-       The site already fades its own listing container whenever a control filter (pet type, breed,
-       ZIP) is applied: it toggles `loading` then `reload` on .plan-repeater, and that element
-       carries `transition: all 0.5s ease`, so the opacity change animates. Measured on the live
-       page: 1 -> 0.6 -> 0, then 0 -> 1 once the new cards are in, ~0.5s per leg.
-       The site also drifts the list down ~50px as it fades and back up as it returns (its `reload`
-       class animates margin-top on the same curve).
-       Choosing a sort option now does the same thing, so our filter feels like the site's own: fade
-       and slide the container out, re-rank while nothing is visible, then fade and slide it back in.
-       Client asked for a longer, smoother version of it than the site's own 0.5s ease, so we have to
-       declare the duration/easing ourselves - and that is why there are TWO classes rather than one.
-       Putting `transition` on .plan-repeater directly would replace the site's `transition: all
-       0.5s ease`, which is what animates the site's OWN filter fade, so every pet-type/breed/ZIP
-       change inside the variation would silently inherit our timing too. Instead
-       SORT_FADE_ENABLE_CLASS carries the transition and is only on the element while our sort
-       animates; the moment both legs are done it comes off and the site's own transition is back in
-       charge, byte-identical to the control.
-       0.7s per leg, so a sort takes ~1.4s end to end - the same overall length as the control's own
-       filter transition, which spends most of its 1.4s waiting on the network rather than fading.
-       SORT_FADE_MS must stay equal to the duration in the CSS: it is both how long we wait before
-       re-ranking (so the re-order lands at the END of the fade-out rather than visibly during it)
-       and how long we then wait before handing the transition back. */
-    /* ---- waiting for the site's own filter transition ----
-       Client-reported flashing, second pass. The site does not rewrite its "Showing prices for ..."
-       sentence until its card transition has finished - measured live, the text only changes at
-       ~1.08s, at the very end of its loading -> reload sequence. Our copy is put back into that line
-       within a frame (see scheduleCopySync), so on its own that means the user reads our "Sorted by
-       ..." beside the OLD sentence and then watches the sentence change underneath it. Holding our
-       copy back until the site is done fixes the order: sentence settles first, then our copy appears
-       beside the finished text, once.
-       We watch the site's own `loading` / `reload` markers instead of hard-coding ~1.4s, so we wait
-       exactly as long as the control actually takes - longer on a slow connection, shorter on a fast
-       one. SITE_BUSY_MAX_MS is a safety cap: if those classes ever stick, the copy comes back anyway
-       rather than staying hidden for the rest of the session. */
+    /* Copy hold: the site only rewrites "Showing prices for ..." at the end of its own transition,
+       so our copy waits on its `loading` / `reload` markers, with SITE_BUSY_MAX_MS as the cap. */
     var SITE_BUSY_CLASSES = ["loading", "reload"];
     var COPY_BUSY_CLASS = "cre-t-151-copy-busy";
     var SITE_BUSY_MAX_MS = 3000;
 
     var SORT_FADE_CLASS = "cre-t-151-sorting"; // the opacity target
     var SORT_FADE_ENABLE_CLASS = "cre-t-151-fading"; // carries our duration + easing, briefly
-    var SORT_FADE_MS = 700;
+    var SORT_FADE_MS = 700; // must equal the CSS duration - times the re-rank and the hand-back
 
     /* ---- state ---- */
     var currentMode = DEFAULT_SORT_MODE;
@@ -119,9 +72,7 @@
     var isApplying = false; // true while WE are the ones mutating the DOM
 
     /* ---- pure helpers ---- */
-    /**
-     * Debounce - collapses a burst of calls into one, delayInterval ms after the last call.
-     */
+    // Debounce - collapses a burst of calls into one, delayInterval ms after the last call.
     function debounce(fn, delayInterval) {
       var timeoutId;
       return function () {
@@ -133,14 +84,8 @@
         }, delayInterval);
       };
     }
-    /**
-     * Event-driven replacement for polling: fires `callback(el)` for every element currently
-     * matching `selector`, then again whenever the DOM changes (debounced 100ms), until the
-     * returned `done()` function is called (or, with options.once, after the first match).
-     * NOTE: it observes the WHOLE document with attributes:true - fine for a short-lived
-     * "wait until this appears" check, far too broad to leave running long-term (which is why
-     * the ongoing watch below uses its own narrowly-scoped observer instead).
-     */
+    // Fires `callback(el)` for each match now and on every DOM change (debounced 100ms) until done().
+    // Observes the whole document, so it is only safe for a short-lived "wait until this appears".
     function observeSelector(selector, callback, options) {
       options = options || {};
       var doc = options.document || window.document;
@@ -188,9 +133,7 @@
       }
       return done;
     }
-    /**
-     * Event delegation - listen for events on dynamically added elements.
-     */
+    // Event delegation - listen for events on dynamically added elements.
     function live(selector, event, callback, context) {
       if (typeof callback !== "function") return;
       context = context || document;
@@ -201,13 +144,8 @@
         }
       });
     }
-    /**
-     * Sets textContent only when the value actually differs. textContent's setter always tears
-     * down and rebuilds the element's child text node - even when the string is unchanged - which
-     * is a childList mutation. Since a MutationObserver is watching this section, an unguarded
-     * write here would re-trigger itself on every refresh forever. This guard is what keeps the
-     * refresh cycle idempotent/self-terminating instead of an infinite loop.
-     */
+    // Writes only on a real change: textContent always rebuilds the text node, which the observer
+    // would read as a mutation and re-trigger forever. This guard is what makes refresh() terminate.
     function setTextIfChanged(el, text) {
       if (el && el.textContent !== text) el.textContent = text;
     }
@@ -215,26 +153,23 @@
     function setAttrIfChanged(el, name, value) {
       if (el && value && el.getAttribute(name) !== value) el.setAttribute(name, value);
     }
-    /**
-     * Smooth scroll that clears the overlay header. window.pageYOffset is required here:
-     * getBoundingClientRect() is viewport-relative, so without it the page lands in the wrong
-     * place whenever the user has already scrolled.
-     */
+    // Smooth scroll that clears the overlay header. pageYOffset is required - getBoundingClientRect
+    // is viewport-relative, so without it an already-scrolled page lands in the wrong place.
     function smoothScrollTo(el) {
       if (!el) return;
       var header = document.querySelector(".oxy-header-wrapper");
       var headerHeight = 0;
       if (header) {
-        // Only reserve space for the header when it actually stays on screen - this site's header
-        // is an overlay that scrolls away, in which case subtracting its height would overshoot.
+        // Only reserve header space when it stays on screen - this one scrolls away, so subtracting
+        // its height would overshoot.
         var position = window.getComputedStyle(header).position;
         if (position === "fixed" || position === "sticky") headerHeight = header.getBoundingClientRect().height;
       }
       var top = el.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
       window.scrollTo({ top: top > 0 ? top : 0, behavior: "smooth" });
     }
-    // Finds the "Ranking Methodology" section by its heading text rather than a hardcoded selector.
-    // This site renders it as an <h3>; other Guru sites use <h2> - scan both.
+    // Finds the "Ranking Methodology" section by heading text, not a hardcoded selector - this site
+    // uses <h3>, other Guru sites use <h2>.
     function findRankingMethodologyTarget() {
       var headings = document.querySelectorAll("h2, h3, h4");
       for (var i = 0; i < headings.length; i++) {
@@ -251,13 +186,8 @@
       var style = window.getComputedStyle(el);
       return style.display !== "none" && style.visibility !== "hidden" && style.opacity !== "0";
     }
-    /**
-     * The price the user can actually SEE for one plan. Checks <body> for each override test's
-     * class first and only then looks for that test's span (see PRICE_OVERRIDE_TESTS). Reading the
-     * control `.ct-span` blindly, or picking "whichever child happens to be visible", both go wrong
-     * here: the control price stays in the DOM underneath an override, so it is always readable and
-     * always the wrong number when an override test is on.
-     */
+    // The price the user can actually SEE. The <body> class is checked before the span, because the
+    // control `.ct-span` stays readable underneath an override and would give the wrong number.
     function getDisplayedPriceText(contentEl) {
       for (var i = 0; i < PRICE_OVERRIDE_TESTS.length; i++) {
         if (!document.body.classList.contains(PRICE_OVERRIDE_TESTS[i].bodyClass)) continue;
@@ -285,8 +215,8 @@
     }
 
     /* ---- ordering ---- */
-    // The listing blocks currently rendered. Direct children of the repeater only, so nested markup
-    // carrying the same data-unique value can never be picked up twice.
+    // Direct children of the repeater only, so nested markup carrying the same data-unique value can
+    // never be picked up twice.
     function getListingItems() {
       var repeater = document.querySelector(SECTION_SELECTOR + " " + REPEATER_SELECTOR);
       if (!repeater) return [];
@@ -294,18 +224,8 @@
         return el.matches && el.matches(LISTING_ITEM_SELECTOR);
       });
     }
-    /**
-     * Snapshots the site's own (native) order into originalOrder.
-     *
-     * This is a plain read of DOM position, and it stays truthful forever, because ranking is
-     * applied with the CSS `order` property and never by moving nodes (see reorder()). An earlier
-     * version did physically move them, and could not be made correct: this site patches new
-     * content into whatever physical slots already exist rather than rebuilding the list, so once
-     * Lowest Price had rearranged the nodes, every later capture read our own sorted order back as
-     * if it were the site's. Switching pet type a few times while sorted and then going back to
-     * Best Rated left an order that no longer matched the control, with no way to recover the true
-     * one client-side. Not moving the nodes at all removes that whole class of bug.
-     */
+    // Snapshots the site's native order. Stays truthful forever because ranking uses CSS `order` and
+    // never moves nodes - moving them made later captures read our own sorted order back as native.
     function captureOrder(items) {
       cachedSiteLine = null; // stale after a fresh render - force findSiteCopyLine() to re-query
       bestOverallCard = null;
@@ -324,16 +244,8 @@
         el.removeAttribute("id");
       });
     }
-    /* ---- keeping the pinned card's tooltips alive ------------------------------------------
-       Oxygen binds every popover trigger once, at page load. A button produced later by cloning
-       innerHTML is therefore inert: it looks exactly right and does nothing on click, which is
-       what broke the "Average Plan Cost" and money-back tooltips on the mirrored card. Re-binding
-       is not available to us, so instead we never display a cloned trigger. The pinned card
-       already owns two real, bound ones, and this tooltip copy is generic rather than
-       provider-specific, so those get moved into the clone while it is on screen and moved back
-       when it is not. Event listeners survive a DOM move, and the popover positions itself from
-       the trigger's live bounding rect, so it opens in the right place either way.
-       --------------------------------------------------------------------------------------- */
+    /* Oxygen binds popover triggers once at load, so a cloned one is inert. We move the pinned
+       card's two real triggers into the clone and back - listeners survive a DOM move. */
     function makeSlot() {
       var slot = document.createElement("span");
       slot.className = POPOVER_SLOT_CLASS;
@@ -365,17 +277,8 @@
         slots[i].parentNode.insertBefore(triggers[i], slots[i]);
       }
     }
-    /**
-     * Mirrors whichever card is currently #1 into the pinned card at the bottom of the list, and
-     * swaps its badge to "Lowest Price".
-     *
-     * The pinned card's real .plan-col-1 / .plan-col-2 are NEVER written to. A separate clone of
-     * those two columns is built alongside them and only the clone is shown while Lowest Price is
-     * active, so in Best Rated the pinned card is still the site's own untouched element - the
-     * control exactly. Cloning the rendered columns (rather than rebuilding a card) is also what
-     * keeps the CTA tracking correct: the partner href, the data-unique attributes and the
-     * see-plans button all come across precisely as the site rendered them on the #1 card.
-     */
+    // Mirrors the #1 card into the pinned card and swaps its badge. The pinned card's real columns
+    // are never written to - a clone is shown instead, which also keeps the CTA tracking intact.
     function syncBestOverallCard(mode, ranked) {
       if (!bestOverallCard) return;
       var box = bestOverallCard.querySelector(".plan-box");
@@ -396,8 +299,7 @@
         origCol2.style.removeProperty("display");
         if (cloneCol1) cloneCol1.style.display = "none";
         if (cloneCol2) cloneCol2.style.display = "none";
-        // Only put the identity back if we were the ones who changed it - in a session that never
-        // leaves Best Rated this attribute is never written to at all.
+        // Only restore the identity if we changed it - a Best Rated-only session never writes it.
         if (dataUniqueOverridden && ranked.length) {
           setAttrIfChanged(bestOverallCard, "data-unique", ranked[0].getAttribute("data-unique"));
           dataUniqueOverridden = false;
@@ -421,16 +323,13 @@
         cloneCol2.className = "ct-div-block plan-col-2 cre-t-151-clone";
         origCol2.insertAdjacentElement("afterend", cloneCol2);
       }
-      // Keyed on the source MARKUP, not on which provider is #1. Gating by provider identity would
-      // freeze the clone on whatever price was live the first time that insurer reached the top -
-      // the same insurer can stay cheapest across a pet-type change while its own price moves.
-      // Comparing the markup re-clones exactly when something really changed, and is a silent
-      // no-op otherwise, which is also what keeps this from waking the observer on every tick.
+      // Keyed on the source MARKUP, not on which provider is #1 - the same insurer can stay cheapest
+      // while its own price moves. Re-clones only on a real change, so the observer stays asleep.
       var sourceHtml1 = sourceCol1.innerHTML;
       var sourceHtml2 = sourceCol2.innerHTML;
       if (sourceHtml1 !== lastClonedCol1Html || sourceHtml2 !== lastClonedCol2Html) {
-        // Rescue the real triggers first - the overwrite below would otherwise destroy them along
-        // with the rest of the clone's markup, and they are the only bound ones we have.
+        // Rescue the real triggers first - the overwrite below would destroy them, and they are the
+        // only bound ones we have.
         movePopoverTriggers(cloneCol1, origCol1);
         movePopoverTriggers(cloneCol2, origCol2);
         cloneCol1.innerHTML = sourceHtml1;
@@ -442,11 +341,8 @@
         lastClonedCol1Html = sourceHtml1;
         lastClonedCol2Html = sourceHtml2;
       }
-      // Fallback - never blank out the control with nothing to put in its place. Checked BEFORE the
-      // trigger hand-over below, because moving the real popover buttons into a detached clone
-      // would take them out of the document entirely and there is no second copy of them. If the
-      // clone is ever emptied or detached by a site re-render, the pinned card falls back to the
-      // site's own card instead of rendering as an empty box, and the next tick rebuilds the clone.
+      // Fall back to the site's own card if the clone is empty or detached, rather than rendering an
+      // empty box. Checked BEFORE the hand-over below, which would strand the real triggers off-DOM.
       var cloneUsable =
         cloneCol1.isConnected &&
         cloneCol2.isConnected &&
@@ -477,19 +373,14 @@
       origCol2.style.display = "none";
       cloneCol1.style.removeProperty("display");
       cloneCol2.style.removeProperty("display");
-      // The wrapper's identity has to follow the content it now shows: in the control the pinned
-      // card and the #1 card always carry the same data-unique, and listing-level click tracking
-      // reads it off this wrapper. Left alone, a click on the mirrored card would be attributed to
-      // whichever partner the site happened to render here.
+      // Listing-level click tracking reads data-unique off this wrapper, so it has to follow the
+      // content the card now shows or the click is attributed to the wrong partner.
       setAttrIfChanged(bestOverallCard, "data-unique", top.getAttribute("data-unique"));
       dataUniqueOverridden = true;
       setTextIfChanged(badge, BEST_OVERALL_LOWEST_PRICE_LABEL);
     }
-    // Ranks the listings visually and renumbers the rank bubbles.
-    //
-    // "lowest-price" assigns each repeater child an explicit CSS `order`; "best-rated" removes
-    // every order we set, which drops the list straight back to DOM order - the site's own
-    // sequence, untouched, i.e. the control. Nothing is ever detached or re-inserted.
+    // Ranks the listings visually and renumbers the rank bubbles. "lowest-price" assigns each child
+    // a CSS `order`; "best-rated" removes them, dropping back to DOM order - the control, untouched.
     function reorder(mode) {
       var container = originalOrder[0].parentElement;
       if (!container) return;
@@ -508,10 +399,8 @@
         return;
       }
 
-      // Each price is read ONCE, up front, instead of from inside the comparator. getPrice walks
-      // the columns and calls getComputedStyle, so comparator-side reads would repeat that work
-      // O(n log n) times per tick; more importantly, a comparator that re-reads live DOM can see a
-      // value change mid-sort and produce an inconsistent ordering.
+      // Prices are read ONCE, up front: getPrice calls getComputedStyle, and a comparator that
+      // re-reads live DOM can also see a value change mid-sort and produce an unstable ordering.
       var priceByItem = new Map();
       originalOrder.forEach(function (item) {
         priceByItem.set(item, getPrice(item));
@@ -549,36 +438,22 @@
         isApplying = false;
       }
     }
-    /**
-     * The user-facing sort: fade the listings out, re-rank while they are invisible, fade back in.
-     *
-     * Called ONLY from selectSortOption(), i.e. an actual click on an option. refresh() keeps
-     * calling applySort() directly, with no fade - it runs on every site re-render (the observer
-     * fires on each filter change and on each late-arriving price), so fading there would leave the
-     * list strobing on its own.
-     *
-     * The classes are toggled on the site's own .plan-repeater, which our MutationObserver watches
-     * with childList only - no `attributes: true` - so this cannot feed back into scheduleRefresh().
-     * try/finally guarantees the opacity class comes off even if the re-rank throws; leaving it on
-     * would strand the listings at opacity 0, which is exactly how the equivalent code in cre-t-150
-     * once blanked the list. Both timers are cleared up front so double-clicking two options in
-     * quick succession cancels the pending re-rank instead of running two overlapping fades.
-     */
+    /* Fade out, re-rank while invisible, fade back in. Called ONLY on a real click - refresh() uses
+       applySort() directly, since it runs on every re-render and would strobe the list. */
     function applySortAnimated(mode) {
       var container = originalOrder.length ? originalOrder[0].parentElement : null;
-      // No container, or the user has asked the OS for reduced motion: re-rank straight away. Doing
-      // the reduced-motion case in CSS instead would snap the list to opacity 0 and leave it
-      // invisible for the whole SORT_FADE_MS, which is worse than the fade it replaces.
+      // Reduced motion is handled here, not in CSS: killing the transition alone would snap the list
+      // to opacity 0 and leave it invisible for the whole SORT_FADE_MS.
       if (!container || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
         applySort(mode);
         return;
       }
+      // Cleared up front so a fast double-click cancels the pending re-rank instead of overlapping.
       clearTimeout(fadeTimer);
       clearTimeout(fadeEndTimer);
       container.classList.add(SORT_FADE_ENABLE_CLASS);
-      // Forced reflow, same trick as playCopyFade(): commits the transition declaration as its own
-      // style change, so the opacity below is guaranteed to be seen as a transitionable change
-      // rather than as part of the same recalc that introduced the transition.
+      // Forced reflow: commits the transition declaration on its own, so the opacity change below is
+      // seen as transitionable rather than as part of the same recalc.
       void container.offsetWidth;
       container.classList.add(SORT_FADE_CLASS);
       fadeTimer = setTimeout(function () {
@@ -586,8 +461,8 @@
           applySort(mode);
         } finally {
           container.classList.remove(SORT_FADE_CLASS); // fades back in over the same duration
-          // Hand the transition back to the site only once the fade-in has actually finished -
-          // removing it early would cut the fade-in short at the site's own 0.5s.
+          // Hand the transition back only once the fade-in has finished - removing it early would
+          // cut the fade-in short at the site's own 0.5s.
           fadeEndTimer = setTimeout(function () {
             container.classList.remove(SORT_FADE_ENABLE_CLASS);
           }, SORT_FADE_MS);
@@ -638,9 +513,8 @@
         '<span class="cre-t-151-sort-toggle-value">' + LABELS[DEFAULT_SORT_MODE] + "</span>",
         '<svg class="cre-t-151-sort-caret" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"></path></svg>',
         "</button>",
-        // NOTE: the open menu deliberately shows only the two values - no "Sort by:" prefix - per spec.
-        // The selected state is driven by DEFAULT_SORT_MODE so the checkmark always matches whichever
-        // mode actually loads first, instead of being hardcoded to "best-rated".
+        // The open menu shows only the two values, no "Sort by:" prefix, per spec. The checkmark is
+        // driven by DEFAULT_SORT_MODE so it always matches whichever mode loads first.
         '<ul class="cre-t-151-sort-menu" role="listbox" aria-label="Sort plans">',
         '<li class="cre-t-151-sort-option' +
           (DEFAULT_SORT_MODE === "best-rated" ? " cre-t-151-is-selected" : "") +
@@ -675,9 +549,8 @@
       el.innerHTML = [
         '<span class="cre-t-151-sort-copy-sep">.</span> Sorted by ',
         '<strong class="cre-t-151-sort-value">' + COPY_LABELS[DEFAULT_SORT_MODE] + "</strong>",
-        // Both full stops are spans, not bare text, purely so CSS can drop them per placement: the
-        // leading one only makes sense mid-sentence, and the trailing one only when we are finishing
-        // the site's sentence. Standing on its own the line is not a sentence, so it gets neither.
+        // Both full stops are spans so CSS can drop them per placement - standing alone the line is
+        // not a sentence, so it gets neither.
         '<span class="cre-t-151-sort-copy-end">.</span>',
         '<button type="button" class="cre-t-151-sort-tooltip" data-cre-t-151-tooltip aria-label="View ranking methodology">',
         '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">',
@@ -687,11 +560,8 @@
       ].join("");
       return el;
     }
-    // The site prints "Showing prices for Cats" / "Showing prices for Devon Rexs in 90210" under
-    // the filters, but only once a filter is active. Returns the deepest element holding that copy -
-    // querySelectorAll is in document order, so the last match is the innermost one. Memoized, since
-    // ensureCopy() runs on every refresh and a full "div, p, span" scan of the section on each call
-    // is wasted work once the line has been found and is still attached.
+    // Returns the deepest element holding the site's "Showing prices ..." line (document order, so
+    // the last match is innermost). Memoized - ensureCopy() runs on every refresh.
     function findSiteCopyLine() {
       if (cachedSiteLine && cachedSiteLine.isConnected) return cachedSiteLine;
       var scope = document.querySelector(SECTION_SELECTOR) || document.body;
@@ -706,10 +576,8 @@
       cachedSiteLine = match;
       return match;
     }
-    // The site's own sentence text, with our appended copy excluded. Comparing this between passes
-    // is how we tell "the user changed a filter and the site rewrote its line" apart from "nothing
-    // happened" - reading siteLine.textContent directly would include our own copy and change
-    // whenever the sort value changed, firing the fade for the wrong reason.
+    // The site's own sentence text with our copy excluded - reading textContent directly would
+    // include ours and change on every sort, firing the fade for the wrong reason.
     function siteLineTextWithoutCopy(line) {
       var out = "";
       for (var i = 0; i < line.childNodes.length; i++) {
@@ -718,21 +586,16 @@
       }
       return out.trim();
     }
-    // Restarts the copy's fade-in. The class has to be removed, the removal flushed with a forced
-    // reflow, then re-added: re-adding a class that is already present does not restart a CSS
-    // animation, so without the reflow only the very first filter change would animate and every
-    // one after it would flicker exactly as before.
+    // Restarts the copy's fade-in. Re-adding a class that is already present does not restart a CSS
+    // animation, so the removal has to be flushed with a forced reflow in between.
     function playCopyFade() {
       if (!copyEl || !copyEl.isConnected) return;
       copyEl.classList.remove("cre-t-151-copy-animate");
       void copyEl.offsetWidth; // forced reflow - commits the removal before the re-add below
       copyEl.classList.add("cre-t-151-copy-animate");
     }
-    /**
-     * The site's line ends in a trailing space ("Showing prices for <strong>Cats</strong> ").
-     * Left alone that renders as "Cats . Sorted by ..." once our copy is appended, so strip any
-     * trailing whitespace off the last real text node first.
-     */
+    // The site's line ends in a trailing space, which would render as "Cats . Sorted by ..." once
+    // our copy is appended - so strip it off the last real text node first.
     function trimTrailingSpace(container) {
       var node = container.lastChild;
       if (node === copyEl) node = node.previousSibling;
@@ -753,12 +616,8 @@
       }
       return false;
     }
-    /**
-     * Hides our copy while the site's filter transition is running and reveals it, once, when the
-     * transition ends - see the SITE_BUSY_CLASSES notes above for why.
-     * The busy === wasBusy early-out is what keeps this idempotent: it is called from the observer
-     * and from every ensureCopy() pass, and without it the reveal fade would restart on every tick.
-     */
+    // Hides our copy during the site's filter transition and reveals it once at the end. The
+    // busy === wasBusy early-out keeps it idempotent - otherwise the fade restarts on every tick.
     function syncCopyBusy() {
       if (!copyEl) return;
       var busy = isSiteBusy();
@@ -778,9 +637,8 @@
       copyEl.classList.remove(COPY_BUSY_CLASS);
       playCopyFade();
     }
-    // Keeps that class watch pointed at the live repeater - the site can replace the element on a
-    // re-render, and an observer left on a detached node would never fire again. Cheap and
-    // idempotent: re-observes only when the repeater is genuinely a different element.
+    // Keeps the class watch pointed at the live repeater - the site can replace that element, and an
+    // observer on a detached node never fires again. Re-observes only on a genuinely new element.
     function ensureBusyObserver() {
       if (!window.MutationObserver) return;
       var repeater = document.querySelector(SECTION_SELECTOR + " " + REPEATER_SELECTOR);
@@ -792,18 +650,14 @@
       // and it deliberately ignores our own cre-t-151-sorting / -fading classes on the same element.
       busyObserver.observe(repeater, { attributes: true, attributeFilter: ["class"] });
     }
-    // Appends our copy to the site's line ("... in 90210. Sorted by best rated.") when that line
-    // exists, otherwise renders it as its own line directly under the filters. React re-renders
-    // wipe the appended node, which is why this is re-run from the observer.
+    // Appends our copy to the site's line when it exists, otherwise renders it standalone under the
+    // filters. React re-renders wipe the appended node, which is why the observer re-runs this.
     function ensureCopy() {
-      // DOM-level check, matching ensureSortField: adopt a copy element that is already on the page
-      // rather than injecting a second one.
+      // Adopt a copy element already on the page rather than injecting a second one.
       if (!copyEl) copyEl = document.getElementById("cre-t-151-sort-copy") || buildCopy();
 
-      // One layout at every width (client request): our copy always continues the site's own
-      // "Showing prices for ..." sentence under the filters. An earlier build moved it top-right of
-      // the "Personalize prices" header row at >=992px - that placement is gone, desktop now reads
-      // exactly like mobile.
+      // One layout at every width (client request): the copy always continues the site's own
+      // sentence. The earlier >=992px header-row placement is gone.
       var siteLine = findSiteCopyLine();
       if (siteLine) {
         var siteText = siteLineTextWithoutCopy(siteLine);
@@ -815,15 +669,10 @@
           if (debug) console.log(appendError, "could not append copy in " + variation_name);
         }
         copyEl.classList.remove("cre-t-151-sort-copy--standalone");
-        // SITE_COPY_CLASS is only worn while standalone, so the clone picks up the site's own
-        // typography for that line; inline it would be a duplicate of the real one.
+        // SITE_COPY_CLASS is only worn while standalone - inline it would duplicate the real line.
         copyEl.classList.remove(SITE_COPY_CLASS);
-        // Client-reported flicker: every pet-type / breed / ZIP change makes the site tear down and
-        // rebuild its "Showing prices ..." sentence, which takes our copy out with it and pops it
-        // straight back in. Fading it back in on each of those updates turns that pop into one
-        // smooth transition. Two triggers, because both happen in practice: the copy was actually
-        // re-attached (the site replaced the whole line), or the line survived but its own text
-        // changed (the site patched "Cats" -> "Dogs" in place). See playCopyFade() for the restart.
+        // Fade away the flicker: a filter change either replaces the whole sentence (taking our copy
+        // with it) or patches its text in place, and both need the re-entry animated.
         if (isReattach || siteText !== lastSiteLineText) playCopyFade();
         lastSiteLineText = siteText;
       } else {
@@ -860,10 +709,8 @@
       var next = window.innerWidth <= ZIP_SHORT_MAX_WIDTH ? ZIP_SHORT_PLACEHOLDER : originalZipPlaceholder;
       if (input.getAttribute("placeholder") !== next) input.setAttribute("placeholder", next);
     }
-    // Re-asserts our UI and our ranking after the site's React filters re-render this section - the
-    // sort field and the appended copy node get wiped by those re-renders, and the listings come
-    // back in the site's order. Every step is a no-op when nothing has moved, which is what stops
-    // the observer below from re-triggering itself forever.
+    // Re-asserts our UI and our ranking after a React re-render wipes them. Every step is a no-op
+    // when nothing has moved, which is what stops the observer from re-triggering itself forever.
     function refresh() {
       if (isApplying) return;
       ensureSortField();
@@ -873,9 +720,8 @@
       syncZipPlaceholder();
       var items = getListingItems();
       if (!items.length) return;
-      // Safe to re-run on every tick, and it has to be: the site's per-provider prices keep
-      // arriving after the initial render, so Lowest Price must re-rank against whatever price is
-      // CURRENTLY displayed. Re-capturing is harmless now that DOM order is never disturbed.
+      // Has to re-run every tick: per-provider prices keep arriving after the initial render, so
+      // Lowest Price must re-rank against whatever is displayed now.
       captureOrder(items);
       applySort(currentMode);
     }
@@ -884,36 +730,19 @@
       clearTimeout(refreshTimer);
       refreshTimer = setTimeout(refresh, 150);
     }
-    /**
-     * Puts our copy back into the site's sentence on the LEADING edge of a re-render, instead of
-     * waiting for refresh().
-     *
-     * Client-reported flashing: changing a pet type / breed / ZIP made the site's own "Showing
-     * prices for Dogs in 90210" appear on its own first, with our "Sorted by ..." arriving well
-     * after it. Measured on the live page, that gap was ~1.4s - because scheduleRefresh() debounces
-     * 150ms behind the LAST mutation, and the site's re-render burst runs for about that long
-     * (its loading -> reload -> clear sequence). So the copy could only ever land after the burst
-     * ended. Worse, for part of that window the copy sat standalone under the filters while the
-     * site's sentence was already on screen, reading as two separate lines.
-     *
-     * This runs off the same observer but on a requestAnimationFrame, so the copy is back in the
-     * sentence within a frame of it being rebuilt. The querySelector before ensureCopy() is what
-     * keeps it cheap enough to sit in the observer path: during a long burst this is one O(1) lookup
-     * per frame, and the expensive part (ensureCopy -> findSiteCopyLine's text scan) only runs on
-     * the frames where the copy genuinely is not in the line yet.
-     * The :not() matters - our own element wears the site's `search-details` class while standalone,
-     * so without it we would match ourselves and never re-attach.
-     */
+    /* Puts our copy back on the LEADING edge of a re-render - refresh() debounces behind the site's
+       whole burst, so the copy used to arrive ~1.4s after the sentence it belongs to. */
     function scheduleCopySync() {
       if (copyFrame || isApplying || !copyEl) return;
       copyFrame = requestAnimationFrame(function () {
         copyFrame = null;
         if (isApplying || !copyEl) return;
+        // The :not() matters - our own element wears the site's `search-details` class standalone.
         var line = document.querySelector(
           SECTION_SELECTOR + " ." + SITE_COPY_CLASS + ":not(#cre-t-151-sort-copy)"
         );
-        // No sentence rendered yet, or we are already inside it - nothing to do. The standalone
-        // fallback stays with refresh(), which is where it belongs: it is not time-critical.
+        // No sentence yet, or we are already inside it - nothing to do. The standalone fallback
+        // stays with refresh(), where it belongs: it is not time-critical.
         if (!line || copyEl.parentNode === line) return;
         ensureCopy();
       });
@@ -935,8 +764,7 @@
         e.stopPropagation();
         selectSortOption(this.getAttribute("data-value"));
       });
-      // click outside closes the menu ("html" matches every click, since every click target's
-      // closest("html") is the root element)
+      // click outside closes the menu ("html" matches every click target)
       live("html", "click", function (e) {
         var dropdown = document.getElementById("cre-t-151-sort-dropdown");
         if (dropdown && dropdown.classList.contains("cre-t-151-is-open") && !dropdown.contains(e.target)) {
@@ -947,8 +775,7 @@
       live("html", "keydown", function (e) {
         if (e.key === "Escape") closeMenu();
       });
-      // "i" icon -> smooth scroll to the "Ranking Methodology" section (found by heading text, so
-      // it keeps working even if that section's id/structure changes)
+      // "i" icon -> smooth scroll to the "Ranking Methodology" section, found by heading text
       live("[data-cre-t-151-tooltip]", "click", function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -962,23 +789,19 @@
           ensureCopy(); // cheap idempotent re-assert - re-attaches the copy if a resize re-rendered the line
         }, 150);
       });
-      // Scoped to the section rather than the document: this only needs to notice the site's own
-      // re-renders of the filters/copy area, and a document-wide observer would react to every
+      // Scoped to the section, not the document: a document-wide observer would react to every
       // unrelated mutation on the page.
       var observeTarget = document.querySelector(SECTION_SELECTOR);
       if (observeTarget && window.MutationObserver) {
-        // Two speeds off one observer: the copy goes back into the site's sentence on the next frame
-        // (scheduleCopySync), while the heavier re-assert - sort field, field height, re-rank - stays
-        // debounced behind the burst (scheduleRefresh).
+        // Two speeds off one observer: the copy returns next frame (scheduleCopySync), the heavier
+        // re-assert stays debounced behind the burst (scheduleRefresh).
         domObserver = new MutationObserver(function () {
           scheduleCopySync();
           scheduleRefresh();
         });
         domObserver.observe(observeTarget, { childList: true, subtree: true });
-        // This observer has to live as long as the section does - the site re-renders it on every
-        // filter change - so the page going away is the only sound disconnect condition. Without
-        // it the observer and its pending timers stay alive in the bfcache. pagehide rather than
-        // unload, since unload does not fire reliably and blocks the bfcache outright.
+        // The observer must live as long as the section, so the page going away is the only sound
+        // disconnect. pagehide, not unload - unload is unreliable and blocks the bfcache.
         window.addEventListener("pagehide", function () {
           if (domObserver) {
             domObserver.disconnect();
@@ -1001,8 +824,7 @@
 
     /* Variation Init */
     function init() {
-      // Hard guard: even if this script (or the waitFor trigger) somehow runs more than once on the
-      // same page, only the very first call is allowed to run any of the logic below.
+      // Hard guard: only the very first call may run any of the logic below.
       if (window.cre_151_initialized) return;
       window.cre_151_initialized = true;
 
@@ -1022,12 +844,8 @@
     // very first captureOrder has something real to snapshot) before injecting.
     if (!window.CRE_151_OBSERVER) {
       window.CRE_151_OBSERVER = true;
-      // observeSelector runs its first scan SYNCHRONOUSLY, before it returns. On a page where the
-      // filter row and the listings are already present, this callback therefore fires while
-      // stopWaitingForReady is still undefined - calling it directly would throw, the outer catch
-      // would swallow the throw, and we would be left with the whole-document observer running for
-      // the rest of the page's life AND the timeout below never registered. Flagging the hit and
-      // cleaning up immediately after the assignment covers both the sync and the async path.
+      // observeSelector's first scan is SYNCHRONOUS, so on an already-rendered page this callback
+      // fires while stopWaitingForReady is still undefined. The flag covers the sync and async paths.
       var stopWaitingForReady = null;
       var readyFired = false;
       stopWaitingForReady = observeSelector(SECTION_SELECTOR + " " + FILTERS_FIELDS_SELECTOR, function () {
@@ -1037,10 +855,8 @@
         if (stopWaitingForReady) stopWaitingForReady();
       });
       if (readyFired && stopWaitingForReady) stopWaitingForReady();
-      // Safety net: observeSelector has no built-in timeout, unlike the old waitFor(). If our
-      // selectors ever stop matching (markup change, wrong page, etc.) this would otherwise leave a
-      // whole-document attributes+childList+subtree MutationObserver running for the entire page
-      // lifetime, reacting to every unrelated mutation forever. Cap it at 25s, same as before.
+      // Safety net: observeSelector has no built-in timeout, so a markup change would otherwise leave
+      // a whole-document observer running for the page's lifetime. Cap it at 25s, same as before.
       setTimeout(function () {
         if (!window.cre_151_initialized) {
           stopWaitingForReady();

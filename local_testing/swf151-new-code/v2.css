@@ -1,45 +1,14 @@
-/* cre-t-151 : Sort feature (Best Rated / Lowest Price) - Pet Insurance Gurus
-   Styles the injected sort pill, its dropdown menu and the "Sorted by ___" copy line, at every
-   breakpoint. Re-ordering itself is done in JS and needs no styling - this stylesheet never
-   targets the listing cards or the "Average Plan Cost" column, only the filter row and our own
-   elements. Every class we inject ourselves is prefixed `cre-t-151-`.
-   The one exception to "never targets the listing cards" is section 0's fade on the listing
-   container, which is what gives a sort change the same transition the site's own filters have. */
-/* ---------------------------------------------------------------------------
-   0. Listing container - required for the Lowest Price ranking
-   --------------------------------------------------------------------------- */
-/* Lowest Price is applied with the CSS `order` property rather than by moving nodes (see
-   reorder() in vB.js), and `order` is ignored outside a flex or grid container. The site already
-   sets exactly these two declarations inline on the repeater, so this changes nothing today - it
-   only guarantees the ranking cannot silently stop working if that inline style ever goes away. */
+/* cre-t-151 : Sort feature (Best Rated / Lowest Price) - Pet Insurance Gurus. Styles the sort pill,
+   its menu and the copy line; only section 0 touches the listing container. */
+/* ---- 0. Listing container - required for the Lowest Price ranking ---- */
+/* `order` is ignored outside a flex/grid container. The site already sets both inline, so this only
+   guarantees the ranking cannot break if that inline style ever goes away. */
 html body.cre-t-151 #comparison-section .plan-repeater {
     display: flex;
     flex-direction: column;
 }
-/* Re-order transition - the same fade the site plays when a control filter is applied, slowed down
-   and smoothed out per the client.
-   The site dims and fades this very element on every pet-type / breed / ZIP change (it toggles its
-   own `loading` and `reload` classes: opacity 0.6 then 0, then back to 1), riding the
-   `transition: all .5s ease` it already carries. We want a longer, softer version of that for a sort
-   change, so the duration and easing have to be ours - but they are deliberately NOT declared on
-   .plan-repeater itself, because that would replace the site's `all .5s ease` and quietly restyle
-   the control's own filter fade inside the variation. So the transition rides a second class that
-   applySortAnimated() only keeps on the element for the ~3s our fade lasts, then removes.
-   0.7s each way (~1.4s per sort, the same overall length as the control's own filter transition);
-   keep it equal to SORT_FADE_MS in vB.js, which is when the re-rank fires.
-   cubic-bezier(.4, 0, .2, 1) is the site's own MUI easing - eases in and out instead of the flat
-   `ease`, which is what makes it read as smoother than the control's.
-   The slide: the control does not just fade, it also drifts the list down as it goes and back up as
-   it returns. Measured on the live page, its `reload` class animates margin-top 0 -> ~50px on the
-   same 0.5s ease as the opacity (its `all` transition covers both). We reproduce the same 50px of
-   travel with translateY instead of margin-top: identical on screen, but it animates on the
-   compositor rather than reflowing a ~2800px list of cards on every frame, and it leaves the page
-   below the listings exactly where it is instead of shoving it down 50px and back.
-   BOTH properties must be named in the transition below. This class deliberately narrows the site's
-   `transition: all .5s ease` down to what we animate, so anything not listed here changes instantly -
-   which would snap the list down 50px and snap it back rather than sliding.
-   Nothing that affects layout - no display/visibility/height/margin - so the list keeps its box and
-   the page cannot jump or scroll under the user mid-sort. */
+/* Re-order transition, on a second class so it cannot replace the site's own `all .5s ease`. Keep
+   0.7s equal to SORT_FADE_MS in vB.js; both properties must be named or the slide snaps. */
 html body.cre-t-151 #comparison-section .plan-repeater.cre-t-151-fading {
     transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -47,15 +16,11 @@ html body.cre-t-151 #comparison-section .plan-repeater.cre-t-151-sorting {
     opacity: 0;
     transform: translateY(50px);
 }
-/* Reduced motion is handled in vB.js instead of here: killing the transition in CSS alone would
-   snap the list to opacity 0 and leave it invisible for the full SORT_FADE_MS, which is worse than
-   the fade. applySortAnimated() skips the animated path entirely and re-ranks immediately. */
-/* ---------------------------------------------------------------------------
-   1. Filter row layout - make room for the sort field
-   --------------------------------------------------------------------------- */
-/* .filter-options carries inline styles from the site (display:flex; flex-flow:wrap; gap:10px).
-   We only need vertical centring plus a growing field group so the sort pill can be pushed
-   flush to the right edge of the listings below. */
+/* Reduced motion is handled in vB.js: killing the transition here would leave the list invisible
+   for the full SORT_FADE_MS instead of fading. */
+/* ---- 1. Filter row layout - make room for the sort field ---- */
+/* .filter-options carries inline styles from the site. We only add vertical centring plus a growing
+   field group, so the pill can sit flush right of the listings below. */
 html body.cre-t-151 #comparison-section .filter-options {
     align-items: center;
     margin-bottom: 1rem;
@@ -67,18 +32,15 @@ html body.cre-t-151 #comparison-section .additional-filters {
     flex: 1 1 auto;
     min-width: 0;
 }
-/* Right-align the sort field to the right edge of the listings. This intentionally leaves a gap
-   between the ZIP field and the sort field on desktop (per client direction). */
+/* Right-aligned to the edge of the listings; the desktop gap after ZIP is intentional (client). */
 html body.cre-t-151 #comparison-section .cre-t-151-sort-dropdown {
     position: relative;
     flex: 0 0 auto;
     margin-left: auto;
 }
-/* ---------------------------------------------------------------------------
-   2. The sort pill - matched to the site's MUI filter fields
-   --------------------------------------------------------------------------- */
-/* --cre-t-151-sort-field-h is measured from the real ZIP/breed field at runtime, so the pill is
-   always exactly as tall as its neighbours. 50px is only the pre-measurement fallback. */
+/* ---- 2. The sort pill - matched to the site's MUI filter fields ---- */
+/* --cre-t-151-sort-field-h is measured off the real ZIP/breed field at runtime; 50px is only the
+   pre-measurement fallback. */
 html body.cre-t-151 #comparison-section .cre-t-151-sort-toggle {
     box-sizing: border-box;
     display: inline-flex;
@@ -111,8 +73,7 @@ html body.cre-t-151 #comparison-section .cre-t-151-sort-toggle-value {
     font-weight: 600;
     color: inherit;
 }
-/* Fixed value width - without it the whole pill (and the gap before it) jumps when the user
-   switches between "Best Rated" and the longer "Lowest Price". */
+/* Fixed value width - without it the pill jumps when switching to the longer "Lowest Price". */
 html body.cre-t-151 #comparison-section .cre-t-151-sort-toggle-value {
     display: inline-block;
     min-width: 94px;
@@ -131,9 +92,7 @@ html body.cre-t-151 #comparison-section .cre-t-151-sort-caret {
 html body.cre-t-151 #comparison-section .cre-t-151-sort-dropdown.cre-t-151-is-open .cre-t-151-sort-caret {
     transform: rotate(180deg);
 }
-/* ---------------------------------------------------------------------------
-   3. Dropdown menu - MUI-select look, only the two values (no "Sort by:" prefix)
-   --------------------------------------------------------------------------- */
+/* ---- 3. Dropdown menu - MUI-select look, only the two values (no "Sort by:" prefix) ---- */
 html body.cre-t-151 #comparison-section .cre-t-151-sort-menu {
     position: absolute;
     top: calc(100% + 6px);
@@ -192,21 +151,15 @@ html body.cre-t-151 #comparison-section .cre-t-151-sort-check {
 html body.cre-t-151 #comparison-section .cre-t-151-sort-option.cre-t-151-is-selected .cre-t-151-sort-check {
     visibility: visible;
 }
-/* ---------------------------------------------------------------------------
-   4. "Sorted by ___" copy - appended to the site's existing "Showing prices for..." line
-   --------------------------------------------------------------------------- */
-/* Left unscoped from #comparison-section on purpose - these classes only ever exist on our own
-   element, and keeping them global means the copy still styles correctly if the site ever renders
-   its "Showing prices for ..." line just outside the section wrapper. */
+/* ---- 4. "Sorted by ___" copy - appended to the site's "Showing prices for..." line ---- */
+/* Unscoped from #comparison-section on purpose: these classes only exist on our own element, so the
+   copy still styles correctly if the site ever moves that line outside the section wrapper. */
 html body.cre-t-151 .cre-t-151-sort-copy {
     font: inherit;
     color: inherit;
 }
-/* Standalone mode: used when the site hasn't rendered its own copy line (the default "All Pets"
-   state with no breed/zip chosen). .ct-section-inner-wrap is a centred flex column, so without
-   the full width + stretch the copy floats in the middle of the page instead of sitting flush
-   left where the site's own line appears. Deliberately no font rules here - the element also
-   wears the site's .search-details class, so it inherits exactly what the real line would. */
+/* Standalone mode (no breed/zip chosen, so the site renders no line of its own). The wrap is a
+   centred flex column, hence the full width + stretch. No font rules - .search-details supplies them. */
 html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone {
     display: block;
     width: 100%;
@@ -214,9 +167,8 @@ html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone {
     text-align: left;
     margin-top: 0px;
 }
-/* Neither full stop belongs here: standing on its own the copy is a label, not a sentence, so it
-   reads "Sorted by best rated" with no leading separator and no closing period (client request).
-   Both are still there when we are appended to the site's own "Showing prices ..." sentence. */
+/* Standing alone the copy is a label, not a sentence, so it drops both full stops (client request).
+   Both come back when we are appended to the site's own sentence. */
 html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone .cre-t-151-sort-copy-sep,
 html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone .cre-t-151-sort-copy-end {
     display: none;
@@ -224,16 +176,8 @@ html body.cre-t-151 #comparison-section .cre-t-151-sort-copy--standalone .cre-t-
 html body.cre-t-151 .cre-t-151-sort-value {
     font-weight: 700;
 }
-/* Held back while the site's own filter transition is still running - the site does not rewrite its
-   "Showing prices for ..." sentence until the very end of that transition, so showing our copy any
-   earlier means it sits beside the old sentence and the user watches the text change underneath it.
-   syncCopyBusy() in vB.js adds this class while the site's repeater carries `loading` / `reload`, and
-   removes it (with one fade-in) once the sentence has settled.
-   display:none, not visibility/opacity: the copy is the tail of a left-aligned sentence, and holding
-   its width would reserve a blank run of space - enough to wrap the line to a second, apparently
-   empty row on narrow screens.
-   !important because the standalone rule above sets `display: block` from an ID-scoped selector,
-   which would otherwise win on specificity and leave the copy visible in that state. */
+/* Held back by syncCopyBusy() while the site's filter transition runs. display:none, not opacity -
+   reserving the width would wrap a blank second row; !important beats the standalone rule above. */
 html body.cre-t-151 .cre-t-151-sort-copy.cre-t-151-copy-busy {
     display: none !important;
 }
@@ -242,16 +186,8 @@ html body.cre-t-151 .cre-t-151-sort-copy.cre-t-151-copy-busy {
 html body.cre-t-151 .cre-t-151-popover-slot {
     display: none !important;
 }
-/* Smooths the flicker the client reported: every pet-type / breed / ZIP change makes the site
-   rebuild its "Showing prices in ..." sentence, and our copy - which rides that sentence - gets
-   torn out and popped straight back. JS re-adds .cre-t-151-copy-animate on each of those updates
-   (see playCopyFade()) so the copy fades back in instead.
-   Unscoped by width: the copy now rides the site's sentence at every breakpoint, so the same fade
-   has to cover desktop too (it used to be capped at <992px, where the old header-row placement did
-   not need it).
-   Opacity only, no transform: the copy is an inline <span> inside the site's sentence, and inline
-   elements ignore transform - making it inline-block to fix that would let the whole phrase wrap
-   to its own line. */
+/* Fades the copy back in each time a filter change tears it out of the sentence (playCopyFade()).
+   Opacity only: the copy is an inline span, and inline elements ignore transform. */
 html body.cre-t-151 .cre-t-151-sort-copy.cre-t-151-copy-animate {
     animation: creT151CopyFadeIn 0.3s ease-out both;
 }
@@ -274,15 +210,15 @@ html body.cre-t-151 .cre-t-151-sort-tooltip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
     margin: 0 0 0 2px;
     padding: 0;
     border: 0;
     background: transparent;
     color: #8c8ea0;
     cursor: pointer;
-    vertical-align: -0.15em;
+    vertical-align: -0.18em;
 }
 html body.cre-t-151 .cre-t-151-sort-tooltip svg {
     width: 100%;
@@ -293,17 +229,9 @@ html body.cre-t-151 .cre-t-151-sort-tooltip svg {
 html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
     color: #13162f;
 }
-/* ---------------------------------------------------------------------------
-   5. Desktop - keep tabs + breed + ZIP + sort on ONE row
-   Measured on the live page: the row is 1120px wide at a 1440 viewport and the control uses
-   373 (tabs) + 261 (breed) + 230 (ZIP), leaving 247px. The pill at its natural width plus the
-   gap overflows that, which dropped the whole field group onto a second row and pushed the
-   tabs onto a line of their own. Capping the two native fields and slimming the pill fits all
-   four in 1043px. Client explicitly allowed resizing these fields.
-   The 1180px floor: the one row needs 1062px and container = viewport - 95, so 1180 leaves 23px
-   before section 6 takes over. flex-basis must be an explicit px value here - with `auto` the
-   breed field collapses to its 137px content width.
-   --------------------------------------------------------------------------- */
+/* ---- 5. Desktop - keep tabs + breed + ZIP + sort on ONE row ---- */
+/* Capping the native fields fits all four in 1043px, down to the 1180px floor. flex-basis must be
+   explicit px here - with `auto` the breed field collapses to its 137px content width. */
 @media (min-width: 1180px) {
     html body.cre-t-151 #comparison-section .breed-select {
         flex: 0 1 230px;
@@ -323,15 +251,13 @@ html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
         width: 100%;
         min-width: 0;
     }
-    /* Client asked for more breathing room on the left of the pill, desktop only (the tablet and
-       mobile rows are too tight to give any away, so they keep the base padding). */
+    /* Extra breathing room left of the pill, desktop only - the tighter rows keep base padding. */
     html body.cre-t-151 #comparison-section .cre-t-151-sort-toggle {
         gap: 6px;
         padding: 0 15px 0 17px;
         font-size: 15px;
     }
-    /* 100px holds the longer "Lowest Price" label - at 90px the whole pill grew 9px when the
-       user switched option, shifting the field next to it. */
+    /* 100px holds "Lowest Price" - at 90px the pill grew 9px on switch and shifted its neighbour. */
     html body.cre-t-151 #comparison-section .cre-t-151-sort-toggle-value {
         min-width: 100px;
     }
@@ -340,11 +266,8 @@ html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
         height: 18px;
     }
 }
-/* ---------------------------------------------------------------------------
-   6. Tablet / small laptop - tabs on row 1, the three fields share row 2
-   flex-basis 0 (not auto) so breed and ZIP split the row evenly; with `auto` the ZIP field's
-   wider intrinsic content made it 262px against breed's 169px.
-   --------------------------------------------------------------------------- */
+/* ---- 6. Tablet / small laptop - tabs on row 1, the three fields share row 2 ----
+   flex-basis 0 (not auto) so breed and ZIP split the row evenly. */
 @media (max-width: 1179px) {
     html body.cre-t-151 #comparison-section .additional-filters {
         flex: 1 1 100%;
@@ -368,28 +291,22 @@ html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
         width: 100%;
         min-width: 0;
     }
-    /* Still right-aligned, but the capped breed/ZIP absorb most of the row so the pill sits a
-       comfortable ~57px from the ZIP field rather than stranded across a 270px void. */
+    /* Still right-aligned, but the capped fields leave the pill ~57px from ZIP, not a 270px void. */
     html body.cre-t-151 #comparison-section .cre-t-151-sort-dropdown {
         flex: 0 0 auto;
         margin-left: auto;
     }
 }
-/* ---------------------------------------------------------------------------
-   7. Mobile - breed + ZIP + sort share the second row
-   --------------------------------------------------------------------------- */
+/* ---- 7. Mobile - breed + ZIP + sort share the second row ---- */
 @media (max-width: 767px) {
-    /* flex-direction:row is load-bearing. The site's own stylesheet has
-       `@media (max-width:389px){ .additional-filters{flex-direction:column} }`, which stacks
-       breed and ZIP vertically and full-width. Without this override the 3-across row silently
-       falls apart below 390px. */
+    /* flex-direction:row is load-bearing: the site stacks these to a column below 390px, which
+       would silently break the 3-across row. */
     html body.cre-t-151 #comparison-section .additional-filters {
         gap: 6px;
         flex-direction: row;
         flex-wrap: nowrap;
     }
-    /* The inline divider between breed and ZIP costs ~11px we need for the third field.
-       These are inline styles on the element, so !important is required to beat them. */
+    /* The inline divider costs ~11px we need for the third field, and it is an inline style. */
     html body.cre-t-151 #comparison-section .breed-select {
         flex: 1 1 36%;
         padding-right: 0 !important;
@@ -419,8 +336,8 @@ html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
         width: 12px;
         height: 16px;
     }
-    /* Sort pill: drop the "Sort by:" label on mobile - the value plus the "Sorted by ___" copy
-       underneath already say what the field does, and it buys ~60px for the other two fields. */
+    /* Drop the "Sort by:" label on mobile - the copy underneath says what the field does, and it
+       buys ~60px for the other two fields. */
     html body.cre-t-151 #comparison-section .cre-t-151-sort-dropdown {
         flex: 0 1 auto;
         min-width: 0;
@@ -447,10 +364,12 @@ html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
         font-size: 14px;
     }
 
+    /* Mobile keeps the original icon size and baseline - only desktop took the 18px / -0.18em bump. */
     html body.cre-t-151 #comparison-section .cre-t-151-sort-tooltip {
         width: 16px;
         height: 16px;
         margin-left: 2px;
+        vertical-align: -0.15em;
     }
 }
 /* Narrow phones: shave a little more before we allow the row to break. */
@@ -473,9 +392,8 @@ html body.cre-t-151 .cre-t-151-sort-tooltip:hover {
         min-width: 72px;
     }
 }
-/* Smallest phones (<=374px): three pills on one row stops being legible, so breed + ZIP keep the
-   row and the sort field drops to a line of its own, full width. 375px is the floor for the
-   3-across layout - signed off at 389px and it holds down to 375. */
+/* Smallest phones (<=374px): three pills stop being legible, so breed + ZIP keep the row and the
+   sort field drops to a full-width line of its own. The 3-across layout holds down to 375px. */
 @media (max-width: 374.98px) {
     /* Still row + wrap, not the site's column: breed and ZIP share line 1, sort takes line 2. */
     html body.cre-t-151 #comparison-section .additional-filters {

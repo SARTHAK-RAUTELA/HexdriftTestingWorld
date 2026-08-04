@@ -1,7 +1,7 @@
 # SWF146 — Renters Insurance Gurus TrustScore Badge Restyle (SWF135-style, badge alone)
 
 **Test file:** `my-playwright-project/testing/swf146-badge-restyle.spec.js`
-**Report:** `local_testing/Local2/swf146-badge-restyle-qa-report.html`
+**Report:** deleted 2026-08-04 (findings fully captured in this entry) — recoverable from git history at `local_testing/Local2/swf146-badge-restyle-qa-report.html`
 **Screenshots:** `my-playwright-project/swf146-screenshots/`
 **Site:** `https://rentersinsurancegurus.com` — `/`, `/home/`, `/comparison/`
 **Test date:** July 28, 2026

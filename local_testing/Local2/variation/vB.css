@@ -1,204 +1,1044 @@
-html body.cre-t-14 .main-header .sec-wrap {
+
+.Cre_explore-membership_redesing * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.cre-t-119 .Cre_explore-membership_redesing {
+  color: #1a1a1a;
+  line-height: 1.6;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing img {
+  max-width: 100%;
+  display: block;
+}
+
+
+
+.cre-t-119 .Cre_explore-membership_redesing h1,
+.cre-t-119 .Cre_explore-membership_redesing h2,
+.cre-t-119 .Cre_explore-membership_redesing h3 {
+  color: #002b49;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing a {
+  text-decoration: none;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing ul,
+.cre-t-119 .Cre_explore-membership_redesing ol {
+  list-style: none;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .section-heading {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* ---------- Shared: buttons ---------- */
+.cre-t-119 .Cre_explore-membership_redesing .btn {
+  display: inline-block;
+  padding: 14px 50px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .btn--primary {
+  background: #027db6;
+  color: #ffffff;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .btn--primary:hover {
+  background: #026593;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .btn--outline {
+  background: #ffffff;
+  color: #027db6;
+  border-color: #027db6;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .btn--outline:hover {
+  background: #eef7fb;
+}
+
+/* ---------- Shared: category tag pill ---------- */
+.cre-t-119 .Cre_explore-membership_redesing .tag {
+  display: inline-block;
+  background: #027db6;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  padding: 4px 17px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* ---------- Shared: checkmark ---------- */
+.cre-t-119 .Cre_explore-membership_redesing .check {
+  color: #027db6;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+
+/* =========================================================================
+   1. HERO SECTION
+   ========================================================================= */
+.cre-t-119 .Cre_explore-membership_redesing .hero {
+  background: #eef0f1;
+  border-bottom: 1px solid #e6ebef;
+  text-align: center;
+  padding: 70px 0 50px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .hero__title {
+  font-size: 54px;
+  max-width: 900px;
+  margin: 0 auto 24px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .hero__subtitle {
+  font-size: 18px;
+  max-width: 750px;
+  margin: 0 auto 32px;
+  color: #333333;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .hero__actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .hero__stat {
+  margin-bottom: 8px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .hero__stat-line {
+  font-size: 18px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .hero__stat-source {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .hero__trust-text {
+  text-align: center;
+  font-size: 16px;
+  padding: 24px 24px 0;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .hero__logos {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 0 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+section.hero__logos_section .container {
+    overflow: hidden;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .logo-placeholder {
+  height: 48px;
+  flex: 1 1 120px;
+  max-width: 160px;
+}
+.hero__logos {
+  display: flex;
+  width: max-content;
+  animation: logoSlide 30s linear infinite;
+  will-change: transform;
+}
+
+.hero__logos .logo-placeholder {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 70px;
+  margin-right: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__logos .logo-placeholder img {
+ display: block;
+  width: auto;
+  max-width: 120px;
+  max-height: 55px;
+  object-fit: contain;
+}
+
+@keyframes logoSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* =========================================================================
+   2. TESTIMONIALS (Swiper carousel — 4 slides, 3 visible on desktop)
+   ========================================================================= */
+.cre-t-119 .Cre_explore-membership_redesing .testimonials {
+  padding: 60px 0 40px;
+  background: #ffffff;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonials-swiper {
+  padding-bottom: 8px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .swiper-wrapper {
+  align-items: stretch;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .swiper-slide {
+  height: auto;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .swiper-pagination {
+  position: relative;
+  margin-top: 24px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .swiper-pagination-bullet {
+  background: #027db6;
+  opacity: 0.3;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonials-nav {
+      display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+    max-width: 147px;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonials-nav button {
+  width: 39px;
+  height: 39px;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+      outline: none;
+    background: none;
+    border: none;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonials-nav button:hover {
+     outline: none;
+    border: none;
+    background: none;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonials-nav button.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonial-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e6ebef;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__photo {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  border: none;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__body {
+  padding: 24px 28px 32px;
+  text-align: center;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__quote {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__author {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__author span {
+  display: block;
+  font-weight: 400;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+
+/* =========================================================================
+   3. WHY FINANCE PROFESSIONALS JOIN AFP (feature cards)
+   ========================================================================= */
+.cre-t-119 .Cre_explore-membership_redesing .features {
+  background: #eef0f1;
+  border-top: 1px solid #e6ebef;
+  padding: 60px 0;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .features__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .feature-card {
+  background: #ffffff;
+  border: 1px solid #e6ebef;
+  border-radius: 6px;
+  padding: 45px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .feature-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .feature-card h3 {
+  font-size: 19px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .feature-card p {
+  font-size: 15px;
+  color: #333333;
+}
+
+
+/* =========================================================================
+   4. CONTENT BLOCKS
+   (Learn From Practitioners / Put Ideas Into Practice / Stay Up-To-Date /
+   Maintain Your Certification / Help Shape the Future)
+   Alternating text / media layout via .content-block--reverse
+   ========================================================================= */
+.cre-t-119 .Cre_explore-membership_redesing .content-block {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .content-block:nth-of-type(even) {
+  background: #fbfcfd;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .content-block__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__grid {
+  direction: rtl;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__text,
+.cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__media {
+  direction: ltr;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .content-block__text h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .content-block__text p {
+  font-size: 16px;
+  color: #333333;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .media-card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding-bottom: 28px;
+  position: relative;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .media-card__photo {
+  width: 100%;
+  aspect-ratio: 599 / 239;
+  border-radius: 6px 6px 0 0;
+  border: none;
+  position: relative;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .media-card__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: absolute;
+    bottom: -51px;
+        left: 8px;
+}
+.media-card__body {
+    padding-left: 87px;
+}
+.cre-t-119 .Cre_explore-membership_redesing .media-card__quote {
+  font-size: 16px;
+  padding: 20px 28px 8px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .media-card__author {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 28px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .media-card__author span {
+  font-weight: 400;
+  color: #6b7280;
+}
+
+
+/* =========================================================================
+   5. MEMBER VALUE TABLE ("Over $4,000 in Member Value")
+   ========================================================================= */
+
+.cre-t-119 .Cre_explore-membership_redesing .value-table {
+  background: #eef0f1;
+  border-top: 1px solid #e6ebef;
+  border-bottom: 1px solid #e6ebef;
+  padding: 70px 0;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .table-wrapper {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e6ebef;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing thead tr {
+  background: #002b49;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing thead th {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: left;
+  padding: 20px 24px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing thead th:not(:first-child) {
+  text-align: center;
+  width: 220px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing tbody tr:last-child {
+  border-bottom: none;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing tbody td {
+  padding: 18px 24px;
+  font-size: 16px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing tbody td:not(:first-child) {
+  text-align: center;
+  width: 220px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing tr.table-group td {
+  background: #fbfcfd;
+  color: #002b49;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 18px 24px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing td.is-included {
+  color: #1a1a1a;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .value-table__cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Value-table benefit tooltip — add these rules to your existing stylesheet.
+   Only the classes needed for the new tooltip icon/box in buildValueTableHTML. */
+
+.benefit-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tooltip-icon {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.tooltip-content {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #1f2937;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 220px;
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 20;
+}
+
+.tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+
+.tooltip-wrap:hover .tooltip-content,
+.tooltip-wrap:focus-within .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================================================================
+   6. START YOUR AFP MEMBERSHIP
+   ========================================================================= */
+.cre-t-119 .Cre_explore-membership_redesing .start-membership {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .start-membership__grid {
+     display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 50px;
+    align-items: start;
+    max-width: 1238px;
+    margin: 0 auto;
+    border-radius: 6px;
+    border: 1px solid #E6EBEF;
+    background: #EAEFF3;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+    padding: 81px 108px 65px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .start-membership__price h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .price {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .price__amount {
+  font-size: 25px;
+  font-weight: 700;
+  color: #002b49;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .price__sub {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .price__desc {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 24px;
+  max-width: 420px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .start-membership__note {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .start-membership__divider {
+  width: 1px;
+  background: #e6ebef;
+  align-self: stretch;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .start-membership__options {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.cre-t-119 .Cre_explore-membership_redesing .start-membership__options h3 span {
+    width: 40px;
+        display: flex;
+}
+.cre-t-119 .Cre_explore-membership_redesing .start-membership__options p {
+    padding-left: 40px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .option h3 {
+  font-size: 19px;
+  margin-bottom: 6px;
+      display: flex;
+    align-items: center;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .option p {
+  font-size: 16px;
+  color: #333333;
+}
+
+
+/* =========================================================================
+   7. QUOTE BANNER (Lee Ann Perkins testimonial)
+   ========================================================================= */
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner {
+  background: #eef0f1;
+  border-top: 1px solid #e6ebef;
+  border-left: 1px solid #e6ebef;
+  padding: 80px 0;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner__media {
+  position: relative;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner__photo {
+  width: 100%;
+  aspect-ratio: 446 / 345;
+  border-radius: 6px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner__badge {
+  width: 120px;
+  height: 116px;
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 8px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner__text h3 {
+  font-size: 25px;
+  margin-bottom: 16px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner__text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner__author {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .quote-banner__author span {
+  display: block;
+  font-weight: 400;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+
+/* =========================================================================
+   8. FAQ
+   ========================================================================= */
+.cre-t-119 .Cre_explore-membership_redesing .faq {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .faq-item {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 24px 0;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .faq-item summary {
+  font-weight: 700;
+  font-size: 19px;
+  color: #002b49;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 28px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 22px;
+  color: #027db6;
+  font-weight: 400;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .faq-item[open] summary::after {
+  content: '\2212';
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .faq-item p {
+  font-size: 16px;
+  color: #333333;
+  margin-top: 12px;
+}
+
+
+/* =========================================================================
+   9. FOOTER CTA
+   ========================================================================= */
+.cre-t-119 .Cre_explore-membership_redesing .footer-cta {
+  background: #002b49;
+  color: #ffffff;
+  text-align: center;
+  padding: 70px 0;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .footer-cta h2 {
+  color: #ffffff;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing .footer-cta p {
+  font-size: 16px;
+  max-width: 650px;
+  margin: 0 auto 32px;
+  opacity: 0.9;
+}
+
+.cre-t-119 .Cre_explore-membership_redesing  .container:before  {
+  display: none;
+}
+
+/* =========================================================================
+   RESPONSIVE — TABLET (<= 992px)
+   ========================================================================= */
+@media (max-width: 992px) {
+
+  .cre-t-119 .Cre_explore-membership_redesing .hero__title {
+    font-size: 42px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .features__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .content-block__grid {
+    gap: 36px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .start-membership__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .start-membership__divider {
     display: none;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .quote-banner__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing thead th,
+  .cre-t-119 .Cre_explore-membership_redesing tbody td {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
 }
 
-html body.cre-t-14 .cre-t-14-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-}
 
-html body.cre-t-14 .main-header {
-    padding-top: 60px;
-    padding-bottom: 40px;
-}
+/* =========================================================================
+   RESPONSIVE — MOBILE (<= 768px)
+   ========================================================================= */
+@media (max-width: 768px) {
 
-html body.cre-t-14 .cre-t-14-left-side {
-    max-width: 650px;
-    width: 100%;
-}
+  .cre-t-119 .Cre_explore-membership_redesing .section-heading {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
 
-html body.cre-t-14 .cre-t-header-content {
-    color: #383F4D;
-    font-style: normal;
-    line-height: 64px;
-    padding-bottom: 20px;
-    font-family: Pay, Europa, sans-serif;
-    font-weight: 400;
-    font-size: 56px;
-}
+  /* Hero */
+  .cre-t-119 .Cre_explore-membership_redesing .hero {
+    padding: 48px 0 36px;
+  }
 
-html body.cre-t-14 .cre-t-subHeader-content {
-    color: #383f4d;
-    font-family: "Europa", Arial, sans-serif;
-    font-size: 18.5px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 26px;
-    letter-spacing: 0.09px;
-    padding-bottom: 34px;
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    max-width: 600px;
-}
+  .cre-t-119 .Cre_explore-membership_redesing .hero__title {
+    font-size: 32px;
+  }
 
-html body.cre-t-14 .cre-t-14-create-button {
-    border-radius: 8px;
-    background: #D03643;
-    display: flex;
-    width: 280px;
-    padding: 14px 25px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: #FFF;
-    font-family: inherit;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: var(--line-height-30_8, 30.8px);
-    cursor: pointer;
-}
-
-html body.cre-t-14 .cre-t-14-see-button {
-    border-radius: 8px;
-    border: 1px solid #3066C9;
-    display: flex;
-    width: 240px;
-    padding: 14px 25px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: #3066C9;
-    font-family: inherit;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: var(--line-height-30_8, 30.8px);
-    cursor: pointer;
-}
-
-html body.cre-t-14 .cre-t-button-main {
-    display: flex;
-    gap: 20px;
-    padding-bottom: 10px;
-    flex-wrap: wrap;
-}
-
-html body.cre-t-14 .cre-t-14-button-text-bottom {
-    color: #383f4d;
-    font-family: inherit;
+  .cre-t-119 .Cre_explore-membership_redesing .hero__subtitle {
     font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: var(--line-height-30_8, 30.8px);
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+    margin: 0 auto 32px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .hero__logos {
+    justify-content: center;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .logo-placeholder {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  /* Testimonials: Swiper drops to 1 slide per view via JS breakpoints */
+  .cre-t-119 .Cre_explore-membership_redesing .testimonials-nav button {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Features */
+  .cre-t-119 .Cre_explore-membership_redesing .features__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Content blocks always stack, text first */
+  .cre-t-119 .Cre_explore-membership_redesing .content-block {
+    padding: 56px 0;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .content-block__grid,
+  .cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__grid {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 32px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__media {
+    order: 2;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .content-block__text h2 {
+    font-size: 26px;
+  }
+
+  /* Value table -> stacked card rows */
+  .cre-t-119 .Cre_explore-membership_redesing .value-table {
+    padding: 48px 0;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing thead {
+    display: none;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing tbody tr {
+    display: block;
+    padding: 14px 16px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing tr.table-group {
+    padding: 14px 16px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    width: auto !important;
+    text-align: left !important;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing tbody td[data-label]::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 13px;
+    margin-right: 12px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing tr.table-group td::before {
+    content: none;
+  }
+
+  /* Start membership */
+  .cre-t-119 .Cre_explore-membership_redesing .start-membership {
+    padding: 56px 0;
+  }
+
+  /* Quote banner */
+  .cre-t-119 .Cre_explore-membership_redesing .quote-banner {
+    padding: 56px 0;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .quote-banner__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .quote-banner__badge {
+    width: 90px;
+    height: 88px;
+  }
+
+  /* FAQ */
+  .cre-t-119 .Cre_explore-membership_redesing .faq {
+    padding: 56px 0;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .faq-item summary {
+    font-size: 17px;
+  }
+
+  /* Footer CTA */
+  .cre-t-119 .Cre_explore-membership_redesing .footer-cta {
+    padding: 48px 0;
+  }
+
+  .cre-t-119 .Cre_explore-membership_redesing .footer-cta h2 {
+    font-size: 26px;
+  }
+  .cre-t-119 .Cre_explore-membership_redesing .start-membership__grid{
+        padding: 49px 26px 20px;
+  }
 }
 
-html body.cre-t-14 .cre-t-14-earn-points {
-    color: #3066C9;
-}
 
-html body.cre-t-14 .cre-t-14-right-side {
-    max-width: 470px;
-}
+/* =========================================================================
+   RESPONSIVE — SMALL MOBILE (<= 480px)
+   ========================================================================= */
+@media (max-width: 480px) {
 
-html body.cre-t-14 .cre-t-14-trusted-points,
-html body.cre-t-14 .cre-t-14-free {
-    font-weight: 700;
-}
+  .cre-t-119 .Cre_explore-membership_redesing .hero__title {
+    font-size: 26px;
+  }
 
+  .cre-t-119 .Cre_explore-membership_redesing .hero__subtitle {
+    font-size: 15px;
+  }
 
-@media screen and (min-width: 899px) and (max-width: 1108px) {
-    html body.cre-t-14 .cre-t-header-content {
-        font-size: 40px;
-        line-height: 50px;
-    }
+  .cre-t-119 .Cre_explore-membership_redesing .btn {
+    padding: 14px 24px;
+    width: 100%;
+  }
 
-    html body.cre-t-14 .cre-t-subHeader-content {
-        margin: 0 auto;
-    }
+  .cre-t-119 .Cre_explore-membership_redesing .features__grid {
+    grid-template-columns: 1fr;
+  }
 
-    html body.cre-t-14 .cre-t-14-see-button {
-        width: 280px;
-    }
-}
+  .cre-t-119 .Cre_explore-membership_redesing .logo-placeholder {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 
-@media screen and (max-width: 898px) {
-    html body.cre-t-14 .cre-t-14-main {
-        flex-direction: column;
-        text-align: center;
-    }
+  .cre-t-119 .Cre_explore-membership_redesing .media-card__avatar {
+    width: 70px;
+    height: 70px;
+    margin: -35px 0 0 16px;
+  }
 
-    html body.cre-t-14 .cre-t-header-content {
-        font-size: 48px;
-        line-height: 58px;
-    }
-
-    html body.cre-t-14 .main-header {
-        padding-top: 30px;
-    }
-
-    html body.cre-t-14 .cre-t-button-main {
-        justify-content: center;
-    }
-
-    html body.cre-t-14 .cre-t-14-see-button {
-        width: 280px;
-    }
-
-    html body.cre-t-14 .cre-t-subHeader-content {
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    html body.cre-t-14 .cre-t-14-main {
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
-    }
-
-    html body.cre-t-14 .cre-t-header-content {
-        text-align: center;
-        padding-bottom: 20px;
-        font-size: 44px;
-        line-height: 48px;
-        font-weight: 400 !important;
-    }
-
-    html body.cre-t-14 .cre-t-subHeader-content {
-        padding-bottom: 30px;
-    }
-
-    html body.cre-t-14 .cre-t-button-main {
-        justify-content: center;
-        gap: 16px;
-    }
-
-    html body.cre-t-14 .cre-t-14-see-button {
-        width: 100%;
-        max-height: 58.8px;
-    }
-
-    html body.cre-t-14 .cre-t-14-create-button {
-        width: 100%;
-    }
-
-    html body.cre-t-14 .cre-t-subHeader-content {
-        margin: 0 auto;
-    }
-
-    html body.cre-t-14 .cre-t-14-button-text-bottom {
-        line-height: 22px;
-    }
+  .cre-t-119 .Cre_explore-membership_redesing thead th,
+  .cre-t-119 .Cre_explore-membership_redesing tbody td {
+    font-size: 14px;
+  }
 }
 
 
-@media screen and (max-width: 390px) {
-    html body.cre-t-14 .cre-t-header-content {
-        font-size: 40px;
-        line-height: 42px;
-    }
-}
+

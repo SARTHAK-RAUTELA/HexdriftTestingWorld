@@ -530,7 +530,7 @@
         '<a href="https://www.financialprofessionals.org/membership/benefits/join-now" id="start-membership-join-btn" class="btn btn--primary">JOIN AFP</a>' +
         '<p class="start-membership__note"><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none">'+
   '<path d="M5.7 12.025L0 6.325L1.425 4.9L5.7 9.175L14.875 0L16.3 1.425L5.7 12.025Z" fill="#027DB6"></path>'+
-'</svg></span> Immediate access to your member benefits</p>' +
+'</svg></span>Immediate access to your member benefits</p>' +
         "</div>" +
         '<div class="start-membership__divider" aria-hidden="true"></div>' +
         '<div class="start-membership__options">' +

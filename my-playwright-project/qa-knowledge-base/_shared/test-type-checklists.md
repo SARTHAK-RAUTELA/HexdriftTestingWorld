@@ -190,13 +190,15 @@ actionTimeout: 20000
 screenshot: only-on-failure
 ```
 
-**6 browser projects:**
+**7 browser projects** (Tablet added 2026-08-12 for CRE-T-155 — see
+[renters-insurance-gurus/cre-t-155-landlord-approved-faq.md](../renters-insurance-gurus/cre-t-155-landlord-approved-faq.md)):
 1. Chrome Desktop (`Desktop Chrome`)
 2. Firefox Desktop (`Desktop Firefox`)
 3. Edge Desktop (`Desktop Edge` + `channel: 'msedge'`)
 4. Safari Desktop (`Desktop Safari`)
 5. Mobile Chrome — Pixel 5 (`Pixel 5`)
 6. Mobile Safari — iPhone 12 (`iPhone 12`)
+7. Tablet — iPad Gen 7 (`iPad (gen 7)`)
 
 **Run a specific test file:**
 ```

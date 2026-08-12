@@ -2,7 +2,7 @@
 
 **Site:** `rentersinsurancegurus.com` (sister site: `petinsurancegurus.com` — see `../pet-insurance-gurus/`)
 **A/B platform:** Convert.com — force URLs: `?cro_mode=qa&_conv_eforce=<experiment>.<variation>`
-**Tests done:** CRE-T-136, SWF146
+**Tests done:** CRE-T-136, SWF146, CRE-T-155
 
 ## Environment / site quirks (apply to every RIG test)
 
@@ -34,3 +34,4 @@
 |------|------|
 | CRE-T-136 — Insurer alert box | [cre-t-136-insurer-alert.md](cre-t-136-insurer-alert.md) |
 | SWF146 — TrustScore badge restyle (SWF135-style) | [swf146-badge-restyle.md](swf146-badge-restyle.md) |
+| CRE-T-155 — "Landlord Approved" nav link + FAQ | [cre-t-155-landlord-approved-faq.md](cre-t-155-landlord-approved-faq.md) |

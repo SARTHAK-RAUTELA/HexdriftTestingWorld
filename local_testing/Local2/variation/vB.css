@@ -449,7 +449,7 @@ section.hero__logos_section .container {
 
 .cre-t-21 .Cre_explore-membership_redesing .content-block__text h2 {
   font-size: 32px;
-  line-height: 42px; /* Figma: lineHeight 42 @ fontSize32 */
+  line-height: 32px; /* client-requested line-height update */
   margin-bottom: 15px; /* Figma: heading bottom y2473 -> paragraph top y2488 = 15px */
 }
 
@@ -546,6 +546,7 @@ section.hero__logos_section .container {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #e6ebef;
 }
+
 
 .cre-t-21 .Cre_explore-membership_redesing table {
   width: 100%;
@@ -740,6 +741,11 @@ section.hero__logos_section .container {
 .cre-t-21 .Cre_explore-membership_redesing .start-membership__note {
   font-size: 16px;
   margin-top: 20px;
+  /* Hanging indent: icon (17px) + its margin-right (6px) = 23px, so a
+     wrapped second line lands under "Immediate" (the text start) instead
+     of under the checkmark. */
+  padding-left: 23px;
+  text-indent: -23px;
 }
 
 .cre-t-21 .Cre_explore-membership_redesing .start-membership__divider {
@@ -755,6 +761,10 @@ section.hero__logos_section .container {
 }
 .cre-t-21 .Cre_explore-membership_redesing .start-membership__options h3 span {
     width: 40px;
+    flex-shrink: 0; /* without this, the longest heading ("Student &
+       Early Career Membership") can compress the icon slightly to make
+       room for its text, nudging that heading a few px left of the
+       paragraph's fixed 40px padding below it */
         display: flex;
 }
 .cre-t-21 .Cre_explore-membership_redesing .start-membership__options p {
@@ -765,7 +775,10 @@ section.hero__logos_section .container {
   font-size: 19px;
   margin-bottom: 6px;
       display: flex;
-    align-items: center;
+    /* Top-align the icon with the first line of the heading — center was
+       pulling it to the vertical midpoint of 2-line headings like
+       "Student & Early Career Membership" on mobile. */
+    align-items: flex-start;
 }
 
 .cre-t-21 .Cre_explore-membership_redesing .option p {
@@ -1051,43 +1064,113 @@ section.hero__logos_section .container {
     font-size: 26px;
   }
 
-  /* Value table -> stacked card rows */
+  /* Value table on mobile: keep the real <table> (same structure as
+     desktop) instead of stacking rows into cards. The whole table area
+     becomes its own bounded scroll box: scroll down inside it to reach
+     every row with the header pinned at the top the whole time (nothing
+     left to scroll once the last row is in view), and swipe right to
+     reveal AFP Non-Member / AFP Member with the Benefit column frozen
+     on the left so you always know which row you're comparing. */
   .cre-t-21 .Cre_explore-membership_redesing .value-table {
     padding: 48px 0;
   }
 
-  .cre-t-21 .Cre_explore-membership_redesing thead {
-    display: none;
+  .cre-t-21 .Cre_explore-membership_redesing .table-wrapper {
+    max-height: 500px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
+  .cre-t-21 .Cre_explore-membership_redesing table {
+    min-width: 450px;
+    /* position:sticky on table cells is unreliable when the table uses
+       the collapsed border model (the desktop default) — cells need
+       the separate model for sticky left/top to actually hold. */
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .cre-t-21 .Cre_explore-membership_redesing thead th,
+  .cre-t-21 .Cre_explore-membership_redesing tbody td {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .cre-t-21 .Cre_explore-membership_redesing thead th:nth-child(3),
+  .cre-t-21 .Cre_explore-membership_redesing tbody td:nth-child(3) {
+    width: 150px;
+  }
+
+  /* Wider than AFP Member so "AFP Non-Member" fits on one line instead
+     of wrapping in the header. */
+  .cre-t-21 .Cre_explore-membership_redesing thead th:nth-child(2),
+  .cre-t-21 .Cre_explore-membership_redesing tbody td:nth-child(2) {
+    width: 195px;
+  }
+
+  .cre-t-21 .Cre_explore-membership_redesing thead th:first-child,
+  .cre-t-21 .Cre_explore-membership_redesing tbody td:first-child {
+    min-width: 188px;
+  }
+
+  /* table-layout is auto, so a specified width is only a hint — the
+     column can still shrink and wrap "AFP Non-Member" depending on the
+     site's actual font metrics. white-space:nowrap forces it to stay on
+     one line and lets the column (and table) grow to fit instead. */
+  .cre-t-21 .Cre_explore-membership_redesing thead th {
+    white-space: nowrap;
+  }
+
+  /* Sticky header: pins to the top of .table-wrapper's own scrollport
+     as you scroll down inside it. */
+  .cre-t-21 .Cre_explore-membership_redesing thead th {
+    position: sticky;
+    top: 0;
+    background: #002b49;
+    z-index: 3;
+  }
+
+  /* No frozen column — the whole table scrolls left/right together as
+     one unit (Benefit included). The header row still stays put
+     vertically via the sticky-top rule above. Kept the soft column
+     divider (previously used to separate the frozen column's edge) as
+     a plain visual separator between all three columns. */
+  .cre-t-21 .Cre_explore-membership_redesing thead th:not(:last-child),
+  .cre-t-21 .Cre_explore-membership_redesing tbody td:not(:last-child) {
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .cre-t-21 .Cre_explore-membership_redesing tr.table-group td {
+    /* Group dividers ("Learn & Develop" etc.) kept the desktop 35px
+       padding here — .table-group gives this selector higher
+       specificity than the tbody td override above, so it never
+       inherited the 16px used everywhere else, leaving it out of step
+       with the header and the rows above/below it. */
+    background: #fbfcfd;
+    padding: 12px 16px;
+  }
+
+  /* Row divider lines: border on <tr> only renders in the collapsed
+     border model — now that the table uses the separate model (needed
+     for sticky above), move the line onto the cells instead so it
+     doesn't silently disappear. */
   .cre-t-21 .Cre_explore-membership_redesing tbody tr {
-    display: block;
-    padding: 14px 16px;
-  }
-
-  .cre-t-21 .Cre_explore-membership_redesing tr.table-group {
-    padding: 0px 16px;
+    border-bottom: none;
   }
 
   .cre-t-21 .Cre_explore-membership_redesing tbody td {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 0;
-    width: auto !important;
-    text-align: left !important;
+    border-bottom: 1px solid #e5e7eb;
   }
 
-  .cre-t-21 .Cre_explore-membership_redesing tbody td[data-label]::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: #6b7280;
-    font-size: 13px;
-    margin-right: 12px;
+  .cre-t-21 .Cre_explore-membership_redesing tbody tr:last-child td {
+    border-bottom: none;
   }
 
-  .cre-t-21 .Cre_explore-membership_redesing tr.table-group td::before {
-    content: none;
+  /* Benefit names are now in a narrower frozen column and will wrap
+     more often — keep the info icon pinned to the top line instead of
+     centering between wrapped lines. */
+  .cre-t-21 .Cre_explore-membership_redesing .benefit-label {
+    align-items: flex-start;
   }
 
   /* Start membership */

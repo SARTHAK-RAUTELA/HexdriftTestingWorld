@@ -1,4 +1,3 @@
-
 .Cre_explore-membership_redesing * {
   margin: 0;
   padding: 0;
@@ -6,56 +5,74 @@
 }
 
 
-.cre-t-119 .Cre_explore-membership_redesing {
+.cre-t-21 .Cre_explore-membership_redesing {
   color: #1a1a1a;
   line-height: 1.6;
+  letter-spacing: 0.25px;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing img {
+.cre-t-21 .Cre_explore-membership_redesing img {
   max-width: 100%;
   display: block;
 }
 
 
 
-.cre-t-119 .Cre_explore-membership_redesing h1,
-.cre-t-119 .Cre_explore-membership_redesing h2,
-.cre-t-119 .Cre_explore-membership_redesing h3 {
+.cre-t-21 .Cre_explore-membership_redesing h1,
+.cre-t-21 .Cre_explore-membership_redesing h2,
+.cre-t-21 .Cre_explore-membership_redesing h3 {
   color: #002b49;
   font-weight: 700;
   line-height: 1.25;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing a {
+.cre-t-21 .Cre_explore-membership_redesing a {
   text-decoration: none;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing ul,
-.cre-t-119 .Cre_explore-membership_redesing ol {
+.cre-t-21 .Cre_explore-membership_redesing ul,
+.cre-t-21 .Cre_explore-membership_redesing ol {
   list-style: none;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .container {
+.cre-t-21 .Cre_explore-membership_redesing .container {
+  /* Figma: the content area inside the 1440px frame runs from x=71 to
+     x=1371 (width 1300px) across the features grid, content blocks,
+     value table, quote banner, and FAQ. The old 1200px cap squeezed
+     every one of those sections narrower than designed, which is what
+     was shifting paragraph line-breaks and card/gap sizing off. */
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .section-heading {
+.cre-t-21 .Cre_explore-membership_redesing .section-heading {
   text-align: center;
   font-size: 32px;
   margin-bottom: 40px;
 }
+.cre-t-21 .Cre_explore-membership_redesing .value-table .section-heading {
+    margin-bottom: 15px;
+}
 
 /* ---------- Shared: buttons ---------- */
-.cre-t-119 .Cre_explore-membership_redesing .btn {
-  display: inline-block;
-  padding: 14px 50px;
+/* Figma: every CTA frame (hero, start-membership, footer) is a fixed
+   250x54 auto-layout frame with its label centered inside — NOT a
+   content-hugging button. Using padding alone (old rule) made
+   "JOIN AFP" and "FREE INFO SESSION" render at different widths. */
+.cre-t-21 .Cre_explore-membership_redesing .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 54px;
+  box-sizing: border-box;
+  padding: 14px 20px;
   border-radius: 6px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.25px;
   text-align: center;
@@ -64,40 +81,49 @@
   border: 1px solid transparent;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .btn--primary {
+.cre-t-21 .Cre_explore-membership_redesing .btn--primary {
   background: #027db6;
   color: #ffffff;
+  font-family: GothamNarrowMedium, Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .btn--primary:hover {
+.cre-t-21 .Cre_explore-membership_redesing .btn--primary:hover {
   background: #026593;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .btn--outline {
+.cre-t-21 .Cre_explore-membership_redesing .btn--outline {
   background: #ffffff;
   color: #027db6;
   border-color: #027db6;
+font-family: GothamNarrowMedium, Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .btn--outline:hover {
-  background: #eef7fb;
+.cre-t-21 .Cre_explore-membership_redesing .btn--outline:hover {
+      background: #027db6;
+    color: #fff;
 }
 
 /* ---------- Shared: category tag pill ---------- */
-.cre-t-119 .Cre_explore-membership_redesing .tag {
-  display: inline-block;
-  background: #027db6;
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.75px;
-  padding: 4px 17px;
-  border-radius: 8px;
-  margin-bottom: 16px;
+.cre-t-21 .Cre_explore-membership_redesing .tag {
+     display: inline-block;
+    background: #027db6;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.75px;
+    padding: 6px 17px;
+    border-radius: 8px;
+    margin-bottom: 13px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    display: inline-block;
 }
 
 /* ---------- Shared: checkmark ---------- */
-.cre-t-119 .Cre_explore-membership_redesing .check {
+.cre-t-21 .Cre_explore-membership_redesing .check {
   color: #027db6;
   font-weight: 700;
   margin-right: 6px;
@@ -107,68 +133,82 @@
 /* =========================================================================
    1. HERO SECTION
    ========================================================================= */
-.cre-t-119 .Cre_explore-membership_redesing .hero {
+.cre-t-21 .Cre_explore-membership_redesing .hero {
   background: #eef0f1;
   border-bottom: 1px solid #e6ebef;
   text-align: center;
-  padding: 70px 0 50px;
+  /* Figma: grey card runs y169->787; title starts y289 (120px in), stat block ends y684 (103px before card bottom) */
+  padding: 100px 0 83px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .hero__title {
+.cre-t-21 .Cre_explore-membership_redesing .hero__title {
   font-size: 54px;
-  max-width: 900px;
-  margin: 0 auto 24px;
+  font-weight: 800;
+  line-height: 60px;
+  max-width: 991px; /* Figma text box is 991px wide, not 900px — narrower box was forcing an earlier line-break than the design */
+  margin: 0 auto 20px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .hero__subtitle {
+.cre-t-21 .Cre_explore-membership_redesing .hero__subtitle {
   font-size: 18px;
-  max-width: 750px;
-  margin: 0 auto 32px;
-  color: #333333;
+  line-height: 24px;
+  max-width: 687px;
+  margin: 0 auto 37px; /* Figma: subtitle bottom y504 -> buttons top y541 = 37px */
+  color: #000000;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .hero__actions {
+.cre-t-21 .Cre_explore-membership_redesing .hero__actions {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px; /* Figma: Frame2 ends x=715, Frame3 starts x=725 -> 10px gap, not 20 */
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .hero__stat {
+.cre-t-21 .Cre_explore-membership_redesing .hero__stat {
   margin-bottom: 8px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .hero__stat-line {
+.cre-t-21 .Cre_explore-membership_redesing .hero__stat-line {
   font-size: 18px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .hero__stat-source {
+.cre-t-21 .Cre_explore-membership_redesing .hero__stat-source {
   display: block;
   font-size: 14px;
   color: #6b7280;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .hero__trust-text {
+.cre-t-21 .Cre_explore-membership_redesing .hero__trust-text {
   text-align: center;
   font-size: 16px;
-  padding: 24px 24px 0;
+  line-height: 24px;
+  color: #000000;
+  /* Figma: hero card bottom y787 -> trust text top y835 = 48px */
+  padding: 48px 24px 0;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .hero__logos {
-  max-width: 1200px;
-  margin: 24px auto 0;
-  padding: 0 24px 40px;
-  display: flex;
+.cre-t-21 .Cre_explore-membership_redesing .hero__logos {
+  /* Marquee-track fix: max-width/padding/gap below were leftovers from a
+     static (pre-marquee) layout. max-width:1200px was clamping this
+     element's rendered width to 1200px even though its real content
+     (26 duplicated logos) is ~5700px wide, so translateX(-50%) — which is
+     relative to the element's own width — moved nowhere near far enough
+     to reach the second copy, causing a visible snap/jerk every loop.
+     The flex `gap` also added an extra 20px between items on top of each
+     item's own margin-right, which isn't applied after the very last
+     item — breaking the perfect symmetry the -50% technique needs and
+     adding a smaller residual stutter. Only vertical alignment/spacing
+     is needed here now; sizing is fully driven by the marquee-track rule
+     below (display:flex; width:max-content). */
+  margin-top: 26px; /* Figma: trust text bottom y859 -> logos top y865 = 6px */
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
 }
 section.hero__logos_section .container {
     overflow: hidden;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .logo-placeholder {
+.cre-t-21 .Cre_explore-membership_redesing .logo-placeholder {
   height: 48px;
   flex: 1 1 120px;
   max-width: 160px;
@@ -212,48 +252,53 @@ section.hero__logos_section .container {
 /* =========================================================================
    2. TESTIMONIALS (Swiper carousel — 4 slides, 3 visible on desktop)
    ========================================================================= */
-.cre-t-119 .Cre_explore-membership_redesing .testimonials {
-  padding: 60px 0 40px;
+.cre-t-21 .Cre_explore-membership_redesing .testimonials {
+  padding: 62px 0 69px; /* Figma: logos bottom y945 -> first testimonial card top y1007 = 62px */
   background: #ffffff;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonials-swiper {
+.cre-t-21 .Cre_explore-membership_redesing .testimonials-swiper {
   padding-bottom: 8px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .swiper-wrapper {
+.cre-t-21 .Cre_explore-membership_redesing .swiper-wrapper {
   align-items: stretch;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .swiper-slide {
+.cre-t-21 .Cre_explore-membership_redesing .swiper-slide {
   height: auto;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .swiper-pagination {
+.cre-t-21 .Cre_explore-membership_redesing .swiper-pagination {
   position: relative;
-  margin-top: 24px;
+  margin-top: 17px;
+      width: auto;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .swiper-pagination-bullet {
+.cre-t-21 .Cre_explore-membership_redesing .swiper-pagination-bullet {
   background: #027db6;
   opacity: 0.3;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px; /* Figma: 10px dot, 10px gap between dot edges (20px between dot starts) */
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .swiper-pagination-bullet-active {
+.cre-t-21 .Cre_explore-membership_redesing .swiper-pagination-bullet-active {
   opacity: 1;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonials-nav {
-      display: flex;
+.cre-t-21 .Cre_explore-membership_redesing .testimonials-nav {
+       display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 19px;
     margin-top: 16px;
-    max-width: 147px;
+    min-width: 157px;
     margin: 0 auto;
     margin-top: 16px;
+    max-width: 250px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonials-nav button {
+.cre-t-21 .Cre_explore-membership_redesing .testimonials-nav button {
   width: 39px;
   height: 39px;
 
@@ -264,51 +309,51 @@ section.hero__logos_section .container {
     border: none;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonials-nav button:hover {
+.cre-t-21 .Cre_explore-membership_redesing .testimonials-nav button:hover {
      outline: none;
     border: none;
     background: none;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonials-nav button.swiper-button-disabled {
+.cre-t-21 .Cre_explore-membership_redesing .testimonials-nav button.swiper-button-disabled {
   opacity: 0.35;
   cursor: default;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonial-card {
+.cre-t-21 .Cre_explore-membership_redesing .testimonial-card {
   height: 100%;
   display: flex;
   flex-direction: column;
   background: #ffffff;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05); /* Figma: card group drop-shadow offset y3 radius10 */
   border: 1px solid #e6ebef;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__photo {
+.cre-t-21 .Cre_explore-membership_redesing .testimonial-card__photo {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 420 / 273; /* Figma: photo 420x273 (20:13), not 16:10 */
   border-radius: 0;
   border: none;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__body {
-  padding: 24px 28px 32px;
+.cre-t-21 .Cre_explore-membership_redesing .testimonial-card__body {
+  padding: 30px 27px 32px; /* Figma: quote box inset x=27, quote top 30px below body top */
   text-align: center;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__quote {
+.cre-t-21 .Cre_explore-membership_redesing .testimonial-card__quote {
   font-size: 16px;
   margin-bottom: 12px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__author {
+.cre-t-21 .Cre_explore-membership_redesing .testimonial-card__author {
   font-size: 14px;
   font-weight: 600;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .testimonial-card__author span {
+.cre-t-21 .Cre_explore-membership_redesing .testimonial-card__author span {
   display: block;
   font-weight: 400;
   color: #6b7280;
@@ -319,42 +364,45 @@ section.hero__logos_section .container {
 /* =========================================================================
    3. WHY FINANCE PROFESSIONALS JOIN AFP (feature cards)
    ========================================================================= */
-.cre-t-119 .Cre_explore-membership_redesing .features {
+.cre-t-21 .Cre_explore-membership_redesing .features {
   background: #eef0f1;
   border-top: 1px solid #e6ebef;
   padding: 60px 0;
+  padding-bottom: 75px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .features__grid {
+.cre-t-21 .Cre_explore-membership_redesing .features__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .feature-card {
+.cre-t-21 .Cre_explore-membership_redesing .feature-card {
   background: #ffffff;
   border: 1px solid #e6ebef;
   border-radius: 6px;
-  padding: 45px 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 45px 35px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Figma: card drop-shadow radius8, not 4 */
   display: flex;
   flex-direction: column;
-  gap: 18px;
+
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .feature-card__icon {
+.cre-t-21 .Cre_explore-membership_redesing .feature-card__icon {
   width: 44px;
   height: 44px;
-  border-radius: 8px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .feature-card h3 {
+.cre-t-21 .Cre_explore-membership_redesing .feature-card h3 {
   font-size: 19px;
+      margin-bottom: 5px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .feature-card p {
-  font-size: 15px;
-  color: #333333;
+.cre-t-21 .Cre_explore-membership_redesing .feature-card p {
+  font-size: 16px;
+  color: #000000;
 }
 
 
@@ -364,42 +412,54 @@ section.hero__logos_section .container {
    Maintain Your Certification / Help Shape the Future)
    Alternating text / media layout via .content-block--reverse
    ========================================================================= */
-.cre-t-119 .Cre_explore-membership_redesing .content-block {
+/* Figma: Rectangle 42/44/46 (blocks 1,3,5) = #fcfcfb; Rectangle 43/45 (blocks 2,4) = #f8f9fa.
+   Every block has a 1px #e6ebef top border; only border-top is applied per block (not
+   bottom too) so adjacent blocks don't double up on a shared edge — the last block adds
+   its own bottom border to close the group. */
+.cre-t-21 .Cre_explore-membership_redesing .content-block {
   padding: 80px 0;
-  background: #ffffff;
+  background: #fcfcfb;
+  border-top: 1px solid #e6ebef;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .content-block:nth-of-type(even) {
-  background: #fbfcfd;
+
+.cre-t-21 .Cre_explore-membership_redesing .content-block:nth-of-type(even) {
+  background: #f8f9fa;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .content-block__grid {
+.cre-t-21 .Cre_explore-membership_redesing .content-block:last-of-type {
+  border-bottom: 1px solid #e6ebef;
+}
+
+.cre-t-21 .Cre_explore-membership_redesing .content-block__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 0 60px;
   align-items: center;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__grid {
+.cre-t-21 .Cre_explore-membership_redesing .content-block--reverse .content-block__grid {
   direction: rtl;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__text,
-.cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__media {
+.cre-t-21 .Cre_explore-membership_redesing .content-block--reverse .content-block__text,
+.cre-t-21 .Cre_explore-membership_redesing .content-block--reverse .content-block__media {
   direction: ltr;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .content-block__text h2 {
+.cre-t-21 .Cre_explore-membership_redesing .content-block__text h2 {
   font-size: 32px;
-  margin-bottom: 16px;
+  line-height: 42px; /* Figma: lineHeight 42 @ fontSize32 */
+  margin-bottom: 15px; /* Figma: heading bottom y2473 -> paragraph top y2488 = 15px */
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .content-block__text p {
+.cre-t-21 .Cre_explore-membership_redesing .content-block__text p {
   font-size: 16px;
-  color: #333333;
+  line-height: 24px;
+  color: #000000;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .media-card {
+.cre-t-21 .Cre_explore-membership_redesing .media-card {
   background: #ffffff;
   border-radius: 6px;
   box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
@@ -408,7 +468,7 @@ section.hero__logos_section .container {
   position: relative;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .media-card__photo {
+.cre-t-21 .Cre_explore-membership_redesing .media-card__photo {
   width: 100%;
   aspect-ratio: 599 / 239;
   border-radius: 6px 6px 0 0;
@@ -416,31 +476,46 @@ section.hero__logos_section .container {
   position: relative;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .media-card__avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: absolute;
+.cre-t-21 .Cre_explore-membership_redesing .media-card__avatar {
+   position: absolute;
     bottom: -51px;
-        left: 8px;
+    left: 0px; /* Figma: avatar left inset from card ~21px (average of 22/21/20/21), not 8px */
 }
-.media-card__body {
-    padding-left: 87px;
+.cre-t-21 .Cre_explore-membership_redesing .media-card__body {
+    padding-left: 110px; /* Figma: quote text starts ~138px from card left; 28px of that is the quote's own left padding */
 }
-.cre-t-119 .Cre_explore-membership_redesing .media-card__quote {
+.cre-t-21 .Cre_explore-membership_redesing .media-card__quote {
   font-size: 16px;
-  padding: 20px 28px 8px;
+  padding: 26px 28px 8px; /* Figma: quote top is 26px below the photo/body seam */
+      position: relative;
+}
+.cre-t-21 .Cre_explore-membership_redesing .media-card__quote span.parentheses{
+   position: absolute;
+    top: 20px;
+    right: 19px;
+    z-index: 1;
+    opacity: .6;
+}
+.cre-t-21 .Cre_explore-membership_redesing .media-card__quote span.parentheses svg path {
+    fill: #EEF0F1;
+}
+.cre-t-21 .Cre_explore-membership_redesing .media-card__quote span {
+    position: relative;
+    z-index: 9;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .media-card__author {
+.cre-t-21 .Cre_explore-membership_redesing .media-card__quote .parentheses {
+    position: absolute;
+    top: 21px;
+    right: 25px;
+}
+.cre-t-21 .Cre_explore-membership_redesing .media-card__author {
   font-size: 14px;
   font-weight: 600;
   padding: 0 28px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .media-card__author span {
+.cre-t-21 .Cre_explore-membership_redesing .media-card__author span {
   font-weight: 400;
   color: #6b7280;
 }
@@ -450,78 +525,90 @@ section.hero__logos_section .container {
    5. MEMBER VALUE TABLE ("Over $4,000 in Member Value")
    ========================================================================= */
 
-.cre-t-119 .Cre_explore-membership_redesing .value-table {
+.cre-t-21 .Cre_explore-membership_redesing .value-table {
   background: #eef0f1;
   border-top: 1px solid #e6ebef;
   border-bottom: 1px solid #e6ebef;
   padding: 70px 0;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .table-wrapper {
+.cre-t-21 .Cre_explore-membership_redesing .value-table__intro {
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  max-width: 736px;
+  margin: 0 auto 32px;
+}
+
+.cre-t-21 .Cre_explore-membership_redesing .table-wrapper {
   background: #ffffff;
-  border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #e6ebef;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing table {
+.cre-t-21 .Cre_explore-membership_redesing table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing thead tr {
+.cre-t-21 .Cre_explore-membership_redesing thead tr {
   background: #002b49;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing thead th {
-  color: #ffffff;
-  font-size: 17px;
-  font-weight: 700;
-  text-align: left;
-  padding: 20px 24px;
+.cre-t-21 .Cre_explore-membership_redesing thead th {
+     color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    text-align: left;
+    padding: 20px 35px;
+    line-height: 24px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing thead th:not(:first-child) {
-  text-align: center;
+.cre-t-21 .Cre_explore-membership_redesing thead th:not(:first-child) {
+  text-align: left;
   width: 220px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing tbody tr {
+.cre-t-21 .Cre_explore-membership_redesing tbody tr {
   border-bottom: 1px solid #e5e7eb;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing tbody tr:last-child {
+.cre-t-21 .Cre_explore-membership_redesing tbody tr:last-child {
   border-bottom: none;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing tbody td {
-  padding: 18px 24px;
+.cre-t-21 .Cre_explore-membership_redesing tbody td {
+      padding: 18px 35px;
   font-size: 16px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing tbody td:not(:first-child) {
-  text-align: center;
+.cre-t-21 .Cre_explore-membership_redesing tbody td:not(:first-child) {
+      text-align: left;
   width: 220px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing tr.table-group td {
+.cre-t-21 .Cre_explore-membership_redesing tr.table-group td {
   background: #fbfcfd;
   color: #002b49;
   font-weight: 700;
-  font-size: 18px;
-  padding: 18px 24px;
+  font-size: 19px;
+ padding: 18px 35px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing td.is-included {
+.cre-t-21 .Cre_explore-membership_redesing td.is-included {
   color: #1a1a1a;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .value-table__cta {
-  text-align: center;
-  margin-top: 40px;
+.cre-t-21 .Cre_explore-membership_redesing .value-table__cta {
+      text-align: right;
+    margin-top: 0;
+    background-color: #ffffff;
+       padding: 32px 32px 32px 0;
 }
-
+.cre-t-21 .Cre_explore-membership_redesing .value-table__cta .btn--primary {
+    max-width: 171px;
+}
 /* Value-table benefit tooltip — add these rules to your existing stylesheet.
    Only the classes needed for the new tooltip icon/box in buildValueTableHTML. */
 
@@ -545,53 +632,68 @@ section.hero__logos_section .container {
 }
 
 .tooltip-content {
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
+  /* Click-to-open tooltip: positioned as `fixed` (coordinates computed in JS
+     from the icon's bounding rect) instead of `absolute` inside `.tooltip-wrap`.
+     `.table-wrapper` has `overflow: hidden` for its rounded corners, which was
+     clipping the old absolutely-positioned tooltip on mobile. `fixed` is laid
+     out against the viewport, so it escapes that clipping ancestor. */
+  position: fixed;
+  top: 0;
+  left: 0;
   background: #1f2937;
   color: #ffffff;
   font-size: 13px;
   line-height: 1.4;
   padding: 8px 12px;
   border-radius: 6px;
-  width: 220px;
+  width: max-content;
+  max-width: 280px;
+  min-width: 160px;
   text-align: left;
   white-space: normal;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: translateY(4px);
   transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 20;
+  z-index: 9999;
 }
 
 .tooltip-content::after {
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  /* JS sets --arrow-left per open tooltip so the arrow still points at the
+     icon even when the box has been shifted to stay inside the viewport. */
+  left: var(--arrow-left, 50%);
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
   border-color: #1f2937 transparent transparent transparent;
 }
 
-.tooltip-wrap:hover .tooltip-content,
-.tooltip-wrap:focus-within .tooltip-content {
+.tooltip-content.tooltip-content--below::after {
+  top: auto;
+  bottom: 100%;
+  border-color: transparent transparent #1f2937 transparent;
+}
+
+.tooltip-wrap.is-active .tooltip-content {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 /* =========================================================================
    6. START YOUR AFP MEMBERSHIP
    ========================================================================= */
-.cre-t-119 .Cre_explore-membership_redesing .start-membership {
+.cre-t-21 .Cre_explore-membership_redesing .start-membership {
   background: #ffffff;
   padding: 80px 0;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .start-membership__grid {
+.cre-t-21 .Cre_explore-membership_redesing .start-membership__grid {
      display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: 50px;
@@ -605,99 +707,103 @@ section.hero__logos_section .container {
     padding: 81px 108px 65px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .start-membership__price h2 {
+.cre-t-21 .Cre_explore-membership_redesing .start-membership__price h2 {
   font-size: 32px;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+  line-height: 32px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .price {
+.cre-t-21 .Cre_explore-membership_redesing .price {
   font-size: 16px;
   line-height: 24px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .price__amount {
+.cre-t-21 .Cre_explore-membership_redesing .price__amount {
   font-size: 25px;
   font-weight: 700;
   color: #002b49;
+  font-family: GothamNarrowBold, Arial, Helvetica, sans-serif;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .price__sub {
+.cre-t-21 .Cre_explore-membership_redesing .price__sub {
   font-size: 16px;
   margin-bottom: 18px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .price__desc {
+.cre-t-21 .Cre_explore-membership_redesing .price__desc {
   font-size: 16px;
-  color: #333333;
+  color: #000000;
   margin-bottom: 24px;
   max-width: 420px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .start-membership__note {
+.cre-t-21 .Cre_explore-membership_redesing .start-membership__note {
   font-size: 16px;
   margin-top: 20px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .start-membership__divider {
+.cre-t-21 .Cre_explore-membership_redesing .start-membership__divider {
   width: 1px;
-  background: #e6ebef;
+  background: #e5e7eb;
   align-self: stretch;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .start-membership__options {
+.cre-t-21 .Cre_explore-membership_redesing .start-membership__options {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.cre-t-119 .Cre_explore-membership_redesing .start-membership__options h3 span {
+.cre-t-21 .Cre_explore-membership_redesing .start-membership__options h3 span {
     width: 40px;
         display: flex;
 }
-.cre-t-119 .Cre_explore-membership_redesing .start-membership__options p {
+.cre-t-21 .Cre_explore-membership_redesing .start-membership__options p {
     padding-left: 40px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .option h3 {
+.cre-t-21 .Cre_explore-membership_redesing .option h3 {
   font-size: 19px;
   margin-bottom: 6px;
       display: flex;
     align-items: center;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .option p {
+.cre-t-21 .Cre_explore-membership_redesing .option p {
   font-size: 16px;
-  color: #333333;
+  color: #000000;
 }
 
 
 /* =========================================================================
    7. QUOTE BANNER (Lee Ann Perkins testimonial)
    ========================================================================= */
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner {
-  background: #eef0f1;
-  border-top: 1px solid #e6ebef;
-  border-left: 1px solid #e6ebef;
-  padding: 80px 0;
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner {
+ background: #eef0f1;
+    border-top: 1px solid #e6ebef;
+    border-left: 1px solid #e6ebef;
+    padding: 80px 0;
+    padding-bottom: 70px;
+    padding-top: 93px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner__grid {
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner__grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
+  gap: 0 60px;
   align-items: center;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner__media {
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner__media {
   position: relative;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner__photo {
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner__photo {
   width: 100%;
   aspect-ratio: 446 / 345;
   border-radius: 6px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner__badge {
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner__badge {
   width: 120px;
   height: 116px;
   position: absolute;
@@ -706,23 +812,27 @@ section.hero__logos_section .container {
   border-radius: 8px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner__text h3 {
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner__text h3 {
   font-size: 25px;
   margin-bottom: 16px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner__text p {
+/* BUG-09 fix: this generic "p inside .quote-banner__text" rule (0,3,1)
+   was beating .quote-banner__author's (0,3,0), forcing the attribution
+   line to 16px instead of the intended 14px. Exclude .quote-banner__author
+   explicitly so its own font-size rule wins. */
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner__text p:not(.quote-banner__author) {
   font-size: 16px;
   margin-bottom: 20px;
-  color: #333333;
+  color: #000000;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner__author {
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner__author {
   font-size: 14px;
   font-weight: 600;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .quote-banner__author span {
+.cre-t-21 .Cre_explore-membership_redesing .quote-banner__author span {
   display: block;
   font-weight: 400;
   color: #6b7280;
@@ -733,22 +843,22 @@ section.hero__logos_section .container {
 /* =========================================================================
    8. FAQ
    ========================================================================= */
-.cre-t-119 .Cre_explore-membership_redesing .faq {
+.cre-t-21 .Cre_explore-membership_redesing .faq {
   background: #ffffff;
   padding: 80px 0;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .faq__list {
+.cre-t-21 .Cre_explore-membership_redesing .faq__list {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .faq-item {
+.cre-t-21 .Cre_explore-membership_redesing .faq-item {
   border-bottom: 1px solid #e5e7eb;
   padding: 24px 0;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .faq-item summary {
+.cre-t-21 .Cre_explore-membership_redesing .faq-item summary {
   font-weight: 700;
   font-size: 19px;
   color: #002b49;
@@ -758,11 +868,11 @@ section.hero__logos_section .container {
   padding-right: 28px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .faq-item summary::-webkit-details-marker {
+.cre-t-21 .Cre_explore-membership_redesing .faq-item summary::-webkit-details-marker {
   display: none;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .faq-item summary::after {
+.cre-t-21 .Cre_explore-membership_redesing .faq-item summary::after {
   content: '+';
   position: absolute;
   right: 0;
@@ -772,13 +882,13 @@ section.hero__logos_section .container {
   font-weight: 400;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .faq-item[open] summary::after {
+.cre-t-21 .Cre_explore-membership_redesing .faq-item[open] summary::after {
   content: '\2212';
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .faq-item p {
+.cre-t-21 .Cre_explore-membership_redesing .faq-item p {
   font-size: 16px;
-  color: #333333;
+  color: #000000;
   margin-top: 12px;
 }
 
@@ -786,63 +896,70 @@ section.hero__logos_section .container {
 /* =========================================================================
    9. FOOTER CTA
    ========================================================================= */
-.cre-t-119 .Cre_explore-membership_redesing .footer-cta {
+.cre-t-21 .Cre_explore-membership_redesing .footer-cta {
   background: #002b49;
   color: #ffffff;
   text-align: center;
   padding: 70px 0;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .footer-cta h2 {
+.cre-t-21 .Cre_explore-membership_redesing .footer-cta h2 {
   color: #ffffff;
   font-size: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 13px;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing .footer-cta p {
+.cre-t-21 .Cre_explore-membership_redesing .footer-cta p {
   font-size: 16px;
   max-width: 650px;
   margin: 0 auto 32px;
   opacity: 0.9;
 }
 
-.cre-t-119 .Cre_explore-membership_redesing  .container:before  {
+.cre-t-21 .Cre_explore-membership_redesing  .container:before  {
   display: none;
 }
 
 /* =========================================================================
    RESPONSIVE — TABLET (<= 992px)
    ========================================================================= */
+@media (max-width: 1000px) {
+    .cre-t-21 .Cre_explore-membership_redesing .media-card__body {
+        padding-left: 0;
+        margin-top: 37px;
+    }
+}
+
 @media (max-width: 992px) {
 
-  .cre-t-119 .Cre_explore-membership_redesing .hero__title {
+  .cre-t-21 .Cre_explore-membership_redesing .hero__title {
     font-size: 42px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .features__grid {
+  .cre-t-21 .Cre_explore-membership_redesing .features__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .content-block__grid {
+  .cre-t-21 .Cre_explore-membership_redesing .content-block__grid {
     gap: 36px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .start-membership__grid {
+  .cre-t-21 .Cre_explore-membership_redesing .start-membership__grid {
     grid-template-columns: 1fr;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .start-membership__divider {
+  .cre-t-21 .Cre_explore-membership_redesing .start-membership__divider {
     display: none;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .quote-banner__grid {
+  .cre-t-21 .Cre_explore-membership_redesing .quote-banner__grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing thead th,
-  .cre-t-119 .Cre_explore-membership_redesing tbody td {
-    padding: 14px 16px;
+  .cre-t-21 .Cre_explore-membership_redesing thead th,
+  .cre-t-21 .Cre_explore-membership_redesing tbody td {
+    padding: 14px 32px;
     font-size: 15px;
   }
 }
@@ -852,92 +969,107 @@ section.hero__logos_section .container {
    RESPONSIVE — MOBILE (<= 768px)
    ========================================================================= */
 @media (max-width: 768px) {
+  .cre-t-21 .Cre_explore-membership_redesing .content-block:nth-of-type(odd) .content-block__text {
+    margin-bottom: 60px;
+}
+  .cre-t-21 .Cre_explore-membership_redesing .media-card__body {
+    padding-left: 0;
+    margin-top: 37px;
+}
 
-  .cre-t-119 .Cre_explore-membership_redesing .section-heading {
+.cre-t-21 .Cre_explore-membership_redesing tr.table-group td{
+      padding: 18px 4px;
+     background: transparent;
+}
+  .cre-t-21 .Cre_explore-membership_redesing .section-heading {
     font-size: 26px;
     margin-bottom: 28px;
+    text-wrap: pretty;
   }
 
   /* Hero */
-  .cre-t-119 .Cre_explore-membership_redesing .hero {
+  .cre-t-21 .Cre_explore-membership_redesing .hero {
     padding: 48px 0 36px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .hero__title {
+  .cre-t-21 .Cre_explore-membership_redesing .hero__title {
     font-size: 32px;
+    line-height: 1.20;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .hero__subtitle {
+  .cre-t-21 .Cre_explore-membership_redesing .hero__subtitle {
     font-size: 16px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .hero__actions {
+  .cre-t-21 .Cre_explore-membership_redesing .hero__actions {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     max-width: 320px;
     margin: 0 auto 32px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .hero__logos {
+  .cre-t-21 .Cre_explore-membership_redesing .hero__logos {
     justify-content: center;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .logo-placeholder {
+  .cre-t-21 .Cre_explore-membership_redesing .logo-placeholder {
     flex: 1 1 45%;
     max-width: 45%;
   }
 
   /* Testimonials: Swiper drops to 1 slide per view via JS breakpoints */
-  .cre-t-119 .Cre_explore-membership_redesing .testimonials-nav button {
+  .cre-t-21 .Cre_explore-membership_redesing .testimonials-nav button {
     width: 40px;
     height: 40px;
   }
 
   /* Features */
-  .cre-t-119 .Cre_explore-membership_redesing .features__grid {
+  .cre-t-21 .Cre_explore-membership_redesing .features__grid {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
 
   /* Content blocks always stack, text first */
-  .cre-t-119 .Cre_explore-membership_redesing .content-block {
+  .cre-t-21 .Cre_explore-membership_redesing .content-block {
     padding: 56px 0;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .content-block__grid,
-  .cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__grid {
+  .cre-t-21 .Cre_explore-membership_redesing .content-block__grid,
+  .cre-t-21 .Cre_explore-membership_redesing .content-block--reverse .content-block__grid {
     grid-template-columns: 1fr;
     direction: ltr;
     gap: 32px;
   }
-
-  .cre-t-119 .Cre_explore-membership_redesing .content-block--reverse .content-block__media {
+.cre-t-21 .Cre_explore-membership_redesing .content-block__grid{
+  gap:  0px;
+}
+  .cre-t-21 .Cre_explore-membership_redesing .content-block--reverse .content-block__media {
     order: 2;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .content-block__text h2 {
+  .cre-t-21 .Cre_explore-membership_redesing .content-block__text h2 {
     font-size: 26px;
   }
 
   /* Value table -> stacked card rows */
-  .cre-t-119 .Cre_explore-membership_redesing .value-table {
+  .cre-t-21 .Cre_explore-membership_redesing .value-table {
     padding: 48px 0;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing thead {
+  .cre-t-21 .Cre_explore-membership_redesing thead {
     display: none;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing tbody tr {
+  .cre-t-21 .Cre_explore-membership_redesing tbody tr {
     display: block;
     padding: 14px 16px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing tr.table-group {
-    padding: 14px 16px;
+  .cre-t-21 .Cre_explore-membership_redesing tr.table-group {
+    padding: 0px 16px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing tbody td {
+  .cre-t-21 .Cre_explore-membership_redesing tbody td {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -946,7 +1078,7 @@ section.hero__logos_section .container {
     text-align: left !important;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing tbody td[data-label]::before {
+  .cre-t-21 .Cre_explore-membership_redesing tbody td[data-label]::before {
     content: attr(data-label);
     font-weight: 600;
     color: #6b7280;
@@ -954,50 +1086,54 @@ section.hero__logos_section .container {
     margin-right: 12px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing tr.table-group td::before {
+  .cre-t-21 .Cre_explore-membership_redesing tr.table-group td::before {
     content: none;
   }
 
   /* Start membership */
-  .cre-t-119 .Cre_explore-membership_redesing .start-membership {
-    padding: 56px 0;
+  .cre-t-21 .Cre_explore-membership_redesing .start-membership {
+    padding: 56px 18px;
   }
 
   /* Quote banner */
-  .cre-t-119 .Cre_explore-membership_redesing .quote-banner {
+  .cre-t-21 .Cre_explore-membership_redesing .quote-banner {
     padding: 56px 0;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .quote-banner__grid {
+  .cre-t-21 .Cre_explore-membership_redesing .quote-banner__grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 0 28px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .quote-banner__badge {
+  .cre-t-21 .Cre_explore-membership_redesing .quote-banner__badge {
     width: 90px;
     height: 88px;
   }
 
   /* FAQ */
-  .cre-t-119 .Cre_explore-membership_redesing .faq {
+  .cre-t-21 .Cre_explore-membership_redesing .faq {
     padding: 56px 0;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .faq-item summary {
+  .cre-t-21 .Cre_explore-membership_redesing .faq-item summary {
     font-size: 17px;
   }
 
   /* Footer CTA */
-  .cre-t-119 .Cre_explore-membership_redesing .footer-cta {
+  .cre-t-21 .Cre_explore-membership_redesing .footer-cta {
     padding: 48px 0;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .footer-cta h2 {
+  .cre-t-21 .Cre_explore-membership_redesing .footer-cta h2 {
     font-size: 26px;
   }
-  .cre-t-119 .Cre_explore-membership_redesing .start-membership__grid{
-        padding: 49px 26px 20px;
+  .cre-t-21 .Cre_explore-membership_redesing .start-membership__grid{
+     padding: 49px 26px 49px;
   }
+  .cre-t-21 .Cre_explore-membership_redesing .start-membership__price h2{
+    font-size: 29px;
+  }
+  
 }
 
 
@@ -1006,39 +1142,49 @@ section.hero__logos_section .container {
    ========================================================================= */
 @media (max-width: 480px) {
 
-  .cre-t-119 .Cre_explore-membership_redesing .hero__title {
-    font-size: 26px;
+  .cre-t-21 .Cre_explore-membership_redesing .hero__title {
+    font-size: 30px;
+  }
+  .cre-t-21 .Cre_explore-membership_redesing .testimonials-nav{
+    max-width: 200px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .hero__subtitle {
-    font-size: 15px;
+  .cre-t-21 .Cre_explore-membership_redesing .hero__subtitle {
+    font-size: 16px;
+  }
+  .cre-t-21 .Cre_explore-membership_redesing .hero__stat-line{
+    font-size: 16px;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .btn {
+  .cre-t-21 .Cre_explore-membership_redesing .btn {
     padding: 14px 24px;
     width: 100%;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .features__grid {
+  .cre-t-21 .Cre_explore-membership_redesing .features__grid {
     grid-template-columns: 1fr;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .logo-placeholder {
+  .cre-t-21 .Cre_explore-membership_redesing .logo-placeholder {
     flex: 1 1 100%;
     max-width: 100%;
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing .media-card__avatar {
+  .cre-t-21 .Cre_explore-membership_redesing .media-card__avatar {
     width: 70px;
     height: 70px;
     margin: -35px 0 0 16px;
+    bottom: -37px;
+  }
+  .cre-t-21 .Cre_explore-membership_redesing .media-card__quote{
+    padding: 8px 28px 8px
   }
 
-  .cre-t-119 .Cre_explore-membership_redesing thead th,
-  .cre-t-119 .Cre_explore-membership_redesing tbody td {
+  .cre-t-21 .Cre_explore-membership_redesing thead th,
+  .cre-t-21 .Cre_explore-membership_redesing tbody td {
     font-size: 14px;
   }
+  .cre-t-21 .Cre_explore-membership_redesing .media-card__quote span.parentheses{
+               top: -4px;
+  }
 }
-
-
-

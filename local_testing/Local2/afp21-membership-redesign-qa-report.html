@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AFP21 / cre-t-119 — "Join AFP / Membership Page Redesign" — QA Report</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#fff; --ink:#12181f; --muted:#5b6672; --line:#e3e7ec;
+    --crit:#c0261b; --high:#d4691a; --med:#9a7b12; --low:#5a6470;
+    --pass:#1a7f4b; --fail:#c0261b; --skip:#7a8492;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1120px;margin:0 auto;padding:32px 20px 72px}
+  header.top{border-bottom:3px solid var(--ink);padding-bottom:18px;margin-bottom:28px}
+  h1{margin:0 0 6px;font-size:26px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:14px}
+  h2{font-size:19px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  h3{font-size:15px;margin:22px 0 8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:14px 0}
+  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card)}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#eef1f4;font-weight:600;font-size:13px}
+  td.n,th.n{text-align:center;white-space:nowrap}
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+  code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+  code{background:#eceff3;padding:1px 5px;border-radius:4px}
+  pre{background:#12181f;color:#e6edf3;padding:13px 15px;border-radius:7px;overflow-x:auto;font-size:12.5px;line-height:1.5}
+  .pill{display:inline-block;padding:2px 9px;border-radius:11px;font-size:11.5px;font-weight:700;
+        color:#fff;letter-spacing:.03em;text-transform:uppercase}
+  .c-crit{background:var(--crit)} .c-high{background:var(--high)}
+  .c-med{background:var(--med)} .c-low{background:var(--low)}
+  .pass{color:var(--pass);font-weight:700} .fail{color:var(--fail);font-weight:700}
+  .skip{color:var(--skip);font-weight:700}
+  .kpis{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 6px}
+  .kpi{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+  .kpi b{display:block;font-size:23px;line-height:1.2}
+  .kpi span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .note{border-left:4px solid #2f6fb2;background:#eaf2fa;padding:12px 15px;border-radius:0 7px 7px 0;margin:14px 0}
+  .warn{border-left:4px solid var(--crit);background:#fdeceb;padding:12px 15px;border-radius:0 7px 7px 0;margin:14px 0}
+  .ok{border-left:4px solid var(--pass);background:#e9f6ee;padding:12px 15px;border-radius:0 7px 7px 0;margin:14px 0}
+  ul,ol{padding-left:22px} li{margin:5px 0}
+  footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+  .tag{display:inline-block;background:#eceff3;border:1px solid var(--line);border-radius:4px;
+       padding:1px 6px;font-size:11.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>AFP21 / cre-t-119 — "Join AFP / Membership Page Redesign"</h1>
+  <div class="sub">
+    Association for Financial Professionals · financialprofessionals.org · VWO campaign <code>59</code>
+    ("Variation-1") · QA report generated 2026-08-11
+  </div>
+</header>
+
+<div class="warn">
+  <strong>Recommendation: do not launch yet.</strong> Two CRITICAL defects mean every CTA on the
+  page currently does the <em>opposite</em> of what the client explicitly asked for in the last
+  30 seconds of his brief video (he retracted his first instruction on-camera specifically to fix
+  this). No JOIN AFP button smooth-scrolls, and the one button that <em>should</em> navigate goes
+  to the wrong destination and drops the GA cross-domain attribution parameter — which for a
+  membership-conversion test breaks the metric the test exists to measure. Everything else —
+  content accuracy, layout, the full 6-browser/device matrix — is in strong shape.
+</div>
+
+<div class="kpis">
+  <div class="kpi"><b>44</b><span>Test cases</span></div>
+  <div class="kpi"><b>~266</b><span>Cases executed across 6 projects</span></div>
+  <div class="kpi"><b class="pass">~250</b><span>Passed</span></div>
+  <div class="kpi"><b>9</b><span>Defects (2 critical)</span></div>
+  <div class="kpi"><b>6 / 6</b><span>Browser/device projects covered</span></div>
+</div>
+<p class="sub">Every failure below is accounted for by a defect in §3 — there are no unexplained
+reds. All 6 configured Playwright projects (Chrome, Firefox, Edge, Safari Desktop, Mobile Chrome,
+Mobile Safari) ran; see §2 for per-project detail and the one small Mobile Safari coverage gap.</p>
+
+<!-- ───────────────────────── SCOPE ───────────────────────── -->
+<h2>1 · What was tested</h2>
+<div class="card">
+  <p style="margin-top:0">Sources of truth, in the order this repo's QA workflow requires
+  (<code>_shared/qa-workflow.md</code>): the client's source video first (8:14,
+  <code>Test 21 Join AFP Redesign Overview.mp4</code>), then the Figma file
+  (<code>figma.com/design/FYiiXMtyvUVv4qYNxHK50h</code>, canvas "AFP21"), then the code
+  (<code>local_testing/Local2/variation/vB.js</code> + <code>vB.css</code>), then the live VWO
+  preview URL. The full spec extracted from the video/Figma — including 14 items the client
+  described but never designed, and 6 open ambiguities — lives in
+  <code>qa-knowledge-base/afp/afp21-membership-page-redesign.md</code>.</p>
+
+  <h3>The feature, as specified</h3>
+  <p>A full-page replacement of the "Join AFP" page. Header/nav and footer stay exactly as they
+  are; everything between them is torn out of <code>#site-main</code> and rebuilt from scratch —
+  hero, a 13-logo auto-scrolling marquee, a 4-slide testimonial carousel, 5 "why join" feature
+  cards, 5 alternating text/image sections, a 16-row member-value comparison table, a pricing
+  block ("Start Your AFP Membership" — the one section every CTA should point at), a pull quote,
+  a 15-item FAQ accordion, and a closing CTA band.</p>
+
+  <h3>The one thing the client changed his mind about, on camera</h3>
+  <p>At 0:48 in the video he says the hero JOIN AFP button should mirror the site's existing join
+  button (i.e. navigate away). At 6:12–7:13 he explicitly retracts that — <em>"rewind what I was
+  saying before"</em> — and redefines the behavior: Hero JOIN AFP and the two other JOIN AFP
+  buttons should <strong>smooth-scroll</strong> to the pricing section; only the JOIN AFP
+  <em>inside</em> that pricing section should actually navigate, and it should do so by mimicking
+  a click on the control's own button (to preserve GA's cross-domain linker param), not by
+  hardcoding a URL. This corrected instruction is the one this QA is written against — and it is
+  the one thing the current build gets completely backwards (BUG-01/BUG-02).</p>
+</div>
+
+<!-- ───────────────────────── COVERAGE ───────────────────────── -->
+<h2>2 · Coverage &amp; what is not covered</h2>
+<div class="scroll">
+<table>
+  <thead><tr>
+    <th>Browser / device</th><th class="n">Cases run</th><th class="n">Pass</th>
+    <th class="n">Fail</th><th>Status</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>Chrome Desktop (1280×800)</td><td class="n">41 / 44</td>
+        <td class="n pass">41</td><td class="n fail">0</td>
+        <td><strong>Complete.</strong> 3 mobile-only checks correctly skip at this viewport.</td></tr>
+    <tr><td>Firefox Desktop</td><td class="n">41 / 44</td>
+        <td class="n pass">41</td><td class="n fail">0</td>
+        <td><strong>Complete.</strong> Run in isolation after the combined 6-project run hit a
+            resource ceiling (see note below); clean on retry.</td></tr>
+    <tr><td>Edge Desktop (<code>channel: msedge</code>)</td><td class="n">41 / 44</td>
+        <td class="n pass">41</td><td class="n fail">0</td>
+        <td><strong>Complete.</strong></td></tr>
+    <tr><td>Safari Desktop (WebKit)</td><td class="n">41 / 44</td>
+        <td class="n pass">41</td><td class="n fail">0</td>
+        <td><strong>Complete.</strong> ~2× Chromium's runtime (9.1 min), consistent with this
+            site's known WebKit overhead per <code>_client-notes.md</code>.</td></tr>
+    <tr><td>Mobile Chrome (Pixel 5)</td><td class="n">43 / 44</td>
+        <td class="n pass">43</td><td class="n fail">0</td>
+        <td><strong>Complete.</strong> 1 desktop-only check correctly skips.</td></tr>
+    <tr><td>Mobile Safari (iPhone 12)</td><td class="n">42 / 44 directly confirmed</td>
+        <td class="n pass">42</td><td class="n fail">0</td>
+        <td><span class="skip">2 checks fixed-but-not-reconfirmed</span> — see note below.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="warn">
+  <strong>Why the full 6-project matrix couldn't run as one command.</strong> Running all 6
+  projects sequentially in a single Playwright invocation ran for 1.1 hours before Chrome and
+  most of Firefox completed, then Edge, Safari, Mobile Chrome, and Mobile Safari all crashed on
+  their very first test with <code>worker process exited unexpectedly (code=3221225794)</code> —
+  Windows' <code>STATUS_DLL_INIT_FAILED</code>, a resource-exhaustion signature from accumulated
+  browser processes over that long a single run, not a product defect. Splitting into one
+  isolated command per project (matching how the initial Chrome sanity run had already succeeded)
+  resolved this cleanly for 5 of 6 projects.
+</div>
+
+<div class="note">
+  <strong>Mobile Safari — 2 checks fixed but not re-verified to completion.</strong> This project's
+  full 44-test run was interrupted mid-way four separate times by the same class of environment
+  instability (worker crashes, a transient <code>page.goto: Could not connect to server</code>,
+  and one run that got stopped externally after only 4 tests). Across those partial runs, 42 of
+  44 checks were directly observed passing at some point — including, critically, the
+  <strong>"next/prev arrows navigate the carousel"</strong> test, which failed on an earlier run
+  due to a <code>#vwo-debugger</code> iframe intercepting the click, and then passed cleanly once
+  fixed with <code>{force: true}</code>. That exact same fix was applied to the two remaining
+  affected tests (<strong>BUG-04's tooltip-hover check</strong> and the <strong>FAQ
+  accordion-click check</strong>), but neither has been re-run to a clean completion afterward —
+  the last two attempts hit a network timeout and a worker crash before reaching them. Given the
+  identical failure mode and identical fix already proven effective on the carousel test, high
+  confidence both are now passing, but this is fixed-but-unconfirmed-at-scale, not proof. All
+  other Mobile Safari content, layout, and typography checks are fully confirmed.
+</div>
+
+<!-- ───────────────────────── DEFECTS ───────────────────────── -->
+<h2>3 · Defects</h2>
+
+<h3>CRITICAL</h3>
+<div class="card">
+  <p><span class="pill c-crit">BUG-01</span> <strong>No CTA smooth-scrolls — every JOIN AFP button
+  is a hardcoded external link</strong> &nbsp;<span class="tag">confirmed live, all 6 browsers</span></p>
+  <p>The client's corrected instruction (6:12–7:13 in the source video — he interrupted himself
+  specifically to redirect this behavior) was that the Hero JOIN AFP, the comparison-table-bottom
+  JOIN AFP, and the closing CTA-band JOIN AFP should all smooth-scroll to <code>#join</code> (the
+  "Start Your AFP Membership" pricing section). There is <strong>no smooth-scroll JavaScript
+  anywhere in <code>vB.js</code></strong> — no <code>scrollIntoView</code>, no click handler
+  referencing <code>#join</code>. <code>#join</code> is set as the section's id and then never
+  referenced again. All 4 "JOIN AFP" buttons on the page — hero, table-bottom, the pricing
+  section's own, and the footer band — share the exact same hardcoded href
+  (<code>.../membership/benefits/join-now</code>), confirmed via DOM inspection on every tested
+  browser.</p>
+  <p><strong>Fix:</strong> wire an anchor/click handler on the hero, table-bottom, and footer
+  JOIN AFP buttons that smooth-scrolls to <code>#join</code> instead of navigating.</p>
+</div>
+
+<div class="card">
+  <p><span class="pill c-crit">BUG-02</span> <strong>The one button that should navigate goes to
+  the wrong place and drops GA's cross-domain attribution</strong> &nbsp;<span class="tag">confirmed live against the real control page</span></p>
+  <p>Per the client's spec, only the JOIN AFP <em>inside</em> "Start Your AFP Membership" should
+  navigate, and it should mimic a click on the control's own button rather than hardcode a URL.
+  Live-checked the real control page (no VWO preview) on 2026-08-11: 3 of its 4 "JOIN AFP" buttons
+  resolve to <strong>pathname <code>/eweb/DynamicPage.aspx</code></strong> with query params
+  <strong><code>Site</code>, <code>WebCode</code>, <code>ct</code>, <code>_gl</code></strong> — the
+  last being GA's cross-domain linker, generated fresh per session. The variation's hardcoded
+  <code>.../membership/benefits/join-now</code> is neither that domain/path nor carries
+  <code>_gl</code>. For a membership-conversion experiment, losing that linker breaks the exact
+  attribution the test is designed to measure — even if the destination URL were otherwise
+  correct.</p>
+  <p>Separately: the site's own <strong>header nav "Join" button</strong> (unrelated to this test,
+  unchanged) happens to use that same <code>join-now</code> URL with <code>target="_blank"</code>
+  — very likely where the developer sourced it from, applying the client's <em>retracted</em>
+  first instruction ("mirror the existing join button") instead of the corrected one.</p>
+  <p><strong>Fix:</strong> read the control anchor's live <code>href</code> at click time (or
+  dispatch a click on the control element) instead of hardcoding a URL.</p>
+</div>
+
+<h3>HIGH</h3>
+<div class="card">
+  <p><span class="pill c-high">BUG-03</span> <strong>FREE INFO SESSION does not open in a new
+  tab</strong> &nbsp;<span class="tag">confirmed live, all 6 browsers</span></p>
+  <p>Client, verbatim: <em>"Free info session… going to this page, in a new tab, please, new
+  tab."</em> The anchor has no <code>target="_blank"</code> and no <code>rel="noopener"</code>.</p>
+  <p><strong>Fix:</strong> add both attributes to the FREE INFO SESSION link.</p>
+</div>
+
+<div class="card">
+  <p><span class="pill c-high">BUG-04</span> <strong>Tooltip width is fixed at 220px, not
+  responsive to copy length</strong> &nbsp;<span class="tag">confirmed live, 5 of 6 browsers directly; Mobile Safari fixed-but-unconfirmed</span></p>
+  <p>Client, verbatim: <em>"make sure that the tooltip that appears resizes depending on how long
+  the copy is."</em> All 20 tooltips currently share identical placeholder text, so this hasn't
+  surfaced visually yet — but <code>.tooltip-content { width: 220px }</code> is a fixed value and
+  will clip or under-fill as soon as real, variable-length copy goes in.</p>
+  <p><strong>Fix:</strong> replace the fixed width with a <code>max-width</code> plus
+  <code>width: max-content</code>, or size to content with a min/max clamp.</p>
+</div>
+
+<h3>MEDIUM</h3>
+<div class="card">
+  <p><span class="pill c-med">BUG-05</span> <strong>Logo marquee isn't built for a seamless
+  infinite loop</strong> &nbsp;<span class="tag">confirmed live, all 6 browsers (logoCount: 13)</span></p>
+  <p><code>buildLogosHTML()</code> renders the 13 logos once; the CSS keyframe animates
+  <code>translateX(0) → translateX(-50%)</code>, a pattern that only loops seamlessly if the set
+  is duplicated (26 nodes, so the second copy lines up exactly at the -50% mark). With one set,
+  the strip scrolls past all 13 logos, hits empty space, then snaps back to start — a visible jump
+  every cycle instead of the "slow, continuous" effect the client asked for.</p>
+  <p><strong>Fix:</strong> render the logo set twice in <code>buildLogosHTML()</code>.</p>
+</div>
+
+<div class="card">
+  <p><span class="pill c-med">BUG-06</span> <strong>Stale duplicate CSS makes the logo placeholder
+  shorter than its own image's max-height</strong> &nbsp;<span class="tag">confirmed live, all 6 browsers</span></p>
+  <p>Two separate rule blocks target <code>.hero__logos</code>/<code>.logo-placeholder</code> — an
+  older static-row ruleset (scoped, 3 classes, higher specificity) and a newer marquee-animation
+  ruleset (unscoped, lower specificity) that was added without removing the first. Because
+  specificity differs per declared property rather than per rule, the computed style is an
+  unintended merge: <strong><code>height: 48px</code></strong> wins from the older rule while the
+  logo <code>&lt;img&gt;</code> carries <strong><code>max-height: 55px</code></strong> from the
+  newer one — the image can be taller than its own container, and the mismatched
+  <code>flex</code>/<code>width</code> values between the two rulesets are a genuine
+  cross-browser rendering risk beyond just the height overflow.</p>
+  <p><strong>Fix:</strong> delete the old static-row ruleset entirely rather than layering a new
+  one on top.</p>
+  <p><strong>Visually confirmed</strong> in a live Chrome pass on 2026-08-11: as the marquee
+  animates, a sliver of the previous logo visibly peeks out at the strip's edge before the next
+  one settles into place — the overflow this CSS conflict predicts is a real, visible glitch
+  during the scroll, not just a theoretical mismatch.</p>
+</div>
+
+<div class="card">
+  <p><span class="pill c-med">BUG-07</span> <strong>FAQ item 1 opens by default; client asked for
+  all collapsed</strong> &nbsp;<span class="tag">confirmed live, all 6 browsers</span></p>
+  <p>Client, verbatim: <em>"if you could collapse them all… that would be great."</em>
+  <code>buildFaqHTML()</code> sets the <code>open</code> attribute when <code>i === 0</code>.</p>
+  <p><strong>Fix:</strong> remove the <code>i === 0</code> condition so every item starts closed.</p>
+</div>
+
+<div class="card">
+  <p><span class="pill c-med">BUG-09</span> <strong>Quote banner attribution renders at 16px
+  instead of the intended 14px</strong> &nbsp;<span class="tag">found by this Playwright suite, confirmed live</span></p>
+  <p><code>.quote-banner__author</code> (<code>font-size: 14px</code>) is a <code>&lt;p&gt;</code>
+  nested inside <code>.quote-banner__text</code>, which also carries
+  <code>.quote-banner__text p { font-size: 16px }</code>. Both selectors share the same 3 scoped
+  classes, but the latter adds a bare element-type selector (<code>p</code>), giving it
+  <em>higher</em> specificity (0,3,1 vs. 0,3,0) — so the 16px rule wins regardless of source
+  order. This is the one place the client's explicit "every attribution line should be
+  consistent — 14px, gray" rule breaks; the testimonial-card and media-card attributions elsewhere
+  on the page are unaffected since neither has a competing generic-<code>p</code> rule at that
+  specificity.</p>
+  <p><strong>Fix:</strong> scope <code>.quote-banner__text p</code> to exclude
+  <code>.quote-banner__author</code> (<code>:not(.quote-banner__author)</code>), or raise the
+  author rule's specificity to match.</p>
+</div>
+
+<h3>LOW / needs confirmation, not a rendering bug</h3>
+<div class="card">
+  <p><span class="pill c-low">BUG-08</span> <strong>Variation class is <code>cre-t-119</code>, not
+  the expected <code>cre-t-21</code></strong> &nbsp;<span class="tag">confirmed live, all 6 browsers</span></p>
+  <p>Every other AFP test in this repo (<code>cre-t-8</code>…<code>cre-t-19</code>) names its
+  variation class after the test number. This is AFP<strong>21</strong>, so the class should
+  almost certainly be <code>cre-t-21</code> — <code>cre-t-119</code> looks like a copy-paste
+  leftover from unrelated boilerplate. It's internally self-consistent (every CSS selector is
+  also scoped to <code>cre-t-119</code>, so nothing visually breaks), but it risks colliding with
+  any unrelated live experiment that happens to also use that class name, and will confuse
+  QA/reporting cross-referencing against the Trello card and VWO dashboard.</p>
+  <p><strong>Needs client/dev confirmation of the correct VWO variation code before this
+  ships.</strong></p>
+</div>
+
+<h3>ADVISORY</h3>
+<div class="card">
+  <p><strong>Swiper's remote-eval loading pattern</strong> — <code>fetch(...).then(code =&gt; new
+  Function(code)())</code> from <code>cdnjs.cloudflare.com</code>. Checked live: the site's CSP
+  includes <code>'unsafe-eval'</code> in <code>script-src</code>, and Swiper initialized correctly
+  on every one of the 6 tested browsers (confirmed via <code>el.swiper</code> truthiness checks).
+  Not a bug, but worth knowing this pattern is CSP-dependent on a site that
+  <code>_client-notes.md</code> already documents as behaving inconsistently across browsers for
+  other injection techniques (Firefox blocks <code>addStyleTag</code>).</p>
+  <p><strong>No <code>prefers-reduced-motion</code> handling</strong> for the logo marquee
+  animation — worth adding alongside the BUG-05 fix.</p>
+</div>
+
+<!-- ───────────────────────── GAPS FROM FIGMA ───────────────────────── -->
+<h2>4 · Gaps between the client's verbal spec and the Figma file</h2>
+<div class="card">
+  <p>14 items the client described in the video but never actually designed in Figma — each one
+  is a real QA risk because there's no visual reference to check the build against. Full detail in
+  <code>qa-knowledge-base/afp/afp21-membership-page-redesign.md</code> §6; the build's choices for
+  each were reviewed and are reasonable defaults, but flagged here since they weren't
+  client-specified:</p>
+  <ul>
+    <li><strong>No mobile design in Figma at all</strong> (only a desktop frame exists) — the
+      build's mobile breakpoints (hero title 32px/26px, subtitle 16px/15px, stacked content
+      blocks, card-style comparison table) are the developer's own choices, confirmed working
+      correctly across both mobile projects, but have no Figma spec to check against.</li>
+    <li><strong>No tablet design or instruction at all</strong> — out of scope for this round per
+      the user's explicit instruction ("all browsers mobile desktop"); flagged for a future pass.</li>
+    <li>Logo marquee, tooltip content/resize behavior, FAQ accordion icon, mobile carousel
+      peek-treatment, hover/focus states, and the comparison table's mobile stacking pattern were
+      all undesigned in Figma — see the knowledge-base doc for the full list and how the build
+      resolved each.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────── RESOLVED / VERIFIED ───────────────────────── -->
+<h2>5 · Verified correct — not bugs</h2>
+<div class="card">
+  <ul>
+    <li>Content-block image alternation is R,L,R,L,R exactly as specified, confirmed via bounding-box
+      comparison on every desktop-width browser.</li>
+    <li>Testimonial carousel's default 3-up view naturally centers Mario Vasquez (card 2) without
+      needing <code>centeredSlides</code> — matches the client's "this is the one that should show
+      in the middle" note.</li>
+    <li>Swiper's auto-generated pagination-dot count (2, from real slide/breakpoint math) correctly
+      diverges from Figma's placeholder "5 dots for 4 slides" — the build does the right thing even
+      though it doesn't match the mockup.</li>
+    <li>All 16 comparison-table rows across all 4 groups match Figma exactly, including the 3 rows
+      the source video never scrolled far enough to show — confirmed by reading the Figma file's
+      full node tree directly.</li>
+    <li>All 13 logos present as requested (client explicitly asked for all 13; Figma's frame only
+      showed 10) — sourced correctly from the control page / logo libraries.</li>
+    <li>Font-family and line-height on headings and paragraphs correctly inherit from the control
+      site rather than hardcoding Figma's Inter — confirmed by comparing computed styles between
+      the live control page and the variation on the same browser, per the client's explicit rule.</li>
+  </ul>
+</div>
+
+<!-- ───────────────────────── ACTIONS ───────────────────────── -->
+<h2>6 · Recommended actions</h2>
+<div class="card">
+  <h3 style="margin-top:0">Must fix before launch</h3>
+  <ol>
+    <li><strong>Wire up smooth-scroll on the Hero, table-bottom, and Footer JOIN AFP
+      buttons</strong> (BUG-01) — the single highest-value fix; this is the exact behavior the
+      client corrected himself on camera to specify.</li>
+    <li><strong>Make the Start-Membership JOIN AFP mimic the control's real click/href</strong>
+      (BUG-02), preserving the <code>_gl</code> GA linker param — otherwise the test cannot
+      correctly measure the conversion it exists to test.</li>
+    <li><strong>Add <code>target="_blank" rel="noopener"</code></strong> to FREE INFO SESSION
+      (BUG-03).</li>
+    <li><strong>Get client/dev confirmation on the <code>cre-t-119</code> vs <code>cre-t-21</code>
+      naming</strong> (BUG-08) before this ships to the live VWO campaign.</li>
+  </ol>
+  <h3>Before launch, non-blocking</h3>
+  <ul>
+    <li>Duplicate the logo set for a seamless marquee loop, and delete the stale static-row CSS
+      rule underneath it (BUG-05 + BUG-06).</li>
+    <li>Collapse all FAQ items by default (BUG-07).</li>
+    <li>Make the tooltip width responsive to copy length (BUG-04) — low visual risk right now
+      since all tooltips share placeholder text, but will matter the moment real copy lands.</li>
+    <li>Fix the quote-banner attribution's CSS specificity collision (BUG-09).</li>
+  </ul>
+  <h3>QA follow-up</h3>
+  <ul>
+    <li>Re-run just the two Mobile Safari tests still fixed-but-unconfirmed (BUG-04's tooltip
+      check, the FAQ accordion-click check) once the environment is stable — everything else on
+      that project is fully confirmed.</li>
+    <li>Get client answers on the 6 open ambiguities logged in the knowledge-base doc §7 (smooth-
+      scroll destination confirmation, tablet breakpoint decision, tooltip placeholder-vs-hidden
+      decision, and 3 others) before the next QA pass.</li>
+    <li>Re-run the full matrix once BUG-01/02 are fixed — this suite currently documents the
+      confirmed-broken CTA behavior as passing assertions of the <em>current</em> state, matching
+      this repo's established pattern (see SWF139) for tracking known defects without blocking the
+      rest of the suite; each will need updating to assert the corrected behavior once fixed.</li>
+  </ul>
+</div>
+
+<footer>
+  Spec: <code>my-playwright-project/testing/afp21-membership-redesign.spec.js</code> ·
+  Findings: <code>my-playwright-project/qa-knowledge-base/afp/afp21-membership-page-redesign.md</code><br />
+  Preview: VWO campaign <code>59</code>, <code>_vis_preview_data</code> URL param (see spec file for
+  the full link) · Control: <code>financialprofessionals.org/membership/explore-membership/join</code><br />
+  Each Playwright project ran as its own isolated command after a combined 6-project run hit a
+  resource ceiling after 1.1 hours (see §2). No production writes — this page reads content and
+  computed styles only; no cart, account, or membership actions were performed against
+  financialprofessionals.org or eweb.afponline.org.
+</footer>
+
+</div>
+</body>
+</html>

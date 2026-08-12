@@ -1,79 +1,72 @@
-/* https://buckfirelaw.com/case-types/personal-injury/ */
-
-html body.BuckfireLaw_12 .testimonial-card {
-    max-width: 428px;
-    margin: 0 auto;
-    width: 100%;
-    margin-bottom: 20px;
-    margin-top: 15px;
-}
-
-html body.BuckfireLaw_12 .testimonial-card__media {
-    position: relative;
-    width: 100%;
+html body .cre-t-155-LandlordApprovedLink {
     cursor: pointer;
-    overflow: hidden;
-    aspect-ratio: 428 / 240;
+    color: #000000;
 }
 
-html body.BuckfireLaw_12 .testimonial-card__video-el {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
+html body .cre-t-155-LandlordApprovedLink:hover {
+    background: #ffffff !important;
+    color: #0272E4 !important;
 }
 
-html body.BuckfireLaw_12 .testimonial-card__thumb {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-
-html body.BuckfireLaw_12 .testimonial-card__body {
+html body .cre-t-155-accordion_header {
+    background-color: rgba(0, 0, 0, 0);
+    color: #000000;
+    padding-top: 2rem;
+    padding-left: 0rem;
+    padding-bottom: 2rem;
+    padding-right: 0rem;
+    color: inherit;
+    cursor: pointer;
+    font-size: .7em;
+    letter-spacing: .1em;
+    transition: all var(--extras-accordion-duration);
+    text-transform: uppercase;
     display: flex;
-    padding: 12px 0 15px 0;
-    flex-direction: column;
     align-items: center;
-    gap: 5px;
-    align-self: stretch;
-    text-align: center;
-    border-right: 1px solid #D37935;
-    border-bottom: 1px solid #D37935;
-    border-left: 1px solid #D37935;
+    justify-content: space-between;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+    font-family: inherit;
 }
 
-html body.BuckfireLaw_12 .testimonial-card__title {
-    color: #D37935;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 36px;
-    margin: 0;
+html body .cre-t-155-accordion_toggle-icon {
+    fill: currentColor;
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+    transition: transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);
+    -webkit-transition: -webkit-transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);
 }
 
-html body.BuckfireLaw_12 .testimonial-card__quote {
-    color: #363737;
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    margin-top: 5px;
-    margin-bottom: 8px;
+html body .cre-t-155-accordion_item.active .cre-t-155-accordion_header,
+html body .cre-t-155-accordion_item .cre-t-155-accordion_header:hover {
+    color: #0272e4 !important;
 }
 
-html body.BuckfireLaw_12 .testimonial-card__author {
-    color: #363737;
-    text-align: center;
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 20px;
+@media screen and (max-width: 1070px) and (min-width:991px) {
+    html body .oxy-header-left img {
+        width: 350px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    html body .cre-t-155-LandlordApprovedLink {
+        font-size: 14px !important;
+    }
+
+    html body .oxy-header-right nav li {
+        margin-right: 10px !important;
+        margin-left: -5px !important;
+
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    html body .oxy-header-right nav li a,
+    html body .cre-t-155-LandlordApprovedLink {
+        font-size: 12px !important;
+    }
 }

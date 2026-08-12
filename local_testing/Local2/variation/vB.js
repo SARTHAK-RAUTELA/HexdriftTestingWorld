@@ -2,7 +2,7 @@
   try {
     /* main variables */
     var debug = 0;
-    var variation_name = "cre-t-119";
+    var variation_name = "cre-t-21";
 
      var MOUNT_SELECTOR = "#site-main";
 
@@ -54,7 +54,7 @@
 
     /* =====================================================================
        image logo url .
-        
+
        ===================================================================== */
      const logosData = [
       { name: "Pfizer", img: "https://v2.crocdn.com/AFP/test21/pfizer.png" },
@@ -161,7 +161,7 @@
     var contentBlocksData = [
       {
         bigimg: "https://v2.crocdn.com/AFP/test21/img4.jpg",
-        shortimg: "https://v2.crocdn.com/AFP/test21/img10.jpg",
+        shortimg: "https://v2.crocdn.com/AFP/test21/image%2045.png",
         reverse: false,
         tag: "COMMUNITY",
         heading: "Learn From Experienced Practitioners",
@@ -175,7 +175,7 @@
       {
           bigimg: "https://v2.crocdn.com/AFP/test21/img6.jpg",
 
-        shortimg: "https://v2.crocdn.com/AFP/test21/img10.jpg",
+        shortimg: "https://v2.crocdn.com/AFP/test21/Mario-Vasquez%202.png",
         reverse: true,
         tag: "PRACTICAL TOOLS",
         heading: "Put Ideas Into Practice",
@@ -189,7 +189,7 @@
       {
            bigimg: "https://v2.crocdn.com/AFP/test21/img1.jpg",
 
-        shortimg: "https://v2.crocdn.com/AFP/test21/img10.jpg",
+        shortimg: "https://v2.crocdn.com/AFP/test21/image%2048.png ",
 
         reverse: false,
         tag: "STAY CURRENT",
@@ -203,7 +203,7 @@
       {
            bigimg: "https://v2.crocdn.com/AFP/test21/img5.jpg",
 
-        shortimg: "https://v2.crocdn.com/AFP/test21/img10.jpg",
+        shortimg: "https://v2.crocdn.com/AFP/test21/image%2050.png",
 
         reverse: true,
         tag: "CERTIFICATION",
@@ -218,7 +218,7 @@
       {
            bigimg: "https://v2.crocdn.com/AFP/test21/img2.jpg",
 
-        shortimg: "https://v2.crocdn.com/AFP/test21/img10.jpg",
+        shortimg: "https://v2.crocdn.com/AFP/test21/image%2042.png",
 
         reverse: false,
         tag: "LEADERSHIP",
@@ -232,7 +232,7 @@
       },
     ];
 
-  
+
     var DUMMY_TOOLTIP_TEXT = "Short placeholder tooltip text for this benefit.";
 
     var valueTableData = [
@@ -275,7 +275,7 @@
     ];
 
     /* Tooltip icon shown next to each benefit row label — a simple info*/
-      
+
     var TOOLTIP_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.25" stroke="#9CA3AF" stroke-width="1.5"></circle><path d="M6.05 6.5C6.05 5.53 6.91 4.75 8 4.75C9.09 4.75 9.95 5.53 9.95 6.5C9.95 7.2 9.55 7.55 9.05 7.9C8.6 8.2 8.3 8.45 8.3 9" stroke="#9CA3AF" stroke-width="1.2" stroke-linecap="round"></path><circle cx="8" cy="11.25" r="0.75" fill="#9CA3AF"></circle></svg>`;
 
     var faqData = [
@@ -342,11 +342,12 @@
        HTML BUILDERS
        ===================================================================== */
     function buildLogosHTML() {
-      return logosData
+      var single = logosData
         .map(function (logo) {
           return '<div class="placeholder-box logo-placeholder" aria-hidden="true"> <img src="' + logo.img + '" alt="' + logo.name + '" loading="lazy"></div>';
         })
         .join("");
+        return single + single;
     }
 
     function buildTestimonialsHTML() {
@@ -394,9 +395,18 @@
             '<div class="content-block__media">' +
             '<div class="media-card">' +
             '<div class="placeholder-box media-card__photo" aria-hidden="true"> <img src="' + b.bigimg + '" alt="" loading="lazy"><div class="placeholder-box media-card__avatar" aria-hidden="true"><img src="' + b.shortimg + '" alt="" loading="lazy"></div></div>' +
-            ' <div class="media-card__body">' +
-            '<p class="media-card__quote">&ldquo;' + b.quote + "&rdquo;</p>" +
-            '<p class="media-card__author">' + b.authorName + "<span>" + b.authorRole + "</span></p>" +
+           '<div class="media-card__body">' +
+          '<p class="media-card__quote"><span>' + b.quote + ' </span>' +
+          '<span class="parentheses"> ' +
+            '<svg xmlns="http://www.w3.org/2000/svg" width="52" height="37" viewBox="0 0 52 37" fill="none">' +
+                '<path d="M5.2 0L12.2353 12.3333C8.87059 12.3333 5.9902 13.541 3.59412 15.9562C1.19804 18.3715 0 21.275 0 24.6667C0 28.0583 1.19804 30.9618 3.59412 33.3771C5.9902 35.7924 8.87059 37 12.2353 37C15.6 37 18.4804 35.7924 20.8765 33.3771C23.2726 30.9618 24.4706 28.0583 24.4706 24.6667C24.4706 23.4847 24.3304 22.3927 24.05 21.3906C23.7696 20.3885 23.349 19.425 22.7882 18.5L12.2353 0H5.2ZM32.7294 0L39.7647 12.3333C36.4 12.3333 33.5196 13.541 31.1235 15.9562C28.7275 18.3715 27.5294 21.275 27.5294 24.6667C27.5294 28.0583 28.7275 30.9618 31.1235 33.3771C33.5196 35.7924 36.4 37 39.7647 37C43.1294 37 46.0098 35.7924 48.4059 33.3771C50.802 30.9618 52 28.0583 52 24.6667C52 23.4847 51.8598 22.3927 51.5794 21.3906C51.299 20.3885 50.8784 19.425 50.3176 18.5L39.7647 0H32.7294Z" fill="#EEF0F1"></path>' +
+            '</svg>' +
+        '</span>' +
+    '</p>' +
+    '<p class="media-card__author">' +
+        b.authorName +
+        '<span>' + b.authorRole + '</span>' +
+    '</p>'+
             ' </div>'+
             "</div>" +
             "</div>" +
@@ -420,9 +430,9 @@
 
     function buildFaqHTML() {
       return faqData
-        .map(function (f, i) {
+        .map(function (f) {
           return (
-            '<details class="faq-item"' + (i === 0 ? " open" : "") + ">" +
+            '<details class="faq-item">' +
             "<summary>" + f.q + "</summary>" +
             "<p>" + f.a + "</p>" +
             "</details>"
@@ -440,8 +450,8 @@
         '<h1 class="hero__title">Advance Your Treasury and Finance Career with AFP Membership</h1>' +
         '<p class="hero__subtitle">Learn from experienced practitioners, access practical resources, support your professional development and certification, and make better decisions throughout your treasury and finance career.</p>' +
         '<div class="hero__actions">' +
-        '<a href="https://www.financialprofessionals.org/membership/benefits/join-now" class="btn btn--primary">JOIN AFP</a>' +
-        '<a href="https://www.financialprofessionals.org/events/meetings/afp-power-hour--discover-what\'s-possible" class="btn btn--outline">FREE INFO SESSION</a>' +   "</div>" +
+        '<a href="#join" class="btn btn--primary">JOIN AFP</a>' +
+        '<a href="https://www.financialprofessionals.org/events/meetings/afp-power-hour--discover-what\'s-possible" class="btn btn--outline" target="_blank" rel="noopener">FREE INFO SESSION</a>' +   "</div>" +
         '<div class="hero__stat">' +
         '<p class="hero__stat-line"><strong>90%</strong> of members are satisfied with their membership</p>' +
         '<span class="hero__stat-source">AFP 2025 Member Survey</span>' +
@@ -491,13 +501,14 @@
         '<section class="value-table">' +
         '<div class="container">' +
         '<h2 class="section-heading">Over $4,000 in Member Value</h2>' +
+        '<p class="value-table__intro">A single research report or workshop can cost hundreds of dollars. AFP membership includes a full year of learning, research, practical resources and community access for just $545.</p>' +
         '<div class="table-wrapper">' +
         "<table>" +
         "<thead><tr><th>Benefit</th><th>AFP Non-Member</th><th>AFP Member</th></tr></thead>" +
         "<tbody>" + buildValueTableHTML() + "</tbody>" +
         "</table>" +
         "</div>" +
-        '<div class="value-table__cta"><a href="https://www.financialprofessionals.org/membership/benefits/join-now" class="btn btn--primary">JOIN AFP</a></div>' +
+        '<div class="value-table__cta"><a href="#join" class="btn btn--primary">JOIN AFP</a></div>' +
         "</div>" +
         "</section>" +
 
@@ -510,7 +521,13 @@
         '<p class="price"><span class="price__amount">$545 per year</span> </p>' +
         '<p class="price__sub">Individual Membership</p>' +
         '<p class="price__desc">Join more than 10,000 treasury and finance professionals who rely on AFP to make better decisions, stay current and advance their careers.</p>' +
-        '<a href="https://www.financialprofessionals.org/membership/benefits/join-now" class="btn btn--primary">JOIN AFP</a>' +
+        /* BUG-02 fix: this is the ONE JOIN AFP button that should actually
+           navigate. It keeps the old URL only as a no-JS fallback — the
+           click handler wired up in init()/wireStartMembershipJoinButton()
+           mimics a click on the control page's own equivalent button
+           instead, so GA's session-generated cross-domain _gl param and the
+           real /eweb/DynamicPage.aspx destination survive. */
+        '<a href="https://www.financialprofessionals.org/membership/benefits/join-now" id="start-membership-join-btn" class="btn btn--primary">JOIN AFP</a>' +
         '<p class="start-membership__note"><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none">'+
   '<path d="M5.7 12.025L0 6.325L1.425 4.9L5.7 9.175L14.875 0L16.3 1.425L5.7 12.025Z" fill="#027DB6"></path>'+
 '</svg></span> Immediate access to your member benefits</p>' +
@@ -558,7 +575,7 @@
         '<div class="container">' +
         "<h2>Join AFP and Accelerate Your Career</h2>" +
         "<p>Everything you need to keep learning, growing and making better decisions.</p>" +
-        '<a href="https://www.financialprofessionals.org/membership/benefits/join-now" class="btn btn--primary">JOIN AFP</a>' +
+        '<a href="#join" class="btn btn--primary">JOIN AFP</a>' +
         "</div>" +
         "</section>"+
         "</div>"
@@ -572,7 +589,7 @@
 
       if (typeof Swiper === "undefined") return;
       var swiperInstance = new Swiper(".testimonials-swiper", {
-        slidesPerView: 1,
+        slidesPerView: 1.2,
         spaceBetween: 20,
         grabCursor: true,
         observer: true,
@@ -588,10 +605,6 @@
         },
       });
 
-      /* Safety net: late-loading webfonts/images (or a smooth-scroll jump
-         landing mid layout-shift) can leave Swiper's width calc stale,
-         which locks the next/prev buttons in the wrong disabled state.
-         Force a few recalculations after init settles. */
       function refresh() {
         swiperInstance.update();
       }
@@ -601,26 +614,173 @@
       setTimeout(refresh, 1000);
     }
 
+      function findControlJoinAnchor(scopeEl) {
+      if (!scopeEl) return null;
+      var candidates = scopeEl.querySelectorAll(
+        'a[href*="join-now" i], a[href*="DynamicPage.aspx" i]'
+      );
+      for (var i = 0; i < candidates.length; i++) {
+        var a = candidates[i];
+        if (a.target === "_blank") continue;
+        if (/join/i.test(a.textContent || "")) return a;
+      }
+      return null;
+    }
+
+    function wireSmoothScrollLinks(scopeEl) {
+      if (!scopeEl) return;
+      var links = scopeEl.querySelectorAll('a[href^="#"]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function (e) {
+          var targetId = this.getAttribute("href").slice(1);
+          if (!targetId) return;
+          var targetEl = document.getElementById(targetId);
+          if (!targetEl) return;
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    }
+
+    /* Value-table tooltips: click-to-toggle, one open at a time, on both
+       desktop and mobile. Positioned with getBoundingClientRect + fixed
+       coords (see .tooltip-content in vB.css) so it can't get clipped by
+       .table-wrapper's overflow:hidden on small screens. */
+    function initTooltips(scopeEl) {
+      if (!scopeEl) return;
+      var wraps = scopeEl.querySelectorAll(".tooltip-wrap");
+      var activeWrap = null;
+
+      function closeTooltip(wrap) {
+        wrap.classList.remove("is-active");
+        var icon = wrap.querySelector(".tooltip-icon");
+        if (icon) icon.setAttribute("aria-expanded", "false");
+      }
+
+      function positionTooltip(wrap) {
+        var icon = wrap.querySelector(".tooltip-icon");
+        var content = wrap.querySelector(".tooltip-content");
+        if (!icon || !content) return;
+        var margin = 10;
+        var iconRect = icon.getBoundingClientRect();
+        var contentRect = content.getBoundingClientRect();
+
+        var left = iconRect.left + iconRect.width / 2 - contentRect.width / 2;
+        var maxLeft = window.innerWidth - contentRect.width - margin;
+        left = Math.max(margin, Math.min(left, maxLeft));
+
+        var top = iconRect.top - contentRect.height - 10;
+        if (top < margin) {
+          top = iconRect.bottom + 10;
+          content.classList.add("tooltip-content--below");
+        } else {
+          content.classList.remove("tooltip-content--below");
+        }
+
+        var arrowLeft = iconRect.left + iconRect.width / 2 - left;
+        content.style.left = left + "px";
+        content.style.top = top + "px";
+        content.style.setProperty("--arrow-left", arrowLeft + "px");
+      }
+
+      function openTooltip(wrap) {
+        if (activeWrap && activeWrap !== wrap) closeTooltip(activeWrap);
+        wrap.classList.add("is-active");
+        var icon = wrap.querySelector(".tooltip-icon");
+        if (icon) icon.setAttribute("aria-expanded", "true");
+        positionTooltip(wrap);
+        activeWrap = wrap;
+      }
+
+      for (var i = 0; i < wraps.length; i++) {
+        (function (wrap) {
+          var icon = wrap.querySelector(".tooltip-icon");
+          if (!icon) return;
+          icon.setAttribute("aria-expanded", "false");
+
+          icon.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (wrap.classList.contains("is-active")) {
+              closeTooltip(wrap);
+              activeWrap = null;
+            } else {
+              openTooltip(wrap);
+            }
+          });
+
+          icon.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              icon.click();
+            } else if (e.key === "Escape" && wrap.classList.contains("is-active")) {
+              closeTooltip(wrap);
+              activeWrap = null;
+            }
+          });
+        })(wraps[i]);
+      }
+
+      document.addEventListener("click", function (e) {
+        if (activeWrap && !activeWrap.contains(e.target)) {
+          closeTooltip(activeWrap);
+          activeWrap = null;
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (activeWrap) positionTooltip(activeWrap);
+      });
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (activeWrap) positionTooltip(activeWrap);
+        },
+        true
+      );
+    }
+
+    function wireStartMembershipJoinButton(controlAnchor) {
+      var btn = document.getElementById("start-membership-join-btn");
+      if (!btn) return;
+      btn.addEventListener("click", function (e) {
+        if (controlAnchor && typeof controlAnchor.click === "function") {
+          e.preventDefault();
+          controlAnchor.click();
+          return;
+        }
+        if (controlAnchor && controlAnchor.href) {
+          e.preventDefault();
+           window.location.href = controlAnchor.href;
+        }
+        });
+    }
+
     /* Variation Init */
     function init() {
       document.body.classList.add(variation_name);
 
       var mountEl = document.querySelector(MOUNT_SELECTOR);
       if (!mountEl) return;
+
+      var controlJoinAnchor = findControlJoinAnchor(mountEl);
+
       mountEl.innerHTML = buildPageHTML();
 
-    injectSwiperCSS();
+      wireStartMembershipJoinButton(controlJoinAnchor);
+      wireSmoothScrollLinks(mountEl);
+      initTooltips(mountEl);
 
-    injectScripts()
+          injectSwiperCSS();
 
-    .then(() => {
-      initSwiper();
-    })
-    .catch((error) => {
-      console.error("Swiper error:", error);
-    });
+          injectScripts()
 
-   
+          .then(() => {
+            initSwiper();
+          })
+        
+
+
     }
 
     /* Initialise variation */

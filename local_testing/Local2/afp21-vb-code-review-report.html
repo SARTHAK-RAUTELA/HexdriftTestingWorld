@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AFP21 / cre-t-21 — vB.js / vB.css Code Review Report</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#fff; --ink:#12181f; --muted:#5b6672; --line:#e3e7ec;
+    --crit:#c0261b; --high:#d4691a; --med:#9a7b12; --low:#5a6470;
+    --pass:#1a7f4b; --fail:#c0261b; --skip:#7a8492;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1120px;margin:0 auto;padding:32px 20px 72px}
+  header.top{border-bottom:3px solid var(--ink);padding-bottom:18px;margin-bottom:28px}
+  h1{margin:0 0 6px;font-size:26px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:14px}
+  h2{font-size:19px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+  h3{font-size:15px;margin:22px 0 8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:14px 0}
+  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card)}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#eef1f4;font-weight:600;font-size:13px}
+  td.n,th.n{text-align:center;white-space:nowrap}
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+  code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+  code{background:#eceff3;padding:1px 5px;border-radius:4px}
+  pre{background:#12181f;color:#e6edf3;padding:13px 15px;border-radius:7px;overflow-x:auto;font-size:12.5px;line-height:1.5;margin:10px 0}
+  pre code{background:none;padding:0;color:inherit}
+  .pill{display:inline-block;padding:2px 9px;border-radius:11px;font-size:11.5px;font-weight:700;
+        color:#fff;letter-spacing:.03em;text-transform:uppercase}
+  .c-crit{background:var(--crit)} .c-high{background:var(--high)}
+  .c-med{background:var(--med)} .c-low{background:var(--low)} .c-pass{background:var(--pass)}
+  .pass{color:var(--pass);font-weight:700} .fail{color:var(--fail);font-weight:700}
+  .skip{color:var(--skip);font-weight:700}
+  .kpis{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 6px}
+  .kpi{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+  .kpi b{display:block;font-size:23px;line-height:1.2}
+  .kpi span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .note{border-left:4px solid #2f6fb2;background:#eaf2fa;padding:12px 15px;border-radius:0 7px 7px 0;margin:14px 0}
+  .warn{border-left:4px solid var(--crit);background:#fdeceb;padding:12px 15px;border-radius:0 7px 7px 0;margin:14px 0}
+  .ok{border-left:4px solid var(--pass);background:#e9f6ee;padding:12px 15px;border-radius:0 7px 7px 0;margin:14px 0}
+  ul,ol{padding-left:22px} li{margin:5px 0}
+  footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+  .tag{display:inline-block;background:#eceff3;border:1px solid var(--line);border-radius:4px;
+       padding:1px 6px;font-size:11.5px;color:var(--muted)}
+  .finding{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin:16px 0}
+  .finding-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+  .finding-head h3{margin:0;font-size:16px}
+  .checklist-map{color:var(--muted);font-size:12.5px;margin-top:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>AFP21 / cre-t-21 — vB.js / vB.css Code Review</h1>
+  <div class="sub">
+    Association for Financial Professionals · financialprofessionals.org · reviewed against the
+    client-supplied code-quality checklist (injection safety, event-listener hygiene, debounce,
+    caching, cleanup) · report generated 2026-08-12
+  </div>
+</header>
+
+<div class="note">
+  <strong>This is a review, not a fix log.</strong> Nothing in <code>vB.js</code> / <code>vB.css</code>
+  has been changed. Findings below are for triage — decide which to action and in what order.
+</div>
+
+<div class="kpis">
+  <div class="kpi"><b>10</b><span>Checklist items reviewed</span></div>
+  <div class="kpi"><b class="fail">8</b><span>Findings raised</span></div>
+  <div class="kpi"><b class="pass">3</b><span>Items fully compliant</span></div>
+  <div class="kpi"><b>2</b><span>High severity</span></div>
+</div>
+
+<!-- ───────────────────────── SCOPE ───────────────────────── -->
+<h2>1 · Scope</h2>
+<div class="card">
+  <p style="margin-top:0">Files reviewed: <code>local_testing/Local2/variation/vB.js</code> (791 lines)
+  and <code>local_testing/Local2/variation/vB.css</code> (1190 lines) — the "Join AFP / Membership
+  Page Redesign" variation (<code>variation_name = "cre-t-21"</code>), previously QA'd end-to-end
+  and shipped (see <code>afp21-membership-redesign-qa-report.html</code>). This pass is a
+  <strong>code-quality/hygiene review</strong> against a 10-point checklist supplied by the client,
+  not a re-test of visual/functional correctness.</p>
+</div>
+
+<!-- ───────────────────────── CHECKLIST TABLE ───────────────────────── -->
+<h2>2 · Checklist compliance</h2>
+<div class="scroll">
+<table>
+  <thead><tr>
+    <th style="width:34px">#</th><th>Checklist rule</th><th style="width:110px">Status</th><th>Finding</th>
+  </tr></thead>
+  <tbody>
+    <tr><td class="n">1</td><td>Variation class name present on the page</td>
+        <td><span class="pass">✔ Compliant</span></td><td>—</td></tr>
+    <tr><td class="n">2</td><td>Check element doesn't already exist before injecting</td>
+        <td><span class="fail">✘ Missing</span></td><td>CR-01, CR-06</td></tr>
+    <tr><td class="n">3</td><td>Any interval used is cleared via a setTimeout fallback</td>
+        <td><span class="pass">✔ Compliant</span></td><td>—</td></tr>
+    <tr><td class="n">4</td><td>Event handlers wrapped in a single window-flag guard (inject once)</td>
+        <td><span class="fail">✘ Missing</span></td><td>CR-02</td></tr>
+    <tr><td class="n">5</td><td>Fallback exists for conditionally-hidden/failed elements</td>
+        <td><span class="fail">✘ Missing</span></td><td>CR-03</td></tr>
+    <tr><td class="n">6</td><td>Observer / scroll detector is debounced</td>
+        <td><span class="fail">✘ Missing</span></td><td>CR-04</td></tr>
+    <tr><td class="n">7</td><td>Observers disconnected after some condition</td>
+        <td><span class="skip">⚠ Partial</span></td><td>CR-07</td></tr>
+    <tr><td class="n">8</td><td>No unnecessary functions left in the code</td>
+        <td><span class="skip">⚠ Minor</span></td><td>CR-08</td></tr>
+    <tr><td class="n">9</td><td>Fetched URLs cached in session storage, not re-fetched every time</td>
+        <td><span class="fail">✘ Missing</span></td><td>CR-05</td></tr>
+    <tr><td class="n">10</td><td>Anything running under a loop is cleared</td>
+        <td><span class="pass">✔ Compliant</span></td><td>—</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ───────────────────────── FINDINGS ───────────────────────── -->
+<h2>3 · Findings</h2>
+
+<div class="finding">
+  <div class="finding-head">
+    <span class="pill c-high">High</span><h3>CR-01 — No re-injection guard in <code>init()</code></h3>
+  </div>
+  <div class="checklist-map">Checklist #2 — check before injecting</div>
+  <p><code>init()</code> unconditionally overwrites <code>#site-main</code> and rebuilds the whole
+  section every time it runs, with no check for whether the redesign markup is already there.</p>
+  <pre><code>// vB.js:760-768
+function init() {
+  document.body.classList.add(variation_name);
+  var mountEl = document.querySelector(MOUNT_SELECTOR);
+  if (!mountEl) return;
+  var controlJoinAnchor = findControlJoinAnchor(mountEl);
+  mountEl.innerHTML = buildPageHTML();   // &lt;-- no existence check first</code></pre>
+  <p><strong>Why it matters:</strong> if the variation script executes twice on the same page load
+  (SPA-style re-injection by the test platform, a duplicated script tag, back/forward-cache
+  restore), the section is rebuilt from scratch and every listener below gets re-attached on top
+  of the old ones — root cause for CR-02.</p>
+</div>
+
+<div class="finding">
+  <div class="finding-head">
+    <span class="pill c-high">High</span><h3>CR-02 — Listeners not gated behind a one-time-init flag</h3>
+  </div>
+  <div class="checklist-map">Checklist #4 — event handlers under a single window-flag guard</div>
+  <p>None of the following are deduplicated against repeat calls:</p>
+  <ul>
+    <li><code>document.addEventListener("click", ...)</code> — vB.js:724 (closes open tooltip on outside click)</li>
+    <li><code>window.addEventListener("scroll", ..., true)</code> — vB.js:734-740</li>
+    <li><code>window.addEventListener("resize", ...)</code> — vB.js:731-733 (tooltip) and vB.js:611-612 (Swiper refresh)</li>
+    <li><code>wireSmoothScrollLinks()</code> — vB.js:630, attaches a fresh click listener per <code>a[href^="#"]</code> with no dedupe</li>
+  </ul>
+  <p><strong>Why it matters:</strong> combined with CR-01, a second <code>init()</code> run means
+  two independent <code>activeWrap</code> closures both listening for outside clicks — tooltip
+  open/close state can desync between them, and smooth-scroll links fire <code>scrollIntoView</code>
+  twice per click. Standard fix pattern: <code>if (window.__creT21Inited) return; window.__creT21Inited = true;</code>
+  before wiring anything.</p>
+</div>
+
+<div class="finding">
+  <div class="finding-head">
+    <span class="pill c-high">High</span><h3>CR-03 — No fallback if the Swiper CDN fetch fails</h3>
+  </div>
+  <div class="checklist-map">Checklist #5 — fallback when the code doesn't work properly</div>
+  <pre><code>// vB.js:776-780
+injectScripts()
+  .then(() => {
+    initSwiper();
+  })
+  // &lt;-- no .catch()</code></pre>
+  <p><strong>Why it matters:</strong> if the fetch to
+  <code>cdnjs.cloudflare.com/.../swiper-bundle.min.js</code> fails (ad-blocker, CSP, network blip),
+  the rejection is swallowed silently — it's async, so the outer <code>try/catch</code> around the
+  whole IIFE (vB.js:788) never sees it. Result: <code>initSwiper()</code> never runs, and the 4
+  testimonial slides render as an unstyled stack with dead nav buttons and no pagination — with no
+  fallback layout in <code>vB.css</code> for the no-JS-carousel case.</p>
+</div>
+
+<div class="finding">
+  <div class="finding-head">
+    <span class="pill c-med">Medium</span><h3>CR-04 — Scroll/resize handlers are not debounced</h3>
+  </div>
+  <div class="checklist-map">Checklist #6 — observer/scroll detector should debounce</div>
+  <pre><code>// vB.js:734-740
+window.addEventListener(
+  "scroll",
+  function () {
+    if (activeWrap) positionTooltip(activeWrap);
+  },
+  true
+);</code></pre>
+  <p><strong>Why it matters:</strong> <code>positionTooltip()</code> calls
+  <code>getBoundingClientRect()</code> twice and writes 3 inline styles on every scroll tick with
+  no throttle — layout thrashing during fast scroll, most visible on lower-end devices. The resize
+  handlers (vB.js:612, 731-733) have the same gap, lower severity since resize fires far less often.</p>
+</div>
+
+<div class="finding">
+  <div class="finding-head">
+    <span class="pill c-med">Medium</span><h3>CR-05 — Swiper bundle re-fetched every page load, never session-cached</h3>
+  </div>
+  <div class="checklist-map">Checklist #9 — cache fetched URLs in session storage</div>
+  <pre><code>// vB.js:28-40
+const injectScripts = () => {
+  return fetch("https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js")
+    .then((res) => res.text())
+    .then((code) => {
+      new Function(code)();
+      ...</code></pre>
+  <p><strong>Why it matters:</strong> this variation re-initializes on every pageview of the AFP
+  membership page, and every single one triggers a fresh <code>fetch</code> + <code>eval</code> of
+  the same ~150KB bundle. Browser HTTP cache may absorb some of this, but there's no explicit
+  <code>sessionStorage</code> cache, so it isn't guaranteed. Should store the fetched text once per
+  session and read it back on subsequent loads instead of re-fetching.</p>
+</div>
+
+<div class="finding">
+  <div class="finding-head">
+    <span class="pill c-low">Low</span><h3>CR-06 — <code>injectScripts()</code> doesn't check if Swiper is already loaded</h3>
+  </div>
+  <div class="checklist-map">Checklist #2 — check before injecting (specific case)</div>
+  <p><code>injectSwiperCSS()</code> (vB.js:41-42) correctly guards with
+  <code>if (document.querySelector("#cre-swiper-css")) return;</code> before injecting the
+  stylesheet link — but <code>injectScripts()</code> has no equivalent
+  <code>if (typeof window.Swiper === "function") return Promise.resolve();</code> guard before
+  fetching and re-executing the JS bundle. Same root cause as CR-01/CR-02: harmless on a normal
+  single page load, but wasteful (and potentially double-initializing) on any repeat run.</p>
+</div>
+
+<div class="finding">
+  <div class="finding-head">
+    <span class="pill c-low">Low</span><h3>CR-07 — Swiper's internal MutationObserver is never disconnected</h3>
+  </div>
+  <div class="checklist-map">Checklist #7 — observers disconnected after some condition</div>
+  <pre><code>// vB.js:591-596
+var swiperInstance = new Swiper(".testimonials-swiper", {
+  ...
+  observer: true,
+  observeParents: true,
+  ...</code></pre>
+  <p><code>observer: true</code> / <code>observeParents: true</code> makes Swiper spin up its own
+  MutationObserver internally, which is never torn down via
+  <code>swiperInstance.destroy()</code>. Low priority — this page section isn't expected to be
+  removed within a page lifetime — but flagged since it technically doesn't satisfy the rule.</p>
+</div>
+
+<div class="finding">
+  <div class="finding-head">
+    <span class="pill c-low">Low</span><h3>CR-08 — Leftover debug scaffolding; otherwise no dead functions</h3>
+  </div>
+  <div class="checklist-map">Checklist #8 — remove unnecessary functions</div>
+  <p>Every builder/wiring function in the file is called from <code>init()</code> — no genuinely
+  dead functions found. Only loose end: <code>var debug = 0;</code> (vB.js:4) is hardcoded off and
+  only gates a <code>console.log</code> in the outer <code>catch</code> (vB.js:789) — harmless, but
+  worth a pass/fail note since it's inert in production.</p>
+</div>
+
+<!-- ───────────────────────── PRIORITY ───────────────────────── -->
+<h2>4 · Suggested priority order</h2>
+<div class="card">
+  <ol>
+    <li><strong>CR-01 + CR-02</strong> — add the one-time-init guard; everything else downstream of
+    a repeat <code>init()</code> run gets safer once this lands.</li>
+    <li><strong>CR-03</strong> — add <code>.catch()</code> + a basic CSS fallback for the
+    testimonials carousel so a blocked/failed CDN fetch degrades gracefully instead of breaking
+    silently.</li>
+    <li><strong>CR-04</strong> — debounce/throttle the scroll handler (resize is lower priority).</li>
+    <li><strong>CR-05</strong> — session-cache the fetched Swiper bundle.</li>
+    <li><strong>CR-06, CR-07, CR-08</strong> — cleanup, no urgency.</li>
+  </ol>
+</div>
+
+<footer>
+  Generated from a manual review of <code>vB.js</code> / <code>vB.css</code> against the
+  client-supplied 10-point checklist. No code changes applied — pending decision on which findings
+  to action.
+</footer>
+
+</div>
+</body>
+</html>

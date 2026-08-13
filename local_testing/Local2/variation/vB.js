@@ -21,20 +21,48 @@
       }, delayTimeout);
     }
 
-
-
+    function debounce(fn, wait) {
+      var timeoutId;
+      return function () {
+        var args = arguments;
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(function () {
+          fn.apply(null, args);
+        }, wait);
+      };
+    }
 
     //inject scripts
+    var SWIPER_JS_URL = "https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js";
+    var SWIPER_JS_CACHE_KEY = "cre-t-21-swiper-js";
     const injectScripts = () => {
-      return fetch(
-        "https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js"
-      )
+      if (typeof window.Swiper === "function") return Promise.resolve();
+
+      var cachedCode = null;
+      try {
+        cachedCode = sessionStorage.getItem(SWIPER_JS_CACHE_KEY);
+      } catch (e) {
+        cachedCode = null;
+      }
+
+      if (cachedCode) {
+        new Function(cachedCode)();
+        if (typeof window.Swiper === "function") return Promise.resolve();
+      }
+
+      return fetch(SWIPER_JS_URL)
         .then((res) => res.text())
         .then((code) => {
           new Function(code)();
 
           if (typeof window.Swiper !== "function") {
             throw new Error("Swiper failed to initialize");
+          }
+
+          try {
+            sessionStorage.setItem(SWIPER_JS_CACHE_KEY, code);
+          } catch (e) {
+            /* sessionStorage unavailable or full — skip caching, script still ran */
           }
         });
     };
@@ -586,8 +614,6 @@
         slidesPerView: 1.2,
         spaceBetween: 20,
         grabCursor: true,
-        observer: true,
-        observeParents: true,
         pagination: { el: ".swiper-pagination", clickable: true },
         navigation: {
           nextEl: ".testimonials-nav__next",
@@ -602,8 +628,9 @@
       function refresh() {
         swiperInstance.update();
       }
+      var debouncedRefresh = debounce(refresh, 150);
       window.addEventListener("load", refresh);
-      window.addEventListener("resize", refresh);
+      window.addEventListener("resize", debouncedRefresh);
       setTimeout(refresh, 300);
       setTimeout(refresh, 1000);
     }
@@ -623,17 +650,16 @@
 
     function wireSmoothScrollLinks(scopeEl) {
       if (!scopeEl) return;
-      var links = scopeEl.querySelectorAll('a[href^="#"]');
-      for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener("click", function (e) {
-          var targetId = this.getAttribute("href").slice(1);
-          if (!targetId) return;
-          var targetEl = document.getElementById(targetId);
-          if (!targetEl) return;
-          e.preventDefault();
-          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-      }
+      scopeEl.addEventListener("click", function (e) {
+        var link = e.target.closest && e.target.closest('a[href^="#"]');
+        if (!link) return;
+        var targetId = link.getAttribute("href").slice(1);
+        if (!targetId) return;
+        var targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     }
 
     function wireStartMembershipJoinButton(controlAnchor) {
@@ -654,6 +680,9 @@
 
     /* Variation Init */
     function init() {
+      if (window.__creT21Inited) return;
+      window.__creT21Inited = true;
+
       document.body.classList.add(variation_name);
 
       var mountEl = document.querySelector(MOUNT_SELECTOR);
@@ -666,16 +695,19 @@
       wireStartMembershipJoinButton(controlJoinAnchor);
       wireSmoothScrollLinks(mountEl);
 
-          injectSwiperCSS();
+      injectSwiperCSS();
 
-          injectScripts()
-
-          .then(() => {
-            initSwiper();
-          })
-        
-
-
+      injectScripts()
+        .then(() => {
+          initSwiper();
+        })
+        .catch(function (err) {
+          if (debug) console.log(err, "Swiper failed to load in " + variation_name);
+          var testimonialsSection = mountEl.querySelector(".testimonials");
+          if (testimonialsSection) {
+            testimonialsSection.classList.add("testimonials--fallback");
+          }
+        });
     }
 
     /* Initialise variation */

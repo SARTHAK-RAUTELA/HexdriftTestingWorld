@@ -1,4 +1,4 @@
-.Cre_explore-membership_redesing * {
+.cre-t-21 .Cre_explore-membership_redesing * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -318,6 +318,29 @@ section.hero__logos_section .container {
 .cre-t-21 .Cre_explore-membership_redesing .testimonials-nav button.swiper-button-disabled {
   opacity: 0.35;
   cursor: default;
+}
+
+/* Fallback layout if the Swiper bundle fails to load (see vB.js init() .catch()) —
+   shows the same testimonial cards in a static responsive grid instead of a
+   broken/unstyled stack, with the now-inert nav/pagination controls hidden. */
+.cre-t-21 .Cre_explore-membership_redesing .testimonials--fallback .testimonials-swiper {
+  overflow: visible;
+}
+
+.cre-t-21 .Cre_explore-membership_redesing .testimonials--fallback .swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  transform: none;
+}
+
+.cre-t-21 .Cre_explore-membership_redesing .testimonials--fallback .swiper-slide {
+  width: auto;
+}
+
+.cre-t-21 .Cre_explore-membership_redesing .testimonials--fallback .testimonials-nav,
+.cre-t-21 .Cre_explore-membership_redesing .testimonials--fallback .swiper-pagination {
+  display: none;
 }
 
 .cre-t-21 .Cre_explore-membership_redesing .testimonial-card {
@@ -1097,6 +1120,7 @@ section.hero__logos_section .container {
 
   .cre-t-21 .Cre_explore-membership_redesing .value-table__cta {
     padding: 22px 32px 22px 0;
+    box-shadow: 1px -8px 8px rgba(0, 0, 0, 0.05);
   }
 
   /* Start membership */

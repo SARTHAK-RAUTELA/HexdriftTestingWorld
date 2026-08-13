@@ -233,50 +233,44 @@
     ];
 
 
-    var DUMMY_TOOLTIP_TEXT = "Short placeholder tooltip text for this benefit.";
-
     var valueTableData = [
       {
         group: "Learn &amp; Develop",
         items: [
-          { benefit: "AFP Learn Interactive Platform", nonMember: "Not Available", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Live Webinars (24+ per year)", nonMember: "$50 per webinar", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Live Virtual Workshops (4+ per year)", nonMember: "$295 per workshop", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "On-Demand Webinars &amp; Courses", nonMember: "Not Available", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Digital Badges", nonMember: "$50 per badge", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
+          { benefit: "AFP Learn Interactive Platform", nonMember: "Not Available", member: "Included" },
+          { benefit: "Live Webinars (24+ per year)", nonMember: "$50 per webinar", member: "Included" },
+          { benefit: "Live Virtual Workshops (4+ per year)", nonMember: "$295 per workshop", member: "Included" },
+          { benefit: "On-Demand Webinars &amp; Courses", nonMember: "Not Available", member: "Included" },
+          { benefit: "Digital Badges", nonMember: "$50 per badge", member: "Included" },
         ],
       },
       {
         group: "Community &amp; Practitioner Insights",
         items: [
-          { benefit: "AFP Collaborate Community", nonMember: "Not Available", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Virtual Member Meet-Ups (6+ per year)", nonMember: "$50 per meet-up", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Member Networking Opportunities", nonMember: "Limited Access", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
+          { benefit: "AFP Collaborate Community", nonMember: "Not Available", member: "Included" },
+          { benefit: "Virtual Member Meet-Ups (6+ per year)", nonMember: "$50 per meet-up", member: "Included" },
+          { benefit: "Member Networking Opportunities", nonMember: "Limited Access", member: "Included" },
         ],
       },
       {
         group: "Research &amp; Practical Resources",
         items: [
-          { benefit: "Research Reports", nonMember: "$295 per report", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Tools &amp; Templates", nonMember: "Not Available", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Industry Benchmarking Resources", nonMember: "Limited Access", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Practical Guides &amp; Checklists", nonMember: "Limited Access", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
+          { benefit: "Research Reports", nonMember: "$295 per report", member: "Included" },
+          { benefit: "Tools &amp; Templates", nonMember: "Not Available", member: "Included" },
+          { benefit: "Industry Benchmarking Resources", nonMember: "Limited Access", member: "Included" },
+          { benefit: "Practical Guides &amp; Checklists", nonMember: "Limited Access", member: "Included" },
         ],
       },
       {
         group: "Certification &amp; Professional Savings",
         items: [
-          { benefit: "Member Pricing for AFP Events", nonMember: "Standard Pricing", member: "Discounted", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Member Pricing for Certification", nonMember: "Standard Pricing", member: "Discounted", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Certification Credit Opportunities", nonMember: "Pay Per Activity", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
-          { benefit: "Professional Development Resources", nonMember: "Limited Access", member: "Included", tooltip: DUMMY_TOOLTIP_TEXT },
+          { benefit: "Member Pricing for AFP Events", nonMember: "Standard Pricing", member: "Discounted" },
+          { benefit: "Member Pricing for Certification", nonMember: "Standard Pricing", member: "Discounted" },
+          { benefit: "Certification Credit Opportunities", nonMember: "Pay Per Activity", member: "Included" },
+          { benefit: "Professional Development Resources", nonMember: "Limited Access", member: "Included" },
         ],
       },
     ];
-
-    /* Tooltip icon shown next to each benefit row label — a simple info*/
-
-    var TOOLTIP_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.25" stroke="#9CA3AF" stroke-width="1.5"></circle><path d="M6.05 6.5C6.05 5.53 6.91 4.75 8 4.75C9.09 4.75 9.95 5.53 9.95 6.5C9.95 7.2 9.55 7.55 9.05 7.9C8.6 8.2 8.3 8.45 8.3 9" stroke="#9CA3AF" stroke-width="1.2" stroke-linecap="round"></path><circle cx="8" cy="11.25" r="0.75" fill="#9CA3AF"></circle></svg>`;
 
     var faqData = [
       {
@@ -422,7 +416,7 @@
       valueTableData.forEach(function (group) {
         rows += `<tr class="table-group"><td colspan="3">${group.group}</td></tr>`;
         group.items.forEach(function (item) {
-          rows += `<tr><td data-label="Benefit"><span class="benefit-label">${item.benefit}<span class="tooltip-wrap"><span class="tooltip-icon" tabindex="0" role="button" aria-label="More info about ${item.benefit}">${TOOLTIP_ICON_SVG}</span><span class="tooltip-content" role="tooltip">${item.tooltip}</span></span></span></td><td data-label="AFP Non-Member">${item.nonMember}</td><td data-label="AFP Member" class="is-included"><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M5.7 12.025L0 6.325L1.425 4.9L5.7 9.175L14.875 0L16.3 1.425L5.7 12.025Z" fill="#0076A8"></path></svg></span> ${item.member}</td></tr>`;
+          rows += `<tr><td data-label="Benefit">${item.benefit}</td><td data-label="AFP Non-Member">${item.nonMember}</td><td data-label="AFP Member" class="is-included"><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none"><path d="M5.7 12.025L0 6.325L1.425 4.9L5.7 9.175L14.875 0L16.3 1.425L5.7 12.025Z" fill="#0076A8"></path></svg></span> ${item.member}</td></tr>`;
         });
       });
       return rows;
@@ -642,104 +636,6 @@
       }
     }
 
-    /* Value-table tooltips: click-to-toggle, one open at a time, on both
-       desktop and mobile. Positioned with getBoundingClientRect + fixed
-       coords (see .tooltip-content in vB.css) so it can't get clipped by
-       .table-wrapper's overflow:hidden on small screens. */
-    function initTooltips(scopeEl) {
-      if (!scopeEl) return;
-      var wraps = scopeEl.querySelectorAll(".tooltip-wrap");
-      var activeWrap = null;
-
-      function closeTooltip(wrap) {
-        wrap.classList.remove("is-active");
-        var icon = wrap.querySelector(".tooltip-icon");
-        if (icon) icon.setAttribute("aria-expanded", "false");
-      }
-
-      function positionTooltip(wrap) {
-        var icon = wrap.querySelector(".tooltip-icon");
-        var content = wrap.querySelector(".tooltip-content");
-        if (!icon || !content) return;
-        var margin = 10;
-        var iconRect = icon.getBoundingClientRect();
-        var contentRect = content.getBoundingClientRect();
-
-        var left = iconRect.left + iconRect.width / 2 - contentRect.width / 2;
-        var maxLeft = window.innerWidth - contentRect.width - margin;
-        left = Math.max(margin, Math.min(left, maxLeft));
-
-        var top = iconRect.top - contentRect.height - 10;
-        if (top < margin) {
-          top = iconRect.bottom + 10;
-          content.classList.add("tooltip-content--below");
-        } else {
-          content.classList.remove("tooltip-content--below");
-        }
-
-        var arrowLeft = iconRect.left + iconRect.width / 2 - left;
-        content.style.left = left + "px";
-        content.style.top = top + "px";
-        content.style.setProperty("--arrow-left", arrowLeft + "px");
-      }
-
-      function openTooltip(wrap) {
-        if (activeWrap && activeWrap !== wrap) closeTooltip(activeWrap);
-        wrap.classList.add("is-active");
-        var icon = wrap.querySelector(".tooltip-icon");
-        if (icon) icon.setAttribute("aria-expanded", "true");
-        positionTooltip(wrap);
-        activeWrap = wrap;
-      }
-
-      for (var i = 0; i < wraps.length; i++) {
-        (function (wrap) {
-          var icon = wrap.querySelector(".tooltip-icon");
-          if (!icon) return;
-          icon.setAttribute("aria-expanded", "false");
-
-          icon.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            if (wrap.classList.contains("is-active")) {
-              closeTooltip(wrap);
-              activeWrap = null;
-            } else {
-              openTooltip(wrap);
-            }
-          });
-
-          icon.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              icon.click();
-            } else if (e.key === "Escape" && wrap.classList.contains("is-active")) {
-              closeTooltip(wrap);
-              activeWrap = null;
-            }
-          });
-        })(wraps[i]);
-      }
-
-      document.addEventListener("click", function (e) {
-        if (activeWrap && !activeWrap.contains(e.target)) {
-          closeTooltip(activeWrap);
-          activeWrap = null;
-        }
-      });
-
-      window.addEventListener("resize", function () {
-        if (activeWrap) positionTooltip(activeWrap);
-      });
-      window.addEventListener(
-        "scroll",
-        function () {
-          if (activeWrap) positionTooltip(activeWrap);
-        },
-        true
-      );
-    }
-
     function wireStartMembershipJoinButton(controlAnchor) {
       var btn = document.getElementById("start-membership-join-btn");
       if (!btn) return;
@@ -769,7 +665,6 @@
 
       wireStartMembershipJoinButton(controlJoinAnchor);
       wireSmoothScrollLinks(mountEl);
-      initTooltips(mountEl);
 
           injectSwiperCSS();
 

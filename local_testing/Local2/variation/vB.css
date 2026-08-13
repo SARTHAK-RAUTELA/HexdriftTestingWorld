@@ -610,81 +610,6 @@ section.hero__logos_section .container {
 .cre-t-21 .Cre_explore-membership_redesing .value-table__cta .btn--primary {
     max-width: 171px;
 }
-/* Value-table benefit tooltip — add these rules to your existing stylesheet.
-   Only the classes needed for the new tooltip icon/box in buildValueTableHTML. */
-
-.benefit-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.tooltip-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.tooltip-icon {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  line-height: 0;
-}
-
-.tooltip-content {
-  /* Click-to-open tooltip: positioned as `fixed` (coordinates computed in JS
-     from the icon's bounding rect) instead of `absolute` inside `.tooltip-wrap`.
-     `.table-wrapper` has `overflow: hidden` for its rounded corners, which was
-     clipping the old absolutely-positioned tooltip on mobile. `fixed` is laid
-     out against the viewport, so it escapes that clipping ancestor. */
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #1f2937;
-  color: #ffffff;
-  font-size: 13px;
-  line-height: 1.4;
-  padding: 8px 12px;
-  border-radius: 6px;
-  width: max-content;
-  max-width: 280px;
-  min-width: 160px;
-  text-align: left;
-  white-space: normal;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(4px);
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 9999;
-}
-
-.tooltip-content::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  /* JS sets --arrow-left per open tooltip so the arrow still points at the
-     icon even when the box has been shifted to stay inside the viewport. */
-  left: var(--arrow-left, 50%);
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: #1f2937 transparent transparent transparent;
-}
-
-.tooltip-content.tooltip-content--below::after {
-  top: auto;
-  bottom: 100%;
-  border-color: transparent transparent #1f2937 transparent;
-}
-
-.tooltip-wrap.is-active .tooltip-content {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
-}
 
 /* =========================================================================
    6. START YOUR AFP MEMBERSHIP
@@ -1092,7 +1017,7 @@ section.hero__logos_section .container {
 
   .cre-t-21 .Cre_explore-membership_redesing thead th,
   .cre-t-21 .Cre_explore-membership_redesing tbody td {
-    padding: 12px 16px;
+    padding: 12px 12px;
     font-size: 14px;
   }
 
@@ -1101,16 +1026,20 @@ section.hero__logos_section .container {
     width: 150px;
   }
 
+  .cre-t-21 .Cre_explore-membership_redesing thead th:nth-child(3) {
+    padding-left: 18px;
+  }
+
   /* Wider than AFP Member so "AFP Non-Member" fits on one line instead
      of wrapping in the header. */
   .cre-t-21 .Cre_explore-membership_redesing thead th:nth-child(2),
   .cre-t-21 .Cre_explore-membership_redesing tbody td:nth-child(2) {
-    width: 195px;
+    width: 122px;
   }
 
   .cre-t-21 .Cre_explore-membership_redesing thead th:first-child,
   .cre-t-21 .Cre_explore-membership_redesing tbody td:first-child {
-    min-width: 188px;
+    min-width: 165px;
   }
 
   /* table-layout is auto, so a specified width is only a hint — the
@@ -1147,7 +1076,7 @@ section.hero__logos_section .container {
        inherited the 16px used everywhere else, leaving it out of step
        with the header and the rows above/below it. */
     background: #fbfcfd;
-    padding: 12px 16px;
+    padding: 12px 12px;
   }
 
   /* Row divider lines: border on <tr> only renders in the collapsed
@@ -1164,13 +1093,6 @@ section.hero__logos_section .container {
 
   .cre-t-21 .Cre_explore-membership_redesing tbody tr:last-child td {
     border-bottom: none;
-  }
-
-  /* Benefit names are now in a narrower frozen column and will wrap
-     more often — keep the info icon pinned to the top line instead of
-     centering between wrapped lines. */
-  .cre-t-21 .Cre_explore-membership_redesing .benefit-label {
-    align-items: flex-start;
   }
 
   .cre-t-21 .Cre_explore-membership_redesing .value-table__cta {

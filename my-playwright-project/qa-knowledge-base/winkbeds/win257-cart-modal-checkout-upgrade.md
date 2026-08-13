@@ -324,6 +324,98 @@ browsers/day" pattern holding even when one of the three is a partial/diagnostic
 
 ---
 
+## SESSION 4 (2026-08-13) — re-test against updated code, now at v2.js/v2.css
+
+**File relocation, not a new variation.** The cre-t-257 code the client sent for this re-test
+lives at `local_testing/Local2/variation/v2.js` + `v2.css`, not `vB.js`/`vB.css`. `vB.js`/`vB.css`
+are shared scratch files reused across many unrelated QA jobs in this repo and had since been
+overwritten (uncommitted) with unrelated AFP21 (cre-t-21) work-in-progress from a later session —
+confirmed by diffing; neither file has ever held cre-t-257 content in a git commit, only in
+working-tree state during whichever session was actively testing it. The spec
+(`winkbeds-win257-cart-modal.spec.js`) `VB_JS`/`VB_CSS` constants were repointed at `v2.js`/
+`v2.css` accordingly. Treat any future WIN257 work as living at `v2.js`/`v2.css`, and do not
+assume `vB.js`/`vB.css` reflects this variation without checking `variation_name` first.
+
+### BUG-01 is FIXED — confirmed on Chrome, Firefox and Mobile Safari
+`init()` now gates on plain `waitForElement("body", init, 50, 15000)` and
+`modalInsertion()` injects via `insertBeforeEnd("body", modalHtml)` — exactly the fix this KB
+recommended. TC-02 (modal must appear on any page, tested via homepage injection) now PASSES on
+every browser run this session. This is the first confirmed real fix across all sessions of this
+QA.
+
+### Everything else checked is still open, confirmed live on 2-3 browsers each
+Static reading of `v2.js` plus live TC results agree: BUG-02, BUG-03, BUG-04, BUG-06, BUG-11 are
+unchanged from the code documented in SESSION 1/2 (line numbers shift slightly but the logic is
+identical — cart removed before replacement resolves, redirect unconditional on the `return`
+paths, `title.includes('winkbed')` substring match, no CTA in-flight guard, click-only
+close/CTA with no Escape handler). BUG-14 (the TC-40 discount-without-upgrade combination) is
+also still live. Confirmed failing on live runs this session:
+- **TC-10 (BUG-04)** — Chrome, Firefox, Mobile Safari.
+- **TC-28, TC-29 (BUG-11)** — Chrome, Firefox, Mobile Safari.
+- **TC-32 (BUG-02)** — Chrome, Firefox. (Mobile Safari's attempt hit the 429 limiter first — see below.)
+- **TC-33 (BUG-06)** — Chrome, Firefox. On Chrome this time three rapid clicks produced
+  `count:4` (qty 4, not the qty-9-writes shape seen historically) — same defect, timing-dependent
+  write count, consistent with the "timing race, not an engine difference" finding from SESSION 2.
+- **TC-40 (BUG-03+BUG-04)** — Chrome, Firefox, Mobile Safari. Mobile Safari's version of this
+  case did NOT get blocked by the 429 (needs zero cart writes to reproduce — the decoy product
+  is already the only cart contents), so it stands as a clean confirmation even inside the
+  rate-limited window.
+- **TC-08 (previously logged as BUG-05, spec-red)** — now PASSES on Chrome, Firefox and Mobile
+  Safari. TC-08 exercises the real Convert **activation's** qty gate, not `v2.js`'s own
+  `winkbedItems.length !== 1` check — those are two separate qualification layers. The activation
+  is unchanged from prior sessions, so this is most likely a previous mis-diagnosis rather than a
+  fix in this code drop; `v2.js` itself still has no quantity check in
+  `upgradeWinkbedToFrostCooling`, so BUG-05 should stay open until the activation's behavior here
+  is independently re-verified — do not close it on this evidence alone.
+- **TC-04** flaked once on Chrome (failed at 11.2s mid-matrix, passed cleanly at 37.2s on an
+  isolated re-run). Consistent with the known activation-timing sensitivity documented in
+  SESSION 3 — not treated as a new defect.
+
+### Chrome Desktop: 43/43, 36 passed / 7 failed
+Run was interrupted once mid-Group-D (a `page.reload`/test-timeout of "1.1h" on TC-30 that is
+almost certainly the host machine suspending during a long background wait between agent
+check-ins, not a real hang — Group D's configured timeout is 150s). Retried Group D alone (9/9
+cases, clean) plus the never-reached Group E (5/5, clean) to complete the matrix. Final set
+matches SESSION 2's original Chrome baseline count (36/7) but with a different composition:
+TC-02 and TC-08 flipped to pass (see above), TC-04 flaked to fail once instead.
+
+### Mobile Safari (iPhone 12): 43/43 attempted — first-ever full run past the historical 0/43 wall
+Groups A/B/C/E completed cleanly (30/35 passed; the only non-Group-D failures were the expected
+TC-10/TC-28/TC-29 spec reds plus one TC-38 90s timeout, likely a symptom of the rate limiter
+slowing subsequent page loads rather than a real hang). Group D then hit the same HTTP 429
+signature documented in SESSION 3 (`/cart.js unusable after 4 attempts`) partway through: TC-30's
+4 combos and TC-31/32/33/34 (8 of the 9 Group D cases) are **inconclusive, not confirmed either
+way** — some show partial real cart writes consistent with the swap actually working (e.g. the
+Softer/King combo left a correct `King with Frost Cooling Cover` cart but the case failed only on
+the missing redirect, which is exactly what BUG-03's "thrown errors skip the redirect" behavior
+would produce if a later fetch got 429'd), but none should be read as a clean pass or a clean
+repro. TC-40 alone in Group D avoided the limiter (needs no cart writes) and confirmed BUG-03+
+BUG-04 live on WebKit mobile for the first time.
+
+User decision: stop here rather than immediately retry into a possibly-still-hot limiter
+(consistent with the standing "if you see 429: stop, wait, resume" guidance) — Mobile Safari's
+Group D remains a coverage gap, same shape as every prior session, just 8 cases smaller (TC-40
+now confirmed).
+
+### Firefox Desktop: 43/43, bonus data (not originally in this session's requested scope)
+32 passed / 11 failed. Same 6 confirmed defects as Chrome (BUG-02, BUG-04, BUG-06, BUG-11 x2,
+BUG-03+BUG-04). The other 5 failures (TC-16, two of the four TC-30 combos, TC-34, TC-35) all
+trace to a single Firefox browser-context crash mid-run
+(`Protocol error (Browser.removeBrowserContext): can't access property "_maybeDontRestoreTabs"...`)
+that cascaded through the rest of that project's Group D/E — a Playwright/Firefox harness
+instability, not a v2.js defect. Not independently re-verified this session; if Firefox coverage
+matters for the client deliverable, re-run at least those 5 cases in isolation before reporting
+them either way.
+
+### Net assessment for this code drop
+Of the 6 CRITICAL/HIGH defects previously documented as live in vB.js's cre-t-257 code
+(BUG-01/02/03/04/06/11), **only BUG-01 is fixed**. BUG-02, BUG-03, BUG-04, BUG-06, BUG-11, and the
+compound BUG-14/TC-40 path remain reproducible on every browser tested. Recommendation stands:
+do not launch until BUG-02/03/04 are addressed together (the discount-without-upgrade path is
+still fully live).
+
+---
+
 ## QA RUN STATUS (session 1 — superseded by SESSION 2 above)
 
 Spec: `my-playwright-project/testing/winkbeds-win257-cart-modal.spec.js` (39 cases x 6 projects).

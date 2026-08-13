@@ -29,11 +29,11 @@ const EFORCE_VAR = '_conv_eforce=100350199.1003183627';
 const EFORCE_CTL = '_conv_eforce=100350199.1003183626';
 
 const VB_JS = fs.readFileSync(
-  path.join(__dirname, '..', '..', 'local_testing', 'Local2', 'variation', 'vB.js'),
+  path.join(__dirname, '..', '..', 'local_testing', 'Local2', 'variation', 'v2.js'),
   'utf8',
 );
 const VB_CSS = fs.readFileSync(
-  path.join(__dirname, '..', '..', 'local_testing', 'Local2', 'variation', 'vB.css'),
+  path.join(__dirname, '..', '..', 'local_testing', 'Local2', 'variation', 'v2.css'),
   'utf8',
 );
 

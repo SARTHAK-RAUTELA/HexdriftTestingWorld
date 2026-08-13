@@ -70,6 +70,23 @@ At **6:12–7:13** he explicitly retracted that (*"rewind what I was saying befo
 
 > ⚠️ **Different domain, and the URL carries GA cross-domain linker params (`_gl`, `_ga`, `_hstc`).** The client said *"mimic a click on this button"* — not "link to this URL". Hardcoding the href strips the linker and **breaks cross-domain attribution**, which for a membership-conversion test destroys the metric the test exists to measure. Correct implementation reads the control anchor's live `href` at click time, or dispatches a click on the control element.
 
+**Correction (2026-08-13): that recorded target is only the anchor's static `href`, not where an anonymous
+visitor actually lands.** `AFPMbrApplication` itself 302-redirects any unauthenticated request straight to
+AFP's login gate — verified directly via `curl`:
+```
+GET https://eweb.afponline.org/eweb/DynamicPage.aspx?Site=afp&WebCode=AFPMbrApplication&ct=us
+→ HTTP/1.1 302 Found
+  Location: /eWeb/DynamicPage.aspx?WebCode=LoginRequired&expires=yes&Site=afp
+```
+Final URL for a logged-out session: `https://eweb.afponline.org/eWeb/DynamicPage.aspx?WebCode=LoginRequired&expires=yes&Site=afp`.
+So for the overwhelming majority of real visitors (no active AFP member session), clicking "JOIN AFP" inside
+"Start Your AFP Membership" — on the control page **or** on this variation, since it mimics the control's own
+click — actually surfaces AFP's login wall, not the membership application form. `AFPMbrApplication` only
+serves real content once already authenticated; the "7:02" observation above was presumably made from an
+already-logged-in session and only captured the first hop. This does not change BUG-02's fix (still read the
+control anchor's live `href`/dispatch its click, not hardcode a URL) — it only corrects what the *end* result
+of doing that correctly looks like for a typical anonymous visitor.
+
 ---
 
 ## 4. Styling rule

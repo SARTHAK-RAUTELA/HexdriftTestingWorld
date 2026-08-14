@@ -43,6 +43,14 @@
     QA method: local <code>v2.js</code>/<code>v2.css</code> injected onto the live pages (force URLs not yet published
     to Convert.com at test time)
   </div>
+  <div class="meta">
+    <strong>Re-verified 2026-08-14:</strong> full 7-project suite (490/490) re-run live against
+    <code>rentersinsurancegurus.com</code> after the shared <code>v2.js</code>/<code>v2.css</code> scratch files were
+    briefly overwritten by an unrelated ticket (WIN257/cre-t-257) — restored from commit <code>8123c29</code> before
+    this re-run. Identical pass count and bug findings to the original 2026-08-12 run; one transient Edge Desktop
+    timeout on the injected-nav-link wait (flaky CDN/injection timing, not a regression) passed clean on immediate
+    retry.
+  </div>
 
   <div class="summary-grid">
     <div class="stat pass"><div class="num">490 / 490</div><div>tests passed</div></div>

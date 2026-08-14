@@ -5,7 +5,7 @@
 **Report:** `local_testing/Local2/cre-t-155-landlord-approved-faq-qa-report.html`
 **Screenshots dir:** `my-playwright-project/cre-t-155-screenshots/`
 **Site:** `https://rentersinsurancegurus.com` — `/`, `/comparison/`, `/california/`
-**Test date:** August 2026
+**Test date:** August 2026 (original run 2026-08-12; re-verified live 2026-08-14, see note below)
 **Browsers:** Chrome, Firefox, Edge, Safari Desktop + Mobile Chrome (Pixel 5), Mobile Safari (iPhone 12) + **Tablet (iPad Gen 7)** — 7 projects total (Tablet project newly added to `playwright.config.js` for this test)
 **Variation class:** `cre-t-155` · Convert experiment `100052625` (control `...824`, variation `...825`)
 **Result:** 490/490 passed (70 TCs × 7 browsers), zero failures on any browser
@@ -55,6 +55,21 @@ sentence removed, so the answer now renders as plain text). Fix verified on all 
   inherit;` later in the same rule — dead declaration. No visible effect on this page (the inherited color
   also resolves to black), confirmed via static source check rather than a computed-style assertion (see
   Test/harness notes below).
+
+### Re-verification (2026-08-14)
+
+Full 7-project suite re-run live against `rentersinsurancegurus.com` at the user's request. The shared
+`local_testing/Local2/variation/v2.js`/`v2.css` scratch files had been overwritten in the interim by the
+unrelated WIN257/cre-t-257 test (2026-08-13) — **these files are a shared scratch location reused across
+tickets, not a per-ticket snapshot**; always `grep -o "cre-t-[0-9]*"` them before trusting their contents
+for a given ticket. Restored the correct cre-t-155 code from commit `8123c29` before re-running, then
+restored v2.js/v2.css back to the WIN257 content afterward so that ticket's in-progress work wasn't
+disturbed.
+
+Result: **490/490 passed again**, identical to the original run — same bugs (BUG-A/B/C/D still open,
+BUG-CONTENT-01 still fixed), no regressions on the live site in the 2-day gap. One transient failure on
+Edge Desktop (timeout waiting for the injected nav link on `/comparison/`) passed clean on immediate
+retry — flaky injection/CDN timing, not a real bug.
 
 ### Test/harness notes
 

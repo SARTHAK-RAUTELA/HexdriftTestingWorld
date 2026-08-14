@@ -73,13 +73,26 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 
 **Adding a new test?** Add it to BOTH tables: the client row above and its test-type row here (create a new type row if none fits — and add a matching checklist in `_shared/test-type-checklists.md`).
 
-## Deleted source files (July 9, 2026)
+## Deleted source files (July 9, 2026; second pass August 14, 2026)
 
 All spec files (`testing/*.spec.js`), custom reporters (`*-reporter.js`), fanorate scripts, and raw screenshot
 folders were **deleted after being documented here**. Generated HTML reports (screenshots embedded) live in
 `local_testing/Local2/`. Recover any deleted file from git history (commit `ceb8b12` or later). The reusable
 custom-reporter pattern is preserved in
 [renters-insurance-gurus/cre-t-136-insurer-alert.md](renters-insurance-gurus/cre-t-136-insurer-alert.md).
+
+A second cleanup pass (2026-08-14) removed everything that had accumulated since and was already fully written
+up here: the AFP21, Buckfire (both tests), CRE-T-144, CRE-T-155, SWF139, SWF146, SWF151 (original build only —
+see below), Thumbtack, WIN257, and Fanorate spec files/screenshot folders/data files, plus the six WIN257
+SESSION 4 run logs (`run-chrome*.log`, `run-firefox.log`, `run-mobilesafari.log`) whose results are captured in
+[winkbeds/win257-cart-modal-checkout-upgrade.md](winkbeds/win257-cart-modal-checkout-upgrade.md). Recover from
+git history at or before commit `2490532`.
+
+**Not deleted:** `testing/swf151-new-build.spec.js` — this is the in-progress SWF151 sort-feature *rebuild*
+(against `local_testing/swf151-new-code/`, not yet in the Convert experiment). It has no completed run results
+yet, and [pet-insurance-gurus/swf151-sort-order.md](pet-insurance-gurus/swf151-sort-order.md) still documents
+the OLD build (wrong selectors for the rebuild) — that KB entry needs a rewrite once the rebuild is verified
+live, not before.
 
 ## Conventions
 

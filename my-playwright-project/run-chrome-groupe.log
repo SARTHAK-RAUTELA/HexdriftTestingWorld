@@ -1,0 +1,11 @@
+
+Running 5 tests using 1 worker
+
+  ✓  1 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:978:3 › E. Responsive & hygiene › TC-35 Modal fits the viewport with no horizontal overflow (37.8s)
+  ✓  2 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:1021:3 › E. Responsive & hygiene › TC-36 Snowflakes do not overlap the CTA or the title (24.4s)
+  ✓  3 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:1041:3 › E. Responsive & hygiene › TC-37 Title uses the mobile type ramp below 768px (20.1s)
+  ✓  4 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:1061:3 › E. Responsive & hygiene › TC-38 No JS errors attributable to the variation (19.8s)
+  ✓  5 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:1137:3 › E. Responsive & hygiene › TC-39 Background must be scroll-locked while the modal is open (17.6s)
+
+  5 passed (2.1m)
+EXIT_CODE=0

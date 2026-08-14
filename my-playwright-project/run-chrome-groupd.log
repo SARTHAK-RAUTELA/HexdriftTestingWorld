@@ -1,0 +1,127 @@
+
+Running 9 tests using 1 worker
+
+  ✓  1 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Luxury Firm / Queen (1.2m)
+  ✓  2 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Softer / King (33.5s)
+  ✓  3 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Firmer / Cal. King (34.9s)
+  ✓  4 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Plus / Twin XL (33.5s)
+  ✓  5 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:799:3 › D. CTA swap & redirect › TC-31 Spinner replaces the CTA label while the swap runs (24.4s)
+  ✘  6 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete (33.1s)
+  ✘  7 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart (39.5s)
+  ✘  8 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded (32.8s)
+  ✓  9 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:959:3 › D. CTA swap & redirect › TC-34 Discount URL is exactly the Figma-specified link (32.7s)
+
+
+  1) [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete 
+
+    Error: BUG-02: the original item is removed before the replacement is resolved, so a failure empties the cart
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      843 |       after.count,
+      844 |       'BUG-02: the original item is removed before the replacement is resolved, so a failure empties the cart',
+    > 845 |     ).toBe(1);
+          |       ^
+      846 |   });
+      847 |
+      848 |   test('TC-33 SPEC: double-click must not double-mutate the cart', async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:845:7
+
+    attachment #1: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/change.js
+    
+    final cart: {"count":0,"items":[]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-e7d21-en-the-swap-cannot-complete-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-e7d21-en-the-swap-cannot-complete-Chrome-Desktop\error-context.md
+
+  2) [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart 
+
+    Error: BUG-06: no in-flight guard, so concurrent runs can double-add or double-remove.
+    cart writes were:
+    POST 200 /cart/change.js
+    POST 200 /cart/change.js
+    POST 200 /cart/change.js
+    POST 200 /cart/add.js
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m4[39m
+
+      871 |       after.count,
+      872 |       `BUG-06: no in-flight guard, so concurrent runs can double-add or double-remove.\ncart writes were:\n${writes.join('\n')}`,
+    > 873 |     ).toBe(1);
+          |       ^
+      874 |   });
+      875 |
+      876 |   /**
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:873:7
+
+    attachment #1: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/change.js
+    POST 200 /cart/change.js
+    POST 200 /cart/change.js
+    POST 200 /cart/add.js
+    
+    final cart: {"count":4,"items":[{"title":"The LUXURY FIRM WinkBed - Queen with Frost Cooling Cover","variant":"Queen with Frost Cooling Cover","qty":4}]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-e35a9--not-double-mutate-the-cart-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-e35a9--not-double-mutate-the-cart-Chrome-Desktop\error-context.md
+
+  3) [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded 
+
+    Error: BUG-03+BUG-04: "WinkBeds Blue Collection - B2" qualifies for the modal, cannot be upgraded, yet the $125 discount redirect still fires. Cart writes:
+    (none)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeNull[2m()[22m
+
+    Received: [31m"https://www.winkbeds.com/discount/FROST3S1CFP?redirect=/checkout"[39m
+
+      954 |       `BUG-03+BUG-04: "${seeded.title}" qualifies for the modal, cannot be upgraded, yet the ` +
+      955 |         `$125 discount redirect still fires. Cart writes:\n${writes.join('\n') || '(none)'}`,
+    > 956 |     ).toBeNull();
+          |       ^
+      957 |   });
+      958 |
+      959 |   test('TC-34 Discount URL is exactly the Figma-specified link', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:956:7
+
+    attachment #1: decoy-product (text/plain) ──────────────────────────────────────────────────────
+    {
+      "found": true,
+      "title": "WinkBeds Blue Collection - B2",
+      "handle": "winkbeds-blue-collection-b2",
+      "variant": "Twin"
+    }
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    (none)
+    
+    final cart: {"count":1,"items":[{"title":"WinkBeds Blue Collection - B2 - Twin","variant":"Twin","qty":1}]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-2d9cf-the-item-cannot-be-upgraded-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-2d9cf-the-item-cannot-be-upgraded-Chrome-Desktop\error-context.md
+
+  3 failed
+    [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete 
+    [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart 
+    [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded 
+  6 passed (5.8m)
+EXIT_CODE=1

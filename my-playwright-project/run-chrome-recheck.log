@@ -1,0 +1,87 @@
+
+Running 4 tests using 1 worker
+
+  ✓  1 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:372:3 › A. Trigger & qualification › TC-04 Real activation path fires after the 5s delay (no manual injection) (37.2s)
+  ✘  2 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product (42.2s)
+  ✘  3 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal (26.3s)
+  ✘  4 [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) (27.0s)
+
+
+  1) [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product 
+
+    Error: BUG-04: cartMeetsMattressCondition uses title.includes("winkbed"), which matches Blue Collection / Kids Mattress — the offer is shown for a product it cannot upgrade
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      498 |       'BUG-04: cartMeetsMattressCondition uses title.includes("winkbed"), which matches ' +
+      499 |         'Blue Collection / Kids Mattress — the offer is shown for a product it cannot upgrade',
+    > 500 |     ).toBe(false);
+          |       ^
+      501 |   });
+      502 |
+      503 |   test('TC-11 Does NOT qualify without the checkout-return signals', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:500:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-389a6-ress-WinkBed--named-product-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-389a6-ress-WinkBed--named-product-Chrome-Desktop\error-context.md
+
+  2) [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal 
+
+    Error: BUG-11: no keydown handler — Escape does not close the dialog
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"none"[39m
+    Received: [31m"block"[39m
+
+      716 |       (await modalVisible(page)).containerDisplay,
+      717 |       'BUG-11: no keydown handler — Escape does not close the dialog',
+    > 718 |     ).toBe('none');
+          |       ^
+      719 |   });
+      720 |
+      721 |   test('TC-29 SPEC: close control is keyboard operable (Enter)', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:718:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-875d1-ape-key-dismisses-the-modal-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-875d1-ape-key-dismisses-the-modal-Chrome-Desktop\error-context.md
+
+  3) [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) 
+
+    Error: BUG-11: role=button + tabindex=0 but click-only handler
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"none"[39m
+    Received: [31m"block"[39m
+
+      726 |       (await modalVisible(page)).containerDisplay,
+      727 |       'BUG-11: role=button + tabindex=0 but click-only handler',
+    > 728 |     ).toBe('none');
+          |       ^
+      729 |   });
+      730 | });
+      731 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:728:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-82354-is-keyboard-operable-Enter--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-82354-is-keyboard-operable-Enter--Chrome-Desktop\error-context.md
+
+  3 failed
+    [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product 
+    [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal 
+    [Chrome Desktop] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) 
+  1 passed (2.9m)
+EXIT_CODE=1

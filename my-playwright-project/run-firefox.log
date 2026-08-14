@@ -1,0 +1,378 @@
+
+Running 43 tests using 1 worker
+
+  ✓   1 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:326:3 › A. Trigger & qualification › TC-01 Control variant renders no modal and no cre-t-257 artefacts (40.8s)
+  ✓   2 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:338:3 › A. Trigger & qualification › TC-02 SPEC: modal must appear on ANY page — homepage (19.5s)
+  ✓   3 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:354:3 › A. Trigger & qualification › TC-03 Modal renders on the PDP when all 4 conditions are met (16.7s)
+  ✓   4 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:372:3 › A. Trigger & qualification › TC-04 Real activation path fires after the 5s delay (no manual injection) (16.1s)
+  ✓   5 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:422:3 › A. Trigger & qualification › TC-05 Does NOT qualify: cart empty (24.6s)
+  ✓   6 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:432:3 › A. Trigger & qualification › TC-06 Does NOT qualify: mattress already has Frost Cooling Cover (26.1s)
+  ✓   7 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:442:3 › A. Trigger & qualification › TC-07 Does NOT qualify: two WinkBed mattresses (2 line items) (26.1s)
+  ✓   8 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:456:3 › A. Trigger & qualification › TC-08 SPEC: must NOT qualify with quantity 2 of one WinkBed (24.8s)
+  ✓   9 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:471:3 › A. Trigger & qualification › TC-09 Does NOT qualify: GravityLux / EcoCloud only (26.0s)
+  ✘  10 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product (27.0s)
+  ✓  11 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:503:3 › A. Trigger & qualification › TC-11 Does NOT qualify without the checkout-return signals (28.2s)
+  ✓  12 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:512:3 › A. Trigger & qualification › TC-12 Trigger cookie is armed by clicking a checkout link (17.3s)
+  ✓  13 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:546:3 › B. Modal content & styling › TC-13 Copy matches the Figma exactly (15.4s)
+  ✓  14 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:561:3 › B. Modal content & styling › TC-14 $125 in the price line is struck through (16.3s)
+  ✓  15 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:571:3 › B. Modal content & styling › TC-15 Overlay dims the page and sits above site content (46.2s)
+  ✘  16 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:582:3 › B. Modal content & styling › TC-16 Underlying page is blurred (Figma "underlying page shading") (10.5s)
+  ✓  17 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:592:3 › B. Modal content & styling › TC-17 Wrapper gradient, radius and shadow match the design (32.8s)
+  ✓  18 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:602:3 › B. Modal content & styling › TC-18 Five snowflake decorations load and are non-interactive (29.7s)
+  ✓  19 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:618:3 › B. Modal content & styling › TC-19 CTA styling: red pill, white bold text (23.1s)
+  ✓  20 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:631:3 › B. Modal content & styling › TC-20 Modal is centred and within the 674px max width (17.0s)
+  ✓  21 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:643:3 › B. Modal content & styling › TC-21 Close icon is present, sized and positioned per CSS (14.9s)
+  ✓  22 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:654:3 › B. Modal content & styling › TC-22 Spinner is hidden until the CTA is clicked (18.3s)
+  ✓  23 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:659:3 › B. Modal content & styling › TC-23 No duplicate modal on repeated injection (15.5s)
+  ✓  24 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:684:3 › C. Dismissal › TC-24 Close icon dismisses the modal (16.2s)
+  ✓  25 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:693:3 › C. Dismissal › TC-25 Clicking outside (overlay) dismisses the modal (16.0s)
+  ✓  26 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:699:3 › C. Dismissal › TC-26 Clicking inside the modal does NOT dismiss it (15.0s)
+  ✓  27 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:705:3 › C. Dismissal › TC-27 Page blur is removed after dismissal (17.9s)
+  ✘  28 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal (17.1s)
+  ✘  29 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) (19.0s)
+  ✘  30 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Luxury Firm / Queen (26.5s)
+  ✓  31 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Softer / King (25.0s)
+  ✓  32 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Firmer / Cal. King (22.2s)
+  ✘  33 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Plus / Twin XL (59.7s)
+  ✓  34 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:799:3 › D. CTA swap & redirect › TC-31 Spinner replaces the CTA label while the swap runs (43.2s)
+  ✘  35 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete (23.0s)
+  ✘  36 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart (27.1s)
+  ✘  37 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded (24.8s)
+  ✘  38 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:959:3 › D. CTA swap & redirect › TC-34 Discount URL is exactly the Figma-specified link (8.5s)
+  ✘  39 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:978:3 › E. Responsive & hygiene › TC-35 Modal fits the viewport with no horizontal overflow (8.5s)
+  ✓  40 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:1021:3 › E. Responsive & hygiene › TC-36 Snowflakes do not overlap the CTA or the title (15.0s)
+  ✓  41 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:1041:3 › E. Responsive & hygiene › TC-37 Title uses the mobile type ramp below 768px (13.0s)
+  ✓  42 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:1061:3 › E. Responsive & hygiene › TC-38 No JS errors attributable to the variation (15.3s)
+  ✓  43 [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:1137:3 › E. Responsive & hygiene › TC-39 Background must be scroll-locked while the modal is open (14.6s)
+
+
+  1) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product 
+
+    Error: BUG-04: cartMeetsMattressCondition uses title.includes("winkbed"), which matches Blue Collection / Kids Mattress — the offer is shown for a product it cannot upgrade
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      498 |       'BUG-04: cartMeetsMattressCondition uses title.includes("winkbed"), which matches ' +
+      499 |         'Blue Collection / Kids Mattress — the offer is shown for a product it cannot upgrade',
+    > 500 |     ).toBe(false);
+          |       ^
+      501 |   });
+      502 |
+      503 |   test('TC-11 Does NOT qualify without the checkout-return signals', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:500:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-389a6-ress-WinkBed--named-product-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-389a6-ress-WinkBed--named-product-Firefox-Desktop\error-context.md
+
+  2) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:582:3 › B. Modal content & styling › TC-16 Underlying page is blurred (Figma "underlying page shading") 
+
+    Error: Assertion error
+
+    Error: page.reload: Test ended.
+    Call log:
+    [2m  - waiting for navigation until "domcontentloaded"[22m
+
+
+      129 | async function reloadPage(page) {
+      130 |   if (!isWebKit(page)) {
+    > 131 |     await page.reload({ waitUntil: 'domcontentloaded' });
+          |                ^
+      132 |     return;
+      133 |   }
+      134 |   await page.reload({ waitUntil: 'commit' });
+        at reloadPage (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:131:16)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:542:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-49993-ma-underlying-page-shading--Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-49993-ma-underlying-page-shading--Firefox-Desktop\error-context.md
+
+  3) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal 
+
+    Error: BUG-11: no keydown handler — Escape does not close the dialog
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"none"[39m
+    Received: [31m"block"[39m
+
+      716 |       (await modalVisible(page)).containerDisplay,
+      717 |       'BUG-11: no keydown handler — Escape does not close the dialog',
+    > 718 |     ).toBe('none');
+          |       ^
+      719 |   });
+      720 |
+      721 |   test('TC-29 SPEC: close control is keyboard operable (Enter)', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:718:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-875d1-ape-key-dismisses-the-modal-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-875d1-ape-key-dismisses-the-modal-Firefox-Desktop\error-context.md
+
+  4) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) 
+
+    Error: BUG-11: role=button + tabindex=0 but click-only handler
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"none"[39m
+    Received: [31m"block"[39m
+
+      726 |       (await modalVisible(page)).containerDisplay,
+      727 |       'BUG-11: role=button + tabindex=0 but click-only handler',
+    > 728 |     ).toBe('none');
+          |       ^
+      729 |   });
+      730 | });
+      731 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:728:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-82354-is-keyboard-operable-Enter--Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-82354-is-keyboard-operable-Enter--Firefox-Desktop\error-context.md
+
+  5) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Luxury Firm / Queen 
+
+    Error: browserContext.close: Protocol error (Browser.removeBrowserContext): can't access property "_maybeDontRestoreTabs", this._windows[aWindow.__SSi] is undefined
+
+    attachment #1: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/update.js
+    POST 200 /cart/change.js
+    POST 200 /cart/add.js
+    
+    final cart: {"count":1,"items":[{"title":"The LUXURY FIRM WinkBed - Queen with Frost Cooling Cover","variant":"Queen with Frost Cooling Cover","qty":1}]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-52ae4-Cooling-—-Luxury-Firm-Queen-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-52ae4-Cooling-—-Luxury-Firm-Queen-Firefox-Desktop\error-context.md
+
+  6) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Plus / Twin XL 
+
+    Error: cart must still hold exactly one mattress. cart writes were:
+    POST 200 /cart/update.js
+    POST 200 /cart/change.js
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      789 |       });
+      790 |       const trace = `cart writes were:\n${writes.join('\n') || '(none)'}`;
+    > 791 |       expect(after.count, `cart must still hold exactly one mattress. ${trace}`).toBe(1);
+          |                                                                                  ^
+      792 |       expect(after.items[0].title).toContain(before.main.product);
+      793 |       expect(after.items[0].variant).toBe(`${combo.size} with Frost Cooling Cover`);
+      794 |       expect(after.items[0].qty).toBe(1);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:791:82
+
+    attachment #1: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/update.js
+    POST 200 /cart/change.js
+    
+    final cart: {"count":0,"items":[]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-1b42a-rost-Cooling-—-Plus-Twin-XL-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-1b42a-rost-Cooling-—-Plus-Twin-XL-Firefox-Desktop\error-context.md
+
+  7) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete 
+
+    Error: BUG-02: the original item is removed before the replacement is resolved, so a failure empties the cart
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      843 |       after.count,
+      844 |       'BUG-02: the original item is removed before the replacement is resolved, so a failure empties the cart',
+    > 845 |     ).toBe(1);
+          |       ^
+      846 |   });
+      847 |
+      848 |   test('TC-33 SPEC: double-click must not double-mutate the cart', async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:845:7
+
+    attachment #1: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/change.js
+    POST 200 /cart/update.js
+    
+    final cart: {"count":0,"items":[]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-e7d21-en-the-swap-cannot-complete-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-e7d21-en-the-swap-cannot-complete-Firefox-Desktop\error-context.md
+
+  8) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart 
+
+    Error: BUG-06: no in-flight guard, so concurrent runs can double-add or double-remove.
+    cart writes were:
+    POST 200 /cart/change.js
+    POST 200 /cart/change.js
+    POST 200 /cart/update.js
+    POST 409 /cart/change.js
+    POST 200 /cart/add.js
+    POST 200 /cart/add.js
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m4[39m
+
+      871 |       after.count,
+      872 |       `BUG-06: no in-flight guard, so concurrent runs can double-add or double-remove.\ncart writes were:\n${writes.join('\n')}`,
+    > 873 |     ).toBe(1);
+          |       ^
+      874 |   });
+      875 |
+      876 |   /**
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:873:7
+
+    attachment #1: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/change.js
+    POST 200 /cart/change.js
+    POST 200 /cart/update.js
+    POST 409 /cart/change.js
+    POST 200 /cart/add.js
+    POST 200 /cart/add.js
+    
+    final cart: {"count":4,"items":[{"title":"The LUXURY FIRM WinkBed - Queen with Frost Cooling Cover","variant":"Queen with Frost Cooling Cover","qty":4}]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-e35a9--not-double-mutate-the-cart-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-e35a9--not-double-mutate-the-cart-Firefox-Desktop\error-context.md
+
+  9) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded 
+
+    Error: BUG-03+BUG-04: "WinkBeds Blue Collection - B2" qualifies for the modal, cannot be upgraded, yet the $125 discount redirect still fires. Cart writes:
+    POST 200 /cart/update.js
+    POST 200 /cart/update.js
+    POST 200 /cart/update.js
+    POST 200 /cart/update.js
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeNull[2m()[22m
+
+    Received: [31m"https://www.winkbeds.com/discount/FROST3S1CFP?redirect=/checkout"[39m
+
+      954 |       `BUG-03+BUG-04: "${seeded.title}" qualifies for the modal, cannot be upgraded, yet the ` +
+      955 |         `$125 discount redirect still fires. Cart writes:\n${writes.join('\n') || '(none)'}`,
+    > 956 |     ).toBeNull();
+          |       ^
+      957 |   });
+      958 |
+      959 |   test('TC-34 Discount URL is exactly the Figma-specified link', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:956:7
+
+    attachment #1: decoy-product (text/plain) ──────────────────────────────────────────────────────
+    {
+      "found": true,
+      "title": "WinkBeds Blue Collection - B2",
+      "handle": "winkbeds-blue-collection-b2",
+      "variant": "Twin"
+    }
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/update.js
+    POST 200 /cart/update.js
+    POST 200 /cart/update.js
+    POST 200 /cart/update.js
+    
+    final cart: {"count":1,"items":[{"title":"WinkBeds Blue Collection - B2 - Twin","variant":"Twin","qty":1}]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-2d9cf-the-item-cannot-be-upgraded-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-2d9cf-the-item-cannot-be-upgraded-Firefox-Desktop\error-context.md
+
+  10) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:959:3 › D. CTA swap & redirect › TC-34 Discount URL is exactly the Figma-specified link 
+
+    Error: Assertion error
+
+    Error: page.reload: Test ended.
+    Call log:
+    [2m  - waiting for navigation until "domcontentloaded"[22m
+
+
+      129 | async function reloadPage(page) {
+      130 |   if (!isWebKit(page)) {
+    > 131 |     await page.reload({ waitUntil: 'domcontentloaded' });
+          |                ^
+      132 |     return;
+      133 |   }
+      134 |   await page.reload({ waitUntil: 'commit' });
+        at reloadPage (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:131:16)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:964:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-8a749-ly-the-Figma-specified-link-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-8a749-ly-the-Figma-specified-link-Firefox-Desktop\error-context.md
+
+  11) [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:978:3 › E. Responsive & hygiene › TC-35 Modal fits the viewport with no horizontal overflow 
+
+    Error: Assertion error
+
+    Error: page.reload: Test ended.
+    Call log:
+    [2m  - waiting for navigation until "domcontentloaded"[22m
+
+
+      129 | async function reloadPage(page) {
+      130 |   if (!isWebKit(page)) {
+    > 131 |     await page.reload({ waitUntil: 'domcontentloaded' });
+          |                ^
+      132 |     return;
+      133 |   }
+      134 |   await page.reload({ waitUntil: 'commit' });
+        at reloadPage (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:131:16)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:983:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-f0646-with-no-horizontal-overflow-Firefox-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-f0646-with-no-horizontal-overflow-Firefox-Desktop\error-context.md
+
+  11 failed
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:582:3 › B. Modal content & styling › TC-16 Underlying page is blurred (Figma "underlying page shading") 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Luxury Firm / Queen 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Plus / Twin XL 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:959:3 › D. CTA swap & redirect › TC-34 Discount URL is exactly the Figma-specified link 
+    [Firefox Desktop] › testing\winkbeds-win257-cart-modal.spec.js:978:3 › E. Responsive & hygiene › TC-35 Modal fits the viewport with no horizontal overflow 
+  32 passed (17.2m)
+EXIT_CODE=1

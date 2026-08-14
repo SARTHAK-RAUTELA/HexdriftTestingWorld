@@ -1,0 +1,369 @@
+
+Running 43 tests using 1 worker
+
+  ✓   1 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:326:3 › A. Trigger & qualification › TC-01 Control variant renders no modal and no cre-t-257 artefacts (34.5s)
+  ✓   2 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:338:3 › A. Trigger & qualification › TC-02 SPEC: modal must appear on ANY page — homepage (38.2s)
+  ✓   3 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:354:3 › A. Trigger & qualification › TC-03 Modal renders on the PDP when all 4 conditions are met (32.1s)
+  ✓   4 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:372:3 › A. Trigger & qualification › TC-04 Real activation path fires after the 5s delay (no manual injection) (24.0s)
+  ✓   5 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:422:3 › A. Trigger & qualification › TC-05 Does NOT qualify: cart empty (25.1s)
+  ✓   6 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:432:3 › A. Trigger & qualification › TC-06 Does NOT qualify: mattress already has Frost Cooling Cover (39.5s)
+  ✓   7 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:442:3 › A. Trigger & qualification › TC-07 Does NOT qualify: two WinkBed mattresses (2 line items) (27.8s)
+  ✓   8 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:456:3 › A. Trigger & qualification › TC-08 SPEC: must NOT qualify with quantity 2 of one WinkBed (30.5s)
+  ✓   9 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:471:3 › A. Trigger & qualification › TC-09 Does NOT qualify: GravityLux / EcoCloud only (30.2s)
+  ✘  10 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product (35.4s)
+  ✓  11 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:503:3 › A. Trigger & qualification › TC-11 Does NOT qualify without the checkout-return signals (30.2s)
+  ✓  12 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:512:3 › A. Trigger & qualification › TC-12 Trigger cookie is armed by clicking a checkout link (27.8s)
+  ✓  13 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:546:3 › B. Modal content & styling › TC-13 Copy matches the Figma exactly (19.5s)
+  ✓  14 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:561:3 › B. Modal content & styling › TC-14 $125 in the price line is struck through (20.8s)
+  ✓  15 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:571:3 › B. Modal content & styling › TC-15 Overlay dims the page and sits above site content (18.6s)
+  ✓  16 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:582:3 › B. Modal content & styling › TC-16 Underlying page is blurred (Figma "underlying page shading") (27.8s)
+  ✓  17 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:592:3 › B. Modal content & styling › TC-17 Wrapper gradient, radius and shadow match the design (26.6s)
+  ✓  18 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:602:3 › B. Modal content & styling › TC-18 Five snowflake decorations load and are non-interactive (26.0s)
+  ✓  19 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:618:3 › B. Modal content & styling › TC-19 CTA styling: red pill, white bold text (21.3s)
+  ✓  20 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:631:3 › B. Modal content & styling › TC-20 Modal is centred and within the 674px max width (34.1s)
+  ✓  21 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:643:3 › B. Modal content & styling › TC-21 Close icon is present, sized and positioned per CSS (16.6s)
+  ✓  22 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:654:3 › B. Modal content & styling › TC-22 Spinner is hidden until the CTA is clicked (20.3s)
+  ✓  23 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:659:3 › B. Modal content & styling › TC-23 No duplicate modal on repeated injection (19.0s)
+  ✓  24 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:684:3 › C. Dismissal › TC-24 Close icon dismisses the modal (23.1s)
+  ✓  25 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:693:3 › C. Dismissal › TC-25 Clicking outside (overlay) dismisses the modal (30.3s)
+  ✓  26 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:699:3 › C. Dismissal › TC-26 Clicking inside the modal does NOT dismiss it (31.8s)
+  ✓  27 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:705:3 › C. Dismissal › TC-27 Page blur is removed after dismissal (22.5s)
+  ✘  28 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal (25.0s)
+  ✘  29 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) (30.1s)
+  ✘  30 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Luxury Firm / Queen (1.0m)
+  ✘  31 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Softer / King (31.9s)
+  ✘  32 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Firmer / Cal. King (34.0s)
+  ✘  33 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Plus / Twin XL (1.0m)
+  ✘  34 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:799:3 › D. CTA swap & redirect › TC-31 Spinner replaces the CTA label while the swap runs (1.2m)
+  ✘  35 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete (1.2m)
+  ✘  36 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart (57.7s)
+  ✘  37 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded (25.9s)
+  ✘  38 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:959:3 › D. CTA swap & redirect › TC-34 Discount URL is exactly the Figma-specified link (57.7s)
+  ✓  39 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:978:3 › E. Responsive & hygiene › TC-35 Modal fits the viewport with no horizontal overflow (25.7s)
+  ✓  40 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:1021:3 › E. Responsive & hygiene › TC-36 Snowflakes do not overlap the CTA or the title (19.6s)
+  ✓  41 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:1041:3 › E. Responsive & hygiene › TC-37 Title uses the mobile type ramp below 768px (20.2s)
+  ✘  42 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:1061:3 › E. Responsive & hygiene › TC-38 No JS errors attributable to the variation (1.5m)
+  ✓  43 [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:1137:3 › E. Responsive & hygiene › TC-39 Background must be scroll-locked while the modal is open (27.6s)
+
+
+  1) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product 
+
+    Error: BUG-04: cartMeetsMattressCondition uses title.includes("winkbed"), which matches Blue Collection / Kids Mattress — the offer is shown for a product it cannot upgrade
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      498 |       'BUG-04: cartMeetsMattressCondition uses title.includes("winkbed"), which matches ' +
+      499 |         'Blue Collection / Kids Mattress — the offer is shown for a product it cannot upgrade',
+    > 500 |     ).toBe(false);
+          |       ^
+      501 |   });
+      502 |
+      503 |   test('TC-11 Does NOT qualify without the checkout-return signals', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:500:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-389a6-ress-WinkBed--named-product-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-389a6-ress-WinkBed--named-product-Mobile-Safari-iPhone-12-\error-context.md
+
+  2) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal 
+
+    Error: BUG-11: no keydown handler — Escape does not close the dialog
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"none"[39m
+    Received: [31m"block"[39m
+
+      716 |       (await modalVisible(page)).containerDisplay,
+      717 |       'BUG-11: no keydown handler — Escape does not close the dialog',
+    > 718 |     ).toBe('none');
+          |       ^
+      719 |   });
+      720 |
+      721 |   test('TC-29 SPEC: close control is keyboard operable (Enter)', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:718:7
+
+    Error Context: test-results\winkbeds-win257-cart-modal-875d1-ape-key-dismisses-the-modal-Mobile-Safari-iPhone-12-\error-context.md
+
+  3) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) 
+
+    Error: BUG-11: role=button + tabindex=0 but click-only handler
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"none"[39m
+    Received: [31m"block"[39m
+
+      726 |       (await modalVisible(page)).containerDisplay,
+      727 |       'BUG-11: role=button + tabindex=0 but click-only handler',
+    > 728 |     ).toBe('none');
+          |       ^
+      729 |   });
+      730 | });
+      731 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:728:7
+
+    Error Context: test-results\winkbeds-win257-cart-modal-82354-is-keyboard-operable-Enter--Mobile-Safari-iPhone-12-\error-context.md
+
+  4) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Luxury Firm / Queen 
+
+    Error: page.evaluate: Error: HARNESS: /cart.js unusable after 4 attempts — last: HTTP 429 rate-limited (attempt 4)
+
+      192 |   }
+      193 |
+    > 194 |   const result = await page.evaluate(async (items) => {
+          |                             ^
+      195 |     /*
+      196 |      * Cart calls, made resilient to Shopify's rate limiter.
+      197 |      *
+        at setCart (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:194:29)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:776:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-52ae4-Cooling-—-Luxury-Firm-Queen-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-52ae4-Cooling-—-Luxury-Firm-Queen-Mobile-Safari-iPhone-12-\error-context.md
+
+  5) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Softer / King 
+
+    Error: must redirect to the discount URL
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"https://www.winkbeds.com/discount/FROST3S1CFP?redirect=/checkout"[39m
+    Received: [31mnull[39m
+
+      793 |       expect(after.items[0].variant).toBe(`${combo.size} with Frost Cooling Cover`);
+      794 |       expect(after.items[0].qty).toBe(1);
+    > 795 |       expect(seen.url, 'must redirect to the discount URL').toBe(COPY.discountUrl);
+          |                                                             ^
+      796 |     });
+      797 |   }
+      798 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:795:61
+
+    attachment #1: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/change.js
+    POST 200 /cart/update.js
+    POST 200 /cart/add.js
+    GET 200 /cart/update.js
+    POST 200 /cart/update.js
+    
+    final cart: {"count":1,"items":[{"title":"The SOFTER WinkBed - King with Frost Cooling Cover","variant":"King with Frost Cooling Cover","qty":1}]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-0b135-Frost-Cooling-—-Softer-King-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-0b135-Frost-Cooling-—-Softer-King-Mobile-Safari-iPhone-12-\error-context.md
+
+  6) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Firmer / Cal. King 
+
+    Error: cart must still hold exactly one mattress. cart writes were:
+    POST 200 /cart/update.js
+    POST 200 /cart/change.js
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      789 |       });
+      790 |       const trace = `cart writes were:\n${writes.join('\n') || '(none)'}`;
+    > 791 |       expect(after.count, `cart must still hold exactly one mattress. ${trace}`).toBe(1);
+          |                                                                                  ^
+      792 |       expect(after.items[0].title).toContain(before.main.product);
+      793 |       expect(after.items[0].variant).toBe(`${combo.size} with Frost Cooling Cover`);
+      794 |       expect(after.items[0].qty).toBe(1);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:791:82
+
+    attachment #1: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    POST 200 /cart/update.js
+    POST 200 /cart/change.js
+    
+    final cart: {"count":0,"items":[]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-e1c0e-t-Cooling-—-Firmer-Cal-King-Mobile-Safari-iPhone-12-\error-context.md
+
+  7) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Plus / Twin XL 
+
+    Error: page.evaluate: Error: HARNESS: /cart.js unusable after 4 attempts — last: HTTP 429 rate-limited (attempt 4)
+
+      192 |   }
+      193 |
+    > 194 |   const result = await page.evaluate(async (items) => {
+          |                             ^
+      195 |     /*
+      196 |      * Cart calls, made resilient to Shopify's rate limiter.
+      197 |      *
+        at setCart (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:194:29)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:776:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-1b42a-rost-Cooling-—-Plus-Twin-XL-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-1b42a-rost-Cooling-—-Plus-Twin-XL-Mobile-Safari-iPhone-12-\error-context.md
+
+  8) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:799:3 › D. CTA swap & redirect › TC-31 Spinner replaces the CTA label while the swap runs 
+
+    Error: page.evaluate: Error: HARNESS: /cart.js unusable after 4 attempts — last: HTTP 429 rate-limited (attempt 4)
+
+      192 |   }
+      193 |
+    > 194 |   const result = await page.evaluate(async (items) => {
+          |                             ^
+      195 |     /*
+      196 |      * Cart calls, made resilient to Shopify's rate limiter.
+      197 |      *
+        at setCart (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:194:29)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:803:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-0888b-A-label-while-the-swap-runs-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-0888b-A-label-while-the-swap-runs-Mobile-Safari-iPhone-12-\error-context.md
+
+  9) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete 
+
+    Error: page.evaluate: Error: HARNESS: /cart.js unusable after 4 attempts — last: HTTP 429 rate-limited (attempt 4)
+
+      192 |   }
+      193 |
+    > 194 |   const result = await page.evaluate(async (items) => {
+          |                             ^
+      195 |     /*
+      196 |      * Cart calls, made resilient to Shopify's rate limiter.
+      197 |      *
+        at setCart (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:194:29)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:823:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-e7d21-en-the-swap-cannot-complete-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-e7d21-en-the-swap-cannot-complete-Mobile-Safari-iPhone-12-\error-context.md
+
+  10) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart 
+
+    Error: page.evaluate: Error: HARNESS: /cart.js unusable after 4 attempts — last: HTTP 429 rate-limited (attempt 4)
+
+      192 |   }
+      193 |
+    > 194 |   const result = await page.evaluate(async (items) => {
+          |                             ^
+      195 |     /*
+      196 |      * Cart calls, made resilient to Shopify's rate limiter.
+      197 |      *
+        at setCart (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:194:29)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:852:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-e35a9--not-double-mutate-the-cart-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-e35a9--not-double-mutate-the-cart-Mobile-Safari-iPhone-12-\error-context.md
+
+  11) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded 
+
+    Error: BUG-03+BUG-04: "WinkBeds Blue Collection - B2" qualifies for the modal, cannot be upgraded, yet the $125 discount redirect still fires. Cart writes:
+    (none)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeNull[2m()[22m
+
+    Received: [31m"https://www.winkbeds.com/discount/FROST3S1CFP?redirect=/checkout"[39m
+
+      954 |       `BUG-03+BUG-04: "${seeded.title}" qualifies for the modal, cannot be upgraded, yet the ` +
+      955 |         `$125 discount redirect still fires. Cart writes:\n${writes.join('\n') || '(none)'}`,
+    > 956 |     ).toBeNull();
+          |       ^
+      957 |   });
+      958 |
+      959 |   test('TC-34 Discount URL is exactly the Figma-specified link', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:956:7
+
+    attachment #1: decoy-product (text/plain) ──────────────────────────────────────────────────────
+    {
+      "found": true,
+      "title": "WinkBeds Blue Collection - B2",
+      "handle": "winkbeds-blue-collection-b2",
+      "variant": "Twin"
+    }
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: cart-writes (text/plain) ────────────────────────────────────────────────────────
+    (none)
+    
+    final cart: {"count":0,"items":[]}
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-2d9cf-the-item-cannot-be-upgraded-Mobile-Safari-iPhone-12-\error-context.md
+
+  12) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:959:3 › D. CTA swap & redirect › TC-34 Discount URL is exactly the Figma-specified link 
+
+    Error: page.evaluate: Error: HARNESS: /cart.js unusable after 4 attempts — last: HTTP 429 rate-limited (attempt 4)
+
+      192 |   }
+      193 |
+    > 194 |   const result = await page.evaluate(async (items) => {
+          |                             ^
+      195 |     /*
+      196 |      * Cart calls, made resilient to Shopify's rate limiter.
+      197 |      *
+        at setCart (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:194:29)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:963:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-8a749-ly-the-Figma-specified-link-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-8a749-ly-the-Figma-specified-link-Mobile-Safari-iPhone-12-\error-context.md
+
+  13) [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:1061:3 › E. Responsive & hygiene › TC-38 No JS errors attributable to the variation 
+
+    [31mTest timeout of 90000ms exceeded.[39m
+
+    Error: page.waitForFunction: Test timeout of 90000ms exceeded.
+
+      113 | async function settle(page) {
+      114 |   await page.waitForSelector('body', { state: 'attached', timeout: 90000 });
+    > 115 |   await page.waitForFunction(() => document.body && document.body.childElementCount > 5, null, {
+          |              ^
+      116 |     timeout: 90000,
+      117 |   });
+      118 | }
+        at settle (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:115:14)
+        at go (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:126:3)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\winkbeds-win257-cart-modal.spec.js:1083:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\winkbeds-win257-cart-modal-8e170-tributable-to-the-variation-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\winkbeds-win257-cart-modal-8e170-tributable-to-the-variation-Mobile-Safari-iPhone-12-\error-context.md
+
+  13 failed
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:481:3 › A. Trigger & qualification › TC-10 SPEC: must NOT qualify on a non-mattress "WinkBed"-named product 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:712:3 › C. Dismissal › TC-28 SPEC: Escape key dismisses the modal 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:721:3 › C. Dismissal › TC-29 SPEC: close control is keyboard operable (Enter) 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Luxury Firm / Queen 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Softer / King 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Firmer / Cal. King 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:772:5 › D. CTA swap & redirect › TC-30 Swap keeps size+firmness and adds Frost Cooling — Plus / Twin XL 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:799:3 › D. CTA swap & redirect › TC-31 Spinner replaces the CTA label while the swap runs 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:817:3 › D. CTA swap & redirect › TC-32 SPEC: no redirect when the swap cannot complete 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:848:3 › D. CTA swap & redirect › TC-33 SPEC: double-click must not double-mutate the cart 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:892:3 › D. CTA swap & redirect › TC-40 SPEC: no discount redirect when the item cannot be upgraded 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:959:3 › D. CTA swap & redirect › TC-34 Discount URL is exactly the Figma-specified link 
+    [Mobile Safari (iPhone 12)] › testing\winkbeds-win257-cart-modal.spec.js:1061:3 › E. Responsive & hygiene › TC-38 No JS errors attributable to the variation 
+  30 passed (24.3m)
+EXIT_CODE=1

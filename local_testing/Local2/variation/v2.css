@@ -4,6 +4,15 @@ html body.cre-t-257-modal-open .desktop-promo-container {
     filter: blur(5px);
 }
 
+/* WIN262 (cre-t-262) — theme's .shopMarquee has a built-in margin-top: -35px
+   that pulls the benefit ticker up under the review carousel above it.
+   That overlap now covers our first row of clickable benefit tiles
+   (120-Night Trial / 100+ Showrooms), so their goal clicks never land.
+   Cancel it only for this variation. */
+html body.cre-t-262 .shopMarquee {
+    margin-top: 0 !important;
+}
+
 html body .cre-t-257-modal-overlay {
     position: fixed;
     top: 0 !important;

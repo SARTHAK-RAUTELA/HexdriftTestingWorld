@@ -1,65 +1,29 @@
-html body .cre-t-155-LandlordApprovedLink {
-    cursor: pointer;
-    color: #000000;
-}
+html body.Test_06 .qa-hero-subheading {
+    color: var(--color-base-terracotta);
+    font-family: var(--font-body-family-secondary);
+    font-size: var(--text-size-s);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight-bold-secondary);
+    line-height: normal;
+   margin-bottom: 2rem;
+  }
 
-html body .cre-t-155-LandlordApprovedLink:hover {
-    background: #ffffff !important;
-    color: #0272E4 !important;
-}
 
-html body .cre-t-155-accordion_header {
-    background-color: rgba(0, 0, 0, 0);
-    color: #000000;
-    padding-top: 2rem;
-    padding-left: 0rem;
-    padding-bottom: 2rem;
-    padding-right: 0rem;
-    color: inherit;
-    cursor: pointer;
-    font-size: .7em;
-    letter-spacing: .1em;
-    transition: all var(--extras-accordion-duration);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border: none;
-    box-shadow: none;
-    text-align: left;
-    font-family: inherit;
-}
-
-html body .cre-t-155-accordion_toggle-icon {
-    fill: currentColor;
-    font-size: 1em;
-    height: 1em;
-    width: 1em;
-    transition: transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);
-    -webkit-transition: -webkit-transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);
-}
-
-html body .cre-t-155-accordion_item.active .cre-t-155-accordion_header,
-html body .cre-t-155-accordion_item .cre-t-155-accordion_header:hover {
-    color: #0272e4 !important;
-}
-
-@media screen and (max-width: 1120px) and (min-width:991px) {
-    html body .oxy-header-left img {
-        width: 350px !important;
-    }
+   
+html body.Test_06 #MainContent > [id*='media_with_text'],
+html body.Test_06 [id*="gallery_panel"],
+html body.Test_06 [id*="gallery_panel"] + section,
+html body.Test_06 .whats-in-pack-toggle , 
+html body.Test_06 .brochure_description , 
+html body.Test_06 .qa-hide {
+  display: none !important;
 }
 
 
-@media screen and (max-width: 500px) {
-
-    html body .oxy-header-right .header-nav li a,
-    html body .oxy-header-right nav .cre-t-155-LandlordApprovedLink {
-        font-size: 12px !important;
-    }
-
-    html body .oxy-header-right nav li {
-        margin-right: 10px !important;
-    }
+html body.Test_06 .qa-hero-video {
+    
+  width: 100%;
+}
+html body.Test_06 .brochure-tab-content.active {
+    margin-top: 30px;
 }

@@ -45,6 +45,7 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 | [WinkBeds — winkbeds.com](winkbeds/_client-notes.md) | Convert.com | [cre-t-253 Buy Box sub-total line](winkbeds/cre-t-253-buybox-subtotal.md) *(needs `navigator.webdriver` override to run Playwright — see client notes; 60/60 passing across 6 browsers; BUG-01 addon price not reflected in badge)* |
 | Trakio — trakio.brillmark.com (internal app) | — | [Full app audit](trakio/trakio-full-app-audit.md) |
 | Fanorate — fanorate.com | — | [Full site audit](fanorate/fanorate-site-audit.md) |
+| [Rhino Greenhouses — rhinogreenhouses.co.uk](rhino-greenhouses/_client-notes.md) | Convert.com | [SWF-T06](rhino-greenhouses/swf-t06-brochure-hero-bestsellers.md) *(brochure page hero rebuild + bestsellers AJAX swap; BUG-01 pre-existing video-never-loads site defect (control repro'd too); BUG-02 HIGH — malformed `SECTION_ID` in the deployed Convert bundle 404s the bestsellers fetch, 3/3 on Mobile Chrome/Safari/Tablet + intermittent on Firefox/Safari Desktop)* |
 
 ## Test Type Index (cross-client lookup)
 
@@ -69,6 +70,7 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 | Price display / multi-day pricing | [G](_shared/test-type-checklists.md) | [SEA316](seaworld/sea316-price-display.md) · [WinkBeds cre-t-253](winkbeds/cre-t-253-buybox-subtotal.md) (running sub-total; site needs `navigator.webdriver` override for Playwright) |
 | Hero / page section replacement | — | [AFP19](afp/afp19-compensation-survey-hero.md) · [Thumbtack Pro hero header](thumbtack/pro-landing-page-phase1-hero-header.md) (2 separate desktop/mobile `<h1>` elements — variation only targeted one) |
 | Landing page section injection | [K](_shared/test-type-checklists.md) | [Thumbtack SA Roofing](thumbtack/sa-roofing-landing-section.md) |
+| AJAX section fetch/swap (fetch another page's rendered `?section_id=` HTML, inject client-side) | — | [Rhino SWF-T06](rhino-greenhouses/swf-t06-brochure-hero-bestsellers.md) (malformed `SECTION_ID` in the deployed bundle 404s the fetch — reliably on mobile/tablet, intermittently on desktop; always verify the fetch resolves with real content on every device tier) |
 | Full app / website audit | [C](_shared/test-type-checklists.md) | [Trakio](trakio/trakio-full-app-audit.md) · [Fanorate](fanorate/fanorate-site-audit.md) |
 
 **Adding a new test?** Add it to BOTH tables: the client row above and its test-type row here (create a new type row if none fits — and add a matching checklist in `_shared/test-type-checklists.md`).
@@ -101,4 +103,4 @@ live, not before.
 - After finishing a test: add its file, update the client's `_client-notes.md` if a new site-wide quirk was found, and add a row to the table above.
 - `_shared/` files are cross-client: update the checklist file when a new test *type* appears.
 
-*Last updated: 2026-08-12*
+*Last updated: 2026-08-20*

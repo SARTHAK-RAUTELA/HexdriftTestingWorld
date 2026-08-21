@@ -41,10 +41,10 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 | [pay.com.au](pay-com-au/_client-notes.md) | Optimizely | [CRE-T-08](pay-com-au/cre-t-08-timed-modal.md) · [CRE-T-08 (vB)](pay-com-au/cre-t-08-vB-exit-intent-mobile-timer.md) *(trigger logic was missing, now fixed via Experiment JS wiring — see BUG-01/BUG-02)* · [CRE-T-09](pay-com-au/cre-t-09-navbar-cta.md) |
 | [Buckfire Law — buckfirelaw.com](buckfirelaw/_client-notes.md) | Convert.com | [BuckfireLaw_12](buckfirelaw/buckfire-12-client-stories.md) *(Client Stories video carousel, exp. 100052508; video playback + play/pause verified on all 6 browsers. Slides 4-6 copy and twice-used clip are client-confirmed intentional placeholders — real content due days after 2026-08-04. Open: keyboard a11y)* · [Internal-page testimonial card](buckfirelaw/buckfire-personal-injury-testimonial.md) *(exp. 100052509, `/case-types/personal-injury/`; matches Figma, video plays on all 6 browsers. Open: BUG-02 body class shared with 100052508, BUG-03 no keyboard path to play, BUG-01 `-Denise's` typo originating in the Figma)* |
 | SeaWorld — seaworldentertainment.com | — | [SEA316](seaworld/sea316-price-display.md) |
-| [Thumbtack — thumbtack.com](thumbtack/_client-notes.md) | Optimizely | [SA Roofing landing section](thumbtack/sa-roofing-landing-section.md) · [Pro_landing_page_phase_1 hero header](thumbtack/pro-landing-page-phase1-hero-header.md) *(mobile-only H1 never targeted — BUG-01)* |
+| [Thumbtack — thumbtack.com](thumbtack/_client-notes.md) | Optimizely | [SA Roofing landing section](thumbtack/sa-roofing-landing-section.md) · [Pro_landing_page_phase_1 hero header](thumbtack/pro-landing-page-phase1-hero-header.md) *(mobile-only H1 never targeted — BUG-01)* · [Antonio Roofing vB code review](thumbtack/antonio-roofing-vb-code-review.md) *(static review, not live-verified; 5 critical incl. broken avatar URLs + page-wide `overflow:hidden`, ~15 dead CSS blocks)* |
 | [WinkBeds — winkbeds.com](winkbeds/_client-notes.md) | Convert.com | [cre-t-253 Buy Box sub-total line](winkbeds/cre-t-253-buybox-subtotal.md) *(needs `navigator.webdriver` override to run Playwright — see client notes; 60/60 passing across 6 browsers; BUG-01 addon price not reflected in badge)* |
 | Trakio — trakio.brillmark.com (internal app) | — | [Full app audit](trakio/trakio-full-app-audit.md) |
-| Fanorate — fanorate.com | — | [Full site audit](fanorate/fanorate-site-audit.md) |
+| Fanorate — fanorate.com | — | [Full site audit](fanorate/fanorate-site-audit.md) (scripted link/image crawl, July 3) · [UI issues audit](fanorate/fanorate-ui-audit-june2026.md) (manual visual pass, 13 pages, June 6 — separate from the site audit) |
 | [Rhino Greenhouses — rhinogreenhouses.co.uk](rhino-greenhouses/_client-notes.md) | Convert.com | [SWF-T06](rhino-greenhouses/swf-t06-brochure-hero-bestsellers.md) *(brochure page hero rebuild + bestsellers AJAX swap; BUG-01 pre-existing video-never-loads site defect (control repro'd too); BUG-02 HIGH — malformed `SECTION_ID` in the deployed Convert bundle 404s the bestsellers fetch, 3/3 on Mobile Chrome/Safari/Tablet + intermittent on Firefox/Safari Desktop)* |
 
 ## Test Type Index (cross-client lookup)
@@ -96,6 +96,20 @@ yet, and [pet-insurance-gurus/swf151-sort-order.md](pet-insurance-gurus/swf151-s
 the OLD build (wrong selectors for the rebuild) — that KB entry needs a rewrite once the rebuild is verified
 live, not before.
 
+A third cleanup pass (2026-08-21) removed 10 more `local_testing/Local2/*.html` reports whose findings were
+confirmed already captured here: `swf151-qa-report.html`, `buckfire-12-qa-report.html`,
+`buckfire-personal-injury-qa-report.html`, `afp21-membership-redesign-qa-report.html`,
+`afp21-vb-code-review-report.html` (both folded into
+[afp/afp21-membership-page-redesign.md](afp/afp21-membership-page-redesign.md) §9), `winkbeds-win257-qa-report.html`,
+`cre-t-155-landlord-approved-faq-qa-report.html`, and `rhino-t06-qa-report.html`. Two more were found to
+document audits that had **no** existing KB record and were written up fresh before deletion:
+`fanorate-ui-report.html` (13-page manual UI critique, 67 issues → new
+[fanorate/fanorate-ui-audit-june2026.md](fanorate/fanorate-ui-audit-june2026.md), distinct from the existing
+scripted `fanorate-site-audit.md`) and `code-review-vB.html` (Thumbtack "Antonio Roofing" vB.js/vB.css static
+code review → new [thumbtack/antonio-roofing-vb-code-review.md](thumbtack/antonio-roofing-vb-code-review.md)).
+Recover any of the 10 from git history at or before commit `66bfb06`. **Not touched:** `h.html` in the same
+folder — it's an unrelated game file (Stickman Brawl), not a QA report.
+
 ## Conventions
 
 - One file per test, named `<test-id>-<short-slug>.md`, inside the client's folder.
@@ -103,4 +117,4 @@ live, not before.
 - After finishing a test: add its file, update the client's `_client-notes.md` if a new site-wide quirk was found, and add a row to the table above.
 - `_shared/` files are cross-client: update the checklist file when a new test *type* appears.
 
-*Last updated: 2026-08-20*
+*Last updated: 2026-08-21*

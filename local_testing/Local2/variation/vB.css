@@ -1,29 +1,13 @@
-html body.Test_06 .qa-hero-subheading {
-    color: var(--color-base-terracotta);
-    font-family: var(--font-body-family-secondary);
-    font-size: var(--text-size-s);
-    font-style: var(--font-body-style);
-    font-weight: var(--font-body-weight-bold-secondary);
-    line-height: normal;
-   margin-bottom: 2rem;
-  }
-
-
-   
-html body.Test_06 #MainContent > [id*='media_with_text'],
-html body.Test_06 [id*="gallery_panel"],
-html body.Test_06 [id*="gallery_panel"] + section,
-html body.Test_06 .whats-in-pack-toggle , 
-html body.Test_06 .brochure_description , 
-html body.Test_06 .qa-hide {
-  display: none !important;
+html body.UKRadiators-18 #sale-banner,
+html body.UKRadiators-18 .adm-nav>.fakeDrawer+div+div {
+    display: none !important;
 }
 
 
-html body.Test_06 .qa-hero-video {
-    
-  width: 100%;
+html body.UKRadiators-18 .nav-draw-level-one>div>span {
+    visibility: hidden;
 }
-html body.Test_06 .brochure-tab-content.active {
-    margin-top: 30px;
+
+html body.UKRadiators-18 {
+    padding-top: 0;
 }

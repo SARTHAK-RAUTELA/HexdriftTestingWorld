@@ -46,6 +46,7 @@ ideas** ("Additional test cases to consider"), **lessons learned / browser & env
 | Trakio — trakio.brillmark.com (internal app) | — | [Full app audit](trakio/trakio-full-app-audit.md) |
 | Fanorate — fanorate.com | — | [Full site audit](fanorate/fanorate-site-audit.md) (scripted link/image crawl, July 3) · [UI issues audit](fanorate/fanorate-ui-audit-june2026.md) (manual visual pass, 13 pages, June 6 — separate from the site audit) |
 | [Rhino Greenhouses — rhinogreenhouses.co.uk](rhino-greenhouses/_client-notes.md) | Convert.com | [SWF-T06](rhino-greenhouses/swf-t06-brochure-hero-bestsellers.md) *(brochure page hero rebuild + bestsellers AJAX swap; BUG-01 pre-existing video-never-loads site defect (control repro'd too); BUG-02 HIGH — malformed `SECTION_ID` in the deployed Convert bundle 404s the bestsellers fetch, 3/3 on Mobile Chrome/Safari/Tablet + intermittent on Firefox/Safari Desktop)* |
+| [UK Radiators — ukradiators.com](ukradiators/_client-notes.md) | Convert.com | [UKRadiators-18](ukradiators/ukradiators-18-hide-banner-nav.md) *(hide summer-sale banner + header nav on magnetic towel bars lander; 15/16 passing on Chrome/Firefox/Safari/Edge; BUG-01 MEDIUM — mobile hamburger/cart icons not hidden per Figma; site has a Cloudflare-style bot-protection challenge that false-fails browsers hit in an unthrottled burst)* |
 
 ## Test Type Index (cross-client lookup)
 

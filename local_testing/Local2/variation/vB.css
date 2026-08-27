@@ -1,13 +1,31 @@
-html body.UKRadiators-18 #sale-banner,
-html body.UKRadiators-18 .adm-nav>.fakeDrawer+div+div {
-    display: none !important;
-}
+@media (max-width: 768px) {
+  html body .cart__page .cart-product.cart__page-col {
+    margin-top: 0;
+  }
 
+  html body .cart__page .cart-product.cart__page-col header {
+    margin-top: 0;
+  }
 
-html body.UKRadiators-18 .nav-draw-level-one>div>span {
-    visibility: hidden;
-}
+  html body .delivery-group-last {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
 
-html body.UKRadiators-18 {
-    padding-top: 0;
+  html body #service-extras-container {
+    margin-top: 0;
+  }
+
+  html body [data-discounts] + .cart__item-delivery.cart__item-sub.cart__item-row {
+    display: none;
+  }
+
+  html body .cre-t-17-summary-inline {
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-top: 0;
+    border-bottom: 1px solid #D9D9D9;
+  }
 }

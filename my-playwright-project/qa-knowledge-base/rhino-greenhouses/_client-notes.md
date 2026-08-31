@@ -20,6 +20,18 @@ to the source function names in the local `vB.js`.
   [swf-t06-brochure-hero-bestsellers.md](swf-t06-brochure-hero-bestsellers.md) BUG-01.
 - Convert.com preview links use `cro_mode=qa` + `_conv_eforce=<project>.<variation>` query params on the
   real page (not a separate iframe/preview tool) - standard Playwright `page.goto()` works directly.
+- **Shopify's own `/cart/add.js` rate-limits (HTTP 429) after repeated rapid add-to-cart calls in a
+  short window** (confirmed live 2026-08-31, testing SWF-T05 - see
+  [swf-t05-cart-reformat.md](swf-t05-cart-reformat.md)). This is platform-level Shopify rate limiting,
+  not a client-specific bot-protection challenge like ukradiators.com's Cloudflare-style check (see
+  `qa-knowledge-base/ukradiators/_client-notes.md`) - same *symptom* (429 blocking cart-dependent
+  tests), different mechanism. **Mitigation:** cache one cart session's `storageState()` (cookies) for
+  the whole spec file run and reuse it across every `describe` block's `browser.newContext()` instead
+  of calling `/cart/add.js` once per block - this cuts a 4-describe-block spec from ~4 add-to-cart POSTs
+  per browser project down to 1, which is what actually avoided the limit (a per-call retry/backoff
+  alone was not enough once the rate window was already primed by an earlier run in the same session).
+  A UI cookie country prompt ("Are you in the right place? ... visiting from India") also appears for
+  automated/headless traffic - unrelated to this quirk, see the geo-IP note above.
 
 ## Cross-test lessons
 

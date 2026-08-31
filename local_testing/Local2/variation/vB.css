@@ -1,31 +1,110 @@
-@media (max-width: 768px) {
-  html body .cart__page .cart-product.cart__page-col {
-    margin-top: 0;
-  }
-
-  html body .cart__page .cart-product.cart__page-col header {
-    margin-top: 0;
-  }
-
-  html body .delivery-group-last {
-    padding-bottom: 0;
-    border-bottom: 0;
-  }
-
-  html body #service-extras-container {
-    margin-top: 0;
-  }
-
-  html body [data-discounts] + .cart__item-delivery.cart__item-sub.cart__item-row {
+html body[data-path="/cart"] .header .header__secondary-nav, 
+html body[data-path="/cart"] .header .header__icons, 
+html body[data-path="/cart"] .header .header__mobile-left,
+html body[data-path="/cart"] .header .header__inline-menu,
+html body[data-path="/cart"] .header .header__secondary-nav,
+html body[data-path="/cart"] .header .header__search,
+html body[data-path="/cart"] .header .header__basket,
+html body[data-path="/cart"]  .template__cart__basket .template__cart__recommended-installer,
+html body[data-path="/cart"] .template__cart__checkout .template__cart__deposit-opt-out__delivery,
+html body[data-path="/cart"] .template__cart__checkout .template__cart__deposit-opt-out__delivery + hr,
+html body[data-path="/cart"] .template__cart__checkout .template__cart__deposit-opt-out__discount,
+html body[data-path="/cart"] .cart-payment-icons,
+html body[data-path="/cart"] .template__cart__message,
+html body[data-path="/cart"] .template__cart__deposit-opt-out hr:nth-child(6),
+html body[data-path="/cart"] .cre-t-05-price-2 .template__cart__deposit-opt-out__option__text h4 + p,
+html body[data-path="/cart"] .announcement-bar{
     display: none;
-  }
+}
 
-  html body .cre-t-17-summary-inline {
-    margin-top: 0;
-    margin-bottom: 24px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    border-top: 0;
-    border-bottom: 1px solid #D9D9D9;
-  }
+@media screen and (min-width:890px) {
+    html body[data-path="/cart"] #template-cart{
+    padding-top: 0px;
+}
+html body[data-path="/cart"] .header{
+    padding-bottom: 0px !important;
+}
+}
+
+
+html body[data-path="/cart"] .header__heading-link{
+    padding-top: 12px !important;
+}
+
+
+
+.cre-t-05-add-sub{
+    color: #FFF;
+    font-family: inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 321px;
+}
+
+html body[data-path="/cart"] .template__cart__deposit-opt-out__option__text h4,
+html body[data-path="/cart"] .template__cart__deposit-opt-out__option__price{
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+html body[data-path="/cart"] .cre-t-05-add-sub-content{
+    margin-bottom: 8px;
+}
+
+html body[data-path="/cart"] .shopify-section ghd-cart{
+    margin-top: 8px;
+}
+
+html body[data-path="/cart"] .mobile-nav-toolbar{
+    display: none !important;
+}
+
+@media screen and (max-width: 989px) {
+   html body[data-path="/cart"] sticky-header .header__heading{
+            position: relative;
+        bottom: 0;
+        /* right: 0; */
+        /* margin: 0 auto; */
+        display: flex !important;
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 0px;
+    }
+    
+    html body[data-path="/cart"] .header{
+            display: flex;
+        align-items: center;
+        padding-bottom: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1500px) {
+   html body[data-path="/cart"] .header--top-center > .header__heading .header__heading-link {
+        padding-top: 1.4rem;
+         margin-bottom: 0px;
+         position: unset; 
+        top: 2rem;
+    }
+}
+
+
+html body[data-path="/cart"].cre-t-05 .template__cart__deposit-opt-out__option .template__cart__deposit-opt-out__option__text h4{
+    display: none;
+}
+
+
+.template__cart__deposit-opt-out .template__cart__deposit-opt-out__option__text{
+    opacity: 0;
+     transition: all 0.3s linear;
+}
+
+.cre-t-05-order-now.template__cart__deposit-opt-out .template__cart__deposit-opt-out__option__text{
+   
+    opacity: 1;
+    
 }

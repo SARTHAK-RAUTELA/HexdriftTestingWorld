@@ -918,6 +918,34 @@
       box.style.setProperty("--tt-arrow-left", arrowLeft + "px");
     }
 
+    /* True only if `el` is still on-screen: within the viewport, and not
+       clipped out of any scrollable ancestor's visible area (e.g. the
+       mobile value-table's own scrollbox). Used to close a click-opened
+       tooltip once its icon scrolls out of view, instead of letting the
+       fixed-position box keep chasing an anchor no longer visible. */
+    function isIconVisible(el) {
+      var rect = el.getBoundingClientRect();
+      var viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+      var viewportHeight = document.documentElement.clientHeight || window.innerHeight;
+      if (rect.bottom <= 0 || rect.top >= viewportHeight || rect.right <= 0 || rect.left >= viewportWidth) {
+        return false;
+      }
+
+      var node = el.parentElement;
+      while (node && node !== document.body && node !== document.documentElement) {
+        var style = window.getComputedStyle(node);
+        var clips = /(auto|scroll|hidden)/.test(style.overflowY) || /(auto|scroll|hidden)/.test(style.overflowX);
+        if (clips) {
+          var parentRect = node.getBoundingClientRect();
+          if (rect.bottom <= parentRect.top || rect.top >= parentRect.bottom || rect.right <= parentRect.left || rect.left >= parentRect.right) {
+            return false;
+          }
+        }
+        node = node.parentElement;
+      }
+      return true;
+    }
+
     function initValueTableTooltips(scopeEl) {
       if (!scopeEl) return;
 
@@ -1107,9 +1135,23 @@
       // away from its icon (since the box is `position: fixed`).
       function repositionVisibleTooltips() {
         if (activeHoverWrap) positionTooltipBox(activeHoverWrap);
+
+        // Mobile/touch tap-opened tooltips stay open across scrolls
+        // (unlike hover, which naturally ends once the icon moves out
+        // from under the cursor). Once the icon itself scrolls off-
+        // screen — or out of the mobile table's own scrollbox — close
+        // it instead of letting the fixed-position box keep chasing a
+        // no-longer-visible anchor (BUG: tooltip floats disconnected).
         var openWraps = scopeEl.querySelectorAll(".tooltip-wrap.is-open");
         for (var j = 0; j < openWraps.length; j++) {
-          positionTooltipBox(openWraps[j]);
+          var wrapEl = openWraps[j];
+          var icon = wrapEl.querySelector(".tooltip-icon");
+          if (icon && !isIconVisible(icon)) {
+            wrapEl.classList.remove("is-open");
+            icon.setAttribute("aria-expanded", "false");
+            continue;
+          }
+          positionTooltipBox(wrapEl);
         }
       }
       window.addEventListener("scroll", repositionVisibleTooltips, { passive: true, capture: true });

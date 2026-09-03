@@ -987,11 +987,6 @@
              mouseover doesn't double-fire this alongside its click. */
           if (isHoverCapableDevice) {
             fireVwoGoal(CLICKS_ON_ANY_TOOLTIP_GOAL);
-            console.log(
-              "[AFP21] VWO goal fired:",
-              CLICKS_ON_ANY_TOOLTIP_GOAL,
-              "(hover)"
-            );
           }
         },
         scopeEl
@@ -1083,7 +1078,6 @@
           /* AFP21 goal: fire on every click of a tooltip icon, on any
              device. */
           fireVwoGoal(CLICKS_ON_ANY_TOOLTIP_GOAL);
-          console.log("[AFP21] VWO goal fired:", CLICKS_ON_ANY_TOOLTIP_GOAL);
 
           var isMouseClick = lastPointerType
             ? lastPointerType === "mouse"

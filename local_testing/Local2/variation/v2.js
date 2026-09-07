@@ -1,10 +1,47 @@
 (function () {
   try {
-    /* main variables */
-    var debug = false;
-    var variation_name = 'cre-t-17';
+    /* ==== Modal CONFIGURATION ==== */
+    var variation_name = "cre-t-13-control";
+    var debug = 0;
 
-  
+    var imageConfig = {
+      crossIcon: "https://v2.crocdn.com/PAY/test8/cross.svg",
+      icon1: "https://v2.crocdn.com/PAY/test8/laptop.svg",
+      icon2: "https://v2.crocdn.com/PAY/test8/card.svg",
+      icon3: "https://v2.crocdn.com/PAY/test8/rocket.svg"
+    };
+
+    function live(selector, event, callback, context) {
+      if (typeof callback !== "function") return;
+      context = context || document;
+
+      context.addEventListener(event, function (e) {
+        var el = e.target.closest(selector);
+        if (el && context.contains(el)) {
+          callback.call(el, e);
+        }
+      });
+    }
+
+    function insertAfter(selector, html) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (typeof html === "string") {
+        element.insertAdjacentHTML("afterbegin", html);
+      } else if (html && html.nodeType === 1) {
+        element.insertAdjacentElement("afterbegin", html);
+      }
+    }
+
+    function addClass(selector, className) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (element.classList) element.classList.add(className);
+      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
+        element.className += " " + className;
+      }
+    }
+
     function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
       var interval = setInterval(function () {
         if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
@@ -12,127 +49,136 @@
           trigger();
         }
       }, delayInterval);
-
       setTimeout(function () {
         clearInterval(interval);
       }, delayTimeout);
     }
 
-    function addClass(selector, className) {
-      var element = typeof selector === 'string' ? document.querySelector(selector) : selector;
-      if (!element) return;
+    /* ==== MODAL HTML ==== */
+    var modalHtml = `<div class="cre-t-13-modal-main">
+  <div id="cre-t-13-modal-overlay" class="cre-t-13-overlay"></div>
+  <div class="cre-t-13-modal-container">
+    <div class="cre-t-13-modal-inner">
+      <div class="cre-t-13-modal-cross-icon-wrapper">
+        <img src="${imageConfig.crossIcon}" alt="cross_icon" class="cre-t-13-cross-icon">
+      </div>
+      
+      <div class="cre-t-13-modal-content">
+        <div class="cre-t-13-main-title">
+          Not sure if Pay.com.au is right for your business?
+        </div>
+        <div class="cre-t-13-sub-title"">
+        You don't need to move all your payments to Pay.com.au to get started. Many customers start with a single payment to see how it works.
+        </div>
 
-      if (element.classList) {
-        element.classList.add(className);
-      } else if (!element.className.match(new RegExp('\\b' + className + '\\b'))) {
-        element.className += ' ' + className;
-      }
-    }
+        <div class="cre-t-13-features-container">
+    <div class="cre-t-13-feature-card card1">
+        <div class="cre-t-13-icon-box">
+            <div class="cre-t-13-icon-wrapper"><img src="${imageConfig.icon1}" alt="icon"></div>
+        </div>
+        <div class="cre-t-13-card-info">
+            <div class="cre-t-13-card-title">Create a Free Account</div>
+            <div class="cre-t-13-card-subtitle">Create your account in minutes. No charge unless you make a payment.
+            </div>
+        </div>
+    </div>
+    <div class="cre-t-13-feature-card card2">
+        <div class="cre-t-13-icon-box">
+            <div class="cre-t-13-icon-wrapper"><img src="${imageConfig.icon2}" alt="icon"></div>
+        </div>
+        <div class="cre-t-13-card-info">
+            <div class="cre-t-13-card-title">Use Your Existing Cards</div>
+            <div class="cre-t-13-card-subtitle">Keep using your existing cards, bank accounts and accounting software.
+            </div>
+        </div>
+    </div>
+    <div class="cre-t-13-feature-card card3">
+        <div class="cre-t-13-icon-box">
+            <div class="cre-t-13-icon-wrapper"><img src="${imageConfig.icon3}" alt="icon"></div>
+        </div>
+        <div class="cre-t-13-card-info">
+            <div class="cre-t-13-card-title">Make a Single Payment</div>
+            <div class="cre-t-13-card-subtitle">Review your fees, points and rewards before making your first payment.</div>
+        </div>
+    </div>
+</div>
 
-    function removeClass(selector, className) {
-      var element = typeof selector === 'string' ? document.querySelector(selector) : selector;
-      if (!element) return;
+        <button class="cre-t-13-modal-cta">Create your free account</button>
+      </div>
+    </div>
+  </div>
+</div>`;
 
-      if (element.classList) {
-        element.classList.remove(className);
-      } else {
-        element.className = element.className.replace(new RegExp('\\b' + className + '\\b', 'g'), '');
-      }
-    }
-
-   
-
-    var basketSummaryMoved = false;
-    var basketSummaryOriginalParent = null;
-    var basketSummaryOriginalNextSibling = null;
-
-    function findContinueShoppingLink(cartProduct) {
-      var links = cartProduct.querySelectorAll('a[href="/collections/"]');
-      for (var i = 0; i < links.length; i++) {
-        if (links[i].textContent.indexOf('Continue Shopping') !== -1) {
-          return links[i];
+    /* ==== MODAL CORE LOGIC ==== */
+    function optimizelyGoal(eventName) {
+      window["optimizely"] = window["optimizely"] || [];
+      window["optimizely"].push({
+        type: "event",
+        eventName: eventName,
+        tags: {
+          revenue: 0,
+          value: 0.0
         }
-      }
-      return null;
-    }
-
-    function moveBasketSummaryAboveContinueShopping(cartProduct, cartSidebar) {
-      if (basketSummaryMoved) return;
-
-      var continueShoppingLink = findContinueShoppingLink(cartProduct);
-      if (!continueShoppingLink) return;
-
-      basketSummaryOriginalParent = cartSidebar.parentNode;
-      basketSummaryOriginalNextSibling = cartSidebar.nextSibling;
-
-      cartProduct.insertBefore(cartSidebar, continueShoppingLink);
-      addClass(cartSidebar, variation_name + '-summary-inline');
-      basketSummaryMoved = true;
-    }
-
-    function restoreBasketSummaryPosition(cartSidebar) {
-      if (!basketSummaryMoved) return;
-      if (!basketSummaryOriginalParent) return;
-
-      basketSummaryOriginalParent.insertBefore(cartSidebar, basketSummaryOriginalNextSibling);
-      removeClass(cartSidebar, variation_name + '-summary-inline');
-      basketSummaryMoved = false;
-    }
-
-    function handleMediaQueryChange(mobileMediaQuery, cartProduct, cartSidebar) {
-      if (mobileMediaQuery.matches) {
-        moveBasketSummaryAboveContinueShopping(cartProduct, cartSidebar);
-      } else {
-        restoreBasketSummaryPosition(cartSidebar);
-      }
-    }
-
-    function bindMediaQueryListener(mobileMediaQuery, cartProduct, cartSidebar) {
-      if (window.cre_t_17_media_listener_bound) return;
-      window.cre_t_17_media_listener_bound = true;
-
-      if (mobileMediaQuery.addEventListener) {
-        mobileMediaQuery.addEventListener('change', function () {
-          handleMediaQueryChange(mobileMediaQuery, cartProduct, cartSidebar);
-        });
-      } else if (mobileMediaQuery.addListener) {
-        mobileMediaQuery.addListener(function () {
-          handleMediaQueryChange(mobileMediaQuery, cartProduct, cartSidebar);
-        });
-      }
-    }
-
-    function setupBasketSummaryOrder(cartProduct, cartSidebar) {
-      if (document.querySelector('.cre-t-17-outer')) return;
-
-      var marker = document.createElement('span');
-      marker.className = variation_name + '-outer';
-      marker.style.display = 'none';
-      cartProduct.appendChild(marker);
-
-      var mobileMediaQuery = window.matchMedia('(max-width: 768px)');
-      handleMediaQueryChange(mobileMediaQuery, cartProduct, cartSidebar);
-      bindMediaQueryListener(mobileMediaQuery, cartProduct, cartSidebar);
-    }
-
-    function waitForCartSidebar(cartProduct) {
-      waitForElement('.cart-sidebar', function () {
-        var cartSidebar = document.querySelector('.cart-sidebar');
-        if (!cartSidebar) return;
-
-        setupBasketSummaryOrder(cartProduct, cartSidebar);
       });
     }
 
-    function init() {
-      var cartProduct = document.querySelector('.cart-product');
-      if (!cartProduct) return;
-
-      waitForCartSidebar(cartProduct);
+    function hideModal() {
+      var modalMain = document.querySelector(".cre-t-13-modal-main");
+      if (modalMain) {
+        modalMain.remove();
+        document.body.classList.remove("cre-t-13-freeze");
+      }
     }
-    
-    waitForElement('.cart-product', init);
+
+    function showModal() {
+      var alreadyExists = document.querySelector(".cre-t-13-modal-main");
+      if (!alreadyExists) {
+        if (debug) console.log("inserting modal");
+        insertAfter("body", modalHtml);
+      }
+
+      var modal = document.querySelector(".cre-t-13-modal-main");
+      if (modal) {
+        modal.classList.add("active");
+        document.body.classList.add("cre-t-13-freeze");
+      }
+    }
+
+    function setupCloseEvents() {
+      live(".cre-t-13-modal-cross-icon-wrapper, .cre-t-13-overlay", "click", function () {
+        hideModal();
+      });
+      live(".cre-t-13-modal-cta", "click", function () {
+        // Optimizely Goal Create Account
+        optimizelyGoal("pay13_-_clicks_on__create_your_free_account__button");
+
+        var targetBtn = document.querySelector(".sticky-get-started a#mob-get-started");
+        if (targetBtn) {
+          targetBtn.click();
+        }
+        hideModal();
+      });
+    }
+
+    /* ==== VARIATION INITIALIZE ==== */
+    function init() {
+      addClass("body", variation_name);
+      //Modal Fires Goal
+      optimizelyGoal("pay13_-_modal_fires");
+      showModal();
+
+      if (!window.CRE_EVENT_13) {
+        window.CRE_EVENT_13 = true;
+        setupCloseEvents();
+      }
+
+      if (debug) console.log(variation_name + " initialized");
+    }
+
+    /* ==== Trigger timing (exit-intent only, desktop-only) is owned by the Optimizely
+       Activation Code field (pay13-trigger-control.js), which calls activate() -> init(). ==== */
+    waitForElement("body", init, 50, 15000);
   } catch (e) {
-    if (debug) console.log(e, 'error in Test ' + variation_name);
+    if (debug) console.log(e, "error in Test " + variation_name);
   }
 })();

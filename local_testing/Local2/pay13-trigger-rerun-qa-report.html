@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PAY13 Trigger Rerun QA Report — pay.com.au</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #f4f5f7; color: #1a1a1a; margin: 0; padding: 40px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 26px; margin-bottom: 4px; }
+  .sub { color: #666; margin-bottom: 30px; }
+  .card { background: #fff; border-radius: 10px; padding: 24px 28px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  h2 { font-size: 18px; border-bottom: 2px solid #3066C9; padding-bottom: 8px; margin-top: 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+  th { background: #f0f2f5; }
+  .pass { color: #1a7a3c; font-weight: 600; }
+  .fixed { background: #fff8e1; border-left: 4px solid #f4b400; padding: 12px 16px; border-radius: 4px; margin: 10px 0; }
+  .note { background: #eef3fc; border-left: 4px solid #3066C9; padding: 12px 16px; border-radius: 4px; margin: 10px 0; }
+  code { background: #f0f2f5; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+  pre { background: #0d1117; color: #d6e0ea; padding: 14px 16px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+  .badge.pass { background: #e3f5e9; color: #1a7a3c; }
+  ul { padding-left: 20px; }
+  .matrix { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .matrix span { background: #e3f5e9; color: #1a7a3c; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>PAY13 — pay.com.au Modal: Trigger Rerun Against Real Activation Code</h1>
+  <div class="sub">QA report — 2026-09-07 (Round 2, same-day rerun of cre-t-13-desktop-trigger-update)</div>
+
+  <div class="card">
+    <h2>Why this rerun</h2>
+    <p>The client supplied the actual Optimizely <strong>Activation Code</strong> — the <code>function trigger(activate, options)</code> snippet that decides <em>when</em> to call <code>activate()</code>. This is architecturally separate from the Variation/Control JS (<code>vB.js</code>/<code>v2.js</code>), which only builds and shows the modal. Round&nbsp;1's fix had guessed at the trigger requirement and baked the 40s-timer/exit-intent logic directly into <code>vB.js</code>/<code>v2.js</code>; this round rebuilds the test around the real two-stage architecture:</p>
+    <pre>pay13-trigger-variation.js / pay13-trigger-control.js   --calls activate()-->   vB.js / v2.js
+        (decides WHEN)                                                    (just builds+shows modal)</pre>
+    <p><code>vB.js</code>/<code>v2.js</code> were stripped back to firing immediately (<code>waitForElement("body", init, 50, 15000)</code>) when <code>activate()</code> calls them.</p>
+  </div>
+
+  <div class="card">
+    <h2>Control's activation code — derived, not supplied</h2>
+    <div class="note">
+      The client only supplied the <strong>variation's</strong> activation code (40s timer + exit intent). Per the client's own confirmation — "control fires exit intent only, variation fires exit intent and 40 sec" — <code>pay13-trigger-control.js</code> was derived by removing the 40s-timer block from the variation code, keeping the <code>isMobile</code> guard, cookie, and exit-intent handler byte-identical. <strong>If the client later shares the actual control-side snippet, diff it against this derived version before trusting further reruns.</strong>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>New finding: desktop-only is enforced in JS, not just via the Optimizely audience</h2>
+    <div class="fixed">
+      Round 1's report stated "there is nothing in the injected code for a device-emulation test to exercise" — true of <code>vB.js</code>/<code>v2.js</code>'s content, but the real Activation Code has:
+      <pre>var isMobile = window.innerWidth &lt; 768;
+if (isMobile) { return; }</pre>
+      before setting up either trigger path. This round adds dedicated regression tests confirming the modal never activates on Mobile Chrome (Pixel&nbsp;5), Mobile Safari (iPhone&nbsp;12), or a narrow desktop viewport — independent of the Optimizely audience.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Two environment-artifact issues found and fixed in the test fixture (not the client's code)</h2>
+    <div class="fixed">
+      <strong>1. Virtual-clock two-stage timer gap.</strong> Once <code>activate()</code> injects <code>vB.js</code>/<code>v2.js</code>, that script registers its own fresh <code>waitForElement("body", init, 50, 15000)</code> poll under the already-installed <code>page.clock</code> fake timer. The test wasn't advancing the clock a second time after activation fired, so <code>init()</code> never ran even though activation itself had succeeded. <strong>Fix:</strong> added a follow-up <code>page.clock.fastForward(100)</code> after every action that triggers activation.
+    </div>
+    <div class="fixed">
+      <strong>2. Cookie-on-<code>file://</code>-origin unreliability.</strong> The real trigger's fired-flag is a <code>document.cookie</code> write (<code>cre-t-13=modal-triggered; path=/</code>), not <code>sessionStorage</code> like Round 1's hand-built version. Chromium and WebKit silently refuse to persist cookies set on <code>file://</code> origins (Firefox tolerates it) — an artifact of the fixture's origin, not a defect in the client's code; the modal still displayed and the goal still fired correctly in every case, only the cookie-persistence assertion tripped. <strong>Fix:</strong> the fixture is now served from a local HTTP server (<code>http://127.0.0.1:&lt;port&gt;/</code>, spun up in <code>test.beforeAll</code>) instead of <code>file://</code>, matching how <code>https://pay.com.au/</code> actually behaves.
+    </div>
+    <div class="note">
+      Also added a <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> tag to the fixture — without it, mobile/tablet emulated browsers report a stale ~980px layout-viewport width instead of their real device width, making the <code>isMobile</code> check untestable in this environment. Production's real page already has a normal viewport meta tag, so this only mattered for making the fixture trustworthy.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Result</h2>
+    <p><span class="badge pass">126 / 126 passed</span> — 18 test cases × 7 Playwright projects</p>
+    <div class="matrix">
+      <span>Chrome Desktop</span>
+      <span>Firefox Desktop</span>
+      <span>Edge Desktop</span>
+      <span>Safari Desktop</span>
+      <span>Mobile Chrome (Pixel 5)</span>
+      <span>Mobile Safari (iPhone 12)</span>
+      <span>Tablet (iPad Gen 7)</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Regression checklist (18 TCs)</h2>
+    <table>
+      <tr><th>#</th><th>Group</th><th>What it checks</th><th>Result</th></tr>
+      <tr><td>1</td><td>Variation</td><td>Modal hidden immediately on load</td><td class="pass">Pass</td></tr>
+      <tr><td>2</td><td>Variation</td><td><code>sessionStorage</code> target-time recorded as soon as the trigger sets up; not yet activated</td><td class="pass">Pass</td></tr>
+      <tr><td>3</td><td>Variation</td><td>Modal hidden at 39s, appears at 40s (timer path); cookie + goal + <code>optimizely_trigger_reason_cre_t_13 === 'timer'</code> all set</td><td class="pass">Pass</td></tr>
+      <tr><td>4</td><td>Variation</td><td>Exit intent fires early and cancels the 40s timer — no double <code>pay13_-_modal_fires</code></td><td class="pass">Pass</td></tr>
+      <tr><td>5</td><td>Variation</td><td>If the 40s timer fires first, a later exit-intent event does not double-fire (dangling <code>mouseout</code> listener is harmless)</td><td class="pass">Pass</td></tr>
+      <tr><td>6</td><td>Variation</td><td>Does NOT activate on a mobile viewport (375×667), even after exit intent + 40s+</td><td class="pass">Pass</td></tr>
+      <tr><td>7</td><td>Variation</td><td>40s timer persists across a simulated page reload (cumulative time, not reset)</td><td class="pass">Pass</td></tr>
+      <tr><td>8</td><td>Variation</td><td>Does not re-fire on a later page view once shown this session (cookie persists)</td><td class="pass">Pass</td></tr>
+      <tr><td>9</td><td>Variation</td><td>Content matches variation copy</td><td class="pass">Pass</td></tr>
+      <tr><td>10</td><td>Variation</td><td>Close via cross icon / overlay both hide the modal</td><td class="pass">Pass</td></tr>
+      <tr><td>11</td><td>Variation</td><td>CTA click fires click goal + activates sticky get-started link</td><td class="pass">Pass</td></tr>
+      <tr><td>12</td><td>Control</td><td>Modal never fires from elapsed time alone, even 5 minutes later (no timer)</td><td class="pass">Pass</td></tr>
+      <tr><td>13</td><td>Control</td><td>Exit intent fires the modal</td><td class="pass">Pass</td></tr>
+      <tr><td>14</td><td>Control</td><td>Does NOT activate on a mobile viewport</td><td class="pass">Pass</td></tr>
+      <tr><td>15</td><td>Control</td><td>Does not re-fire on a later page view once shown this session</td><td class="pass">Pass</td></tr>
+      <tr><td>16</td><td>Control</td><td>Content matches PAY08 control copy</td><td class="pass">Pass</td></tr>
+      <tr><td>17</td><td>Control</td><td>Close via cross icon / overlay both hide the modal</td><td class="pass">Pass</td></tr>
+      <tr><td>18</td><td>Control</td><td>CTA click fires click goal + activates sticky get-started link</td><td class="pass">Pass</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Minor code note (not a bug — harmless by design)</h2>
+    <p>If the 40s timer fires first in the client's real activation code, the <code>mouseout</code> exit-intent listener is never explicitly removed (only the listener's own branch removes it; the timer branch doesn't reach that removal). A later exit-intent event after the timer has already fired still invokes <code>executeActivation("exit_intent")</code>, but the <code>getCookie(...) === "modal-triggered"</code> guard at the top of <code>executeActivation</code> makes it a no-op — confirmed via TC&nbsp;5, no double-fire occurs. Not worth a client fix, just worth knowing if debugging a "why is this listener still attached" question later.</p>
+  </div>
+
+  <div class="card">
+    <h2>Not covered by this test suite</h2>
+    <p>This rerun uses a local static fixture (served over HTTP) with the client's activation code + variation/control JS injected directly, per the existing lesson that exit-intent/timer testing against the live <code>pay.com.au</code> page is flaky due to 15+ third-party scripts competing for the main thread. Visual/content assertions (modal layout, copy, CTA behavior) are unchanged from Round 1 — this rerun's scope is specifically the trigger/activation architecture and the newly-discovered desktop-only JS gate.</p>
+  </div>
+
+  <div class="card">
+    <h2>Before pushing live</h2>
+    <p>The Optimizely campaign's live Variation/Control JS + CSS fields, plus this new Activation Code field, still need to be updated to match these files. Re-verify against the preview links once the Optimizely editor is updated.</p>
+  </div>
+</div>
+</body>
+</html>

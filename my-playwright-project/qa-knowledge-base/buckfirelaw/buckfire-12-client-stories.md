@@ -141,3 +141,78 @@ supplied for this test.
 - [ ] Keyboard-only pass once BUG-03 is fixed: Tab to play control, Space/Enter to start.
 - [ ] Once slides 4-6 get real content, re-assert TC-32/TC-33 (unique titles, distinct clips) as
       must-pass rather than known-fail.
+
+---
+
+## Update 2026-09-07 — rolled out sitewide (Test 12), rebuilt as a static 3-card grid
+
+**Test file:** `my-playwright-project/testing/buckfire-12-client-stories.spec.js`
+**Report:** `local_testing/Local2/buckfire-test12-client-stories-qa-report.html`
+**Result:** 13 pages × 2 viewports (Chrome Desktop + Mobile Chrome/Pixel 5) = 26/26 checks passed, 39
+videos verified (13 pages × 3 cards). **Zero defects found.**
+
+**The component changed shape since the 2026-08-04 write-up above.** It's no longer a 6-slide Swiper
+carousel on a single page — it's now a plain CSS-grid `.buckfire-12-stories-grid` of exactly **3**
+`.buckfire-12-story-card`s (no Swiper, no carousel arrows, no pause-others logic to test), and the same
+component now renders **different, page-specific content on 13 different URLs** (homepage + 12 PPC
+pages), each showing a different trio of real clients — no more placeholder slides. All prior carousel
+bugs (BUG-01 keyboard double-play, BUG-06 Swiper version mismatch, BUG-07 dead CSS vars) are **moot**;
+they described the old carousel markup, not this one. BUG-03 (no keyboard path to play) and BUG-04 (alt
+text can drift from the visible name) are still worth re-checking against the new markup if this becomes
+a priority — not re-verified in this pass, which focused on content-mapping correctness and playback.
+
+**Confirmed live markup:**
+```
+section.buckfire-12-client-stories
+  h2 "Client Stories"
+  div.buckfire-12-stories-grid          (1 col <721px / 2 col 721-1099 / 3 col >=1100)
+    div.buckfire-12-story-card x3
+      div.buckfire-12-video-thumb
+        video.buckfire-12-video[video-url]   <- lazy: empty until clicked
+        img.buckfire-12-thumb-img[alt="{Name} video thumbnail"]
+        div.buckfire-12-play-button
+      div.buckfire-12-story-content
+        h3                                    <- CSS display:none, not the visible headline
+        p  "quote..."                         <- the visible quote
+        span.buckfire-12-name  "– Name"
+```
+
+**Force URLs:** PPC pages all share `?cro_mode=qa&_conv_eforce=100052508.1000256555` (same experiment,
+still 100052508); homepage uses a **separate** experiment, `?cro_mode=qa&_conv_eforce=100052748.1000257125`.
+
+**Page → client mapping (all confirmed correct, name + quote + order + poster alt, 2026-09-07):**
+
+| Page | URL | Clients (order) |
+|---|---|---|
+| Homepage | `/` | Shaylynn, Denita, Mike |
+| Medical Malpractice | `/medical-malpractice-lawyers/` | Denise, Shaylynn, Mike |
+| Dog Bite | `/dog-bite-lawyer/` | Jessica, Alyssa, Denita |
+| Slip & Fall (lawyers) | `/slip-and-fall-lawyers/` | Jessica, Alyssa, Denita |
+| Slip & Fall (attorneys) | `/slip-and-fall-attorneys/` | Damian, Alyssa, Denita |
+| Free Case Review | `/free-case-review/` | Shaylynn, Mike, Denita |
+| Car Accident | `/car-accident-lawyers/` | Denita, Damian, Mike |
+| Personal Injury | `/personal-injury-lawyer/` | Mike, Shaylynn, Denise |
+| Bike Accident | `/bicycle-accident-lawyer/` | Mike, Jessica, Denita |
+| Wrongful Death | `/wrongful-death-lawyer/` | Denita, Shaylynn, Denise |
+| Nursing Home Abuse | `/nursing-home-abuse-lawyer/` | Denise, Alyssa, Mike |
+| Birth Injury | `/birth-injury-lawyers/` | Denise, Alyssa, Mike |
+| Truck Accidents | `/truck-accident-lawyers/` | Denita, Mike, Damian |
+
+### Notes (not defects)
+
+- **Transient Mobile Chrome video-load timeouts, self-resolved on retry.** 2 of 26 checks (Dog Bite,
+  Slip & Fall lawyers, both Mobile Chrome) initially timed out waiting for a video to reach
+  `readyState >= 1` after 3 videos were clicked back-to-back in the same test. Re-run standalone: Dog
+  Bite passed clean; Slip & Fall failed again but on a **different** card that time, then passed on
+  retry. A different card failing each run (not the same client/page) points to headless-emulation
+  CPU/network contention from stacking 3 video loads in quick succession, not a per-client defect. If
+  this suite is re-run and a single Mobile Chrome video check times out, re-run that page alone before
+  treating it as a regression.
+- **`cre-t-21-modal-overlay` (an unrelated lead-capture modal sharing this rollout) can intercept clicks
+  after extended dwell time.** Observed once, while capturing report screenshots (a slower flow than the
+  main test): the modal opened over `/medical-malpractice-lawyers/` and blocked a click on a video
+  thumbnail underneath it. Did **not** occur during the main automated run (interacts almost immediately
+  after load), so this looks like a time- or scroll-based trigger on `cre-t-21`, a different experiment —
+  not investigated further since it's out of scope for the Client Stories section, but worth a manual
+  check on whether it can pop up mid-video and block interaction. See `_client-notes.md` — Buckfire pages
+  routinely run more than one experiment at once (previously body class `cre-t-11`, now `cre-t-21`).

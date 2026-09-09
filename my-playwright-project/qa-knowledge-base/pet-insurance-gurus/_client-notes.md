@@ -2,7 +2,7 @@
 
 **Sites:** `petinsurancegurus.com` (sister site: `rentersinsurancegurus.com` — see `../renters-insurance-gurus/`)
 **A/B platform:** Convert.com — force URLs: `?cro_mode=qa&_conv_eforce=<experiment>.<variation>`
-**Tests done:** SWF128, SIC132, SWF135, CRE-T-123, CRE-T-133, CRE-T-137, CRE-T-144 (SWF144), SWF139, SWF151 (cre-t-151), SWF157 (cre-t-157)
+**Tests done:** SWF128, SIC132, SWF135, CRE-T-123, CRE-T-133, CRE-T-137, CRE-T-144 (SWF144), SWF139, SWF151 (cre-t-151), SWF157 (cre-t-157), SWF164 (cre-t-164)
 
 ## Environment / site quirks (apply to every PIG test)
 
@@ -31,6 +31,19 @@
   Convert bucketing cookies from prior QA sessions. If a bug won't reproduce consistently in your regular test
   browser, re-check in a fresh Playwright `browser.newContext()` (or a private window) before concluding
   anything about the code.
+- **A force-preview URL that renders as bare/unmodified doesn't necessarily mean the wrong link or a
+  timing issue — check the `_conv_v` cookie first.** SWF164's V1 URL rendered byte-identical to the
+  hardcoded page on every attempt (fresh context, reload, longer waits); the `_conv_v` cookie's `exp`
+  map confirmed Convert genuinely bucketed the session into that variation, meaning the variation slot
+  itself had no code attached yet in Convert — a client/dev-side gap, not a QA-side one. Fall back to
+  local injection (`swf151-new-build.spec.js` pattern) against the real site rather than assuming the
+  test link is broken.
+- **A polling `setInterval` that runs for N seconds after init and unconditionally re-applies a
+  collapsed/default state can silently undo a user's own interaction inside that window.** SWF164's
+  `clickNativeButton()` re-added its own collapsed CSS class on every 250ms tick for 3 seconds after
+  load, with no check for whether the user had since expanded manually — so clicking "Show More" early
+  looked completely broken, but worked fine once tested after the interval's own window elapsed. Worth
+  checking for on any interval-based init pattern on this site/template family.
 
 ## Cross-site clone risk
 
@@ -50,3 +63,4 @@ Tests get cloned between this site and Renters Insurance Gurus (CRE-T-123 → CR
 | SWF139 — Info icon on scoring badge → scroll to Ranking Methodology | [swf139-info-icon-scroll.md](swf139-info-icon-scroll.md) |
 | SWF151 — "Sort by" (Best Rated / Lowest Price) on comparison listings | [swf151-sort-order.md](swf151-sort-order.md) |
 | SWF157 — Vet-quote testimonial redesign (single quote / manual carousel / auto carousel) | [swf157-quote-carousel.md](swf157-quote-carousel.md) |
+| SWF164 — Rearrange comparison listings + rating overrides (2 arms) | [swf164-rearrange-listings.md](swf164-rearrange-listings.md) |

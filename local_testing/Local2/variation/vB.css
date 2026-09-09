@@ -1,162 +1,344 @@
-/* cre-t-157: testimonial quote section (new design, single quote, no carousel), injected above the top listing */
+/* cre-t-164 Control - all overrides gated behind body.cre-t-164-default */
 
-/* Remove "Personalize prices" copy above the filter buttons */
-#section-11-584 {
+/* pin the native read-more link's old slot + the duplicate Best Overall card, default state only */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.oxy-read-more-link:not(.cre-t-164-toggle) {
+  display: none;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Lemonade-Listing-Only"]:has(.best-overall-bubble) {
+  order: 12;
+}
+
+/* defensive: force all 10 cards visible regardless of whatever the native show-more/less collapse
+   mechanism does by DOM position -- NEEDS LIVE VERIFICATION, see chat notes */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Lemonade-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Embrace-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Figo-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Odie-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] {
+  display: block !important;
+}
+
+/* our own collapse: hides rank 8/9/10 (Odie, ASPCA, AKC -- same set in both arms) when collapsed */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"].cre-t-164-collapsed>[data-unique="outbound-partner-clicks-Odie-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"].cre-t-164-collapsed>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"],
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"].cre-t-164-collapsed>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] {
   display: none !important;
 }
 
-.cre-t-157-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  background-color: #f5f5f9;
-  padding-top: 30px;
-  padding-bottom: 0px;
-  margin-bottom: -15px;
+/* our injected copy reuses the native .oxy-read-more-link class for visual fidelity -- */
+/* only needs its own order (native has none) and a hide rule for filtered state */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.cre-t-164-toggle {
+  order: 11;
 }
 
-/* Rectangle 5 (see section.css) */
-.cre-t-157-quote-box {
+body:not(.cre-t-164-default) .plan-repeater[data-unique="comparison-table"]>.cre-t-164-toggle {
+  display: none;
+}
+
+/* Fetch -> position 2, score 8.6 */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] {
+  order: 2;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .plan-number {
   position: relative;
-  width: 100%;
-  max-width: 1120px;
-  min-height: 110px;
-  background: rgb(255, 255, 255);
-  border: 1px solid #E6E8EF;
-  border-radius: 10px;
-  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.02);
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .plan-number::after {
+  content: "2";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 22px;
-  padding: 20px 84px 20px 34px;
-  box-sizing: border-box;
-  overflow: hidden;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
 }
 
-.cre-t-157-author-photo {
-  flex-shrink: 0;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.cre-t-157-quote-content {
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .cre-t-135-total {
   position: relative;
-  z-index: 1;
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .cre-t-135-total::after {
+  content: "8.6";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
   display: flex;
-  flex-direction: column;
-  gap:10px;
-  text-align: left;
-  min-width: 0;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  white-space: nowrap;
 }
 
-.cre-t-157-quote-text {
-  margin: 0;
-  color: #000;
-  text-align: left;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 150% */
+/* Embrace -> position 3 */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Embrace-Listing-Only"] {
+  order: 3;
 }
 
-.cre-t-157-quote-author {
-  margin: 0;
-  color: #000;
-  text-align: left;
-  font-size: 13.8px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Embrace-Listing-Only"] .plan-number {
+  position: relative;
+  visibility: hidden;
 }
 
-.cre-t-157-quote-author .cre-t-157-author-name {
-  color: #000;
-  font-size: 13.8px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px;
-}
-
-/* Source logo image, replaces the old "Source: ..." text */
-.cre-t-157-quote-source {
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Embrace-Listing-Only"] .plan-number::after {
+  content: "3";
   position: absolute;
-  right: 21px;
-  bottom: 19px;
-  height: 16px;
-  width: auto;
-  object-fit: contain;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
 }
 
-/* Decorative quote mark, top-right of the white box */
-.cre-t-157-quote-mark {
+/* Pumpkin -> position 4 */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] {
+  order: 4;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .plan-number {
+  position: relative;
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .plan-number::after {
+  content: "4";
   position: absolute;
-  top: 16px;
-  right: 20px;
-  line-height: 0;
-  pointer-events: none;
-  z-index: 0;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
 }
 
-.cre-t-157-quote-mark svg {
-  width: 51px;
-  height: 36px;
-  aspect-ratio: 17/12;
+/* Figo -> position 5 */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Figo-Listing-Only"] {
+  order: 5;
 }
 
-@media (max-width: 768px) {
-  .cre-t-157-quote-box {
-    flex-direction: column;
-    padding:20px;
-    gap: 10px;
-    align-items: start;
-    padding-bottom: 32px;
-  }
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Figo-Listing-Only"] .plan-number {
+  position: relative;
+  visibility: hidden;
+}
 
-  .cre-t-157-author-photo {
-    width: 50px;
-    height: 50px;
-  }
-  .cre-t-157-quote-content {
-    text-align: left;
-    gap:10px;
-    padding-bottom: 15px;
-  }
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Figo-Listing-Only"] .plan-number::after {
+  content: "5";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
+}
 
-  .cre-t-157-quote-text {
-    text-align: left;
-    font-size: 16px;
-    line-height: 24px;
+/* Liberty Mutual -> position 6, score 6.7, label Good */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] {
+  order: 6;
+}
 
-  }
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .plan-number {
+  position: relative;
+  visibility: hidden;
+}
 
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .plan-number::after {
+  content: "6";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
+}
 
-  .cre-t-157-quote-author {
-    text-align: left;
-    font-size: 12.5px;
-    line-height: 20px;
-  }
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-total {
+  position: relative;
+  visibility: hidden;
+}
 
-  .cre-t-157-quote-author .cre-t-157-author-name {
-    text-align: left;
-    font-size: 12.5px;
-    line-height: 20px;
-  }
-  .cre-t-157-quote-source {
-    height: 12px;
-  }
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-total::after {
+  content: "6.7";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  white-space: nowrap;
+}
 
-  .cre-t-157-quote-mark  {
-    top: 20px;
-  }
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-classification {
+  position: relative;
+  visibility: hidden;
+  min-width: 6.5em;
+}
 
-  .cre-t-157-section {
-    margin-bottom: 0px;
-  }
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-classification::after {
+  content: "Good";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  white-space: nowrap;
+}
 
+/* Trupanion -> position 7, score 6.5 */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] {
+  order: 7;
+}
 
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .plan-number {
+  position: relative;
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .plan-number::after {
+  content: "7";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .cre-t-135-total {
+  position: relative;
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .cre-t-135-total::after {
+  content: "6.5";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  white-space: nowrap;
+}
+
+/* Odie -> position 8 */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Odie-Listing-Only"] {
+  order: 8;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Odie-Listing-Only"] .plan-number {
+  position: relative;
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Odie-Listing-Only"] .plan-number::after {
+  content: "8";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
+}
+
+/* ASPCA -> position 9, score 4.5, label Average */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] {
+  order: 9;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .plan-number {
+  position: relative;
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .plan-number::after {
+  content: "9";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-total {
+  position: relative;
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-total::after {
+  content: "4.5";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  white-space: nowrap;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-classification {
+  position: relative;
+  visibility: hidden;
+  min-width: 6.5em;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-classification::after {
+  content: "Average";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  white-space: nowrap;
+}
+
+/* AKC -> position 10 */
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] {
+  order: 10;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] .plan-number {
+  position: relative;
+  visibility: hidden;
+}
+
+body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] .plan-number::after {
+  content: "10";
+  position: absolute;
+  inset: 0;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  color: inherit;
 }

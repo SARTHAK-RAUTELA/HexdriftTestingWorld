@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SWF164 QA Report — Pet Insurance Gurus Rearrange Listings</title>
+<style>
+  :root { color-scheme: light; }
+  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #f6f7f9; color: #1a1d23; }
+  header { background: #10203a; color: #fff; padding: 28px 36px; }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header p { margin: 2px 0; color: #b9c4d6; font-size: 13px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 36px 60px; }
+  section { background: #fff; border: 1px solid #e2e5ea; border-radius: 10px; padding: 22px 26px; margin-bottom: 22px; }
+  h2 { font-size: 17px; margin-top: 0; border-bottom: 2px solid #eef0f3; padding-bottom: 8px; }
+  h3 { font-size: 15px; margin-bottom: 6px; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0 16px; font-size: 13px; }
+  th, td { border: 1px solid #e2e5ea; padding: 6px 10px; text-align: left; }
+  th { background: #f0f2f5; }
+  .stat-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 10px 0 4px; }
+  .stat { flex: 1; min-width: 140px; border-radius: 8px; padding: 14px 16px; color: #fff; }
+  .stat .num { font-size: 26px; font-weight: 700; display: block; }
+  .stat.total { background: #2b3a55; }
+  .stat.pass { background: #1e7a4b; }
+  .stat.fail { background: #b5442e; }
+  .bug { border-left: 4px solid #b5442e; background: #fdf2f0; padding: 14px 18px; border-radius: 6px; margin-bottom: 18px; }
+  .bug h3 { color: #8c2e1c; }
+  .ok { border-left: 4px solid #1e7a4b; background: #f0f8f3; padding: 14px 18px; border-radius: 6px; margin-bottom: 12px; }
+  code { background: #eef0f3; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+  img.shot { max-width: 100%; border: 1px solid #dde1e6; border-radius: 6px; margin-top: 10px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; background: #e2e5ea; margin-right: 6px; }
+  .browsers { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SWF164 (cre-t-164) — Pet Insurance Gurus "Rearrange Listings"</h1>
+  <p>petinsurancegurus.com &nbsp;·&nbsp; Convert.com experiment 100052787 &nbsp;·&nbsp; Test date: September 9, 2026</p>
+  <p>V1 = Proposed Control (vB.js/vB.css) &nbsp;·&nbsp; V2 = Proposed Variation (va3.js/va3.css)</p>
+</header>
+<main>
+
+<section>
+  <h2>Summary</h2>
+  <div class="stat-row">
+    <div class="stat total"><span class="num">273</span>total runs (39 TCs × 7 browsers)</div>
+    <div class="stat pass"><span class="num">133</span>passed</div>
+    <div class="stat fail"><span class="num">140</span>failed</div>
+  </div>
+  <p>The failure pattern is <strong>100% deterministic</strong> — the same 10 of 39 test cases fail in
+  every single browser/device, for both arms, with zero flakiness. That points to genuine functional
+  bugs, not environment/CDN noise (a contrast with this client's SWF151 test, which had CDN-timeout
+  flakiness on its last 3 browsers).</p>
+  <div class="browsers">
+    <span class="tag">Chrome Desktop</span><span class="tag">Firefox Desktop</span><span class="tag">Edge Desktop</span>
+    <span class="tag">Safari Desktop</span><span class="tag">Mobile Chrome (Pixel 5)</span>
+    <span class="tag">Mobile Safari (iPhone 12)</span><span class="tag">Tablet (iPad Gen 7)</span>
+  </div>
+</section>
+
+<section>
+  <h2>Methodology note — V1's live force-preview URL doesn't work</h2>
+  <p>The V1 force-preview link (<code>_conv_eforce=100052787.1000257233</code>) rendered byte-identical
+  to the bare hardcoded page on every attempt. This was not a caching/timing artifact — the
+  <code>_conv_v</code> cookie confirmed Convert genuinely bucketed the browser into that variation, so
+  Convert bucketing works but <strong>no code appears to be wired to that variation slot yet</strong>.
+  V2's link works correctly. To QA both arms consistently, this suite injects the real
+  <code>vB.js</code>/<code>vB.css</code> and <code>va3.js</code>/<code>va3.css</code> files directly
+  into the live site (the same method already established for this client's SWF151 rebuild tests).</p>
+  <p><strong>Action item for the client/Asher:</strong> confirm vB.js/vB.css are attached to variation
+  <code>1000257233</code> in Convert before launch.</p>
+</section>
+
+<section>
+  <h2>Confirmed bugs</h2>
+
+  <div class="bug">
+    <h3>BUG-01 — "Show More" is fought by a 3-second background interval; page loads collapsed by default</h3>
+    <p>The code's own comment says the default state should always land <em>expanded</em>, but the line
+    that would do that — <code>expandIfCollapsed()</code> — is commented out in both <code>vB.js</code>
+    and <code>va3.js</code> (line 152). Confirmed live: only 7 of 10 cards show on load.</p>
+    <p><strong>Worse:</strong> for 3 seconds after load, a background <code>setInterval</code>
+    unconditionally re-applies the collapsed CSS class on every 250ms tick, with no check for whether
+    the user has since clicked "Show More" — so a fast click on "Show More" gets silently undone a
+    fraction of a second later. Clicking after the 3-second window works correctly and stays expanded
+    (isolated recon: 11/11 cards visible and stable a further second later).</p>
+    <p><strong>Reproduced in:</strong> all 7 browsers, both V1 and V2.</p>
+    <img class="shot" src="swf164-screenshots/bug01-default-collapsed-v1-chrome.png" alt="Default collapsed state on load, Chrome Desktop, V1">
+  </div>
+
+  <div class="bug">
+    <h3>BUG-02 — Ratings revert to native values under any filter, contradicting the ticket</h3>
+    <p>Ticket requirement: <em>"Whenever any of the filters are active, we will restore the native
+    website behaviour for the sorting order. However, the ratings will continue to be applied from
+    the test."</em></p>
+    <p>Confirmed live: activating Cats, Dogs, or a ZIP code correctly restores native <strong>order</strong>
+    — but every rating/score/classification also reverts to native, because both the order overrides
+    and the rating overrides are gated behind the exact same <code>body.cre-t-164-default</code> class.
+    <code>hasActiveFilters()</code> removes that one class for any active filter, undoing everything at
+    once. Example (V1, Cats filter): Liberty Mutual should still read "6.7 Good" but shows the native
+    "5.1 Average"; ASPCA should still read "4.5 Average" but shows the native "8.7 Excellent".</p>
+    <p><strong>Reproduced in:</strong> all 7 browsers, both V1 and V2, under Cats, Dogs, and ZIP filters.</p>
+    <img class="shot" src="swf164-screenshots/bug02-ratings-revert-under-cats-filter-v1-chrome.png" alt="Ratings reverted to native under Cats filter, Chrome Desktop, V1">
+  </div>
+</section>
+
+<section>
+  <h2>What was verified and is correct</h2>
+  <div class="ok">Order values in both CSS files match the ticket's Google Sheet exactly for the full
+  10-card set (Fetch/Embrace/Pumpkin/Figo/Liberty Mutual/Trupanion/Odie/ASPCA/AKC, plus Lemonade
+  correctly left at native order to land first).</div>
+  <div class="ok">Rating overrides only exist where the value actually differs from the current
+  hardcoded page — intentional, not a missed override.</div>
+  <div class="ok">The "duplicate Best Overall" card architecture (two Lemonade elements — one sortable,
+  one pinned) works as intended, same pattern already established in SWF151.</div>
+  <div class="ok">Native order restore under Cats/Dogs filters works correctly — only the rating half
+  of that requirement fails (BUG-02).</div>
+  <div class="ok">Font-size parity holds for overridden vs. un-overridden rating text (<code>font: inherit</code>
+  confirmed via computed style); no gap/spacing regression from reordering or the toggle insertion.</div>
+  <div class="ok">No duplicate-id or console-error regressions from the injected code in any browser.</div>
+</section>
+
+<section>
+  <h2>Test case breakdown</h2>
+  <table>
+    <tr><th>TC</th><th>What it checks</th><th>Result (all 7 browsers × 2 arms)</th></tr>
+    <tr><td>TC-01</td><td>Body carries <code>cre-t-164-default</code> on load</td><td>✅ Pass</td></tr>
+    <tr><td>TC-02</td><td>Default load shows all 10 cards expanded</td><td>❌ Fail — BUG-01</td></tr>
+    <tr><td>TC-03</td><td>Show More reveals remaining cards</td><td>❌ Fail — BUG-01 (race condition)</td></tr>
+    <tr><td>TC-04</td><td>All Pets order matches ticket</td><td>❌ Fail — cascades from BUG-01 (only 7 of 10 visible to compare)</td></tr>
+    <tr><td>TC-05</td><td>All Pets ratings match ticket</td><td>❌ Fail — cascades from BUG-01</td></tr>
+    <tr><td>TC-06</td><td>Rank bubbles renumber 1–10</td><td>✅ Pass</td></tr>
+    <tr><td>TC-07</td><td>Pinned Best Overall duplicate exists</td><td>✅ Pass</td></tr>
+    <tr><td>TC-08</td><td>No stray duplicate ids</td><td>✅ Pass</td></tr>
+    <tr><td>TC-09</td><td>Cats filter restores native order</td><td>✅ Pass</td></tr>
+    <tr><td>TC-10</td><td>Cats filter keeps test ratings</td><td>❌ Fail — BUG-02</td></tr>
+    <tr><td>TC-11</td><td>Switching back to All Pets restores test order</td><td>❌ Fail — cascades from BUG-01</td></tr>
+    <tr><td>TC-12</td><td>Dogs filter restores native order</td><td>✅ Pass</td></tr>
+    <tr><td>TC-13</td><td>Dogs filter keeps test ratings</td><td>❌ Fail — BUG-02</td></tr>
+    <tr><td>TC-14</td><td>Switching back to All Pets after Dogs restores test order</td><td>❌ Fail — cascades from BUG-01</td></tr>
+    <tr><td>TC-15</td><td>ZIP filter drops default class</td><td>✅ Pass</td></tr>
+    <tr><td>TC-16</td><td>ZIP filter keeps test ratings</td><td>❌ Fail — BUG-02</td></tr>
+    <tr><td>TC-17</td><td>Clearing ZIP restores test order</td><td>❌ Fail — cascades from BUG-01</td></tr>
+    <tr><td>TC-18</td><td>Overridden rating font-size matches sibling</td><td>✅ Pass</td></tr>
+    <tr><td>TC-19</td><td>No console/page errors</td><td>✅ Pass</td></tr>
+    <tr><td>TC-20</td><td>Bare page shows current hardcoded order (ground truth)</td><td>✅ Pass</td></tr>
+  </table>
+  <p style="font-size:12px;color:#666">TC-04/05/11/14/17 fail as a direct downstream effect of BUG-01
+  (the visible-card count is 7, not 10, so the array-equality assertions against the full 10-item
+  expected order/ratings can't match) — they are not independent bugs beyond BUG-01 itself.</p>
+</section>
+
+<section>
+  <h2>Additional test cases to consider</h2>
+  <ul>
+    <li>Breed dropdown selection specifically — not automated in this pass (MUI popup); same code path
+      as Cats/Dogs/ZIP, so BUG-02 almost certainly reproduces there too.</li>
+    <li>Re-verify V1's live force-preview URL once Convert has vB.js/vB.css attached to variation
+      1000257233.</li>
+    <li>Duplicate-init guard (re-running the variation script shouldn't double-bind listeners or add a
+      second toggle).</li>
+  </ul>
+</section>
+
+</main>
+</body>
+</html>

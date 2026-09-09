@@ -1,137 +1,204 @@
-/* Hiding Variation Navbar On Other devices */
-html body.cre-t-01 .cre-t-01-afp-nav {
-  display: none;
-}
-@media screen and (min-width: 1200px) {
-  /* Hiding the Original Navbar */
-  html body.cre-t-01 .header-layout .afp-nav[aria-label="Main Navigation"] {
+html body.cre-t-21 .main-header .sec-wrap {
     display: none;
-  }
-  /* Showing Variation Navbar on Desktop Device as Per Requirement */
-  html body.cre-t-01 .cre-t-01-afp-nav {
-    display: block;
-  }
-  html body.cre-t-01 nav.cre-t-01-afp-nav {
-    margin-left: auto;
-  }
-  html body.cre-t-01 .cre-t-01-afp-nav-ulList {
+}
+
+html body.cre-t-21 .cre-t-21-main {
     display: flex;
-    column-gap: 64px;
-    position: relative;
-    top: 100%;
-    left: 0;
-    z-index: 2;
-  }
-  html body.cre-t-01 button.cre-t-01-afp-nav-Link {
-    padding: 30px 0;
-    border: 0;
-    background: none;
-    font-family: GothamNarrowBold, Arial, Helvetica, sans;
-    position: relative;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 9px;
-    border: 0;
-    background: none;
-    font-size: 1.25rem;
-    text-decoration: none;
-  }
-  html body.cre-t-01 .cre-t-01-afp-nav-Link.cre-t-01-has-sub::after {
-    content: "";
-    display: block;
-    border-bottom: 2px solid;
-    border-left: 2px solid;
-    padding: 4px;
-    margin-left: auto;
-    margin-bottom: 3px;
-    transform: rotate(-45deg);
-    transition:
-      transform 0.3s ease-in-out,
-      color 0.3s ease-in-out;
-  }
-  html
-    body.cre-t-01
-    .cre-t-01-afp-nav-ulList
-    > .cre-t-01-afp-nav-item
-    > .cre-t-01-afp-nav-sub-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    gap: 35px;
+}
+
+html body.cre-t-21 .main-header {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+html body.cre-t-21 .cre-t-21-left-side {
+    max-width: 650px;
     width: 100%;
-    padding: 40px;
-    background: #eff0f1;
-    color: #000;
-    display: none;
-  }
-  html body.cre-t-01 .cre-t-01-afp-nav-Link.cre-t-01-afp-nav-sub-nav-title {
-    margin-bottom: 8px;
-    font-family: GothamNarrowMedium, Arial, Helvetica, sans;
-    font-size: 1.125rem;
-  }
-  html body.cre-t-01 a.cre-t-01-afp-nav-Link {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    font-family: GothamNarrow, Arial, Helvetica, sans;
-    font-size: 0.9375rem;
-    color: currentColor;
-    display: block;
-    position: relative;
-  }
-  html
-    body.cre-t-01
-    .cre-t-01-afp-nav-ulList
-    > .cre-t-01-afp-nav-item
-    > .cre-t-01-afp-nav-sub-nav.open {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    -moz-column-gap: 30px;
-    column-gap: 30px;
-    row-gap: 32px;
-  }
+}
 
+html body.cre-t-21 .cre-t-header-content {
+    color: #383F4D;
+    font-style: normal;
+    line-height: 64px;
+    padding-bottom: 20px;
+    font-family: Pay, Europa, sans-serif;
+    font-weight: 400;
+    font-size: 56px;
+}
 
+html body.cre-t-21 .cre-t-subHeader-content {
+    color: #383f4d;
+    font-family: "Europa", Arial, sans-serif;
+    font-size: 18.5px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.09px;
+    padding-bottom: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    max-width: 600px;
+}
 
-  html body.cre-t-01 .cre-t-01-afp-nav-ulList > .cre-t-01-afp-nav-item > .cre-t-01-afp-nav-sub-nav.open[cre-test-submenufor="learning"]{
-    min-width: 1000px;
-    transform: translateX(-12%);
+html body.cre-t-21 .cre-t-21-create-button {
+    border-radius: 8px;
+    background: #D03643;
+    display: flex;
+    width: 280px;
+    padding: 14px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: var(--line-height-30_8, 30.8px);
+    cursor: pointer;
+}
+
+html body.cre-t-21 .cre-t-21-contact-button {
+    border-radius: 8px;
+    border: 1px solid #3066C9;
+    display: flex;
+    width: 240px;
+    padding: 14px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #3066C9;
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: var(--line-height-30_8, 30.8px);
+    cursor: pointer;
+}
+
+html body.cre-t-21 .cre-t-button-main {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+html body.cre-t-21 .cre-t-21-button-text-bottom {
+    color: #383f4d;
+    font-family: inherit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-30_8, 30.8px);
+}
+
+html body.cre-t-21 .cre-t-21-earn-points {
+    color: #3066C9;
+}
+
+html body.cre-t-21 .cre-t-21-right-side {
+    max-width: 470px;
+}
+
+html body.cre-t-21 .cre-t-21-trusted-points,
+html body.cre-t-21 .cre-t-21-free {
+    font-weight: 700;
 }
 
 
-  html body.cre-t-01 .cre-t-01-nav-badge {
-    border-radius: 4px;
-    background: #2c8fbf;
-    color: #fff;
-    font-size: 10px;
-    padding: 2px 6px;
-    margin-left: 9px;
-    /* font-family: Arial, sans-serif; */
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 11px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  html
-    body.cre-t-01
-    .cre-t-01-afp-nav-ulList
-    .cre-t-01-afp-nav-Link.active:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 8px;
-    background: #0076a8;
-  }
-  html
-    body.cre-t-01
-    .cre-t-01-afp-nav-ulList
-    .cre-t-01-afp-nav-Link.active:after {
-    transform: rotate(135deg);
-  }
-  html body.cre-t-01 .topLevel-list-item-2 .cre-t-01-afp-nav-sub-nav.open[cre-test-submenufor="certification"]{
-    column-gap: unset;
-  }
+@media screen and (min-width: 899px) and (max-width: 1108px) {
+    html body.cre-t-21 .cre-t-header-content {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    html body.cre-t-21 .cre-t-subHeader-content {
+        margin: 0 auto;
+    }
+
+    html body.cre-t-21 .cre-t-21-contact-button {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 898px) {
+    html body.cre-t-21 .cre-t-21-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    html body.cre-t-21 .cre-t-header-content {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    html body.cre-t-21 .main-header {
+        padding-top: 30px;
+    }
+
+    html body.cre-t-21 .cre-t-button-main {
+        justify-content: center;
+    }
+
+    html body.cre-t-21 .cre-t-21-contact-button {
+        width: 280px;
+    }
+
+    html body.cre-t-21 .cre-t-subHeader-content {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    html body.cre-t-21 .cre-t-21-main {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    html body.cre-t-21 .cre-t-header-content {
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 44px;
+        line-height: 48px;
+        font-weight: 400 !important;
+    }
+
+    html body.cre-t-21 .cre-t-subHeader-content {
+        padding-bottom: 30px;
+    }
+
+    html body.cre-t-21 .cre-t-button-main {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    html body.cre-t-21 .cre-t-21-contact-button {
+        width: 100%;
+        max-height: 58.8px;
+    }
+
+    html body.cre-t-21 .cre-t-21-create-button {
+        width: 100%;
+    }
+
+    html body.cre-t-21 .cre-t-subHeader-content {
+        margin: 0 auto;
+    }
+
+    html body.cre-t-21 .cre-t-21-button-text-bottom {
+        line-height: 22px;
+    }
+}
+
+
+@media screen and (max-width: 390px) {
+    html body.cre-t-21 .cre-t-header-content {
+        font-size: 40px;
+        line-height: 42px;
+    }
 }

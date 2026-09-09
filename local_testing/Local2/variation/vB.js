@@ -1,46 +1,19 @@
 (function () {
   try {
-    /* ==== Modal CONFIGURATION ==== */
-    var variation_name = "cre-t-13-variation";
     var debug = 0;
+    var variation_name = "cre-t-157";
+    var imageBase = "https://v2.crocdn.com/PetInsurance/";
 
-    var imageConfig = {
-      crossIcon: "https://v2.crocdn.com/PAY/test8/cross.svg",
-      icon1: "https://v2.crocdn.com/PAY/test8/laptop.svg",
-      icon2: "https://v2.crocdn.com/PAY/test13/iconTicket.svg",
-      icon3: "https://v2.crocdn.com/PAY/test8/rocket.svg"
+    // V1: new design, single quote, no carousel (V5 from SWF145)
+    var quote = {
+      text: "“Several times the insurance has made the difference between treatment and euthanasia.”",
+      author: "Dr. Diane Deresienski • Veterinarian, Bowman Animal Hospital",
+      authorName: "Dr. Diane Deresienski",
+      authorRole: "Veterinarian, Bowman Animal Hospital",
+      authorImg: "diane.png",
+      sourceImg: "nyt_new.png",
+      sourceAlt: "The New York Times"
     };
-
-    function live(selector, event, callback, context) {
-      if (typeof callback !== "function") return;
-      context = context || document;
-
-      context.addEventListener(event, function (e) {
-        var el = e.target.closest(selector);
-        if (el && context.contains(el)) {
-          callback.call(el, e);
-        }
-      });
-    }
-
-    function insertAfter(selector, html) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (typeof html === "string") {
-        element.insertAdjacentHTML("afterbegin", html);
-      } else if (html && html.nodeType === 1) {
-        element.insertAdjacentElement("afterbegin", html);
-      }
-    }
-
-    function addClass(selector, className) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-      if (element.classList) element.classList.add(className);
-      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
-        element.className += " " + className;
-      }
-    }
 
     function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
       var interval = setInterval(function () {
@@ -54,132 +27,40 @@
       }, delayTimeout);
     }
 
-    /* ==== MODAL HTML ==== */
-    var modalHtml = `<div class="cre-t-13-modal-main">
-  <div id="cre-t-13-modal-overlay" class="cre-t-13-overlay"></div>
-  <div class="cre-t-13-modal-container">
-    <div class="cre-t-13-modal-inner">
-      <div class="cre-t-13-modal-cross-icon-wrapper">
-        <img src="${imageConfig.crossIcon}" alt="cross_icon" class="cre-t-13-cross-icon">
-      </div>
-      
-      <div class="cre-t-13-modal-content">
-        <div class="cre-t-13-main-title">
-         See <span class="cre-t-13-highlight">your</span> fees, points and rewards
-        </div>
-        <div class="cre-t-13-sub-title"">
-        Create a free account to see how your numbers stack up based on how you’d use pay.com.au. Then decide if it’s right for you.
-        </div>
+    var quoteMarkSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="51" height="36" viewBox="0 0 51 36" fill="none"><path d="M5.1 36L12 24C8.7 24 5.875 22.825 3.525 20.475C1.175 18.125 0 15.3 0 12C0 8.7 1.175 5.875 3.525 3.525C5.875 1.175 8.7 0 12 0C15.3 0 18.125 1.175 20.475 3.525C22.825 5.875 24 8.7 24 12C24 13.15 23.8625 14.2125 23.5875 15.1875C23.3125 16.1625 22.9 17.1 22.35 18L12 36H5.1ZM32.1 36L39 24C35.7 24 32.875 22.825 30.525 20.475C28.175 18.125 27 15.3 27 12C27 8.7 28.175 5.875 30.525 3.525C32.875 1.175 35.7 0 39 0C42.3 0 45.125 1.175 47.475 3.525C49.825 5.875 51 8.7 51 12C51 13.15 50.8625 14.2125 50.5875 15.1875C50.3125 16.1625 49.9 17.1 49.35 18L39 36H32.1Z" fill="#8C8EA0" fill-opacity="0.07"/></svg>';
 
-        <div class="cre-t-13-features-container">
-    <div class="cre-t-13-feature-card card1">
-        <div class="cre-t-13-icon-box">
-            <div class="cre-t-13-icon-wrapper"><img src="${imageConfig.icon1}" alt="icon"></div>
-        </div>
-        <div class="cre-t-13-card-info">
-            <div class="cre-t-13-card-title">Create a Free Account</div>
-            <div class="cre-t-13-card-subtitle">Get started in minutes. No credit card required.</div>
-        </div>
+    var sectionHTML = `<section id="cre-t-157-section" class="cre-t-157-section">
+  <div class="cre-t-157-quote-box">
+    <img class="cre-t-157-author-photo" src="${imageBase}${quote.authorImg}" alt="${quote.author}">
+    <div class="cre-t-157-quote-content">
+      <p class="cre-t-157-quote-text">${quote.text}</p>
+      <p class="cre-t-157-quote-author"><span class="cre-t-157-author-name">${quote.authorName}</span> • ${quote.authorRole}</p>
     </div>
-    <div class="cre-t-13-feature-card card2">
-        <div class="cre-t-13-icon-box">
-            <div class="cre-t-13-icon-wrapper"><img src="${imageConfig.icon2}" alt="icon"></div>
-        </div>
-        <div class="cre-t-13-card-info">
-            <div class="cre-t-13-card-title">See Your Numbers</div>
-            <div class="cre-t-13-card-subtitle">See what you’d pay and earn based on your spend, card and rewards options.
-            </div>
-        </div>
-    </div>
-    <div class="cre-t-13-feature-card card3">
-        <div class="cre-t-13-icon-box">
-            <div class="cre-t-13-icon-wrapper"><img src="${imageConfig.icon3}" alt="icon"></div>
-        </div>
-        <div class="cre-t-13-card-info">
-            <div class="cre-t-13-card-title">Then Decide</div>
-            <div class="cre-t-13-card-subtitle">If the numbers make sense, make your first payment and start earning.</div>
-        </div>
-    </div>
-</div>
-
-        <button class="cre-t-13-modal-cta">Create your free account</button>
-      </div>
-    </div>
+    <img class="cre-t-157-quote-source" src="${imageBase}${quote.sourceImg}" alt="${quote.sourceAlt}">
+    <span class="cre-t-157-quote-mark" aria-hidden="true">${quoteMarkSVG}</span>
   </div>
-</div>`;
+</section>`;
 
-    /* ==== MODAL CORE LOGIC ==== */
-
-    function optimizelyGoal(eventName) {
-      window["optimizely"] = window["optimizely"] || [];
-      window["optimizely"].push({
-        type: "event",
-        eventName: eventName,
-        tags: {
-          revenue: 0,
-          value: 0.0
-        }
-      });
-    }
-
-    function hideModal() {
-      var modalMain = document.querySelector(".cre-t-13-modal-main");
-      if (modalMain) {
-        modalMain.remove();
-        document.body.classList.remove("cre-t-13-freeze");
-      }
-    }
-
-    function showModal() {
-      var alreadyExists = document.querySelector(".cre-t-13-modal-main");
-      if (!alreadyExists) {
-        if (debug) console.log("inserting modal");
-        insertAfter("body", modalHtml);
-      }
-
-      var modal = document.querySelector(".cre-t-13-modal-main");
-      if (modal) {
-        modal.classList.add("active");
-        document.body.classList.add("cre-t-13-freeze");
-      }
-    }
-
-    function setupCloseEvents() {
-      live(".cre-t-13-modal-cross-icon-wrapper, .cre-t-13-overlay", "click", function () {
-        hideModal();
-      });
-      live(".cre-t-13-modal-cta", "click", function () {
-        // Optimizely Goal Create Account
-        optimizelyGoal("pay13_-_clicks_on__create_your_free_account__button");
-        var targetBtn = document.querySelector(".sticky-get-started a#mob-get-started");
-        if (targetBtn) {
-          targetBtn.click();
-        }
-        hideModal();
-      });
-    }
-
-    /* ==== VARIATION INITIALIZE ==== */
     function init() {
-      addClass("body", variation_name);
+      if (document.querySelector('#cre-t-157-section')) return;
 
-      //Modal Fires Goal
-      optimizelyGoal("pay13_-_modal_fires");
+      var comparisonSection = document.querySelector('#comparison-section');
+      if (!comparisonSection) return;
 
-      showModal();
+      comparisonSection.insertAdjacentHTML('beforebegin', sectionHTML);
 
-      if (!window.CRE_EVENT_13) {
-        window.CRE_EVENT_13 = true;
-        setupCloseEvents();
+      // Convert Experiments conversion tracking - any click/engagement on quote element
+      var quoteSection = document.querySelector('#cre-t-157-section');
+      if (quoteSection) {
+        quoteSection.addEventListener('click', function () {
+          window._conv_q = window._conv_q || [];
+          _conv_q.push(["triggerConversion", "100038194"]);
+        });
       }
-
-      if (debug) console.log(variation_name + " initialized");
     }
 
-    /* ==== Trigger timing (40s-or-exit-intent, desktop-only) is owned by the Optimizely
-       Activation Code field (pay13-trigger-variation.js), which calls activate() -> init(). ==== */
-    waitForElement("body", init, 50, 15000);
+    waitForElement('#comparison-section', init);
   } catch (e) {
-    if (debug) console.log(e, "error in Test " + variation_name);
+    if (debug) console.log(e, 'error in Test ' + variation_name);
   }
 })();

@@ -2,7 +2,7 @@
 
 **Sites:** `petinsurancegurus.com` (sister site: `rentersinsurancegurus.com` — see `../renters-insurance-gurus/`)
 **A/B platform:** Convert.com — force URLs: `?cro_mode=qa&_conv_eforce=<experiment>.<variation>`
-**Tests done:** SWF128, SIC132, SWF135, CRE-T-123, CRE-T-133, CRE-T-137, CRE-T-144 (SWF144), SWF139, SWF151 (cre-t-151)
+**Tests done:** SWF128, SIC132, SWF135, CRE-T-123, CRE-T-133, CRE-T-137, CRE-T-144 (SWF144), SWF139, SWF151 (cre-t-151), SWF157 (cre-t-157)
 
 ## Environment / site quirks (apply to every PIG test)
 
@@ -49,3 +49,4 @@ Tests get cloned between this site and Renters Insurance Gurus (CRE-T-123 → CR
 | CRE-T-144 — Vet FAQ moved to TOP (SWF137 clone) | [cre-t-144-vet-faq-top.md](cre-t-144-vet-faq-top.md) |
 | SWF139 — Info icon on scoring badge → scroll to Ranking Methodology | [swf139-info-icon-scroll.md](swf139-info-icon-scroll.md) |
 | SWF151 — "Sort by" (Best Rated / Lowest Price) on comparison listings | [swf151-sort-order.md](swf151-sort-order.md) |
+| SWF157 — Vet-quote testimonial redesign (single quote / manual carousel / auto carousel) | [swf157-quote-carousel.md](swf157-quote-carousel.md) |

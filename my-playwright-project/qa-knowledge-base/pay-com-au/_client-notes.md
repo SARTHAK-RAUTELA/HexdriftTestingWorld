@@ -3,6 +3,7 @@
 **Site:** `pay.com.au`
 **A/B platform:** Optimizely
 **Tests done:** CRE-T-08, CRE-T-08 (vB), CRE-T-09, CRE-T-13
+**In progress:** PAY21 (cre-t-21) — paused mid full-matrix run, dev applying fixes; see [pay21-secondary-cta-in-progress.md](pay21-secondary-cta-in-progress.md)
 
 ## Environment / site quirks
 

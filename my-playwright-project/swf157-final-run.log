@@ -1,0 +1,191 @@
+
+Running 128 tests using 1 worker
+
+  ✓    1 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:114:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C01 quote section renders immediately before #comparison-section (14.3s)
+  ✓    2 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:123:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C02 uses the legacy plain-text design (no author photo, no source-logo image) (7.0s)
+  ✓    3 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:129:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C03 quote text/author/source-as-text match the existing control copy (3.8s)
+  ✓    4 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:135:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C04 no carousel/swiper elements present (3.3s)
+  ✓    5 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:147:3 › SWF157 - V1 (new design, single quote) › TC-V1-01 exactly one quote box, no carousel/pagination (4.8s)
+  ✓    6 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:153:3 › SWF157 - V1 (new design, single quote) › TC-V1-02 new-design card content renders: photo, text, name+role, source logo, quote mark (4.0s)
+  ✓    7 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:169:3 › SWF157 - V1 (new design, single quote) › TC-V1-03 "Personalize prices" copy above filter buttons is hidden (3.0s)
+  ✓    8 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:173:3 › SWF157 - V1 (new design, single quote) › TC-V1-05 mobile breakpoint (<=768px) collapses to column layout (6.3s)
+  ✓    9 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:181:3 › SWF157 - V1 (new design, single quote) › TC-V1-06 clicking the quote card fires the Convert conversion goal (100038194) (3.6s)
+  ✓   10 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:187:3 › SWF157 - V1 (new design, single quote) › TC-V1-07 starting quote matches "V5 from SWF145" (Dr. Diane Deresienski / NYT) — client-confirmed correct (3.3s)
+  ✓   11 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /compare/ (4.0s)
+  ✓   12 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /home/ (5.0s)
+  ✓   13 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /comparison/ (5.2s)
+  ✓   14 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:214:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-01 carousel renders with exactly 4 pagination bullets (6.2s)
+  ✓   15 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:219:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-08 carousel starts on the "V5 from SWF145" quote (Dr. Diane Deresienski) before any interaction (6.2s)
+  ✓   16 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:224:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-02 exactly 4 unique quotes, GB News source excluded (3.5s)
+  ✓   17 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:233:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-03 does NOT autoplay - active slide unchanged without interaction (9.6s)
+  ✓   18 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:240:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-04 manual pagination click changes the active slide (5.8s)
+  ✓   19 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:251:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-05 manually changing slides fires the conversion goal (3.8s)
+  ✓   20 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:260:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-06 mobile breakpoint (<=768px) collapses to column layout (5.2s)
+  ✓   21 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:266:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-07 "Personalize prices" copy is hidden (3.1s)
+  ✓   22 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:277:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-01 carousel renders with exactly 4 pagination bullets, GB News excluded (5.0s)
+  ✓   23 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:286:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-07 carousel starts on the "V5 from SWF145" quote (Dr. Diane Deresienski) before autoplay advances it (5.7s)
+  ✓   24 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:291:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-02 autoplays automatically every ~5s without interaction (10.2s)
+  ✓   25 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:298:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-03 autoplay-triggered transitions do NOT fire the conversion goal (12.1s)
+  ✓   26 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:304:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-04 manual pagination click still works and fires the conversion goal (6.2s)
+  ✓   27 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:317:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-05 mobile breakpoint (<=768px) collapses to column layout (9.5s)
+  ✓   28 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:323:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-06 "Personalize prices" copy is hidden (3.6s)
+  ✓   29 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-control no console errors on control (5.5s)
+  ✓   30 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v1 no console errors on v1 (5.9s)
+  ✓   31 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v2 no console errors on v2 (5.1s)
+  ✓   32 [Chrome Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v3 no console errors on v3 (2.7s)
+  ✓   33 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:114:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C01 quote section renders immediately before #comparison-section (7.4s)
+  ✓   34 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:123:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C02 uses the legacy plain-text design (no author photo, no source-logo image) (7.4s)
+  ✓   35 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:129:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C03 quote text/author/source-as-text match the existing control copy (7.4s)
+  ✓   36 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:135:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C04 no carousel/swiper elements present (7.2s)
+  ✓   37 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:147:3 › SWF157 - V1 (new design, single quote) › TC-V1-01 exactly one quote box, no carousel/pagination (7.3s)
+  ✓   38 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:153:3 › SWF157 - V1 (new design, single quote) › TC-V1-02 new-design card content renders: photo, text, name+role, source logo, quote mark (8.3s)
+  ✓   39 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:169:3 › SWF157 - V1 (new design, single quote) › TC-V1-03 "Personalize prices" copy above filter buttons is hidden (8.1s)
+  ✓   40 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:173:3 › SWF157 - V1 (new design, single quote) › TC-V1-05 mobile breakpoint (<=768px) collapses to column layout (11.9s)
+  ✓   41 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:181:3 › SWF157 - V1 (new design, single quote) › TC-V1-06 clicking the quote card fires the Convert conversion goal (100038194) (4.9s)
+  ✓   42 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:187:3 › SWF157 - V1 (new design, single quote) › TC-V1-07 starting quote matches "V5 from SWF145" (Dr. Diane Deresienski / NYT) — client-confirmed correct (8.3s)
+  ✓   43 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /compare/ (5.2s)
+  ✓   44 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /home/ (9.2s)
+  ✓   45 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /comparison/ (8.9s)
+  ✓   46 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:214:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-01 carousel renders with exactly 4 pagination bullets (8.7s)
+  ✓   47 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:219:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-08 carousel starts on the "V5 from SWF145" quote (Dr. Diane Deresienski) before any interaction (7.6s)
+  ✓   48 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:224:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-02 exactly 4 unique quotes, GB News source excluded (7.9s)
+  ✓   49 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:233:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-03 does NOT autoplay - active slide unchanged without interaction (13.4s)
+  ✓   50 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:240:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-04 manual pagination click changes the active slide (8.8s)
+  ✓   51 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:251:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-05 manually changing slides fires the conversion goal (8.3s)
+  ✓   52 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:260:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-06 mobile breakpoint (<=768px) collapses to column layout (14.3s)
+  ✓   53 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:266:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-07 "Personalize prices" copy is hidden (5.0s)
+  ✓   54 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:277:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-01 carousel renders with exactly 4 pagination bullets, GB News excluded (7.1s)
+  ✓   55 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:286:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-07 carousel starts on the "V5 from SWF145" quote (Dr. Diane Deresienski) before autoplay advances it (7.1s)
+  ✓   56 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:291:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-02 autoplays automatically every ~5s without interaction (11.5s)
+  ✓   57 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:298:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-03 autoplay-triggered transitions do NOT fire the conversion goal (10.9s)
+  ✓   58 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:304:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-04 manual pagination click still works and fires the conversion goal (9.0s)
+  ✓   59 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:317:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-05 mobile breakpoint (<=768px) collapses to column layout (13.4s)
+  ✓   60 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:323:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-06 "Personalize prices" copy is hidden (8.2s)
+  ✓   61 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-control no console errors on control (8.0s)
+  ✘   62 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v1 no console errors on v1 (6.6s)
+  ✓   63 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v2 no console errors on v2 (7.1s)
+  ✓   64 [Safari Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v3 no console errors on v3 (6.6s)
+  ✓   65 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:114:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C01 quote section renders immediately before #comparison-section (5.9s)
+  ✓   66 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:123:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C02 uses the legacy plain-text design (no author photo, no source-logo image) (3.6s)
+  ✓   67 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:129:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C03 quote text/author/source-as-text match the existing control copy (3.2s)
+  ✓   68 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:135:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C04 no carousel/swiper elements present (3.2s)
+  ✓   69 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:147:3 › SWF157 - V1 (new design, single quote) › TC-V1-01 exactly one quote box, no carousel/pagination (4.9s)
+  ✓   70 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:153:3 › SWF157 - V1 (new design, single quote) › TC-V1-02 new-design card content renders: photo, text, name+role, source logo, quote mark (5.1s)
+  ✓   71 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:169:3 › SWF157 - V1 (new design, single quote) › TC-V1-03 "Personalize prices" copy above filter buttons is hidden (3.8s)
+  ✓   72 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:173:3 › SWF157 - V1 (new design, single quote) › TC-V1-05 mobile breakpoint (<=768px) collapses to column layout (5.2s)
+  ✓   73 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:181:3 › SWF157 - V1 (new design, single quote) › TC-V1-06 clicking the quote card fires the Convert conversion goal (100038194) (3.0s)
+  ✓   74 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:187:3 › SWF157 - V1 (new design, single quote) › TC-V1-07 starting quote matches "V5 from SWF145" (Dr. Diane Deresienski / NYT) — client-confirmed correct (3.0s)
+  ✓   75 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /compare/ (3.9s)
+  ✓   76 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /home/ (5.9s)
+  ✓   77 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /comparison/ (5.7s)
+  ✓   78 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:214:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-01 carousel renders with exactly 4 pagination bullets (6.0s)
+  ✓   79 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:219:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-08 carousel starts on the "V5 from SWF145" quote (Dr. Diane Deresienski) before any interaction (5.1s)
+  ✓   80 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:224:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-02 exactly 4 unique quotes, GB News source excluded (3.6s)
+  ✓   81 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:233:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-03 does NOT autoplay - active slide unchanged without interaction (9.7s)
+  ✓   82 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:240:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-04 manual pagination click changes the active slide (5.8s)
+  ✓   83 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:251:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-05 manually changing slides fires the conversion goal (3.5s)
+  ✓   84 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:260:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-06 mobile breakpoint (<=768px) collapses to column layout (7.7s)
+  ✓   85 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:266:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-07 "Personalize prices" copy is hidden (3.4s)
+  ✓   86 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:277:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-01 carousel renders with exactly 4 pagination bullets, GB News excluded (4.9s)
+  ✓   87 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:286:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-07 carousel starts on the "V5 from SWF145" quote (Dr. Diane Deresienski) before autoplay advances it (3.7s)
+  ✓   88 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:291:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-02 autoplays automatically every ~5s without interaction (9.8s)
+  ✓   89 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:298:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-03 autoplay-triggered transitions do NOT fire the conversion goal (9.7s)
+  ✓   90 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:304:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-04 manual pagination click still works and fires the conversion goal (5.6s)
+  ✓   91 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:317:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-05 mobile breakpoint (<=768px) collapses to column layout (10.7s)
+  ✓   92 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:323:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-06 "Personalize prices" copy is hidden (4.5s)
+  ✓   93 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-control no console errors on control (5.3s)
+  ✓   94 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v1 no console errors on v1 (7.0s)
+  ✓   95 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v2 no console errors on v2 (5.2s)
+  ✓   96 [Mobile Chrome (Pixel 5)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v3 no console errors on v3 (3.2s)
+  ✓   97 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:114:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C01 quote section renders immediately before #comparison-section (7.7s)
+  ✓   98 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:123:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C02 uses the legacy plain-text design (no author photo, no source-logo image) (7.6s)
+  ✓   99 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:129:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C03 quote text/author/source-as-text match the existing control copy (8.3s)
+  ✓  100 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:135:3 › SWF157 - Control (SWF145 V1 baseline) › TC-C04 no carousel/swiper elements present (6.4s)
+  ✓  101 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:147:3 › SWF157 - V1 (new design, single quote) › TC-V1-01 exactly one quote box, no carousel/pagination (8.1s)
+  ✓  102 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:153:3 › SWF157 - V1 (new design, single quote) › TC-V1-02 new-design card content renders: photo, text, name+role, source logo, quote mark (7.8s)
+  ✓  103 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:169:3 › SWF157 - V1 (new design, single quote) › TC-V1-03 "Personalize prices" copy above filter buttons is hidden (6.3s)
+  ✓  104 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:173:3 › SWF157 - V1 (new design, single quote) › TC-V1-05 mobile breakpoint (<=768px) collapses to column layout (8.9s)
+  ✓  105 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:181:3 › SWF157 - V1 (new design, single quote) › TC-V1-06 clicking the quote card fires the Convert conversion goal (100038194) (9.0s)
+  ✓  106 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:187:3 › SWF157 - V1 (new design, single quote) › TC-V1-07 starting quote matches "V5 from SWF145" (Dr. Diane Deresienski / NYT) — client-confirmed correct (8.1s)
+  ✓  107 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /compare/ (5.2s)
+  ✓  108 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /home/ (9.3s)
+  ✓  109 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:200:5 › SWF157 - V1 sitewide injection › TC-V1-04 sitewide: quote card injects on /comparison/ (10.1s)
+  ✓  110 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:214:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-01 carousel renders with exactly 4 pagination bullets (8.9s)
+  ✓  111 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:219:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-08 carousel starts on the "V5 from SWF145" quote (Dr. Diane Deresienski) before any interaction (6.0s)
+  ✓  112 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:224:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-02 exactly 4 unique quotes, GB News source excluded (4.5s)
+  ✓  113 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:233:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-03 does NOT autoplay - active slide unchanged without interaction (11.2s)
+  ✓  114 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:240:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-04 manual pagination click changes the active slide (5.5s)
+  ✓  115 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:251:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-05 manually changing slides fires the conversion goal (5.2s)
+  ✓  116 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:260:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-06 mobile breakpoint (<=768px) collapses to column layout (11.2s)
+  ✓  117 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:266:3 › SWF157 - V2 (carousel, manual rotation, 4 quotes) › TC-V2-07 "Personalize prices" copy is hidden (5.1s)
+  ✓  118 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:277:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-01 carousel renders with exactly 4 pagination bullets, GB News excluded (8.4s)
+  ✓  119 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:286:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-07 carousel starts on the "V5 from SWF145" quote (Dr. Diane Deresienski) before autoplay advances it (9.0s)
+  ✓  120 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:291:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-02 autoplays automatically every ~5s without interaction (14.4s)
+  ✓  121 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:298:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-03 autoplay-triggered transitions do NOT fire the conversion goal (14.1s)
+  ✓  122 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:304:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-04 manual pagination click still works and fires the conversion goal (8.9s)
+  ✓  123 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:317:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-05 mobile breakpoint (<=768px) collapses to column layout (12.2s)
+  ✓  124 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:323:3 › SWF157 - V3 (carousel, automatic rotation, 4 quotes) › TC-V3-06 "Personalize prices" copy is hidden (7.7s)
+  ✓  125 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-control no console errors on control (8.6s)
+  ✓  126 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v1 no console errors on v1 (6.6s)
+  ✓  127 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v2 no console errors on v2 (7.6s)
+  ✘  128 [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v3 no console errors on v3 (6.7s)
+
+
+  1) [Safari Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v1 no console errors on v1 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 3[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "i.tippy is not a function. (In 'i.tippy(\"#breed-select\",{allowHTML:!0,interactive:!0,maxWidth:\"none\",inertia:!0,theme:\"extras\",touch:!0,arrow:!0,trigger:\"click\",content:Ag.renderToString(P.jsx(Mg,{children:\"Select Dog or Cat first to choose a breed.\"}))})', 'i.tippy' is undefined)",[39m
+    [31m+ ][39m
+
+      333 |       page.on('pageerror', (err) => errors.push(err.message));
+      334 |       await gotoExperience(page, '/', eforceId);
+    > 335 |       expect(errors).toEqual([]);
+          |                      ^
+      336 |     });
+      337 |   }
+      338 | });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf157-quote-carousel.spec.js:335:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf157-quote-carousel-SWF1-804f9--v1-no-console-errors-on-v1-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf157-quote-carousel-SWF1-804f9--v1-no-console-errors-on-v1-Safari-Desktop\error-context.md
+
+  2) [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v3 no console errors on v3 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 3[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "i.tippy is not a function. (In 'i.tippy(\"#breed-select\",{allowHTML:!0,interactive:!0,maxWidth:\"none\",inertia:!0,theme:\"extras\",touch:!0,arrow:!0,trigger:\"click\",content:Ag.renderToString(P.jsx(Mg,{children:\"Select Dog or Cat first to choose a breed.\"}))})', 'i.tippy' is undefined)",[39m
+    [31m+ ][39m
+
+      333 |       page.on('pageerror', (err) => errors.push(err.message));
+      334 |       await gotoExperience(page, '/', eforceId);
+    > 335 |       expect(errors).toEqual([]);
+          |                      ^
+      336 |     });
+      337 |   }
+      338 | });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf157-quote-carousel.spec.js:335:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf157-quote-carousel-SWF1-5c3df--v3-no-console-errors-on-v3-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf157-quote-carousel-SWF1-5c3df--v3-no-console-errors-on-v3-Mobile-Safari-iPhone-12-\error-context.md
+
+  2 failed
+    [Safari Desktop] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v1 no console errors on v1 
+    [Mobile Safari (iPhone 12)] › testing\swf157-quote-carousel.spec.js:331:5 › SWF157 - console error check › TC-ERR-v3 no console errors on v3 
+  126 passed (14.9m)

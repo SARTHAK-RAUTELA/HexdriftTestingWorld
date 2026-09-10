@@ -44,7 +44,15 @@
   `clickNativeButton()` re-added its own collapsed CSS class on every 250ms tick for 3 seconds after
   load, with no check for whether the user had since expanded manually — so clicking "Show More" early
   looked completely broken, but worked fine once tested after the interval's own window elapsed. Worth
-  checking for on any interval-based init pattern on this site/template family.
+  checking for on any interval-based init pattern on this site/template family. **Confirmed still live
+  2026-09-10 after a full code rewrite** (same bug persisted through a rewrite that touched everything
+  else) — and the rewrite *added* a second polling window keyed to `.oxy-tab` clicks, so the same
+  collapse-fight now also refires every time a user returns to "All Pets" from a filter, not just on
+  initial load. A defensive CSS comment added in the rewrite ("force all visible regardless of native
+  collapse -- needs live verification") did not actually fix it, because CSS can't override a JS
+  interval still re-adding the collapsed class on a live timer. Lesson: a bug surviving a full file
+  rewrite is a sign the root cause was never actually addressed, just refactored around — re-check the
+  exact same failure mode after any "fixed" rewrite rather than assuming a rewrite implies a fix.
 
 ## Cross-site clone risk
 

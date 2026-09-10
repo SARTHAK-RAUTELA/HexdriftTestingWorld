@@ -12,9 +12,11 @@
  * inject any cre-t-164 markup on the live site, even though the Convert bucketing cookie confirms
  * this browser IS assigned to that variation (_conv_v exp map shows
  * 100052787.{v.1000257233-g.{}}) - i.e. Convert has not had vB.js/vB.css wired to that variation slot
- * yet. Variation 1000257236 (Proposed Variation / V2) DOES work live. To QA both arms consistently
- * this suite uses LOCAL INJECTION of the real vB.js/vB.css and va3.js/va3.css files against the real
- * live site, mirroring the established swf151-new-build.spec.js pattern for this client.
+ * yet. Variation 1000257236 (Proposed Variation / V2) DOES work live. RESOLVED 2026-09-10: client
+ * issued a new V1 variation ID, 1000257234, confirmed live-working via recon (body carries
+ * cre-t-164-default, toggle present). This suite still uses LOCAL INJECTION of the real
+ * vB.js/vB.css and va3.js/va3.css files against the real live site for both arms, for consistency
+ * across QA passes, mirroring the established swf151-new-build.spec.js pattern for this client.
  *
  * Each describe block runs serially against ONE page - this site's CDN rate-limits repeated
  * automated navigation (see qa-knowledge-base/pet-insurance-gurus/_client-notes.md).
@@ -184,7 +186,8 @@ for (const arm of [
 
     test("TC-02 default load shows all 10 cards expanded (no Show More needed)", async () => {
       // Code comment states default should always land expanded; expandIfCollapsed() is
-      // commented out in both vB.js and va3.js (line 152) so this is expected to FAIL live.
+      // commented out in updateFilterState() in both vB.js and va3.js, so this is expected to
+      // FAIL live - reconfirmed 2026-09-10 after a full rewrite of both files (BUG-01, still open).
       // expect.soft() so this confirmed bug doesn't abort the rest of the serial suite.
       const state = await readListing(page);
       expect.soft(state.visibleCards.length).toBe(10);
@@ -246,9 +249,8 @@ for (const arm of [
 
       test("TC-10 ratings still show the TEST values, not the native ones", async () => {
         // Ticket requirement: "the ratings will continue to be applied from the test" while a
-        // filter is active. Both arms gate every override (order AND rating) behind the same
-        // body.cre-t-164-default class, which is removed the instant any filter is active - so
-        // ratings are expected to revert to native here too. This assertion documents that gap.
+        // filter is active. Confirmed 2026-09-10: rating ::after overrides are no longer gated
+        // behind body.cre-t-164-default (only order/serial-number rules are) - so this passes.
         const state = await readListing(page);
         const actual = {};
         state.visibleCards.forEach((c) => (actual[c.name] = rating(c)));

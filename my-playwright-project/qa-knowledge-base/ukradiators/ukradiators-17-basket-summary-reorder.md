@@ -7,6 +7,7 @@
 **Spec:** `testing/ukradiators-17-basket-summary-reorder.spec.js`
 **Force URLs:** Control `_conv_eforce=100052714.1000257045` · Variation (V1) `_conv_eforce=100052714.1000257046`
 **QA Report (Artifact):** https://claude.ai/code/artifact/198ab1c2-d341-4583-8552-8f36d5aecd92
+**Screenshots:** `ukradiators-17-screenshots/` (control/variation full-page mobile captures)
 
 ## What this test does
 

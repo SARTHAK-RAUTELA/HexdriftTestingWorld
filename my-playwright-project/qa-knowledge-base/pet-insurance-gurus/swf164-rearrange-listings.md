@@ -1,8 +1,7 @@
 # SWF164 (cre-t-164) — Pet Insurance Gurus "Rearrange Listings"
 
 **Test file:** `my-playwright-project/testing/swf164-rearrange-listings.spec.js`
-**Report:** `my-playwright-project/qa-knowledge-base/pet-insurance-gurus/swf164-qa-report.html`
-**Screenshots:** `swf164-screenshots/`
+**Screenshots:** `swf164-screenshots/` (HTML QA report retired — all findings/results captured in this doc)
 **Site:** `https://petinsurancegurus.com`
 **Test date:** September 9, 2026
 **Browsers:** Chrome, Firefox, Edge, Safari (Desktop) + Mobile Chrome (Pixel 5) + Mobile Safari (iPhone 12) + Tablet (iPad Gen 7) — all 7 `playwright.config.js` projects, each in a fresh Playwright context (private-mode equivalent — no persisted profile/cookies between runs)

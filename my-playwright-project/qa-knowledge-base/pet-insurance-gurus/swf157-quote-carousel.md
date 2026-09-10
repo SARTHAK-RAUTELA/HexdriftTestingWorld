@@ -5,7 +5,7 @@
 **Experiment:** 100052769 — Control 1000257177, V1 1000257178, V2 1000257179, V3 1000257224
 **Injection anchor:** `#comparison-section` (quote box inserted immediately `beforebegin`)
 **Spec file:** `my-playwright-project/testing/swf157-quote-carousel.spec.js`
-**HTML QA report (screenshots embedded):** [swf157-quote-carousel-qa-report.html](swf157-quote-carousel-qa-report.html)
+**Screenshots:** `swf157-screenshots/` (extracted from the retired HTML QA report)
 
 ## What this test does
 

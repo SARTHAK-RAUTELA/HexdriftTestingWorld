@@ -6,8 +6,7 @@
 **Control files:** `local_testing/Local2/variation/v2.js` + `v2.css`
 **Test spec:** `testing/pay13-desktop-trigger.spec.js`
 **Fixture:** `local_testing/Local2/pay13-fixture.html` (served over local HTTP, not `file://` — see Round 2)
-**Report (Round 1):** `local_testing/Local2/pay13-desktop-trigger-qa-report.html`
-**Report (Round 2 rerun):** `local_testing/Local2/pay13-trigger-rerun-qa-report.html`
+**Screenshots (Round 1):** `pay13-desktop-trigger-screenshots/` (HTML QA reports retired — Round 1 + Round 2 results captured in this doc)
 **Variation class:** `cre-t-13-variation` · **Control class:** `cre-t-13-control`
 **Result (Round 1, 2026-09-07):** 60/60 passed (15 TCs × 4 desktop browsers: Chrome, Firefox, Edge, Safari) — trigger logic was still hand-built directly into vB.js/v2.js at this point (see Round 1 below), no real activation code from client yet.
 **Result (Round 2 rerun, 2026-09-07):** 126/126 passed (18 TCs × 7 projects: Chrome/Firefox/Edge/Safari Desktop, Mobile Chrome, Mobile Safari, Tablet) — rebuilt against the client's real Optimizely Activation Code.

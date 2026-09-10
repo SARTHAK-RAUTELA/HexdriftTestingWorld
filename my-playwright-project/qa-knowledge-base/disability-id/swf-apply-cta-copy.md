@@ -69,5 +69,4 @@ one-shot `waitForElement` poll. No other blocking defects found.
 
 ## Report + screenshots
 - Spec: `testing/disabilityid-apply-cta-copy.spec.js`
-- Report: `local_testing/Local2/disabilityid-apply-cta-copy-qa-report.html`
-- Screenshots: `local_testing/Local2/screenshots/`
+- Screenshots: `local_testing/Local2/screenshots/` (HTML QA report retired — its 12 screenshots are these same PNGs, and its narrative is captured in this doc)

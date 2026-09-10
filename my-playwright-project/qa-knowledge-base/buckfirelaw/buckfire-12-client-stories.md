@@ -1,8 +1,7 @@
 # BuckfireLaw_12 — "Client Stories" video testimonial carousel
 
 **Test file:** `my-playwright-project/testing/buckfire-12-client-stories.spec.js`
-**Report:** `local_testing/Local2/buckfire-12-qa-report.html`
-**Screenshots:** `my-playwright-project/buckfire-12-screenshots/` (3 states × 6 projects = 18 PNGs)
+**Screenshots:** the original HTML QA report and `buckfire-12-screenshots/` PNGs from this 2026-08-04 pass are no longer present on disk (not found in this repo); the findings below are the only surviving record of that run.
 **Source under test:** `local_testing/Local2/variation/v2.js` (246 lines) · `v2.css` (119 lines)
 **Site:** `https://buckfirelaw.com/medical-malpractice-lawyers/`
 **Test date:** August 4, 2026
@@ -147,7 +146,7 @@ supplied for this test.
 ## Update 2026-09-07 — rolled out sitewide (Test 12), rebuilt as a static 3-card grid
 
 **Test file:** `my-playwright-project/testing/buckfire-12-client-stories.spec.js`
-**Report:** `local_testing/Local2/buckfire-test12-client-stories-qa-report.html`
+**Screenshots:** `buckfire-test12-screenshots/` (HTML QA report retired — results captured in this doc)
 **Result:** 13 pages × 2 viewports (Chrome Desktop + Mobile Chrome/Pixel 5) = 26/26 checks passed, 39
 videos verified (13 pages × 3 cards). **Zero defects found.**
 

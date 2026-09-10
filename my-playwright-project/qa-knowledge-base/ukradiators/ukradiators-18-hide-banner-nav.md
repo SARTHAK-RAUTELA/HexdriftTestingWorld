@@ -5,6 +5,7 @@
 **Audience:** Paid-traffic lander visitors
 **Variation files:** `local_testing/Local2/variation/vB.js` / `vB.css` (body class `UKRadiators-18`)
 **Spec:** `testing/ukradiators-18-hide-banner-nav.spec.js`
+**Screenshots:** `ukradiators-18-screenshots/` (HTML QA report retired — findings captured in this doc)
 **Force URLs:** Control `_conv_eforce=100052699.1000257008` · Variation `_conv_eforce=100052699.1000257009`
 
 ## What this test does

@@ -7,6 +7,7 @@
 **Spec:** `testing/rhino-t05-cart-reformat.spec.js`
 **Force URLs:** Control `_conv_eforce=100052681.1000256969` · Variation `_conv_eforce=100052681.1000256970`
 **Figma:** Control.png / Variant.png (supplied by requester)
+**Screenshots:** `swf-t05-screenshots/` (HTML QA report retired — findings captured in this doc)
 
 ## What this test does
 

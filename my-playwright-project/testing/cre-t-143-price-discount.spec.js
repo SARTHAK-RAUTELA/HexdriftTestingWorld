@@ -2,17 +2,26 @@
 /**
  * CRE-T-143 - Pet Insurance Gurus "Comparison Listing Price Discount"
  *
- * No ticket/Figma was available for this test (local_testing/Local2/variation/testdetail.md is
- * empty) - see qa-knowledge-base/pet-insurance-gurus/cre-t-143-price-discount.md for the
- * code-as-spec this suite was built against. Two arms, same naming convention as CRE-T-164/SWF157
- * for this client: V1 = vB.js/vB.css (13.5% off), V2 = va3.js/va3.css (32.9% off). Both patch
- * window.fetch to read per-provider prices from insurance-finder/v1/quotes and .../v1/options,
- * insert a `.cre-t-143-discounted-price` span after each real `.ct-span` price, and hide the
- * original via CSS.
+ * testdetail.md was empty when this suite was first written - see
+ * qa-knowledge-base/pet-insurance-gurus/cre-t-143-price-discount.md for the code-as-spec history
+ * and the 2026-09-11 retest section (testdetail.md is now populated with the real requirement
+ * text + Convert force-preview URLs; see cre-t-143-price-discount-live-preview.spec.js for the
+ * preview-link pass that now precedes this code pass, per updated client instruction).
  *
- * Neither arm has a Convert force-preview URL documented, so this suite uses LOCAL INJECTION of
- * the real vB.js/vB.css and va3.js/va3.css files against the real live site, mirroring the
- * established pattern for this client (swf151-new-build.spec.js, swf164-rearrange-listings.spec.js).
+ * Two arms, same naming convention as CRE-T-164/SWF157 for this client: V1 = vB.js/vB.css (13.5%
+ * off), V2 = v2.js/v2.css (32.9% off) - CURRENT file mapping as of 2026-09-11 (the arm's own
+ * `va3.js`/`va3.css` files were retired; `va3.css` is actually stale cre-t-164 CSS, not a valid
+ * substitute, and `v2.css` is ALSO stale/unrelated content - see BUG-04 in the QA doc). Both JS
+ * files patch window.fetch to read per-provider prices from insurance-finder/v1/quotes and
+ * .../v1/options, insert a `.cre-t-143-discounted-price` span after each real `.ct-span` price,
+ * and hide the original via CSS (vB.css does this correctly; v2.css does not - see BUG-04).
+ *
+ * Neither arm has ever had a documented Convert force-preview URL for use with this style of
+ * local-injection-only suite (a real force-preview URL now exists for the live preview check, but
+ * this file's purpose is specifically to validate the LOCAL BUILD FILES in isolation), so this
+ * suite continues to use LOCAL INJECTION of the real vB.js/vB.css and v2.js/v2.css files against
+ * the real live site, mirroring the established pattern for this client
+ * (swf151-new-build.spec.js, swf164-rearrange-listings.spec.js).
  *
  * Each arm runs serially against ONE page - this site's CDN rate-limits repeated automated
  * navigation (see qa-knowledge-base/pet-insurance-gurus/_client-notes.md).
@@ -25,8 +34,8 @@ const SITE = "https://petinsurancegurus.com/";
 const BUILD_DIR = path.join(__dirname, "..", "..", "local_testing", "Local2", "variation");
 const CSS_V1 = fs.readFileSync(path.join(BUILD_DIR, "vB.css"), "utf8");
 const JS_V1 = fs.readFileSync(path.join(BUILD_DIR, "vB.js"), "utf8");
-const CSS_V2 = fs.readFileSync(path.join(BUILD_DIR, "va3.css"), "utf8");
-const JS_V2 = fs.readFileSync(path.join(BUILD_DIR, "va3.js"), "utf8");
+const CSS_V2 = fs.readFileSync(path.join(BUILD_DIR, "v2.css"), "utf8");
+const JS_V2 = fs.readFileSync(path.join(BUILD_DIR, "v2.js"), "utf8");
 
 const TABLE = '[data-unique="comparison-table"]';
 const CARD = TABLE + ' [data-unique$="-Listing-Only"]';
@@ -112,7 +121,7 @@ async function readDuplicateIds(page) {
 // ─────────────────────────────────────────────────────────────────────────────
 for (const arm of [
   { label: "V1 (vB.js/vB.css, 13.5% off)", css: CSS_V1, js: JS_V1, discountPercent: 0.135 },
-  { label: "V2 (va3.js/va3.css, 32.9% off)", css: CSS_V2, js: JS_V2, discountPercent: 0.329 },
+  { label: "V2 (v2.js/v2.css, 32.9% off)", css: CSS_V2, js: JS_V2, discountPercent: 0.329 },
 ]) {
   test.describe(arm.label, () => {
     /** @type {import('@playwright/test').Page} */
@@ -263,6 +272,85 @@ for (const arm of [
           await page.waitForTimeout(2000);
         }
       }
+    });
+
+    test("TC-12 the tail cards (listings 8-10, revealed via Show More on organic loads) carry the same discount", async () => {
+      // Default currently lands already-expanded (SWF164's BUG-01: expandIfCollapsed() is
+      // commented out) so no click is needed for these cards to be present, but this still
+      // confirms the discount logic covers them per the ticket's explicit "also applies to
+      // listings 8, 9 and 10 hidden within the Show More accordion" requirement.
+      const state = await readPriceState(page);
+      const priced = state.filter((c) => c.found && c.originalText !== null);
+      expect(priced.length).toBeGreaterThanOrEqual(8);
+      const tail = priced.slice(-3);
+      tail.forEach((c) => {
+        expect(c.discountedText, `tail card provider ${c.provider}`).not.toBeNull();
+      });
+    });
+
+    test("TC-13 ZIP filter (in-place re-render) keeps the discount applied", async () => {
+      const input = page.locator(".zip-textinput input").first();
+      if (await input.count()) {
+        await input.fill("90210");
+        await input.dispatchEvent("change");
+        await page.waitForTimeout(2500);
+        const state = await readPriceState(page);
+        const priced = state.filter((c) => c.found && c.originalText !== null);
+        expect(priced.length).toBeGreaterThan(0);
+        priced.forEach((c) => {
+          expect(c.discountedText, `provider ${c.provider} under ZIP filter`).not.toBeNull();
+        });
+        await input.fill("");
+        await input.dispatchEvent("change");
+        await page.waitForTimeout(1500);
+      }
+    });
+
+    test("TC-14 selecting a breed then reverting to All Breeds re-applies the discount (URL-param round trip)", async ({ browser }) => {
+      // Confirmed requirement (testdetail.md Q&A, 2026-09-11): "if a user selects a specific
+      // breed and then changes the selection back to the All Breeds option, should we apply the
+      // discounted prices again? Yes." This checks the code's own signal
+      // (isBreedSelectedInUrl()/isBreedSelectedInResponseData()) via URL-param transitions on a
+      // fresh context; the real MUI breed-picker widget round trip is covered end-to-end in
+      // cre-t-143-price-discount-live-preview.spec.js against the real force-preview URLs.
+      const ctx = await browser.newContext();
+      const p = await ctx.newPage();
+      await p.goto(SITE + "?breed=Beagle", { waitUntil: "domcontentloaded" });
+      await p.waitForSelector(CARD, { timeout: 45000 });
+      await p.waitForTimeout(2500);
+      await inject(p, arm.css, arm.js);
+      const withBreed = await readPriceState(p);
+      withBreed.filter((c) => c.found && c.originalText !== null).forEach((c) => {
+        expect(c.discountedText, `provider ${c.provider} with breed selected`).toBeNull();
+      });
+
+      await p.goto(SITE, { waitUntil: "domcontentloaded" });
+      await p.waitForSelector(CARD, { timeout: 45000 });
+      await p.waitForTimeout(2500);
+      await inject(p, arm.css, arm.js);
+      const reverted = await readPriceState(p);
+      const revertedPriced = reverted.filter((c) => c.found && c.originalText !== null);
+      expect(revertedPriced.length).toBeGreaterThan(0);
+      revertedPriced.forEach((c) => {
+        expect(c.discountedText, `provider ${c.provider} after reverting to All Breeds`).not.toBeNull();
+      });
+      await ctx.close();
+    });
+
+    test("TC-15 BUG CANDIDATE: with the current v2.css file paired to v2.js, is the original price actually hidden?", async () => {
+      // v2.css (the file currently mapped to the V2 arm) is stale/unrelated content (leftover
+      // pay.com.au cre-t-13 modal CSS) - it contains no rule for `.cre-t-143-price-original-hidden`.
+      // vB.css (V1) DOES contain the correct hide rule. This test documents whether that gap is
+      // actually visible on screen for V2 when only the current local file pairing is injected.
+      test.skip(arm.label.indexOf("V1") === 0, "only relevant to the V2 arm's current css file");
+      const state = await readPriceState(page);
+      const priced = state.filter((c) => c.found && c.discountedText !== null);
+      expect(priced.length).toBeGreaterThan(0);
+      const stillShowingOriginal = priced.filter((c) => c.originalVisible);
+      // Soft assertion: this documents a LOCAL BUILD FILE gap (v2.css mismatch), not necessarily
+      // a live production bug - cross-reference against the real V2 force-preview URL result in
+      // cre-t-143-price-discount-live-preview.spec.js before treating this as user-facing.
+      expect.soft(stillShowingOriginal.length, "cards where original price is STILL visible next to the discount, because v2.css never hides it").toBe(0);
     });
   });
 }

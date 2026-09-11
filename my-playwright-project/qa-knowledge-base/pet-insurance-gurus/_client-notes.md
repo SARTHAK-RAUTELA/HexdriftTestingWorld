@@ -54,6 +54,16 @@
   rewrite is a sign the root cause was never actually addressed, just refactored around — re-check the
   exact same failure mode after any "fixed" rewrite rather than assuming a rewrite implies a fix.
 
+- **The breed-select MUI combobox (`#breed-select`) starts `Mui-disabled` and only enables once a
+  ZIP is entered AND validated** — but the standard `input.fill("90210")` +
+  `input.dispatchEvent("change")` pattern used elsewhere on this client (ZIP-persistence checks,
+  SWF164) does NOT reliably trigger whatever async validation the site needs to enable it: in 2/2
+  attempts (2026-09-11, CRE-T-143 live preview retest) the combobox was still `disabled` 15s after
+  the synthetic `change` event. A slower/more realistic input simulation (e.g. `pressSequentially()`
+  and waiting for a real network response) is likely needed for any FUTURE test that must interact
+  with the real breed-picker widget (as opposed to the `?breed=` URL param, which remains the
+  reliable, fast proxy for "a breed is selected" on this client — see `cre-t-143-price-discount.md`).
+
 ## Cross-site clone risk
 
 Tests get cloned between this site and Renters Insurance Gurus (CRE-T-123 → CRE-T-136). **Clone artifacts are the #1 bug source:** leftover "pet"/"renters" copy, old fallback insurer names, old `window.cre_t_NNN_event` guard variable names. Diff cloned code against the new Figma line by line.

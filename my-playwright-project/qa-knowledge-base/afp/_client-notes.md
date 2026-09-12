@@ -33,3 +33,4 @@ Copy is frequently carried over from earlier AFP tests (AFP05 → AFP10 stale bu
 | AFP18 — Download summary nav link | [afp18-download-summary-link.md](afp18-download-summary-link.md) |
 | AFP19 — Compensation survey hero | [afp19-compensation-survey-hero.md](afp19-compensation-survey-hero.md) |
 | AFP21 — Join AFP membership page redesign | [afp21-membership-page-redesign.md](afp21-membership-page-redesign.md) |
+| AFP26 — Homepage updated design (hero + sections) | [afp26-homepage-updated-design.md](afp26-homepage-updated-design.md) |

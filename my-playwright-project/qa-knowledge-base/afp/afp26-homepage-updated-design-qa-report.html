@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AFP26 — Homepage Updated Design — QA Report</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Arial, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; color: #1a1a1a; background:#fafafa; }
+  h1 { color: #002B49; }
+  h2 { color: #002B49; border-bottom: 2px solid #002B49; padding-bottom: 6px; margin-top: 48px; }
+  .meta { background:#eef3f6; border-radius:8px; padding:16px; margin-bottom:24px; }
+  .bug { border-left: 5px solid #c0392b; background:#fff5f4; padding:14px 18px; margin:16px 0; border-radius:4px; }
+  .bug h3 { margin-top:0; color:#c0392b; }
+  .ok { border-left: 5px solid #2e7d32; background:#f3fbf3; padding:14px 18px; margin:16px 0; border-radius:4px; }
+  .ok h3 { margin-top:0; color:#2e7d32; }
+  .note { border-left: 5px solid #b8860b; background:#fffbf0; padding:14px 18px; margin:16px 0; border-radius:4px; }
+  .shots { display:flex; gap:16px; flex-wrap:wrap; margin:16px 0; }
+  .shots figure { margin:0; flex:1 1 320px; max-width:480px; }
+  .shots img { width:100%; border:1px solid #ccc; border-radius:4px; display:block; }
+  .shots figcaption { font-size:13px; color:#555; margin-top:6px; text-align:center; }
+  table { border-collapse: collapse; width:100%; margin:16px 0; }
+  th, td { border:1px solid #ddd; padding:8px 10px; text-align:left; font-size:14px; }
+  th { background:#002B49; color:#fff; }
+  code { background:#eee; padding:1px 5px; border-radius:3px; font-size:13px; }
+  .sev-high { color:#c0392b; font-weight:bold; }
+  .sev-med { color:#b8860b; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<h1>AFP26 — Homepage Updated Design — QA Report</h1>
+<div class="meta">
+  <strong>Client:</strong> AFP (Association for Financial Professionals) &middot; <strong>Site:</strong> www.financialprofessionals.org<br>
+  <strong>Tested:</strong> VWO preview links (Control v1 / Variation v2) &middot; <strong>Browsers:</strong> Chrome Desktop, Safari Desktop, Mobile Chrome (Pixel 5), Mobile Safari (iPhone 12) — per this round's request<br>
+  <strong>Reference:</strong> Figma side-by-side comparison image + client walkthrough video (video contained no additional visual info beyond the static Figma image — see <a href="afp26-homepage-updated-design.md">afp26-homepage-updated-design.md</a> for the full spec)<br>
+  <strong>Result:</strong> Variation is a strong, largely faithful build of the Figma design. <strong>3 real bugs found and FIXED in `vB.js`/`vB.css`</strong>, verified live by injecting the fixed code onto the control page across Chrome, Safari, and Mobile Chrome. One originally-reported issue (BUG-02) turned out to be a false positive from the QA tooling itself, not a code defect — corrected below.
+</div>
+
+<div class="note">
+  <strong>Update (fix pass):</strong> after the client supplied the video transcript, 3 real issues were found (button-destination/font-size/weight consistency, none visible in the static Figma image alone) and have now been <strong>fixed directly in the code</strong> at <code>local_testing/Local2/variation/vB.js</code> / <code>vB.css</code>, then re-verified by injecting the updated files onto the live control page. All fixes confirmed working in Chrome Desktop, Safari Desktop, and Mobile Chrome.
+</div>
+
+<h2>Confirmed Bugs</h2>
+
+<div class="bug">
+  <h3>BUG-01 <span class="sev-high">[High]</span> — 3-card promo row buttons are not level; Figma has them (nearly) aligned — <span style="color:#2e7d32">FIXED &amp; VERIFIED</span></h3>
+  <p style="background:#f3fbf3;padding:8px;border-left:3px solid #2e7d32;"><strong>Fix applied:</strong> CSS <code>align-items:stretch</code> alone wasn't reliably equalizing card heights on this site's markup, so a small JS height-equalizer (<code>equalizeCardHeights()</code> in <code>vB.js</code>) measures the tallest card and absolute-positions every button at a shared bottom offset. Re-verified by injecting the fixed code onto the live control page: all 3 buttons now land at the identical <code>top:1104 / bottom:1158</code> in both Chrome and Safari Desktop.</p>
+  <p>In the Figma design, the "AFP Power Hour" and "Earn the CTP® or FPAC®" card buttons sit at almost the same height (within ~6px of each other), with only the "AFP Events" card sitting noticeably higher (shorter copy). On the <strong>live variation</strong>, measured directly from the rendered page (Chrome Desktop, 1280×800), the three buttons form a full staircase:</p>
+  <table>
+    <tr><th>Card</th><th>Button</th><th>Figma bottom offset (relative)</th><th>Live bottom offset (relative)</th></tr>
+    <tr><td>1 — AFP Power Hour</td><td>REGISTER FOR POWER HOUR</td><td>≈232px</td><td>≈460px</td></tr>
+    <tr><td>2 — Earn the CTP®/FPAC®</td><td>EXPLORE CERTIFICATIONS</td><td>≈238px</td><td>≈377px</td></tr>
+    <tr><td>3 — AFP Events</td><td>EXPLORE AFP EVENTS</td><td>≈195px</td><td>≈333px</td></tr>
+  </table>
+  <p><strong>Figma intent:</strong> Card 1 ≈ Card 2 (level), Card 3 higher. <strong>Live result:</strong> Card 1 is <em>lowest</em>, Card 2 middle, Card 3 highest — a full progressive staircase, and Card 1 sits ~83px below Card 2 instead of level with it.</p>
+  <p><strong>Likely root cause:</strong> Card 1's button label "REGISTER FOR POWER HOUR" wraps to two lines (vs. one line for the other two buttons), and the card layout doesn't bottom-anchor the button within a shared card height — so the two-line button pushes the whole card's visual weight down instead of just the button growing in place. Confirmed present in <strong>both Chrome and Safari Desktop</strong> (WebKit renders the same layout, same stagger).</p>
+  <p><strong>Scope:</strong> Desktop/tablet only — the three cards stack full-width vertically on mobile (Pixel 5 and iPhone 12 both confirmed), so this specific misalignment does not reproduce on mobile.</p>
+  <div class="shots">
+    <figure><img src="afp26-screenshots/variation-cardrow-desktop.png" alt="Variation card row desktop"><figcaption>Live variation, Chrome Desktop — note staggered button baselines</figcaption></figure>
+  </div>
+</div>
+
+<div class="ok">
+  <h3>BUG-02 <span style="color:#2e7d32">[RETRACTED — false positive, not a real bug]</span> — "Explore Certifications" button href</h3>
+  <p>Originally reported as a malformed placeholder URL. On re-reading the actual source, the code correctly sets <code>href="#TODO-CERTIFICATIONS-URL"</code> — exactly the kind of clean placeholder the client asked for (4:04: <em>"maybe put in a placeholder URL just for now"</em>). The original finding came from reading the browser's <em>resolved</em> <code>.href</code> DOM property in the QA test script (which auto-expands a relative/fragment href to an absolute URL using the current page's address, including its query string) instead of the raw <code>getAttribute('href')</code> value. No code change was needed or made. The other two card buttons ("Register For Power Hour" → same URL as control, "Explore AFP Events" → same URL as control) are confirmed correctly pointing to the same destinations as control, per spec.</p>
+</div>
+
+<div class="bug">
+  <h3>BUG-03 <span class="sev-med">[Medium]</span> — Certification tab copy size trends smaller than control, not bigger as requested — <span style="color:#2e7d32">FIXED &amp; VERIFIED</span></h3>
+  <p>The client said (2:44): <em>"If you can bump up the copy size a little bit more, or even maybe we even wrapped two lines if needed, that would be great."</em> Measured computed styles (Chrome Desktop):</p>
+  <table>
+    <tr><th></th><th>Control</th><th>Variation</th></tr>
+    <tr><td>Inactive tabs (CTP / FPAC / Scholarship)</td><td>20px / weight 800 / line-height 35px</td><td>16px / weight 800 / line-height 28px</td></tr>
+    <tr><td>Active tab ("Maintain(ing) Your Credential")</td><td>14px / weight 400 / line-height 24.5px</td><td>16px / weight 800 / line-height 28px</td></tr>
+  </table>
+  <p>The active tab did get bigger (14px→16px, as asked), but the three inactive tabs — the visually dominant reference point in control at 20px — actually <strong>shrank</strong> to 16px in the variation. Net effect: all four tabs converged to a uniform 16px, which reads as smaller than control's most prominent tab size, opposite of the explicit request to bump the copy up.</p>
+  <p style="background:#f3fbf3;padding:8px;border-left:3px solid #2e7d32;"><strong>Fix applied:</strong> <code>.tab-section__nav-btn</code> font-size raised from 16px to 20px (matching/exceeding control's own baseline), padding reduced slightly (44px→28px horizontal) to keep the row fitting comfortably at the larger size. Re-verified live: measured 20px on the injected fixed code.</p>
+</div>
+
+<div class="bug">
+  <h3>BUG-04 <span class="sev-med">[Medium]</span> — Eyebrow font doesn't match across the section, despite explicit "should all be the same" instruction — <span style="color:#2e7d32">FIXED &amp; VERIFIED</span></h3>
+  <p>The client was explicit and repeated this twice: eyebrows on the section-2 heading and the "Maintain Your Credential" panel should have <em>"the same font characteristics as [the card-row eyebrows]... the font style, like the weight, the size, the line height, everything else is really consistent, so that's all the same as one another."</em> Measured:</p>
+  <table>
+    <tr><th>Eyebrow</th><th>Font-size / weight / line-height</th></tr>
+    <tr><td>Card-row eyebrows (all 3 — reference pattern)</td><td>15px / 800 / 26.25px</td></tr>
+    <tr><td>"AFP CERTIFICATIONS" (section-2 eyebrow)</td><td class="sev-med">16px / 700 / 28px — mismatched</td></tr>
+    <tr><td>"ALREADY CERTIFIED" (panel eyebrow)</td><td class="sev-med">16px / 400 / 28px — mismatched, and much lighter weight</td></tr>
+  </table>
+  <p><em>Correction:</em> the panel-eyebrow number above (16px/400) was later found to be a measurement artifact — the QA script's text-matching grabbed an unrelated page element (likely a breadcrumb) with coincidentally the same text, not the actual injected eyebrow. The real pre-fix CSS was <code>14px/700/24px</code> — close to the 15px/800/26.25px target, but not exact.</p>
+  <p style="background:#f3fbf3;padding:8px;border-left:3px solid #2e7d32;"><strong>Fix applied:</strong> both <code>.tab-section__title.variation-eyebrow-cert</code> (section-2 eyebrow) and <code>.variation-eyebrow-already-certified</code> (panel eyebrow) set to exactly <code>15px / weight 800 / line-height 26.25px</code>, matching the card-row eyebrows precisely. Re-verified live: all three eyebrows (card, section-2, panel) now measure identically.</p>
+</div>
+
+<h2>Confirmed Matches (no action needed)</h2>
+
+<div class="ok">
+  <h3>Hero "JOIN AFP" button width</h3>
+  <p>Client asked (0:59): <em>"the join AFP button is wider, it's about as wide as all of these buttons in the box underneath."</em> Measured: hero button = 280px wide; card-row buttons = 209–261px wide. The hero button is in the same range as (slightly wider than) the card buttons — matches intent, a clear improvement over control's cramped 108px-wide button. If the client meant "as wide as the combined row of 3 buttons" rather than "as wide as one button," that would be a much larger width (~1200px) — worth a quick confirmation given the phrasing is genuinely ambiguous, but the more natural reading is already satisfied.</p>
+</div>
+
+<div class="ok">
+  <h3>Tab default/position (confirmed against transcript)</h3>
+  <p>Client explicitly confirmed (2:54–3:08): <em>"we're going to move it to position three, but we're still going to default to it."</em> Live build matches exactly — "Maintain Your Credential" is 3rd in the tab order and remains the active/default tab on page load.</p>
+</div>
+
+<div class="ok">
+  <h3>Section-2 heading size vs. card headings (confirmed against transcript)</h3>
+  <p>Client self-corrected mid-video (3:28): <em>"this headline here might actually be a bit bigger than these ones, because it is the main headline for section 2."</em> Measured: card headings = 40px, section-2 heading ("Stand Out with the CTP® or FPAC®") = 48px. Matches the corrected instruction.</p>
+</div>
+
+<div class="ok">
+  <h3>Font-family parity</h3>
+  <p>Per the client's standing rule ("if it's the same on the wireframe, it should be the same in the page"), computed <code>font-family</code> for the H1 is <code>GothamNarrowBold, Arial, Helvetica, sans</code> — identical string in both control and variation. No font substitution introduced by the variation.</p>
+</div>
+
+<div class="ok">
+  <h3>Hero copy, CTA, and layout</h3>
+  <p>Headline ("Advance Your Career with AFP Membership"), subcopy, and single "JOIN AFP" button all match the Figma design exactly, in both Chrome and Safari, desktop and mobile. The smaller hero font size in the variation (48px vs. control's 72px) matches Figma's proportions — verified by direct pixel comparison against the reference image; not a bug.</p>
+</div>
+
+<div class="ok">
+  <h3>3-card row content pivot</h3>
+  <p>Card 2 correctly swaps from the control's "Stablecoins &amp; On-Chain Liquidity Certificate" promo to the variation's "Earn the CTP® or FPAC®" copy, with the ® symbols intact everywhere they appear (hero card, section heading, tab label).</p>
+</div>
+
+<div class="ok">
+  <h3>"Stand Out with the CTP® or FPAC®" section</h3>
+  <p>New eyebrow, heading, pill-style tabs (vs. control's underline tabs), and the tab reorder (Maintain Your Credential moved from 1st/active to 3rd position while <em>remaining</em> the active/default tab) are all implemented correctly and match Figma. "ALREADY CERTIFIED" tag and "Explore Recertification →" exit link are present; webinar list content is unchanged and correct.</p>
+</div>
+
+<div class="ok">
+  <h3>Header/nav</h3>
+  <p>The Figma comparison image shows a visibly larger logo/nav in the variation panel than the control panel — this raised a flag in the spec doc (worth confirming as a Figma export artifact vs. a real change). <strong>Resolved by live testing:</strong> the live header renders identically sized in both control and variation, across all 4 browser/device combinations. Confirmed as a Figma export-zoom artifact, not a code discrepancy — no action needed.</p>
+</div>
+
+<h2>Needs Client Confirmation (not bugs, just unresolved scope)</h2>
+<div class="note">
+  <ul>
+    <li><strong>Does the "Stablecoins &amp; On-Chain Liquidity Certificate" promotion move elsewhere on the site</strong>, or is it intentionally dropped from the homepage entirely? The variation's card 2 no longer references it at all.</li>
+    <li><strong>How far down the page does this redesign extend?</strong> The Figma comparison image stops right after the certifications tab panel — everything below (AFP Newsletters section, footer) is untouched and identical in both versions, which appears correct, but wasn't explicitly confirmed as in/out of scope by the client.</li>
+    <li><strong>Audio narration was not recoverable</strong> — no speech-to-text tool was available in this environment, and all 87 sampled video frames showed the same static Figma canvas (cursor movement only, no inspector panel opened). Anything the client said verbally that isn't visible in the Figma image itself (rationale, additional requirements, corrections) could not be captured. Recommend a human re-watch with audio before final sign-off.</li>
+  </ul>
+</div>
+
+<h2>Screenshots — Hero, Chrome vs Safari Desktop</h2>
+<div class="shots">
+  <figure><img src="afp26-screenshots/control-hero-chrome-desktop.png"><figcaption>Control — Chrome Desktop</figcaption></figure>
+  <figure><img src="afp26-screenshots/variation-hero-chrome-desktop.png"><figcaption>Variation — Chrome Desktop</figcaption></figure>
+  <figure><img src="afp26-screenshots/control-hero-safari-desktop.png"><figcaption>Control — Safari Desktop</figcaption></figure>
+  <figure><img src="afp26-screenshots/variation-hero-safari-desktop.png"><figcaption>Variation — Safari Desktop</figcaption></figure>
+</div>
+
+<h2>Screenshots — Card Row Detail (Desktop)</h2>
+<div class="shots">
+  <figure><img src="afp26-screenshots/control-cardrow-desktop.png"><figcaption>Control card row — buttons also stagger, but matches Figma's control panel</figcaption></figure>
+  <figure><img src="afp26-screenshots/variation-cardrow-desktop.png"><figcaption>Variation card row — BUG-01, staircase exceeds Figma's intended near-level Cards 1–2</figcaption></figure>
+</div>
+
+<h2>Screenshots — Full Page, Mobile</h2>
+<div class="shots">
+  <figure><img src="afp26-screenshots/control-full-mobile-chrome.png"><figcaption>Control — Mobile Chrome (Pixel 5)</figcaption></figure>
+  <figure><img src="afp26-screenshots/variation-full-mobile-chrome.png"><figcaption>Variation — Mobile Chrome (Pixel 5)</figcaption></figure>
+  <figure><img src="afp26-screenshots/control-full-mobile-safari.png"><figcaption>Control — Mobile Safari (iPhone 12)</figcaption></figure>
+  <figure><img src="afp26-screenshots/variation-full-mobile-safari.png"><figcaption>Variation — Mobile Safari (iPhone 12)</figcaption></figure>
+</div>
+
+<p style="margin-top:48px;color:#888;font-size:13px;">Full design spec, content inventory, and open questions: <a href="afp26-homepage-updated-design.md">afp26-homepage-updated-design.md</a></p>
+
+</body>
+</html>

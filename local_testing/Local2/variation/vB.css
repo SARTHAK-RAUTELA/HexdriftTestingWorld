@@ -1,93 +1,218 @@
-/* cre-t-162: testimonial quote section, injected above the top listing */
-
-/* Remove "Personalize prices" copy above the filter buttons */
-#section-11-584 {
-  display: none !important;
+html body.afp-26 .card--hero__content {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-right: 0;
+    padding-left: 0;
 }
-
-.cre-t-162-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  background-color: #f5f5f9;
-  padding-top: 30px;
-  padding-bottom: 0px;
-  margin-bottom: -15px;
+html body.afp-26 .card--hero__title {
+  font-size: 48px;
+  line-height: 56px;
 }
-
-/* Rectangle 5 (see section.css) */
-.cre-t-162-quote-box {
+html body.afp-26 .card--hero__text {
+  font-size: 15px !important;
+  line-height: 24px !important;
+}
+html body.afp-26 .cta-list__subheading {
+  font-weight: 800;
+  font-size: 15px;
+}
+html body.afp-26 .cta-list__item {
   position: relative;
+}
+html body.afp-26 .cta-list__btn {
+  white-space: nowrap;
+}
+html body.afp-26 .card--hero__btn {
   width: 100%;
-  max-width: 1120px;
-  min-height: 102px;
-  background: rgb(255, 255, 255);
-  border: 1px solid #E6E8EF;
-  border-radius: 6px;
-  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.02);
+  max-width: 280px;
+  text-align: center;
+  display: inline-block;
+}
+html body.afp-26 .tab-section__title.variation-eyebrow-cert {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.25px;
+  line-height: 26.25px;
+  text-transform: uppercase;
+  color: #6fc9de;
+  margin-bottom: 0;
+}
+html body.afp-26 .cta-list__text {
+  font-size: 15px;
+}
+html body.afp-26 .tab-section__display .variation-date-prefix+a span {
+  color: #6fc9de !important;
+}
+html body.afp-26 .variation-section2-headline {
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 400;
+  color: #00254A;
+  margin: 8px 0 35px;
+}
+.tab-section__nav-item {
+  background-color: #eef0f1;
+}
+html body.afp-26 .tab-section__nav {
+  border-bottom: none;
+  gap: 10px;
+  justify-content: space-between;
+}
+html body.afp-26 .tab-section__nav-btn {
+  font-size: 20px;
+  border: 1px solid #e1e1e1;
+  padding: 12px 28px;
+}
+html body.afp-26 .tab-section__nav-btn::after {
+  display: none;
+}
+html body.afp-26 .tab-section__nav-btn.active {
+  background-color: #002b49;
+  color: #FFFFFF;
+}
+html body.afp-26 .variation-eyebrow-already-certified {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.25px;
+  line-height: 26.25px;
+  text-transform: uppercase;
+  color: #6fc9de;
+}
+html body.afp-26 .variation-explore-recert {
+  margin-top: 8px;
+}
+html body.afp-26 .variation-explore-recert a {
+  font-weight: 700;
+}
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>p:first-child {
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title {
+  margin-bottom: 4px;
+}
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>p:first-child+p {
+  margin-bottom: 0;
+}
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>p {
+  padding: 6px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 23px 110px 26px;
-  box-sizing: border-box;
+  align-items: baseline;
+  margin-bottom: 0;
+  margin-top: 0;
+  gap: 15px;
 }
-
-.cre-t-162-quote-text {
-  margin: 0;
-  color: #000;
-  text-align: center;
-  font-family: Montserrat, sans-serif;
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>p a {
   font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 150% */
+}
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>.variation-explore-recert a {
+  color: #77cbd5;
+}
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>p:nth-child(3),
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>p:nth-child(4),
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>p:nth-child(5),
+html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p:nth-child(3),
+html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p:nth-child(4),
+html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p:nth-child(5) {
+  border-top: 1px solid #77cbd5;
+  border-top: 1px solid #004371;
+}
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title+.sf-Long-text>p:first-child {
+  font-size: 15px;
+  margin-top: 0;
+}
+html body.afp-26 .variation-date-prefix {
+  display: inline-block;
+  width: stretch;
+  max-width: fit-content;
+}
+html body.afp-26 .card--hero__media {
+    min-height: auto;
+}
+html body.afp-26 .main-content .card.card--hero{
+      min-height: 34rem;
+}
+html body.afp-26 .tab-section__display .variation-date-prefix + a span{
+  color: #6fc9de;
+}
+html body.afp-26 .main-content .sf-Long-text {
+    font-size: 15px;
+}
+html body.afp-26 .tab-section .tab-section__display .tab-section__content-title + .sf-Long-text > p:first-child{
+  flex-direction: column;
+}
+html body.afp-26 .main-content .card.card--hero .card--hero__media{
+    background-image: url(https://v2.crocdn.com/AFP/test26/afp-26_website_header_image_sep.jpg)!important;
 }
 
-.cre-t-162-quote-author {
-  margin: 0;
-  color: #000;
-  text-align: center;
-  font-family: Montserrat, sans-serif;
-  font-size: 13.5px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
+
+@media (max-width: 767px) {
+  html body.afp-26 .tab-section .card--hero__title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  html body.afp-26 .tab-section .card--hero__content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  html body.afp-26 .card--hero__btn {
+    max-width: 100%;
+  }
+  html body.afp-26 .tab-section .variation-section2-headline {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  html body.afp-26 .tab-section .tab-section__nav-btn {
+    font-size: 18px;
+  }
+  html body.afp-26 .tab-section .tab-section__text {
+    padding: 1rem;
+  }
+  html body.afp-26 .tab-section .tab-section__content-title {
+    font-size: 26px;
+  }
+  html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p:first-child {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p a {
+    font-size: 16px;
+  }
+  html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p {
+    display: flex;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    gap: 15px;
+  }
+  html body.afp-26 .tab-section .variation-explore-recert a {
+    color: #77cbd5;
+    margin-top: 12px;
+  }
+  html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p:nth-child(4),
+  html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p:nth-child(5) {
+    margin-top: 0;
+    padding: 10px 0;
+  }
+  html body.afp-26 .tab-section .tab-section__content.open .sf-Long-text>p:nth-child(2) {
+    margin-bottom: 20px;
+  }
+  html body.afp-26 .card--hero__content{
+        padding-left: 0;
+  }
+  html body.afp-26 .cta-list__item{
+    padding: 3rem 2rem;
+
+  }
+  html body.afp-26 .card--hero__title {
+    font-size: 42px;
+    line-height: 50px;
+}
+html body.afp-26 .cta-list .cta-list__heading {
+    font-size: 42px !important;
 }
 
-.cre-t-162-quote-source {
-  position: absolute;
-  right: 16px;
-  bottom: 6px;
-  margin: 0;
-  color: #8C8EA0;
-  text-align: right;
-  font-family: Montserrat, sans-serif;
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 218.182% */
-}
 
-@media (max-width: 768px) {
-  .cre-t-162-quote-box {
-    padding: 20px 20px 20px;
-    gap: 10px;
-  }
-  .cre-t-162-quote-author {
-    font-size: 12.5px;
-    line-height: 20px;
-  }
-  .cre-t-162-quote-source {
-    position: static;
-    text-align: center;
-    line-height: normal;
-  }
-
-  .cre-t-162-section {
-    margin-bottom: -10px;
-  }
 }

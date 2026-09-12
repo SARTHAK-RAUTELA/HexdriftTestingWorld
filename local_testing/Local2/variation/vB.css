@@ -1,5 +1,93 @@
-/* cre-t-143: reduces displayed listing prices by 13.5% */
-/* The real price span is hidden (not removed) once the discounted span is inserted after it */
-html body .cre-t-143-price-original-hidden {
-  display: none;
+/* cre-t-162: testimonial quote section, injected above the top listing */
+
+/* Remove "Personalize prices" copy above the filter buttons */
+#section-11-584 {
+  display: none !important;
+}
+
+.cre-t-162-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f9;
+  padding-top: 30px;
+  padding-bottom: 0px;
+  margin-bottom: -15px;
+}
+
+/* Rectangle 5 (see section.css) */
+.cre-t-162-quote-box {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  min-height: 102px;
+  background: rgb(255, 255, 255);
+  border: 1px solid #E6E8EF;
+  border-radius: 6px;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 23px 110px 26px;
+  box-sizing: border-box;
+}
+
+.cre-t-162-quote-text {
+  margin: 0;
+  color: #000;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
+.cre-t-162-quote-author {
+  margin: 0;
+  color: #000;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 13.5px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.cre-t-162-quote-source {
+  position: absolute;
+  right: 16px;
+  bottom: 6px;
+  margin: 0;
+  color: #8C8EA0;
+  text-align: right;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 218.182% */
+}
+
+@media (max-width: 768px) {
+  .cre-t-162-quote-box {
+    padding: 20px 20px 20px;
+    gap: 10px;
+  }
+  .cre-t-162-quote-author {
+    font-size: 12.5px;
+    line-height: 20px;
+  }
+  .cre-t-162-quote-source {
+    position: static;
+    text-align: center;
+    line-height: normal;
+  }
+
+  .cre-t-162-section {
+    margin-bottom: -10px;
+  }
 }

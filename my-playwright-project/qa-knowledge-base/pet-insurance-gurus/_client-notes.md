@@ -2,7 +2,7 @@
 
 **Sites:** `petinsurancegurus.com` (sister site: `rentersinsurancegurus.com` — see `../renters-insurance-gurus/`)
 **A/B platform:** Convert.com — force URLs: `?cro_mode=qa&_conv_eforce=<experiment>.<variation>`
-**Tests done:** SWF128, SIC132, SWF135, CRE-T-123, CRE-T-133, CRE-T-137, CRE-T-144 (SWF144), SWF139, SWF151 (cre-t-151), SWF157 (cre-t-157), SWF164 (cre-t-164), CRE-T-143 (price discount, no ticket number)
+**Tests done:** SWF128, SIC132, SWF135, CRE-T-123, CRE-T-133, CRE-T-137, CRE-T-144 (SWF144), SWF139, SWF151 (cre-t-151), SWF157 (cre-t-157), SWF164 (cre-t-164), CRE-T-143 (price discount, no ticket number), CRE-T-162 (testimonial quote section, no ticket/Figma)
 
 ## Environment / site quirks (apply to every PIG test)
 
@@ -84,3 +84,4 @@ Tests get cloned between this site and Renters Insurance Gurus (CRE-T-123 → CR
 | SWF157 — Vet-quote testimonial redesign (single quote / manual carousel / auto carousel) | [swf157-quote-carousel.md](swf157-quote-carousel.md) |
 | SWF164 — Rearrange comparison listings + rating overrides (2 arms) | [swf164-rearrange-listings.md](swf164-rearrange-listings.md) |
 | CRE-T-143 — Comparison listing price discount, 13.5%/32.9% (2 arms, no ticket number) | [cre-t-143-price-discount.md](cre-t-143-price-discount.md) / [HTML report](cre-t-143-price-discount-retest-qa-report.html) |
+| CRE-T-162 — Testimonial quote section above comparison table (no ticket/Figma) | [cre-t-162-quote-section.md](cre-t-162-quote-section.md) / [HTML report](cre-t-162-quote-section-qa-report.html) |

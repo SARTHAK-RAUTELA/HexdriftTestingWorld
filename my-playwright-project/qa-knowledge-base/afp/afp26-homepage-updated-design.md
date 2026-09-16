@@ -1,6 +1,6 @@
 # AFP26 — Homepage Updated Design (Hero + Section Updates)
 
-**Status:** Live QA complete (Chrome + Safari, desktop + mobile), including a second pass against the client's video transcript (obtained 2026-09-12 — see §10 below). See [afp26-homepage-updated-design-qa-report.html](afp26-homepage-updated-design-qa-report.html) for findings — 4 confirmed bugs (BUG-01 card-row button misalignment, BUG-02 malformed placeholder href, BUG-03 tab copy shrank instead of growing, BUG-04 eyebrow font mismatch).
+**Status:** Live QA complete (Chrome + Safari, desktop + mobile), including a second pass against the client's video transcript (obtained 2026-09-12 — see §10 below), plus a post-launch follow-up round (2026-09-14 — see §11) where BUG-01's fix was reverted per client request and further copy/CSS tuning + VWO goal setup happened. See [afp26-homepage-updated-design-qa-report.html](afp26-homepage-updated-design-qa-report.html) for the original findings — 4 confirmed bugs (BUG-01 card-row button misalignment, BUG-02 malformed placeholder href, BUG-03 tab copy shrank instead of growing, BUG-04 eyebrow font mismatch).
 
 ## 10. Video transcript (obtained 2026-09-12 — supersedes the "no transcript available" note in §0 above)
 
@@ -208,3 +208,39 @@ Per the request that opened this test: **Chrome + Safari, desktop + mobile** (4 
 | Mobile Safari (iPhone 12) | 390×844 |
 
 Deliverable: HTML QA report with per-browser/viewport screenshots of control vs. variation for the hero, 3-card row, and certifications section, plus a findings list of any UI breaks / uneven element properties found live, matching the WIN257 / SWF151 / AFP21 report format.
+
+---
+
+## 11. Post-launch follow-up (2026-09-14)
+
+After go-live, the client asked for BUG-01's fix to be reverted plus a couple of small tuning changes. Done directly in the shared scratch files `local_testing/Local2/variation/vB.js` / `vB.css` (same files as §9/§10 — remember these are reused across many unrelated tickets, always grep before trusting their contents).
+
+### 11.1 BUG-01 fix reverted (client no longer wants the button-equalizer)
+- Removed the `equalizeCardHeights()` function from `vB.js` (and its call inside `updateHero()`) — this was the JS height-equalizer added in the original QA round that bottom-anchored each of the 3 hero CTA-box buttons (Register For Power Hour / Explore Certifications / Explore AFP Events) at a shared baseline via absolute positioning.
+- Removed the two supporting CSS rules from `vB.css` that existed only to back that JS: `.cta-list__item { position: relative; }` and `.cta-list__btn { white-space: nowrap; }`.
+- Net effect: the 3-card row buttons are back to whatever their natural (potentially staggered) position is — this is intentional, not a regression, per client request.
+- **If this needs to be reinstated later**, the removed code is preserved in git history at commit `4f52cbb` ("Add AFP26 homepage redesign QA suite and fix 3 confirmed bugs") — `git show 4f52cbb -- local_testing/Local2/variation/vB.js local_testing/Local2/variation/vB.css`.
+- Test impact: `my-playwright-project/testing/afp26-verify-fixes.spec.js` has an assertion checking equal button positions across the 3 cards — that check will now fail as expected since the alignment fix is gone. Not re-run/updated this round; flag before relying on that spec's pass/fail again.
+
+### 11.2 Further tuning requested this round
+- `.tab-section__nav-btn` font-size lowered from 20px → **18px** (applies to both active and inactive tabs — `.tab-section__nav-btn.active` only overrides background/text color, no separate font-size rule, so one change covers both states). Desktop rule now matches the mobile breakpoint, which was already 18px.
+- Client made further manual edits directly in `vB.css` outside this assistant's changes (seen via file-changed-on-disk diff): `.card--hero__content` padding-top 64px → 80px, then padding-left 0 → 52px; `.variation-section2-headline` font-size 48px → 45px. Not otherwise verified/QA'd — just noting they happened, since this file is actively being hand-edited in parallel.
+
+### 11.3 Git checkpoint
+- Committed the BUG-01 revert + font-size change as `9d1fe0e` ("Checkpoint AFP26 vB tweaks: revert card-row button equalizer, tab font 20->18px") on branch `swf151-new-build`, and pushed to `origin/swf151-new-build`. Use this as a rollback point if later hand-edits go wrong: `git diff 9d1fe0e -- local_testing/Local2/variation/vB.css` or `git checkout 9d1fe0e -- local_testing/Local2/variation/vB.css`.
+
+### 11.4 VWO "Prevent Content Flicker" prompt
+When publishing changes in VWO's visual editor, it surfaces a **Prevent Content Flicker** dialog listing every selector the code modifies, with **Skip** / **Add** buttons. Recommended: click **Add** for all listed selectors here (`.card--hero__content`, `.card--hero__title`, `.card--hero__text`, `.cta-list__subheading`, `.card--hero__btn`, `.tab-section__title`) — all of them get their text/appearance rewritten by `vB.js`/`vB.css`, so without anti-flicker enabled, visitors briefly see the unmodified control content flash before the variation applies (worst for the text-rewritten elements: title/text/subheading/tab-section title).
+
+### 11.5 VWO click-goal selectors
+Verified against the live control page's actual DOM/CSS (fetched `https://www.financialprofessionals.org/` + its `styles.min.css`), for 5 requested click goals:
+
+| Goal | Selector | Notes |
+|---|---|---|
+| "Join Us" button in hero | `.card--hero__content .card--hero__btn` | Live button text is actually "Join AFP" (goal name is just descriptive). `vB.js` never touches this element's text, only CSS width/alignment — same selector fires in both control and variation. |
+| Hero Box 1 CTA ("AFP Power Hour") | `.cta-list__item:nth-child(1) .cta-list__btn` | Control text "Register Here" → variation "Register For Power Hour"; href unchanged by JS in both arms. |
+| Hero Box 2 CTA ("Certification") | `.cta-list__item:nth-child(2) .cta-list__btn` | Control text "Learn More" (href to the stablecoin-certificate page) → variation "Explore Certifications" **and `vB.js` rewrites the href to the placeholder `#TODO-CERTIFICATIONS-URL`** (still an open item — needs the real certifications URL before this is fully launch-ready). Element selector works for both arms; if VWO's goal instead matches by destination URL, control and variation need separate URL rules since the href literally changes. |
+| Hero Box 3 CTA ("AFP Events") | `.cta-list__item:nth-child(3) .cta-list__btn` | Control text "Learn More" (href `/upcoming-events`) → variation "Explore AFP Events"; href unchanged in both arms. |
+| Any of the 4 tabs in section 2 | `button.tab-section__nav-btn, button.tab-section__heading` | **Important:** the site has two parallel sets of 4 tab buttons in the DOM — `.tab-section__nav-btn` (desktop nav, visible only at `min-width:72em` i.e. ≥1152px) and `.tab-section__heading` (mobile/tablet accordion inside `.tab-section__list`, visible below that breakpoint). A goal using only `.tab-section__nav-btn` silently misses every tab click below 1152px viewport width — since this test's scope explicitly includes mobile, both selectors must be included (comma-separated) or the mobile numbers will be wrong. |
+
+The `nth-child` selectors for the 3 hero CTA boxes are safe because the three `.cta-list__item` divs are the *only* children of the `.cta-list` container (confirmed from the live DOM) — no other siblings to throw off the count.

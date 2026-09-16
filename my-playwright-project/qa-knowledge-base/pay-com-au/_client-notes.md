@@ -2,7 +2,7 @@
 
 **Site:** `pay.com.au`
 **A/B platform:** Optimizely
-**Tests done:** CRE-T-08, CRE-T-08 (vB), CRE-T-09, CRE-T-13
+**Tests done:** CRE-T-08, CRE-T-08 (vB), CRE-T-09, CRE-T-13, PAY19 (cre-t-19)
 **In progress:** PAY21 (cre-t-21) — paused mid full-matrix run, dev applying fixes; see [pay21-secondary-cta-in-progress.md](pay21-secondary-cta-in-progress.md)
 
 ## Environment / site quirks
@@ -25,6 +25,8 @@
 - **Cookie-based fired-flags don't persist on `file://` test fixtures:** this client's real trigger code uses `document.cookie` (not `sessionStorage`) to prevent re-firing. Chromium and WebKit silently refuse to persist cookies set on `file://` origins (Firefox tolerates it) — serve any local fixture over `http://127.0.0.1:<port>/` (e.g. Node's `http` module in `test.beforeAll`) instead of `file://` whenever a variation's persistence mechanism is cookie-based.
 - **A two-stage trigger→activate() flow needs two `page.clock.fastForward()` calls:** when a test's stubbed `activate()` dynamically injects a second script that itself calls `waitForElement(selector, fn, 50, ...)`, that second script registers its *own* fresh timer under the already-installed fake clock — advancing the clock once (for the outer trigger) isn't enough; add a follow-up `fastForward(100)` after every action that causes `activate()` to fire.
 - **Fixture pages need a real `<meta name="viewport">` tag for `window.innerWidth` device checks to be testable:** without it, Playwright's mobile/tablet device emulation reports a stale ~980px layout-viewport width instead of the emulated device's actual width, making any `isMobile`-style JS gate untestable in the fixture even though it works fine on the real page (which has a normal viewport meta tag).
+- **`v2.js`/`v2.css` really is a shared scratch file, reused across unrelated tickets — always grep its actual contents before trusting it:** PAY19's `v2.css` was found entirely scoped to `.cre-t-13-control` (leftover from the PAY13 ticket), while `v2.js` builds `cre-t-19-*`-classed HTML — the CSS never matched, so the modal rendered completely unstyled. Same failure class as PAY13's own Round-1 BUG-01 ("control had no CSS at all," that time containing leftover WIN257 CSS). Don't assume `v2.css`/`vB.css` match whatever `v2.js`/`vB.js` currently builds — diff the class names between the JS template and the CSS selectors every time.
+- **A viewport that "fits without scrolling" per Figma can still clip content on a shorter device:** PAY19 V1's modal (scaled 0.8, `overflow:hidden` container) fit fine on Mobile Chrome/Pixel 5 (851px tall) but clipped the CTA button entirely on Mobile Safari/iPhone 12 (844px tall) — a ~9px overflow. `overflow:hidden` means excess content is invisible, not scrollable, so a "no scroll" requirement needs testing on the shortest target viewport, not just one.
 
 ## Test files
 
@@ -34,3 +36,4 @@
 | CRE-T-08 (vB) — Exit-intent/mobile-20s modal (trigger logic missing) | [cre-t-08-vB-exit-intent-mobile-timer.md](cre-t-08-vB-exit-intent-mobile-timer.md) |
 | CRE-T-09 — Navbar CTA via `::before` | [cre-t-09-navbar-cta.md](cre-t-09-navbar-cta.md) |
 | CRE-T-13 — Desktop-only + 40s-or-exit-intent trigger update (Round 2: real Activation Code) | [cre-t-13-desktop-trigger-update.md](cre-t-13-desktop-trigger-update.md) |
+| PAY19 — Getting Started modal V2, sitewide, mobile only | [pay19-getting-started-modal-v2.md](pay19-getting-started-modal-v2.md) |

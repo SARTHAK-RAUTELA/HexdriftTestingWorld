@@ -1,270 +1,244 @@
-(function () {
+(function() {
   try {
-    var debug = 0;
-    var variation_name = "cre-t-143";
-    var discountPercent = 0.329;
-    var priceSelector = '[data-unique="comparison-table"] .plan-detail-content .ct-span:not(.cre-t-143-discounted-price)';
-    var quotesEndpoint = "insurance-finder/v1/quotes";
-    var optionsEndpoint = "insurance-finder/v1/options";
-    var discountByProvider = {};
-
-    /**
-     * Polls the DOM until a specific element exists
-     * @param {string} selector - CSS selector to watch for
-     * @param {Function} trigger - Callback function to run when element is found
-     * @param {number} delayInterval - Polling frequency in ms (default: 50)
-     * @param {number} delayTimeout - Stop checking after this many ms (default: 15000)
-     *
-     * Usage Example:
-     * waitForElement('.success-message', function() {
-     * console.log('Element found! Running logic...');
-     * });
-     */
-    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
-      var interval = setInterval(function () {
-        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
+    var debug=1;
+    var variation_name="cre-t-266";
+    /* ============================================================
+       HELPERS
+    ============================================================ */
+    function waitForElement(selector,trigger,delayInterval,delayTimeout) {
+      delayInterval=delayInterval||50;
+      delayTimeout=delayTimeout||15000;
+      var interval=setInterval(function() {
+        if(document.querySelector(selector)&&document.querySelectorAll(selector).length>0) {
           clearInterval(interval);
           trigger();
         }
-      }, delayInterval);
-      setTimeout(function () {
+      },delayInterval);
+      setTimeout(function() {
         clearInterval(interval);
-      }, delayTimeout);
+      },delayTimeout);
     }
 
-    function debounce(func, delay = 100) {
-      if (typeof func !== "function") return function () {};
-      var timeout;
 
-      return function () {
-        var context = this;
-        var args = arguments;
 
-        clearTimeout(timeout);
-        timeout = setTimeout(function () {
-          func.apply(context, args);
-        }, delay);
-      };
-    }
-
-    function addClass(selector, className) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-
-      if (element.classList) {
-        element.classList.add(className);
-      } else if (!element.className.match(new RegExp("\\b" + className + "\\b"))) {
-        element.className += " " + className;
-      }
-    }
-
-    function removeClass(selector, className) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-
-      if (element.classList) {
-        element.classList.remove(className);
-      } else {
-        element.className = element.className.replace(new RegExp("\\b" + className + "\\b", "g"), "");
-      }
-    }
-
-    function insertAfter(selector, html) {
-      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
-      if (!element) return;
-
-      if (typeof html === "string") {
-        element.insertAdjacentHTML("afterend", html);
-      } else if (html && html.nodeType === 1) {
-        element.insertAdjacentElement("afterend", html);
-      }
-    }
-
-    function getPriceValue(text) {
-      var match = text.trim().match(/^\$(\d+(?:\.\d+)?)\/mo$/);
-      if (!match) return null;
-      return parseFloat(match[1]);
-    }
-
-    function formatPriceValue(value) {
-      return "$" + value.toFixed(2) + "/mo";
-    }
-
-    function getRequestUrl(resource) {
-      if (typeof resource === "string") return resource;
-      if (resource && typeof resource.url === "string") return resource.url;
-      return "";
-    }
-
-    function isBreedSelectedInUrl() {
-      var params = new URLSearchParams(window.location.search);
-      var breedParam = params.get("breed");
-
-      if (breedParam === null) return false;
-      if (breedParam.trim() === "") return false;
-      return true;
-    }
-
-    function isBreedSelectedInResponseData(data) {
-      if (!data) return false;
-      if (typeof data.breed !== "string") return false;
-      if (data.breed.trim() === "") return false;
-      return true;
-    }
-
-    function getProviderNameForElement(element) {
-      var planBox = element.closest(".plan-box");
-      if (!planBox) return null;
-
-      var logo = planBox.querySelector(".provider-logo");
-      if (!logo) return null;
-
-      var altText = logo.getAttribute("alt");
-      if (!altText) return null;
-
-      return altText.replace(/\s*Logo\s*$/i, "").trim();
-    }
-
-    function clearDiscountMap() {
-      discountByProvider = {};
-    }
-
-    function updateDiscountMapFromQuoteList(quotes) {
-      if (!quotes) return;
-
-      quotes.forEach(function (quote) {
-        if (!quote.providerName) return;
-
-        var priceValue = getPriceValue(quote.standardPlanCost);
-        if (priceValue === null) return;
-
-        var discountedValue = priceValue * (1 - discountPercent);
-        discountByProvider[quote.providerName] = formatPriceValue(discountedValue);
+    function live(selector,event,callback,context) {
+      if(typeof callback!=="function") return;
+      (context||document).addEventListener(event,function(e) {
+        var el=e.target.closest(selector);
+        if(el) callback.call(el,e);
       });
     }
-
-    function handleQuotesResponse(response) {
-      var clonedResponse = response.clone();
-
-      clonedResponse
-        .json()
-        .then(function (data) {
-          if (isBreedSelectedInResponseData(data)) {
-            clearDiscountMap();
-          } else {
-            updateDiscountMapFromQuoteList(data.quotes);
-          }
-          syncAllPriceElements();
-        })
-        .catch(function () {});
+    /* ============================================================
+       STATE
+    ============================================================ */
+    var lastSubtotal=null;
+    var lastStrikeTotal=null;
+    var lastItemCount=null;
+    var subtotalEl=null;
+    var priceSymbol=null;
+    /* ============================================================
+       PRICE UTILITIES
+    ============================================================ */
+    function getElText(sel) {
+      var el=document.querySelector(sel);
+      return el? el.textContent:"";
     }
 
-    function handleOptionsResponse(response) {
-      var clonedResponse = response.clone();
-
-      clonedResponse
-        .json()
-        .then(function (data) {
-          if (isBreedSelectedInUrl()) {
-            clearDiscountMap();
-          } else if (data.options) {
-            updateDiscountMapFromQuoteList(data.options.initialQuotes);
-          }
-          syncAllPriceElements();
-        })
-        .catch(function () {});
+    function extractNum(text) {
+      var m=text.replace(/,/g,"").match(/\$([0-9]+(\.[0-9]+)?)/);
+      return m? parseFloat(m[1]):0;
     }
 
-    function patchFetchForPriceDiscount() {
-      if (window.cre_t_143_fetchPatched) return;
-      window.cre_t_143_fetchPatched = true;
-
-      var originalFetch = window.fetch;
-
-      window.fetch = function () {
-        var requestArgs = arguments;
-        var requestUrl = getRequestUrl(requestArgs[0]);
-        var fetchPromise = originalFetch.apply(window, requestArgs);
-
-        fetchPromise.then(function (response) {
-          if (requestUrl.indexOf(quotesEndpoint) > -1) handleQuotesResponse(response);
-          if (requestUrl.indexOf(optionsEndpoint) > -1) handleOptionsResponse(response);
-        });
-
-        return fetchPromise;
-      };
+    function getPriceSymbol() {
+      if(priceSymbol) return priceSymbol;
+      var m=getElText(".price-row__pay-option-price").trim().match(/[^0-9\s.,]/);
+      priceSymbol=m? m[0]:"$";
+      return priceSymbol;
     }
 
-    function computeFallbackDiscountedText(priceValue) {
-      if (isBreedSelectedInUrl()) return null;
-
-      var discountedValue = priceValue * (1 - discountPercent);
-      return formatPriceValue(discountedValue);
+    function formatPrice(n) {
+      return getPriceSymbol()+n.toLocaleString("en-US",{
+        minimumFractionDigits: 0
+        ,maximumFractionDigits: 0
+      });
+    }
+    /* ============================================================
+       PRICE CALCULATORS
+    ============================================================ */
+    function getBasePrice() {
+      return extractNum(getElText(".price-row__pay-option-price"));
     }
 
-    function syncPriceElement(element) {
-      var priceValue = getPriceValue(element.textContent);
-      if (priceValue === null) return;
+    function getSetupPrice() {
+      var btn=document.querySelector(".order-form__loadup-button");
+      var plus=btn&&btn.querySelector(".order-form__loadup-button-icon-plus");
+      if(!plus||!plus.classList.contains("hide")) return 0;
+      var priceEl=btn.querySelector(".order-form__loadup-button-price");
+      return priceEl? extractNum(priceEl.textContent):0;
+    }
 
-      var parent = element.parentElement;
-      if (!parent) return;
+    function getAccessoriesTotal() {
+      var total=0;
+      document.querySelectorAll(".accessory-tray_item").forEach(function(item) {
+        var cb=item.querySelector(".add-to-accessory-cart");
+        var titleEl=item.querySelector(".accessory-item-title");
+        var isActive=cb&&cb.checked;
+        if(isActive&&titleEl) total+=extractNum(titleEl.textContent);
+      });
+      return total;
+    }
 
-      var providerName = getProviderNameForElement(element);
-      var discountedText = null;
-      if (providerName) discountedText = discountByProvider[providerName];
-      if (!discountedText) discountedText = computeFallbackDiscountedText(priceValue);
+    function getSelectedItemCount() {
+      var count=1;
+      var setupBtn=document.querySelector(".order-form__loadup-button");
+      var setupPlus=setupBtn&&setupBtn.querySelector(".order-form__loadup-button-icon-plus");
 
-      var discountedElement = parent.querySelector(".cre-t-143-discounted-price");
+      if(setupPlus&&setupPlus.classList.contains("hide")) count++;
 
-      if (!discountedText) {
-        if (discountedElement) discountedElement.remove();
-        removeClass(element, "cre-t-143-price-original-hidden");
+      document.querySelectorAll(".accessory-tray_item .add-to-accessory-cart").forEach(function(cb) {
+        if(cb.checked) count++;
+      });
+
+      return count;
+    }
+
+    function calculateSubtotal() {
+      return getBasePrice()+getSetupPrice()+getAccessoriesTotal();
+    }
+
+    function strikeTotal() {
+      var selectors=[
+        ".order-form__loadup-button-compare-price",
+        ".cre-t-202-box-strike-price"
+      ];
+
+      var total=selectors.reduce(function(total,selector) {
+        return total+extractNum(getElText(selector));
+      },0);
+
+      // Accessories have no strike price, so they should not reduce the saving.
+      return total+getAccessoriesTotal();
+    }
+    /* ============================================================
+       DOM
+    ============================================================ */
+    function getSubtotalEl() {
+      if(subtotalEl&&subtotalEl.parentNode) return subtotalEl;
+      return (subtotalEl=document.querySelector(".cre-t-266-subtotal-line"));
+    }
+
+    function syncControlButtonCount(itemCount) {
+      var btn=document.querySelector(".order-form__add.button");
+      if(!btn) return;
+
+      if(itemCount===1) {
+        btn.textContent="ADD TO CART";
+      } else {
+        btn.textContent="ADD "+itemCount+" ITEMS TO CART";
+      }
+    }
+
+    function updateSubtotal() {
+      var el=getSubtotalEl();
+      var total=calculateSubtotal();
+      var strikePriceTotal=strikeTotal();
+      var itemCount=getSelectedItemCount();
+      syncControlButtonCount(itemCount);
+      if(!el||(total===lastSubtotal&&strikePriceTotal===lastStrikeTotal&&itemCount===lastItemCount)) return;
+      lastSubtotal=total;
+      lastStrikeTotal=strikePriceTotal;
+      lastItemCount=itemCount;
+      el.innerHTML="<strong>"+itemCount+" "+(itemCount===1? "item":"items")+" selected</strong> &middot; <strong>"+
+        formatPrice(total)+" total</strong> &middot; <span>Saving <strong>"+
+        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span>";
+    }
+
+    function injectSubtotalLine() {
+      if(getSubtotalEl()) {
+        updateSubtotal();
         return;
       }
+      var btn=document.querySelector(".order-form__add.button");
+      if(!btn) return;
+      var total=calculateSubtotal();
+      var strikePriceTotal=strikeTotal();
+      var itemCount=getSelectedItemCount();
+      syncControlButtonCount(itemCount);
+      btn.insertAdjacentHTML("beforebegin",'<div class="cre-t-266-subtotal-line"><strong>'+itemCount+" "+(itemCount===1? "item":"items")+
+        " selected</strong> &middot; <strong>"+formatPrice(total)+" total</strong> &middot; <span>Saving <strong>"+
+        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span></div>");
+      subtotalEl=btn.previousElementSibling;
+      lastSubtotal=total;
+      lastStrikeTotal=strikePriceTotal;
+      lastItemCount=itemCount;
+    }
 
-      if (discountedElement && discountedElement.textContent === discountedText) return;
 
-      if (discountedElement) {
-        discountedElement.textContent = discountedText;
-      } else {
-        var discountedHTML = `<span class="ct-span cre-t-143-discounted-price">${discountedText}</span>`;
-        insertAfter(element, discountedHTML);
+
+
+    var subtotalUpdateInterval=null;
+
+    function scheduleSubtotalRefresh() {
+      if(subtotalUpdateInterval) {
+        clearInterval(subtotalUpdateInterval);
+        subtotalUpdateInterval=null;
       }
 
-      addClass(element, "cre-t-143-price-original-hidden");
+      var currentInterval=setInterval(function() {
+        updateSubtotal();
+      },500);
+
+      subtotalUpdateInterval=currentInterval;
+
+      setTimeout(function() {
+        clearInterval(currentInterval);
+        if(subtotalUpdateInterval===currentInterval) {
+          subtotalUpdateInterval=null;
+        }
+      },3000);
     }
 
-    function syncAllPriceElements() {
-      var priceElements = document.querySelectorAll(priceSelector);
-      priceElements.forEach(function (element) {
-        syncPriceElement(element);
+    /* ============================================================
+       EVENTS
+    ============================================================ */
+    function eventHandler() {
+      live("#coolingCoverSelect","change",scheduleSubtotalRefresh);
+      live("#size-select","change",scheduleSubtotalRefresh);
+      live("#firmness-select","change",scheduleSubtotalRefresh);
+      live(".order-form__loadup-button, .pop-loadup__service-button, .order-form__loadup-button-price,#orderForm .order-form__add","click",scheduleSubtotalRefresh);
+      document.addEventListener("click",function(e) {
+        var isAccessory=e.target.closest(".add-to-accessory-cart")||e.target.closest(".accessory-item-title");
+        if(isAccessory) scheduleSubtotalRefresh();
       });
+
+
     }
 
-    function startPriceDomObserver() {
-      var debouncedSync = debounce(syncAllPriceElements, 100);
-      var priceObserver = new MutationObserver(function () {
-        debouncedSync();
-      });
-
-      priceObserver.observe(document.documentElement, {
-        childList: true,
-        subtree: true,
-        characterData: true,
-      });
-    }
-
+    /* ============================================================
+       INIT
+    ============================================================ */
     function init() {
-      if (window.cre_t_143_priceObserverStarted) return;
-      window.cre_t_143_priceObserverStarted = true;
+      document.body.classList.add(variation_name);
 
-      patchFetchForPriceDiscount();
-      syncAllPriceElements();
-      startPriceDomObserver();
+      injectSubtotalLine()
+
+      waitForElement(".cre-t-266-subtotal-line",function() {
+        var forceInsertion=setInterval(function() {
+          scheduleSubtotalRefresh()
+        },250);
+        setTimeout(function() {
+          clearInterval(forceInsertion);
+        },3000);
+
+      },50,15000);
+
     }
-
-    waitForElement("body", init);
-  } catch (e) {
-    if (debug) console.log(e, "error in Test " + variation_name);
+    if(!window.variation_name_266) {
+      window.variation_name_266=true;
+      eventHandler();
+    }
+    waitForElement("#orderForm.loaded .order-form__add.button",init,50,15000);
+  } catch(e) {
+    if(debug) console.log(e,"error in Test "+variation_name);
   }
-})();
+}());

@@ -3,7 +3,8 @@
 **Client:** WinkBeds
 **Site:** winkbeds.com (shop-winkbed Buy Box page)
 **A/B platform:** Convert.com (preview via `?convert_action=convert_vpreview&convert_e=<id>&convert_v=<id>`)
-**Tests done:** [cre-t-253 — Buy Box sub-total line](cre-t-253-buybox-subtotal.md)
+**Tests done:** [cre-t-253 — Buy Box sub-total line](cre-t-253-buybox-subtotal.md) · [WIN266/cre-t-266 — Shop
+Page Select Sub-Total V2](win266-shop-subtotal-v2.md)
 
 ## Environment / site quirks (apply to every winkbeds.com test)
 
@@ -41,9 +42,16 @@
   checkboxes inside the modal. The collapsed summary badge (`.order-form__loadup-button-price`) reflects whichever
   tier is selected, but **does not update when an add-on checkbox inside the modal is checked** — see BUG-01 in
   the cre-t-253 test file.
+- **WebKit engines (Safari Desktop, Mobile Safari iPhone 12, Tablet iPad Gen 7) render injected sub-total
+  lines noticeably slower/less consistently than Chromium or Firefox.** An 8s poll window for line-presence
+  that is 100% reliable on Chrome/Firefox/Edge/Mobile Chrome can still time out on WebKit. Mobile Safari
+  specifically is also prone to a hard `page.goto` timeout (45s) mid-run that breaks the rest of that
+  `describe` block — the same "429 wall" pattern seen on WIN257. If adding WebKit projects to a new WinkBeds
+  spec, consider a per-project (WebKit-only) longer timeout rather than raising it universally. See WIN266.
 
 ## Test files
 
 | Test | File |
 |------|------|
 | cre-t-253 — Buy Box sub-total line | [cre-t-253-buybox-subtotal.md](cre-t-253-buybox-subtotal.md) |
+| WIN266/cre-t-266 — Shop Page Select Sub-Total V2 | [win266-shop-subtotal-v2.md](win266-shop-subtotal-v2.md) |

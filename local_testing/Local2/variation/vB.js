@@ -1,194 +1,210 @@
-(function () {
-  const DEBUG = 0; 
-  const VARIATION_NAME = "afp-26";
-  const PLACEHOLDER_CERTIFICATIONS_URL = "#TODO-CERTIFICATIONS-URL";
-  const HERO_TITLE = "Advance Your Career with AFP Membership";
-  const HERO_TEXT =
-    "Practitioner-driven. Peer-informed. Grounded in real-world experience. " +
-    "AFP connects you with treasury and finance professionals, practical " +
-    "tools and learning to grow your expertise and move your career forward.";
-  // The 3 hero "cta-list__item" boxes, in DOM order.
-  const CTA_BOXES = [
-    {
-      subheading: "Questions About Membership?",
-      heading: "AFP Power Hour",
-      text:
-        "Meet the AFP team, see what membership includes and get your " +
-        "questions answered live before you decide to join.",
-      buttonText: "Register For Power Hour"
-    },
-    {
-      subheading: "Certification",
-      heading: "Earn the CTP® or FPAC®",
-      text:
-        "Progress your career and validate your experience with the " +
-        "globally recognized CTP and FPAC® certifications.",
-      buttonText: "Explore Certifications",
-      href: PLACEHOLDER_CERTIFICATIONS_URL
-    },
-    {
-      subheading: "Connect & Learn",
-      heading: "AFP Events",
-      text:
-        "Join 7,000+ treasury and finance professionals at AFP 2026, the " +
-        "premier global event for treasury and finance, plus year-round " +
-        "events and meet-ups.",
-      buttonText: "Explore AFP Events"
-    }
-  ];
-  const OLD_TAB_LABEL = "Maintaining Your Credential";
-  const NEW_TAB_LABEL = "Maintain Your Credential";
-  const CONTROL_INTRO_MATCH = "for details on maintaining your credential";
-  const VARIATION_INTRO_TEXT =
-    "Earn recertification credits while staying current through AFP " +
-    "learning, including live webinars that are complimentary for members.";
-  const FALLBACK_RECERT_HREF = "/certification/already-certified/maintaining-your-credential";
-  // Polls for `selector` and runs `callback` once; self-clears on success or timeout.
-  function waitForElement(selector, trigger) {
-        var interval = setInterval(function () {
-          if (
-            document &&
-            document.querySelector(selector) &&
-            document.querySelectorAll(selector).length > 0
-          ) {
-            clearInterval(interval);
-            trigger();
-          }
-        }, 50);
-        setTimeout(function () {
-          clearInterval(interval);
-        }, 15000);
-      }
-  // DOM query shortcuts.
-  function qs(selector, root) {
-    return (root || document).querySelector(selector);
-  }
-  function qsa(selector, root) {
-    return Array.from((root || document).querySelectorAll(selector));
-  }
-  function setText(el, text) {
-    if (el) el.textContent = text;
-  }
-  // True if `root` already contains something matching `selector` (idempotency guard).
-  function exists(root, selector) {
-    return !!(root && root.querySelector(selector));
-  }
-  // Wraps a paragraph's leading text (before its first real link)
-  function wrapLeadingTextBeforeLink(p) {
-    const link = p.querySelector("a");
-    if (!link || !link.textContent.trim()) return;
-    if (link.previousElementSibling && link.previousElementSibling.classList.contains("variation-date-prefix")) return;
-    const leadingNodes = [];
-    let node = p.firstChild;
-    while (node && node !== link) {
-      leadingNodes.push(node);
-      node = node.nextSibling;
-    }
-    if (!leadingNodes.length) return;
-    const span = document.createElement("span");
-    span.className = "variation-date-prefix";
-    p.insertBefore(span, leadingNodes[0]);
-    leadingNodes.forEach(function (n) {
-      span.appendChild(n);
-    });
-    span.textContent = span.textContent.replace(/\|/g, "").replace(/\s+/g, " ");
-  }
-  // Moves the OLD_TAB_LABEL tab to index 2 (3rd position) within a nav/accordion list.
-  function reorderList(section, listSelector, itemSelector, textSelector) {
-    const list = qs(listSelector, section);
-    if (!list) return;
-    const itemNodes = qsa(itemSelector, list);
-    const target = itemNodes.find(function (li) {
-      const label = qs(textSelector, li);
-      return label && label.textContent.trim().indexOf(OLD_TAB_LABEL) !== -1;
-    });
-    if (!target || itemNodes.indexOf(target) === 2) return;
-    const remaining = itemNodes.filter(function (li) {
-      return li !== target;
-    });
-    if (remaining[2]) {
-      list.insertBefore(target, remaining[2]);
-    } else {
-      list.appendChild(target);
-    }
-  }
-  // Updates hero headline + the 3 CTA boxes.
-  function updateHero() {
-    setText(qs(".card--hero__title"), HERO_TITLE);
-    setText(qs(".card--hero__text"), HERO_TEXT);
-    qsa(".cta-list__item").forEach(function (item, i) {
-      const box = CTA_BOXES[i];
-      if (!box) return;
-      const subheadingEl = qs(".cta-list__subheading", item);
-      const headingEl = qs(".cta-list__heading", item);
-      const textEl = qs(".cta-list__text", item);
-      const buttonEl = qs(".cta-list__btn", item);
-      setText(subheadingEl, box.subheading);
-      setText(headingEl, box.heading);
-      setText(textEl, box.text);
-      setText(buttonEl, box.buttonText);
-      if (box.href && buttonEl) buttonEl.setAttribute("href", box.href);
-    });
-  }
-  // Updates the "AFP Certifications" tab section: headline, tab order,
-  function updateCertTabSection() {
-    const section = qs(".tab-section");
-    if (!section) return;
-    const titleEl = qs(".tab-section__title", section);
-    if (titleEl && !exists(section, ".variation-section2-headline")) {
-      setText(titleEl, "AFP Certifications");
-      titleEl.classList.add("variation-eyebrow-cert");
-      const headline = document.createElement("h2");
-      headline.className = "variation-section2-headline";
-      headline.textContent = "Stand Out with the CTP® or FPAC®";
-      titleEl.insertAdjacentElement("afterend", headline);
-    }
-    reorderList(section, ".tab-section__nav", ".tab-section__nav-item", ".tab-section__nav-btn");
-    reorderList(section, ".tab-section__list", ".tab-section__item", ".tab-section__heading");
-    qsa(".tab-section__nav-btn, .tab-section__heading, .tab-section__content-title", section).forEach(function (el) {
-      if (el.textContent.trim() === OLD_TAB_LABEL) setText(el, NEW_TAB_LABEL);
-    });
-    qsa(".tab-section__content-title", section)
-      .filter(function (el) {
-        return el.textContent.trim() === NEW_TAB_LABEL;
-      })
-      .forEach(function (contentTitle) {
-        const prev = contentTitle.previousElementSibling;
-        if (prev && prev.classList.contains("variation-eyebrow-already-certified")) return;
-        const eyebrow = document.createElement("span");
-        eyebrow.className = "variation-eyebrow-already-certified";
-        eyebrow.textContent = "Already Certified";
-        contentTitle.insertAdjacentElement("beforebegin", eyebrow);
-      });
-    qsa(".sf-Long-text", section).forEach(function (longText) {
-      const firstP = longText.children[0];
-      if (!firstP) return;
-      if (firstP.textContent.trim().toLowerCase().indexOf(CONTROL_INTRO_MATCH) === -1) return;
-      const existingLink = firstP.querySelector("a");
-      const recertHref = existingLink ? existingLink.getAttribute("href") : FALLBACK_RECERT_HREF;
-      setText(firstP, VARIATION_INTRO_TEXT);
-      if (!exists(longText, ".variation-explore-recert")) {
-        const p = document.createElement("p");
-        p.className = "variation-explore-recert";
-        const a = document.createElement("a");
-        a.setAttribute("href", recertHref);
-        a.textContent = "Explore Recertification →";
-        p.appendChild(a);
-        longText.appendChild(p);
-      }
-      qsa("p", longText).forEach(wrapLeadingTextBeforeLink);
-    });
-  }
-  // Entry point: add the variation class, then apply the hero + tab changes.
-  function init() {
-    document.body.classList.add(VARIATION_NAME);
-    updateHero();
-    updateCertTabSection();
-    if (DEBUG) console.log(VARIATION_NAME + " initialized");
-  }
+(function() {
   try {
-    waitForElement("body", init, 50, 15000);
-  } catch (e) {
-    console.error(VARIATION_NAME + ": error running variation", e);
+    var debug=1;
+    var variation_name="cre-t-266";
+    /* ============================================================
+       HELPERS
+    ============================================================ */
+    function waitForElement(selector,trigger,delayInterval,delayTimeout) {
+      delayInterval=delayInterval||50;
+      delayTimeout=delayTimeout||15000;
+      var interval=setInterval(function() {
+        if(document.querySelector(selector)&&document.querySelectorAll(selector).length>0) {
+          clearInterval(interval);
+          trigger();
+        }
+      },delayInterval);
+      setTimeout(function() {
+        clearInterval(interval);
+      },delayTimeout);
+    }
+
+
+
+    function live(selector,event,callback,context) {
+      if(typeof callback!=="function") return;
+      (context||document).addEventListener(event,function(e) {
+        var el=e.target.closest(selector);
+        if(el) callback.call(el,e);
+      });
+    }
+    /* ============================================================
+       STATE
+    ============================================================ */
+    var lastSubtotal=null;
+    var lastStrikeTotal=null;
+    var subtotalEl=null;
+    var priceSymbol=null;
+    /* ============================================================
+       PRICE UTILITIES
+    ============================================================ */
+    function getElText(sel) {
+      var el=document.querySelector(sel);
+      return el? el.textContent:"";
+    }
+
+    function extractNum(text) {
+      var m=text.replace(/,/g,"").match(/\$([0-9]+(\.[0-9]+)?)/);
+      return m? parseFloat(m[1]):0;
+    }
+
+    function getPriceSymbol() {
+      if(priceSymbol) return priceSymbol;
+      var m=getElText(".price-row__pay-option-price").trim().match(/[^0-9\s.,]/);
+      priceSymbol=m? m[0]:"$";
+      return priceSymbol;
+    }
+
+    function formatPrice(n) {
+      return getPriceSymbol()+n.toLocaleString("en-US",{
+        minimumFractionDigits: 0
+        ,maximumFractionDigits: 0
+      });
+    }
+    /* ============================================================
+       PRICE CALCULATORS
+    ============================================================ */
+    function getBasePrice() {
+      return extractNum(getElText(".price-row__pay-option-price"));
+    }
+
+    function getSetupPrice() {
+      var btn=document.querySelector(".order-form__loadup-button");
+      var plus=btn&&btn.querySelector(".order-form__loadup-button-icon-plus");
+      if(!plus||!plus.classList.contains("hide")) return 0;
+      var priceEl=btn.querySelector(".order-form__loadup-button-price");
+      return priceEl? extractNum(priceEl.textContent):0;
+    }
+
+    function getAccessoriesTotal() {
+      var total=0;
+      document.querySelectorAll(".accessory-tray_item").forEach(function(item) {
+        var cb=item.querySelector(".add-to-accessory-cart");
+        var titleEl=item.querySelector(".accessory-item-title");
+        var isActive=cb&&(cb.checked||cb.hasAttribute("checked"));
+        if(isActive&&titleEl) total+=extractNum(titleEl.textContent);
+      });
+      return total;
+    }
+
+    function calculateSubtotal() {
+      return getBasePrice()+getSetupPrice()+getAccessoriesTotal();
+    }
+
+    function strikeTotal() {
+      var selectors=[
+        ".order-form__loadup-button-compare-price",
+        ".cre-t-202-box-strike-price"
+      ];
+
+      var total=selectors.reduce(function(total,selector) {
+        return total+extractNum(getElText(selector));
+      },0);
+
+      // Accessories have no strike price, so they should not reduce the saving.
+      return total+getAccessoriesTotal();
+    }
+    /* ============================================================
+       DOM
+    ============================================================ */
+    function getSubtotalEl() {
+      if(subtotalEl&&subtotalEl.parentNode) return subtotalEl;
+      return (subtotalEl=document.querySelector(".cre-t-266-subtotal-line"));
+    }
+
+    function updateSubtotal() {
+      var el=getSubtotalEl();
+      var total=calculateSubtotal();
+      var strikePriceTotal=strikeTotal();
+      if(!el||(total===lastSubtotal&&strikePriceTotal===lastStrikeTotal)) return;
+      lastSubtotal=total;
+      lastStrikeTotal=strikePriceTotal;
+      el.innerHTML="You&rsquo;re adding <strong>"+formatPrice(total)+"</strong> to your cart &middot; <span>Saving <strong>"+
+        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span>";
+    }
+
+    function injectSubtotalLine() {
+      if(getSubtotalEl()) {
+        updateSubtotal();
+        return;
+      }
+      var btn=document.querySelector(".order-form__add.button");
+      if(!btn) return;
+      var total=calculateSubtotal();
+      var strikePriceTotal=strikeTotal();
+      btn.insertAdjacentHTML("beforebegin",'<div class="cre-t-266-subtotal-line">You&rsquo;re adding <strong>'+formatPrice(total)+
+        "</strong> to your cart &middot; <span>Saving <strong>"+formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span></div>");
+      subtotalEl=btn.previousElementSibling;
+      lastSubtotal=total;
+      lastStrikeTotal=strikePriceTotal;
+    }
+
+
+
+
+    var subtotalUpdateInterval=null;
+
+    function scheduleSubtotalRefresh() {
+      if(subtotalUpdateInterval) {
+        clearInterval(subtotalUpdateInterval);
+        subtotalUpdateInterval=null;
+      }
+
+      var currentInterval=setInterval(function() {
+        updateSubtotal();
+      },500);
+
+      subtotalUpdateInterval=currentInterval;
+
+      setTimeout(function() {
+        clearInterval(currentInterval);
+        if(subtotalUpdateInterval===currentInterval) {
+          subtotalUpdateInterval=null;
+        }
+      },3000);
+    }
+
+    /* ============================================================
+       EVENTS
+    ============================================================ */
+    function eventHandler() {
+      live("#coolingCoverSelect","change",scheduleSubtotalRefresh);
+      live("#size-select","change",scheduleSubtotalRefresh);
+      live("#firmness-select","change",scheduleSubtotalRefresh);
+      live(".order-form__loadup-button, .pop-loadup__service-button, .order-form__loadup-button-price,#orderForm .order-form__add","click",scheduleSubtotalRefresh);
+      document.addEventListener("click",function(e) {
+        var isAccessory=e.target.closest(".add-to-accessory-cart")||e.target.closest(".accessory-item-title");
+        if(isAccessory) scheduleSubtotalRefresh();
+      });
+
+
+    }
+
+    /* ============================================================
+       INIT
+    ============================================================ */
+    function init() {
+      document.body.classList.add(variation_name);
+
+      injectSubtotalLine()
+
+      waitForElement(".cre-t-266-subtotal-line",function() {
+        var forceInsertion=setInterval(function() {
+          scheduleSubtotalRefresh()
+        },250);
+        setTimeout(function() {
+          clearInterval(forceInsertion);
+        },3000);
+
+      },50,15000);
+
+    }
+    if(!window.variation_name_266) {
+      window.variation_name_266=true;
+      eventHandler();
+    }
+    waitForElement("#orderForm.loaded .order-form__add.button",init,50,15000);
+  } catch(e) {
+    if(debug) console.log(e,"error in Test "+variation_name);
   }
-})();
+}());

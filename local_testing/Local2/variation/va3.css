@@ -1,228 +1,241 @@
-/* cre-t-164 Variation */
-/* Order/serial number are gated behind body.cre-t-164-default -- reverts to native under filters. */
-/* Rating (score + label) is NOT gated -- must persist in every state per test policy. */
-
-/* ===== structural pins (order-related, gated) ===== */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.oxy-read-more-link:not(.cre-t-164-toggle) {
-  display: none;
+html body.cre-t-19-variation .cre-t-19-modal-main {
+    display: none;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Lemonade-Listing-Only"]:has(.best-overall-bubble) {
-  order: 12;
+html body.cre-t-19-variation .cre-t-19-modal-main.active {
+    display: block !important;
 }
 
-/* defensive: force all 10 cards visible regardless of the native collapse mechanism -- needs live verification */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Lemonade-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Embrace-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Figo-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Odie-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] {
-  display: block !important;
+html body.cre-t-19-variation.cre-t-19-freeze {
+    overflow: hidden
 }
 
-/* our own collapse: hides rank 8/9/10 (same set in both arms) when collapsed */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"].cre-t-164-collapsed>[data-unique="outbound-partner-clicks-Odie-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"].cre-t-164-collapsed>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"],
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"].cre-t-164-collapsed>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] {
-  display: none !important;
+/* ===========================
+   MODAL OVERLAY
+=========================== */
+html body.cre-t-19-variation .cre-t-19-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.20);
+    z-index: 101 !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* Safari */
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.cre-t-164-toggle {
-  order: 11;
+/* ===========================
+   MODAL CONTENT CONTAINER
+=========================== */
+html body.cre-t-19-variation .cre-t-19-modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    padding: 75px;
+    background: #fff;
+    max-width: 994px;
+    width: calc(100% - 20px);
+    height: auto;
+    box-shadow: 0 3px 8px 0 rgba(19, 19, 20, 0.12);
+    z-index: 101 !important;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Prevent overflow */
 }
 
-body:not(.cre-t-164-default) .plan-repeater[data-unique="comparison-table"]>.cre-t-164-toggle {
-  display: none;
+/* ===========================
+   CLOSE ICON (FIXED POSITION)
+=========================== */
+html body.cre-t-19-variation .cre-t-19-modal-cross-icon-wrapper {
+    position: fixed;
+    /* Keep the cross icon fixed */
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 102;
+    /* Ensure the cross icon is above content */
 }
 
-/* ===== ORDER + SERIAL NUMBER (gated) ===== */
-
-/* shared: hide the native number for every partner whose rank changes */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .plan-number,
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Embrace-Listing-Only"] .plan-number,
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .plan-number,
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Figo-Listing-Only"] .plan-number,
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .plan-number,
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .plan-number,
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Odie-Listing-Only"] .plan-number,
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .plan-number,
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] .plan-number {
-  position: relative;
-  visibility: hidden;
+html body.cre-t-19-variation .cre-t-19-cross-icon {
+    width: 25px;
+    height: 25px;
 }
 
-/* shared: base styling for the replacement number -- content set per partner below.
-   Safe to scope broadly ([data-unique^=...]) since ::after only renders where "content" is also set. */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique^="outbound-partner-clicks-"] .plan-number::after {
-  position: absolute;
-  inset: 0;
-  visibility: visible;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font: inherit;
-  color: inherit;
+/* ===========================
+   TEXT + ELEMENTS
+=========================== */
+html body.cre-t-19-variation .cre-t-19-main-title {
+    color: var(--pay-com-au-bright-gray, #383F4D);
+    text-align: center;
+    /* font-family: Manrope; */
+    font-family: Pay, Europa, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 43px;
+    max-width: 601px;
+    margin: auto auto 16px auto
 }
 
-/* per-partner order + number content */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] {
-  order: 3;
+html body.cre-t-19-variation .cre-t-19-sub-title {
+    color: #000;
+    text-align: center;
+    /* font-family: Manrope; */
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    /* 144.444% */
+    letter-spacing: 0.09px;
+    max-width: 666px;
+    margin: 0 auto;
+    display: none;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .plan-number::after {
-  content: "3";
+html body.cre-t-19-variation .cre-t-19-features-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin: 40px 0px 30px 0px;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Embrace-Listing-Only"] {
-  order: 4;
+html body.cre-t-19-variation .cre-t-19-feature-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 179px; */
+    gap: 15px;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Embrace-Listing-Only"] .plan-number::after {
-  content: "4";
+html body.cre-t-19-variation .cre-t-19-card-title {
+    color: #000;
+    text-align: center;
+    /* font-family: Manrope; */
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    /* 123.81% */
+    letter-spacing: 0.09px;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] {
-  order: 2;
+html body.cre-t-19-variation .cre-t-19-highlight {
+    color: #3066C9;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .plan-number::after {
-  content: "2";
+html body.cre-t-19-variation .cre-t-19-card-subtitle {
+    color: #000;
+    /* font-family: Manrope; */
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.09px;
+    padding: 0 30px;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Figo-Listing-Only"] {
-  order: 5;
+html body.cre-t-19-variation .cre-t-19-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Figo-Listing-Only"] .plan-number::after {
-  content: "5";
+html body.cre-t-19-variation .cre-t-19-icon-box{
+    width: 60px;
+    height: 60px;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] {
-  order: 6;
+html body.cre-t-19-variation .cre-t-19-icon-box img {
+    width: 100%;
+    height: 100%;
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .plan-number::after {
-  content: "6";
+
+
+html body.cre-t-19-variation .cre-t-19-modal-cta {
+    background: #D03643;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 35px;
+    font-weight: 800;
+    font-size: 19px;
+    border-radius: 8px;
+    cursor: pointer;
+    line-height: 30px;
+    /* min-width: 177px; */
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] {
-  order: 7;
+
+
+/* Responsive */
+@media (max-width: 1023px) {
+    html body.cre-t-19-variation .cre-t-19-modal-container {
+        width: calc(100% - 40px);
+    }
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .plan-number::after {
-  content: "7";
+@media screen and (max-width: 767px) {
+    html body.cre-t-19-variation .cre-t-19-features-container {
+        flex-direction: column;
+        align-items: center;
+        /* max-height: 460px;
+        overflow-y: auto;
+        box-shadow: inset 0px -7px 6px -6px rgba(0, 0, 0, 0.15); */
+        padding: 8px 0px;
+        margin-top: 0;
+    }
+
+    html body.cre-t-19-variation .cre-t-19-modal-container {
+        transform: translate(-50%, -50%) scale(0.8);
+        padding: 40px 20px;
+        width: calc(100% - 0px);
+    }
+
+
+    html body.cre-t-19-variation .cre-t-19-modal-inner {
+        max-height: 100vh;
+        /* overflow-y: auto; */
+    }
+
+    html body.cre-t-19-variation .cre-t-19-main-title {
+        font-size: 32px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        line-height: 38px;
+        text-wrap: pretty;
+    }
+
+    html body.cre-t-19-variation .cre-t-19-modal-cta {
+        padding: 10px 45px;
+    }
+
+    html body.cre-t-19-variation .cre-t-19-modal-cross-icon-wrapper .cre-t-19-cross-icon {
+        width: 100%;
+    }
+
+    html body.cre-t-19-variation .cre-t-19-modal-cross-icon-wrapper {
+        max-width: 20px;
+    }
+
+    html body.cre-t-19-variation .cre-t-19-modal-cta-text {
+        font-size: 14px;
+    }
+
 }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Odie-Listing-Only"] {
-  order: 8;
-}
+@media screen and (max-width: 425px) {
+    html body.cre-t-19-variation .cre-t-19-modal-container {
+        transform: translate(-50%, -50%) scale(0.79);
+        width: calc(100% + 80px);
+    }
 
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Odie-Listing-Only"] .plan-number::after {
-  content: "8";
-}
-
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] {
-  order: 9;
-}
-
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .plan-number::after {
-  content: "9";
-}
-
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] {
-  order: 10;
-}
-
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-AKC-Listing-Only"] .plan-number::after {
-  content: "10";
-}
-
-/* ===== RATING (NOT gated -- always applies, filtered or not) ===== */
-
-/* shared: hide the native score for every partner whose score changes */
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .cre-t-135-total,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .cre-t-135-total,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-total,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .cre-t-135-total,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-total {
-  position: relative;
-  visibility: hidden;
-  display: inline-block;
-}
-
-/* shared: base styling for the replacement score */
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .cre-t-135-total::after,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .cre-t-135-total::after,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-total::after,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .cre-t-135-total::after,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-total::after {
-  margin-top: -100%;
-  visibility: visible;
-  display: flex;
-  align-items: center;
-  font: inherit;
-  color: inherit;
-  white-space: nowrap;
-}
-
-/* per-partner score content */
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Fetch-Listing-Only"] .cre-t-135-total::after {
-  content: "8.6";
-}
-
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .cre-t-135-total::after {
-  content: "8.7";
-}
-
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-total::after {
-  content: "6.7";
-}
-
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Trupanion-Listing-Only"] .cre-t-135-total::after {
-  content: "6.5";
-}
-
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-total::after {
-  content: "4.5";
-}
-
-/* shared: hide the native classification label for every partner whose label changes */
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .cre-t-135-classification,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-classification,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-classification {
-  position: relative;
-  visibility: hidden;
-  min-width: 6.5em;
-}
-
-/* shared: base styling for the replacement label */
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .cre-t-135-classification::after,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-classification::after,
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-classification::after {
-  position: absolute;
-  inset: 0;
-  visibility: visible;
-  display: flex;
-  align-items: center;
-  font: inherit;
-  color: inherit;
-  white-space: nowrap;
-}
-
-/* per-partner label content */
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Pumpkin-Listing-Only"] .cre-t-135-classification::after {
-  content: "Excellent";
-}
-
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-Liberty Mutual-Listing-Only"] .cre-t-135-classification::after {
-  content: "Good";
-}
-
-.plan-repeater[data-unique="comparison-table"]>[data-unique="outbound-partner-clicks-ASPCA-Listing-Only"] .cre-t-135-classification::after {
-  content: "Average";
+    /* html body.cre-t-19-variation .cre-t-19-features-container {
+        max-height: 350px;
+    } */
 }

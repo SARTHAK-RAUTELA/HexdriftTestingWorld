@@ -1,22 +1,32 @@
 (function () {
   try {
-    /* main variables */
-    var debug = 0;
-    var variation_name = "cre-t-164";
+    /* ==== Modal CONFIGURATION ==== */
+    var variation_name = "cre-t-19-variation";
+     var cookie_name = "cre-t-19";
+    var VARIATION_DELAY_SECONDS = 20; // Extra 20 seconds
+    var debug = 1;
 
-    /* all Pure helper functions — copied as-is from helpers.js */
+    var imageConfig = {
+      crossIcon: "https://v2.crocdn.com/PAY/test8/cross.svg",
+      icon1: "https://v2.crocdn.com/PAY/test8/laptop.svg",
+      icon2: "https://v2.crocdn.com/PAY/test13/iconTicket.svg",
+      icon3: "https://v2.crocdn.com/PAY/test8/rocket.svg",
+    };
 
-    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
-      var interval = setInterval(function () {
-        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
-          clearInterval(interval);
-          trigger();
-        }
-      }, delayInterval);
+    // Cookie helpers 
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+      }
+      return "";
+    }
 
-      setTimeout(function () {
-        clearInterval(interval);
-      }, delayTimeout);
+    function setModalShownCookie() {
+      document.cookie = cookie_name + "=modal-shown; path=/";
     }
 
     function live(selector, event, callback, context) {
@@ -31,209 +41,192 @@
       });
     }
 
-    function debounce(func, delay = 100) {
-      if (typeof func !== "function") return function () { };
-      var timeout;
-
-      return function () {
-        var context = this;
-        var args = arguments;
-
-        clearTimeout(timeout);
-        timeout = setTimeout(function () {
-          func.apply(context, args);
-        }, delay);
-      };
-    }
-
     function insertAfter(selector, html) {
       var element = typeof selector === "string" ? document.querySelector(selector) : selector;
       if (!element) return;
-
       if (typeof html === "string") {
-        element.insertAdjacentHTML("afterend", html);
+        element.insertAdjacentHTML("afterbegin", html);
       } else if (html && html.nodeType === 1) {
-        element.insertAdjacentElement("afterend", html);
+        element.insertAdjacentElement("afterbegin", html);
       }
     }
 
-    /* Variation data */
-    var defaultClass = "cre-t-164-default";
-    var collapsedClass = "cre-t-164-collapsed";
-
-    /* reuses the native link's own classes + inline visibility attribute for exact visual match */
-    var toggleButtonHtml = `<a class="oxy-read-more-link cre-t-164-toggle" href="javascript:void(0)" style="visibility: visible;"><span class="oxy-read-more-link_text cre-t-164-toggle-text" style="visibility: visible;">Show More</span></a>`;
-
-    /* Variation functions */
-
-    function hasActiveFilters() {
-      var params = new URLSearchParams(window.location.search);
-      if (params.get("petType")) return true;
-      if (params.get("breed")) return true;
-      if (params.get("zipCode")) return true;
-      return false;
-    }
-
-    function injectToggleButton() {
-
-      if (hasActiveFilters()) {
-        document.body.classList.remove(defaultClass);
-        return;
-      }
-
-      if (document.querySelector('.cre-t-164-toggle')) return;
-
-      const listContainer = document.querySelector('.plan-repeater[data-unique="comparison-table"]');
-      if (!listContainer) return;
-      const showMoreButton = listContainer.querySelector('.oxy-read-more-link');
-      if (!showMoreButton) return;
-      insertAfter(showMoreButton, toggleButtonHtml);
-
-    }
-
-    function clickNativeButton() {
-
-      if (hasActiveFilters()) {
-        document.body.classList.remove(defaultClass);
-        return;
-      }
-
-      const listContainer = document.querySelector('.plan-repeater[data-unique="comparison-table"]');
-      if (!listContainer) return;
-      listContainer.classList.add(collapsedClass);
-      const showMoreButton = listContainer.querySelector('.oxy-read-more-link:not(.cre-t-164-toggle)');
-      if (!showMoreButton) return;
-
-      if (showMoreButton.textContent.trim() === "Show More") {
-        showMoreButton.click();
+    function addClass(selector, className) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (element.classList) element.classList.add(className);
+      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
+        element.className += " " + className;
       }
     }
 
-
-    function toggleCollapsedState(toggleElement) {
-      var listContainer = document.querySelector('.plan-repeater[data-unique="comparison-table"]');
-      if (!listContainer) return;
-
-      var textElement = toggleElement.querySelector(".cre-t-164-toggle-text");
-
-      if (listContainer.classList.contains(collapsedClass)) {
-        listContainer.classList.remove(collapsedClass);
-        if (textElement) textElement.textContent = "Show Less";
-      } else {
-        listContainer.classList.add(collapsedClass);
-        if (textElement) textElement.textContent = "Show More";
-      }
-    }
-
-
-    /* "default" should always land expanded (matching the site's normal fully-expanded state) --
-       fires a real click through our own handler rather than setting state directly, so there's
-       only one code path that ever changes the collapsed/expanded state */
-    function expandIfCollapsed() {
-      var listContainer = document.querySelector('.plan-repeater[data-unique="comparison-table"]');
-      if (!listContainer) return;
-
-      var toggleElement = listContainer.querySelector(":scope > .cre-t-164-toggle");
-      if (!toggleElement) return;
-
-      var textElement = toggleElement.querySelector(".cre-t-164-toggle-text");
-      if (!textElement) return;
-
-      if (textElement.textContent === "Show More") {
-        toggleElement.click();
-      }
-    }
-
-    function updateFilterState() {
-      if (hasActiveFilters()) {
-        document.body.classList.remove(defaultClass);
-      } else {
-        document.body.classList.add(defaultClass);
-        // expandIfCollapsed();
-      }
-    }
-
-    /* "for now" per your instruction — a MutationObserver on the results container would be more robust
-       (catches the actual DOM change regardless of which control the user touched), happy to swap this
-       in if the listeners below miss a filter path */
-    function eventListeners() {
-      if (window.cre_164_filter_listeners_bound) return;
-      window.cre_164_filter_listeners_bound = true;
-
-      var debouncedUpdate = debounce(function () {
-        injectToggleButton();
-        clickNativeButton();
-        updateFilterState();
-
-        const showMoreText = document.querySelector('.cre-t-164-toggle-text');
-        if (showMoreText) {
-          showMoreText.textContent = "Show More";
+    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+      var interval = setInterval(function () {
+        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
+          clearInterval(interval);
+          trigger();
         }
-
-      }, 300);
-
-      let listenerInterval = null;
-
-      live(".oxy-tab", "click", function () {
-        if (listenerInterval) clearTimeout(listenerInterval);
-        listenerInterval = setInterval(() => {
-          debouncedUpdate();
-        }, 250);
-
-        setTimeout(() => {
-          if (listenerInterval) clearTimeout(listenerInterval);
-        }, 1000);
-      });
-
-      live(".breed-select", "click", function () {
-        if (listenerInterval) clearTimeout(listenerInterval);
-        listenerInterval = setInterval(() => {
-          debouncedUpdate();
-        }, 250);
-
-        setTimeout(() => {
-          if (listenerInterval) clearTimeout(listenerInterval);
-        }, 1000);
-      });
-
-      live(".zip-textinput input", "change", function () {
-        if (listenerInterval) clearTimeout(listenerInterval);
-        listenerInterval = setInterval(() => {
-          debouncedUpdate();
-        }, 250);
-
-        setTimeout(() => {
-          if (listenerInterval) clearTimeout(listenerInterval);
-        }, 1000);
-      });
-
-
-      live(".cre-t-164-toggle", "click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleCollapsedState(this);
-      });
-
+      }, delayInterval);
+      setTimeout(function () {
+        clearInterval(interval);
+      }, delayTimeout);
     }
 
-    /* Variation Init */
+    /* ==== MODAL HTML ==== */
+    var modalHtml = `<div class="cre-t-19-modal-main">
+  <div id="cre-t-19-modal-overlay" class="cre-t-19-overlay"></div>
+  <div class="cre-t-19-modal-container">
+    <div class="cre-t-19-modal-inner">
+      <div class="cre-t-19-modal-cross-icon-wrapper">
+        <img src="${imageConfig.crossIcon}" alt="cross_icon" class="cre-t-19-cross-icon">
+      </div>
+      
+      <div class="cre-t-19-modal-content">
+        <div class="cre-t-19-main-title">
+           See <span class="cre-t-19-highlight">your</span> fees, points and rewards
+        </div>
+        <div class="cre-t-19-sub-title"">
+        You don't need to move all your payments to pay.com.au to get started. Many customers start with a single payment to see how it works.
+        </div>
+
+        <div class="cre-t-19-features-container">
+    <div class="cre-t-19-feature-card card1">
+        <div class="cre-t-19-icon-box">
+            <div class="cre-t-19-icon-wrapper"><img src="${imageConfig.icon1}" alt="icon"></div>
+        </div>
+        <div class="cre-t-19-card-info">
+            <div class="cre-t-19-card-title">Create a Free Account</div>
+            <div class="cre-t-19-card-subtitle">Get started in minutes. No credit card required.
+            </div>
+        </div>
+    </div>
+    <div class="cre-t-19-feature-card card2">
+        <div class="cre-t-19-icon-box">
+            <div class="cre-t-19-icon-wrapper"><img src="${imageConfig.icon2}" alt="icon"></div>
+        </div>
+        <div class="cre-t-19-card-info">
+            <div class="cre-t-19-card-title">See Your Numbers</div>
+            <div class="cre-t-19-card-subtitle">See what you'd pay and earn based on your spend, card and rewards option.
+            </div>
+        </div>
+    </div>
+    <div class="cre-t-19-feature-card card3">
+        <div class="cre-t-19-icon-box">
+            <div class="cre-t-19-icon-wrapper"><img src="${imageConfig.icon3}" alt="icon"></div>
+        </div>
+        <div class="cre-t-19-card-info">
+            <div class="cre-t-19-card-title">Then Decide</div>
+            <div class="cre-t-19-card-subtitle">If the numbers make sense, make your first payment and start earning.</div>
+        </div>
+    </div>
+</div>
+
+        <button class="cre-t-19-modal-cta">Create your free account</button>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+    /* ==== MODAL CORE LOGIC ==== */
+
+    function hideModal() {
+      var modalMain = document.querySelector(".cre-t-19-modal-main");
+      if (modalMain) {
+        modalMain.classList.remove("active");
+        document.body.classList.remove("cre-t-19-freeze");
+      }
+    }
+
+    function showModal() {
+      var alreadyExists = document.querySelector(".cre-t-19-modal-main");
+      if (!alreadyExists) {
+        if (debug) console.log("inserting modal");
+        insertAfter("body", modalHtml);
+      }
+
+      var modal = document.querySelector(".cre-t-19-modal-main");
+      if (modal) {
+        modal.classList.add("active");
+        document.body.classList.add("cre-t-19-freeze");
+      }
+    }
+
+    function setupCloseEvents() {
+      live(".cre-t-19-modal-cross-icon-wrapper, .cre-t-19-overlay", "click", function () {
+        hideModal();
+      });
+      live(".cre-t-19-modal-cta", "click", function () {
+        window['optimizely'] = window['optimizely'] || [];
+        window['optimizely'].push({
+          type: "event",
+          eventName: "pay19_-_clicks_on__create_your_free_account__button",
+          tags: {
+            revenue: 0, // Optional in cents as integer (500 == $5.00)
+            value: 0.00 // Optional as float
+          }
+        });
+
+        var targetBtn = document.querySelector(".sticky-get-started a#mob-get-started");
+        if (targetBtn) {
+          targetBtn.click();
+        }
+        hideModal();
+      });
+    }
+
+
+    function executeModalView() {
+      // Check if already shown
+      if (getCookie(cookie_name) === "modal-shown") return;
+
+      window['optimizely'] = window['optimizely'] || [];
+        window['optimizely'].push({
+          type: "event",
+          eventName: "pay19_-_modal_fires",
+          tags: {
+            revenue: 0, // Optional in cents as integer (500 == $5.00)
+            value: 0.00 // Optional as float
+          }
+        });
+
+      // Show modal and set cookie 
+      showModal();
+      setModalShownCookie();
+
+      if (!window.CRE_EVENT_19) {
+        window.CRE_EVENT_19 = true;
+        setupCloseEvents();
+      }
+    }
+
+    /* ==== VARIATION INITIALIZE ==== */
     function init() {
+      addClass("body", variation_name);
 
-      const interval = setInterval(() => {
-        injectToggleButton();
-        clickNativeButton();
-      }, 250);
-      setTimeout(() => {
-        clearInterval(interval);
-      }, 3000);
+      // Variation's internal 20s cross-page timer
+      var sessionKeyVariation = cookie_name + "-variation-time";
+      var sessionValue = sessionStorage.getItem(sessionKeyVariation);
 
+      if (!sessionValue) {
+        var triggerTime = new Date().getTime() + VARIATION_DELAY_SECONDS * 1000;
+        sessionStorage.setItem(sessionKeyVariation, triggerTime);
+      }
 
-      eventListeners();
-      updateFilterState();
+      var varInterval = setInterval(function () {
+        var currentTime = new Date().getTime();
+        var targetTime = parseInt(sessionStorage.getItem(sessionKeyVariation), 10);
+
+        if (currentTime >= targetTime) {
+          clearInterval(varInterval);
+          executeModalView();
+        }
+      }, 1000);
+
+      if (debug) console.log(variation_name + " initialized - waiting for extra 20s");
     }
 
     /* Initialise variation */
-    waitForElement('.plan-repeater[data-unique="comparison-table"]', init, 50, 15000);
+    waitForElement("body", init, 50, 15000);
   } catch (e) {
     if (debug) console.log(e, "error in Test " + variation_name);
   }

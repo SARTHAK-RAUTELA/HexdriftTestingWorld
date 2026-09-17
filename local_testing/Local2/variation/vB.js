@@ -1,210 +1,234 @@
-(function() {
+(function () {
   try {
-    var debug=1;
-    var variation_name="cre-t-266";
-    /* ============================================================
-       HELPERS
-    ============================================================ */
-    function waitForElement(selector,trigger,delayInterval,delayTimeout) {
-      delayInterval=delayInterval||50;
-      delayTimeout=delayTimeout||15000;
-      var interval=setInterval(function() {
-        if(document.querySelector(selector)&&document.querySelectorAll(selector).length>0) {
+    /* ==== Modal CONFIGURATION ==== */
+    var variation_name = "cre-t-19-variation";
+    var cookie_name = "cre-t-19";
+    var VARIATION_DELAY_SECONDS = 20; // Extra 20 seconds
+    var debug = 1;
+
+    var imageConfig = {
+      crossIcon: "https://v2.crocdn.com/PAY/test8/cross.svg",
+      icon1: "https://v2.crocdn.com/PAY/test8/laptop.svg",
+      icon2: "https://v2.crocdn.com/PAY/test8/card.svg",
+      icon3: "https://v2.crocdn.com/PAY/test8/rocket.svg",
+    };
+
+    // Cookie helpers 
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+      }
+      return "";
+    }
+
+
+    function setModalShownCookie() {
+      document.cookie = cookie_name + "=modal-shown; path=/";
+    }
+
+    function live(selector, event, callback, context) {
+      if (typeof callback !== "function") return;
+      context = context || document;
+
+      context.addEventListener(event, function (e) {
+        var el = e.target.closest(selector);
+        if (el && context.contains(el)) {
+          callback.call(el, e);
+        }
+      });
+    }
+
+    function insertAfter(selector, html) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (typeof html === "string") {
+        element.insertAdjacentHTML("afterbegin", html);
+      } else if (html && html.nodeType === 1) {
+        element.insertAdjacentElement("afterbegin", html);
+      }
+    }
+
+    function addClass(selector, className) {
+      var element = typeof selector === "string" ? document.querySelector(selector) : selector;
+      if (!element) return;
+      if (element.classList) element.classList.add(className);
+      else if (!element.className.match(new RegExp("\b" + className + "\b"))) {
+        element.className += " " + className;
+      }
+    }
+
+    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+      var interval = setInterval(function () {
+        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
           clearInterval(interval);
           trigger();
         }
-      },delayInterval);
-      setTimeout(function() {
+      }, delayInterval);
+      setTimeout(function () {
         clearInterval(interval);
-      },delayTimeout);
+      }, delayTimeout);
     }
 
+    /* ==== MODAL HTML ==== */
+    var modalHtml = `<div class="cre-t-19-modal-main">
+  <div id="cre-t-19-modal-overlay" class="cre-t-19-overlay"></div>
+  <div class="cre-t-19-modal-container">
+    <div class="cre-t-19-modal-inner">
+      <div class="cre-t-19-modal-cross-icon-wrapper">
+        <img src="${imageConfig.crossIcon}" alt="cross_icon" class="cre-t-19-cross-icon">
+      </div>
+      
+      <div class="cre-t-19-modal-content">
+        <div class="cre-t-19-main-title">
+          Not sure if pay.com.au is right for your business?
+        </div>
+        <div class="cre-t-19-sub-title"">
+        You don't need to move all your payments to pay.com.au to get started. Many customers start with a single payment to see how it works.
+        </div>
 
+        <div class="cre-t-19-features-container">
+    <div class="cre-t-19-feature-card card1">
+        <div class="cre-t-19-icon-box">
+            <div class="cre-t-19-icon-wrapper"><img src="${imageConfig.icon1}" alt="icon"></div>
+        </div>
+        <div class="cre-t-19-card-info">
+            <div class="cre-t-19-card-title">Create a Free Account</div>
+            <div class="cre-t-19-card-subtitle">Get set up in minutes. No charge unless you make a payment.
+            </div>
+        </div>
+    </div>
+    <div class="cre-t-19-feature-card card2">
+        <div class="cre-t-19-icon-box">
+            <div class="cre-t-19-icon-wrapper"><img src="${imageConfig.icon2}" alt="icon"></div>
+        </div>
+        <div class="cre-t-19-card-info">
+            <div class="cre-t-19-card-title">Use Your Existing Cards</div>
+            <div class="cre-t-19-card-subtitle">Keep using your cards, bank accounts and software.
+            </div>
+        </div>
+    </div>
+    <div class="cre-t-19-feature-card card3">
+        <div class="cre-t-19-icon-box">
+            <div class="cre-t-19-icon-wrapper"><img src="${imageConfig.icon3}" alt="icon"></div>
+        </div>
+        <div class="cre-t-19-card-info">
+            <div class="cre-t-19-card-title">Start With a Single Payment</div>
+            <div class="cre-t-19-card-subtitle">See your fees, points and rewards before you pay.</div>
+        </div>
+    </div>
+</div>
 
-    function live(selector,event,callback,context) {
-      if(typeof callback!=="function") return;
-      (context||document).addEventListener(event,function(e) {
-        var el=e.target.closest(selector);
-        if(el) callback.call(el,e);
-      });
-    }
-    /* ============================================================
-       STATE
-    ============================================================ */
-    var lastSubtotal=null;
-    var lastStrikeTotal=null;
-    var subtotalEl=null;
-    var priceSymbol=null;
-    /* ============================================================
-       PRICE UTILITIES
-    ============================================================ */
-    function getElText(sel) {
-      var el=document.querySelector(sel);
-      return el? el.textContent:"";
-    }
+        <button class="cre-t-19-modal-cta">Create your free account</button>
+      </div>
+    </div>
+  </div>
+</div>`;
 
-    function extractNum(text) {
-      var m=text.replace(/,/g,"").match(/\$([0-9]+(\.[0-9]+)?)/);
-      return m? parseFloat(m[1]):0;
-    }
+    /* ==== MODAL CORE LOGIC ==== */
 
-    function getPriceSymbol() {
-      if(priceSymbol) return priceSymbol;
-      var m=getElText(".price-row__pay-option-price").trim().match(/[^0-9\s.,]/);
-      priceSymbol=m? m[0]:"$";
-      return priceSymbol;
-    }
-
-    function formatPrice(n) {
-      return getPriceSymbol()+n.toLocaleString("en-US",{
-        minimumFractionDigits: 0
-        ,maximumFractionDigits: 0
-      });
-    }
-    /* ============================================================
-       PRICE CALCULATORS
-    ============================================================ */
-    function getBasePrice() {
-      return extractNum(getElText(".price-row__pay-option-price"));
-    }
-
-    function getSetupPrice() {
-      var btn=document.querySelector(".order-form__loadup-button");
-      var plus=btn&&btn.querySelector(".order-form__loadup-button-icon-plus");
-      if(!plus||!plus.classList.contains("hide")) return 0;
-      var priceEl=btn.querySelector(".order-form__loadup-button-price");
-      return priceEl? extractNum(priceEl.textContent):0;
-    }
-
-    function getAccessoriesTotal() {
-      var total=0;
-      document.querySelectorAll(".accessory-tray_item").forEach(function(item) {
-        var cb=item.querySelector(".add-to-accessory-cart");
-        var titleEl=item.querySelector(".accessory-item-title");
-        var isActive=cb&&(cb.checked||cb.hasAttribute("checked"));
-        if(isActive&&titleEl) total+=extractNum(titleEl.textContent);
-      });
-      return total;
-    }
-
-    function calculateSubtotal() {
-      return getBasePrice()+getSetupPrice()+getAccessoriesTotal();
-    }
-
-    function strikeTotal() {
-      var selectors=[
-        ".order-form__loadup-button-compare-price",
-        ".cre-t-202-box-strike-price"
-      ];
-
-      var total=selectors.reduce(function(total,selector) {
-        return total+extractNum(getElText(selector));
-      },0);
-
-      // Accessories have no strike price, so they should not reduce the saving.
-      return total+getAccessoriesTotal();
-    }
-    /* ============================================================
-       DOM
-    ============================================================ */
-    function getSubtotalEl() {
-      if(subtotalEl&&subtotalEl.parentNode) return subtotalEl;
-      return (subtotalEl=document.querySelector(".cre-t-266-subtotal-line"));
-    }
-
-    function updateSubtotal() {
-      var el=getSubtotalEl();
-      var total=calculateSubtotal();
-      var strikePriceTotal=strikeTotal();
-      if(!el||(total===lastSubtotal&&strikePriceTotal===lastStrikeTotal)) return;
-      lastSubtotal=total;
-      lastStrikeTotal=strikePriceTotal;
-      el.innerHTML="You&rsquo;re adding <strong>"+formatPrice(total)+"</strong> to your cart &middot; <span>Saving <strong>"+
-        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span>";
-    }
-
-    function injectSubtotalLine() {
-      if(getSubtotalEl()) {
-        updateSubtotal();
-        return;
+    function hideModal() {
+      var modalMain = document.querySelector(".cre-t-19-modal-main");
+      if (modalMain) {
+        modalMain.classList.remove("active");
+        document.body.classList.remove("cre-t-19-freeze");
       }
-      var btn=document.querySelector(".order-form__add.button");
-      if(!btn) return;
-      var total=calculateSubtotal();
-      var strikePriceTotal=strikeTotal();
-      btn.insertAdjacentHTML("beforebegin",'<div class="cre-t-266-subtotal-line">You&rsquo;re adding <strong>'+formatPrice(total)+
-        "</strong> to your cart &middot; <span>Saving <strong>"+formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span></div>");
-      subtotalEl=btn.previousElementSibling;
-      lastSubtotal=total;
-      lastStrikeTotal=strikePriceTotal;
     }
 
-
-
-
-    var subtotalUpdateInterval=null;
-
-    function scheduleSubtotalRefresh() {
-      if(subtotalUpdateInterval) {
-        clearInterval(subtotalUpdateInterval);
-        subtotalUpdateInterval=null;
+    function showModal() {
+      var alreadyExists = document.querySelector(".cre-t-19-modal-main");
+      if (!alreadyExists) {
+        if (debug) console.log("inserting modal");
+        insertAfter("body", modalHtml);
       }
 
-      var currentInterval=setInterval(function() {
-        updateSubtotal();
-      },500);
+      var modal = document.querySelector(".cre-t-19-modal-main");
+      if (modal) {
+        modal.classList.add("active");
+        document.body.classList.add("cre-t-19-freeze");
+      }
+    }
 
-      subtotalUpdateInterval=currentInterval;
+    function setupCloseEvents() {
+      live(".cre-t-19-modal-cross-icon-wrapper, .cre-t-19-overlay", "click", function () {
+        hideModal();
+      });
+      live(".cre-t-19-modal-cta", "click", function () {
+        window['optimizely'] = window['optimizely'] || [];
+        window['optimizely'].push({
+          type: "event",
+          eventName: "pay19_-_clicks_on__create_your_free_account__button",
+          tags: {
+            revenue: 0, // Optional in cents as integer (500 == $5.00)
+            value: 0.00 // Optional as float
+          }
+        });
 
-      setTimeout(function() {
-        clearInterval(currentInterval);
-        if(subtotalUpdateInterval===currentInterval) {
-          subtotalUpdateInterval=null;
+        var targetBtn = document.querySelector(".sticky-get-started a#mob-get-started");
+        if (targetBtn) {
+          targetBtn.click();
         }
-      },3000);
+        hideModal();
+      });
     }
 
-    /* ============================================================
-       EVENTS
-    ============================================================ */
-    function eventHandler() {
-      live("#coolingCoverSelect","change",scheduleSubtotalRefresh);
-      live("#size-select","change",scheduleSubtotalRefresh);
-      live("#firmness-select","change",scheduleSubtotalRefresh);
-      live(".order-form__loadup-button, .pop-loadup__service-button, .order-form__loadup-button-price,#orderForm .order-form__add","click",scheduleSubtotalRefresh);
-      document.addEventListener("click",function(e) {
-        var isAccessory=e.target.closest(".add-to-accessory-cart")||e.target.closest(".accessory-item-title");
-        if(isAccessory) scheduleSubtotalRefresh();
+
+    function executeModalView() {
+      // Check if already shown
+      if (getCookie(cookie_name) === "modal-shown") return;
+
+      window['optimizely'] = window['optimizely'] || [];
+      window['optimizely'].push({
+        type: "event",
+        eventName: "pay19_-_modal_fires",
+        tags: {
+          revenue: 0, // Optional in cents as integer (500 == $5.00)
+          value: 0.00 // Optional as float
+        }
       });
 
+      // Show modal and set cookie 
+      showModal();
+      setModalShownCookie();
 
+      if (!window.CRE_EVENT_19) {
+        window.CRE_EVENT_19 = true;
+        setupCloseEvents();
+      }
     }
 
-    /* ============================================================
-       INIT
-    ============================================================ */
+    /* ==== VARIATION INITIALIZE ==== */
     function init() {
-      document.body.classList.add(variation_name);
+      addClass("body", variation_name);
 
-      injectSubtotalLine()
+      // Variation's internal 20s cross-page timer
+      var sessionKeyVariation = cookie_name + "-variation-time";
+      var sessionValue = sessionStorage.getItem(sessionKeyVariation);
 
-      waitForElement(".cre-t-266-subtotal-line",function() {
-        var forceInsertion=setInterval(function() {
-          scheduleSubtotalRefresh()
-        },250);
-        setTimeout(function() {
-          clearInterval(forceInsertion);
-        },3000);
+      if (!sessionValue) {
+        var triggerTime = new Date().getTime() + VARIATION_DELAY_SECONDS * 1000;
+        sessionStorage.setItem(sessionKeyVariation, triggerTime);
+      }
 
-      },50,15000);
+      var varInterval = setInterval(function () {
+        var currentTime = new Date().getTime();
+        var targetTime = parseInt(sessionStorage.getItem(sessionKeyVariation), 10);
 
+        if (currentTime >= targetTime) {
+          clearInterval(varInterval);
+          executeModalView();
+        }
+      }, 1000);
+
+      if (debug) console.log(variation_name + " initialized - waiting for extra 20s");
     }
-    if(!window.variation_name_266) {
-      window.variation_name_266=true;
-      eventHandler();
-    }
-    waitForElement("#orderForm.loaded .order-form__add.button",init,50,15000);
-  } catch(e) {
-    if(debug) console.log(e,"error in Test "+variation_name);
+
+    /* Initialise variation */
+    waitForElement("body", init, 50, 15000);
+  } catch (e) {
+    if (debug) console.log(e, "error in Test " + variation_name);
   }
-}());
+})();

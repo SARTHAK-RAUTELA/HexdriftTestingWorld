@@ -5,13 +5,13 @@
 
     /* Only this array changes between V1-V6. Order IS rank: index 0 = rank 1, index 9 = rank 10. */
     var partnerRatingData = [
-      { dataLabel: "outbound-partner-clicks-Lemonade-Listing-Only", total: "9.6", classification: "Exceptional", popularity: "10.0", valueForMoney: "9.8", reviews: "9.0", popularityPercentage: "100%", valueForMoneyPercentage: "98%", reviewsPercentage: "90%" },
-      { dataLabel: "outbound-partner-clicks-Fetch-Listing-Only", total: "8.4", classification: "Excellent", popularity: "8.6", valueForMoney: "8.3", reviews: "8.5", popularityPercentage: "86%", valueForMoneyPercentage: "83%", reviewsPercentage: "85%" },
-      { dataLabel: "outbound-partner-clicks-Embrace-Listing-Only", total: "8.5", classification: "Excellent", popularity: "8.4", valueForMoney: "8.7", reviews: "8.3", popularityPercentage: "84%", valueForMoneyPercentage: "87%", reviewsPercentage: "83%" },
+      { dataLabel: "outbound-partner-clicks-Figo-Listing-Only", total: "9.6", classification: "Exceptional", popularity: "7.1", valueForMoney: "7.7", reviews: "7.5", popularityPercentage: "71%", valueForMoneyPercentage: "77%", reviewsPercentage: "75%" },
+      { dataLabel: "outbound-partner-clicks-Fetch-Listing-Only", total: "8.5", classification: "Excellent", popularity: "8.6", valueForMoney: "8.3", reviews: "8.5", popularityPercentage: "86%", valueForMoneyPercentage: "83%", reviewsPercentage: "85%" },
       { dataLabel: "outbound-partner-clicks-Pumpkin-Listing-Only", total: "8.1", classification: "Very Good", popularity: "7.9", valueForMoney: "8.0", reviews: "8.3", popularityPercentage: "79%", valueForMoneyPercentage: "80%", reviewsPercentage: "83%" },
-      { dataLabel: "outbound-partner-clicks-Figo-Listing-Only", total: "7.4", classification: "Very Good", popularity: "7.1", valueForMoney: "7.7", reviews: "7.5", popularityPercentage: "71%", valueForMoneyPercentage: "77%", reviewsPercentage: "75%" },
-      { dataLabel: "outbound-partner-clicks-Trupanion-Listing-Only", total: "6.9", classification: "Good", popularity: "6.7", valueForMoney: "7.6", reviews: "6.5", popularityPercentage: "67%", valueForMoneyPercentage: "76%", reviewsPercentage: "65%" },
-      { dataLabel: "outbound-partner-clicks-Liberty Mutual-Listing-Only", total: "5.1", classification: "Average", popularity: "5.2", valueForMoney: "4.7", reviews: "5.3", popularityPercentage: "52%", valueForMoneyPercentage: "47%", reviewsPercentage: "53%" },
+      { dataLabel: "outbound-partner-clicks-Embrace-Listing-Only", total: "7.4", classification: "Very Good", popularity: "8.4", valueForMoney: "8.7", reviews: "8.3", popularityPercentage: "84%", valueForMoneyPercentage: "87%", reviewsPercentage: "83%" },
+      { dataLabel: "outbound-partner-clicks-Liberty Mutual-Listing-Only", total: "6.7", classification: "Good", popularity: "5.2", valueForMoney: "4.7", reviews: "5.3", popularityPercentage: "52%", valueForMoneyPercentage: "47%", reviewsPercentage: "53%" },
+      { dataLabel: "outbound-partner-clicks-Trupanion-Listing-Only", total: "6.5", classification: "Good", popularity: "6.7", valueForMoney: "7.6", reviews: "6.5", popularityPercentage: "67%", valueForMoneyPercentage: "76%", reviewsPercentage: "65%" },
+      { dataLabel: "outbound-partner-clicks-Lemonade-Listing-Only", total: "5.9", classification: "Good", popularity: "10.0", valueForMoney: "9.8", reviews: "9.0", popularityPercentage: "100%", valueForMoneyPercentage: "98%", reviewsPercentage: "90%" },
       { dataLabel: "outbound-partner-clicks-Odie-Listing-Only", total: "4.8", classification: "Average", popularity: "4.1", valueForMoney: "4.5", reviews: "5.7", popularityPercentage: "41%", valueForMoneyPercentage: "45%", reviewsPercentage: "57%" },
       { dataLabel: "outbound-partner-clicks-ASPCA-Listing-Only", total: "4.5", classification: "Average", popularity: "8.5", valueForMoney: "8.4", reviews: "8.7", popularityPercentage: "85%", valueForMoneyPercentage: "84%", reviewsPercentage: "87%" },
       { dataLabel: "outbound-partner-clicks-AKC-Listing-Only", total: "4.3", classification: "Average", popularity: "4.2", valueForMoney: "4.2", reviews: "4.5", popularityPercentage: "42%", valueForMoneyPercentage: "42%", reviewsPercentage: "45%" }
@@ -124,6 +124,7 @@
     }
 
 
+
     /* ===== state ===== */
     var defaultClass = "cre-t-164-default";
     var listenerInterval = null;
@@ -170,8 +171,6 @@
     function isQuotesEndpoint(url) {
       return typeof url === "string" && url.indexOf("/wp-json/insurance-finder/v1/quotes") !== -1;
     }
-
-
 
     function getContainer() {
       return document.querySelector('.plan-repeater[data-unique="comparison-table"]');
@@ -261,8 +260,6 @@
       }
     }
 
-
-
     function injectToggleButton() {
       var container = getContainer();
       if (!container) return;
@@ -312,7 +309,6 @@
         card.classList.remove("cre-t-164-below-trupanion");
       });
     }
-
 
 
     function getRatingWidgetHtml(data) {
@@ -525,7 +521,6 @@
       });
     }
 
-
     function getBestOverallCard() {
       return document.querySelector(
         '.plan-repeater[data-unique="comparison-table"] > [data-unique^="outbound-partner-clicks-"]:has(.best-overall-bubble)'
@@ -567,9 +562,8 @@
         if (ratingBar) ratingBar.classList.add("cre-t-164-hide-rating-bar");
       }
 
-      insertRatingWidget(bestOverallCard, rankOne); // NEW line -- keeps Best Overall's own widget in sync too
+      insertRatingWidget(bestOverallCard, rankOne);
     }
-
 
     /* ===== exit-intent modal ===== */
 
@@ -749,8 +743,6 @@
         }
       });
     }
-
-
 
     function init() {
       if (document.body.classList.contains(variation_name)) return;

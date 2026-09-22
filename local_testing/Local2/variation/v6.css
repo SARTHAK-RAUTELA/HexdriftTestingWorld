@@ -1,3 +1,14 @@
+/* cre-t-164 shared CSS -- identical across V1-V6, only the JS array differs per variation */
+/* No CSS "order" is used anymore. Reordering is done by copying content into fixed physical
+   slots via JS (content-swap), not by moving nodes or reassigning flex order. */
+/* The Pro Tip box and any other sibling element in this repeater are left completely untouched --
+   no positioning rules for them here by design. */
+/* Show More is entirely native's own DOM mount/unmount -- we forward clicks to its hidden button
+   and never manage visibility of the 10 slots ourselves. No defensive "force visible" rule needed. */
+/* Every override below is gated behind body.cre-t-164-default so removing that one class fully
+   reverts everything -- no JS cleanup required for any of it. */
+
+/* hide the native "Show More" link -- we inject our own copy, styled from the same native classes */
 body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.oxy-read-more-link:not(.cre-t-164-toggle) {
   display: none;
 }
@@ -6,28 +17,26 @@ body.cre-t-164-default .plan-repeater .rating-bar {
   display: none !important;
 }
 
-body.cre-t-164-default.cre-t-164-collapsed .cre-t-164-below-trupanion {
-  display: none !important;
-}
-
 /* our own toggle only shows in the "applied" state -- reverted state defers fully to native */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.cre-t-164-toggle {
-  display: flex !important;
-  visibility: visible;
+body:not(.cre-t-164-default) .plan-repeater[data-unique="comparison-table"]>.cre-t-164-toggle {
+  display: none;
 }
 
-
+/* the app-store blurb only exists on Lemonade's card -- hidden on the Best Overall duplicate
+   whenever it's currently representing someone other than Lemonade (unaffected by revert --
+   self-corrects via syncBestOverall's own content-aware add/remove regardless of state) */
 .cre-t-164-hide-rating-bar,
 html body.cre-t-164-default .oxy-dynamic-list>div>.trustpilot-image {
   display: none;
 }
 
-
+/* cre-t-164 rating widget: renamed clone of cre-t-135's styling, driven by our own sheet data */
+/* hide the OTHER test's widget only while applied -- reverted state shows native's own rating again */
 body.cre-t-164-default .plan-repeater[data-unique="comparison-table"] .cre-t-135-container {
   display: none;
 }
 
-
+/* hide OUR widget when reverted -- showing sheet-driven ratings next to genuine native content would be wrong */
 body:not(.cre-t-164-default) .cre-t-164-container {
   display: none;
 }

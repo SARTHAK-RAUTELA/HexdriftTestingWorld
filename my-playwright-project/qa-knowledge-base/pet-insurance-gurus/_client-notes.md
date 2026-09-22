@@ -54,6 +54,14 @@
   rewrite is a sign the root cause was never actually addressed, just refactored around — re-check the
   exact same failure mode after any "fixed" rewrite rather than assuming a rewrite implies a fix.
 
+- **When a test ships as N per-variation file pairs, diff the CSS files against each other, not just
+  against the spec.** SWF164-v2 (exp 100052846) shipped 6 variations whose JS was functionally identical
+  (only the `partnerRatingData` array differed) but whose CSS split into two groups: V1/V3 carried the
+  `body.cre-t-164-default.cre-t-164-collapsed .cre-t-164-below-trupanion { display:none }` rule and the
+  positive toggle rule, while V4/V5/V6 omitted both — so V4/V5/V6 rendered all 10 cards with an
+  unclickable Show More. Their header comment claimed the CSS was *"identical across V1-V6"*, which is
+  exactly why it went unnoticed. `md5sum *.css` (after normalising CRLF) finds this in seconds.
+
 - **The breed-select MUI combobox (`#breed-select`) starts `Mui-disabled` and only enables once a
   ZIP is entered AND validated** — but the standard `input.fill("90210")` +
   `input.dispatchEvent("change")` pattern used elsewhere on this client (ZIP-persistence checks,
@@ -83,5 +91,6 @@ Tests get cloned between this site and Renters Insurance Gurus (CRE-T-123 → CR
 | SWF151 — "Sort by" (Best Rated / Lowest Price) on comparison listings | [swf151-sort-order.md](swf151-sort-order.md) |
 | SWF157 — Vet-quote testimonial redesign (single quote / manual carousel / auto carousel) | [swf157-quote-carousel.md](swf157-quote-carousel.md) |
 | SWF164 — Rearrange comparison listings + rating overrides (2 arms) | [swf164-rearrange-listings.md](swf164-rearrange-listings.md) |
+| SWF164-v2 — Rearrange listings rebuild, 6 variations (exp 100052846) | [swf164-v2-six-variation-rearrange.md](swf164-v2-six-variation-rearrange.md)  / [HTML report](swf164-v2-six-variation-qa-report.html) |
 | CRE-T-143 — Comparison listing price discount, 13.5%/32.9% (2 arms, no ticket number) | [cre-t-143-price-discount.md](cre-t-143-price-discount.md) / [HTML report](cre-t-143-price-discount-retest-qa-report.html) |
 | CRE-T-162 — Testimonial quote section above comparison table (no ticket/Figma) | [cre-t-162-quote-section.md](cre-t-162-quote-section.md) / [HTML report](cre-t-162-quote-section-qa-report.html) |

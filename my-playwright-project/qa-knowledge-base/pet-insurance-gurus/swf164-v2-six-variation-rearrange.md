@@ -24,7 +24,9 @@ Trupanion is at position 6 in all six variations, so the collapsed state must sh
 
 ## RETEST 2026-09-23 — BUG-01 FIXED, all six variations now PASS
 
-**Report:** [swf164-v2-retest-qa-report.html](swf164-v2-retest-qa-report.html) ·
+**Report:** [swf164-v2-six-variation-qa-report.html](swf164-v2-six-variation-qa-report.html) — rewritten
+2026-09-23 as the single current report (all 6 pass, BUG-01 marked fixed with before/after shots,
+root cause kept as collapsed history; self-contained with base64 images) ·
 **Screenshots:** `swf164-v2-retest-screenshots/` · **Console dump:** `swf164-v2-retest-console.json`
 
 Client shipped the fix and supplied the same force URLs. Re-run entirely against the **deployed

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SWF164-v2 RETEST QA Report — Pet Insurance Gurus "Rearrange Listings" (6 variations)</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #f4f5f7; color: #1a1a1a; margin: 0; padding: 40px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 26px; margin-bottom: 4px; }
+  .sub { color: #666; margin-bottom: 30px; }
+  .card { background: #fff; border-radius: 10px; padding: 24px 28px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  h2 { font-size: 18px; border-bottom: 2px solid #3066C9; padding-bottom: 8px; margin-top: 0; }
+  h3 { font-size: 15px; margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+  th { background: #f0f2f5; }
+  .pass { color: #1a7a3c; font-weight: 600; }
+  .fail { color: #b3261e; font-weight: 600; }
+  .warn { color: #8a6100; font-weight: 600; }
+  .fixed { background: #e3f5e9; border-left: 4px solid #1a7a3c; padding: 12px 16px; border-radius: 4px; margin: 10px 0; }
+  .open { background: #fdecea; border-left: 4px solid #b3261e; padding: 12px 16px; border-radius: 4px; margin: 10px 0; }
+  .amber { background: #fff6e0; border-left: 4px solid #d99000; padding: 12px 16px; border-radius: 4px; margin: 10px 0; }
+  .note { background: #eef3fc; border-left: 4px solid #3066C9; padding: 12px 16px; border-radius: 4px; margin: 10px 0; }
+  code { background: #f0f2f5; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+  pre { background: #f0f2f5; padding: 12px 14px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+  .shots { display: flex; gap: 20px; flex-wrap: wrap; }
+  .shots figure { margin: 0; flex: 1; min-width: 300px; }
+  .shots img { width: 100%; border: 1px solid #ddd; border-radius: 6px; }
+  .shots figcaption { text-align: center; font-size: 13px; color: #555; margin-top: 6px; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+  .badge.pass { background: #e3f5e9; color: #1a7a3c; }
+  .badge.fail { background: #fdecea; color: #b3261e; }
+  .badge.warn { background: #fff6e0; color: #8a6100; }
+  ul { padding-left: 20px; }
+  .statgrid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 14px; }
+  .stat { flex: 1; min-width: 150px; background: #f8f9fb; border-radius: 8px; padding: 14px 18px; text-align: center; }
+  .stat .num { font-size: 26px; font-weight: 700; }
+  .stat .lbl { font-size: 12px; color: #666; margin-top: 2px; }</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>SWF164-v2 RETEST &mdash; Pet Insurance Gurus "Rearrange Listings" (6 variations)</h1>
+  <div class="sub">petinsurancegurus.com &middot; Convert experiment <code>100052846</code> &middot; retested <b>2026-09-23</b> (original run 2026-09-22) &middot; Chrome Desktop (1280&times;900) + Mobile Chrome (Pixel&nbsp;5), plus a Firefox / WebKit spot-check &middot; tested on the client-supplied force URLs <code>?utm_campaign=Cromode164&amp;_conv_eforce=100052846.&lt;id&gt;</code></div>
+
+  <div class="card">
+    <h2>Headline &mdash; BUG-01 is fixed, all six variations now pass</h2>
+    <div class="statgrid">
+      <div class="stat"><div class="num" style="color:#1a7a3c">120</div><div class="lbl">/ 120 assertions passed</div></div>
+      <div class="stat"><div class="num" style="color:#1a7a3c">6</div><div class="lbl">/ 6 variations pass</div></div>
+      <div class="stat"><div class="num" style="color:#1a7a3c">1</div><div class="lbl">ship-blocker closed</div></div>
+      <div class="stat"><div class="num" style="color:#1a7a3c">0</div><div class="lbl">new bugs</div></div>
+      <div class="stat"><div class="num" style="color:#1a7a3c">0</div><div class="lbl">test-related console errors</div></div>
+    </div>
+    <div class="fixed" style="margin-top:16px"><b>BUG-01 (V4 / V5 / V6 never collapsed and had an unclickable "Show&nbsp;More") is resolved.</b> All three now load with exactly <b>6 cards ending on Trupanion</b> and a visible, working <code>.cre-t-164-toggle</code>. The missing CSS rules are present in the deployed stylesheets. V1, V2 and V3 show no regression. <b>This experiment is clear to ship from a QA standpoint.</b></div>
+    <table>
+      <tr><th>Variation</th><th>#1 partner</th><th>Order</th><th>Ratings</th><th>Filters</th><th>Show More after Trupanion</th><th>Yesterday</th><th>Today</th></tr>
+      <tr><td>V1</td><td>Lemonade</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td><span class="badge pass">PASS</span></td><td><span class="badge pass">PASS</span></td></tr>
+      <tr><td>V2</td><td>Fetch</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td><span class="badge pass">PASS</span></td><td><span class="badge pass">PASS</span></td></tr>
+      <tr><td>V3</td><td>Embrace</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td><span class="badge pass">PASS</span></td><td><span class="badge pass">PASS</span></td></tr>
+      <tr><td>V4</td><td>Pumpkin</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS &mdash; 6 visible, toggle works</td><td><span class="badge fail">BUG-01</span></td><td><span class="badge pass">PASS</span></td></tr>
+      <tr><td>V5</td><td>Figo</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS &mdash; 6 visible, toggle works</td><td><span class="badge fail">BUG-01</span></td><td><span class="badge pass">PASS</span></td></tr>
+      <tr><td>V6</td><td>Liberty Mutual</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS &mdash; 6 visible, toggle works</td><td><span class="badge fail">BUG-01</span></td><td><span class="badge pass">PASS</span></td></tr>
+    </table>
+    <div class="note"><b>Scope note.</b> This retest was run entirely against the <b>deployed Convert code</b> on the force URLs the client supplied &mdash; the local <code>local_testing/Local2/variation/</code> files were deliberately not used and have <b>not</b> been updated with the new code, so they no longer reflect what is live. See the housekeeping item at the bottom.</div>
+  </div>
+
+  <div class="card">
+    <h2>Proof that BUG-01 is closed</h2>
+    <p>The ship-blocker was: V4/V5/V6 rendered all 10 cards with <code>.cre-t-164-toggle</code> computing to <code>display:none</code>. Measured again today on the same URLs:</p>
+    <table>
+      <tr><th>Variation</th><th>Cards visible on load</th><th>Last visible card</th><th>Our toggle</th><th>Native toggle</th></tr>
+      <tr><td>V4 (Pumpkin)</td><td class="pass">6</td><td class="pass">Trupanion</td><td class="pass">visible, <code>display:flex</code>, "Show More"</td><td>hidden (as designed)</td></tr>
+      <tr><td>V5 (Figo)</td><td class="pass">6</td><td class="pass">Trupanion</td><td class="pass">visible, <code>display:flex</code>, "Show More"</td><td>hidden (as designed)</td></tr>
+      <tr><td>V6 (Liberty Mutual)</td><td class="pass">6</td><td class="pass">Trupanion</td><td class="pass">visible, <code>display:flex</code>, "Show More"</td><td>hidden (as designed)</td></tr>
+    </table>
+    <div class="shots" style="margin-top:16px">
+      <figure><img src="swf164-v2-retest-screenshots/v4-desktop-tail.png" alt="V4 desktop, Show More after Trupanion"><figcaption>V4 desktop &mdash; SHOW MORE now sits directly after Trupanion (was absent)</figcaption></figure>
+      <figure><img src="swf164-v2-retest-screenshots/v5-desktop-tail.png" alt="V5 desktop, Show More after Trupanion"><figcaption>V5 desktop &mdash; fixed</figcaption></figure>
+    </div>
+    <div class="shots" style="margin-top:16px">
+      <figure><img src="swf164-v2-retest-screenshots/v6-desktop-tail.png" alt="V6 desktop, Show More after Trupanion"><figcaption>V6 desktop &mdash; fixed</figcaption></figure>
+      <figure><img src="swf164-v2-retest-screenshots/v4-mobile-tail.png" alt="V4 mobile, Show More after Trupanion"><figcaption>V4 Mobile Chrome (Pixel 5) &mdash; fixed</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>What was re-verified, per variation</h2>
+    <p>Each of the six variations was run through the same five checks on <b>both</b> Chrome Desktop and Mobile Chrome &mdash; 10 assertions per variation per viewport, 120 in total, all passing, in a fresh browser context each time.</p>
+    <table>
+      <tr><th style="width:56px">Check</th><th>What it asserts</th><th>Result</th></tr>
+      <tr><td><b>A</b></td><td>Default state collapses to exactly 6 cards ending on Trupanion, and our injected "Show More" toggle is visible</td><td class="pass">24/24 PASS</td></tr>
+      <tr><td><b>B</b></td><td>Clicking "Show More" expands to 10 and relabels to "Show Less"; clicking again collapses back to 6</td><td class="pass">24/24 PASS</td></tr>
+      <tr><td><b>C</b></td><td><b>Early</b> click (0.9&nbsp;s after the list renders, inside the window where the old build's interval used to fight the user) still shows 10 cards five seconds later</td><td class="pass">12/12 PASS</td></tr>
+      <tr><td><b>D</b></td><td>Cats, Dogs and back-to-All-Pets all keep the test order, keep <code>cre-t-164-default</code> on <code>&lt;body&gt;</code>, and keep the 6-card collapse</td><td class="pass">36/36 PASS</td></tr>
+      <tr><td><b>E</b></td><td><code>?breed=</code> and <code>?zipCode=</code> both drop <code>cre-t-164-default</code>, restore the hardcoded order (Lemonade &gt; ASPCA &gt; Fetch &gt; Embrace &gt; Pumpkin &gt; Figo &gt; Trupanion) and hand the toggle back to native</td><td class="pass">24/24 PASS</td></tr>
+    </table>
+    <div class="fixed"><b>The old collapse-fighting bug stays fixed (check C).</b> This is the failure mode that survived a full rewrite once before on this client, so it was re-probed deliberately: clicking "Show&nbsp;More" almost immediately after the list appears now sticks, and <code>cre-t-164-collapsed</code> is not re-added by any timer. Returning to "All Pets" from a filter also does not re-collapse.</div>
+  </div>
+
+  <div class="card">
+    <h2>Order and ratings as built, live today</h2>
+    <p>Read from the rendered <code>.cre-t-164-total</code> values on each card. The collapsed six are positions 1&ndash;6, ending on Trupanion (bold); positions 7&ndash;10 are the hidden tail.</p>
+    <table>
+      <tr><th>Variation</th><th>Order as built (1 &rarr; 10)</th><th>Rating ladder</th></tr>
+      <tr><td><b>V1</b></td><td>Lemonade, Fetch, Embrace, Pumpkin, Figo, <b>Trupanion</b>, Liberty&nbsp;Mutual, Odie, ASPCA, AKC</td><td>9.6 / 8.4 / 8.5 / 8.1 / 7.4 / 6.9 / 5.1 / 4.8 / 4.5 / 4.3</td></tr>
+      <tr><td><b>V2</b></td><td>Fetch, Embrace, Pumpkin, Figo, Liberty&nbsp;Mutual, <b>Trupanion</b>, Lemonade, Odie, ASPCA, AKC</td><td>9.6 / 8.5 / 8.1 / 7.4 / 6.7 / 6.5 / 5.9 / 4.8 / 4.5 / 4.3</td></tr>
+      <tr><td><b>V3</b></td><td>Embrace, Fetch, Pumpkin, Figo, Liberty&nbsp;Mutual, <b>Trupanion</b>, Lemonade, Odie, ASPCA, AKC</td><td>9.6 / 8.5 / 8.1 / 7.4 / 6.7 / 6.5 / 5.9 / 4.8 / 4.5 / 4.3</td></tr>
+      <tr><td><b>V4</b></td><td>Pumpkin, Fetch, Embrace, Figo, Liberty&nbsp;Mutual, <b>Trupanion</b>, Lemonade, Odie, ASPCA, AKC</td><td>9.6 / 8.5 / 8.1 / 7.4 / 6.7 / 6.5 / 5.9 / 4.8 / 4.5 / 4.3</td></tr>
+      <tr><td><b>V5</b></td><td>Figo, Fetch, Pumpkin, Embrace, Liberty&nbsp;Mutual, <b>Trupanion</b>, Lemonade, Odie, ASPCA, AKC</td><td>9.6 / 8.5 / 8.1 / 7.4 / 6.7 / 6.5 / 5.9 / 4.8 / 4.5 / 4.3</td></tr>
+      <tr><td><b>V6</b></td><td>Liberty&nbsp;Mutual, Fetch, Pumpkin, Embrace, Figo, <b>Trupanion</b>, Lemonade, Odie, ASPCA, AKC</td><td>9.6 / 8.5 / 8.1 / 7.4 / 6.7 / 6.5 / 5.9 / 4.8 / 4.5 / 4.3</td></tr>
+    </table>
+    <p style="margin-top:14px">Rank numbers renumber 1&ndash;10 correctly in every variation. The <b>Best Overall</b> duplicate card syncs to the new #1 in all six (verified: V4's Best Overall shows Pumpkin at 9.6 with Pumpkin's own copy, not Lemonade's app-store blurb). The competing <code>cre-t-135</code> rating widget stays hidden under <code>cre-t-164-default</code>, so no double rating is shown.</p>
+    <div class="amber"><b>Still open from yesterday &mdash; V1's rating ladder is not monotonically descending.</b> V1 shows Fetch <b>8.4</b> at rank&nbsp;2 sitting above Embrace <b>8.5</b> at rank&nbsp;3, so a lower-scored partner outranks a higher-scored one on screen. This matches the supplied sheet, so it is <b>built correctly</b> &mdash; it is a spec question, not a defect, and it is unchanged today. V2&ndash;V6 all use the position-locked ladder and have no such inversion. <b>Worth a yes/no from the client before launch.</b></div>
+  </div>
+
+  <div class="card">
+    <h2>Control &mdash; unchanged baseline (variation 1000257396)</h2>
+    <p>The control still renders the hardcoded order with the site's own native "Show More", no <code>cre-t-164</code> classes on <code>&lt;body&gt;</code>, and no injected toggle &mdash; exactly as expected:</p>
+    <p><code>Lemonade 9.6 &gt; ASPCA 8.7 &gt; Fetch 8.4 &gt; Embrace 8.5 &gt; Pumpkin 8.1 &gt; Figo 7.4 &gt; Trupanion 6.9</code> (7 visible, native toggle reveals the rest).</p>
+    <div class="shots">
+      <figure><img src="swf164-v2-retest-screenshots/original-desktop-tail.png" alt="Control desktop"><figcaption>Control desktop &mdash; native Show More, hardcoded order</figcaption></figure>
+      <figure><img src="swf164-v2-retest-screenshots/v1-desktop-tail.png" alt="V1 desktop"><figcaption>V1 desktop &mdash; unchanged from yesterday, still correct</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Cross-browser spot-check (closes an open item from yesterday)</h2>
+    <p>Yesterday's run covered Chrome desktop + mobile only, and flagged that the code uses <code>:has()</code> inside <code>querySelector</code>. V1, V4 and V6 were therefore re-run on Firefox and WebKit (Safari engine) at 1280&times;900:</p>
+    <table>
+      <tr><th>Engine</th><th>V1</th><th>V4</th><th>V6</th></tr>
+      <tr><td>Firefox</td><td class="pass">PASS &mdash; 6 &rarr; 10</td><td class="pass">PASS &mdash; 6 &rarr; 10</td><td class="pass">PASS &mdash; 6 &rarr; 10</td></tr>
+      <tr><td>WebKit / Safari</td><td class="pass">PASS &mdash; 6 &rarr; 10</td><td class="pass">PASS &mdash; 6 &rarr; 10 (on retry, see below)</td><td class="pass">PASS &mdash; 6 &rarr; 10</td></tr>
+    </table>
+    <div class="note"><b>One WebKit load flake, not a variation defect.</b> The first WebKit/V4 attempt timed out waiting for the comparison table to render at all &mdash; the site's own listing markup never appeared, so no <code>cre-t-164</code> code had anything to act on. Re-run on the identical URL it loaded and passed fully (6 cards, working toggle, expands to 10). WebKit is documented as the slowest engine on this site. Flagged for transparency; it is not attributable to this test's code. Edge was not run separately &mdash; it shares Chromium with the Chrome desktop pass.</div>
+  </div>
+
+  <div class="card">
+    <h2>Console</h2>
+    <p>Zero <code>cre-t-164</code>-related console errors in any variation, on either viewport. Desktop loads show 4 baseline errors and mobile shows 0 &mdash; the same counts appear on the <b>control</b>, and they are third-party <code>403</code> resource failures unrelated to this test.</p>
+  </div>
+
+  <div class="card">
+    <h2>Housekeeping &mdash; not user-facing</h2>
+    <div class="amber"><b>The local variation files are now stale.</b> <code>local_testing/Local2/variation/</code> still holds yesterday's pre-fix code (and <code>v2.css</code> is still the wrong file entirely &mdash; it contains PAY13's modal CSS, dated 2026-09-07, with no <code>cre-t-164</code> rules at all). The deployed Convert code is correct and is what this report tests; but anyone who tests by local injection from those files will reproduce yesterday's BUG-01 and the V2 false failure. <b>Recommend pulling the current deployed code down into those files, or deleting them so they cannot mislead.</b> This is the third recurrence of the shared-scratch-file trap on this client (see SWF155, PAY19).</div>
+  </div>
+
+  <div class="card">
+    <h2>Remaining open items</h2>
+    <ul>
+      <li><b>V1's non-monotonic rating ladder</b> (Fetch 8.4 at rank 2 above Embrace 8.5 at rank 3) &mdash; matches the sheet, needs a client yes/no.</li>
+      <li><b>Breed was tested via the <code>?breed=</code> URL param</b>, not the real MUI <code>#breed-select</code> combobox, which stays <code>Mui-disabled</code> under synthetic input on this site. One manual pass on the real widget is still worth doing.</li>
+      <li><b>Duplicate-init guard not tested</b> &mdash; re-running the variation JS should not double-inject the toggle.</li>
+      <li>Tablet viewports not covered.</li>
+    </ul>
+  </div>
+
+  <div class="sub" style="margin-top:30px">Retested 2026-09-23 against the client-supplied force URLs for experiment 100052846. Screenshots in <code>swf164-v2-retest-screenshots/</code>. Previous (pre-fix) report: <a href="swf164-v2-six-variation-qa-report.html">swf164-v2-six-variation-qa-report.html</a>.</div>
+</div>
+</body>
+</html>

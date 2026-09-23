@@ -22,7 +22,55 @@ variations**; its position is NOT to change per variation.
 
 Trupanion is at position 6 in all six variations, so the collapsed state must show **6 cards**.
 
-## Result
+## RETEST 2026-09-23 — BUG-01 FIXED, all six variations now PASS
+
+**Report:** [swf164-v2-retest-qa-report.html](swf164-v2-retest-qa-report.html) ·
+**Screenshots:** `swf164-v2-retest-screenshots/` · **Console dump:** `swf164-v2-retest-console.json`
+
+Client shipped the fix and supplied the same force URLs. Re-run entirely against the **deployed
+Convert code** — the local `local_testing/Local2/variation/` files were NOT updated and were
+deliberately not used.
+
+**120/120 assertions passed** — 6 variations × 10 checks × (Chrome Desktop 1280×900 + Mobile Chrome
+Pixel 5), fresh context per run, zero flakiness.
+
+| | Order | Ratings | Filters | Show More after Trupanion | 2026-09-22 | 2026-09-23 |
+|---|---|---|---|---|---|---|
+| V1 | PASS | PASS | PASS | PASS | PASS | **PASS** |
+| V2 | PASS | PASS | PASS | PASS | PASS | **PASS** |
+| V3 | PASS | PASS | PASS | PASS | PASS | **PASS** |
+| V4 | PASS | PASS | PASS | PASS — 6 visible, toggle works | BUG-01 | **PASS** |
+| V5 | PASS | PASS | PASS | PASS — 6 visible, toggle works | BUG-01 | **PASS** |
+| V6 | PASS | PASS | PASS | PASS — 6 visible, toggle works | BUG-01 | **PASS** |
+
+**BUG-01 closed.** V4/V5/V6 now load with exactly 6 cards ending on Trupanion, and
+`.cre-t-164-toggle` computes to `display: flex` and is clickable. The two rules that `v4/v5/v6.css`
+had omitted are present in the deployed stylesheets. No regression in V1/V2/V3.
+
+Also re-verified in this pass:
+- **The collapse-fight bug stays fixed** — deliberately re-probed, since that failure mode once
+  survived a full rewrite on this client. Clicking "Show More" 0.9s after the list renders still
+  shows 10 cards 5s later; `cre-t-164-collapsed` is not re-added by any timer, and returning to
+  All Pets does not re-collapse. 12/12.
+- **Filter gating** — Cats / Dogs / back-to-All-Pets keep test order + 6-card collapse (36/36);
+  `?breed=` and `?zipCode=` both drop `cre-t-164-default` and restore
+  Lemonade > ASPCA > Fetch > Embrace > Pumpkin > Figo > Trupanion with the native toggle back (24/24).
+- **Best Overall** syncs to the new #1 in all six (V4 verified visually: Pumpkin 9.6, Pumpkin's own
+  copy, not Lemonade's app-store blurb). `cre-t-135`'s competing widget stays hidden.
+- **Control** unchanged — hardcoded order, native toggle, no `cre-t-164` body classes.
+- **Console** — 0 `cre-t-164`-related errors on any variant/viewport. Desktop shows 4 baseline
+  third-party 403s, mobile 0; identical counts on the control.
+- **Cross-browser (closes a prior open item):** V1/V4/V6 also pass on **Firefox** and **WebKit**
+  at 1280×900 — the `:has()` concern is a non-issue. One WebKit/V4 run timed out before the site's
+  own comparison table rendered at all; it passed fully on retry against the identical URL. Load
+  flake, not a variation defect. Edge not run separately (shares Chromium with the desktop pass).
+
+**Still open:** V1's non-monotonic ladder (see Notes) is unchanged and still needs a client yes/no.
+**Housekeeping:** the local variation files are now stale — they still hold the pre-fix code, and
+`v2.css` is still PAY13's modal CSS. Pull the deployed code down or delete them; local injection
+from them will reproduce a BUG-01 that no longer exists live.
+
+## Result (original run, 2026-09-22 — superseded by the retest above)
 
 | | Order | Ratings | Filters (All/Cats/Dogs keep, Breed/ZIP revert) | Show More after Trupanion | Verdict |
 |---|---|---|---|---|---|
@@ -38,7 +86,12 @@ No cre-t-164-related console errors in any variation (4 unrelated baseline error
 control included). Control (`1000257396`) renders the hardcoded order exactly as the sheet's
 "Currently Hardcoded" column.
 
-## BUG-01 (ship-blocking) — V4/V5/V6 never collapse and have no usable "Show More"
+## BUG-01 ✅ FIXED (verified live 2026-09-23) — V4/V5/V6 never collapse and have no usable "Show More"
+
+> **Status: CLOSED.** Retested 2026-09-23 on the same force URLs — V4/V5/V6 now collapse to 6 cards
+> ending on Trupanion with a visible, working toggle, on Chrome desktop + mobile, Firefox and WebKit.
+> The diagnosis below is retained as the historical record of the cause.
+
 
 **Symptom:** on load, V4/V5/V6 show **all 10 cards** instead of 6. The `.cre-t-164-toggle` element is
 injected into the DOM with the right text ("Show More") but computes to `display: none`, so the user
@@ -115,7 +168,8 @@ will get a false failure. **Third recurrence of the shared-scratch-file trap on 
       intended — a higher-scored partner ranked below a lower-scored one is visible to users.
 - [ ] Breed tested via the `?breed=` URL param (client-notes: the real MUI `#breed-select` combobox
       stays `Mui-disabled` under synthetic input). Worth one manual pass on the real widget.
-- [ ] Only Chrome desktop + Mobile Chrome were requested/run. Firefox/Safari/Edge/tablet not covered.
-      Note `getBestOverallCard()`/`getPartnerCard()` use `:has()` in `querySelector` — fine in Chrome
-      and Safari 15.4+/Firefox 121+, but worth a check if older-browser support matters.
+- [x] ~~Only Chrome desktop + Mobile Chrome were requested/run. Firefox/Safari/Edge/tablet not
+      covered.~~ **Closed 2026-09-23** — V1/V4/V6 re-run on Firefox and WebKit at 1280×900, all pass
+      (6 cards → toggle → 10). The `:has()` concern is a non-issue. Tablet still not covered; Edge
+      not run separately (shares Chromium with the desktop pass).
 - [ ] Duplicate-init guard not tested (re-running the variation JS shouldn't double-inject the toggle).

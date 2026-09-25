@@ -284,6 +284,22 @@ html body.tt-williams-partner-lp [class*="pro-results_card"] img {
   width: 87%;
 }
 
+/* divider between testimonials and the Growth Calculator, sits on the section boundary */
+html body.tt-williams-partner-lp [class*="earnings-calculator_section"] {
+  position: relative;
+}
+
+html body.tt-williams-partner-lp [class*="earnings-calculator_section"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 978px;
+  border-top: 1px solid #d3d4d5;
+}
+
 
 @media screen and (max-width: 768px) {
   html body.tt-williams-partner-lp .faq-section {

@@ -1,511 +1,341 @@
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.oxy-read-more-link:not(.cre-t-164-toggle) {
-  display: none;
+/* ===========================
+   HEADER: Thumbtack + Sherwin-Williams co-brand
+=========================== */
+html body.tt-williams-partner-lp [aria-label="Thumbtack Home"]:after {
+  content: " ";
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-body.cre-t-164-default .plan-repeater .rating-bar {
-  display: none !important;
-}
-
-body.cre-t-164-default.cre-t-164-collapsed .cre-t-164-below-trupanion {
-  display: none !important;
-}
-
-/* our own toggle only shows in the "applied" state -- reverted state defers fully to native */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.cre-t-164-toggle {
-  display: flex !important;
-  visibility: visible;
-}
-
-
-.cre-t-164-hide-rating-bar,
-html body.cre-t-164-default .oxy-dynamic-list>div>.trustpilot-image {
-  display: none;
-}
-
-
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"] .cre-t-135-container {
-  display: none;
-}
-
-
-body:not(.cre-t-164-default) .cre-t-164-container {
-  display: none;
-}
-
-html body .cre-t-164-container {
-  position: relative;
-  font-family: "Montserrat", arial, sans-serif;
-  padding: 31px 0px;
-}
-
-html body .cre-t-164-wrapper {
-  display: block;
-}
-
-html body .cre-t-164-reviews {
-  display: block;
-  cursor: pointer;
-}
-
-html body .cre-t-164-review-top {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2px;
-}
-
-html body .cre-t-164-top-content1 {
-  color: #000;
-  text-align: center;
-  font-family: inherit;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 17.6px;
-}
-
-html body .cre-t-164-total {
-  position: relative;
-  top: -1px;
-}
-
-html body .cre-t-164-star {
-  width: 17px;
-  height: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-html body .cre-t-164-star svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-html body .cre-t-164-classification {
-  position: relative;
-  top: -1px;
-}
-
-html body .cre-t-164-top-content2 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-}
-
-html body .cre-t-164-top-content2-text {
-  color: #000;
-  text-align: right;
-  font-family: inherit;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-}
-
-html body .cre-t-164-top-content2-icon {
-  width: 7px;
-  height: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(0deg);
-  transition: transform 0.3s;
-}
-
-html body .cre-t-164-top-content2-icon svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-html body .cre-t-164-top-content1 .cre-t-164-top-content2-icon {
-  display: none;
-}
-
-html body .cre-t-164-review-dropdown {
-  display: none;
-  position: absolute;
-  right: 0px;
-  top: calc(100% + 18px);
-  z-index: 1000;
-  width: 287px;
-}
-
-html body .cre-t-164-dropdown-wrapper {
-  border-radius: 4px;
-  position: relative;
-}
-
-html body .cre-t-164-dropdown-top {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-html body .cre-t-164-dropdown-content {
-  width: 100%;
-  padding: 16px 24px;
-}
-
-html body .cre-t-164-dropdown-content1 {
-  background: #441771;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-html body .cre-t-164-dropdown-content2 {
-  background: #551e8e;
-}
-
-html body .cre-t-164-dropdown-content3 {
-  background: #441771;
-}
-
-html body .cre-t-164-dropdown-info1 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 7px;
-  margin-bottom: 4px;
-}
-
-html body .cre-t-164-dropdown-info1-icon {
-  width: 14px;
-  min-width: 14px;
-  height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-html body .cre-t-164-dropdown-info1-icon svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-html body .cre-t-164-dropdown-info1-text {
-  color: #fff;
-  font-family: inherit;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 17.6px;
-}
-
-html body .cre-t-164-dropdown-info2 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 2px;
-}
-
-html body .cre-t-164-dropdown-info2-bar {
-  display: block;
-  height: 6px;
-  border-radius: 4px;
-  background: #fff;
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-}
-
-html body .cre-t-164-dropdown-bar {
-  display: block;
-  height: 6px;
-  border-radius: 4px;
-  animation-name: animation-cret164;
-  animation-duration: 0.6s;
-  animation-timing-function: cubic-bezier(0.66, 0.01, 0.41, -0.1);
-  animation-delay: 0s;
-}
-
-@keyframes animation-cret164 {
-  0% {
-    width: 0px;
+@media (min-width: 769px) {
+  html body.tt-williams-partner-lp [aria-label="Thumbtack Home"]:after {
+    background-image: url(https://cdn.optimizely.com/img/20611073899/4a51537b87884762beaae75ad401b092.svg);
+    height: 43px;
+    width: 160px;
   }
 }
 
-html body .cre-t-164-dropdown-info2-score {
-  color: #fff;
-  font-family: inherit;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 17.6px;
-}
+@media (max-width: 768px) {
 
-html body .cre-t-164-dropdown-info3 {
-  color: #fff;
-  font-family: inherit;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 14px;
-}
-
-html body .cre-t-164-dropdown-content1 .cre-t-164-dropdown-bar {
-  background: #eea650;
-}
-
-html body .cre-t-164-dropdown-content2 .cre-t-164-dropdown-bar {
-  background: #5dc087;
-}
-
-html body .cre-t-164-dropdown-content3 .cre-t-164-dropdown-bar {
-  background: #5aacf5;
-}
-
-html body .cre-t-164-dropdown-bottom {
-  padding: 10px 24px 12px 24px;
-  background: #551e8e;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  color: #fff;
-  font-family: inherit;
-  font-size: 9.5px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-}
-
-html body .cre-t-164-dropdown-bottom span {
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  -webkit-text-decoration-skip: ink;
-  text-decoration-skip-ink: auto;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-  cursor: pointer;
-}
-
-html body .cre-t-164-cross {
-  width: 13.308px;
-  min-width: 13.308px;
-  height: 13.308px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-top: 10px;
-  padding-right: 11.69px;
-  box-sizing: content-box;
-}
-
-html body .cre-t-164-cross svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-html body .cre-t-164-top-content1-mobile .cre-t-164-classification {
-  display: none;
-}
-
-html body .cre-t-164-container-parent {
-  margin-bottom: 25px;
-  margin-top: 25px;
-}
-
-html body .cre-t-164-dropdown-content1 .cre-t-164-dropdown-info1 {
-  align-items: flex-start;
-}
-
-html body .cre-t-164-dropdown-content3 .cre-t-164-dropdown-info1 {
-  align-items: flex-end;
-}
-
-html body .cre-t-164-top-content1-text {
-  color: inherit;
-  text-align: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-}
-
-@media (min-width: 992px) {
-  html body .cre-t-164-reviews:hover .cre-t-164-review-dropdown {
-    display: block;
-  }
-
-  html body .cre-t-164-reviews:hover .cre-t-164-top-content2-icon {
-    transform: rotate(180deg);
-  }
-
-  html body .cre-t-164-reviews:hover .cre-t-164-review-top::after {
-    content: "";
-    width: 100%;
-    height: 20px;
-    display: block;
-    background: #ffffff;
-    position: absolute;
-    top: calc(100% - 1px);
-  }
-}
-
-@media (max-width: 991px) {
-  html body .cre-t-164-dropdown-active .cre-t-164-review-dropdown {
-    display: block;
-  }
-
-  html body .cre-t-164-dropdown-active .cre-t-164-top-content2-icon {
-    transform: rotate(180deg);
-  }
-
-  html body .cre-t-164-cross {
-    display: flex;
-  }
-}
-
-@media (max-width: 767px) {
-  html body .cre-t-164-top-content1 .cre-t-164-top-content2-icon {
-    display: flex;
-    width: 6px;
-    height: 6px;
-    position: relative;
-    top: 0px;
-  }
-
-  html body .cre-t-164-top-content1-text .cre-t-164-classification {
-    top: 0;
-  }
-
-  html body .cre-t-164-top-content1-mobile {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-  }
-
-  html body .cre-t-164-top-content1-mobile .cre-t-164-classification {
-    color: #000;
-    font-family: inherit;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 21px;
-    display: flex;
-    align-items: center;
-  }
-
-  html body .cre-t-164-total {
-    top: 0;
-  }
-
-  html body .cre-t-164-container-parent {
-    margin-bottom: 18px;
-    margin-top: 18px;
-    gap: 7px;
-  }
-
-  html body .cre-t-164-review-dropdown {
-    top: calc(100% + 11px);
-  }
-
-  html body .cre-t-164-star {
-    width: 14px;
-    height: 14px;
-    top: 2px;
-  }
-
-  html body .cre-t-164-top-content1 {
-    font-size: 13px;
-  }
-
-  html body .cre-t-164-top-content2-text {
-    font-size: 8px;
-    line-height: 11px;
-  }
-
-  html body .cre-t-164-review-top {
-    gap: 0;
-  }
-}
-
-@media (max-width: 370px) {
-  html body .cre-t-164-star {
-    width: 12px;
-    height: 12px;
-    top: 2px;
-  }
-
-  html body .cre-t-164-top-content1 {
-    font-size: 11px;
-  }
-
-  html body .cre-t-164-top-content2-text {
-    font-size: 8px;
-    line-height: 11px;
-  }
-}
-
-@media (max-width: 360px) {
-  html body .cre-t-164-review-dropdown {
-    right: -20px;
-    width: 280px;
-  }
-}
-
-@media (max-width: 319px) {
-  html body .cre-t-164-review-dropdown {
-    width: 240px;
-  }
-
-  html body .cre-t-164-dropdown-info3 {
-    font-size: 9px;
-  }
-
-  html body .cre-t-164-dropdown-bottom {
-    font-size: 7.5px;
-  }
-}
-
-html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-reviews:hover .cre-t-164-review-dropdown {
-  display: none;
-}
-
-html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-top-content2-icon {
-  display: none;
-}
-
-html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-dropdown-active .cre-t-164-review-dropdown {
-  display: none !important;
-}
-
-html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-reviews {
-  cursor: default;
-}
-
-@media (max-width: 991px) {
-  html body .cre-t-164-dropdown-active .cre-t-164-review-dropdown {
+  /* mobile artwork already includes the Thumbtack "T" mark, so the wordmark is hidden */
+  html body.tt-williams-partner-lp [aria-label="Thumbtack Home"] [aria-label="logo"] {
     display: none !important;
   }
+
+  html body.tt-williams-partner-lp [aria-label="Thumbtack Home"]:after {
+    background-image: url(https://cdn.optimizely.com/img/20611073899/ab51350b04024adcbb65f72dbf407438.svg);
+    height: 44px;
+    width: 162px;
+  }
 }
 
-@media screen and (max-width:767px) {
-  html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-top-content2 {
-    display: none;
+/* ===========================
+   HERO
+=========================== */
+@media (min-width: 769px) {
+  html body.tt-williams-partner-lp [class*="pro-signup-hero_heroSection"] {
+    padding-top: 64px !important;
+  }
+
+  /* reference hero is ~946px wide; the redesigned native hero column is 743px */
+  html body.tt-williams-partner-lp [class*="pro-signup-hero_heroInner"] {
+    max-width: 946px !important;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  html body.tt-williams-partner-lp [class*="pro-signup-hero_heroImage"] {
+    max-width: 100% !important;
+  }
+
+  html body.tt-williams-partner-lp [class*="pro-signup-hero_heroTitle"] {
+    font-size: 48px;
+    line-height: 52px;
+  }
+}
+
+html body.tt-williams-partner-lp [class*="pro-signup-hero_heroImage"] picture {
+  display: none !important;
+}
+
+html body.tt-williams-partner-lp .section_topimage {
+  text-align: center;
+  margin: 0 auto 24px;
+  max-width: 920px;
+}
+
+html body.tt-williams-partner-lp .section_topimage img {
+  display: block;
+  width: 100%;
+  max-width: 100% !important;
+  height: auto;
+}
+
+html body.tt-williams-partner-lp [class*="pro-signup-hero_heroSubhead"] {
+  max-width: 812px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* native "Contact us: phone or let us call you." line is replaced by the partnership line */
+html body.tt-williams-partner-lp [class*="pro-signup-hero_footnote"] {
+  display: none !important;
+}
+
+html body.tt-williams-partner-lp .tt-sw-partner-line {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2f3033;
+}
+
+html body.tt-williams-partner-lp .tt-sw-partner-line a {
+  color: #009fd9;
+}
+
+html body.tt-williams-partner-lp .tt-sw-partner-line a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   SECTIONS NOT IN THE SW PAGE
+=========================== */
+html body.tt-williams-partner-lp [class*="pro-tools_section"] {
+  display: none !important;
+}
+
+/* app store badges row after the community banner */
+html body.tt-williams-partner-lp [class*="pro-community_section"]~[class*="Wrap_root"] {
+  display: none !important;
+}
+
+/* ===========================
+   COMMUNITY -> "Get tips for success on Thumbtack."
+=========================== */
+html body.tt-williams-partner-lp .tt-sw-community {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://cdn.optimizely.com/img/20611073899/3a135c5dd9be46c1b41d51263a09f126.jpg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+@media screen and (max-width: 600px) {
+  html body.tt-williams-partner-lp .tt-sw-community {
+    background-image: url(https://cdn.optimizely.com/img/20611073899/42223a5e62e14813907a914f380f7afd.png) !important;
+  }
+}
+
+/* ===========================
+   DISCLAIMER + FAQ (after community)
+=========================== */
+html body.tt-williams-partner-lp .tt-sw-after-community {
+  padding: 0 16px;
+}
+
+html body.tt-williams-partner-lp .TT_updatetext {
+  max-width: 690px;
+  margin: 0 auto;
+  padding: 60px 0;
+  text-align: center;
+}
+
+html body.tt-williams-partner-lp .TT_updatetext p {
+  font-size: 12px;
+  line-height: 20px;
+  color: #2f3033;
+}
+
+html body.tt-williams-partner-lp .TT_updatetext a {
+  color: #009fd9;
+}
+
+html body.tt-williams-partner-lp .testimonial-line {
+  border-bottom: 1px solid #d3d4d5;
+  max-width: 978px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+html body.tt-williams-partner-lp .faq-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px 40px;
+}
+
+html body.tt-williams-partner-lp .faq-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.3px;
+  margin-bottom: 48px;
+  color: #1a1a1a;
+}
+
+html body.tt-williams-partner-lp .faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+html body.tt-williams-partner-lp .faq-item {
+  padding: 28px 0;
+  text-align: left;
+}
+
+html body.tt-williams-partner-lp .faq-question {
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+html body.tt-williams-partner-lp .faq-answer {
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a1a1a;
+}
+
+html body.tt-williams-partner-lp .faq-answer strong {
+  font-weight: 700;
+}
+
+/* Milestone table */
+html body.tt-williams-partner-lp .milestone-table-wrapper {
+  margin-top: 18px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+html body.tt-williams-partner-lp .milestone-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+html body.tt-williams-partner-lp .milestone-table thead tr {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+html body.tt-williams-partner-lp .milestone-table th,
+html body.tt-williams-partner-lp .milestone-table td {
+  padding: 16px 24px;
+  font-size: 15px;
+  color: #1a1a1a;
+  text-align: left;
+  background: #ffffff;
+}
+
+html body.tt-williams-partner-lp .milestone-table th {
+  font-weight: 700;
+}
+
+html body.tt-williams-partner-lp .milestone-table td {
+  font-weight: 400;
+}
+
+html body.tt-williams-partner-lp .milestone-table tbody tr+tr td {
+  border-top: 1px solid #d9d9d9;
+}
+
+
+/* Desktop new changes */
+
+
+html body.tt-williams-partner-lp [class*="how-tt-different_comparisonTable"] [class*="how-tt-different"] [class*="Type_text3"] {
+  font-size: 18px !important;
+}
+
+html body.tt-williams-partner-lp [class*="pro-results_section"] [class*="section-heading_sectionHeading"] {
+  font-size: 38px;
+}
+
+html body.tt-williams-partner-lp [data-testid="testimonial-quote"] {
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  text-align: center;
+
+}
+
+html body.tt-williams-partner-lp [data-testid="testimonial-quote"]+[class*="Type_text3"] {
+  font-weight: bolder;
+  color: black !important;
+  font-size: 15px !important;
+  text-align: center;
+}
+
+html body.tt-williams-partner-lp [class*="earnings-calculator_section"] [class*="earnings-calculator_intro"] {
+  max-width: 634px;
+}
+
+html body.tt-williams-partner-lp [class*="pro-community_section"] div>div {
+  max-width: 634px !important;
+}
+
+html body.tt-williams-partner-lp div[class*="pro-results_card"] {
+  padding: 24px 0;
+}
+
+html body.tt-williams-partner-lp [class*="pro-results_card"] img {
+  width: 87%;
+}
+
+
+@media screen and (max-width: 768px) {
+  html body.tt-williams-partner-lp .faq-section {
+    padding: 40px 0 24px;
+  }
+
+  html body.tt-williams-partner-lp .faq-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  html body.tt-williams-partner-lp .faq-item {
+    padding: 20px 0;
+  }
+
+  html body.tt-williams-partner-lp .milestone-table th,
+  html body.tt-williams-partner-lp .milestone-table td {
+    padding: 12px 16px;
+  }
+
+  html body.tt-williams-partner-lp .TT_updatetext {
+    padding: 40px 0;
+  }
+
+  /* new changes for mobile */
+
+  html body.tt-williams-partner-lp [class*="how-tt-works_section"] [class*="how-tt-works_inner"] [class*="Type_title1"] {
+    text-align: center !important;
+  }
+
+  html body.tt-williams-partner-lp [class*="how-tt-different_comparisonTable"] [class*="how-tt-different"] [class*="Type_text3"] {
+    font-size: 14px !important;
+  }
+
+  html body.tt-williams-partner-lp [class*="pro-results_section"] [class*="section-heading_sectionHeading"] {
+    font-size: 32px;
+    font-weight: 563 !important;
+  }
+
+  html body.tt-williams-partner-lp [class*="pro-results_card"] img {
+    width: 100%;
+  }
+
+  html body.tt-williams-partner-lp div[class*="pro-results_card"] {
+    padding: 24px;
+  }
+
+  html body.tt-williams-partner-lp [data-testid="testimonial-quote"] {
+    font-size: 22px !important;
+  }
+
+  html body.tt-williams-partner-lp [data-testid="testimonial-quote"]+[class*="Type_text3"] {
+    font-size: 20px !important;
   }
 }

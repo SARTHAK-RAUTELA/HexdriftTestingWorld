@@ -47,3 +47,8 @@
 | SA Roofing landing page sections | [sa-roofing-landing-section.md](sa-roofing-landing-section.md) |
 | Pro_landing_page_phase_1 — hero header "Find more customers" | [pro-landing-page-phase1-hero-header.md](pro-landing-page-phase1-hero-header.md) |
 | Antonio Roofing — vB.js/vB.css code review (static, 2026-06-30) | [antonio-roofing-vb-code-review.md](antonio-roofing-vb-code-review.md) |
+| Sherwin Williams Partner LP — rebuild after /pro redesign (2026-09-25) | [sherwin-williams-partner-lp.md](sherwin-williams-partner-lp.md) |
+
+> **2026-09 /pro redesign:** the `hero_heroInnerOffsetRight` / `hero_heroInnerOffsetLeft` / `see-how-different_*`
+> notes above describe the OLD page. /pro now uses `pro-signup-hero_*` (a single H1, no separate mobile H1) plus native
+> `how-tt-works_*`, `how-tt-different_*`, `pro-tools_*`, `pro-results_*`, `earnings-calculator_*`, `pro-community_*`.

@@ -1,7 +1,10 @@
 // WIN276 — WinkBeds "Other - Targeted Offer V2" (Convert exp 100350628)
 // Control = WIN257 modal for Cohort 1 only; Variation = Cohort 1 + Cohort 2.
 // Cohort 1 = clicked a[href="/checkout"] (cookie cre_276_checkout_visited) + 1 eligible WinkBed in cart.
-// Cohort 2 = eligible WinkBed added to cart (ls cre276_cart_added_ts), no checkout, 1h+ inactive, returns.
+// Cohort 2 = eligible WinkBed added to cart (cookie cre276_cart_added_ts), never reached checkout
+// (cookie cre276_checkout_reached_ever), left 1h+ ago (cookie cre276_left_at_ts, written on tab-hidden/pagehide).
+// Round 2 (2026-09-29 PM): state moved from localStorage to cookies after the client's fix.
+// Round 3 (2026-09-30): Variation code re-shipped (vB.js/vB.css == live bundle _s_t 2026-09-30 04:47Z); results-r3.jsonl.
 // State is seeded directly so each rule can be tested in isolation. Real carts on production, fresh contexts.
 const { test, expect } = require('@playwright/test');
 const fs = require('fs');
@@ -16,7 +19,7 @@ const COOLED_TWIN = 47108603052219;      // Luxury Firm - Twin with Frost Coolin
 const TWO_HOURS = 2 * 60 * 60 * 1000;
 // Kept outside test-results/, which Playwright wipes at the start of every run.
 const OUT = path.join(__dirname, '..', 'qa-knowledge-base', 'winkbeds', 'win276-screenshots');
-const RESULTS = path.join(OUT, 'results.jsonl');
+const RESULTS = path.join(OUT, process.env.WIN276_RESULTS || 'results-r3.jsonl');
 
 const isWebKit = (tp) => /Safari/.test(tp.project.name);
 
@@ -38,19 +41,26 @@ async function go(page, url, tp) {
   return Date.now();
 }
 
-// Seed origin state on a neutral page, then load the force URL fresh.
-async function seed(page, tp, { cart = null, checkoutCookie = false, cartAddedTs = null, lastActiveAgo = null }) {
+// Seed origin state. The site-wide pagehide handler rewrites cre276_left_at_ts on every unload, so
+// cookies are written AFTER leaving the seed page (= user closed the tab and came back later).
+async function seed(page, tp, { cart = null, checkoutCookie = false, reachedEver = false, cartAddedTs = null, leftAgo = null }) {
   await go(page, SEED_URL, tp);
   await page.waitForTimeout(2500);
-  await page.evaluate(async ({ cart, checkoutCookie, cartAddedTs, lastActiveAgo }) => {
+  await page.evaluate(async (cart) => {
     await fetch('/cart/clear.js', { method: 'POST' });
     if (cart) await fetch('/cart/update.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ updates: { [cart]: 1 } }) });
-    if (checkoutCookie) document.cookie = 'cre_276_checkout_visited=true; path=/;';
-    else document.cookie = 'cre_276_checkout_visited=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    localStorage.removeItem('cre276_cart_added_ts');
-    if (cartAddedTs !== null) localStorage.setItem('cre276_cart_added_ts', String(Date.now() - cartAddedTs));
-    if (lastActiveAgo !== null) localStorage.setItem('cre276_last_active_ts', String(Date.now() - lastActiveAgo));
-  }, { cart, checkoutCookie, cartAddedTs, lastActiveAgo });
+  }, cart);
+  await page.goto('about:blank');
+  const ctx = page.context();
+  const names = ['cre_276_checkout_visited', 'cre276_checkout_reached_ever', 'cre276_cart_added_ts', 'cre276_left_at_ts'];
+  await ctx.clearCookies({ name: new RegExp('^(' + names.join('|') + ')$') });
+  const ck = (name, value, session) => ({ name, value, domain: 'www.winkbeds.com', path: '/', ...(session ? {} : { expires: Math.floor(Date.now() / 1000) + 30 * 86400 }) });
+  const add = [];
+  if (checkoutCookie) add.push(ck('cre_276_checkout_visited', 'true', true));
+  if (reachedEver || checkoutCookie) add.push(ck('cre276_checkout_reached_ever', 'true'));
+  if (cartAddedTs !== null) add.push(ck('cre276_cart_added_ts', String(Date.now() - cartAddedTs)));
+  if (leftAgo !== null) add.push(ck('cre276_left_at_ts', String(Date.now() - leftAgo)));
+  if (add.length) await ctx.addCookies(add);
 }
 
 async function state(page) {
@@ -69,8 +79,10 @@ async function state(page) {
 }
 
 // Poll up to `ms` for the modal; returns seconds from navigation start to modal-open (or null).
+// WebKit loads this site 2-3x slower (Cohort 2 lands at 26-30s on iPhone), so its window is doubled.
+const isWebKitPage = (page) => page.context().browser().browserType().name() === 'webkit';
 async function waitModal(page, t0, ms) {
-  const end = Date.now() + ms;
+  const end = Date.now() + (isWebKitPage(page) ? ms * 2 : ms);
   while (Date.now() < end) {
     const at = await page.evaluate(() => window.__qaModalAt || null).catch(() => null);
     if (at) return +(at / 1000).toFixed(1);
@@ -122,7 +134,7 @@ test('TC-03 Cohort 1 opens at the same delay in both arms', async ({}, tp) => {
 
 // ── B. Cohort 2 (cart returner) ───────────────────────────────────────────────
 test('TC-04 Cohort 2 idle return → Variation shows modal ~5s after load', async ({ page }, tp) => {
-  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, lastActiveAgo: TWO_HOURS });
+  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, leftAgo: TWO_HOURS });
   const t0 = await go(page, forceUrl('variation'), tp);
   const secs = await waitModal(page, t0, 25000);
   await page.waitForTimeout(1200);
@@ -135,7 +147,7 @@ test('TC-04 Cohort 2 idle return → Variation shows modal ~5s after load', asyn
 });
 
 test('TC-05 Cohort 2 in Control → bucketed into experiment, no modal', async ({ page }, tp) => {
-  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, lastActiveAgo: TWO_HOURS });
+  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, leftAgo: TWO_HOURS });
   const t0 = await go(page, forceUrl('control'), tp);
   const secs = await waitModal(page, t0, 15000);
   const s = await state(page);
@@ -146,7 +158,7 @@ test('TC-05 Cohort 2 in Control → bucketed into experiment, no modal', async (
 });
 
 test('TC-06 Cohort 2 who scrolls/moves mouse right after landing still gets the modal', async ({ page }, tp) => {
-  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, lastActiveAgo: TWO_HOURS });
+  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, leftAgo: TWO_HOURS });
   await page.goto(forceUrl('variation'), { waitUntil: 'commit', timeout: 90000 });
   const t0 = Date.now();
   // Interact 1.5s after navigation start, before any 3s/5s timer has run.
@@ -161,14 +173,14 @@ test('TC-06 Cohort 2 who scrolls/moves mouse right after landing still gets the 
   }
   const secs = await waitModal(page, t0, 20000);
   const s = await state(page);
-  const lastActiveAge = await page.evaluate(() => Date.now() - +localStorage.getItem('cre276_last_active_ts'));
+  const leftAge = await page.evaluate(() => Date.now() - +(document.cookie.match(/cre276_left_at_ts=([0-9]+)/) || [])[1]);
   const file = await shot(page, tp, 'c2-variation-interacted');
-  record(tp, 'C2-variation-interacted', { secs, lastActiveAge, ...s, file, logs: page.__logs });
+  record(tp, 'C2-variation-interacted', { secs, leftAge, ...s, file, logs: page.__logs });
   expect(secs, 'user who interacts on return should still count as a new session').not.toBeNull();
 });
 
 test('TC-07 Cohort 2 still in original session (active <1h) → no modal', async ({ page }, tp) => {
-  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: 10 * 60 * 1000, lastActiveAgo: 10 * 60 * 1000 });
+  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: 10 * 60 * 1000, leftAgo: 10 * 60 * 1000 });
   const t0 = await go(page, forceUrl('variation'), tp);
   const secs = await waitModal(page, t0, 15000);
   const s = await state(page);
@@ -178,7 +190,7 @@ test('TC-07 Cohort 2 still in original session (active <1h) → no modal', async
 });
 
 test('TC-08 Cohort 2 but mattress already has Frost Cooling Cover → no modal', async ({ page }, tp) => {
-  await seed(page, tp, { cart: COOLED_TWIN, cartAddedTs: TWO_HOURS, lastActiveAgo: TWO_HOURS });
+  await seed(page, tp, { cart: COOLED_TWIN, cartAddedTs: TWO_HOURS, leftAgo: TWO_HOURS });
   const t0 = await go(page, forceUrl('variation'), tp);
   const secs = await waitModal(page, t0, 15000);
   const s = await state(page);
@@ -187,7 +199,7 @@ test('TC-08 Cohort 2 but mattress already has Frost Cooling Cover → no modal',
 });
 
 test('TC-09 Cohort 2 flag set but cart now empty → no modal', async ({ page }, tp) => {
-  await seed(page, tp, { cart: null, cartAddedTs: TWO_HOURS, lastActiveAgo: TWO_HOURS });
+  await seed(page, tp, { cart: null, cartAddedTs: TWO_HOURS, leftAgo: TWO_HOURS });
   const t0 = await go(page, forceUrl('variation'), tp);
   const secs = await waitModal(page, t0, 15000);
   const s = await state(page);
@@ -216,7 +228,7 @@ test('TC-11 Real Buy Box "Add to Cart" records the Cohort 2 cart-added flag', as
   await page.evaluate(() => document.querySelector('.order-form__add.button').click());
   await page.waitForTimeout(8000);
   const r = await page.evaluate(async () => ({
-    ts: localStorage.getItem('cre276_cart_added_ts'),
+    ts: (document.cookie.match(/cre276_cart_added_ts=([0-9]+)/) || [])[1] || null,
     cart: (await (await fetch('/cart.js')).json()).items.map((i) => `${i.title} x${i.quantity}`),
   }));
   const file = await shot(page, tp, 'real-atc');
@@ -254,7 +266,7 @@ test('TC-12 Modal copy, close icon and overlay dismiss', async ({ page }, tp) =>
 });
 
 test('TC-13 CTA swaps mattress to Frost Cooling Cover and goes to discounted checkout', async ({ page }, tp) => {
-  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, lastActiveAgo: TWO_HOURS });
+  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, leftAgo: TWO_HOURS });
   const t0 = await go(page, forceUrl('variation'), tp);
   expect(await waitModal(page, t0, 25000), 'Cohort 2 modal needed for CTA test').not.toBeNull();
   await page.waitForTimeout(800);
@@ -287,15 +299,49 @@ test('TC-14 After Variation bucketing, deployment helpers still load on next pag
 
 // ── F. Frequency: Cohort 2 modal after it was already shown once ───────────────
 test('TC-15 Cohort 2 modal is not re-shown on every later return session', async ({ page }, tp) => {
-  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, lastActiveAgo: TWO_HOURS });
+  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: TWO_HOURS, leftAgo: TWO_HOURS });
   let t0 = await go(page, forceUrl('variation'), tp);
-  const first = await waitModal(page, t0, 25000);
+  const first = await waitModal(page, t0, 40000);
   // Simulate the user leaving again for 2h and coming back.
-  await page.evaluate((ago) => localStorage.setItem('cre276_last_active_ts', String(Date.now() - ago)), TWO_HOURS);
+  await page.goto('about:blank');
+  await page.context().addCookies([{ name: 'cre276_left_at_ts', value: String(Date.now() - TWO_HOURS), domain: 'www.winkbeds.com', path: '/', expires: Math.floor(Date.now() / 1000) + 86400 }]);
   t0 = await go(page, forceUrl('variation'), tp);
-  const second = await waitModal(page, t0, 25000);
-  const ts = await page.evaluate(() => localStorage.getItem('cre276_cart_added_ts'));
+  const second = await waitModal(page, t0, 40000);
+  const ts = await page.evaluate(() => (document.cookie.match(/cre276_cart_added_ts=([0-9]+)/) || [])[1]);
   record(tp, 'C2-repeat', { first, second, cartAddedTsStillSet: !!ts });
   expect(first).not.toBeNull();
   expect(second, 'modal re-appeared on the 2nd return session (no frequency cap)').toBeNull();
+});
+
+// ── G. Round 2 additions ───────────────────────────────────────────────────────
+test('TC-16 Cohort 2 who ever reached checkout is excluded (Variation)', async ({ page }, tp) => {
+  await seed(page, tp, { cart: PLAIN_TWIN, reachedEver: true, cartAddedTs: TWO_HOURS, leftAgo: TWO_HOURS });
+  const t0 = await go(page, forceUrl('variation'), tp);
+  const secs = await waitModal(page, t0, 15000);
+  const s = await state(page);
+  record(tp, 'C2-reached-checkout-ever', { secs, ...s });
+  expect(secs, 'checkout visitor must stay out of Cohort 2').toBeNull();
+  expect(s.activated).toBe(false);
+});
+
+test('TC-17 Tab hidden 1h+ then refocused (no reload) → Variation shows modal', async ({ page }, tp) => {
+  await seed(page, tp, { cart: PLAIN_TWIN, cartAddedTs: 10 * 60 * 1000, leftAgo: 10 * 60 * 1000 });
+  const t0 = await go(page, forceUrl('variation'), tp);
+  expect(await waitModal(page, t0, 10000), 'same session: no modal before the tab is backgrounded').toBeNull();
+  // The tab was hidden 2h ago (what the visibilitychange handler would have recorded), now it becomes visible.
+  // Written with the same attributes as seed() so there is exactly one cookie of this name.
+  await page.context().addCookies([{ name: 'cre276_left_at_ts', value: String(Date.now() - TWO_HOURS), domain: 'www.winkbeds.com', path: '/', expires: Math.floor(Date.now() / 1000) + 86400 }]);
+  const copies = await page.evaluate(() => document.cookie.split('; ').filter((c) => c.startsWith('cre276_left_at_ts=')).length);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', { configurable: true, get: () => false });
+    Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'visible' });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  const t1 = Date.now();
+  let at = null;
+  while (Date.now() - t1 < (isWebKitPage(page) ? 40000 : 20000)) { if (await page.evaluate(() => document.body.classList.contains('cre-t-276-modal-open'))) { at = +((Date.now() - t1) / 1000).toFixed(1); break; } await page.waitForTimeout(250); }
+  const s = await state(page);
+  await shot(page, tp, 'c2-tab-refocus');
+  record(tp, 'C2-tab-refocus', { secsAfterRefocus: at, leftAtCopies: copies, ...s });
+  expect(at, 'modal after refocus').not.toBeNull();
 });

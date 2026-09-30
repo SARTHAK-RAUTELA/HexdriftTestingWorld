@@ -27,3 +27,28 @@ Spec: `testing/win276-targeted-offer-v2.spec.js` (15 cases, seeds cookie/localSt
 - On mobile DOMContentLoaded fires AFTER the modal opens; measure from navigation start (init-script poll on
   `performance.now()`), not from goto() returning. Early mobile passes of TC-03/TC-06 were measurement artifacts.
 - Running 3 projects back-to-back got killed for low memory; run one project per invocation.
+
+## ROUND 2 (2026-09-29 PM) — re-test after client fix (Convert bundle _s_t 2026-09-29 10:03:37Z)
+Client did not send files; the fixed code was re-extracted from the live Convert bundle and diffed.
+State moved to cookies: `cre276_cart_added_ts`, `cre276_left_at_ts` (written on visibilitychange-hidden AND
+every pagehide), `cre276_checkout_reached_ever` (30d). Spec updated (17 cases, results in `results-r2.jsonl`).
+- FIXED: BUG-01 (matches /cart/update.js), BUG-02 (leave-timestamp model), BUG-05 (refocus re-check),
+  BUG-08 (persistent checkout cookie), BUG-03 Cohort 1 half, BUG-09 in Variation.
+- OPEN: BUG-03 Cohort 2 still 12.5–26s (3s activation + 5s variation + load), BUG-04 repeat every session,
+  BUG-06 WIN257 deploy 100350512 still active, BUG-07, BUG-09 in Control (100334268). NEW-01 low: visible idle tab
+  not counted as new session (definition changed from inactivity to departure) — confirm with client.
+- Results: Chrome 15/17, Mobile Chrome 15/17, Safari Desktop 14/17, Mobile Safari 14/17 (TC-03 on WebKit = load noise,
+  Control arm was slower).
+Harness gotchas: seed must set cookies AFTER leaving the seed page (pagehide overwrites left_at); never write a cookie
+via document.cookie that was set via context.addCookies (duplicate names -> site getCookie returns undefined);
+Bash heredoc/sed stripped `\d` in regexes — use `[0-9]`; WebKit needs 2x modal wait windows (Cohort 2 ~26-30s on iPhone);
+site blocked this IP (403 pages / 429 cart POST) after ~4 full runs — discard and re-run after ~15-30 min.
+
+## ROUND 3 (2026-09-30) — PARTIAL, run killed (low memory) mid Safari Desktop
+Local `local_testing/Local2/variation/vB.js` + `vB.css` == live Convert Variation (bundle _s_t 2026-09-30 04:47Z, diffed clean).
+Change vs R2: Variation shows Cohort 1 instantly; Cohort 2 still `setTimeout(5000)` AFTER activation's 3s. Results: `results-r3.jsonl`;
+R2 screenshots copied to `win276-screenshots/round2/`. TC-15 waits widened to 40s (site slow today).
+- Chrome Desktop 15/17 (after re-running TC-01..03/15): FAIL TC-04 (17.3s, BUG-03), TC-15 (repeat at 10.3s, BUG-04).
+- Mobile Chrome: TC-04 19.4s fail, TC-15 repeat fail; TC-02 no activation (seed/load noise, re-run); rest pass.
+- Safari Desktop: TC-01..12 ran; TC-04 24s fail; TC-03 12.9 vs 28.5 (WebKit noise?); TC-11 flag null in 8s (re-run). TC-13..17 not run.
+- Mobile Safari: not run. Still open from bundle: BUG-06 (WIN257 100350512 active), BUG-07, BUG-09 (Control goal 100334268).

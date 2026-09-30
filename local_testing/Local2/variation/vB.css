@@ -1,357 +1,324 @@
-/* ===========================
-   HEADER: Thumbtack + Sherwin-Williams co-brand
-=========================== */
-html body.tt-williams-partner-lp [aria-label="Thumbtack Home"]:after {
-  content: " ";
-  display: inline-block;
-  background-size: cover;
-  background-repeat: no-repeat;
+html body.cre-t-276-modal-open main.main,
+html body.cre-t-276-modal-open header.site-header,
+html body.cre-t-276-modal-open .desktop-promo-container {
+    filter: blur(5px);
 }
 
-@media (min-width: 769px) {
-  html body.tt-williams-partner-lp [aria-label="Thumbtack Home"]:after {
-    background-image: url(https://cdn.optimizely.com/img/20611073899/4a51537b87884762beaae75ad401b092.svg);
-    height: 43px;
-    width: 160px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  /* mobile artwork already includes the Thumbtack "T" mark, so the wordmark is hidden */
-  html body.tt-williams-partner-lp [aria-label="Thumbtack Home"] [aria-label="logo"] {
-    display: none !important;
-  }
-
-  html body.tt-williams-partner-lp [aria-label="Thumbtack Home"]:after {
-    background-image: url(https://cdn.optimizely.com/img/20611073899/ab51350b04024adcbb65f72dbf407438.svg);
-    height: 44px;
-    width: 162px;
-  }
-}
-
-/* ===========================
-   HERO
-=========================== */
-@media (min-width: 769px) {
-  html body.tt-williams-partner-lp [class*="pro-signup-hero_heroSection"] {
-    padding-top: 64px !important;
-  }
-
-  /* reference hero is ~946px wide; the redesigned native hero column is 743px */
-  html body.tt-williams-partner-lp [class*="pro-signup-hero_heroInner"] {
-    max-width: 946px !important;
+html body .cre-t-276-modal-overlay {
+    position: fixed;
+    top: 0 !important;
+    left: 0;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-  }
-
-  html body.tt-williams-partner-lp [class*="pro-signup-hero_heroImage"] {
-    max-width: 100% !important;
-  }
-
-  html body.tt-williams-partner-lp [class*="pro-signup-hero_heroTitle"] {
-    font-size: 48px;
-    line-height: 52px;
-  }
+    height: 100%;
+    /* background-color: rgb(0 0 0 / 60%); */
+    background: rgba(133, 130, 130, 0.6);
+    z-index: 2147483649 !important;
 }
 
-html body.tt-williams-partner-lp [class*="pro-signup-hero_heroImage"] picture {
-  display: none !important;
+html body .cre-t-276-modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    z-index: 2147483650 !important;
+    text-align: center;
+    max-width: 674px;
+    width: calc(100% - 30px);
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-html body.tt-williams-partner-lp .section_topimage {
-  text-align: center;
-  margin: 0 auto 24px;
-  max-width: 920px;
+html body.cre-t-276-modal-open .cre-t-276-modal-overlay {
+    display: block !important;
 }
 
-html body.tt-williams-partner-lp .section_topimage img {
-  display: block;
-  width: 100%;
-  max-width: 100% !important;
-  height: auto;
+html body.cre-t-276-modal-open .cre-t-276-modal-container {
+    display: block !important;
 }
 
-html body.tt-williams-partner-lp [class*="pro-signup-hero_heroSubhead"] {
-  max-width: 812px;
-  margin-left: auto;
-  margin-right: auto;
+html body .cre-t-276-modal-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 72px 25px 82px;
+    position: relative;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #e8f1f5 0%, #eef5f7 50%, #f3f7f8 100%);
+    box-shadow:
+        0 20px 24px -4px rgba(16, 24, 40, 0.08),
+        0 8px 8px -4px rgba(16, 24, 40, 0.03);
 }
 
-/* native "Contact us: phone or let us call you." line is replaced by the partnership line */
-html body.tt-williams-partner-lp [class*="pro-signup-hero_footnote"] {
-  display: none !important;
+html body .cre-t-276-modal-close {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 25px;
+    top: 24px;
+    cursor: pointer;
 }
 
-html body.tt-williams-partner-lp .tt-sw-partner-line {
-  text-align: center;
-  margin-top: 16px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #2f3033;
-}
-
-html body.tt-williams-partner-lp .tt-sw-partner-line a {
-  color: #009fd9;
-}
-
-html body.tt-williams-partner-lp .tt-sw-partner-line a:hover {
-  text-decoration: underline;
-}
-
-/* ===========================
-   SECTIONS NOT IN THE SW PAGE
-=========================== */
-html body.tt-williams-partner-lp [class*="pro-tools_section"] {
-  display: none !important;
-}
-
-/* app store badges row after the community banner */
-html body.tt-williams-partner-lp [class*="pro-community_section"]~[class*="Wrap_root"] {
-  display: none !important;
-}
-
-/* ===========================
-   COMMUNITY -> "Get tips for success on Thumbtack."
-=========================== */
-html body.tt-williams-partner-lp .tt-sw-community {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://cdn.optimizely.com/img/20611073899/3a135c5dd9be46c1b41d51263a09f126.jpg) !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
-
-@media screen and (max-width: 600px) {
-  html body.tt-williams-partner-lp .tt-sw-community {
-    background-image: url(https://cdn.optimizely.com/img/20611073899/42223a5e62e14813907a914f380f7afd.png) !important;
-  }
-}
-
-/* ===========================
-   DISCLAIMER + FAQ (after community)
-=========================== */
-html body.tt-williams-partner-lp .tt-sw-after-community {
-  padding: 0 16px;
-}
-
-html body.tt-williams-partner-lp .TT_updatetext {
-  max-width: 690px;
-  margin: 0 auto;
-  padding: 60px 0;
-  text-align: center;
-}
-
-html body.tt-williams-partner-lp .TT_updatetext p {
-  font-size: 12px;
-  line-height: 20px;
-  color: #2f3033;
-}
-
-html body.tt-williams-partner-lp .TT_updatetext a {
-  color: #009fd9;
-}
-
-html body.tt-williams-partner-lp .testimonial-line {
-  border-bottom: 1px solid #d3d4d5;
-  max-width: 978px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-html body.tt-williams-partner-lp .faq-section {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 40px 40px;
-}
-
-html body.tt-williams-partner-lp .faq-title {
-  font-size: 36px;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: -0.3px;
-  margin-bottom: 48px;
-  color: #1a1a1a;
-}
-
-html body.tt-williams-partner-lp .faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-html body.tt-williams-partner-lp .faq-item {
-  padding: 28px 0;
-  text-align: left;
-}
-
-html body.tt-williams-partner-lp .faq-question {
-  font-size: 15.5px;
-  font-weight: 700;
-  line-height: 1.4;
-  color: #1a1a1a;
-  margin-bottom: 8px;
-}
-
-html body.tt-williams-partner-lp .faq-answer {
-  font-size: 15.5px;
-  font-weight: 400;
-  line-height: 1.65;
-  color: #1a1a1a;
-}
-
-html body.tt-williams-partner-lp .faq-answer strong {
-  font-weight: 700;
-}
-
-/* Milestone table */
-html body.tt-williams-partner-lp .milestone-table-wrapper {
-  margin-top: 18px;
-  border: 1px solid #d9d9d9;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-html body.tt-williams-partner-lp .milestone-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-html body.tt-williams-partner-lp .milestone-table thead tr {
-  border-bottom: 1px solid #d9d9d9;
-}
-
-html body.tt-williams-partner-lp .milestone-table th,
-html body.tt-williams-partner-lp .milestone-table td {
-  padding: 16px 24px;
-  font-size: 15px;
-  color: #1a1a1a;
-  text-align: left;
-  background: #ffffff;
-}
-
-html body.tt-williams-partner-lp .milestone-table th {
-  font-weight: 700;
-}
-
-html body.tt-williams-partner-lp .milestone-table td {
-  font-weight: 400;
-}
-
-html body.tt-williams-partner-lp .milestone-table tbody tr+tr td {
-  border-top: 1px solid #d9d9d9;
-}
-
-
-/* Desktop new changes */
-
-
-html body.tt-williams-partner-lp [class*="how-tt-different_comparisonTable"] [class*="how-tt-different"] [class*="Type_text3"] {
-  font-size: 18px !important;
-}
-
-html body.tt-williams-partner-lp [class*="pro-results_section"] [class*="section-heading_sectionHeading"] {
-  font-size: 38px;
-}
-
-html body.tt-williams-partner-lp [data-testid="testimonial-quote"] {
-  font-weight: 400 !important;
-  font-size: 16px !important;
-  text-align: center;
-
-}
-
-html body.tt-williams-partner-lp [data-testid="testimonial-quote"]+[class*="Type_text3"] {
-  font-weight: bolder;
-  color: black !important;
-  font-size: 15px !important;
-  text-align: center;
-}
-
-html body.tt-williams-partner-lp [class*="earnings-calculator_section"] [class*="earnings-calculator_intro"] {
-  max-width: 634px;
-}
-
-html body.tt-williams-partner-lp [class*="pro-community_section"] div>div {
-  max-width: 634px !important;
-}
-
-html body.tt-williams-partner-lp div[class*="pro-results_card"] {
-  padding: 24px 0;
-}
-
-html body.tt-williams-partner-lp [class*="pro-results_card"] img {
-  width: 87%;
-}
-
-/* divider between testimonials and the Growth Calculator, sits on the section boundary */
-html body.tt-williams-partner-lp [class*="earnings-calculator_section"] {
-  position: relative;
-}
-
-html body.tt-williams-partner-lp [class*="earnings-calculator_section"]::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 32px);
-  max-width: 978px;
-  border-top: 1px solid #d3d4d5;
-}
-
-
-@media screen and (max-width: 768px) {
-  html body.tt-williams-partner-lp .faq-section {
-    padding: 40px 0 24px;
-  }
-
-  html body.tt-williams-partner-lp .faq-title {
-    font-size: 28px;
-    margin-bottom: 24px;
-  }
-
-  html body.tt-williams-partner-lp .faq-item {
-    padding: 20px 0;
-  }
-
-  html body.tt-williams-partner-lp .milestone-table th,
-  html body.tt-williams-partner-lp .milestone-table td {
-    padding: 12px 16px;
-  }
-
-  html body.tt-williams-partner-lp .TT_updatetext {
-    padding: 40px 0;
-  }
-
-  /* new changes for mobile */
-
-  html body.tt-williams-partner-lp [class*="how-tt-works_section"] [class*="how-tt-works_inner"] [class*="Type_title1"] {
-    text-align: center !important;
-  }
-
-  html body.tt-williams-partner-lp [class*="how-tt-different_comparisonTable"] [class*="how-tt-different"] [class*="Type_text3"] {
-    font-size: 14px !important;
-  }
-
-  html body.tt-williams-partner-lp [class*="pro-results_section"] [class*="section-heading_sectionHeading"] {
-    font-size: 32px;
-    font-weight: 563 !important;
-  }
-
-  html body.tt-williams-partner-lp [class*="pro-results_card"] img {
+html body .cre-t-276-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 500px;
     width: 100%;
-  }
+}
 
-  html body.tt-williams-partner-lp div[class*="pro-results_card"] {
-    padding: 24px;
-  }
+html body .cre-t-276-content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
 
-  html body.tt-williams-partner-lp [data-testid="testimonial-quote"] {
-    font-size: 22px !important;
-  }
+html body .cre-t-276-eyebrow {
+    color: #000;
+    text-align: center;
+    font-family: inherit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 37px;
+}
 
-  html body.tt-williams-partner-lp [data-testid="testimonial-quote"]+[class*="Type_text3"] {
-    font-size: 20px !important;
-  }
+html body .cre-t-276-title {
+    color: #000;
+    text-align: center;
+    font-family: inherit;
+    font-size: 31px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 19px;
+    max-width: 450px;
+}
+
+html body .cre-t-276-description {
+    color: #000;
+    text-align: center;
+    font-family: inherit;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 23px;
+    max-width: 450px;
+}
+
+html body .cre-t-276-description__bold {
+    font-weight: 700;
+}
+
+html body .cre-t-276-price-line {
+    color: #000;
+    font-family: inherit;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 35px;
+}
+
+html body .cre-t-276-price-line__strike {
+    text-decoration-line: line-through;
+}
+
+html body .cre-t-276-cta {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    min-height: 61px;
+    padding: 17px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    border-radius: 8px;
+    background: #fe5f4c;
+    cursor: pointer;
+    transition:
+        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+html body .cre-t-276-cta-text {
+    color: #fff;
+    text-align: center;
+    font-family: inherit;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    transition:
+        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+html body .cre-t-276-cta:hover {
+    background: #ce4b3c;
+    color: #fff;
+}
+
+html body .cre-t-276-cta:hover .cre-t-276-cta-text {
+    color: #fff;
+}
+
+html body .cre-t-276-snow-bg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+html body .cre-t-276-snow-bg.cre-t-276-snow-top-left {
+    left: 10px;
+    top: 67px;
+    width: 28px;
+    min-width: 28px;
+    height: 30px;
+}
+
+html body .cre-t-276-snow-bg.cre-t-276-snow-top-large {
+    left: 45px;
+    top: 0;
+}
+
+html body .cre-t-276-snow-bg.cre-t-276-snow-top-right {
+    left: 140px;
+    top: 13px;
+    width: 45px;
+    min-width: 45px;
+    height: 48px;
+}
+
+html body .cre-t-276-snow-bg.cre-t-276-snow-bottom-large {
+    right: 37px;
+    bottom: 0;
+}
+
+html body .cre-t-276-snow-bg.cre-t-276-snow-bottom-right {
+    right: 11px;
+    bottom: 48px;
+    width: 28px;
+    min-width: 28px;
+    height: 30px;
+}
+
+html body .cre-t-276-snow-bg img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+@media (max-width: 767px) {
+    html body .cre-t-276-title {
+        max-width: 500px;
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    html body .cre-t-276-cta {
+        padding: 12px;
+    }
+}
+
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+
+@media (max-height: 550px) and (min-width: 768px) {
+    html body .cre-t-276-modal-container {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+@media (max-height: 490px) and (min-width: 768px) {
+    html body .cre-t-276-modal-container {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+@media (max-height: 435px) and (min-width: 768px) {
+    html body .cre-t-276-modal-container {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+}
+
+@media (max-height: 385px) and (min-width: 768px) {
+    html body .cre-t-276-modal-container {
+        transform: translate(-50%, -50%);
+        overflow: auto;
+        height: 90vh;
+    }
+}
+
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+
+@media (max-height: 640px) and (max-width: 768px) {
+    html body .cre-t-276-modal-container {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+@media (max-height: 570px) and (max-width: 768px) {
+    html body .cre-t-276-modal-container {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+@media (max-height: 510px) and (max-width: 768px) {
+    html body .cre-t-276-modal-container {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+}
+
+@media (max-height: 450px) and (max-width: 768px) {
+    html body .cre-t-276-modal-container {
+        transform: translate(-50%, -50%);
+        overflow: auto;
+        height: 90vh;
+    }
+}
+
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+html body .cre-t-276-spinner {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 4px solid white;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+html body.cre-t-276-cta-clicked .cre-t-276-cta-text {
+    display: none;
+}
+
+html body.cre-t-276-cta-clicked .cre-t-276-spinner {
+    display: block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

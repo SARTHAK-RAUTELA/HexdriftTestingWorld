@@ -175,19 +175,26 @@
 
     function init() {
       waitForHelpers(function () {
-        if (window.CRE276_helpers.cameFromCheckout()) {
-          // Cohort 1 — same instant timing as Control.
-          showModal();
+        var cohort = window.CRE276_helpers.getActiveCohort();
+
+        if (cohort === '1') {
+          showModal(); // same instant timing as Control
           return;
         }
 
-        // Cohort 2 — wait 5s per the card's trigger spec for the new cohort.
-        setTimeout(async function () {
-          var excluded = await exclusionLogicsApply();
-          if (!excluded) showModal();
-        }, 5000);
+        if (cohort === '2') {
+          setTimeout(async function () {
+            // Brief re-verify — cart or checkout status could shift in the 5s wait
+            var stillOk =
+              !window.CRE276_helpers.hasReachedCheckoutEver() &&
+              (await window.CRE276_helpers.cartMeetsMattressCondition());
+            if (stillOk) showModal();
+          }, 5000);
+        }
       });
     }
+
+    waitForElement("body", init, 50, 15000);
 
     waitForElement("body", init, 50, 15000);
   } catch (e) {

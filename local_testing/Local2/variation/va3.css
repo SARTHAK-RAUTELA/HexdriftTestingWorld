@@ -1,511 +1,69 @@
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.oxy-read-more-link:not(.cre-t-164-toggle) {
-  display: none;
+html body.cre-t-272.cre-t-202 #orderForm .cre-t-272-container {
+    order: 3;
 }
 
-body.cre-t-164-default .plan-repeater .rating-bar {
-  display: none !important;
+html body.cre-t-272.cre-t-202 #orderForm .order-form__financing-buy-box-container {
+    order: 4;
+    margin-top: 0;
 }
 
-body.cre-t-164-default.cre-t-164-collapsed .cre-t-164-below-trupanion {
-  display: none !important;
-}
+/* HSA/FSA eligibility line */
 
-/* our own toggle only shows in the "applied" state -- reverted state defers fully to native */
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"]>.cre-t-164-toggle {
-  display: flex !important;
-  visibility: visible;
-}
-
-
-.cre-t-164-hide-rating-bar,
-html body.cre-t-164-default .oxy-dynamic-list>div>.trustpilot-image {
-  display: none;
-}
-
-
-body.cre-t-164-default .plan-repeater[data-unique="comparison-table"] .cre-t-135-container {
-  display: none;
-}
-
-
-body:not(.cre-t-164-default) .cre-t-164-container {
-  display: none;
-}
-
-html body .cre-t-164-container {
-  position: relative;
-  font-family: "Montserrat", arial, sans-serif;
-  padding: 31px 0px;
-}
-
-html body .cre-t-164-wrapper {
-  display: block;
-}
-
-html body .cre-t-164-reviews {
-  display: block;
-  cursor: pointer;
-}
-
-html body .cre-t-164-review-top {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2px;
-}
-
-html body .cre-t-164-top-content1 {
-  color: #000;
-  text-align: center;
-  font-family: inherit;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 17.6px;
-}
-
-html body .cre-t-164-total {
-  position: relative;
-  top: -1px;
-}
-
-html body .cre-t-164-star {
-  width: 17px;
-  height: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-html body .cre-t-164-star svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-html body .cre-t-164-classification {
-  position: relative;
-  top: -1px;
-}
-
-html body .cre-t-164-top-content2 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-}
-
-html body .cre-t-164-top-content2-text {
-  color: #000;
-  text-align: right;
-  font-family: inherit;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-}
-
-html body .cre-t-164-top-content2-icon {
-  width: 7px;
-  height: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(0deg);
-  transition: transform 0.3s;
-}
-
-html body .cre-t-164-top-content2-icon svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-html body .cre-t-164-top-content1 .cre-t-164-top-content2-icon {
-  display: none;
-}
-
-html body .cre-t-164-review-dropdown {
-  display: none;
-  position: absolute;
-  right: 0px;
-  top: calc(100% + 18px);
-  z-index: 1000;
-  width: 287px;
-}
-
-html body .cre-t-164-dropdown-wrapper {
-  border-radius: 4px;
-  position: relative;
-}
-
-html body .cre-t-164-dropdown-top {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-html body .cre-t-164-dropdown-content {
-  width: 100%;
-  padding: 16px 24px;
-}
-
-html body .cre-t-164-dropdown-content1 {
-  background: #441771;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-html body .cre-t-164-dropdown-content2 {
-  background: #551e8e;
-}
-
-html body .cre-t-164-dropdown-content3 {
-  background: #441771;
-}
-
-html body .cre-t-164-dropdown-info1 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 7px;
-  margin-bottom: 4px;
-}
-
-html body .cre-t-164-dropdown-info1-icon {
-  width: 14px;
-  min-width: 14px;
-  height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-html body .cre-t-164-dropdown-info1-icon svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-html body .cre-t-164-dropdown-info1-text {
-  color: #fff;
-  font-family: inherit;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 17.6px;
-}
-
-html body .cre-t-164-dropdown-info2 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 2px;
-}
-
-html body .cre-t-164-dropdown-info2-bar {
-  display: block;
-  height: 6px;
-  border-radius: 4px;
-  background: #fff;
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-}
-
-html body .cre-t-164-dropdown-bar {
-  display: block;
-  height: 6px;
-  border-radius: 4px;
-  animation-name: animation-cret164;
-  animation-duration: 0.6s;
-  animation-timing-function: cubic-bezier(0.66, 0.01, 0.41, -0.1);
-  animation-delay: 0s;
-}
-
-@keyframes animation-cret164 {
-  0% {
-    width: 0px;
-  }
-}
-
-html body .cre-t-164-dropdown-info2-score {
-  color: #fff;
-  font-family: inherit;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 17.6px;
-}
-
-html body .cre-t-164-dropdown-info3 {
-  color: #fff;
-  font-family: inherit;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 14px;
-}
-
-html body .cre-t-164-dropdown-content1 .cre-t-164-dropdown-bar {
-  background: #eea650;
-}
-
-html body .cre-t-164-dropdown-content2 .cre-t-164-dropdown-bar {
-  background: #5dc087;
-}
-
-html body .cre-t-164-dropdown-content3 .cre-t-164-dropdown-bar {
-  background: #5aacf5;
-}
-
-html body .cre-t-164-dropdown-bottom {
-  padding: 10px 24px 12px 24px;
-  background: #551e8e;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  color: #fff;
-  font-family: inherit;
-  font-size: 9.5px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-}
-
-html body .cre-t-164-dropdown-bottom span {
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  -webkit-text-decoration-skip: ink;
-  text-decoration-skip-ink: auto;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-  cursor: pointer;
-}
-
-html body .cre-t-164-cross {
-  width: 13.308px;
-  min-width: 13.308px;
-  height: 13.308px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-top: 10px;
-  padding-right: 11.69px;
-  box-sizing: content-box;
-}
-
-html body .cre-t-164-cross svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-
-html body .cre-t-164-top-content1-mobile .cre-t-164-classification {
-  display: none;
-}
-
-html body .cre-t-164-container-parent {
-  margin-bottom: 25px;
-  margin-top: 25px;
-}
-
-html body .cre-t-164-dropdown-content1 .cre-t-164-dropdown-info1 {
-  align-items: flex-start;
-}
-
-html body .cre-t-164-dropdown-content3 .cre-t-164-dropdown-info1 {
-  align-items: flex-end;
-}
-
-html body .cre-t-164-top-content1-text {
-  color: inherit;
-  text-align: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-}
-
-@media (min-width: 992px) {
-  html body .cre-t-164-reviews:hover .cre-t-164-review-dropdown {
-    display: block;
-  }
-
-  html body .cre-t-164-reviews:hover .cre-t-164-top-content2-icon {
-    transform: rotate(180deg);
-  }
-
-  html body .cre-t-164-reviews:hover .cre-t-164-review-top::after {
-    content: "";
-    width: 100%;
-    height: 20px;
-    display: block;
-    background: #ffffff;
-    position: absolute;
-    top: calc(100% - 1px);
-  }
-}
-
-@media (max-width: 991px) {
-  html body .cre-t-164-dropdown-active .cre-t-164-review-dropdown {
-    display: block;
-  }
-
-  html body .cre-t-164-dropdown-active .cre-t-164-top-content2-icon {
-    transform: rotate(180deg);
-  }
-
-  html body .cre-t-164-cross {
+html body.cre-t-272 .cre-t-272-container {
+    margin-top: 24px;
+    margin-bottom: 24px;
     display: flex;
-  }
-}
-
-@media (max-width: 767px) {
-  html body .cre-t-164-top-content1 .cre-t-164-top-content2-icon {
-    display: flex;
-    width: 6px;
-    height: 6px;
-    position: relative;
-    top: 0px;
-  }
-
-  html body .cre-t-164-top-content1-text .cre-t-164-classification {
-    top: 0;
-  }
-
-  html body .cre-t-164-top-content1-mobile {
-    display: none;
     align-items: center;
     justify-content: center;
-    gap: 3px;
-  }
+}
 
-  html body .cre-t-164-top-content1-mobile .cre-t-164-classification {
-    color: #000;
+html body.cre-t-272 .cre-t-272-hsa-text {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
     font-family: inherit;
-    font-size: 11px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 600;
-    line-height: 21px;
-    display: flex;
+    line-height: 17px;
+    display: inline-flex;
     align-items: center;
-  }
-
-  html body .cre-t-164-total {
-    top: 0;
-  }
-
-  html body .cre-t-164-container-parent {
-    margin-bottom: 18px;
-    margin-top: 18px;
-    gap: 7px;
-  }
-
-  html body .cre-t-164-review-dropdown {
-    top: calc(100% + 11px);
-  }
-
-  html body .cre-t-164-star {
-    width: 14px;
-    height: 14px;
-    top: 2px;
-  }
-
-  html body .cre-t-164-top-content1 {
-    font-size: 13px;
-  }
-
-  html body .cre-t-164-top-content2-text {
-    font-size: 8px;
-    line-height: 11px;
-  }
-
-  html body .cre-t-164-review-top {
-    gap: 0;
-  }
+    gap: 3px;
 }
 
-@media (max-width: 370px) {
-  html body .cre-t-164-star {
-    width: 12px;
-    height: 12px;
-    top: 2px;
-  }
-
-  html body .cre-t-164-top-content1 {
-    font-size: 11px;
-  }
-
-  html body .cre-t-164-top-content2-text {
-    font-size: 8px;
-    line-height: 11px;
-  }
+html body.cre-t-272 .cre-t-272-hsa-label {
+    font-weight: 600;
 }
 
-@media (max-width: 360px) {
-  html body .cre-t-164-review-dropdown {
-    right: -20px;
-    width: 280px;
-  }
+html body.cre-t-272 .cre-t-272-hsa-with {
+    font-weight: 400;
 }
 
-@media (max-width: 319px) {
-  html body .cre-t-164-review-dropdown {
-    width: 240px;
-  }
-
-  html body .cre-t-164-dropdown-info3 {
-    font-size: 9px;
-  }
-
-  html body .cre-t-164-dropdown-bottom {
-    font-size: 7.5px;
-  }
+html body.cre-t-272 .cre-t-272-hsa-logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+    width: 93px;
+    height: 20px;
+    justify-content: flex-start;
+    margin-left: 1px;
+    position: relative;
+    top: 1px;
 }
 
-html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-reviews:hover .cre-t-164-review-dropdown {
-  display: none;
+html body.cre-t-272 .cre-t-272-hsa-logo {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
 }
 
-html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-top-content2-icon {
-  display: none;
-}
+@media (max-width: 280px) {
+    html body.cre-t-272 .cre-t-272-hsa-text {
+        display: inline;
+    }
 
-html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-dropdown-active .cre-t-164-review-dropdown {
-  display: none !important;
-}
-
-html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-reviews {
-  cursor: default;
-}
-
-@media (max-width: 991px) {
-  html body .cre-t-164-dropdown-active .cre-t-164-review-dropdown {
-    display: none !important;
-  }
-}
-
-@media screen and (max-width:767px) {
-  html body .cre-t-164-container .cre-t-164-wrapper .cre-t-164-top-content2 {
-    display: none;
-  }
+    html body.cre-t-272 .cre-t-272-hsa-logo-wrapper {
+        top: 5px;
+    }
 }

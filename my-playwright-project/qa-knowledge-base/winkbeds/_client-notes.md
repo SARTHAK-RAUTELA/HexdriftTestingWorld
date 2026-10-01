@@ -49,9 +49,15 @@ Page Select Sub-Total V2](win266-shop-subtotal-v2.md)
   `describe` block — the same "429 wall" pattern seen on WIN257. If adding WebKit projects to a new WinkBeds
   spec, consider a per-project (WebKit-only) longer timeout rather than raising it universally. See WIN266.
 
+- **Shared Buy Box layout is flex `order`-driven by cre-t-202.** `#orderForm` is a flex column, and cre-t-202 sets
+  `order` on its children (financing block = 3). A new element appended to `#orderForm` only lands in the right
+  place if its CSS accounts for that; scoping the fix to `.cre-t-202` makes it depend on WIN202 staying live (WIN272 BUG-01).
+  cre-t-202 also re-adds its own body class, so to simulate it being off, strip the class with a MutationObserver.
+
 ## Test files
 
 | Test | File |
 |------|------|
 | cre-t-253 — Buy Box sub-total line | [cre-t-253-buybox-subtotal.md](cre-t-253-buybox-subtotal.md) |
 | WIN266/cre-t-266 — Shop Page Select Sub-Total V2 | [win266-shop-subtotal-v2.md](win266-shop-subtotal-v2.md) |
+| WIN272/cre-t-272 — Shop Page Truemed Badges | [win272-truemed-badge.md](win272-truemed-badge.md) |

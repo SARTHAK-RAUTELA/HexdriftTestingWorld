@@ -41,3 +41,15 @@ place, cre-t-202's own `order: 3` on the financing block disappears too.
 - The "We get it…" retention popup covers narrow-viewport screenshots. The spec's `dismissPopups()` clicks
   "OK, GOT IT" and hides fixed full-screen overlays.
 - The size/firmness `<select>` elements are `#size-select` / `#firmness-select`. Use `selectOption`, not text clicks.
+
+## Re-test — 2026-10-01 (after dev fix)
+
+The dev fix went to Convert only. Local `va3.js`/`va3.css` were unchanged, so the deployed CSS was tested. 62/70 checks passed across 7 browsers.
+
+- **BUG-02 FIXED:** the live CSS adds `letter-spacing: 0.187px` to `.cre-t-272-hsa-text`. TC-05 passes in 7/7 browsers.
+- **BUG-01 STILL OPEN, and reproducible in 7/7 browsers (correction):** the live CSS is still scoped to `.cre-t-202`, and the badge
+  is still the last child of `#orderForm`. Without cre-t-202, the badge moves up under the title (Chrome, iPhone 12, iPad)
+  or drops to the very bottom of the Buy Box (Firefox, Edge, Safari, Pixel 5). Round 1 called this "intermittent"
+  because TC-07 only checked `badge >= pay.bottom`, which the bottom case also satisfies. TC-07 now also requires
+  `badge.bottom <= fin.top`, and the report builder re-scores old runs from the logged positions.
+- Firefox TC-03 failed on a page-setup timeout (load noise). Add to Cart passed in both arms on 7/7 browsers.

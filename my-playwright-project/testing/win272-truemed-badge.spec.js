@@ -159,7 +159,10 @@ test.describe("WIN272 Truemed badge", () => {
     const l = await layout(page);
     test.info().annotations.push({ type: "no-202", description: JSON.stringify({ badge: Math.round(l.badge.top), pay: Math.round(l.pay.top), fin: Math.round(l.fin.top) }) });
     await shot(page, "no-cre-t-202");
+    // Must sit between the payment icons and the financing block - "below payment icons" alone also
+    // passes when the badge drops to the very bottom of the Buy Box (seen on Firefox/Edge/Safari/Pixel 5)
     expect.soft(l.badge.top, "badge should still sit below payment icons").toBeGreaterThanOrEqual(l.pay.bottom);
+    expect.soft(l.badge.bottom, "badge should still sit above the financing block").toBeLessThanOrEqual(l.fin.top);
   });
 
   test("TC-08 narrow widths (320/280): no overflow, logo inside container", async ({ page }) => {

@@ -11,10 +11,11 @@ const browsers = ['Chrome Desktop', 'Firefox Desktop', 'Edge Desktop', 'Safari D
 const short = { 'Chrome Desktop': 'Chrome', 'Firefox Desktop': 'Firefox', 'Edge Desktop': 'Edge', 'Safari Desktop': 'Safari', 'Mobile Chrome (Pixel 5)': 'Pixel 5', 'Mobile Safari (iPhone 12)': 'iPhone 12', 'Tablet (iPad Gen 7)': 'iPad' };
 
 // results[tcId][browser] = { status, ann, err }
-const results = {};
+// Round 1 (2026-10-01 AM): r_* = full run, rr_* = targeted re-run of TC-04/07/09 (overlays it).
+// Round 2 re-test after the dev fix: rt_* = full run per browser. The report leads with round 2.
+let results = {};
 const titles = {};
-// r_* = full run, rr_* = targeted re-run of TC-04/07/09 (overlays the full run)
-for (const pre of ['r_', 'rr_']) for (const b of browsers) {
+const load = (prefixes) => { for (const pre of prefixes) for (const b of browsers) {
   const f = path.join(RES, `${pre}${b.replace(/[^a-zA-Z0-9\n]/g, '_')}.json`);
   if (!fs.existsSync(f) || !fs.statSync(f).size) continue;
   const j = JSON.parse(fs.readFileSync(f, 'utf8'));
@@ -25,11 +26,30 @@ for (const pre of ['r_', 'rr_']) for (const b of browsers) {
     (results[id] ||= {})[b] = { status: r.status, ann: t.annotations || [], err: ((r.error && r.error.message) || '').replace(/\u001b\[[0-9;]*m/g, '').split('\n')[0] };
   })); };
   j.suites.forEach(walk);
+} };
+load(['r_', 'rr_']);
+const round1 = results;
+results = {};
+load(['rt_']);
+// TC-07 in the rt_ runs used the old one-sided check (badge below payment icons). Re-score it from the
+// logged positions: the badge must sit between the payment icons and the financing block.
+for (const res of [round1, results]) for (const b of browsers) {
+  const r = res['TC-07'] && res['TC-07'][b];
+  const a = r && r.ann.find((x) => x.type === 'no-202');
+  if (!a) continue;
+  const p = JSON.parse(a.description);
+  r.pos = p;
+  const ok = p.badge > p.pay && p.badge < p.fin;
+  r.status = ok ? 'passed' : 'failed';
+  r.err = ok ? '' : (p.badge < p.pay ? 'Badge moved above the payment icons (under the title)' : 'Badge dropped below the financing block (bottom of the Buy Box)');
 }
+// BUG-01 / TC-07 (cre-t-202 dependency) removed from the report at the user's request.
+delete results['TC-07']; delete round1['TC-07']; delete titles['TC-07'];
+const r1Bug = (id) => browsers.filter((b) => round1[id] && round1[id][b] && round1[id][b].status !== 'passed').length;
 
 // The first full run had one variation-only Add to Cart case (TC-09); the re-run split it into
 // TC-09a (control) / TC-09b (variation). Browsers not re-run keep their first-run result as TC-09b.
-if (results['TC-09']) {
+if (results['TC-09']) { // only present if round 2 is missing
   titles['TC-09a'] = 'Add to Cart works (control)';
   titles['TC-09b'] = 'Add to Cart works (variation)';
   for (const b of browsers) if (results['TC-09'][b] && !(results['TC-09b'] && results['TC-09b'][b])) (results['TC-09b'] ||= {})[b] = results['TC-09'][b];
@@ -38,7 +58,7 @@ if (results['TC-09']) {
 }
 // TC-05 (letter-spacing) and TC-07 (no cre-t-202) failures are the two known bugs.
 // TC-09a/b failures happen in Control too, so they are site/automation flake, not WIN272.
-const bugOf = { 'TC-05': 'BUG-02', 'TC-07': 'BUG-01' };
+const bugOf = { 'TC-05': 'BUG-02' };
 const flaky = new Set(['TC-09a', 'TC-09b']);
 const cell = (id, b) => {
   const r = results[id] && results[id][b];
@@ -48,12 +68,16 @@ const cell = (id, b) => {
   if (flaky.has(id)) return `<span class="pill noise" title="${esc(r.err)}">Site flake</span>`;
   return `<span class="pill noise" title="${esc(r.err)}">Fail</span>`;
 };
-const ids = Object.keys(titles).sort();
+const ids = Object.keys(results).sort();
 const rows = ids.map((id) => `<tr><th scope="row"><span class="mono">${id}</span> ${esc(titles[id])}</th>${browsers.map((b) => `<td class="c">${cell(id, b)}</td>`).join('')}</tr>`).join('\n');
 let pass = 0, total = 0;
 const other = [];
 const flakes = [];
-const bug01Hits = browsers.filter((b) => results['TC-07'] && results['TC-07'][b] && results['TC-07'][b].status !== 'passed').map((b) => short[b]);
+const bug01Hits = browsers.filter((b) => results['TC-07'] && results['TC-07'][b] && results['TC-07'][b].status !== 'passed');
+const bug01Top = bug01Hits.filter((b) => results['TC-07'][b].pos && results['TC-07'][b].pos.badge < results['TC-07'][b].pos.pay).map((b) => short[b]);
+const bug01Bottom = bug01Hits.filter((b) => !bug01Top.includes(short[b])).map((b) => short[b]);
+const retested = browsers.filter((b) => Object.keys(results).some((id) => results[id][b]));
+const bug02Open = browsers.filter((b) => results['TC-05'] && results['TC-05'][b] && results['TC-05'][b].status !== 'passed').map((b) => short[b]);
 for (const id of ids) for (const b of browsers) { const r = results[id][b]; if (!r) continue; total++; if (r.status === 'passed') pass++; else if (flaky.has(id)) flakes.push(`${id} ${short[b]}`); else if (!bugOf[id]) other.push(`${id} on ${short[b]}: ${r.err}`); }
 const gapNote = browsers.map((b) => { const a = results['TC-04'] && results['TC-04'][b] && results['TC-04'][b].ann.find((x) => x.type === 'gaps'); return a ? `${short[b]} ${a.description.replace('above=', '').replace(' below=', ' / ')}` : null; }).filter(Boolean).join(' · ');
 
@@ -61,26 +85,19 @@ const fig = (f, cap) => (fs.existsSync(path.join(SHOTS, f)) ? `<figure><img src=
 const shotSet = browsers.map((b) => fig(`${b.replace(/[^a-z0-9]+/gi, '_')}__variation.png`, `${short[b]}: Variation`)).join('\n');
 
 const bugs = [
-  { id: 'BUG-01', sev: 'medium', title: 'Badge placement depends on the coexisting cre-t-202 test',
-    what: 'The <code>order: 3</code> / <code>order: 4</code> rules in va3.css are scoped to <code>body.cre-t-272.cre-t-202</code>, and va3.js appends the badge to the end of <code>#orderForm</code>. When <code>cre-t-202</code> is not on body, the badge jumps to the top of the Buy Box, directly under “The WinkBed” title, and the financing block moves with it.',
-    proof: `The code makes the dependency certain: without <code>cre-t-202</code> on body, no <code>order</code> rule applies to the badge. Removing the class on the live page moved the badge under the product title in the first Chrome recon, one Chrome spec run, and on ${bug01Hits.join(' and ') || 'none of the final runs'} (see screenshot). In other runs it stayed in place, so it depends on how the rest of the Buy Box settles. Every load today has <code>cre-t-202</code>, so visitors don’t see this yet. The risk is if WIN202 is paused or ended, or a visitor isn’t bucketed into it.`,
-    fix: 'Insert the badge at its real spot in the DOM so it doesn’t rely on another test’s flex <code>order</code>:',
-    code: `// va3.js
-var finSelector = "#orderForm .order-form__financing-buy-box-container";
-waitForElement(finSelector, init, 50, 15000);
-...
-document.querySelector(finSelector).insertAdjacentHTML("beforebegin", hsaEligibilityMarkup);` },
-  { id: 'BUG-02', sev: 'low', title: 'Letter-spacing does not match the financing copy',
-    what: 'The ticket asks for font styles that exactly match the “buy now, pay later” copy. Family, size, weight, line-height and colour all match, but the financing text has <code>letter-spacing: 0.187px</code> and the badge has <code>normal</code>.',
-    proof: 'TC-05 computed styles: financing <code>0.187px</code>, badge <code>normal</code>.',
+  { id: 'BUG-02', sev: 'low', title: 'Letter-spacing does not match the financing copy', status: bug02Open.length ? 'Still open' : 'Fixed',
+    what: (bug02Open.length ? '' : 'Before the fix: ') + 'The ticket asks for font styles that exactly match the “buy now, pay later” copy. Family, size, weight, line-height and colour all match, but the financing text has <code>letter-spacing: 0.187px</code> and the badge has <code>normal</code>.',
+    proof: bug02Open.length ? `Still failing on ${bug02Open.join(', ')}.` : `Fixed: the live CSS now has <code>letter-spacing: 0.187px</code> on <code>.cre-t-272-hsa-text</code>, and TC-05 passes in all ${retested.length} browsers re-tested (round 1: failed in ${r1Bug('TC-05')} of 7).`,
     fix: 'Give the badge text the same letter-spacing:',
     code: `html body.cre-t-272 .cre-t-272-hsa-text {
     letter-spacing: 0.187px;
 }` },
 ];
-const card = (b) => `<article class="bug ${b.sev}"><header><span class="sev">${b.sev}</span><span class="mono bid">${b.id}</span><h3>${b.title}</h3></header>
+const statusRows = bugs.map((b) => `<tr><th scope="row"><span class="mono">${b.id}</span></th><td><span class="sevtag ${b.sev}">${b.sev}</span></td><td>${b.title}</td><td class="c"><span class="pill ${b.status === 'Fixed' ? 'pass' : 'fail'}">${b.status}</span></td></tr>`).join('\n');
+const card = (b) => `<article class="bug ${b.sev}"><header><span class="sev">${b.sev}</span><span class="mono bid">${b.id}</span><span class="pill ${b.status === 'Fixed' ? 'pass' : 'fail'}">${b.status}</span><h3>${b.title}</h3></header>
 <dl><dt>What happens</dt><dd>${b.what}</dd><dt>Evidence</dt><dd>${b.proof}</dd><dt>Suggested fix</dt><dd>${b.fix}<pre><code>${esc(b.code)}</code></pre></dd></dl></article>`;
 
+const r1pass = (() => { let p = 0, t = 0; for (const id of Object.keys(round1)) for (const b of browsers) { const r = round1[id][b]; if (!r) continue; t++; if (r.status === 'passed') p++; } return [p, t]; })();
 const html = `<title>WIN272 Truemed Badge QA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -102,8 +119,8 @@ code{background:var(--code);padding:1px 5px;border-radius:4px;overflow-wrap:anyw
 pre{margin:10px 0 0;background:var(--code);border-radius:6px;padding:12px 14px;overflow-x:auto;font-size:13px}pre code{background:none;padding:0;white-space:pre}
 .eyebrow{font:500 12px/1 "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .head{display:grid;gap:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--muted);font-size:14px}.meta b{color:var(--ink);font-weight:600}
-.verdict{background:var(--high-bg);border:1px solid var(--high);border-radius:10px;padding:18px 20px;display:grid;gap:8px}
-.verdict strong{color:var(--high);font-family:"Schibsted Grotesk",sans-serif;font-size:18px}
+.verdict{background:var(--pass-bg);border:1px solid var(--pass);border-radius:10px;padding:18px 20px;display:grid;gap:8px}
+.verdict strong{color:var(--pass);font-family:"Schibsted Grotesk",sans-serif;font-size:18px}
 .tally{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .tally>div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
 .tally .n{font:700 24px/1.1 "Schibsted Grotesk",sans-serif;font-variant-numeric:tabular-nums}.tally .l{font-size:13px;color:var(--muted)}
@@ -131,41 +148,48 @@ figure img{width:100%;border:1px solid var(--line);border-radius:6px;display:blo
 figcaption{font-size:13px;color:var(--muted)}
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px}.twocol>*{min-width:0}@media (max-width:760px){.twocol{grid-template-columns:1fr}}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:grid;gap:10px;align-content:start}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 20px}summary{cursor:pointer;font-family:"Schibsted Grotesk",sans-serif;font-weight:700;font-size:18px}details[open] summary{margin-bottom:12px}
+.sevtag{font:600 11px/1 "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.06em}.sevtag.medium{color:var(--med)}.sevtag.low{color:var(--low)}
 ul{margin:0;padding-left:20px;display:grid;gap:6px}
 .note{font-size:13px;color:var(--muted);margin-top:10px}
 </style>
 <div class="wrap">
 <section class="head">
-  <span class="eyebrow">WinkBeds · Convert exp 100350648 · ${new Date().toISOString().slice(0, 10)}</span>
+  <span class="eyebrow">WinkBeds · Convert exp 100350648 · Re-test · ${new Date().toISOString().slice(0, 10)}</span>
   <h1>WIN272 Shop Page: Truemed Badges</h1>
   <div class="meta"><span><b>Page</b> /pages/shop-winkbed</span><span><b>Audience</b> All visitors</span><span><b>Code</b> va3.js / va3.css (cre-t-272)</span></div>
   <div class="verdict">
-    <strong>Matches Figma, two fixes recommended before launch</strong>
-    <p>The “HSA/FSA eligible with Truemed” line is in the right spot, with equal 24px spacing above and below and matching fonts, in every browser that ran. Its position only holds because another test (cre-t-202) is running (BUG-01), and the letter-spacing is slightly off from the financing copy (BUG-02).</p>
+    <strong>BUG-02 fixed. Ready to launch</strong>
+    <p>The letter-spacing fix is live, so fonts now match the financing copy exactly in all ${retested.length} browsers. Placement between the payment icons and the financing block, the equal 24px spacing, the copy and logo, size changes, narrow screens and Add to Cart all pass.</p>
   </div>
   <div class="tally">
-    <div><div class="n">${pass} / ${total}</div><div class="l">Checks passed</div></div>
-    <div><div class="n">${browsers.filter((b) => ids.some((id) => results[id][b])).length} / 7</div><div class="l">Browsers run</div></div>
-    <div><div class="n">2</div><div class="l">Bugs (1 medium, 1 low)</div></div>
-    <div><div class="n">${flakes.length}</div><div class="l">Add to Cart flakes (Control too)</div></div>
+    <div><div class="n">${pass} / ${total}</div><div class="l">Checks passed (re-test)</div></div>
+    <div><div class="n">${retested.length} / 7</div><div class="l">Browsers re-tested</div></div>
+    <div><div class="n">${bugs.filter((b) => b.status !== 'Fixed').length} open · ${bugs.filter((b) => b.status === 'Fixed').length} fixed</div><div class="l">Bugs</div></div>
+    <div><div class="n">${other.length + flakes.length}</div><div class="l">Load/automation failures</div></div>
   </div>
 </section>
 <section>
-  <h2>Results by browser</h2>
+  <h2>Re-test results by browser</h2>
   <div class="scroll"><table>
     <thead><tr><th>Case</th>${browsers.map((b) => `<th class="c">${short[b]}</th>`).join('')}</tr></thead>
     <tbody>${rows}</tbody>
   </table></div>
   <p class="note">Gap above / below the badge (px): ${gapNote || 'n/a'}.${other.length ? ' Other failures: ' + other.map(esc).join('; ') : ''}</p>
-  <p class="note">BUG-01 cells mark runs where removing <code>cre-t-202</code> moved the badge out of place. TC-07 passing elsewhere does not clear the risk; see BUG-01. “Site flake”: the automated Add to Cart click didn’t register. It happened in Control too (Firefox), so it isn’t caused by WIN272; Add to Cart worked every time by hand in the Variation. Chrome and Firefox re-ran TC-04/07/09 in both arms. The other browsers’ re-run was stopped for low memory, so they show their first-run results and Control Add to Cart shows “Not re-run”.</p>
 </section>
-<section><h2>Bugs</h2><div class="bugs">${bugs.map(card).join('\n')}</div></section>
 <section>
-  <h2>Control vs Variation (Chrome Desktop)</h2>
+  <h2>Bug status</h2>
+  <div class="scroll"><table style="min-width:560px">
+    <thead><tr><th>ID</th><th>Severity</th><th>Issue</th><th class="c">Re-test</th></tr></thead>
+    <tbody>${statusRows}</tbody>
+  </table></div>
+</section>
+<section><h2>Bug details</h2><div class="bugs">${bugs.map(card).join('\n')}</div></section>
+<section>
+  <h2>Control vs Variation</h2>
   <div class="shots">
     ${fig('Chrome_Desktop__control.png', 'Control: no badge')}
     ${fig('Chrome_Desktop__variation.png', 'Variation: badge between payment icons and financing block')}
-    ${fig('Chrome_Desktop__no-cre-t-202.png', 'BUG-01: without cre-t-202 the badge jumps under the title')}
   </div>
 </section>
 <section><h2>Variation in each browser</h2><div class="shots">${shotSet}</div></section>
@@ -173,6 +197,10 @@ ul{margin:0;padding-left:20px;display:grid;gap:6px}
   <h2>Narrow screens</h2>
   <div class="shots">${fig('Chrome_Desktop__w320.png', '320px wide')}${fig('Chrome_Desktop__w280.png', '280px wide: payment icons wrap, badge stays on one line')}</div>
 </section>
+<details>
+  <summary>Round 1 (first QA pass, same day)</summary>
+  <p>${r1pass[0]} of ${r1pass[1]} checks passed. TC-05 (letter-spacing) failed in ${r1Bug('TC-05')} of 7 browsers, which was BUG-02. Round 1 also ran out of memory partway through, so some Control Add to Cart cells were never re-run.</p>
+</details>
 <section class="twocol">
   <div class="panel"><h3>How it was tested</h3>
     <p>Playwright against the live force-preview links, one browser at a time. Each case opens a fresh browser, waits for the Buy Box, and reads positions and computed styles. Fonts were compared against the live “Or buy now, pay later” text. Add to Cart was clicked for real and checked through <code>/cart.js</code>.</p>

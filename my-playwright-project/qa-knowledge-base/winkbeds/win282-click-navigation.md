@@ -31,3 +31,10 @@ Warranty→shop-promise, Shipping&Returns→open FAQ "Can I return or exchange",
   Link to that section; client OK'd `/pages/store-locator` as the fallback. BUG-02 downgraded to Low: still recommend
   targeting `.cre-t-248-section` directly and falling back to `/pages/store-locator` when it's missing.
 - BUG-01 still open and now affects every visitor, because WIN248's store list (223→7449→1045px) loads for everyone on page load.
+
+## WIN248 condition verified — 2026-10-05 (`testing/win282-recon/w248.js`)
+- `.cre-t-248-section` is injected on page load with scrollY 0 and no scroll ever made, on Pixel 5 and iPhone 12, on both the
+  WIN282 preview link and the plain shop URL. The scroll trigger is gone, as the client said.
+- Showrooms tapped as soon as the grid appeared → "Try the WinkBed in person" heading 16–18px below the header (Pixel 2/2, iPhone 1/1 with 10s sampling).
+  On iPhone it takes ~5s and several hops (1024→10098→16207→16626) to settle; a 4s sample window looks like a miss, so wait ≥10s.
+- One iPhone run timed out before the page (and the section) loaded at all. That was slow WebKit loading, not the condition failing.

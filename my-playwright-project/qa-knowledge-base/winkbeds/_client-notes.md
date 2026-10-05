@@ -61,3 +61,4 @@ Page Select Sub-Total V2](win266-shop-subtotal-v2.md)
 | cre-t-253 — Buy Box sub-total line | [cre-t-253-buybox-subtotal.md](cre-t-253-buybox-subtotal.md) |
 | WIN266/cre-t-266 — Shop Page Select Sub-Total V2 | [win266-shop-subtotal-v2.md](win266-shop-subtotal-v2.md) |
 | WIN272/cre-t-272 — Shop Page Truemed Badges | [win272-truemed-badge.md](win272-truemed-badge.md) |
+| WIN282/cre-t-282 — Shop Page Click Navigation | [win282-click-navigation.md](win282-click-navigation.md) |

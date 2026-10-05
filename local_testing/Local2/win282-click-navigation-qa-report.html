@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WIN282 QA Report</title>
+<style>
+:root{--bg:#f7f7f8;--card:#fff;--ink:#1a1a2e;--mut:#5c5f6b;--line:#e2e4ea;--ok:#1a7f4b;--okbg:#e6f5ec;--bad:#b42318;--badbg:#fdecea;--warn:#946200;--warnbg:#fff4d6;--info:#2f5bb7;--infobg:#e8effc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15161b;--card:#1f2027;--ink:#ececf1;--mut:#a3a6b3;--line:#33353f;--ok:#5fd394;--okbg:#173326;--bad:#ff8a80;--badbg:#3a1d1b;--warn:#f2c14e;--warnbg:#3a2f12;--info:#8fb2ff;--infobg:#1c2742}}
+:root[data-theme="dark"]{--bg:#15161b;--card:#1f2027;--ink:#ececf1;--mut:#a3a6b3;--line:#33353f;--ok:#5fd394;--okbg:#173326;--bad:#ff8a80;--badbg:#3a1d1b;--warn:#f2c14e;--warnbg:#3a2f12;--info:#8fb2ff;--infobg:#1c2742}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:32px 0 10px}
+.sub{color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.tag{display:inline-block;border-radius:5px;padding:1px 8px;font-size:12px;font-weight:600}
+.pass{background:var(--okbg);color:var(--ok)}.fail{background:var(--badbg);color:var(--bad)}.warn{background:var(--warnbg);color:var(--warn)}.info{background:var(--infobg);color:var(--info)}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.shots figure{margin:0}.shots img{width:100%;border:1px solid var(--line);border-radius:6px}.shots figcaption{font-size:12px;color:var(--mut);margin-top:4px}
+code{background:var(--bg);padding:1px 4px;border-radius:4px;font-size:13px}
+.wrap{overflow-x:auto}
+</style>
+</head>
+<body><main>
+<h1>WIN282: Click Navigation Changes</h1>
+<p class="sub">WinkBeds Shop page · Convert exp 100350640 · mobile only · preview links · tested 2026-10-05</p>
+
+<div class="card">
+<b>Verdict: not ready to launch.</b> The visual change (underlined copy, pointer cursor) and goal tracking pass. 4 of the 6 click targets are reliable (Rating, USA, Showrooms with WIN248 present, and the FAQ opening). <b>Trial and Warranty often land on the wrong section</b> because the page is still growing when the scroll position is worked out (BUG-01). <b>Showrooms only works while WIN248's locations section exists</b> (BUG-02).
+</div>
+
+<h2>Expected behaviour (from the client video)</h2>
+<div class="card wrap"><table>
+<tr><th>Item</th><th>Should scroll to</th><th>Code target</th></tr>
+<tr><td>Rated 4.8 stars</td><td>"What Real Winkbed Owners Say"</td><td><code>#shopify-section-testimonials</code></td></tr>
+<tr><td>Made in the U.S.A.</td><td>Made in U.S.A. / "Before Your WinkBed Arrives…"</td><td><code>#shopify-section-shop-hi-touch</code></td></tr>
+<tr><td>120-Night Trial</td><td>"Our 120-Night, Risk-Free Trial…"</td><td><code>#shopify-section-shop-the-winkbed-warranty</code></td></tr>
+<tr><td>Lifetime Warranty</td><td>"Our lifetime durability promise (and warranty)"</td><td><code>#shopify-section-shop-promise</code></td></tr>
+<tr><td>Free Shipping &amp; Returns</td><td>FAQ "Can I return or exchange…", opened</td><td>FAQ concertina, opened + category switch</td></tr>
+<tr><td>100+ Showrooms</td><td>Locations section with map (lives in another test)</td><td>bottom of <code>#shopify-section-shop-frames</code> − 100px</td></tr>
+</table><p class="sub" style="margin-top:8px">Client: "we really want the section just to be kind of anchored at the top of the viewport."</p></div>
+
+<h2>Results</h2>
+<div class="card wrap"><table>
+<tr><th>#</th><th>Check</th><th>Pixel 5 (Chromium)</th><th>iPhone 12 (WebKit)</th></tr>
+<tr><td>TC-01</td><td>Copy underlined, icons not underlined, pointer cursor</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>TC-02</td><td>Control: same grid, no underline, tap does not scroll</td><td><span class="tag pass">PASS</span></td><td>n/a</td></tr>
+<tr><td>TC-03</td><td>Goals: "any benefit" + per-item goal, once per click, same IDs in both arms</td><td><span class="tag pass">PASS</span> 6/6</td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>TC-04</td><td>Rating → reviews section</td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td></tr>
+<tr><td>TC-05</td><td>USA → Made in U.S.A.</td><td><span class="tag warn">2/2 on screen, ~480px down</span></td><td><span class="tag pass">2/2</span></td></tr>
+<tr><td>TC-06</td><td>Trial → trial section</td><td><span class="tag fail">0/2</span> (overshoots)</td><td><span class="tag fail">1/2</span> (once landed in FAQ)</td></tr>
+<tr><td>TC-07</td><td>Warranty → warranty section</td><td><span class="tag fail">1/2</span></td><td><span class="tag fail">0/2</span> (store list / trial section)</td></tr>
+<tr><td>TC-08</td><td>Shipping → FAQ opened on "Can I return or exchange"</td><td><span class="tag warn">opens 2/2, title 390–480px down</span></td><td><span class="tag warn">opens 2/2, anchored 1/2</span></td></tr>
+<tr><td>TC-09</td><td>Showrooms → "Try The WinkBed In Person"</td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td></tr>
+<tr><td>TC-10</td><td>Showrooms when WIN248 section is absent</td><td><span class="tag fail">lands on Trial section</span></td><td>n/a</td></tr>
+<tr><td>TC-11</td><td>Grid at 320 / 360px</td><td><span class="tag info">clipped, same in control</span></td><td>n/a</td></tr>
+<tr><td>TC-12</td><td>No JS errors from cre-t-282</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+</table></div>
+
+<h2>Bugs</h2>
+<div class="card">
+<p><span class="tag fail">BUG-01 · High</span> <b>Trial / Warranty (and the Shipping FAQ) land in the wrong place.</b></p>
+<p><code>scrollToEl()</code> calculates the target position once, when the item is clicked. Content above those sections keeps changing height for several seconds after load, so by the time the scroll ends the target has moved. A height probe (Pixel 5) showed:</p>
+<ul>
+<li><code>.cre-t-248-section</code> (WIN248 "Try The WinkBed In Person" store list): 223 → <b>7,449</b> → 1,045px</li>
+<li><code>#shopify-section-order-the-winkbed</code> (Buy Box): 691 → 2,539px</li>
+<li><code>#shopify-section-faq-content</code>: 3,530 → 1,999px</li>
+</ul>
+<p>As a result, the Trial section's top moved between 15,216 and 24,353px during load. Sections above the store list (Rating, USA) aren't affected, which is why they pass. Showrooms already has a re-check (<code>settle()</code>), but no other item does.</p>
+<p><b>Fix:</b> apply the same re-check to every item: after the smooth scroll, re-measure the target and correct the scroll once or twice until it holds still. Another option is <code>scrollIntoView()</code> with a <code>scroll-margin-top</code>, re-applied after the <code>scrollend</code> event.</p>
+</div>
+<div class="card">
+<p><span class="tag warn">BUG-02 · Low (client answered 2026-10-05)</span> <b>Showrooms depends on WIN248.</b></p>
+<p><b>Update:</b> the client restarted WIN248, and it now runs as a deployment for all visitors. Its section loads with the page (the trigger that waited for a scroll was removed), so the Showrooms scroll has a target for everyone. The client approved <code>/pages/store-locator</code> as the fallback if there are issues. The FAQ handling for Free Shipping &amp; Returns was also confirmed. <b>Still recommended:</b> target <code>.cre-t-248-section</code> directly, and go to <code>/pages/store-locator</code> when it's missing, so the link never lands on the Trial section if WIN248 is ever switched off. Original finding below.</p>
+<p>The locations section only exists for visitors in WIN248's variation. The code doesn't target it directly: it scrolls to the bottom of <code>#shopify-section-shop-frames</code> minus 100px, which happens to be where WIN248 inserts its section. With <code>.cre-t-248-section</code> removed, Showrooms landed on "Our 120-Night, Risk-Free Trial…". So WIN248-control visitors get sent to the Trial section.</p>
+<p><b>Fix / question:</b> target <code>.cre-t-248-section</code> directly. The client needs to say what should happen when it's missing (for example: link to the showrooms page, hide the link, or leave the item unlinked).</p>
+</div>
+
+<h2>Notes (not WIN282 regressions)</h2>
+<div class="card">
+<p><span class="tag info">NOTE-01</span> At ≤360px the grid is a fixed 397px wide (2×180px + gap + padding), so the left icons and right text are clipped ("Lifetime Warrant", "Made in the U.S.A"). The control behaves the same, so this comes from WIN262 V2. Worth fixing anyway, because 360px is a common Android width.</p>
+<p><span class="tag info">NOTE-02</span> "Free Shipping &amp; " has a trailing space inside the underline, caused by <code>white-space: pre-wrap</code>. Cosmetic.</p>
+<p><span class="tag info">NOTE-03</span> The copy differs from the WIN262 Figma ("Rated 4.8 stars" vs "4.8-Star Rating", "Made in the U.S.A." vs "Made in the USA"). The control is identical, so this is out of WIN282 scope.</p>
+<p><span class="tag info">NOTE-04</span> <code>customGoal()</code> also lists a "financing available" goal that has no matching item in the grid. It's harmless dead entry.</p>
+<p><span class="tag info">Testing note</span> The "We get it…" timed modal (<code>#shopify-section-timedModal</code>) opened during runs and blocked taps; it was dismissed or hidden for testing. Headless WebKit taps don't register on this page (constant micro-relayout), so the iPhone landing checks used DOM clicks plus an <code>elementFromPoint</code> check confirming nothing covers the labels.</p>
+</div>
+
+<h2>Screenshots</h2>
+<div class="shots">
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/iphone12_variation_grid.png"><figcaption>Variation grid, iPhone 12</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/pixel_rating_ok.png"><figcaption>Rating: pass</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/iphone_usa_ok.png"><figcaption>USA: pass (iPhone)</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/pixel_usa_short.png"><figcaption>USA: Pixel stops ~480px short</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/iphone_trial_ok.png"><figcaption>Trial: correct landing</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/pixel_trial_overshoot.png"><figcaption>BUG-01: Trial overshoots (heading hidden)</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/pixel_warranty_ok.png"><figcaption>Warranty: correct landing</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/iphone_warranty_in_store_list.png"><figcaption>BUG-01: Warranty lands in WIN248 store list</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/iphone_warranty_lands_on_trial.png"><figcaption>BUG-01: Warranty lands on Trial section</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/iphone_shipping_faq_open.png"><figcaption>Shipping: FAQ opened</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/pixel_showrooms_ok.png"><figcaption>Showrooms: pass (WIN248 present)</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/no248_showrooms_lands_on_trial.png"><figcaption>BUG-02: no WIN248 → Trial section</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/pixel_variation_w320.png"><figcaption>NOTE-01: 320px clipping (variation)</figcaption></figure>
+<figure><img src="../../my-playwright-project/qa-knowledge-base/winkbeds/win282-screenshots/pixel_control_w360.png"><figcaption>NOTE-01: 360px, control has it too</figcaption></figure>
+</div>
+</main></body></html>

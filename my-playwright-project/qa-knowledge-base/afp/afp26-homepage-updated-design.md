@@ -244,3 +244,22 @@ Verified against the live control page's actual DOM/CSS (fetched `https://www.fi
 | Any of the 4 tabs in section 2 | `button.tab-section__nav-btn, button.tab-section__heading` | **Important:** the site has two parallel sets of 4 tab buttons in the DOM — `.tab-section__nav-btn` (desktop nav, visible only at `min-width:72em` i.e. ≥1152px) and `.tab-section__heading` (mobile/tablet accordion inside `.tab-section__list`, visible below that breakpoint). A goal using only `.tab-section__nav-btn` silently misses every tab click below 1152px viewport width — since this test's scope explicitly includes mobile, both selectors must be included (comma-separated) or the mobile numbers will be wrong. |
 
 The `nth-child` selectors for the 3 hero CTA boxes are safe because the three `.cta-list__item` divs are the *only* children of the `.cta-list` container (confirmed from the live DOM) — no other siblings to throw off the count.
+
+## 12. Live re-check after launch (2026-10-07)
+
+Client's final change: **Explore Certifications** → `https://www.financialprofessionals.org/certification/benefits-of-afp-certifications` (replaces the `#TODO-CERTIFICATIONS-URL` placeholder). Client passed the test; it is live in VWO as **experiment id 68** (`window._vwo_exp[68].combination_chosen`: `'1'` = control, `'2'` = variation).
+
+Re-checked by natural bucketing — `my-playwright-project/testing/afp26-live-recheck.spec.js` opens a fresh browser context per attempt (= private window, no VWO cookies) until it lands in variation, also captures a control session for comparison. Output: `local_testing/Local2/afp26-live-recheck/<project>/results.json` + screenshots.
+
+| | Chrome Desktop | Safari Desktop | Mobile Chrome | Mobile Safari |
+|---|---|---|---|---|
+| Bucketed into variation | ✅ | ✅ | ✅ | ✅ |
+| Cert CTA href + click-through (200, "Benefits of AFP Certifications") | ✅ | ✅ | ✅ | ✅ |
+| Copy, tab order, Maintain default-active, Explore Recertification link | ✅ | ✅ | ✅ | ✅ |
+| No TODO/preview hrefs, no horizontal overflow | ✅ | ✅ | ✅ | ✅ |
+
+Live values: tabs 18px/800, card + section eyebrows 15px/800/26.25px, section-2 headline 45px (32px mobile), JOIN AFP 280px desktop, hero padding 80px/52px.
+
+**Finding (Low, copy):** card-2 body reads "globally recognized **CTP and FPAC®** certifications" — ® missing after CTP (spec §3: "CTP® and FPAC®").
+
+**Not AFP26 (identical in control):** `Invalid or unexpected token` pageerror on every load; Safari `License expired` / `Unexpected EOF`; mobile accordion lets two panels be open at once. AFP05 nav test (exp 31) runs alongside without conflict. TrustArc cookie banner covers the lower viewport in fresh sessions.

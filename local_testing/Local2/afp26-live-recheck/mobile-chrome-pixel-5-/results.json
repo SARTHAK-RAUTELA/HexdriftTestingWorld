@@ -1,0 +1,387 @@
+{
+  "project": "Mobile Chrome (Pixel 5)",
+  "attempts": [
+    null,
+    null,
+    "2",
+    "1"
+  ],
+  "variation": {
+    "bodyHasClass": true,
+    "hero": {
+      "title": {
+        "text": "Advance Your Career with AFP Membership",
+        "fontSize": "42px",
+        "fontWeight": "400",
+        "lineHeight": "50px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(255, 255, 255)",
+        "width": 329,
+        "visible": true
+      },
+      "text": "Practitioner-driven. Peer-informed. Grounded in real-world experience. AFP connects you with treasury and finance professionals, practical tools and learning to grow your expertise and move your career forward.",
+      "btn": {
+        "text": "Join AFP",
+        "fontSize": "16px",
+        "fontWeight": "800",
+        "lineHeight": "28px",
+        "fontFamily": "GothamNarrow",
+        "color": "rgb(0, 43, 73)",
+        "width": 329,
+        "visible": true
+      },
+      "btnHref": "https://www.financialprofessionals.org/membership/explore-membership/join",
+      "paddingTop": "80px",
+      "paddingLeft": "0px"
+    },
+    "cards": [
+      {
+        "eyebrow": {
+          "text": "Questions About Membership?",
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "lineHeight": "26.25px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 203, 22)",
+          "width": 329,
+          "visible": true
+        },
+        "heading": "AFP Power Hour",
+        "text": "Meet the AFP team, see what membership includes and get your questions answered live before you decide to join.",
+        "btn": "Register For Power Hour",
+        "href": "/events/meetings/afp-power-hour--discover-what's-possible",
+        "target": null
+      },
+      {
+        "eyebrow": {
+          "text": "Certification",
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "lineHeight": "26.25px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 255, 255)",
+          "width": 329,
+          "visible": true
+        },
+        "heading": "Earn the CTP® or FPAC®",
+        "text": "Progress your career and validate your experience with the globally recognized CTP and FPAC® certifications.",
+        "btn": "Explore Certifications",
+        "href": "https://www.financialprofessionals.org/certification/benefits-of-afp-certifications",
+        "target": null
+      },
+      {
+        "eyebrow": {
+          "text": "Connect & Learn",
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "lineHeight": "26.25px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(187, 214, 74)",
+          "width": 329,
+          "visible": true
+        },
+        "heading": "AFP Events",
+        "text": "Join 7,000+ treasury and finance professionals at AFP 2026, the premier global event for treasury and finance, plus year-round events and meet-ups.",
+        "btn": "Explore AFP Events",
+        "href": "/upcoming-events",
+        "target": null
+      }
+    ],
+    "section2": {
+      "eyebrow": {
+        "text": "AFP Certifications",
+        "fontSize": "15px",
+        "fontWeight": "800",
+        "lineHeight": "26.25px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(111, 201, 222)",
+        "width": 329,
+        "visible": true
+      },
+      "headline": {
+        "text": "Stand Out with the CTP® or FPAC®",
+        "fontSize": "32px",
+        "fontWeight": "400",
+        "lineHeight": "38px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(0, 37, 74)",
+        "width": 329,
+        "visible": true
+      },
+      "navTabs": [
+        {
+          "text": "Certified Treasury Professional (CTP)",
+          "fontSize": "18px",
+          "fontWeight": "800",
+          "lineHeight": "31.5px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 0,
+          "visible": false,
+          "active": false
+        },
+        {
+          "text": "Certified Corporate FP&A Professional (FPAC)",
+          "fontSize": "18px",
+          "fontWeight": "800",
+          "lineHeight": "31.5px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 0,
+          "visible": false,
+          "active": false
+        },
+        {
+          "text": "Maintain Your Credential",
+          "fontSize": "18px",
+          "fontWeight": "800",
+          "lineHeight": "31.5px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 255, 255)",
+          "width": 0,
+          "visible": false,
+          "active": true
+        },
+        {
+          "text": "AFP Certification Scholarship",
+          "fontSize": "18px",
+          "fontWeight": "800",
+          "lineHeight": "31.5px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 0,
+          "visible": false,
+          "active": false
+        }
+      ],
+      "accordionTabs": [
+        {
+          "text": "Certified Treasury Professional (CTP)",
+          "visible": true,
+          "active": false
+        },
+        {
+          "text": "Certified Corporate FP&A Professional (FPAC)",
+          "visible": true,
+          "active": false
+        },
+        {
+          "text": "Maintain Your Credential",
+          "visible": true,
+          "active": true
+        },
+        {
+          "text": "AFP Certification Scholarship",
+          "visible": true,
+          "active": false
+        }
+      ],
+      "panelEyebrow": {
+        "text": "Already Certified",
+        "fontSize": "15px",
+        "fontWeight": "800",
+        "lineHeight": "26.25px",
+        "fontFamily": "GothamNarrow",
+        "color": "rgb(111, 201, 222)",
+        "width": 297,
+        "visible": true
+      },
+      "panelTitle": "Maintain Your Credential",
+      "explore": {
+        "text": "Explore Recertification →",
+        "href": "/certification/already-certified/maintaining-your-credential",
+        "visible": true
+      }
+    },
+    "todoHrefs": [],
+    "horizontalOverflow": 0
+  },
+  "control": {
+    "bodyHasClass": false,
+    "hero": {
+      "title": {
+        "text": "Become a Member of AFP",
+        "fontSize": "48px",
+        "fontWeight": "400",
+        "lineHeight": "56px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(255, 255, 255)",
+        "width": 265,
+        "visible": true
+      },
+      "text": "Practitioner-driven. Peer-informed. Grounded in real-world experience. AFP connects corporate finance professionals to each other—and to ideas and solutions that translate into real impact.",
+      "btn": {
+        "text": "Join AFP",
+        "fontSize": "16px",
+        "fontWeight": "800",
+        "lineHeight": "28px",
+        "fontFamily": "GothamNarrow",
+        "color": "rgb(0, 43, 73)",
+        "width": 108,
+        "visible": true
+      },
+      "btnHref": "https://www.financialprofessionals.org/membership/explore-membership/join",
+      "paddingTop": "96px",
+      "paddingLeft": "32px"
+    },
+    "cards": [
+      {
+        "eyebrow": {
+          "text": "Ask About AFP Membership",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "28px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 203, 22)",
+          "width": 265,
+          "visible": true
+        },
+        "heading": "AFP Power Hour",
+        "text": "Join this virtual open house where you can meet the team, explore resources, ask questions and learn all the ways that AFP can support your success.",
+        "btn": "Register Here",
+        "href": "/events/meetings/afp-power-hour--discover-what's-possible",
+        "target": null
+      },
+      {
+        "eyebrow": {
+          "text": "New",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "28px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 255, 255)",
+          "width": 265,
+          "visible": true
+        },
+        "heading": "Stablecoins & On-Chain Liquidity Certificate",
+        "text": "Designed for today’s corporate treasurer, this certificate helps professionals build practical knowledge of stablecoins and their growing role in finance. The program covers foundational concepts, treasury use cases, risk and governance considerations and operational implications for finance teams.",
+        "btn": "Learn More",
+        "href": "/training-resources/afp-learn/afp-stablecoins-and-on-chain-liquidity-certificate",
+        "target": null
+      },
+      {
+        "eyebrow": {
+          "text": "NETWORKING",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "28px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(187, 214, 74)",
+          "width": 265,
+          "visible": true
+        },
+        "heading": "AFP Events",
+        "text": "Elevate your expertise through practitioner-led sessions, learn from finance industry peers, share real challenges, and build lasting relationships at the premier 2026 networking events for financial professionals.",
+        "btn": "Learn More",
+        "href": "/upcoming-events",
+        "target": null
+      }
+    ],
+    "section2": {
+      "eyebrow": {
+        "text": "AFP Certifications",
+        "fontSize": "28px",
+        "fontWeight": "800",
+        "lineHeight": "49px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(0, 0, 0)",
+        "width": 329,
+        "visible": true
+      },
+      "headline": null,
+      "navTabs": [
+        {
+          "text": "Maintaining Your Credential",
+          "fontSize": "20px",
+          "fontWeight": "800",
+          "lineHeight": "35px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 0,
+          "visible": false,
+          "active": true
+        },
+        {
+          "text": "Certified Treasury Professional (CTP)",
+          "fontSize": "20px",
+          "fontWeight": "800",
+          "lineHeight": "35px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 0,
+          "visible": false,
+          "active": false
+        },
+        {
+          "text": "Certified Corporate FP&A Professional (FPAC)",
+          "fontSize": "20px",
+          "fontWeight": "800",
+          "lineHeight": "35px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 0,
+          "visible": false,
+          "active": false
+        },
+        {
+          "text": "AFP Certification Scholarship",
+          "fontSize": "20px",
+          "fontWeight": "800",
+          "lineHeight": "35px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 0,
+          "visible": false,
+          "active": false
+        }
+      ],
+      "accordionTabs": [
+        {
+          "text": "Maintaining Your Credential",
+          "visible": true,
+          "active": true
+        },
+        {
+          "text": "Certified Treasury Professional (CTP)",
+          "visible": true,
+          "active": false
+        },
+        {
+          "text": "Certified Corporate FP&A Professional (FPAC)",
+          "visible": true,
+          "active": false
+        },
+        {
+          "text": "AFP Certification Scholarship",
+          "visible": true,
+          "active": false
+        }
+      ],
+      "panelEyebrow": null,
+      "panelTitle": "Maintaining Your Credential",
+      "explore": null
+    },
+    "todoHrefs": [],
+    "horizontalOverflow": 0
+  },
+  "clickThrough": {
+    "landedUrl": "https://www.financialprofessionals.org/certification/benefits-of-afp-certifications",
+    "status": 200,
+    "title": "Benefits of AFP Certifications"
+  },
+  "tabSwitch": {
+    "selector": ".tab-section__heading",
+    "afterCtp": [
+      "Certified Treasury Professional (CTP)",
+      "Maintain Your Credential"
+    ],
+    "afterMaintain": [
+      "Certified Treasury Professional (CTP)"
+    ]
+  },
+  "consoleErrors": [
+    "pageerror: Invalid or unexpected token",
+    "pageerror: License expired",
+    "pageerror: Invalid or unexpected token"
+  ]
+}

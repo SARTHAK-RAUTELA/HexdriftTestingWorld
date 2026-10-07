@@ -1,0 +1,430 @@
+{
+  "project": "Safari Desktop",
+  "attempts": [
+    "1",
+    "1",
+    "2"
+  ],
+  "variation": {
+    "bodyHasClass": true,
+    "hero": {
+      "title": {
+        "text": "Advance Your Career with AFP Membership",
+        "fontSize": "48px",
+        "fontWeight": "400",
+        "lineHeight": "56px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(255, 255, 255)",
+        "width": 508,
+        "visible": true
+      },
+      "text": "Practitioner-driven. Peer-informed. Grounded in real-world experience. AFP connects you with treasury and finance professionals, practical tools and learning to grow your expertise and move your career forward.",
+      "btn": {
+        "text": "Join AFP",
+        "fontSize": "16px",
+        "fontWeight": "800",
+        "lineHeight": "28px",
+        "fontFamily": "GothamNarrow",
+        "color": "rgb(0, 43, 73)",
+        "width": 280,
+        "visible": true
+      },
+      "btnHref": "https://www.financialprofessionals.org/membership/explore-membership/join",
+      "paddingTop": "80px",
+      "paddingLeft": "52px"
+    },
+    "cards": [
+      {
+        "eyebrow": {
+          "text": "Questions About Membership?",
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "lineHeight": "26.25px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 203, 22)",
+          "width": 267,
+          "visible": true
+        },
+        "heading": "AFP Power Hour",
+        "text": "Meet the AFP team, see what membership includes and get your questions answered live before you decide to join.",
+        "btn": "Register For Power Hour",
+        "href": "/events/meetings/afp-power-hour--discover-what's-possible",
+        "target": null
+      },
+      {
+        "eyebrow": {
+          "text": "Certification",
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "lineHeight": "26.25px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 255, 255)",
+          "width": 267,
+          "visible": true
+        },
+        "heading": "Earn the CTP® or FPAC®",
+        "text": "Progress your career and validate your experience with the globally recognized CTP and FPAC® certifications.",
+        "btn": "Explore Certifications",
+        "href": "https://www.financialprofessionals.org/certification/benefits-of-afp-certifications",
+        "target": null
+      },
+      {
+        "eyebrow": {
+          "text": "Connect & Learn",
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "lineHeight": "26.25px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(187, 214, 74)",
+          "width": 267,
+          "visible": true
+        },
+        "heading": "AFP Events",
+        "text": "Join 7,000+ treasury and finance professionals at AFP 2026, the premier global event for treasury and finance, plus year-round events and meet-ups.",
+        "btn": "Explore AFP Events",
+        "href": "/upcoming-events",
+        "target": null
+      }
+    ],
+    "section2": {
+      "eyebrow": {
+        "text": "AFP Certifications",
+        "fontSize": "15px",
+        "fontWeight": "800",
+        "lineHeight": "26.25px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(111, 201, 222)",
+        "width": 1216,
+        "visible": true
+      },
+      "headline": {
+        "text": "Stand Out with the CTP® or FPAC®",
+        "fontSize": "45px",
+        "fontWeight": "400",
+        "lineHeight": "52px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(0, 37, 74)",
+        "width": 1216,
+        "visible": true
+      },
+      "navTabs": [
+        {
+          "text": "Certified Treasury Professional (CTP)",
+          "fontSize": "18px",
+          "fontWeight": "800",
+          "lineHeight": "31.5px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 315,
+          "visible": true,
+          "active": false
+        },
+        {
+          "text": "Certified Corporate FP&A Professional (FPAC)",
+          "fontSize": "18px",
+          "fontWeight": "800",
+          "lineHeight": "31.5px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 380,
+          "visible": true,
+          "active": false
+        },
+        {
+          "text": "Maintain Your Credential",
+          "fontSize": "18px",
+          "fontWeight": "800",
+          "lineHeight": "31.5px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 255, 255)",
+          "width": 228,
+          "visible": true,
+          "active": true
+        },
+        {
+          "text": "AFP Certification Scholarship",
+          "fontSize": "18px",
+          "fontWeight": "800",
+          "lineHeight": "31.5px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 262,
+          "visible": true,
+          "active": false
+        }
+      ],
+      "accordionTabs": [
+        {
+          "text": "Certified Treasury Professional (CTP)",
+          "visible": false,
+          "active": false
+        },
+        {
+          "text": "Certified Corporate FP&A Professional (FPAC)",
+          "visible": false,
+          "active": false
+        },
+        {
+          "text": "Maintain Your Credential",
+          "visible": false,
+          "active": true
+        },
+        {
+          "text": "AFP Certification Scholarship",
+          "visible": false,
+          "active": false
+        }
+      ],
+      "panelEyebrow": {
+        "text": "Already Certified",
+        "fontSize": "15px",
+        "fontWeight": "800",
+        "lineHeight": "26.25px",
+        "fontFamily": "GothamNarrow",
+        "color": "rgb(111, 201, 222)",
+        "width": 486,
+        "visible": true
+      },
+      "panelTitle": "Maintain Your Credential",
+      "explore": {
+        "text": "Explore Recertification →",
+        "href": "/certification/already-certified/maintaining-your-credential",
+        "visible": true
+      }
+    },
+    "todoHrefs": [],
+    "horizontalOverflow": 0
+  },
+  "control": {
+    "bodyHasClass": false,
+    "hero": {
+      "title": {
+        "text": "Become a Member of AFP",
+        "fontSize": "72px",
+        "fontWeight": "400",
+        "lineHeight": "80px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(255, 255, 255)",
+        "width": 432,
+        "visible": true
+      },
+      "text": "Practitioner-driven. Peer-informed. Grounded in real-world experience. AFP connects corporate finance professionals to each other—and to ideas and solutions that translate into real impact.",
+      "btn": {
+        "text": "Join AFP",
+        "fontSize": "16px",
+        "fontWeight": "800",
+        "lineHeight": "28px",
+        "fontFamily": "GothamNarrow",
+        "color": "rgb(0, 43, 73)",
+        "width": 108,
+        "visible": true
+      },
+      "btnHref": "https://www.financialprofessionals.org/membership/explore-membership/join",
+      "paddingTop": "96px",
+      "paddingLeft": "64px"
+    },
+    "cards": [
+      {
+        "eyebrow": {
+          "text": "Ask About AFP Membership",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "28px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 203, 22)",
+          "width": 267,
+          "visible": true
+        },
+        "heading": "AFP Power Hour",
+        "text": "Join this virtual open house where you can meet the team, explore resources, ask questions and learn all the ways that AFP can support your success.",
+        "btn": "Register Here",
+        "href": "/events/meetings/afp-power-hour--discover-what's-possible",
+        "target": null
+      },
+      {
+        "eyebrow": {
+          "text": "New",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "28px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(255, 255, 255)",
+          "width": 267,
+          "visible": true
+        },
+        "heading": "Stablecoins & On-Chain Liquidity Certificate",
+        "text": "Designed for today’s corporate treasurer, this certificate helps professionals build practical knowledge of stablecoins and their growing role in finance. The program covers foundational concepts, treasury use cases, risk and governance considerations and operational implications for finance teams.",
+        "btn": "Learn More",
+        "href": "/training-resources/afp-learn/afp-stablecoins-and-on-chain-liquidity-certificate",
+        "target": null
+      },
+      {
+        "eyebrow": {
+          "text": "NETWORKING",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "28px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(187, 214, 74)",
+          "width": 267,
+          "visible": true
+        },
+        "heading": "AFP Events",
+        "text": "Elevate your expertise through practitioner-led sessions, learn from finance industry peers, share real challenges, and build lasting relationships at the premier 2026 networking events for financial professionals.",
+        "btn": "Learn More",
+        "href": "/upcoming-events",
+        "target": null
+      }
+    ],
+    "section2": {
+      "eyebrow": {
+        "text": "AFP Certifications",
+        "fontSize": "28px",
+        "fontWeight": "800",
+        "lineHeight": "49px",
+        "fontFamily": "GothamNarrowBold",
+        "color": "rgb(0, 0, 0)",
+        "width": 1216,
+        "visible": true
+      },
+      "headline": null,
+      "navTabs": [
+        {
+          "text": "Maintaining Your Credential",
+          "fontSize": "20px",
+          "fontWeight": "800",
+          "lineHeight": "35px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 257,
+          "visible": true,
+          "active": true
+        },
+        {
+          "text": "Certified Treasury Professional (CTP)",
+          "fontSize": "20px",
+          "fontWeight": "800",
+          "lineHeight": "35px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 316,
+          "visible": true,
+          "active": false
+        },
+        {
+          "text": "Certified Corporate FP&A Professional (FPAC)",
+          "fontSize": "20px",
+          "fontWeight": "800",
+          "lineHeight": "35px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 376,
+          "visible": true,
+          "active": false
+        },
+        {
+          "text": "AFP Certification Scholarship",
+          "fontSize": "20px",
+          "fontWeight": "800",
+          "lineHeight": "35px",
+          "fontFamily": "GothamNarrow",
+          "color": "rgb(56, 56, 56)",
+          "width": 267,
+          "visible": true,
+          "active": false
+        }
+      ],
+      "accordionTabs": [
+        {
+          "text": "Maintaining Your Credential",
+          "visible": false,
+          "active": true
+        },
+        {
+          "text": "Certified Treasury Professional (CTP)",
+          "visible": false,
+          "active": false
+        },
+        {
+          "text": "Certified Corporate FP&A Professional (FPAC)",
+          "visible": false,
+          "active": false
+        },
+        {
+          "text": "AFP Certification Scholarship",
+          "visible": false,
+          "active": false
+        }
+      ],
+      "panelEyebrow": null,
+      "panelTitle": "Maintaining Your Credential",
+      "explore": null
+    },
+    "todoHrefs": [],
+    "horizontalOverflow": 0
+  },
+  "clickThrough": {
+    "landedUrl": "https://www.financialprofessionals.org/certification/benefits-of-afp-certifications",
+    "status": 200,
+    "title": "Benefits of AFP Certifications"
+  },
+  "tabSwitch": {
+    "selector": ".tab-section__nav-btn",
+    "afterCtp": [
+      "Certified Treasury Professional (CTP)"
+    ],
+    "afterMaintain": [
+      "Maintain Your Credential"
+    ]
+  },
+  "consoleErrors": [
+    "Did not parse stylesheet at 'https://maxcdn.bootstrapcdn.com/' because non CSS MIME types are not allowed in strict mode.",
+    "pageerror: Unexpected EOF",
+    "pageerror: Error: License expired",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /j.clarity.ms/collect due to access control checks.",
+    "pageerror: Unexpected EOF",
+    "Did not parse stylesheet at 'https://maxcdn.bootstrapcdn.com/' because non CSS MIME types are not allowed in strict mode.",
+    "pageerror: Error: License expired",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://view.ceros.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://7185359.hs-sites.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://7185359.hs-sites.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://15414140.fls.doubleclick.net\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match.",
+    "pageerror: /www.financialprofessionals.org\" from accessing a frame with origin \"https://app.hubspot.com\". Protocols, domains, and ports must match."
+  ]
+}

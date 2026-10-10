@@ -1,0 +1,242 @@
+{
+  "control": {
+    "triggers": [
+      "",
+      "USD",
+      "",
+      "Pick-up time12:00 PM",
+      "Drop-off time12:00 PM"
+    ],
+    "Pick-up time": [
+      {
+        "count": 45,
+        "first": [
+          "12:00 AMSelf Service",
+          "12:30 AMSelf Service",
+          "1:00 AMSelf Service"
+        ],
+        "last": [
+          "11:00 PMSelf Service",
+          "11:30 PMSelf Service"
+        ],
+        "selected": "12:00 PM",
+        "selectedCls": "flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent bg-accent",
+        "scrollTop": 0,
+        "clientHeight": 208,
+        "scrollHeight": 1448,
+        "visibleTexts": [
+          "12:00 AMSelf Service",
+          "12:30 AMSelf Service",
+          "1:00 AMSelf Service",
+          "1:30 AMSelf Service",
+          "2:00 AMSelf Service",
+          "4:00 AMSelf Service",
+          "4:30 AMSelf Service"
+        ],
+        "listCls": "flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "popoverHtml": "<div data-open=\"\" data-side=\"bottom\" data-align=\"start\" tabindex=\"-1\" data-base-ui-focusable=\"\" id=\"_R_8qj5inktb_\" role=\"dialog\" data-slot=\"popover-content\" class=\"z-50 flex origin-(--transform-origin) flex-col gap-2.5 bg-popover text-sm text-popover-foreground ring-foreground/10 outline-hidden duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 w-44 rounded-xl p-0 shadow-md ring-0\" style=\"\"><button type=\"button\" class=\"flex w-full items-center justify-center rounded-t-xl py-1 hover:bg-accent transition-colors\" aria-label=\"Scroll up\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-4 text-muted-foreground\"><path d=\"M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z\"></path></svg></button><div class=\"flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden\"><button type=\"button\" class=\"flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent\"><span class=\"truncate text-sm text-foreground\">12:0"
+      }
+    ],
+    "Drop-off time": [
+      {
+        "count": 45,
+        "first": [
+          "12:00 AMSelf Service",
+          "12:30 AMSelf Service",
+          "1:00 AMSelf Service"
+        ],
+        "last": [
+          "11:00 PMSelf Service",
+          "11:30 PMSelf Service"
+        ],
+        "selected": "12:00 PM",
+        "selectedCls": "flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent bg-accent",
+        "scrollTop": 0,
+        "clientHeight": 208,
+        "scrollHeight": 1448,
+        "visibleTexts": [
+          "12:00 AMSelf Service",
+          "12:30 AMSelf Service",
+          "1:00 AMSelf Service",
+          "1:30 AMSelf Service",
+          "2:00 AMSelf Service",
+          "4:00 AMSelf Service",
+          "4:30 AMSelf Service"
+        ],
+        "listCls": "flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "popoverHtml": "<div data-open=\"\" data-side=\"bottom\" data-align=\"start\" tabindex=\"-1\" data-base-ui-focusable=\"\" id=\"_R_9aj5inktb_\" role=\"dialog\" data-slot=\"popover-content\" class=\"z-50 flex origin-(--transform-origin) flex-col gap-2.5 bg-popover text-sm text-popover-foreground ring-foreground/10 outline-hidden duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 w-44 rounded-xl p-0 shadow-md ring-0\" style=\"\"><button type=\"button\" class=\"flex w-full items-center justify-center rounded-t-xl py-1 hover:bg-accent transition-colors\" aria-label=\"Scroll up\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-4 text-muted-foreground\"><path d=\"M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z\"></path></svg></button><div class=\"flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden\"><button type=\"button\" class=\"flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent\"><span class=\"truncate text-sm text-foreground\">12:0"
+      }
+    ]
+  },
+  "links": [
+    "https://www.lotuscarrental.is/",
+    "https://www.lotuscarrental.is/rent-a-car-in-iceland",
+    "https://www.lotuscarrental.is/our-rental-cars",
+    "https://www.lotuscarrental.is/insurance",
+    "https://www.lotuscarrental.is/our-services/tours",
+    "https://www.lotuscarrental.is/faq",
+    "https://www.lotuscarrental.is/blog",
+    "https://www.lotuscarrental.is/contact",
+    "https://www.lotuscarrental.is/client",
+    "https://www.lotuscarrental.is/our-rental-cars/4x4",
+    "https://www.lotuscarrental.is/our-rental-cars/campers",
+    "https://www.lotuscarrental.is/our-rental-cars/small-cars",
+    "https://www.lotuscarrental.is/our-rental-cars/medium-cars",
+    "https://www.lotuscarrental.is/our-rental-cars/large-cars",
+    "https://www.lotuscarrental.is/our-rental-cars/luxury-cars",
+    "https://www.lotuscarrental.is/our-rental-cars/minivans",
+    "https://www.lotuscarrental.is/blog/best-month-to-visit-iceland",
+    "https://www.lotuscarrental.is/blog/how-many-days-do-you-need-in-iceland",
+    "https://www.lotuscarrental.is/blog/is-iceland-expensive-trip-cost-breakdown",
+    "https://www.lotuscarrental.is/blog/campervan-vs-car-rental-in-iceland-a-locals-2026-guide",
+    "https://www.lotuscarrental.is/debit-credit-card",
+    "https://www.lotuscarrental.is/our-services/airport-shuttle",
+    "https://www.lotuscarrental.is/about-us/driving-in-iceland",
+    "https://assist.lotuscarrental.is/sign-in",
+    "https://www.lotuscarrental.is/about-us",
+    "https://www.lotuscarrental.is/insurance/cancellation-policy",
+    "https://www.lotuscarrental.is/rent-a-car-in-iceland/keflavik-airport",
+    "mailto:lotus@lotuscarrental.is",
+    "https://www.lotuscarrental.is/insurance/terms-and-agreement",
+    "https://www.lotuscarrental.is/privacy-policy",
+    "https://www.lotuscarrental.is/?cro_mode=qa&_conv_eforce=100052922.1000257554"
+  ],
+  "v1": {
+    "triggers": [
+      "",
+      "USD",
+      "",
+      "Pick-up time12:00 PM",
+      "Drop-off time12:00 PM"
+    ],
+    "Pick-up time": [
+      {
+        "count": 45,
+        "first": [
+          "12:00 AMSelf Service",
+          "12:30 AMSelf Service",
+          "1:00 AMSelf Service"
+        ],
+        "last": [
+          "11:00 PMSelf Service",
+          "11:30 PMSelf Service"
+        ],
+        "selected": "12:00 PM",
+        "selectedCls": "flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent bg-accent",
+        "scrollTop": 588,
+        "clientHeight": 208,
+        "scrollHeight": 1448,
+        "visibleTexts": [
+          "10:30 AM",
+          "11:00 AM",
+          "11:30 AM",
+          "12:00 PM",
+          "12:30 PM",
+          "1:00 PM",
+          "1:30 PM"
+        ],
+        "listCls": "flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "popoverHtml": "<div data-open=\"\" data-side=\"bottom\" data-align=\"start\" tabindex=\"-1\" data-base-ui-focusable=\"\" id=\"_R_8qj5inktb_\" role=\"dialog\" data-slot=\"popover-content\" class=\"z-50 flex origin-(--transform-origin) flex-col gap-2.5 bg-popover text-sm text-popover-foreground ring-foreground/10 outline-hidden duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 w-44 rounded-xl p-0 shadow-md ring-0\" style=\"\"><button type=\"button\" class=\"flex w-full items-center justify-center rounded-t-xl py-1 hover:bg-accent transition-colors\" aria-label=\"Scroll up\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-4 text-muted-foreground\"><path d=\"M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z\"></path></svg></button><div class=\"flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden\"><button type=\"button\" class=\"flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent\"><span class=\"truncate text-sm text-foreground\">12:0"
+      }
+    ],
+    "Drop-off time": [
+      {
+        "count": 45,
+        "first": [
+          "12:00 AMSelf Service",
+          "12:30 AMSelf Service",
+          "1:00 AMSelf Service"
+        ],
+        "last": [
+          "11:00 PMSelf Service",
+          "11:30 PMSelf Service"
+        ],
+        "selected": "12:00 PM",
+        "selectedCls": "flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent bg-accent",
+        "scrollTop": 588,
+        "clientHeight": 208,
+        "scrollHeight": 1448,
+        "visibleTexts": [
+          "10:30 AM",
+          "11:00 AM",
+          "11:30 AM",
+          "12:00 PM",
+          "12:30 PM",
+          "1:00 PM",
+          "1:30 PM"
+        ],
+        "listCls": "flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "popoverHtml": "<div data-open=\"\" data-side=\"bottom\" data-align=\"start\" tabindex=\"-1\" data-base-ui-focusable=\"\" id=\"_R_9aj5inktb_\" role=\"dialog\" data-slot=\"popover-content\" class=\"z-50 flex origin-(--transform-origin) flex-col gap-2.5 bg-popover text-sm text-popover-foreground ring-foreground/10 outline-hidden duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 w-44 rounded-xl p-0 shadow-md ring-0\" style=\"\"><button type=\"button\" class=\"flex w-full items-center justify-center rounded-t-xl py-1 hover:bg-accent transition-colors\" aria-label=\"Scroll up\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-4 text-muted-foreground\"><path d=\"M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z\"></path></svg></button><div class=\"flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden\"><button type=\"button\" class=\"flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent\"><span class=\"truncate text-sm text-foreground\">12:0"
+      }
+    ]
+  },
+  "v2": {
+    "triggers": [
+      "",
+      "USD",
+      "",
+      "Pick-up timeNoon",
+      "Drop-off timeNoon"
+    ],
+    "Pick-up time": [
+      {
+        "count": 45,
+        "first": [
+          "MidnightSelf Service",
+          "12:30 AMSelf Service",
+          "1:00 AMSelf Service"
+        ],
+        "last": [
+          "11:00 PMSelf Service",
+          "11:30 PMSelf Service"
+        ],
+        "selected": "Noon",
+        "selectedCls": "flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent bg-accent",
+        "scrollTop": 554,
+        "clientHeight": 208,
+        "scrollHeight": 1448,
+        "visibleTexts": [
+          "10:00 AM",
+          "10:30 AM",
+          "11:00 AM",
+          "11:30 AM",
+          "Noon",
+          "12:30 PM",
+          "1:00 PM"
+        ],
+        "listCls": "flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "popoverHtml": "<div data-open=\"\" data-side=\"bottom\" data-align=\"start\" tabindex=\"-1\" data-base-ui-focusable=\"\" id=\"_R_8qj5inktb_\" role=\"dialog\" data-slot=\"popover-content\" class=\"z-50 flex origin-(--transform-origin) flex-col gap-2.5 bg-popover text-sm text-popover-foreground ring-foreground/10 outline-hidden duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 w-44 rounded-xl p-0 shadow-md ring-0\" style=\"\"><button type=\"button\" class=\"flex w-full items-center justify-center rounded-t-xl py-1 hover:bg-accent transition-colors\" aria-label=\"Scroll up\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-4 text-muted-foreground\"><path d=\"M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z\"></path></svg></button><div class=\"flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden\"><button type=\"button\" class=\"flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent\"><span class=\"truncate text-sm text-foreground\" data"
+      }
+    ],
+    "Drop-off time": [
+      {
+        "count": 45,
+        "first": [
+          "MidnightSelf Service",
+          "12:30 AMSelf Service",
+          "1:00 AMSelf Service"
+        ],
+        "last": [
+          "11:00 PMSelf Service",
+          "11:30 PMSelf Service"
+        ],
+        "selected": "Noon",
+        "selectedCls": "flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent bg-accent",
+        "scrollTop": 554,
+        "clientHeight": 208,
+        "scrollHeight": 1448,
+        "visibleTexts": [
+          "10:00 AM",
+          "10:30 AM",
+          "11:00 AM",
+          "11:30 AM",
+          "Noon",
+          "12:30 PM",
+          "1:00 PM"
+        ],
+        "listCls": "flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "popoverHtml": "<div data-open=\"\" data-side=\"bottom\" data-align=\"start\" tabindex=\"-1\" data-base-ui-focusable=\"\" id=\"_R_9aj5inktb_\" role=\"dialog\" data-slot=\"popover-content\" class=\"z-50 flex origin-(--transform-origin) flex-col gap-2.5 bg-popover text-sm text-popover-foreground ring-foreground/10 outline-hidden duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 w-44 rounded-xl p-0 shadow-md ring-0\" style=\"\"><button type=\"button\" class=\"flex w-full items-center justify-center rounded-t-xl py-1 hover:bg-accent transition-colors\" aria-label=\"Scroll up\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-4 text-muted-foreground\"><path d=\"M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z\"></path></svg></button><div class=\"flex max-h-52 flex-col overflow-y-auto p-1 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden\"><button type=\"button\" class=\"flex w-full items-center justify-between gap-2 rounded-full px-2 py-1.5 text-left transition-colors hover:bg-accent\"><span class=\"truncate text-sm text-foreground\" data"
+      }
+    ]
+  }
+}

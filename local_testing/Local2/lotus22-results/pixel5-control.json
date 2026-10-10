@@ -1,0 +1,551 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus22-noon-default.spec.js",
+      "file": "lotus22-noon-default.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Lotus 22 — control",
+          "file": "lotus22-noon-default.spec.js",
+          "line": 115,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC01 control: bucketed into correct variation + closed fields show \"12:00 PM\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10374,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:17:40.472Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-tc01-closed-fields",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-ea21d-losed-fields-show-12-00-PM--Mobile-Chrome-Pixel-5-\\attachments\\control-tc01-closed-fields-9672629c0f07ed9a7cfb8f8724befbf44aa1930e.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-276de604785d6fcca227",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 116,
+              "column": 5
+            },
+            {
+              "title": "TC02 control: pick-up dropdown opens on \"12:00 PM\" (baseline: list at top)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "list",
+                      "description": "{\"count\":45,\"selected\":\"12:00 PM\",\"selVisible\":false,\"centerOffset\":588,\"rowHeight\":32,\"scrollTop\":0,\"visible\":[\"12:00 AM\",\"12:30 AM\",\"1:00 AM\",\"1:30 AM\",\"2:00 AM\",\"4:00 AM\",\"4:30 AM\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15043,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:17:51.074Z",
+                      "annotations": [
+                        {
+                          "type": "list",
+                          "description": "{\"count\":45,\"selected\":\"12:00 PM\",\"selVisible\":false,\"centerOffset\":588,\"rowHeight\":32,\"scrollTop\":0,\"visible\":[\"12:00 AM\",\"12:30 AM\",\"1:00 AM\",\"1:30 AM\",\"2:00 AM\",\"4:00 AM\",\"4:30 AM\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-tc02-pick-up-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-61870-00-PM-baseline-list-at-top--Mobile-Chrome-Pixel-5-\\attachments\\control-tc02-pick-up-open-ddc7e4953d1cea063583919618c7d97692d73e50.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-3e040137ae7f31165666",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 130,
+              "column": 7
+            },
+            {
+              "title": "TC03 control: drop-off dropdown opens on \"12:00 PM\" (baseline: list at top)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "list",
+                      "description": "{\"count\":45,\"selected\":\"12:00 PM\",\"selVisible\":false,\"centerOffset\":588,\"rowHeight\":32,\"scrollTop\":0,\"visible\":[\"12:00 AM\",\"12:30 AM\",\"1:00 AM\",\"1:30 AM\",\"2:00 AM\",\"4:00 AM\",\"4:30 AM\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14524,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:18:06.459Z",
+                      "annotations": [
+                        {
+                          "type": "list",
+                          "description": "{\"count\":45,\"selected\":\"12:00 PM\",\"selVisible\":false,\"centerOffset\":588,\"rowHeight\":32,\"scrollTop\":0,\"visible\":[\"12:00 AM\",\"12:30 AM\",\"1:00 AM\",\"1:30 AM\",\"2:00 AM\",\"4:00 AM\",\"4:30 AM\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-tc03-drop-off-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-e0a00-00-PM-baseline-list-at-top--Mobile-Chrome-Pixel-5-\\attachments\\control-tc03-drop-off-open-ef106eb4dca159bcf7e753f5cccca2349855921b.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-de876a9d4e8ba9de9ed2",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 130,
+              "column": 7
+            },
+            {
+              "title": "TC04 control: change time to 3:00 PM, reopen, then back to \"12:00 PM\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19711,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:18:21.082Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-tc04-reopen-3pm",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-6693c-open-then-back-to-12-00-PM--Mobile-Chrome-Pixel-5-\\attachments\\control-tc04-reopen-3pm-47a0501cc560e3fe9d5e102e7bc8142be8249067.png"
+                        },
+                        {
+                          "name": "control-tc04-back-to-noon",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-6693c-open-then-back-to-12-00-PM--Mobile-Chrome-Pixel-5-\\attachments\\control-tc04-back-to-noon-46257227553063389aa85375ce3f42a3bb62bc55.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-e1bd68fd2fa2a51ab2fe",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 157,
+              "column": 5
+            },
+            {
+              "title": "TC05 control: booking page /rent-a-car-in-iceland (direct load) — time selector shows \"12:00 PM\"",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "booking",
+                      "description": "{\"running\":false,\"texts\":[\"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\",\"12:00 PM\",\"12:00 PM\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 36644,
+                      "error": {
+                        "message": "Error: experience 100052922 runs on the booking page (it has a time selector)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: experience 100052922 runs on the booking page (it has a time selector)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:190:99",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                          "column": 99,
+                          "line": 190
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 188 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-tc05-booking-page`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       ti\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'booking'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ running\u001b[33m,\u001b[39m texts }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 190 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(running\u001b[33m,\u001b[39m \u001b[32m`experience ${EXP} runs on the booking page (it has a time selector)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 191 |\u001b[39m       \u001b[36mconst\u001b[39m wrong \u001b[33m=\u001b[39m arm\u001b[33m.\u001b[39mkey \u001b[33m===\u001b[39m \u001b[32m'v2'\u001b[39m \u001b[33m?\u001b[39m texts\u001b[33m.\u001b[39mfilter((t) \u001b[33m=>\u001b[39m \u001b[35m/12:00 PM/\u001b[39m\u001b[33m.\u001b[39mtest(t)) \u001b[33m:\u001b[39m texts\u001b[33m.\u001b[39mfilter((t) \u001b[33m=>\u001b[39m \u001b[35m/Noon/\u001b[39m\u001b[33m.\u001b[39mtest(t))\u001b[33m;\u001b[39m\n \u001b[90m 192 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(wrong\u001b[33m,\u001b[39m \u001b[32m`no visible time text contradicting \"${arm.label}\"`\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(errs\u001b[33m,\u001b[39m \u001b[32m'JS errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                            "column": 99,
+                            "line": 190
+                          },
+                          "message": "Error: experience 100052922 runs on the booking page (it has a time selector)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  188 |       await shot(page, ti, `${arm.key}-tc05-booking-page`);\n  189 |       ti.annotations.push({ type: 'booking', description: JSON.stringify({ running, texts }) });\n> 190 |       expect.soft(running, `experience ${EXP} runs on the booking page (it has a time selector)`).toBe(true);\n      |                                                                                                   ^\n  191 |       const wrong = arm.key === 'v2' ? texts.filter((t) => /12:00 PM/.test(t)) : texts.filter((t) => /Noon/.test(t));\n  192 |       expect.soft(wrong, `no visible time text contradicting \"${arm.label}\"`).toEqual([]);\n  193 |       expect.soft(errs, 'JS errors').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:190:99"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:18:40.864Z",
+                      "annotations": [
+                        {
+                          "type": "booking",
+                          "description": "{\"running\":false,\"texts\":[\"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\",\"12:00 PM\",\"12:00 PM\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-tc05-booking-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-2d7d1-me-selector-shows-12-00-PM--Mobile-Chrome-Pixel-5-\\attachments\\control-tc05-booking-page-f3e08aa039b6ad1028d170c6d6a9f7d0836067f8.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-2d7d1-me-selector-shows-12-00-PM--Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-2d7d1-me-selector-shows-12-00-PM--Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                        "column": 99,
+                        "line": 190
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-593eb8c63e673f621120",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 180,
+              "column": 5
+            },
+            {
+              "title": "TC06 control: homepage → fleet CTA → booking page keeps \"12:00 PM\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "cta-text",
+                      "description": "Search Now"
+                    },
+                    {
+                      "type": "booking-texts",
+                      "description": "[\"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\"]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13472,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:19:25.544Z",
+                      "annotations": [
+                        {
+                          "type": "cta-text",
+                          "description": "Search Now"
+                        },
+                        {
+                          "type": "booking-texts",
+                          "description": "[\"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\"]"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-tc06-home-to-booking",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-75e56-ooking-page-keeps-12-00-PM--Mobile-Chrome-Pixel-5-\\attachments\\control-tc06-home-to-booking-33054aa6699085e7913cb11eba222ca27c7c6090.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-49cf50332b7687b6663b",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 196,
+              "column": 5
+            },
+            {
+              "title": "TC07 control: flicker — how long the unmodified time is visible before the variation applies",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "timing",
+                      "description": "{\"fieldVisibleMs\":1166,\"convertAppliedMs\":7518,\"dclMs\":1753,\"loadMs\":0,\"unmodifiedWindowMs\":6352}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8737,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:19:39.169Z",
+                      "annotations": [
+                        {
+                          "type": "timing",
+                          "description": "{\"fieldVisibleMs\":1166,\"convertAppliedMs\":7518,\"dclMs\":1753,\"loadMs\":0,\"unmodifiedWindowMs\":6352}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-e7267fc4c36f4ac97b01",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 216,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T10:17:39.623Z",
+    "duration": 164322.808,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

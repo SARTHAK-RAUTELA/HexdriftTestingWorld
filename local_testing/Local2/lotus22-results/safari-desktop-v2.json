@@ -1,0 +1,696 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus22-noon-default.spec.js",
+      "file": "lotus22-noon-default.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Lotus 22 — v2",
+          "file": "lotus22-noon-default.spec.js",
+          "line": 114,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC01 v2: bucketed into correct variation + closed fields show \"Noon\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13422,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:03:53.081Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-tc01-closed-fields",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-6ffb8-on-closed-fields-show-Noon--Safari-Desktop\\attachments\\v2-tc01-closed-fields-d982e7a5d928978ddcb46cd04dfc1a48740038e1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-bf874088d8b57defd490",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 115,
+              "column": 5
+            },
+            {
+              "title": "TC02 v2: pick-up dropdown opens on \"Noon\", centered",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "list",
+                      "description": "{\"count\":45,\"selected\":\"Noon\",\"selVisible\":true,\"centerOffset\":8,\"rowHeight\":32,\"scrollTop\":580,\"visible\":[\"10:30 AM\",\"11:00 AM\",\"11:30 AM\",\"Noon\",\"12:30 PM\",\"1:00 PM\",\"1:30 PM\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12519,
+                      "error": {
+                        "message": "Error: 12:00 AM option must stay \"12:00 AM\" (spec only renames noon)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"12:00 AM\",\u001b[39m\n\u001b[31m+   \"Midnight\",\u001b[39m\n\u001b[2m    \"12:30 AM\",\u001b[22m\n\u001b[2m    \"1:00 AM\",\u001b[22m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: 12:00 AM option must stay \"12:00 AM\" (spec only renames noon)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"12:00 AM\",\u001b[39m\n\u001b[31m+   \"Midnight\",\u001b[39m\n\u001b[2m    \"12:30 AM\",\u001b[22m\n\u001b[2m    \"1:00 AM\",\u001b[22m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:149:104",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                          "column": 104,
+                          "line": 149
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 147 |\u001b[39m         \u001b[90m// option text: only 12:00 PM may change, and only in V2\u001b[39m\n \u001b[90m 148 |\u001b[39m         \u001b[36mconst\u001b[39m norm \u001b[33m=\u001b[39m l\u001b[33m.\u001b[39moptions\u001b[33m.\u001b[39mmap((o) \u001b[33m=>\u001b[39m o\u001b[33m.\u001b[39mreplace(\u001b[35m/Self Service$/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m.\u001b[39mtrim())\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 149 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(norm\u001b[33m.\u001b[39mslice(\u001b[35m0\u001b[39m\u001b[33m,\u001b[39m \u001b[35m3\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m'12:00 AM option must stay \"12:00 AM\" (spec only renames noon)'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCONTROL_FIRST\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 150 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(norm\u001b[33m.\u001b[39mfilter((o) \u001b[33m=>\u001b[39m o \u001b[33m===\u001b[39m \u001b[32m'12:00 PM'\u001b[39m)\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'\"12:00 PM\" option count'\u001b[39m)\u001b[33m.\u001b[39mtoBe(arm\u001b[33m.\u001b[39mkey \u001b[33m===\u001b[39m \u001b[32m'v2'\u001b[39m \u001b[33m?\u001b[39m \u001b[35m0\u001b[39m \u001b[33m:\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 151 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(norm\u001b[33m.\u001b[39mfilter((o) \u001b[33m=>\u001b[39m o \u001b[33m===\u001b[39m \u001b[32m'Noon'\u001b[39m)\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'\"Noon\" option count'\u001b[39m)\u001b[33m.\u001b[39mtoBe(arm\u001b[33m.\u001b[39mkey \u001b[33m===\u001b[39m \u001b[32m'v2'\u001b[39m \u001b[33m?\u001b[39m \u001b[35m1\u001b[39m \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 152 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(errs\u001b[33m,\u001b[39m \u001b[32m'JS errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                            "column": 104,
+                            "line": 149
+                          },
+                          "message": "Error: 12:00 AM option must stay \"12:00 AM\" (spec only renames noon)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"12:00 AM\",\u001b[39m\n\u001b[31m+   \"Midnight\",\u001b[39m\n\u001b[2m    \"12:30 AM\",\u001b[22m\n\u001b[2m    \"1:00 AM\",\u001b[22m\n\u001b[2m  ]\u001b[22m\n\n  147 |         // option text: only 12:00 PM may change, and only in V2\n  148 |         const norm = l.options.map((o) => o.replace(/Self Service$/, '').trim());\n> 149 |         expect.soft(norm.slice(0, 3), '12:00 AM option must stay \"12:00 AM\" (spec only renames noon)').toEqual(CONTROL_FIRST);\n      |                                                                                                        ^\n  150 |         expect.soft(norm.filter((o) => o === '12:00 PM').length, '\"12:00 PM\" option count').toBe(arm.key === 'v2' ? 0 : 1);\n  151 |         expect.soft(norm.filter((o) => o === 'Noon').length, '\"Noon\" option count').toBe(arm.key === 'v2' ? 1 : 0);\n  152 |         expect.soft(errs, 'JS errors').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:149:104"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:04:06.605Z",
+                      "annotations": [
+                        {
+                          "type": "list",
+                          "description": "{\"count\":45,\"selected\":\"Noon\",\"selVisible\":true,\"centerOffset\":8,\"rowHeight\":32,\"scrollTop\":580,\"visible\":[\"10:30 AM\",\"11:00 AM\",\"11:30 AM\",\"Noon\",\"12:30 PM\",\"1:00 PM\",\"1:30 PM\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-tc02-pick-up-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-5d5a4-down-opens-on-Noon-centered-Safari-Desktop\\attachments\\v2-tc02-pick-up-open-2c218eec641f2af70f2b706babb4d941da99df8d.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-5d5a4-down-opens-on-Noon-centered-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-5d5a4-down-opens-on-Noon-centered-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                        "column": 104,
+                        "line": 149
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-180ab8f773c5d8d6a7a6",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 129,
+              "column": 7
+            },
+            {
+              "title": "TC03 v2: drop-off dropdown opens on \"Noon\", centered",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "list",
+                      "description": "{\"count\":45,\"selected\":\"Noon\",\"selVisible\":true,\"centerOffset\":0,\"rowHeight\":32,\"scrollTop\":588,\"visible\":[\"10:30 AM\",\"11:00 AM\",\"11:30 AM\",\"Noon\",\"12:30 PM\",\"1:00 PM\",\"1:30 PM\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13154,
+                      "error": {
+                        "message": "Error: 12:00 AM option must stay \"12:00 AM\" (spec only renames noon)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"12:00 AM\",\u001b[39m\n\u001b[31m+   \"Midnight\",\u001b[39m\n\u001b[2m    \"12:30 AM\",\u001b[22m\n\u001b[2m    \"1:00 AM\",\u001b[22m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: 12:00 AM option must stay \"12:00 AM\" (spec only renames noon)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"12:00 AM\",\u001b[39m\n\u001b[31m+   \"Midnight\",\u001b[39m\n\u001b[2m    \"12:30 AM\",\u001b[22m\n\u001b[2m    \"1:00 AM\",\u001b[22m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:149:104",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                          "column": 104,
+                          "line": 149
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 147 |\u001b[39m         \u001b[90m// option text: only 12:00 PM may change, and only in V2\u001b[39m\n \u001b[90m 148 |\u001b[39m         \u001b[36mconst\u001b[39m norm \u001b[33m=\u001b[39m l\u001b[33m.\u001b[39moptions\u001b[33m.\u001b[39mmap((o) \u001b[33m=>\u001b[39m o\u001b[33m.\u001b[39mreplace(\u001b[35m/Self Service$/\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m.\u001b[39mtrim())\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 149 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(norm\u001b[33m.\u001b[39mslice(\u001b[35m0\u001b[39m\u001b[33m,\u001b[39m \u001b[35m3\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m'12:00 AM option must stay \"12:00 AM\" (spec only renames noon)'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCONTROL_FIRST\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 150 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(norm\u001b[33m.\u001b[39mfilter((o) \u001b[33m=>\u001b[39m o \u001b[33m===\u001b[39m \u001b[32m'12:00 PM'\u001b[39m)\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'\"12:00 PM\" option count'\u001b[39m)\u001b[33m.\u001b[39mtoBe(arm\u001b[33m.\u001b[39mkey \u001b[33m===\u001b[39m \u001b[32m'v2'\u001b[39m \u001b[33m?\u001b[39m \u001b[35m0\u001b[39m \u001b[33m:\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 151 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(norm\u001b[33m.\u001b[39mfilter((o) \u001b[33m=>\u001b[39m o \u001b[33m===\u001b[39m \u001b[32m'Noon'\u001b[39m)\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'\"Noon\" option count'\u001b[39m)\u001b[33m.\u001b[39mtoBe(arm\u001b[33m.\u001b[39mkey \u001b[33m===\u001b[39m \u001b[32m'v2'\u001b[39m \u001b[33m?\u001b[39m \u001b[35m1\u001b[39m \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 152 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(errs\u001b[33m,\u001b[39m \u001b[32m'JS errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                            "column": 104,
+                            "line": 149
+                          },
+                          "message": "Error: 12:00 AM option must stay \"12:00 AM\" (spec only renames noon)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"12:00 AM\",\u001b[39m\n\u001b[31m+   \"Midnight\",\u001b[39m\n\u001b[2m    \"12:30 AM\",\u001b[22m\n\u001b[2m    \"1:00 AM\",\u001b[22m\n\u001b[2m  ]\u001b[22m\n\n  147 |         // option text: only 12:00 PM may change, and only in V2\n  148 |         const norm = l.options.map((o) => o.replace(/Self Service$/, '').trim());\n> 149 |         expect.soft(norm.slice(0, 3), '12:00 AM option must stay \"12:00 AM\" (spec only renames noon)').toEqual(CONTROL_FIRST);\n      |                                                                                                        ^\n  150 |         expect.soft(norm.filter((o) => o === '12:00 PM').length, '\"12:00 PM\" option count').toBe(arm.key === 'v2' ? 0 : 1);\n  151 |         expect.soft(norm.filter((o) => o === 'Noon').length, '\"Noon\" option count').toBe(arm.key === 'v2' ? 1 : 0);\n  152 |         expect.soft(errs, 'JS errors').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:149:104"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:04:19.936Z",
+                      "annotations": [
+                        {
+                          "type": "list",
+                          "description": "{\"count\":45,\"selected\":\"Noon\",\"selVisible\":true,\"centerOffset\":0,\"rowHeight\":32,\"scrollTop\":588,\"visible\":[\"10:30 AM\",\"11:00 AM\",\"11:30 AM\",\"Noon\",\"12:30 PM\",\"1:00 PM\",\"1:30 PM\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-tc03-drop-off-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-88d42-down-opens-on-Noon-centered-Safari-Desktop\\attachments\\v2-tc03-drop-off-open-f1bacac50821b44314414621e18d66e952999891.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-88d42-down-opens-on-Noon-centered-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-88d42-down-opens-on-Noon-centered-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                        "column": 104,
+                        "line": 149
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-ee6fc8baaeced4162dbf",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 129,
+              "column": 7
+            },
+            {
+              "title": "TC04 v2: change time to 3:00 PM, reopen, then back to \"Noon\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17703,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:04:33.867Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-tc04-reopen-3pm",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-11a68-M-reopen-then-back-to-Noon--Safari-Desktop\\attachments\\v2-tc04-reopen-3pm-1f0b81b3dfdcd11e3aeca8ae8bb7d84350da1b67.png"
+                        },
+                        {
+                          "name": "v2-tc04-back-to-noon",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-11a68-M-reopen-then-back-to-Noon--Safari-Desktop\\attachments\\v2-tc04-back-to-noon-ed2e9e59aee226ce8d4cf2201b90723c176b81de.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-fdd5a5cb7388737e9452",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 156,
+              "column": 5
+            },
+            {
+              "title": "TC05 v2: booking page /rent-a-car-in-iceland (direct load) — time selector shows \"Noon\"",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "booking",
+                      "description": "{\"running\":false,\"texts\":[\"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\",\"12:00 PM\",\"12:00 PM\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 37460,
+                      "error": {
+                        "message": "Error: experience 100052922 runs on the booking page (it has a time selector)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: experience 100052922 runs on the booking page (it has a time selector)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:189:99",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                          "column": 99,
+                          "line": 189
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 187 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-tc05-booking-page`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       ti\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'booking'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ running\u001b[33m,\u001b[39m texts }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 189 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(running\u001b[33m,\u001b[39m \u001b[32m`experience ${EXP} runs on the booking page (it has a time selector)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 190 |\u001b[39m       \u001b[36mconst\u001b[39m wrong \u001b[33m=\u001b[39m arm\u001b[33m.\u001b[39mkey \u001b[33m===\u001b[39m \u001b[32m'v2'\u001b[39m \u001b[33m?\u001b[39m texts\u001b[33m.\u001b[39mfilter((t) \u001b[33m=>\u001b[39m \u001b[35m/12:00 PM/\u001b[39m\u001b[33m.\u001b[39mtest(t)) \u001b[33m:\u001b[39m texts\u001b[33m.\u001b[39mfilter((t) \u001b[33m=>\u001b[39m \u001b[35m/Noon/\u001b[39m\u001b[33m.\u001b[39mtest(t))\u001b[33m;\u001b[39m\n \u001b[90m 191 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(wrong\u001b[33m,\u001b[39m \u001b[32m`no visible time text contradicting \"${arm.label}\"`\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 192 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(errs\u001b[33m,\u001b[39m \u001b[32m'JS errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                            "column": 99,
+                            "line": 189
+                          },
+                          "message": "Error: experience 100052922 runs on the booking page (it has a time selector)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  187 |       await shot(page, ti, `${arm.key}-tc05-booking-page`);\n  188 |       ti.annotations.push({ type: 'booking', description: JSON.stringify({ running, texts }) });\n> 189 |       expect.soft(running, `experience ${EXP} runs on the booking page (it has a time selector)`).toBe(true);\n      |                                                                                                   ^\n  190 |       const wrong = arm.key === 'v2' ? texts.filter((t) => /12:00 PM/.test(t)) : texts.filter((t) => /Noon/.test(t));\n  191 |       expect.soft(wrong, `no visible time text contradicting \"${arm.label}\"`).toEqual([]);\n  192 |       expect.soft(errs, 'JS errors').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:189:99"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                            "column": 79,
+                            "line": 191
+                          },
+                          "message": "Error: no visible time text contradicting \"Noon\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\",\u001b[39m\n\u001b[31m+   \"12:00 PM\",\u001b[39m\n\u001b[31m+   \"12:00 PM\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  189 |       expect.soft(running, `experience ${EXP} runs on the booking page (it has a time selector)`).toBe(true);\n  190 |       const wrong = arm.key === 'v2' ? texts.filter((t) => /12:00 PM/.test(t)) : texts.filter((t) => /Noon/.test(t));\n> 191 |       expect.soft(wrong, `no visible time text contradicting \"${arm.label}\"`).toEqual([]);\n      |                                                                               ^\n  192 |       expect.soft(errs, 'JS errors').toEqual([]);\n  193 |     });\n  194 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:191:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:04:51.666Z",
+                      "annotations": [
+                        {
+                          "type": "booking",
+                          "description": "{\"running\":false,\"texts\":[\"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\",\"12:00 PM\",\"12:00 PM\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-tc05-booking-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-a1dc3-—-time-selector-shows-Noon--Safari-Desktop\\attachments\\v2-tc05-booking-page-1efc5ca578ad3b8c438d6abb34e0804a58fbf845.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-a1dc3-—-time-selector-shows-Noon--Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-a1dc3-—-time-selector-shows-Noon--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                        "column": 99,
+                        "line": 189
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-7cac236d19b46b6297c5",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 179,
+              "column": 5
+            },
+            {
+              "title": "TC06 v2: homepage → fleet CTA → booking page keeps \"Noon\"",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "cta-text",
+                      "description": "Check the fleet"
+                    },
+                    {
+                      "type": "booking-texts",
+                      "description": "[\"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\"]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 18311,
+                      "error": {
+                        "message": "Error: no visible time text contradicting \"Noon\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: no visible time text contradicting \"Noon\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:210:79",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                          "column": 79,
+                          "line": 210
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 208 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(texts\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'booking page shows the rental time'\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 209 |\u001b[39m       \u001b[36mconst\u001b[39m wrong \u001b[33m=\u001b[39m arm\u001b[33m.\u001b[39mkey \u001b[33m===\u001b[39m \u001b[32m'v2'\u001b[39m \u001b[33m?\u001b[39m texts\u001b[33m.\u001b[39mfilter((t) \u001b[33m=>\u001b[39m \u001b[35m/12:00 PM/\u001b[39m\u001b[33m.\u001b[39mtest(t)) \u001b[33m:\u001b[39m texts\u001b[33m.\u001b[39mfilter((t) \u001b[33m=>\u001b[39m \u001b[35m/Noon/\u001b[39m\u001b[33m.\u001b[39mtest(t))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 210 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(wrong\u001b[33m,\u001b[39m \u001b[32m`no visible time text contradicting \"${arm.label}\"`\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 211 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(errs\u001b[33m,\u001b[39m \u001b[32m'JS errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 212 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 213 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                            "column": 79,
+                            "line": 210
+                          },
+                          "message": "Error: no visible time text contradicting \"Noon\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  208 |       expect.soft(texts.length, 'booking page shows the rental time').toBeGreaterThan(0);\n  209 |       const wrong = arm.key === 'v2' ? texts.filter((t) => /12:00 PM/.test(t)) : texts.filter((t) => /Noon/.test(t));\n> 210 |       expect.soft(wrong, `no visible time text contradicting \"${arm.label}\"`).toEqual([]);\n      |                                                                               ^\n  211 |       expect.soft(errs, 'JS errors').toEqual([]);\n  212 |     });\n  213 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:210:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:05:30.012Z",
+                      "annotations": [
+                        {
+                          "type": "cta-text",
+                          "description": "Check the fleet"
+                        },
+                        {
+                          "type": "booking-texts",
+                          "description": "[\"11 Oct 2026 12:00 PM - 13 Oct 2026 12:00 PM\"]"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-tc06-home-to-booking",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-d29bc--→-booking-page-keeps-Noon--Safari-Desktop\\attachments\\v2-tc06-home-to-booking-27f78fbafadf2a03e55a8ccfeea1a9f5aa96dbf0.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-d29bc--→-booking-page-keeps-Noon--Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-d29bc--→-booking-page-keeps-Noon--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                        "column": 79,
+                        "line": 210
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-248c6ae8cbcace93e16e",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 195,
+              "column": 5
+            },
+            {
+              "title": "TC07 v2: flicker — how long the unmodified time is visible before the variation applies",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "timing",
+                      "description": "{\"fieldVisibleMs\":1128,\"convertAppliedMs\":5485,\"dclMs\":0,\"loadMs\":3723,\"unmodifiedWindowMs\":4357}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7834,
+                      "error": {
+                        "message": "Error: original time visible before variation applies (ms) — target ≤ 1000\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1000\u001b[39m\nReceived:    \u001b[31m4357\u001b[39m",
+                        "stack": "Error: original time visible before variation applies (ms) — target ≤ 1000\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1000\u001b[39m\nReceived:    \u001b[31m4357\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:232:114",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                          "column": 114,
+                          "line": 232
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 230 |\u001b[39m       \u001b[36mif\u001b[39m (arm\u001b[33m.\u001b[39mkey \u001b[33m!==\u001b[39m \u001b[32m'control'\u001b[39m) {\n \u001b[90m 231 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(t\u001b[33m.\u001b[39mconvertAppliedMs\u001b[33m,\u001b[39m \u001b[32m'Convert applied within 30s'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 232 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(t\u001b[33m.\u001b[39munmodifiedWindowMs\u001b[33m,\u001b[39m \u001b[32m'original time visible before variation applies (ms) — target ≤ 1000'\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m1000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 233 |\u001b[39m       }\n \u001b[90m 234 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 235 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                            "column": 114,
+                            "line": 232
+                          },
+                          "message": "Error: original time visible before variation applies (ms) — target ≤ 1000\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1000\u001b[39m\nReceived:    \u001b[31m4357\u001b[39m\n\n  230 |       if (arm.key !== 'control') {\n  231 |         expect.soft(t.convertAppliedMs, 'Convert applied within 30s').not.toBeNull();\n> 232 |         expect.soft(t.unmodifiedWindowMs, 'original time visible before variation applies (ms) — target ≤ 1000').toBeLessThanOrEqual(1000);\n      |                                                                                                                  ^\n  233 |       }\n  234 |     });\n  235 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js:232:114"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-09T10:05:49.204Z",
+                      "annotations": [
+                        {
+                          "type": "timing",
+                          "description": "{\"fieldVisibleMs\":1128,\"convertAppliedMs\":5485,\"dclMs\":0,\"loadMs\":3723,\"unmodifiedWindowMs\":4357}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-2405c-efore-the-variation-applies-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus22-noon-default-Lotus-2405c-efore-the-variation-applies-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus22-noon-default.spec.js",
+                        "column": 114,
+                        "line": 232
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ef795864c53f5baf6a66-d40ccf68ab317d3ebb72",
+              "file": "lotus22-noon-default.spec.js",
+              "line": 214,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T10:03:52.211Z",
+    "duration": 125030.346,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

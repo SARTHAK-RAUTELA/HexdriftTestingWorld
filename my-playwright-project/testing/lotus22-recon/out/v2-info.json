@@ -1,0 +1,30 @@
+{
+  "info": {
+    "url": "https://www.lotuscarrental.is/?cro_mode=qa&_conv_eforce=100052922.1000257556",
+    "title": "Lotus Car Rental: Car Rental Iceland with Five Star Service",
+    "convert": true,
+    "lotusFlag": true,
+    "timeEls": [
+      {
+        "tag": "BUTTON",
+        "text": "Pick-up timeNoon",
+        "cls": "flex flex-1 flex-col gap-1.5 text-left outline-none",
+        "html": "<button type=\"button\" class=\"flex flex-1 flex-col gap-1.5 text-left outline-none\" tabindex=\"0\" data-base-ui-click-trigger=\"\" id=\"base-ui-_R_6oqj5inktb_\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-slot=\"popover-trigger\"><span class=\"text-sm font-medium leading-none text-foreground select-none opacity-0\">Pick-up time</span><div class=\"flex items-center gap-2 h-10 py-2\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-4 shrink-0\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A8"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Drop-off timeNoon",
+        "cls": "flex flex-1 flex-col gap-1.5 text-left outline-none",
+        "html": "<button type=\"button\" class=\"flex flex-1 flex-col gap-1.5 text-left outline-none\" tabindex=\"0\" data-base-ui-click-trigger=\"\" id=\"base-ui-_R_6paj5inktb_\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-slot=\"popover-trigger\"><span class=\"text-sm font-medium leading-none text-foreground select-none opacity-0\">Drop-off time</span><div class=\"flex items-center gap-2 h-10 py-2\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-4 shrink-0\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A"
+      }
+    ],
+    "labelled": [
+      "Noon",
+      "Noon"
+    ]
+  },
+  "logs": [
+    "[warning] Hotjar not launching due to suspicious userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.7727.15 Safari/537.36",
+    "[log] CRO Mode enabled: qa"
+  ]
+}

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lotus 22 QA Report</title>
+<style>
+:root{--bg:#f7f7f8;--card:#fff;--ink:#1a1a2e;--mut:#5c5f6b;--line:#e2e4ea;--ok:#1a7f4b;--okbg:#e6f5ec;--bad:#b42318;--badbg:#fdecea;--warn:#946200;--warnbg:#fff4d6;--info:#2f5bb7;--infobg:#e8effc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15161b;--card:#1f2027;--ink:#ececf1;--mut:#a3a6b3;--line:#33353f;--ok:#5fd394;--okbg:#173326;--bad:#ff8a80;--badbg:#3a1d1b;--warn:#f2c14e;--warnbg:#3a2f12;--info:#8fb2ff;--infobg:#1c2742}}
+:root[data-theme="dark"]{--bg:#15161b;--card:#1f2027;--ink:#ececf1;--mut:#a3a6b3;--line:#33353f;--ok:#5fd394;--okbg:#173326;--bad:#ff8a80;--badbg:#3a1d1b;--warn:#f2c14e;--warnbg:#3a2f12;--info:#8fb2ff;--infobg:#1c2742}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:32px 0 10px}h3{font-size:16px;margin:22px 0 6px}
+.sub{color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0}
+.bug{border-left:4px solid var(--bad)}.bug.med{border-left-color:var(--warn)}.bug.low{border-left-color:var(--info)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.tag{display:inline-block;border-radius:5px;padding:1px 8px;font-size:12px;font-weight:600}
+.pass{background:var(--okbg);color:var(--ok)}.fail{background:var(--badbg);color:var(--bad)}.warn{background:var(--warnbg);color:var(--warn)}.info{background:var(--infobg);color:var(--info)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}.kpi b{display:block;font-size:24px}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:10px}
+.shots figure{margin:0}.shots img{width:100%;border:1px solid var(--line);border-radius:6px}.shots figcaption{font-size:12px;color:var(--mut);margin-top:4px}
+.pair{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:10px 0}summary{cursor:pointer;font-weight:600}
+code{background:var(--bg);padding:1px 4px;border-radius:4px;font-size:13px;word-break:break-word}
+.wrap{overflow-x:auto}small{color:var(--mut)}
+ul{margin:6px 0;padding-left:20px}
+</style>
+</head>
+<body><main>
+<h1>Lotus Car Rental: Test 22, Show Noon as Default Time</h1>
+<p class="sub">lotuscarrental.is · sitewide · Convert exp 100052922 · Control 1000257554 / V1 1000257555 / V2 1000257556 · preview links (<code>cro_mode=qa</code>) · tested 2026-10-09</p>
+
+<div class="card">
+<b>Verdict: not ready to launch.</b> On the homepage both variations do what the brief asks. V1 opens the time dropdown on 12:00 PM, and V2 shows "Noon" in the fields and the dropdown. This works on all four browsers. But <b>the test does not run on the booking page</b>, which also has the time selector (BUG-01), so V2 visitors see "Noon" on the homepage and then "12:00 PM" one click later. Visitors also see the original time for about 4–5 seconds before the change appears (BUG-02). V2 renames 12:00 AM to "Midnight", which the brief doesn't ask for (BUG-03).
+</div>
+
+<div class="kpis">
+<div class="kpi"><b>52/84</b>checks passed</div>
+<div class="kpi"><b>4</b>browsers: Chrome + Safari, desktop + mobile</div>
+<div class="kpi"><b>2</b>pages with a time selector (homepage, booking)</div>
+<div class="kpi"><b>4</b>bugs: 1 critical, 1 high, 1 medium, 1 low</div>
+</div>
+
+<h2>What the test should do (from the brief)</h2>
+<div class="card wrap"><table>
+<tr><th>Arm</th><th>Expected</th><th>What we found on the homepage</th></tr>
+<tr><td>Control</td><td>Site as-is</td><td>Fields already show <b>12:00 PM</b> by default (native). The dropdown opens scrolled to the top (12:00 AM), so 12:00 PM is off-screen.</td></tr>
+<tr><td>V1</td><td>Time dropdown shows 12:00 PM by default</td><td>Fields show 12:00 PM. The dropdown opens <b>scrolled to 12:00 PM, centered</b> (0–1px off) on all 4 browsers. ✅</td></tr>
+<tr><td>V2</td><td>As V1, with 12:00 PM shown as "Noon"</td><td>Fields and dropdown show <b>Noon</b>. Centered on Safari and both phones, one row low on desktop Chrome (BUG-04). Also renames 12:00 AM → "Midnight" (BUG-03).</td></tr>
+</table>
+<p><small>Note: since control already defaults to 12:00 PM, the only real change in V1 is where the dropdown opens. That's worth confirming with the client as the intended hypothesis.</small></p>
+</div>
+
+<h2>Bugs</h2>
+
+<div class="card bug">
+<p><span class="tag fail">BUG-01 · Critical</span> <b>The test does not run on the booking page, which has the time selector</b></p>
+<p>The brief says the test should run sitewide wherever the time selector is present. Of the 28 internal pages scanned, two have it: the homepage and the booking page <code>/rent-a-car-in-iceland</code>, where the homepage "Search Now" button leads. On the booking page, Convert runs three other experiences (100052722, 100052833, 100052946) <b>but not 100052922</b>. The page loads normally, but the test never runs there.</p>
+<ul>
+<li>A V2 visitor picks "Noon" on the homepage, taps Search Now, and the booking page says <b>"11 Oct 2026 12:00 PM – 13 Oct 2026 12:00 PM"</b>. This is TC06 on all 4 browsers.</li>
+<li>Loading the booking page directly shows the time fields as 12:00 PM in V2, and the V1 dropdown is not centered. This is TC05 on all 4 browsers, all arms.</li>
+<li><b>Even with targeting fixed</b>, the booking page's "Rental time" summary is a plain <code>&lt;p&gt;</code> line. The V2 code only renames text inside <code>button span</code>, so that summary would still say 12:00 PM. The summary needs handling in the code too.</li>
+</ul>
+<p><b>Fix:</b> add <code>/rent-a-car-in-iceland</code> (and any other booking URLs) to the experience's URL targeting, and extend V2 to relabel the summary text.</p>
+<div class="shots pair">
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc01-closed-fields.png" alt="V2 homepage, Chrome: fields show "Noon""></a><figcaption>V2 homepage, Chrome: fields show "Noon"</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc06-home-to-booking.png" alt="V2 after Search Now, Chrome: booking page says 12:00 PM"></a><figcaption>V2 after Search Now, Chrome: booking page says 12:00 PM</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc06-home-to-booking.png" alt="V2 after Search Now, iPhone 12: 12:00 PM"></a><figcaption>V2 after Search Now, iPhone 12: 12:00 PM</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc05-booking-page.png" alt="V2 booking page direct load, Safari"></a><figcaption>V2 booking page direct load, Safari</figcaption></figure>
+</div>
+</div>
+
+<div class="card bug">
+<p><span class="tag fail">BUG-02 · High</span> <b>Visitors see the original time for about 4–5 seconds before the change appears</b></p>
+<p>Convert is not installed in the page <code>&lt;head&gt;</code>. Google Tag Manager injects it after the page has finished loading. Trace (Chrome desktop): page ready 2.2s → load event 3.2s → GTM requests Convert 4.7s → V2 applied 7.0s. Measured time between the time field appearing and the change applying:</p>
+<div class="wrap"><table><tr><th>Browser</th><th>V1</th><th>V2</th></tr>
+<tr><td>Chrome Desktop</td><td>5.0s</td><td>4.0s</td></tr>
+<tr><td>Safari Desktop</td><td>4.7s</td><td>4.4s</td></tr>
+<tr><td>Mobile Chrome (Pixel 5)</td><td>5.4s</td><td>5.1s</td></tr>
+<tr><td>Mobile Safari (iPhone 12)</td><td>4.1s</td><td>4.8s</td></tr>
+</table></div>
+<ul>
+<li><b>V2:</b> "12:00 PM" visibly flips to "Noon".</li>
+<li><b>V1:</b> anyone who opens the dropdown during that window gets control behavior (the list opens at 12:00 AM).</li>
+<li>This is a site install issue rather than a variation-code bug, and it affects every Convert test on this site. Timings are from automated browsers. Real devices on fast networks may be quicker, but the order of events stays the same.</li>
+</ul>
+<p><b>Fix:</b> install the Convert snippet directly in the page <code>&lt;head&gt;</code> (synchronously) instead of through GTM. Or, at a minimum, hide the time fields until Convert has run.</p>
+</div>
+
+<div class="card bug med">
+<p><span class="tag warn">BUG-03 · Medium, needs a client decision</span> <b>V2 also renames 12:00 AM to "Midnight"</b></p>
+<p>The brief only says to change 12:00 PM to "Noon". <code>va3.js</code> also maps <code>'12:00 AM': 'Midnight'</code>, so the first option in the list reads "Midnight Self Service" in V2 on all 4 browsers (TC02/TC03). If the client didn't ask for this, remove the 12:00 AM entry from <code>LABELS</code>. If they want it, update the brief.</p>
+</div>
+
+<div class="card bug low">
+<p><span class="tag info">BUG-04 · Low</span> <b>Desktop Chrome: V2 opens with "Noon" one row below center</b></p>
+<p>On Chrome desktop, Noon lands 34px below center (one row is 32px), with the list scrolled 554px instead of 588px. That's still visible, but not centered like V1. On Safari desktop it was 0–8px, and on both phones 0px. Likely cause: V2 measures positions on the first animation frame while the popover's open animation is still scaling the list, whereas V1 waits about 100ms.</p>
+<div class="shots pair">
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc02-pick-up-open.png" alt="V1 Chrome: 12:00 PM centered"></a><figcaption>V1 Chrome: 12:00 PM centered</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc02-pick-up-open.png" alt="V2 Chrome: Noon one row low"></a><figcaption>V2 Chrome: Noon one row low</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc02-pick-up-open.png" alt="V2 Safari: centered"></a><figcaption>V2 Safari: centered</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc02-pick-up-open.png" alt="V2 iPhone 12: centered"></a><figcaption>V2 iPhone 12: centered</figcaption></figure>
+</div>
+</div>
+
+<h2>Side-by-side: dropdown on open (homepage)</h2>
+<div class="shots">
+<figure><a href="lotus22-screenshots/chrome-desktop/control-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/control-tc02-pick-up-open.png" alt="Control Chrome: opens at 12:00 AM"></a><figcaption>Control Chrome: opens at 12:00 AM</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc02-pick-up-open.png" alt="V1 Chrome: opens on 12:00 PM"></a><figcaption>V1 Chrome: opens on 12:00 PM</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc02-pick-up-open.png" alt="V2 Chrome: opens on Noon"></a><figcaption>V2 Chrome: opens on Noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc02-pick-up-open.png" alt="Control Pixel 5"></a><figcaption>Control Pixel 5</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc02-pick-up-open.png" alt="V1 Pixel 5"></a><figcaption>V1 Pixel 5</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc02-pick-up-open.png" alt="V2 Pixel 5"></a><figcaption>V2 Pixel 5</figcaption></figure>
+</div>
+
+<h2>What passed</h2>
+<div class="card"><ul>
+<li>Bucketing: each preview link put the visitor in the correct variation on all 4 browsers (TC01).</li>
+<li>Pick-up and drop-off fields show the right default in every arm, including inside the mobile booking sheet (TC01).</li>
+<li>V1 centers 12:00 PM in both dropdowns on every browser (TC02/TC03).</li>
+<li>Still 45 time options, in the same order as control. The page itself doesn't jump when the list opens.</li>
+<li>Choosing 3:00 PM, reopening, and choosing the default again works in every arm. The dropdown follows the new selection and V2 shows "Noon" again when Noon is re-selected (TC04).</li>
+<li>No JavaScript errors from the test code in any run.</li>
+</ul></div>
+
+<h2>Results by browser</h2>
+<p class="sub">Hover a FAIL to see the assertion message. TC05 fails for control too, because the experiment doesn't run on the booking page in any arm (BUG-01).</p>
+<h3>Chrome Desktop <span class="tag fail">13/21 passed</span></h3>
+<div class="card wrap"><table><tr><th>Check</th><th>Control</th><th>V1</th><th>V2</th></tr>
+<tr><td><b>TC01</b> Right variation, closed fields show default</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td><b>TC02</b> Pick-up dropdown opens on default</td><td><span class="tag pass">PASS</span><br><small>opens at top (scroll 0px)</small></td><td><span class="tag pass">PASS</span><br><small>selected 1px from center</small></td><td title=""Noon" centered (offset px, row=32) | 12:00 AM option must stay "12:00 AM" (spec only renames noon)"><span class="tag fail">FAIL</span><br><small>selected 34px from center</small></td></tr>
+<tr><td><b>TC03</b> Drop-off dropdown opens on default</td><td><span class="tag pass">PASS</span><br><small>opens at top (scroll 0px)</small></td><td><span class="tag pass">PASS</span><br><small>selected 0px from center</small></td><td title=""Noon" centered (offset px, row=32) | 12:00 AM option must stay "12:00 AM" (spec only renames noon)"><span class="tag fail">FAIL</span><br><small>selected 34px from center</small></td></tr>
+<tr><td><b>TC04</b> Change to 3:00 PM, reopen, change back</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td><b>TC05</b> Booking page, direct load</td><td title="experience 100052922 runs on the booking page (it has a time selector)"><span class="tag fail">FAIL</span></td><td title="experience 100052922 runs on the booking page (it has a time selector)"><span class="tag fail">FAIL</span></td><td title="experience 100052922 runs on the booking page (it has a time selector) | no visible time text contradicting "Noon""><span class="tag fail">FAIL</span></td></tr>
+<tr><td><b>TC06</b> Homepage → Search Now → booking page</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td title="no visible time text contradicting "Noon""><span class="tag fail">FAIL</span></td></tr>
+<tr><td><b>TC07</b> Flicker before change appears</td><td><span class="tag pass">PASS</span><br><small>5.3s</small></td><td title="original time visible before variation applies (ms) — target ≤ 1000"><span class="tag fail">FAIL</span><br><small>5.0s</small></td><td title="original time visible before variation applies (ms) — target ≤ 1000"><span class="tag fail">FAIL</span><br><small>4.0s</small></td></tr>
+</table></div><h3>Safari Desktop <span class="tag fail">13/21 passed</span></h3>
+<div class="card wrap"><table><tr><th>Check</th><th>Control</th><th>V1</th><th>V2</th></tr>
+<tr><td><b>TC01</b> Right variation, closed fields show default</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td><b>TC02</b> Pick-up dropdown opens on default</td><td><span class="tag pass">PASS</span><br><small>opens at top (scroll 0px)</small></td><td><span class="tag pass">PASS</span><br><small>selected 0px from center</small></td><td title="12:00 AM option must stay "12:00 AM" (spec only renames noon)"><span class="tag fail">FAIL</span><br><small>selected 8px from center</small></td></tr>
+<tr><td><b>TC03</b> Drop-off dropdown opens on default</td><td><span class="tag pass">PASS</span><br><small>opens at top (scroll 0px)</small></td><td><span class="tag pass">PASS</span><br><small>selected 0px from center</small></td><td title="12:00 AM option must stay "12:00 AM" (spec only renames noon)"><span class="tag fail">FAIL</span><br><small>selected 0px from center</small></td></tr>
+<tr><td><b>TC04</b> Change to 3:00 PM, reopen, change back</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td><b>TC05</b> Booking page, direct load</td><td title="experience 100052922 runs on the booking page (it has a time selector)"><span class="tag fail">FAIL</span></td><td title="experience 100052922 runs on the booking page (it has a time selector)"><span class="tag fail">FAIL</span></td><td title="experience 100052922 runs on the booking page (it has a time selector) | no visible time text contradicting "Noon""><span class="tag fail">FAIL</span></td></tr>
+<tr><td><b>TC06</b> Homepage → Search Now → booking page</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td title="no visible time text contradicting "Noon""><span class="tag fail">FAIL</span></td></tr>
+<tr><td><b>TC07</b> Flicker before change appears</td><td><span class="tag pass">PASS</span><br><small>4.9s</small></td><td title="original time visible before variation applies (ms) — target ≤ 1000"><span class="tag fail">FAIL</span><br><small>4.7s</small></td><td title="original time visible before variation applies (ms) — target ≤ 1000"><span class="tag fail">FAIL</span><br><small>4.4s</small></td></tr>
+</table></div><h3>Mobile Chrome (Pixel 5) <span class="tag fail">13/21 passed</span></h3>
+<div class="card wrap"><table><tr><th>Check</th><th>Control</th><th>V1</th><th>V2</th></tr>
+<tr><td><b>TC01</b> Right variation, closed fields show default</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td><b>TC02</b> Pick-up dropdown opens on default</td><td><span class="tag pass">PASS</span><br><small>opens at top (scroll 0px)</small></td><td><span class="tag pass">PASS</span><br><small>selected 0px from center</small></td><td title="12:00 AM option must stay "12:00 AM" (spec only renames noon)"><span class="tag fail">FAIL</span><br><small>selected 0px from center</small></td></tr>
+<tr><td><b>TC03</b> Drop-off dropdown opens on default</td><td><span class="tag pass">PASS</span><br><small>opens at top (scroll 0px)</small></td><td><span class="tag pass">PASS</span><br><small>selected 0px from center</small></td><td title="12:00 AM option must stay "12:00 AM" (spec only renames noon)"><span class="tag fail">FAIL</span><br><small>selected 0px from center</small></td></tr>
+<tr><td><b>TC04</b> Change to 3:00 PM, reopen, change back</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td><b>TC05</b> Booking page, direct load</td><td title="experience 100052922 runs on the booking page (it has a time selector)"><span class="tag fail">FAIL</span></td><td title="experience 100052922 runs on the booking page (it has a time selector)"><span class="tag fail">FAIL</span></td><td title="experience 100052922 runs on the booking page (it has a time selector) | no visible time text contradicting "Noon""><span class="tag fail">FAIL</span></td></tr>
+<tr><td><b>TC06</b> Homepage → Search Now → booking page</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td title="no visible time text contradicting "Noon""><span class="tag fail">FAIL</span></td></tr>
+<tr><td><b>TC07</b> Flicker before change appears</td><td><span class="tag pass">PASS</span><br><small>6.4s</small></td><td title="original time visible before variation applies (ms) — target ≤ 1000"><span class="tag fail">FAIL</span><br><small>5.4s</small></td><td title="original time visible before variation applies (ms) — target ≤ 1000"><span class="tag fail">FAIL</span><br><small>5.1s</small></td></tr>
+</table></div><h3>Mobile Safari (iPhone 12) <span class="tag fail">13/21 passed</span></h3>
+<div class="card wrap"><table><tr><th>Check</th><th>Control</th><th>V1</th><th>V2</th></tr>
+<tr><td><b>TC01</b> Right variation, closed fields show default</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td><b>TC02</b> Pick-up dropdown opens on default</td><td><span class="tag pass">PASS</span><br><small>opens at top (scroll 0px)</small></td><td><span class="tag pass">PASS</span><br><small>selected 0px from center</small></td><td title="12:00 AM option must stay "12:00 AM" (spec only renames noon)"><span class="tag fail">FAIL</span><br><small>selected 0px from center</small></td></tr>
+<tr><td><b>TC03</b> Drop-off dropdown opens on default</td><td><span class="tag pass">PASS</span><br><small>opens at top (scroll 0px)</small></td><td><span class="tag pass">PASS</span><br><small>selected 0px from center</small></td><td title="12:00 AM option must stay "12:00 AM" (spec only renames noon)"><span class="tag fail">FAIL</span><br><small>selected 0px from center</small></td></tr>
+<tr><td><b>TC04</b> Change to 3:00 PM, reopen, change back</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td><b>TC05</b> Booking page, direct load</td><td title="experience 100052922 runs on the booking page (it has a time selector)"><span class="tag fail">FAIL</span></td><td title="experience 100052922 runs on the booking page (it has a time selector)"><span class="tag fail">FAIL</span></td><td title="experience 100052922 runs on the booking page (it has a time selector) | no visible time text contradicting "Noon""><span class="tag fail">FAIL</span></td></tr>
+<tr><td><b>TC06</b> Homepage → Search Now → booking page</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td title="no visible time text contradicting "Noon""><span class="tag fail">FAIL</span></td></tr>
+<tr><td><b>TC07</b> Flicker before change appears</td><td><span class="tag pass">PASS</span><br><small>5.0s</small></td><td title="original time visible before variation applies (ms) — target ≤ 1000"><span class="tag fail">FAIL</span><br><small>4.1s</small></td><td title="original time visible before variation applies (ms) — target ≤ 1000"><span class="tag fail">FAIL</span><br><small>4.8s</small></td></tr>
+</table></div>
+
+<h2>Failure reasons</h2>
+<div class="card wrap"><table><tr><th>Check · assertion</th><th>Where</th></tr>
+<tr><td>TC02 · "Noon" centered (offset px, row=32)</td><td><small>Chrome Desktop / v2</small></td></tr>
+<tr><td>TC02 · 12:00 AM option must stay "12:00 AM" (spec only renames noon)</td><td><small>Chrome Desktop / v2, Safari Desktop / v2, Mobile Chrome (Pixel 5) / v2, Mobile Safari (iPhone 12) / v2</small></td></tr>
+<tr><td>TC03 · "Noon" centered (offset px, row=32)</td><td><small>Chrome Desktop / v2</small></td></tr>
+<tr><td>TC03 · 12:00 AM option must stay "12:00 AM" (spec only renames noon)</td><td><small>Chrome Desktop / v2, Safari Desktop / v2, Mobile Chrome (Pixel 5) / v2, Mobile Safari (iPhone 12) / v2</small></td></tr>
+<tr><td>TC05 · experience 100052922 runs on the booking page (it has a time selector)</td><td><small>Chrome Desktop / control, Chrome Desktop / v1, Chrome Desktop / v2, Safari Desktop / control, Safari Desktop / v1, Safari Desktop / v2, Mobile Chrome (Pixel 5) / control, Mobile Chrome (Pixel 5) / v1, Mobile Chrome (Pixel 5) / v2, Mobile Safari (iPhone 12) / control, Mobile Safari (iPhone 12) / v1, Mobile Safari (iPhone 12) / v2</small></td></tr>
+<tr><td>TC05 · no visible time text contradicting "Noon"</td><td><small>Chrome Desktop / v2, Safari Desktop / v2, Mobile Chrome (Pixel 5) / v2, Mobile Safari (iPhone 12) / v2</small></td></tr>
+<tr><td>TC06 · no visible time text contradicting "Noon"</td><td><small>Chrome Desktop / v2, Safari Desktop / v2, Mobile Chrome (Pixel 5) / v2, Mobile Safari (iPhone 12) / v2</small></td></tr>
+<tr><td>TC07 · original time visible before variation applies (ms) — target ≤ 1000</td><td><small>Chrome Desktop / v1, Chrome Desktop / v2, Safari Desktop / v1, Safari Desktop / v2, Mobile Chrome (Pixel 5) / v1, Mobile Chrome (Pixel 5) / v2, Mobile Safari (iPhone 12) / v1, Mobile Safari (iPhone 12) / v2</small></td></tr>
+</table></div>
+
+<h2>Other notes</h2>
+<div class="card"><ul>
+<li><b>Pages scanned:</b> 28 internal pages linked from the homepage. Only the homepage and <code>/rent-a-car-in-iceland</code> have a time selector.</li>
+<li><b>Mobile:</b> the homepage shows no times on phones. Tapping "Pick-up at" opens a full-screen sheet where the time fields live. The test applies there correctly.</li>
+<li><b>Desktop CTA copy:</b> in several loads the homepage button read "Check the fleet" instead of "Search Now". This is probably another live test, not Test 22.</li>
+<li><b>Safari native error:</b> WebKit throws a cross-origin error from the Prismic preview frame on every page, including control. It isn't caused by this test and was excluded from the error checks.</li>
+<li><b>Local code:</b> <code>va3.css</code> is leftover CSS from WIN272 (unrelated selectors, no effect). <code>vB.js</code> (V1) and <code>va3.js</code> (V2) match what the preview links deliver.</li>
+<li><b>Edge case not covered:</b> choosing <i>today</i> as the pick-up date, where earlier times may be disabled and the default may move off 12:00 PM.</li>
+</ul></div>
+
+<h2>How it was tested</h2>
+<div class="card"><ul>
+<li>Playwright on Chromium and WebKit (Safari's engine), at 1280×720 desktop and Pixel 5 / iPhone 12 emulation, one arm and browser at a time.</li>
+<li>Spec: <code>my-playwright-project/testing/lotus22-noon-default.spec.js</code> (7 checks × 3 arms × 4 browsers = 84). Raw results: <code>local_testing/Local2/lotus22-results/*.json</code>.</li>
+<li>The cookie banner was hidden with CSS, so no consent choice was made in either direction.</li>
+</ul></div>
+
+<h2>All screenshots</h2>
+<details><summary>Chrome Desktop: all 21 screenshots</summary><div class="shots">
+<figure><a href="lotus22-screenshots/chrome-desktop/control-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/control-tc01-closed-fields.png" alt="CONTROL · tc01 closed fields"></a><figcaption>CONTROL · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/control-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/control-tc02-pick-up-open.png" alt="CONTROL · tc02 pick up open"></a><figcaption>CONTROL · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/control-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/control-tc03-drop-off-open.png" alt="CONTROL · tc03 drop off open"></a><figcaption>CONTROL · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/control-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/control-tc04-reopen-3pm.png" alt="CONTROL · tc04 reopen 3pm"></a><figcaption>CONTROL · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/control-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/control-tc04-back-to-noon.png" alt="CONTROL · tc04 back to noon"></a><figcaption>CONTROL · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/control-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/control-tc05-booking-page.png" alt="CONTROL · tc05 booking page"></a><figcaption>CONTROL · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/control-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/control-tc06-home-to-booking.png" alt="CONTROL · tc06 home to booking"></a><figcaption>CONTROL · tc06 home to booking</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc01-closed-fields.png" alt="V1 · tc01 closed fields"></a><figcaption>V1 · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc02-pick-up-open.png" alt="V1 · tc02 pick up open"></a><figcaption>V1 · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc03-drop-off-open.png" alt="V1 · tc03 drop off open"></a><figcaption>V1 · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc04-reopen-3pm.png" alt="V1 · tc04 reopen 3pm"></a><figcaption>V1 · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc04-back-to-noon.png" alt="V1 · tc04 back to noon"></a><figcaption>V1 · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc05-booking-page.png" alt="V1 · tc05 booking page"></a><figcaption>V1 · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v1-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v1-tc06-home-to-booking.png" alt="V1 · tc06 home to booking"></a><figcaption>V1 · tc06 home to booking</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc01-closed-fields.png" alt="V2 · tc01 closed fields"></a><figcaption>V2 · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc02-pick-up-open.png" alt="V2 · tc02 pick up open"></a><figcaption>V2 · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc03-drop-off-open.png" alt="V2 · tc03 drop off open"></a><figcaption>V2 · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc04-reopen-3pm.png" alt="V2 · tc04 reopen 3pm"></a><figcaption>V2 · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc04-back-to-noon.png" alt="V2 · tc04 back to noon"></a><figcaption>V2 · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc05-booking-page.png" alt="V2 · tc05 booking page"></a><figcaption>V2 · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/chrome-desktop/v2-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/chrome-desktop/v2-tc06-home-to-booking.png" alt="V2 · tc06 home to booking"></a><figcaption>V2 · tc06 home to booking</figcaption></figure>
+</div></details><details><summary>Safari Desktop: all 21 screenshots</summary><div class="shots">
+<figure><a href="lotus22-screenshots/safari-desktop/control-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/control-tc01-closed-fields.png" alt="CONTROL · tc01 closed fields"></a><figcaption>CONTROL · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/control-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/control-tc02-pick-up-open.png" alt="CONTROL · tc02 pick up open"></a><figcaption>CONTROL · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/control-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/control-tc03-drop-off-open.png" alt="CONTROL · tc03 drop off open"></a><figcaption>CONTROL · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/control-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/control-tc04-reopen-3pm.png" alt="CONTROL · tc04 reopen 3pm"></a><figcaption>CONTROL · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/control-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/control-tc04-back-to-noon.png" alt="CONTROL · tc04 back to noon"></a><figcaption>CONTROL · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/control-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/control-tc05-booking-page.png" alt="CONTROL · tc05 booking page"></a><figcaption>CONTROL · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/control-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/control-tc06-home-to-booking.png" alt="CONTROL · tc06 home to booking"></a><figcaption>CONTROL · tc06 home to booking</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v1-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v1-tc01-closed-fields.png" alt="V1 · tc01 closed fields"></a><figcaption>V1 · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v1-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v1-tc02-pick-up-open.png" alt="V1 · tc02 pick up open"></a><figcaption>V1 · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v1-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v1-tc03-drop-off-open.png" alt="V1 · tc03 drop off open"></a><figcaption>V1 · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v1-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v1-tc04-reopen-3pm.png" alt="V1 · tc04 reopen 3pm"></a><figcaption>V1 · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v1-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v1-tc04-back-to-noon.png" alt="V1 · tc04 back to noon"></a><figcaption>V1 · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v1-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v1-tc05-booking-page.png" alt="V1 · tc05 booking page"></a><figcaption>V1 · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v1-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v1-tc06-home-to-booking.png" alt="V1 · tc06 home to booking"></a><figcaption>V1 · tc06 home to booking</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc01-closed-fields.png" alt="V2 · tc01 closed fields"></a><figcaption>V2 · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc02-pick-up-open.png" alt="V2 · tc02 pick up open"></a><figcaption>V2 · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc03-drop-off-open.png" alt="V2 · tc03 drop off open"></a><figcaption>V2 · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc04-reopen-3pm.png" alt="V2 · tc04 reopen 3pm"></a><figcaption>V2 · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc04-back-to-noon.png" alt="V2 · tc04 back to noon"></a><figcaption>V2 · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc05-booking-page.png" alt="V2 · tc05 booking page"></a><figcaption>V2 · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/safari-desktop/v2-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/safari-desktop/v2-tc06-home-to-booking.png" alt="V2 · tc06 home to booking"></a><figcaption>V2 · tc06 home to booking</figcaption></figure>
+</div></details><details><summary>Mobile Chrome (Pixel 5): all 21 screenshots</summary><div class="shots">
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc01-closed-fields.png" alt="CONTROL · tc01 closed fields"></a><figcaption>CONTROL · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc02-pick-up-open.png" alt="CONTROL · tc02 pick up open"></a><figcaption>CONTROL · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc03-drop-off-open.png" alt="CONTROL · tc03 drop off open"></a><figcaption>CONTROL · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc04-reopen-3pm.png" alt="CONTROL · tc04 reopen 3pm"></a><figcaption>CONTROL · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc04-back-to-noon.png" alt="CONTROL · tc04 back to noon"></a><figcaption>CONTROL · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc05-booking-page.png" alt="CONTROL · tc05 booking page"></a><figcaption>CONTROL · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/control-tc06-home-to-booking.png" alt="CONTROL · tc06 home to booking"></a><figcaption>CONTROL · tc06 home to booking</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc01-closed-fields.png" alt="V1 · tc01 closed fields"></a><figcaption>V1 · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc02-pick-up-open.png" alt="V1 · tc02 pick up open"></a><figcaption>V1 · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc03-drop-off-open.png" alt="V1 · tc03 drop off open"></a><figcaption>V1 · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc04-reopen-3pm.png" alt="V1 · tc04 reopen 3pm"></a><figcaption>V1 · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc04-back-to-noon.png" alt="V1 · tc04 back to noon"></a><figcaption>V1 · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc05-booking-page.png" alt="V1 · tc05 booking page"></a><figcaption>V1 · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v1-tc06-home-to-booking.png" alt="V1 · tc06 home to booking"></a><figcaption>V1 · tc06 home to booking</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc01-closed-fields.png" alt="V2 · tc01 closed fields"></a><figcaption>V2 · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc02-pick-up-open.png" alt="V2 · tc02 pick up open"></a><figcaption>V2 · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc03-drop-off-open.png" alt="V2 · tc03 drop off open"></a><figcaption>V2 · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc04-reopen-3pm.png" alt="V2 · tc04 reopen 3pm"></a><figcaption>V2 · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc04-back-to-noon.png" alt="V2 · tc04 back to noon"></a><figcaption>V2 · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc05-booking-page.png" alt="V2 · tc05 booking page"></a><figcaption>V2 · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-chrome-pixel-5-/v2-tc06-home-to-booking.png" alt="V2 · tc06 home to booking"></a><figcaption>V2 · tc06 home to booking</figcaption></figure>
+</div></details><details><summary>Mobile Safari (iPhone 12): all 21 screenshots</summary><div class="shots">
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/control-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/control-tc01-closed-fields.png" alt="CONTROL · tc01 closed fields"></a><figcaption>CONTROL · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/control-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/control-tc02-pick-up-open.png" alt="CONTROL · tc02 pick up open"></a><figcaption>CONTROL · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/control-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/control-tc03-drop-off-open.png" alt="CONTROL · tc03 drop off open"></a><figcaption>CONTROL · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/control-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/control-tc04-reopen-3pm.png" alt="CONTROL · tc04 reopen 3pm"></a><figcaption>CONTROL · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/control-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/control-tc04-back-to-noon.png" alt="CONTROL · tc04 back to noon"></a><figcaption>CONTROL · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/control-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/control-tc05-booking-page.png" alt="CONTROL · tc05 booking page"></a><figcaption>CONTROL · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/control-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/control-tc06-home-to-booking.png" alt="CONTROL · tc06 home to booking"></a><figcaption>CONTROL · tc06 home to booking</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc01-closed-fields.png" alt="V1 · tc01 closed fields"></a><figcaption>V1 · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc02-pick-up-open.png" alt="V1 · tc02 pick up open"></a><figcaption>V1 · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc03-drop-off-open.png" alt="V1 · tc03 drop off open"></a><figcaption>V1 · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc04-reopen-3pm.png" alt="V1 · tc04 reopen 3pm"></a><figcaption>V1 · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc04-back-to-noon.png" alt="V1 · tc04 back to noon"></a><figcaption>V1 · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc05-booking-page.png" alt="V1 · tc05 booking page"></a><figcaption>V1 · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v1-tc06-home-to-booking.png" alt="V1 · tc06 home to booking"></a><figcaption>V1 · tc06 home to booking</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc01-closed-fields.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc01-closed-fields.png" alt="V2 · tc01 closed fields"></a><figcaption>V2 · tc01 closed fields</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc02-pick-up-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc02-pick-up-open.png" alt="V2 · tc02 pick up open"></a><figcaption>V2 · tc02 pick up open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc03-drop-off-open.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc03-drop-off-open.png" alt="V2 · tc03 drop off open"></a><figcaption>V2 · tc03 drop off open</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc04-reopen-3pm.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc04-reopen-3pm.png" alt="V2 · tc04 reopen 3pm"></a><figcaption>V2 · tc04 reopen 3pm</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc04-back-to-noon.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc04-back-to-noon.png" alt="V2 · tc04 back to noon"></a><figcaption>V2 · tc04 back to noon</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc05-booking-page.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc05-booking-page.png" alt="V2 · tc05 booking page"></a><figcaption>V2 · tc05 booking page</figcaption></figure>
+<figure><a href="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc06-home-to-booking.png" target="_blank"><img loading="lazy" src="lotus22-screenshots/mobile-safari-iphone-12-/v2-tc06-home-to-booking.png" alt="V2 · tc06 home to booking"></a><figcaption>V2 · tc06 home to booking</figcaption></figure>
+</div></details>
+
+</main></body></html>

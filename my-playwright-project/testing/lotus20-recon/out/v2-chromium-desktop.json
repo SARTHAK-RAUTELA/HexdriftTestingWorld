@@ -1,0 +1,99 @@
+{
+  "lang": "en-us",
+  "bodyCls": "flex min-h-screen flex-col bg-background font-sans antialiased cre-t-20",
+  "exp": {
+    "firstTime": true,
+    "variation": {
+      "changes": [
+        {
+          "id": 1000153532,
+          "type": "customCode",
+          "data": {
+            "css": "html[lang=\"en-us\"] body .cre-t-20-Shuttle-details {\r\n    color: #000;\r\n    font-size: 12px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: normal;\r\n    display: flex !important;\r\n    align-items: center;\r\n    gap: 10px;\r\n    cursor: pointer;\r\n}",
+            "js": "function(convertContext){ \n(function () {\r\n  try {\r\n    var debug = 0;\r\n    var variation_name = \"cre-t-20\";\r\n\r\n    let shuttleLink = `\r\n      <div class=\"cre-t-20-Shuttle-details\" style=\"display:none\">\r\n        <div class=\"cre-t-20-Shuttle-icon\" >\r\n          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\">\r\n            <path d=\"M3.875 18.125C3.29167 17.5417 3 16.8333 3 16C2.45 16 1.97933 15.8043 1.588 15.413C1.19667 15.0217 1.00067 14.5507 1 14V7C1 6.45 1.196 5.97933 1.588 5.588C1.98 5.19667 2.45067 5.00067 3 5H16.175C16.4417 5 16.696 5.05 16.938 5.15C17.18 5.25 17.3923 5.39167 17.575 5.575L22.425 10.425C22.6083 10.6083 22.75 10.821 22.85 11.063C22.95 11.305 23 11.559 23 11.825V14C23 14.55 22.8043 15.021 22.413 15.413C22.0217 15.805 21.5507 16.0007 21 16C21 16.8333 20.7083 17.5417 20.125 18.125C19.5417 18.7083 18.8333 19 18 19C17.1667 19 16.4583 18.7083 15.875 18.125C15.2917 17.5417 15 16.8333 15 16H9C9 16.8333 8.70833 17.5417 8.125 18.125C7.54167 18.7083 6.83333 19 6 19C5.16667 19 4.45833 18.7083 3.875 18.125ZM15 10H19L16 7H15V10ZM9 10H13V7H9V10ZM3 10H7V7H3V10ZM6.888 16.888C7.12933 16.646 7.25 16.35 7.25 16C7.25 15.65 7.129 15.354 6.887 15.112C6.645 14.87 6.34933 14.7493 6 14.75C5.65067 14.7507 5.35467 14.8717 5.112 15.113C4.86933 15.3543 4.74867 15.65 4.75 16C4.75133 16.35 4.87233 16.646 5.113 16.888C5.35367 17.13 5.64933 17.2507 6 17.25C6.35067 17.2493 6.64667 17.1283 6.888 16.887M18.888 16.887C19.1293 16.6457 19.25 16.35 19.25 16C19.25 15.65 19.129 15.354 18.887 15.112C18.645 14.87 18.3493 14.7493 18 14.75C17.6507 14.7507 17.3547 14.8717 17.112 15.113C16.8693 15.3543 16.7487 15.65 16.75 16C16.7513 16.35 16.8723 16.646 17.113 16.888C17.3537 17.13 17.6493 17.2507 18 17.25C18.3507 17.2493 18.6467 17.1283 18.888 16.887Z\" fill=\"#18181B\" />\r\n          </svg>\r\n        </div>\r\n        <span class=\"cre-t-20-Shuttle-text\">Free, fast shuttle</span>\r\n      </div>\r\n    `;\r\n\r\n    function live(selector, event, callback, context = document) {\r\n      const addEvent = (el, type, handler) => {\r\n        el.addEventListener(type, handler);\r\n      };\r\n\r\n      const liveHandler = (e) => {\r\n        const el = e.target && e.target.closest ? e.target.closest(selector) : null;\r\n\r\n        if (el && el !== context) {\r\n          callback.call(el, e);\r\n        }\r\n      };\r\n\r\n      addEvent(context, event, liveHandler);\r\n    }\r\n\r\n    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {\r\n      var interval = setInterval(function () {\r\n        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {\r\n          clearInterval(interval);\r\n          trigger(document.querySelector(selector));\r\n        }\r\n      }, delayInterval);\r\n      setTimeout(function () {\r\n        clearInterval(interval);\r\n      }, delayTimeout);\r\n    }\r\n\r\n    function debounce(func, delay = 20) {\r\n      let timeout;\r\n      return function (...args) {\r\n        const context = this;\r\n        clearTimeout(timeout);\r\n        timeout = setTimeout(() => func.apply(context, args), delay);\r\n      };\r\n    }\r\n\r\n    function observeSelector(selector, callback, options = {}) {\r\n      const document = options.document || window.document;\r\n      const processed = new Map();\r\n\r\n      if (options.timeout || options.onTimeout) {\r\n        throw `observeSelector options \\`timeout\\` and \\`onTimeout\\` are not yet implemented.`;\r\n      }\r\n\r\n      let obs;\r\n      let isDone = false;\r\n\r\n      const done = () => {\r\n        if (obs) obs.disconnect();\r\n        isDone = true;\r\n      };\r\n\r\n      const processElement = (el) => {\r\n        if (!processed.has(el)) {\r\n          processed.set(el, true);\r\n          callback(el);\r\n          if (options.once) {\r\n            done();\r\n            return true;\r\n          }\r\n        }\r\n        return false;\r\n      };\r\n\r\n      const lookForSelector = () => {\r\n        const elParent = document.documentElement;\r\n        if (elParent.matches(selector) || elParent.querySelector(selector)) {\r\n          const elements = elParent.querySelectorAll(selector);\r\n          elements.forEach((el) => processElement(el));\r\n        }\r\n      };\r\n\r\n      const debouncedLookForSelector = debounce(() => {\r\n        lookForSelector();\r\n      }, 100);\r\n\r\n      // Initial check for the selector on page load\r\n      lookForSelector();\r\n\r\n      if (!isDone) {\r\n        obs = new MutationObserver(() => {\r\n          debouncedLookForSelector();\r\n        });\r\n\r\n        obs.observe(document, {\r\n          attributes: false,\r\n          childList: true,\r\n          subtree: true,\r\n        });\r\n      }\r\n\r\n      return done;\r\n    }\r\n\r\n    function init() {\r\n      if (!document.querySelector(\"body\").classList.contains(variation_name)) {\r\n        document.querySelector(\"body\").classList.add(variation_name);\r\n\r\n        observeSelector('[data-slice-type=\"fleet_category\"] [id*=\"car\"]>div:nth-child(3)', function () {\r\n          let targetElements = document.querySelectorAll('[data-slice-type=\"fleet_category\"] [id*=\"car\"]>div:nth-child(3)');\r\n          targetElements.forEach(function (targetElement) {\r\n            if (!targetElement.querySelector(\".cre-t-20-Shuttle-details\")) {\r\n              targetElement.insertAdjacentHTML(\"beforeend\", shuttleLink);\r\n            }\r\n          });\r\n        });\r\n      }\r\n    }\r\n\r\n    /* Initialize variation */\r\n    waitForElement(\"html[lang='en-us'] body\", init);\r\n  } catch (e) {\r\n    if (debug) console.log(e, \"error in Test \" + variation_name);\r\n  }\r\n})();\n}"
+          }
+        },
+        {
+          "id": 1000153533,
+          "type": "defaultCode",
+          "data": {
+            "js": null,
+            "css": "",
+            "custom_js": null
+          }
+        }
+      ],
+      "id": "1000257611",
+      "name": "Var #1000257611",
+      "status": "running",
+      "traffic_allocation": 33.3334
+    }
+  },
+  "allExps": [
+    "100052722",
+    "100052833",
+    "100052946"
+  ],
+  "cardCount": 30,
+  "cardIds": [
+    "car-2769",
+    "car-887",
+    "car-1992",
+    "car-1595",
+    "car-921"
+  ],
+  "thirdCount": 30,
+  "thirdHTML": "<div class=\"mt-auto flex flex-col gap-2\"><p class=\"text-2xl font-semibold leading-none text-teal-900\" card-price-currency=\"isk\">22.636 ISK</p><p class=\"flex items-center gap-1 text-xs font-normal text-teal-900\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-3.5 shrink-0\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z\"></path></svg>Includes free WiFi &amp; basic insurance</p><p class=\"text-sm font-medium leading-5 text-zinc-900\" card-price-currency=\"others\">169 EUR | 186 USD | 140 GBP</p>\n      <div class=\"cre-t-20-Shuttle-details\" style=\"display:none\">\n        <div class=\"cre-t-20-Shuttle-icon\">\n          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\">\n            <path d=\"M3.875 18.125C3.29167 17.5417 3 16.8333 3 16C2.45 16 1.97933 15.8043 1.588 15.413C1.19667 15.0217 1.00067 14.5507 1 14V7C1 6.45 1.196 5.97933 1.588 5.588C1.98 5.19667 2.45067 5.00067 3 5H16.175C16.4417 5 16.696 5.05 16.938 5.15C17.18 5.25 17.3923 5.39167 17.575 5.575L22.425 10.425C22.6083 10.6083 22.75 10.821 22.85 11.063C22.95 11.305 23 11.559 23 11.825V14C23 14.55 22.8043 15.021 22.413 15.413C22.0217 15.805 21.5507 16.0007 21 16C21 16.8333 20.7083 17.5417 20.125 18.125C19.5417 18.7083 18.8333 19 18 19C17.1667 19 16.4583 18.7083 15.875 18.125C15.2917 17.5417 1",
+  "shCount": 30,
+  "shVisible": 30,
+  "shuttleish": [
+    {
+      "tag": "SPAN",
+      "cls": "cre-t-20-Shuttle-text",
+      "txt": "Free, fast shuttle"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "cre-t-20-Shuttle-text",
+      "txt": "Free, fast shuttle"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "cre-t-20-Shuttle-text",
+      "txt": "Free, fast shuttle"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "cre-t-20-Shuttle-text",
+      "txt": "Free, fast shuttle"
+    },
+    {
+      "tag": "DIV",
+      "cls": "flex items-center gap-2",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "P",
+      "cls": "text-sm font-medium leading-5 text-white lg:text-base lg:leading-6",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "cre-t-20-Shuttle-text",
+      "txt": "Free, fast shuttle"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "cre-t-20-Shuttle-text",
+      "txt": "Free, fast shuttle"
+    }
+  ],
+  "modal": false,
+  "cssLen": [
+    253
+  ],
+  "css": [
+    "html[lang=\"en-us\"] body .cre-t-20-Shuttle-details {\n    color: #000;\n    font-size: 12px;\n    font-style: normal;\n    font-weight: 400;\n    line-height: normal;\n    display: flex !important;\n    align-items: center;\n    gap: 10px;\n    cursor: pointer;\n}"
+  ],
+  "errs": []
+}

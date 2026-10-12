@@ -1,0 +1,174 @@
+html[lang="en-us"] body .cre-t-20-Shuttle-details {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+html[lang="en-us"] body .cre-t-20-popup-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+html[lang="en-us"] body.cre-t-20-showShuttleModal .cre-t-20-popup-modal {
+  display: flex !important;
+}
+
+html[lang="en-us"] body .cre-t-20-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+}
+
+html[lang="en-us"] body .cre-t-20-modal {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: 1.15fr 0.85fr;
+  max-width: 698px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 60px 30px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid #9f9fa9;
+  background: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+html[lang="en-us"] body .cre-t-20-modal::-webkit-scrollbar {
+  display: none;
+}
+
+html[lang="en-us"] body .cre-t-20-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #18181b;
+}
+html[lang="en-us"] body .cre-t-20-modal-wrapper {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+html[lang="en-us"] body .cre-t-20-title {
+  color: #18181b;
+  text-align: center;
+  font-family: inherit;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 111.111% */
+  letter-spacing: -0.9px;
+  margin: 0;
+  padding: 0;
+}
+
+html[lang="en-us"] body .cre-t-20-list {
+  list-style-type: disc;
+  color: #18181b;
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 137.5% */
+  padding-left: 30px;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+html[lang="en-us"] body .cre-t-20-item {
+  color: #18181b;
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+html[lang="en-us"] body .cre-t-20-item:last-child {
+  margin-bottom: 0;
+}
+
+html[lang="en-us"] body .cre-t-20-button {
+  border-radius: 9999px;
+  background: #0b4f4a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 148px;
+  width: 100%;
+  min-height: 40px;
+  padding: 13px;
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+
+html[lang="en-us"] body .cre-t-20-button:hover {
+  background-color: var(--color-teal-800);
+}
+
+html[lang="en-us"] body .cre-t-20-button-text {
+  color: #fff;
+  text-align: center;
+  font-family: inherit;
+  font-size: 13.3px;
+  font-style: normal;
+  font-weight: 510;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  html[lang="en-us"] body .cre-t-20-modal {
+    flex-direction: column-reverse !important;
+    gap: 30px !important;
+    padding: 40px 25px !important;
+  }
+
+  html[lang="en-us"] body .cre-t-20-close {
+    top: 5px !important;
+    right: 5px !important;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  html[lang="en-us"] body .cre-t-20-modal {
+    gap: 15px !important;
+  }
+}

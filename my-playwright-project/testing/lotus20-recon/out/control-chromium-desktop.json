@@ -1,0 +1,81 @@
+{
+  "lang": "en-us",
+  "bodyCls": "flex min-h-screen flex-col bg-background font-sans antialiased",
+  "exp": {
+    "firstTime": true,
+    "variation": {
+      "changes": [
+        {
+          "name": "Var #1000257609"
+        }
+      ],
+      "id": "1000257609",
+      "name": "Var #1000257609",
+      "status": "running",
+      "traffic_allocation": 33.3333
+    }
+  },
+  "allExps": [
+    "100052722",
+    "100052833",
+    "100052946"
+  ],
+  "cardCount": 30,
+  "cardIds": [
+    "car-2769",
+    "car-887",
+    "car-1992",
+    "car-1595",
+    "car-921"
+  ],
+  "thirdCount": 30,
+  "thirdHTML": "<div class=\"mt-auto flex flex-col gap-2\"><p class=\"text-2xl font-semibold leading-none text-teal-900\" card-price-currency=\"isk\">22.636 ISK</p><p class=\"flex items-center gap-1 text-xs font-normal text-teal-900\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" fill=\"currentColor\" viewBox=\"0 0 256 256\" class=\"size-3.5 shrink-0\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z\"></path></svg>Includes free WiFi &amp; basic insurance</p><p class=\"text-sm font-medium leading-5 text-zinc-900\" card-price-currency=\"others\">169 EUR | 186 USD | 140 GBP</p></div>",
+  "shCount": 0,
+  "shVisible": 0,
+  "shuttleish": [
+    {
+      "tag": "DIV",
+      "cls": "flex items-center gap-2",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "P",
+      "cls": "text-sm font-medium leading-5 text-white lg:text-base lg:leading-6",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "DIV",
+      "cls": "flex items-center gap-2",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "P",
+      "cls": "text-sm font-medium leading-5 text-white lg:text-base lg:leading-6",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "DIV",
+      "cls": "flex items-center gap-2",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "P",
+      "cls": "text-sm font-medium leading-5 text-white lg:text-base lg:leading-6",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "DIV",
+      "cls": "flex items-center gap-2",
+      "txt": "Free Airport Shuttle"
+    },
+    {
+      "tag": "P",
+      "cls": "text-sm font-medium leading-5 text-white lg:text-base lg:leading-6",
+      "txt": "Free Airport Shuttle"
+    }
+  ],
+  "modal": false,
+  "cssLen": [],
+  "css": [],
+  "errs": []
+}

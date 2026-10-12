@@ -1,0 +1,95 @@
+html[lang="en-us" i].cre-t-lotus-16-recommended-mode section[data-slice-type="fleet_category"] h2.text-2xl.font-semibold.leading-6.text-foreground:not(.cre-t-lotus-16-recommended-heading) {
+  display: none !important;
+}
+
+html body .cre-t-lotus-16-recommended-heading {
+  display: none !important;
+}
+
+html[lang="en-us" i].cre-t-lotus-16-recommended-mode .cre-t-lotus-16-recommended-heading {
+  display: block !important;
+}
+
+/* every real section and every real banner — hidden as a whole, not card by
+   card, since the feed below now clones everything. Reversible for free:
+   leaving recommended mode just stops this rule matching, no JS cleanup. */
+html[lang="en-us" i].cre-t-lotus-16-recommended-mode .cre-t-lotus-16-hidden {
+  display: none !important;
+}
+
+/* the feed container itself — hidden by default, only shown once it has
+   actually finished rebuilding (data-cre-t-lotus-16-ready) and we're in
+   recommended mode */
+html body [data-cre-t-lotus-16-feed] {
+  display: none !important;
+}
+
+html[lang="en-us" i].cre-t-lotus-16-recommended-mode [data-cre-t-lotus-16-feed][data-cre-t-lotus-16-ready] {
+  display: flex !important;
+}
+
+/* card clones — hidden by default everywhere, only shown once inside a
+   ready feed container */
+html body [data-cre-t-lotus-16-clone] {
+  display: none !important;
+}
+
+html[lang="en-us" i].cre-t-lotus-16-recommended-mode [data-cre-t-lotus-16-feed][data-cre-t-lotus-16-ready] [data-cre-t-lotus-16-clone] {
+  display: flex !important;
+}
+
+/* banner clones — same pattern, but block (matches a real banner's own
+   outer wrapper, which isn't a flex element) */
+html body [data-cre-t-lotus-16-banner-clone] {
+  display: none !important;
+}
+
+html[lang="en-us" i].cre-t-lotus-16-recommended-mode [data-cre-t-lotus-16-feed][data-cre-t-lotus-16-ready] [data-cre-t-lotus-16-banner-clone] {
+  display: block !important;
+}
+
+html body .cre-t-lotus-16-group-label {
+  display: none !important;
+}
+
+html[lang="en-us" i].cre-t-lotus-16-recommended-mode .cre-t-lotus-16-group-label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  background: #F4F4F5;
+  padding: 2px 16px;
+  color: #18181B;
+  font-family: "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11.4px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+/* Our own lightbox — deliberately not the class "cre-t-11-lightbox" (see
+   ensureThirdPartyLightbox for why), so this base show/hide toggle is ours
+   too; everything inside it reuses cre-t-11's own classes and is styled by
+   its already-loaded CSS. */
+html[lang="en-us" i] .cre-t-lotus-16-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+html[lang="en-us" i] .cre-t-lotus-16-lightbox.cre-t-lotus-16-lightbox-open {
+  display: flex !important;
+}
+
+html[lang="en-us" i] [data-cre-t-lotus-16-gallery-single] {
+  cursor: zoom-in;
+}

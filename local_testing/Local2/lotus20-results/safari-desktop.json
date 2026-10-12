@@ -1,0 +1,1312 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus20-shuttle-details.spec.js",
+      "file": "lotus20-shuttle-details.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "LOTUS20 v1 TC10 — sort change (feed → native list): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Safari Desktop",
+              "projectName": "Safari Desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16495,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:16:20.366Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "scan",
+                      "contentType": "application/json",
+                      "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiA5ODIuNzgxMjUsCiAgICAid2lkdGgiOiAyNCwKICAgICJoZWlnaHQiOiAyNCwKICAgICJ0b3AiOiA5ODIuNzgxMjUsCiAgICAicmlnaHQiOiA4NCwKICAgICJib3R0b20iOiAxMDA2Ljc4MTI1LAogICAgImxlZnQiOiA2MAogIH0sCiAgImJvb2tOb3dWaXNpYmxlIjogMzAsCiAgInNoT3V0c2lkZUNhcmQiOiAwLAogICJvdmVyZmxvd1giOiAwLAogICJsb3R1czE2RmVlZCI6IGZhbHNlCn0="
+                    },
+                    {
+                      "name": "v1-tc10-after-sort",
+                      "contentType": "image/png",
+                      "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-b929c-every-visible-card-no-dupes-Safari-Desktop\\attachments\\v1-tc10-after-sort-f3949b675e2f90b6cd19e429de2400124b5fa835.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2c37d16956081be740-d2af698c96b77aa37730",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 336,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v1 TC11 — currency change ISK→EUR (feed rebuild): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Safari Desktop",
+              "projectName": "Safari Desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17428,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:16:36.899Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "scan",
+                      "contentType": "application/json",
+                      "body": "ewogICJwcmljZSI6ICJNb2RlbCBHdWFyYW50ZWVTdXp1a2kgSmltbnkgNHg0IC0gMiBzZWF0cyBvbmx5IChPbGRlciBNb2RlbClGLXJvYWRzIGFsbG93ZWRNYW51YWw0IENhc2VzKjIgUGVyc29uNFdEKkRlcGVuZHMgb24gcGFzc2VuZ2VyIG51bWJlciBhbmQgc2VhdCBjb25maWd1cmF0aW9uLjE2OSBFVVJJbmNsdWRlcyBmcmVlIFdpRmkgJiBiYXNpYyBpbnN1cmFuY2UyMi42MzYgSVNLIHwgMTg2IFVTRCB8IDE0MCBHQlBcbiAgICAgIFxuICAgICAgIFxuICAgICAgICAgIFxuICAgICAgICAgICAgXG4gICAgICAgICAgXG4gICAgICAgIFxuICAgICAgICBGcmVlLCBmYXN0IHNodXR0bGVcbiAgICAgIFxuICAgIE1vcmUgSW5mb3JtYXRpb25Cb29rIE5vdyIsCiAgInZpc2libGVDYXJkcyI6IDMwLAogICJjbG9uZXMiOiAwLAogICJwZXIiOiBbCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEKICBdLAogICJtaXNzaW5nIjogW10sCiAgImR1cGVzIjogMCwKICAic2hUb3RhbCI6IDMwLAogICJzaFZpc2libGUiOiAzMCwKICAidGV4dHMiOiBbCiAgICAiRnJlZSwgZmFzdCBzaHV0dGxlIgogIF0sCiAgInVuZGVyQ3VycmVuY3kiOiAzMCwKICAiaWNvbiI6IHsKICAgICJ4IjogNjAsCiAgICAieSI6IDEwNTAuNzgxMjUsCiAgICAid2lkdGgiOiAyNCwKICAgICJoZWlnaHQiOiAyNCwKICAgICJ0b3AiOiAxMDUwLjc4MTI1LAogICAgInJpZ2h0IjogODQsCiAgICAiYm90dG9tIjogMTA3NC43ODEyNSwKICAgICJsZWZ0IjogNjAKICB9LAogICJib29rTm93VmlzaWJsZSI6IDMwLAogICJzaE91dHNpZGVDYXJkIjogMCwKICAib3ZlcmZsb3dYIjogMCwKICAibG90dXMxNkZlZWQiOiBmYWxzZQp9"
+                    },
+                    {
+                      "name": "v1-tc11-after-currency",
+                      "contentType": "image/png",
+                      "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-4b826-every-visible-card-no-dupes-Safari-Desktop\\attachments\\v1-tc11-after-currency-f777ff2a7cbdf2ade240733681391d8ae5bc7b28.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2c37d16956081be740-6cf4dcb815378d52d158",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 356,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v1 TC12 — date \"Update\" (feed cleared + rebuilt): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Safari Desktop",
+              "projectName": "Safari Desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17912,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:16:54.366Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "scan",
+                      "contentType": "application/json",
+                      "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiAxMDUwLjc4MTI1LAogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMjQsCiAgICAidG9wIjogMTA1MC43ODEyNSwKICAgICJyaWdodCI6IDg0LAogICAgImJvdHRvbSI6IDEwNzQuNzgxMjUsCiAgICAibGVmdCI6IDYwCiAgfSwKICAiYm9va05vd1Zpc2libGUiOiAzMCwKICAic2hPdXRzaWRlQ2FyZCI6IDAsCiAgIm92ZXJmbG93WCI6IDAsCiAgImxvdHVzMTZGZWVkIjogZmFsc2UKfQ=="
+                    },
+                    {
+                      "name": "v1-tc12-after-update",
+                      "contentType": "image/png",
+                      "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-1c404-every-visible-card-no-dupes-Safari-Desktop\\attachments\\v1-tc12-after-update-4ef2c828c19e04f23180f3ee54f6d7c8abc056c7.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2c37d16956081be740-0ca81ba1d2b5fa35fa6f",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 375,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v1 TC13 — not applied on non-English (Deutsch) listing page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "observation",
+                  "description": "In-app switch to Deutsch leaves 30 hidden .cre-t-20-Shuttle-details nodes in the DOM (observer keeps running; CSS is en-us scoped so nothing shows). Direct load of /de/ injects nothing."
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "Safari Desktop",
+              "projectName": "Safari Desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20193,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:17:12.350Z",
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "In-app switch to Deutsch leaves 30 hidden .cre-t-20-Shuttle-details nodes in the DOM (observer keeps running; CSS is en-us scoped so nothing shows). Direct load of /de/ injects nothing."
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "de",
+                      "contentType": "application/json",
+                      "body": "eyJ1cmwiOiJodHRwczovL3d3dy5sb3R1c2NhcnJlbnRhbC5pcy9kZS9taWV0d2FnZW4taXNsYW5kIiwibGFuZyI6ImRlLWRlIiwiY2FyZHMiOjMwLCJzaCI6MzAsInNoVmlzaWJsZSI6MH0="
+                    },
+                    {
+                      "name": "v1-tc13-deutsch",
+                      "contentType": "image/png",
+                      "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-eb2b1-nglish-Deutsch-listing-page-Safari-Desktop\\attachments\\v1-tc13-deutsch-b18a8d202a3c7342a7a1ef12da8a920bd17db58a.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2c37d16956081be740-9ff0d4eb5230b51e3770",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 394,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v2 TC10 — sort change (feed → native list): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Safari Desktop",
+              "projectName": "Safari Desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14854,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:17:32.598Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "scan",
+                      "contentType": "application/json",
+                      "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiA5ODIuNzgxMjUsCiAgICAid2lkdGgiOiAyNCwKICAgICJoZWlnaHQiOiAyNCwKICAgICJ0b3AiOiA5ODIuNzgxMjUsCiAgICAicmlnaHQiOiA4NCwKICAgICJib3R0b20iOiAxMDA2Ljc4MTI1LAogICAgImxlZnQiOiA2MAogIH0sCiAgImJvb2tOb3dWaXNpYmxlIjogMzAsCiAgInNoT3V0c2lkZUNhcmQiOiAwLAogICJvdmVyZmxvd1giOiAwLAogICJsb3R1czE2RmVlZCI6IGZhbHNlCn0="
+                    },
+                    {
+                      "name": "v2-tc10-after-sort",
+                      "contentType": "image/png",
+                      "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-5f5af-every-visible-card-no-dupes-Safari-Desktop\\attachments\\v2-tc10-after-sort-50b838cdf616dcf80c4462c4860b8c03669d7ca3.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2c37d16956081be740-72900bc5f6ea8ed054a0",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 336,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v2 TC11 — currency change ISK→EUR (feed rebuild): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Safari Desktop",
+              "projectName": "Safari Desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16669,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:17:47.474Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "scan",
+                      "contentType": "application/json",
+                      "body": "ewogICJwcmljZSI6ICJNb2RlbCBHdWFyYW50ZWVTdXp1a2kgSmltbnkgNHg0IC0gMiBzZWF0cyBvbmx5IChPbGRlciBNb2RlbClGLXJvYWRzIGFsbG93ZWRNYW51YWw0IENhc2VzKjIgUGVyc29uNFdEKkRlcGVuZHMgb24gcGFzc2VuZ2VyIG51bWJlciBhbmQgc2VhdCBjb25maWd1cmF0aW9uLjE2OSBFVVJJbmNsdWRlcyBmcmVlIFdpRmkgJiBiYXNpYyBpbnN1cmFuY2UyMi42MzYgSVNLIHwgMTg2IFVTRCB8IDE0MCBHQlBcbiAgICAgIFxuICAgICAgICBcbiAgICAgICAgICBcbiAgICAgICAgICAgIFxuICAgICAgICAgIFxuICAgICAgICBcbiAgICAgICAgRnJlZSwgZmFzdCBzaHV0dGxlXG4gICAgICBcbiAgICBNb3JlIEluZm9ybWF0aW9uQm9vayBOb3ciLAogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiAxMDUwLjc4MTI1LAogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMjQsCiAgICAidG9wIjogMTA1MC43ODEyNSwKICAgICJyaWdodCI6IDg0LAogICAgImJvdHRvbSI6IDEwNzQuNzgxMjUsCiAgICAibGVmdCI6IDYwCiAgfSwKICAiYm9va05vd1Zpc2libGUiOiAzMCwKICAic2hPdXRzaWRlQ2FyZCI6IDAsCiAgIm92ZXJmbG93WCI6IDAsCiAgImxvdHVzMTZGZWVkIjogZmFsc2UKfQ=="
+                    },
+                    {
+                      "name": "v2-tc11-after-currency",
+                      "contentType": "image/png",
+                      "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-2a9b9-every-visible-card-no-dupes-Safari-Desktop\\attachments\\v2-tc11-after-currency-f33dd54857fb475de3b0b183cebe34cd3c82585d.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2c37d16956081be740-fbecf7861d0e4d78b43c",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 356,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v2 TC12 — date \"Update\" (feed cleared + rebuilt): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Safari Desktop",
+              "projectName": "Safari Desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17871,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:18:04.175Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "scan",
+                      "contentType": "application/json",
+                      "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiAxMDUwLjc4MTI1LAogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMjQsCiAgICAidG9wIjogMTA1MC43ODEyNSwKICAgICJyaWdodCI6IDg0LAogICAgImJvdHRvbSI6IDEwNzQuNzgxMjUsCiAgICAibGVmdCI6IDYwCiAgfSwKICAiYm9va05vd1Zpc2libGUiOiAzMCwKICAic2hPdXRzaWRlQ2FyZCI6IDAsCiAgIm92ZXJmbG93WCI6IDAsCiAgImxvdHVzMTZGZWVkIjogZmFsc2UKfQ=="
+                    },
+                    {
+                      "name": "v2-tc12-after-update",
+                      "contentType": "image/png",
+                      "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-afebe-every-visible-card-no-dupes-Safari-Desktop\\attachments\\v2-tc12-after-update-4e6b8aa3e99c99539c569f8408bcfb67a5635354.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2c37d16956081be740-4dceeb7ba34eab820bac",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 375,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v2 TC13 — not applied on non-English (Deutsch) listing page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "observation",
+                  "description": "In-app switch to Deutsch leaves 30 hidden .cre-t-20-Shuttle-details nodes in the DOM (observer keeps running; CSS is en-us scoped so nothing shows). Direct load of /de/ injects nothing."
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "Safari Desktop",
+              "projectName": "Safari Desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19251,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:18:22.090Z",
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "In-app switch to Deutsch leaves 30 hidden .cre-t-20-Shuttle-details nodes in the DOM (observer keeps running; CSS is en-us scoped so nothing shows). Direct load of /de/ injects nothing."
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "de",
+                      "contentType": "application/json",
+                      "body": "eyJ1cmwiOiJodHRwczovL3d3dy5sb3R1c2NhcnJlbnRhbC5pcy9kZS9taWV0d2FnZW4taXNsYW5kIiwibGFuZyI6ImRlLWRlIiwiY2FyZHMiOjMwLCJzaCI6MzAsInNoVmlzaWJsZSI6MH0="
+                    },
+                    {
+                      "name": "v2-tc13-deutsch",
+                      "contentType": "image/png",
+                      "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-3cbed-nglish-Deutsch-listing-page-Safari-Desktop\\attachments\\v2-tc13-deutsch-20c3c8f0be47648683decd40ba060103ad8b27b9.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5d2c37d16956081be740-37e5dca33578c4c4042d",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 394,
+          "column": 3
+        }
+      ],
+      "suites": [
+        {
+          "title": "LOTUS20 control",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 138,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control TC01 — shuttle line absent",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 24027,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:12:53.844Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "bucketing",
+                          "contentType": "application/json",
+                          "body": "eyJleHBzIjpbIjEwMDA1MjcyMjoxMDAwMjU3MDYyIiwiMTAwMDUyOTQ2OjEwMDAyNTc2MDkiXSwibG90dXMxNkZlZWQiOmZhbHNlfQ=="
+                        },
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwCiAgXSwKICAibWlzc2luZyI6IFsKICAgICJjYXItMjc2OSIsCiAgICAiY2FyLTg4NyIsCiAgICAiY2FyLTE5OTIiLAogICAgImNhci0xNTk1IiwKICAgICJjYXItOTIxIiwKICAgICJjYXItODkxIiwKICAgICJjYXItMjYxMSIsCiAgICAiY2FyLTE3NDUiLAogICAgImNhci0yMTY0IiwKICAgICJjYXItOTAxIiwKICAgICJjYXItMTg3OSIsCiAgICAiY2FyLTIwMzUiLAogICAgImNhci0xOTI4IiwKICAgICJjYXItMjY5MCIsCiAgICAiY2FyLTkwMyIsCiAgICAiY2FyLTE1OTMiLAogICAgImNhci0xODY4IiwKICAgICJjYXItMjE2OCIsCiAgICAiY2FyLTE3NzEiLAogICAgImNhci0xMjY3IiwKICAgICJjYXItMTc3MiIsCiAgICAiY2FyLTg5NiIsCiAgICAiY2FyLTI0MTMiLAogICAgImNhci0yMDg4IiwKICAgICJjYXItMTI1MCIsCiAgICAiY2FyLTI0MTUiLAogICAgImNhci0yMTIxIiwKICAgICJjYXItODk5IiwKICAgICJjYXItMTYyNyIsCiAgICAiY2FyLTExMDYiCiAgXSwKICAiZHVwZXMiOiAwLAogICJzaFRvdGFsIjogMCwKICAic2hWaXNpYmxlIjogMCwKICAidGV4dHMiOiBbXSwKICAidW5kZXJDdXJyZW5jeSI6IDAsCiAgImljb24iOiBudWxsLAogICJib29rTm93VmlzaWJsZSI6IDMwLAogICJzaE91dHNpZGVDYXJkIjogMCwKICAib3ZlcmZsb3dYIjogMCwKICAibG90dXMxNkZlZWQiOiBmYWxzZQp9"
+                        },
+                        {
+                          "name": "control-tc01-first-card",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-ac83b--TC01-—-shuttle-line-absent-Safari-Desktop\\attachments\\control-tc01-first-card-e9888c668a3a83cd5df33df9a137db712a0ae4f1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-64a4ca2b8a7e32fc10d1",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 139,
+              "column": 5
+            },
+            {
+              "title": "control TC02 — card layout intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11900,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:13:18.148Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwCiAgXSwKICAibWlzc2luZyI6IFsKICAgICJjYXItMjc2OSIsCiAgICAiY2FyLTg4NyIsCiAgICAiY2FyLTE5OTIiLAogICAgImNhci0xNTk1IiwKICAgICJjYXItOTIxIiwKICAgICJjYXItODkxIiwKICAgICJjYXItMjYxMSIsCiAgICAiY2FyLTE3NDUiLAogICAgImNhci0yMTY0IiwKICAgICJjYXItOTAxIiwKICAgICJjYXItMTg3OSIsCiAgICAiY2FyLTIwMzUiLAogICAgImNhci0xOTI4IiwKICAgICJjYXItMjY5MCIsCiAgICAiY2FyLTkwMyIsCiAgICAiY2FyLTE1OTMiLAogICAgImNhci0xODY4IiwKICAgICJjYXItMjE2OCIsCiAgICAiY2FyLTE3NzEiLAogICAgImNhci0xMjY3IiwKICAgICJjYXItMTc3MiIsCiAgICAiY2FyLTg5NiIsCiAgICAiY2FyLTI0MTMiLAogICAgImNhci0yMDg4IiwKICAgICJjYXItMTI1MCIsCiAgICAiY2FyLTI0MTUiLAogICAgImNhci0yMTIxIiwKICAgICJjYXItODk5IiwKICAgICJjYXItMTYyNyIsCiAgICAiY2FyLTExMDYiCiAgXSwKICAiZHVwZXMiOiAwLAogICJzaFRvdGFsIjogMCwKICAic2hWaXNpYmxlIjogMCwKICAidGV4dHMiOiBbXSwKICAidW5kZXJDdXJyZW5jeSI6IDAsCiAgImljb24iOiBudWxsLAogICJib29rTm93VmlzaWJsZSI6IDMwLAogICJzaE91dHNpZGVDYXJkIjogMCwKICAib3ZlcmZsb3dYIjogMCwKICAibG90dXMxNkZlZWQiOiBmYWxzZQp9"
+                        },
+                        {
+                          "name": "control-tc02-cards-viewport",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-e30a5-tact-no-horizontal-overflow-Safari-Desktop\\attachments\\control-tc02-cards-viewport-f909fbf103141c74f5742430649e2c83430a5a68.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-a3aa29b942084e51b965",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 160,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "LOTUS20 v1",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 138,
+          "column": 8,
+          "specs": [
+            {
+              "title": "v1 TC01 — shuttle line on every visible card, under the EUR/USD/GBP line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17666,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:13:30.109Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "bucketing",
+                          "contentType": "application/json",
+                          "body": "eyJleHBzIjpbIjEwMDA1MjcyMjoxMDAwMjU3MDYyIiwiMTAwMDUyOTQ2OjEwMDAyNTc2MTAiXSwibG90dXMxNkZlZWQiOmZhbHNlfQ=="
+                        },
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiAxMDUwLjc4MTI1LAogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMjQsCiAgICAidG9wIjogMTA1MC43ODEyNSwKICAgICJyaWdodCI6IDg0LAogICAgImJvdHRvbSI6IDEwNzQuNzgxMjUsCiAgICAibGVmdCI6IDYwCiAgfSwKICAiYm9va05vd1Zpc2libGUiOiAzMCwKICAic2hPdXRzaWRlQ2FyZCI6IDAsCiAgIm92ZXJmbG93WCI6IDAsCiAgImxvdHVzMTZGZWVkIjogZmFsc2UKfQ=="
+                        },
+                        {
+                          "name": "v1-tc01-first-card",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-18298--under-the-EUR-USD-GBP-line-Safari-Desktop\\attachments\\v1-tc01-first-card-8b4a01f440964c2a14c9c4a30d47ea55ea46987c.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-57b4d6b2739b27830c48",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 139,
+              "column": 5
+            },
+            {
+              "title": "v1 TC02 — card layout intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14336,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:13:47.853Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiAxMDUwLjc4MTI1LAogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMjQsCiAgICAidG9wIjogMTA1MC43ODEyNSwKICAgICJyaWdodCI6IDg0LAogICAgImJvdHRvbSI6IDEwNzQuNzgxMjUsCiAgICAibGVmdCI6IDYwCiAgfSwKICAiYm9va05vd1Zpc2libGUiOiAzMCwKICAic2hPdXRzaWRlQ2FyZCI6IDAsCiAgIm92ZXJmbG93WCI6IDAsCiAgImxvdHVzMTZGZWVkIjogZmFsc2UKfQ=="
+                        },
+                        {
+                          "name": "v1-tc02-cards-viewport",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-7ee3e-tact-no-horizontal-overflow-Safari-Desktop\\attachments\\v1-tc02-cards-viewport-c2830cd30bf6cf985471a57eb6fa22f03249e620.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-488faa254525e2617ecc",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 160,
+              "column": 5
+            },
+            {
+              "title": "v1 TC03 — shuttle text styling (link: underline + pointer)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "V1 shuttle \"link\" is a plain <div> — no role=\"button\"/tabindex, so it is not keyboard-focusable."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10083,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:14:02.334Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "V1 shuttle \"link\" is a plain <div> — no role=\"button\"/tabindex, so it is not keyboard-focusable."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "style",
+                          "contentType": "application/json",
+                          "body": "ewogICJmb250U2l6ZSI6ICIxMnB4IiwKICAiY29sb3IiOiAicmdiKDAsIDAsIDApIiwKICAiZGVjbyI6ICJ1bmRlcmxpbmUiLAogICJjdXJzb3IiOiAicG9pbnRlciIsCiAgImdhcCI6ICIxMHB4IiwKICAiZGlzcGxheSI6ICJmbGV4IiwKICAidGFnIjogIkRJViIsCiAgInJvbGUiOiBudWxsLAogICJ0YWJJbmRleCI6IC0xCn0="
+                        },
+                        {
+                          "name": "v1-tc03-shuttle-text",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-b6c78-ing-link-underline-pointer--Safari-Desktop\\attachments\\v1-tc03-shuttle-text-10ea68abb33cb0dd3dde1beb13368d93e4a16969.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-ab896b0763cffa75f682",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "v1 TC04 — click shuttle link opens the new modal with wireframe copy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "No backdrop/overlay behind the modal (overlay div is commented out) — the listing stays undimmed. Confirm against the wireframe."
+                    },
+                    {
+                      "type": "observation",
+                      "description": "aria-labelledby=\"cre-t-20-modal-title\" points to an id that does not exist (h2 has no id)."
+                    },
+                    {
+                      "type": "observation",
+                      "description": "\"OK, Got It\" is a <div>, not a <button> — not keyboard reachable."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13126,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:14:12.438Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "No backdrop/overlay behind the modal (overlay div is commented out) — the listing stays undimmed. Confirm against the wireframe."
+                        },
+                        {
+                          "type": "observation",
+                          "description": "aria-labelledby=\"cre-t-20-modal-title\" points to an id that does not exist (h2 has no id)."
+                        },
+                        {
+                          "type": "observation",
+                          "description": "\"OK, Got It\" is a <div>, not a <button> — not keyboard reachable."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "modal",
+                          "contentType": "application/json",
+                          "body": "ewogICJ0aXRsZSI6ICJMb2NhbCBwcmljZXMsIGEgc2hvcnQgcmlkZSBhd2F5IiwKICAiaXRlbXMiOiBbCiAgICAiSWNlbGFuZCdzIGxvY2FsIGNhciByZW50YWwgY29tcGFuaWVzIGFyZSBiYXNlZCBpbiB0aGUgcmVudGFsIHpvbmUganVzdCBvdXRzaWRlIHRoZSBhaXJwb3J0LCBub3QgaW4gdGhlIHRlcm1pbmFsLiIsCiAgICAiSXQncyBob3cgd2Uga2VlcCBwcmljZXMgbG93ZXIgdGhhbiB0aGUgaW50ZXJuYXRpb25hbCBjaGFpbnMuIiwKICAgICJUaGUgZnJlZSBzaHV0dGxlIGdldHMgeW91IHRvIG91ciBkb29yIGluIGp1c3QgZml2ZSBtaW51dGVzLiIKICBdLAogICJidXR0b24iOiAiT0ssIEdvdCBJdCIsCiAgImJveCI6IHsKICAgICJ4IjogMjkxLAogICAgInkiOiAxNzIsCiAgICAid2lkdGgiOiA2OTgsCiAgICAiaGVpZ2h0IjogMzc2LAogICAgInRvcCI6IDE3MiwKICAgICJyaWdodCI6IDk4OSwKICAgICJib3R0b20iOiA1NDgsCiAgICAibGVmdCI6IDI5MQogIH0sCiAgInZ3IjogMTI4MCwKICAidmgiOiA3MjAsCiAgInRpdGxlRm9udCI6ICIzNnB4IiwKICAidGl0bGVMaW5lcyI6IDEsCiAgImxpc3RTdHlsZSI6ICJkaXNjIiwKICAiYnRuQmciOiAicmdiKDExLCA3OSwgNzQpIiwKICAiYnRuVGFnIjogIkRJViIsCiAgIm92ZXJsYXkiOiAicmdiYSgwLCAwLCAwLCAwKSIsCiAgImNsb3NlUmVjdCI6IHsKICAgICJ4IjogOTM2LAogICAgInkiOiAxODksCiAgICAid2lkdGgiOiAzNiwKICAgICJoZWlnaHQiOiAzNiwKICAgICJ0b3AiOiAxODksCiAgICAicmlnaHQiOiA5NzIsCiAgICAiYm90dG9tIjogMjI1LAogICAgImxlZnQiOiA5MzYKICB9LAogICJjbG9zZUJnIjogInJnYmEoMCwgMCwgMCwgMCkiLAogICJtb2RhbFNjcm9sbHMiOiBmYWxzZSwKICAibGFiZWxsZWRCeSI6IGZhbHNlLAogICJoZWFkZXJaIjogIjUwIiwKICAidG9wRWwiOiAibW9kYWwiCn0="
+                        },
+                        {
+                          "name": "v1-tc04-modal-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-a0a56-w-modal-with-wireframe-copy-Safari-Desktop\\attachments\\v1-tc04-modal-open-2458c77793c15c1c2b840eb0ad4e58de87250360.png"
+                        },
+                        {
+                          "name": "v1-tc04-modal-only",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-a0a56-w-modal-with-wireframe-copy-Safari-Desktop\\attachments\\v1-tc04-modal-only-24a7977370681bb24bddb2b702dda37215a94e91.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-f2a6b836a24092083a0f",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 213,
+              "column": 5
+            },
+            {
+              "title": "v1 TC05 — X close button closes the modal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10906,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:14:25.583Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-50391c6c6a7978dc771b",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 268,
+              "column": 5
+            },
+            {
+              "title": "v1 TC06 — \"OK, Got It\" button closes the modal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12185,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:14:36.525Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-7d980549b566daf60e41",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 277,
+              "column": 5
+            },
+            {
+              "title": "v1 TC07 — clicking outside the modal closes it; clicking inside does not",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11328,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:14:48.733Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-70bb56d62acbdae4117a",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 285,
+              "column": 5
+            },
+            {
+              "title": "v1 TC08 — modal re-opens repeatedly and from a card further down the list",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18088,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:15:00.088Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-tc08-modal-from-card-13",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-f4775--card-further-down-the-list-Safari-Desktop\\attachments\\v1-tc08-modal-from-card-13-2ff77bd0c5fa4b7c0561931008d2881a1dffc7b7.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-701b17bc6de5969b7406",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "v1 TC09 — Escape key / background scroll behaviour (observational)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Background page scrolls while the modal is open (scrollY 635 → 1235); no scroll lock."
+                    },
+                    {
+                      "type": "observation",
+                      "description": "Escape does not close the modal."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12144,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:15:18.223Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Background page scrolls while the modal is open (scrollY 635 → 1235); no scroll lock."
+                        },
+                        {
+                          "type": "observation",
+                          "description": "Escape does not close the modal."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "result",
+                          "contentType": "application/json",
+                          "body": "eyJzY3JvbGxCZWZvcmUiOjYzNSwic2Nyb2xsQWZ0ZXIiOjEyMzUsIm9wZW5BZnRlckVzYyI6dHJ1ZX0="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-17c7ce04a93a9512a152",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 317,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "LOTUS20 v2",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 138,
+          "column": 8,
+          "specs": [
+            {
+              "title": "v2 TC01 — shuttle line on every visible card, under the EUR/USD/GBP line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11618,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:15:30.434Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "bucketing",
+                          "contentType": "application/json",
+                          "body": "eyJleHBzIjpbIjEwMDA1MjcyMjoxMDAwMjU3MDYyIiwiMTAwMDUyOTQ2OjEwMDAyNTc2MTEiXSwibG90dXMxNkZlZWQiOmZhbHNlfQ=="
+                        },
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiAxMDUwLjc4MTI1LAogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMjQsCiAgICAidG9wIjogMTA1MC43ODEyNSwKICAgICJyaWdodCI6IDg0LAogICAgImJvdHRvbSI6IDEwNzQuNzgxMjUsCiAgICAibGVmdCI6IDYwCiAgfSwKICAiYm9va05vd1Zpc2libGUiOiAzMCwKICAic2hPdXRzaWRlQ2FyZCI6IDAsCiAgIm92ZXJmbG93WCI6IDAsCiAgImxvdHVzMTZGZWVkIjogZmFsc2UKfQ=="
+                        },
+                        {
+                          "name": "v2-tc01-first-card",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-e808a--under-the-EUR-USD-GBP-line-Safari-Desktop\\attachments\\v2-tc01-first-card-4dcab0c223a065877bf760490501da68b374481d.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-c7da475b815053cb357a",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 139,
+              "column": 5
+            },
+            {
+              "title": "v2 TC02 — card layout intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11175,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:15:42.102Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDYwLAogICAgInkiOiA5ODIuNzgxMjUsCiAgICAid2lkdGgiOiAyNCwKICAgICJoZWlnaHQiOiAyNCwKICAgICJ0b3AiOiA5ODIuNzgxMjUsCiAgICAicmlnaHQiOiA4NCwKICAgICJib3R0b20iOiAxMDA2Ljc4MTI1LAogICAgImxlZnQiOiA2MAogIH0sCiAgImJvb2tOb3dWaXNpYmxlIjogMzAsCiAgInNoT3V0c2lkZUNhcmQiOiAwLAogICJvdmVyZmxvd1giOiAwLAogICJsb3R1czE2RmVlZCI6IGZhbHNlCn0="
+                        },
+                        {
+                          "name": "v2-tc02-cards-viewport",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-712ab-tact-no-horizontal-overflow-Safari-Desktop\\attachments\\v2-tc02-cards-viewport-18dbc685da2a3c86c404bec67447a71af02d6db2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-b9ddf70e3890b40abe3f",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 160,
+              "column": 5
+            },
+            {
+              "title": "v2 TC03 — shuttle text styling (text only: no underline, no pointer)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13112,
+                      "error": {
+                        "message": "Error: V2 is text only — pointer cursor suggests it is clickable\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"pointer\"\u001b[39m",
+                        "stack": "Error: V2 is text only — pointer cursor suggests it is clickable\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"pointer\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js:189:97",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js",
+                          "column": 97,
+                          "line": 189
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 187 |\u001b[39m       } \u001b[36melse\u001b[39m {\n \u001b[90m 188 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(st\u001b[33m.\u001b[39mdeco\u001b[33m,\u001b[39m \u001b[32m'V2 must not look like a link'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[32m'none'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 189 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(st\u001b[33m.\u001b[39mcursor\u001b[33m,\u001b[39m \u001b[32m'V2 is text only — pointer cursor suggests it is clickable'\u001b[39m)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(\u001b[32m'pointer'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 190 |\u001b[39m       }\n \u001b[90m 191 |\u001b[39m       \u001b[36mconst\u001b[39m block \u001b[33m=\u001b[39m firstVisibleShuttle(page)\u001b[33m.\u001b[39mlocator(\u001b[32m'xpath=..'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 192 |\u001b[39m       \u001b[36mawait\u001b[39m block\u001b[33m.\u001b[39mscrollIntoViewIfNeeded()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js",
+                            "column": 97,
+                            "line": 189
+                          },
+                          "message": "Error: V2 is text only — pointer cursor suggests it is clickable\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"pointer\"\u001b[39m\n\n  187 |       } else {\n  188 |         expect.soft(st.deco, 'V2 must not look like a link').toBe('none');\n> 189 |         expect.soft(st.cursor, 'V2 is text only — pointer cursor suggests it is clickable').not.toBe('pointer');\n      |                                                                                                 ^\n  190 |       }\n  191 |       const block = firstVisibleShuttle(page).locator('xpath=..');\n  192 |       await block.scrollIntoViewIfNeeded();\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js:189:97"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:15:53.303Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "style",
+                          "contentType": "application/json",
+                          "body": "ewogICJmb250U2l6ZSI6ICIxMnB4IiwKICAiY29sb3IiOiAicmdiKDAsIDAsIDApIiwKICAiZGVjbyI6ICJub25lIiwKICAiY3Vyc29yIjogInBvaW50ZXIiLAogICJnYXAiOiAiMTBweCIsCiAgImRpc3BsYXkiOiAiZmxleCIsCiAgInRhZyI6ICJESVYiLAogICJyb2xlIjogbnVsbCwKICAidGFiSW5kZXgiOiAtMQp9"
+                        },
+                        {
+                          "name": "v2-tc03-shuttle-text",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-620d1-ly-no-underline-no-pointer--Safari-Desktop\\attachments\\v2-tc03-shuttle-text-ffa568db9a74fbb933f8be594cf9b4570aa6bac5.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-620d1-ly-no-underline-no-pointer--Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-620d1-ly-no-underline-no-pointer--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js",
+                        "column": 97,
+                        "line": 189
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-74cb48f3ce16068b9920",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "v2 TC04 — clicking the shuttle text does nothing (no modal, no navigation)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13201,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:16:07.058Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-tc04-after-click",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-039df-ing-no-modal-no-navigation--Safari-Desktop\\attachments\\v2-tc04-after-click-b35367657c4d0b95d7c6907ce8d238180d7d7e9a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-884a7e4f4b846be84aa8",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 197,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-12T06:12:53.087Z",
+    "duration": 348462.249,
+    "expected": 22,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

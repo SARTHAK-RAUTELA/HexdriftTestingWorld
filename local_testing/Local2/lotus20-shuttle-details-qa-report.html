@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lotus 20 QA Report</title>
+<style>
+:root{--bg:#f7f7f8;--card:#fff;--ink:#1a1a2e;--mut:#5c5f6b;--line:#e2e4ea;--ok:#1a7f4b;--okbg:#e6f5ec;--bad:#b42318;--badbg:#fdecea;--warn:#946200;--warnbg:#fff4d6;--info:#2f5bb7;--infobg:#e8effc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15161b;--card:#1f2027;--ink:#ececf1;--mut:#a3a6b3;--line:#33353f;--ok:#5fd394;--okbg:#173326;--bad:#ff8a80;--badbg:#3a1d1b;--warn:#f2c14e;--warnbg:#3a2f12;--info:#8fb2ff;--infobg:#1c2742}}
+:root[data-theme="dark"]{--bg:#15161b;--card:#1f2027;--ink:#ececf1;--mut:#a3a6b3;--line:#33353f;--ok:#5fd394;--okbg:#173326;--bad:#ff8a80;--badbg:#3a1d1b;--warn:#f2c14e;--warnbg:#3a2f12;--info:#8fb2ff;--infobg:#1c2742}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:32px 0 10px}h3{font-size:16px;margin:22px 0 6px}
+.sub{color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0}
+.bug{border-left:4px solid var(--bad)}.bug.med{border-left-color:var(--warn)}.bug.low{border-left-color:var(--info)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.tag{display:inline-block;border-radius:5px;padding:1px 8px;font-size:12px;font-weight:600}
+.pass{background:var(--okbg);color:var(--ok)}.fail{background:var(--badbg);color:var(--bad)}.warn{background:var(--warnbg);color:var(--warn)}.info{background:var(--infobg);color:var(--info)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}.kpi b{display:block;font-size:24px}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:10px}
+.shots figure{margin:0}.shots img{width:100%;border:1px solid var(--line);border-radius:6px}.shots figcaption{font-size:12px;color:var(--mut);margin-top:4px}
+.pair{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:10px 0}summary{cursor:pointer;font-weight:600}
+code{background:var(--bg);padding:1px 4px;border-radius:4px;font-size:13px;word-break:break-word}
+.wrap{overflow-x:auto}small{color:var(--mut)}
+ul{margin:6px 0;padding-left:20px}
+</style>
+</head>
+<body><main>
+<h1>Lotus Car Rental: Test 20, Listings Page Simplified Shuttle Details</h1>
+<p class="sub">lotuscarrental.is/rent-a-car-in-iceland · Convert exp 100052946 · Control 1000257609 / V1 1000257610 / V2 1000257611 · preview links (<code>cro_mode=qa</code>) · tested 2026-10-12</p>
+
+<div class="card">
+<b>Verdict: ready to launch after one small fix, but iPhone 12 isn't tested yet.</b> Both variations do what the brief asks on Chrome desktop, Safari desktop and Chrome mobile. V1 shows the "Free, fast shuttle" link on every card. Clicking it opens the new modal ("Local prices, a short ride away", 3 bullets, "OK, Got It"), which closes with the X, the button or an outside click. V2 shows the same text with no link, and clicking it does nothing. The only failure is <b>BUG-01: V2's text still shows a pointer cursor</b>, so it looks clickable. The code deployed in Convert matches the local <code>vB.js/vB.css</code> (V1) and <code>v2.js/v2.css</code> (V2) exactly.
+</div>
+
+<div class="kpis">
+<div class="kpi"><b>66/69</b>checks passed (3 browsers × 23)</div>
+<div class="kpi"><b>3 of 4</b>browsers finished: Chrome desktop, Safari desktop, Pixel 5</div>
+<div class="kpi"><b>30/30</b>visible cards show the shuttle line in V1 and V2</div>
+<div class="kpi"><b>1</b>bug (low), 1 risk, 6 notes</div>
+</div>
+
+<div class="card bug med">
+<p><span class="tag warn">Not finished</span> <b>Mobile Safari (iPhone 12) has no test results</b></p>
+<p>The iPhone 12 run was stopped twice because the test machine ran out of memory. The stopped run did save 8 screenshots (control and V1 cards and the V1 modal, shown below), and they look correct, but no checks were recorded. <b>iPhone 12 needs one more run before sign-off.</b></p>
+</div>
+
+<h2>What the test should do (from the brief)</h2>
+<div class="card wrap"><table>
+<tr><th>Arm</th><th>Expected</th><th>What we found</th></tr>
+<tr><td>Control</td><td>The site as it currently runs</td><td>No shuttle line on any card and no modal on the page. ✅</td></tr>
+<tr><td>V1</td><td>Keep the Test 14 shuttle text link, and change the modal content to the wireframe</td><td>Bus icon (24×24) and underlined <b>"Free, fast shuttle"</b> under the EUR/USD/GBP price line on all 30 cards. Clicking it opens the new modal. ✅ <i>We didn't have the wireframe, so we checked the copy in the code, not the layout.</i></td></tr>
+<tr><td>V2</td><td>Keep the Test 14 text but remove the link, so it's text only</td><td>Same icon and text, with no underline and no modal, and clicking does nothing. ✅ But the cursor is still a pointer ❌ (BUG-01).</td></tr>
+</table>
+<p><small>Targeting: the test runs on the English results listing page only. Loading <code>/de/mietwagen-island</code> directly shows nothing, and switching language from inside the site leaves nothing visible.</small></p>
+</div>
+
+<h2>Bugs</h2>
+
+<div class="card bug low">
+<p><span class="tag info">BUG-01 · Low</span> <b>V2's text-only shuttle line still shows a pointer (hand) cursor</b></p>
+<p>V2 is meant to be plain text, but <code>v2.css</code> line 10 keeps <code>cursor: pointer</code> on <code>.cre-t-20-Shuttle-details</code>. Hovering it shows a hand cursor as if it were a link, and clicking does nothing. This fails on Chrome, Safari and Pixel 5 (computed <code>cursor: pointer</code>, <code>text-decoration: none</code>).</p>
+<p><b>Fix:</b> delete <code>cursor: pointer;</code> from <code>v2.css</code>, or set it to <code>cursor: default</code>.</p>
+<div class="shots pair">
+<figure><a href="lotus20-screenshots/chrome-desktop/v2-tc03-shuttle-text.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v2-tc03-shuttle-text.png" alt="V2 shuttle text, Chrome"></a><figcaption>V2, Chrome: plain text with no underline (but hand cursor on hover)</figcaption></figure>
+<figure><a href="lotus20-screenshots/chrome-desktop/v1-tc03-shuttle-text.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v1-tc03-shuttle-text.png" alt="V1 shuttle link, Chrome"></a><figcaption>V1, Chrome, for comparison: underlined link</figcaption></figure>
+</div>
+</div>
+
+<h2>Risk to flag to the developer</h2>
+<div class="card bug med">
+<p><span class="tag warn">Risk · Medium</span> <b>The other live test, LOTUS-16 (exp 100052833), copies the cards, and Test 20 depends on running before it</b></p>
+<p>The QA links also put the visitor into Convert exp 100052833 (<code>cre-t-lotus-16</code>, the "Recommended" feed). On first load it <b>hides all 30 real cards</b> (<code>[id^="car-"]</code>) and shows copies in <code>&lt;cre-t-lotus-16-card&gt;</code> elements, built from <code>card.innerHTML</code> about 400ms after the cards exist. Test 20 only adds its shuttle line to the real cards (<code>[data-slice-type="fleet_category"] [id*="car"]&gt;div:nth-child(3)</code>). The copies don't have an <code>id</code>, so Test 20's selector never matches them.</p>
+<ul>
+<li>In our first check the copies <b>did</b> carry the shuttle line (30 of 30 visible), because Test 20 ran before LOTUS-16 made its copies. The page then had 60 shuttle lines: 30 hidden on the real cards and 30 visible on the copies.</li>
+<li>This only works because of timing. If LOTUS-16 copies a card before Test 20 adds its line (slow device, slow network, or a rebuild after a currency or date change), <b>that visible card will have no shuttle line</b>, and in V1 there's nothing to click. LOTUS-16 rebuilds on currency change (+500ms and +1500ms), on date "Update", and on filter changes.</li>
+<li>In the automated runs, clicking "Update" to close the date panel put LOTUS-16 into its normal list (no copies), so the automated checks covered the site's own cards. <b>The copied-card case was only checked once by hand.</b></li>
+</ul>
+<p><b>Suggestion:</b> widen Test 20's selector to cover the copies as well, for example <code>[data-slice-type="fleet_category"] [id*="car"]&gt;div:nth-child(3), cre-t-lotus-16-card&gt;div:nth-child(3)</code>. The existing "already has a line" check prevents duplicates. Also confirm with the client whether LOTUS-16 will still be live when Test 20 launches.</p>
+</div>
+
+<h2>Notes (not failures; please confirm with the client)</h2>
+<div class="card"><ul>
+<li><b>No backdrop behind the modal.</b> The overlay <code>&lt;div class="cre-t-20-overlay"&gt;</code> is commented out in <code>vB.js</code>, so the listing behind the modal isn't dimmed (see screenshots). Check this against the wireframe.</li>
+<li><b>Escape doesn't close the modal.</b> This is the same in all 3 browsers.</li>
+<li><b>The page behind still scrolls while the modal is open.</b> Scrolling moved the page about 600px (e.g. 703 → 1303) with the modal still open. Because the modal is <code>position: fixed</code> it stays on screen, but the page moves behind it.</li>
+<li><b>Accessibility.</b> The V1 "link" and the "OK, Got It" button are plain <code>&lt;div&gt;</code>s with no role or tabindex, so keyboard users can't reach them. Also, <code>aria-labelledby="cre-t-20-modal-title"</code> points to an id that doesn't exist (the <code>&lt;h2&gt;</code> has no id).</li>
+<li><b>Mobile title size.</b> The 36px title wraps onto 2 lines on a 393px-wide phone. The modal still fits (353×464 on Pixel 5) with no scrolling inside it. Check this against the wireframe.</li>
+<li><b>Switching to German from inside the site.</b> Switching EN → Deutsch from the menu leaves 30 hidden English shuttle elements in the page code, because the page-watcher keeps running. They're <b>not visible</b>, since the CSS only applies to <code>en-us</code>, and loading the German page directly adds nothing. No action needed for users.</li>
+</ul>
+<p><small>Behaviour that is the same in control: visitors with no dates get the "Rental time" panel opened on page load (on desktop a panel over the page, on mobile the full-screen "Iceland Awaits." sheet). Only "Update" / "Check the fleet" closes it. The tests close it that way, like a real visitor.</small></p>
+</div>
+
+<h2>Results by browser</h2>
+<div class="card wrap"><table>
+<tr><th>#</th><th>Check</th><th>Arms</th><th>Chrome desktop</th><th>Safari desktop</th><th>Pixel 5</th><th>iPhone 12</th></tr>
+<tr><td>TC01</td><td>Shuttle line present (V1/V2) or absent (control) on every visible card, exactly 1 per card, under the EUR/USD/GBP line, 24px icon</td><td>C, V1, V2</td><td><span class="tag pass">3/3</span></td><td><span class="tag pass">3/3</span></td><td><span class="tag pass">3/3</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC02</td><td>Card layout intact: no sideways scroll, line inside the card, Book Now visible on all 30</td><td>C, V1, V2</td><td><span class="tag pass">3/3</span></td><td><span class="tag pass">3/3</span></td><td><span class="tag pass">3/3</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC03</td><td>Styling: 12px, black. V1 underline + pointer; V2 no underline, no pointer</td><td>V1, V2</td><td><span class="tag fail">1/2</span></td><td><span class="tag fail">1/2</span></td><td><span class="tag fail">1/2</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC04</td><td>V1: click opens modal with exact copy, centred, inside the screen, not covered by the header. V2: click does nothing, no modal, URL unchanged</td><td>V1, V2</td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC05</td><td>X button closes the modal</td><td>V1</td><td><span class="tag pass">pass</span></td><td><span class="tag pass">pass</span></td><td><span class="tag pass">pass</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC06</td><td>"OK, Got It" closes the modal</td><td>V1</td><td><span class="tag pass">pass</span></td><td><span class="tag pass">pass</span></td><td><span class="tag pass">pass</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC07</td><td>Click outside closes it; clicks inside (title, bullets) don't</td><td>V1</td><td><span class="tag pass">pass</span></td><td><span class="tag pass">pass</span></td><td><span class="tag pass">pass</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC08</td><td>Opens and closes 3× in a row, then opens from card 13 further down; only 1 modal in the page</td><td>V1</td><td><span class="tag pass">pass</span></td><td><span class="tag pass">pass</span></td><td><span class="tag pass">pass</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC09</td><td>Escape / scroll behaviour (recorded only, not pass/fail)</td><td>V1</td><td><span class="tag info">see notes</span></td><td><span class="tag info">see notes</span></td><td><span class="tag info">see notes</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC10</td><td>Sort changed to "High price first": still 1 line per visible card; V1 modal still opens</td><td>V1, V2</td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC11</td><td>Currency ISK → EUR: still 1 line per visible card</td><td>V1, V2</td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC12</td><td>Rental time re-opened and "Update" clicked: still 1 line per visible card</td><td>V1, V2</td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><td>TC13</td><td>Switch to Deutsch: page is <code>de-de</code>, no shuttle line visible</td><td>V1, V2</td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag pass">2/2</span></td><td><span class="tag warn">not run</span></td></tr>
+<tr><th></th><th>Total</th><th></th><th>22/23</th><th>22/23</th><th>22/23</th><th>—</th></tr>
+</table>
+<p><small>No console errors from <code>cre-t-20</code> in any run. Viewports: desktop 1280×720, Pixel 5 393×727, iPhone 12 390×664 (Playwright device emulation).</small></p>
+</div>
+
+<h2>Screenshots</h2>
+
+<h3>Cards: control vs V1 vs V2</h3>
+<div class="shots">
+<figure><a href="lotus20-screenshots/chrome-desktop/control-tc01-first-card.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/control-tc01-first-card.png" alt=""></a><figcaption>Control, Chrome: no shuttle line</figcaption></figure>
+<figure><a href="lotus20-screenshots/chrome-desktop/v1-tc01-first-card.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v1-tc01-first-card.png" alt=""></a><figcaption>V1, Chrome: shuttle link</figcaption></figure>
+<figure><a href="lotus20-screenshots/chrome-desktop/v2-tc01-first-card.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v2-tc01-first-card.png" alt=""></a><figcaption>V2, Chrome: plain text</figcaption></figure>
+<figure><a href="lotus20-screenshots/safari-desktop/v1-tc01-first-card.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/safari-desktop/v1-tc01-first-card.png" alt=""></a><figcaption>V1, Safari desktop</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v1-tc01-first-card.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v1-tc01-first-card.png" alt=""></a><figcaption>V1, Pixel 5</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc01-first-card.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc01-first-card.png" alt=""></a><figcaption>V2, Pixel 5</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-safari-iphone-12-/v1-tc01-first-card.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-safari-iphone-12-/v1-tc01-first-card.png" alt=""></a><figcaption>V1, iPhone 12 (from the stopped run, screenshot only)</figcaption></figure>
+</div>
+
+<h3>V1 modal</h3>
+<div class="shots pair">
+<figure><a href="lotus20-screenshots/chrome-desktop/v1-tc04-modal-open.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v1-tc04-modal-open.png" alt=""></a><figcaption>Chrome desktop: 698×376, centred, no backdrop</figcaption></figure>
+<figure><a href="lotus20-screenshots/safari-desktop/v1-tc04-modal-open.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/safari-desktop/v1-tc04-modal-open.png" alt=""></a><figcaption>Safari desktop</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v1-tc04-modal-open.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v1-tc04-modal-open.png" alt=""></a><figcaption>Pixel 5: 353×464, title on 2 lines</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-safari-iphone-12-/v1-tc04-modal-open.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-safari-iphone-12-/v1-tc04-modal-open.png" alt=""></a><figcaption>iPhone 12 (from the stopped run, screenshot only)</figcaption></figure>
+<figure><a href="lotus20-screenshots/chrome-desktop/v1-tc08-modal-from-card-13.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v1-tc08-modal-from-card-13.png" alt=""></a><figcaption>Chrome: opened from card 13, still on screen</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v1-tc08-modal-from-card-13.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v1-tc08-modal-from-card-13.png" alt=""></a><figcaption>Pixel 5: opened from card 13</figcaption></figure>
+</div>
+
+<h3>V2 after clicking the text</h3>
+<div class="shots pair">
+<figure><a href="lotus20-screenshots/chrome-desktop/v2-tc04-after-click.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v2-tc04-after-click.png" alt=""></a><figcaption>Chrome: nothing opens</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc04-after-click.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc04-after-click.png" alt=""></a><figcaption>Pixel 5: nothing opens</figcaption></figure>
+</div>
+
+<details><summary>After the cards re-render: sort, currency, date update (V1 and V2)</summary>
+<div class="shots">
+<figure><a href="lotus20-screenshots/chrome-desktop/v1-tc10-after-sort.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v1-tc10-after-sort.png" alt=""></a><figcaption>V1 Chrome, after sort (modal reopened)</figcaption></figure>
+<figure><a href="lotus20-screenshots/chrome-desktop/v1-tc11-after-currency.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v1-tc11-after-currency.png" alt=""></a><figcaption>V1 Chrome, EUR</figcaption></figure>
+<figure><a href="lotus20-screenshots/chrome-desktop/v1-tc12-after-update.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v1-tc12-after-update.png" alt=""></a><figcaption>V1 Chrome, after Update</figcaption></figure>
+<figure><a href="lotus20-screenshots/chrome-desktop/v2-tc10-after-sort.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v2-tc10-after-sort.png" alt=""></a><figcaption>V2 Chrome, after sort</figcaption></figure>
+<figure><a href="lotus20-screenshots/safari-desktop/v2-tc11-after-currency.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/safari-desktop/v2-tc11-after-currency.png" alt=""></a><figcaption>V2 Safari, EUR</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v1-tc10-after-sort.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v1-tc10-after-sort.png" alt=""></a><figcaption>V1 Pixel 5, after sort</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc11-after-currency.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc11-after-currency.png" alt=""></a><figcaption>V2 Pixel 5, EUR</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc12-after-update.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc12-after-update.png" alt=""></a><figcaption>V2 Pixel 5, after Update</figcaption></figure>
+</div>
+</details>
+
+<details><summary>German page (targeting check)</summary>
+<div class="shots">
+<figure><a href="lotus20-screenshots/chrome-desktop/v1-tc13-deutsch.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/chrome-desktop/v1-tc13-deutsch.png" alt=""></a><figcaption>V1 Chrome, /de/mietwagen-island: no shuttle line</figcaption></figure>
+<figure><a href="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc13-deutsch.png" target="_blank"><img loading="lazy" src="lotus20-screenshots/mobile-chrome-pixel-5-/v2-tc13-deutsch.png" alt=""></a><figcaption>V2 Pixel 5, German</figcaption></figure>
+</div>
+</details>
+
+<h2>How this was tested</h2>
+<div class="card"><ul>
+<li>Live preview links, forced into each arm with <code>_conv_eforce=100052946.&lt;variation&gt;</code>. Each test starts in a new browser session. The cookie banner is hidden with CSS (no consent given).</li>
+<li>The code running in Convert was read from <code>window.convert.currentData</code> and compared to the local files: it matches exactly.</li>
+<li>Every check runs on the cards that are actually <b>visible</b>, whether those are the site's own cards or the LOTUS-16 copies.</li>
+<li>Playwright test: <code>my-playwright-project/testing/lotus20-shuttle-details.spec.js</code>. Raw results: <code>lotus20-results/*.json</code>.</li>
+<li>Not covered: comparison with the wireframe (we didn't receive it), and real-device testing (we used browser emulation).</li>
+</ul></div>
+</main></body>
+</html>

@@ -1,0 +1,1144 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus20-shuttle-details.spec.js",
+      "file": "lotus20-shuttle-details.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "LOTUS20 v1 TC10 — sort change (feed → native list): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile Safari (iPhone 12)",
+              "projectName": "Mobile Safari (iPhone 12)",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:39:05.946Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5d2c37d16956081be740-91489e9b6b9f0bd42883",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 337,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v1 TC11 — currency change ISK→EUR (feed rebuild): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile Safari (iPhone 12)",
+              "projectName": "Mobile Safari (iPhone 12)",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:39:05.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5d2c37d16956081be740-cb65a74f1362948c392a",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 357,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v1 TC12 — date \"Update\" (feed cleared + rebuilt): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile Safari (iPhone 12)",
+              "projectName": "Mobile Safari (iPhone 12)",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:39:05.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5d2c37d16956081be740-8cc766a44ba5d9f1e01f",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 376,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v1 TC13 — not applied on non-English (Deutsch) listing page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile Safari (iPhone 12)",
+              "projectName": "Mobile Safari (iPhone 12)",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:39:05.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5d2c37d16956081be740-1cf1f31515e95cf5695e",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 395,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v2 TC10 — sort change (feed → native list): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile Safari (iPhone 12)",
+              "projectName": "Mobile Safari (iPhone 12)",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:39:05.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5d2c37d16956081be740-32de02d1cf5c3be0647d",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 337,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v2 TC11 — currency change ISK→EUR (feed rebuild): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile Safari (iPhone 12)",
+              "projectName": "Mobile Safari (iPhone 12)",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:39:05.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5d2c37d16956081be740-fa87871ce359a55afa1e",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 357,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v2 TC12 — date \"Update\" (feed cleared + rebuilt): shuttle on every visible card, no dupes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile Safari (iPhone 12)",
+              "projectName": "Mobile Safari (iPhone 12)",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:39:05.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5d2c37d16956081be740-db4c92bef3cb31e906c9",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 376,
+          "column": 3
+        },
+        {
+          "title": "LOTUS20 v2 TC13 — not applied on non-English (Deutsch) listing page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Mobile Safari (iPhone 12)",
+              "projectName": "Mobile Safari (iPhone 12)",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-12T06:39:05.947Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "5d2c37d16956081be740-ca667279809331e3ac79",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 395,
+          "column": 3
+        }
+      ],
+      "suites": [
+        {
+          "title": "LOTUS20 control",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 139,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control TC01 — shuttle line absent",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23213,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:36:14.513Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "bucketing",
+                          "contentType": "application/json",
+                          "body": "eyJleHBzIjpbIjEwMDA1MjcyMjoxMDAwMjU3MDYyIiwiMTAwMDUyODMyOjEwMDAyNTczNTQiLCIxMDAwNTI5NDY6MTAwMDI1NzYwOSJdLCJsb3R1czE2RmVlZCI6ZmFsc2V9"
+                        },
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwCiAgXSwKICAibWlzc2luZyI6IFsKICAgICJjYXItMjc2OSIsCiAgICAiY2FyLTg4NyIsCiAgICAiY2FyLTE5OTIiLAogICAgImNhci0xNTk1IiwKICAgICJjYXItOTIxIiwKICAgICJjYXItODkxIiwKICAgICJjYXItMjYxMSIsCiAgICAiY2FyLTE3NDUiLAogICAgImNhci0yMTY0IiwKICAgICJjYXItOTAxIiwKICAgICJjYXItMTg3OSIsCiAgICAiY2FyLTIwMzUiLAogICAgImNhci0xOTI4IiwKICAgICJjYXItMjY5MCIsCiAgICAiY2FyLTkwMyIsCiAgICAiY2FyLTE1OTMiLAogICAgImNhci0xODY4IiwKICAgICJjYXItMjE2OCIsCiAgICAiY2FyLTE3NzEiLAogICAgImNhci0xMjY3IiwKICAgICJjYXItMTc3MiIsCiAgICAiY2FyLTg5NiIsCiAgICAiY2FyLTI0MTMiLAogICAgImNhci0yMDg4IiwKICAgICJjYXItMTI1MCIsCiAgICAiY2FyLTI0MTUiLAogICAgImNhci0yMTIxIiwKICAgICJjYXItODk5IiwKICAgICJjYXItMTYyNyIsCiAgICAiY2FyLTExMDYiCiAgXSwKICAiZHVwZXMiOiAwLAogICJzaFRvdGFsIjogMCwKICAic2hWaXNpYmxlIjogMCwKICAidGV4dHMiOiBbXSwKICAidW5kZXJDdXJyZW5jeSI6IDAsCiAgImljb24iOiBudWxsLAogICJib29rTm93VmlzaWJsZSI6IDMwLAogICJzaE91dHNpZGVDYXJkIjogMCwKICAib3ZlcmZsb3dYIjogMCwKICAibG90dXMxNkZlZWQiOiBmYWxzZQp9"
+                        },
+                        {
+                          "name": "control-tc01-first-card",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-ac83b--TC01-—-shuttle-line-absent-Mobile-Safari-iPhone-12-\\attachments\\control-tc01-first-card-94e101a0ada282d50225ee9542d875a88552c02e.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-fcb123b273ba09a9fbc3",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "control TC02 — card layout intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14280,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:36:37.982Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwLAogICAgMCwKICAgIDAsCiAgICAwCiAgXSwKICAibWlzc2luZyI6IFsKICAgICJjYXItMjc2OSIsCiAgICAiY2FyLTg4NyIsCiAgICAiY2FyLTE5OTIiLAogICAgImNhci0xNTk1IiwKICAgICJjYXItOTIxIiwKICAgICJjYXItODkxIiwKICAgICJjYXItMjYxMSIsCiAgICAiY2FyLTE3NDUiLAogICAgImNhci0yMTY0IiwKICAgICJjYXItOTAxIiwKICAgICJjYXItMTg3OSIsCiAgICAiY2FyLTIwMzUiLAogICAgImNhci0xOTI4IiwKICAgICJjYXItMjY5MCIsCiAgICAiY2FyLTkwMyIsCiAgICAiY2FyLTE1OTMiLAogICAgImNhci0xODY4IiwKICAgICJjYXItMjE2OCIsCiAgICAiY2FyLTE3NzEiLAogICAgImNhci0xMjY3IiwKICAgICJjYXItMTc3MiIsCiAgICAiY2FyLTg5NiIsCiAgICAiY2FyLTI0MTMiLAogICAgImNhci0yMDg4IiwKICAgICJjYXItMTI1MCIsCiAgICAiY2FyLTI0MTUiLAogICAgImNhci0yMTIxIiwKICAgICJjYXItODk5IiwKICAgICJjYXItMTYyNyIsCiAgICAiY2FyLTExMDYiCiAgXSwKICAiZHVwZXMiOiAwLAogICJzaFRvdGFsIjogMCwKICAic2hWaXNpYmxlIjogMCwKICAidGV4dHMiOiBbXSwKICAidW5kZXJDdXJyZW5jeSI6IDAsCiAgImljb24iOiBudWxsLAogICJib29rTm93VmlzaWJsZSI6IDMwLAogICJzaE91dHNpZGVDYXJkIjogMCwKICAib3ZlcmZsb3dYIjogMCwKICAibG90dXMxNkZlZWQiOiBmYWxzZQp9"
+                        },
+                        {
+                          "name": "control-tc02-cards-viewport",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-e30a5-tact-no-horizontal-overflow-Mobile-Safari-iPhone-12-\\attachments\\control-tc02-cards-viewport-d352b6fbcfc9efaea1b89c996a42c880bb100ff2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-ad2ced4af887b7ab3d8a",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 161,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "LOTUS20 v1",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 139,
+          "column": 8,
+          "specs": [
+            {
+              "title": "v1 TC01 — shuttle line on every visible card, under the EUR/USD/GBP line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12119,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:36:52.418Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "bucketing",
+                          "contentType": "application/json",
+                          "body": "eyJleHBzIjpbIjEwMDA1MjcyMjoxMDAwMjU3MDYxIiwiMTAwMDUyODMyOjEwMDAyNTczNTQiLCIxMDAwNTI5NDY6MTAwMDI1NzYxMCJdLCJsb3R1czE2RmVlZCI6ZmFsc2V9"
+                        },
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDQwLAogICAgInkiOiAxMDM0Ljc4MTI1LAogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMjQsCiAgICAidG9wIjogMTAzNC43ODEyNSwKICAgICJyaWdodCI6IDY0LAogICAgImJvdHRvbSI6IDEwNTguNzgxMjUsCiAgICAibGVmdCI6IDQwCiAgfSwKICAiYm9va05vd1Zpc2libGUiOiAzMCwKICAic2hPdXRzaWRlQ2FyZCI6IDAsCiAgIm92ZXJmbG93WCI6IDAsCiAgImxvdHVzMTZGZWVkIjogZmFsc2UKfQ=="
+                        },
+                        {
+                          "name": "v1-tc01-first-card",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-18298--under-the-EUR-USD-GBP-line-Mobile-Safari-iPhone-12-\\attachments\\v1-tc01-first-card-d435a4b2036443229ff4077b8a9e5dcde1d49880.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-93bc15c244865fad465b",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "v1 TC02 — card layout intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23710,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:37:04.583Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "scan",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlQ2FyZHMiOiAzMCwKICAiY2xvbmVzIjogMCwKICAicGVyIjogWwogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxLAogICAgMSwKICAgIDEsCiAgICAxCiAgXSwKICAibWlzc2luZyI6IFtdLAogICJkdXBlcyI6IDAsCiAgInNoVG90YWwiOiAzMCwKICAic2hWaXNpYmxlIjogMzAsCiAgInRleHRzIjogWwogICAgIkZyZWUsIGZhc3Qgc2h1dHRsZSIKICBdLAogICJ1bmRlckN1cnJlbmN5IjogMzAsCiAgImljb24iOiB7CiAgICAieCI6IDQwLAogICAgInkiOiAxMTAyLjc4MTI1LAogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMjQsCiAgICAidG9wIjogMTEwMi43ODEyNSwKICAgICJyaWdodCI6IDY0LAogICAgImJvdHRvbSI6IDExMjYuNzgxMjUsCiAgICAibGVmdCI6IDQwCiAgfSwKICAiYm9va05vd1Zpc2libGUiOiAzMCwKICAic2hPdXRzaWRlQ2FyZCI6IDAsCiAgIm92ZXJmbG93WCI6IDAsCiAgImxvdHVzMTZGZWVkIjogZmFsc2UKfQ=="
+                        },
+                        {
+                          "name": "v1-tc02-cards-viewport",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-7ee3e-tact-no-horizontal-overflow-Mobile-Safari-iPhone-12-\\attachments\\v1-tc02-cards-viewport-9d4f0d316d91b0b78ca189b2ede3012e09ddd224.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-6f2af6633108fe0e9c15",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 161,
+              "column": 5
+            },
+            {
+              "title": "v1 TC03 — shuttle text styling (link: underline + pointer)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "V1 shuttle \"link\" is a plain <div> — no role=\"button\"/tabindex, so it is not keyboard-focusable."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18102,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:37:28.353Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "V1 shuttle \"link\" is a plain <div> — no role=\"button\"/tabindex, so it is not keyboard-focusable."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "style",
+                          "contentType": "application/json",
+                          "body": "ewogICJmb250U2l6ZSI6ICIxMnB4IiwKICAiY29sb3IiOiAicmdiKDAsIDAsIDApIiwKICAiZGVjbyI6ICJ1bmRlcmxpbmUiLAogICJjdXJzb3IiOiAicG9pbnRlciIsCiAgImdhcCI6ICIxMHB4IiwKICAiZGlzcGxheSI6ICJmbGV4IiwKICAidGFnIjogIkRJViIsCiAgInJvbGUiOiBudWxsLAogICJ0YWJJbmRleCI6IC0xCn0="
+                        },
+                        {
+                          "name": "v1-tc03-shuttle-text",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-b6c78-ing-link-underline-pointer--Mobile-Safari-iPhone-12-\\attachments\\v1-tc03-shuttle-text-0ea94e41abefe59b58c1d0a542ebee64c92bbcf6.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-41fb553fa508b750e0df",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 174,
+              "column": 5
+            },
+            {
+              "title": "v1 TC04 — click shuttle link opens the new modal with wireframe copy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "No backdrop/overlay behind the modal (overlay div is commented out) — the listing stays undimmed. Confirm against the wireframe."
+                    },
+                    {
+                      "type": "observation",
+                      "description": "aria-labelledby=\"cre-t-20-modal-title\" points to an id that does not exist (h2 has no id)."
+                    },
+                    {
+                      "type": "observation",
+                      "description": "\"OK, Got It\" is a <div>, not a <button> — not keyboard reachable."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19144,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:37:46.512Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "No backdrop/overlay behind the modal (overlay div is commented out) — the listing stays undimmed. Confirm against the wireframe."
+                        },
+                        {
+                          "type": "observation",
+                          "description": "aria-labelledby=\"cre-t-20-modal-title\" points to an id that does not exist (h2 has no id)."
+                        },
+                        {
+                          "type": "observation",
+                          "description": "\"OK, Got It\" is a <div>, not a <button> — not keyboard reachable."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "modal",
+                          "contentType": "application/json",
+                          "body": "ewogICJ0aXRsZSI6ICJMb2NhbCBwcmljZXMsIGEgc2hvcnQgcmlkZSBhd2F5IiwKICAiaXRlbXMiOiBbCiAgICAiSWNlbGFuZCdzIGxvY2FsIGNhciByZW50YWwgY29tcGFuaWVzIGFyZSBiYXNlZCBpbiB0aGUgcmVudGFsIHpvbmUganVzdCBvdXRzaWRlIHRoZSBhaXJwb3J0LCBub3QgaW4gdGhlIHRlcm1pbmFsLiIsCiAgICAiSXQncyBob3cgd2Uga2VlcCBwcmljZXMgbG93ZXIgdGhhbiB0aGUgaW50ZXJuYXRpb25hbCBjaGFpbnMuIiwKICAgICJUaGUgZnJlZSBzaHV0dGxlIGdldHMgeW91IHRvIG91ciBkb29yIGluIGp1c3QgZml2ZSBtaW51dGVzLiIKICBdLAogICJidXR0b24iOiAiT0ssIEdvdCBJdCIsCiAgImJveCI6IHsKICAgICJ4IjogMjAsCiAgICAieSI6IDEwMCwKICAgICJ3aWR0aCI6IDM1MCwKICAgICJoZWlnaHQiOiA0NjQsCiAgICAidG9wIjogMTAwLAogICAgInJpZ2h0IjogMzcwLAogICAgImJvdHRvbSI6IDU2NCwKICAgICJsZWZ0IjogMjAKICB9LAogICJ2dyI6IDM5MCwKICAidmgiOiA2NjQsCiAgInRpdGxlRm9udCI6ICIzNnB4IiwKICAidGl0bGVMaW5lcyI6IDIsCiAgImxpc3RTdHlsZSI6ICJkaXNjIiwKICAiYnRuQmciOiAicmdiKDExLCA3OSwgNzQpIiwKICAiYnRuVGFnIjogIkRJViIsCiAgIm92ZXJsYXkiOiAicmdiYSgwLCAwLCAwLCAwKSIsCiAgImNsb3NlUmVjdCI6IHsKICAgICJ4IjogMzI4LAogICAgInkiOiAxMDYsCiAgICAid2lkdGgiOiAzNiwKICAgICJoZWlnaHQiOiAzNiwKICAgICJ0b3AiOiAxMDYsCiAgICAicmlnaHQiOiAzNjQsCiAgICAiYm90dG9tIjogMTQyLAogICAgImxlZnQiOiAzMjgKICB9LAogICJjbG9zZUJnIjogInJnYmEoMCwgMCwgMCwgMCkiLAogICJtb2RhbFNjcm9sbHMiOiBmYWxzZSwKICAibGFiZWxsZWRCeSI6IGZhbHNlLAogICJoZWFkZXJaIjogIjUwIiwKICAidG9wRWwiOiAibW9kYWwiCn0="
+                        },
+                        {
+                          "name": "v1-tc04-modal-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-a0a56-w-modal-with-wireframe-copy-Mobile-Safari-iPhone-12-\\attachments\\v1-tc04-modal-open-36fe717695076ad09b360a0c30119b09d8ac1d05.png"
+                        },
+                        {
+                          "name": "v1-tc04-modal-only",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-a0a56-w-modal-with-wireframe-copy-Mobile-Safari-iPhone-12-\\attachments\\v1-tc04-modal-only-a1ba97badf523b2636ed51b2d0de7415e3bd03c3.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-b36557bdf9de102766d9",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 214,
+              "column": 5
+            },
+            {
+              "title": "v1 TC05 — X close button closes the modal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10730,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:38:05.709Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-9f42cfa2ff682a32ab27",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "v1 TC06 — \"OK, Got It\" button closes the modal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12079,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:38:16.469Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-a7b2dbcc14f89646aed9",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 278,
+              "column": 5
+            },
+            {
+              "title": "v1 TC07 — clicking outside the modal closes it; clicking inside does not",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10679,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:38:28.586Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-a1eeee38f413968cf8c3",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 286,
+              "column": 5
+            },
+            {
+              "title": "v1 TC08 — modal re-opens repeatedly and from a card further down the list",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15602,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:38:39.289Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-tc08-modal-from-card-13",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-f4775--card-further-down-the-list-Mobile-Safari-iPhone-12-\\attachments\\v1-tc08-modal-from-card-13-4113b17266ede5ff29ca4e502663ca7198fbe528.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-f01d2dff888ff50b03c2",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 297,
+              "column": 5
+            },
+            {
+              "title": "v1 TC09 — Escape key / background scroll behaviour (observational)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10819,
+                      "error": {
+                        "message": "Error: mouse.wheel: Mouse wheel is not supported in mobile WebKit",
+                        "stack": "Error: mouse.wheel: Mouse wheel is not supported in mobile WebKit\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js:322:24",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js",
+                          "column": 24,
+                          "line": 322
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 320 |\u001b[39m       \u001b[36mawait\u001b[39m clickShuttle(page\u001b[33m,\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 321 |\u001b[39m       \u001b[36mconst\u001b[39m before \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m window\u001b[33m.\u001b[39mscrollY)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 322 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mmouse\u001b[33m.\u001b[39mwheel(\u001b[35m0\u001b[39m\u001b[33m,\u001b[39m \u001b[35m600\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 323 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m600\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 324 |\u001b[39m       \u001b[36mconst\u001b[39m after \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m window\u001b[33m.\u001b[39mscrollY)\u001b[33m;\u001b[39m\n \u001b[90m 325 |\u001b[39m       \u001b[36mif\u001b[39m (after \u001b[33m!==\u001b[39m before) note(ti\u001b[33m,\u001b[39m \u001b[32m`Background page scrolls while the modal is open (scrollY ${before} → ${after}); no scroll lock.`\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js",
+                            "column": 24,
+                            "line": 322
+                          },
+                          "message": "Error: mouse.wheel: Mouse wheel is not supported in mobile WebKit\n\n  320 |       await clickShuttle(page, 0);\n  321 |       const before = await page.evaluate(() => window.scrollY);\n> 322 |       await page.mouse.wheel(0, 600);\n      |                        ^\n  323 |       await page.waitForTimeout(600);\n  324 |       const after = await page.evaluate(() => window.scrollY);\n  325 |       if (after !== before) note(ti, `Background page scrolls while the modal is open (scrollY ${before} → ${after}); no scroll lock.`);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js:322:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:38:54.933Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-03414-ll-behaviour-observational--Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus20-shuttle-details-LO-03414-ll-behaviour-observational--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus20-shuttle-details.spec.js",
+                        "column": 24,
+                        "line": 322
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-ab31e7d87855563c051f",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 318,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "LOTUS20 v2",
+          "file": "lotus20-shuttle-details.spec.js",
+          "line": 139,
+          "column": 8,
+          "specs": [
+            {
+              "title": "v2 TC01 — shuttle line on every visible card, under the EUR/USD/GBP line",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:39:05.946Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5d2c37d16956081be740-62377905c327c4fc60da",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "v2 TC02 — card layout intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:39:05.946Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "5d2c37d16956081be740-e9e6fa7462dca20c1e05",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 161,
+              "column": 5
+            },
+            {
+              "title": "v2 TC03 — shuttle text styling (text only: no underline, no pointer)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:39:05.946Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "5d2c37d16956081be740-efd1e811965186e00fb7",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 174,
+              "column": 5
+            },
+            {
+              "title": "v2 TC04 — clicking the shuttle text does nothing (no modal, no navigation)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-12T06:39:05.946Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "5d2c37d16956081be740-2389b5fa510082661281",
+              "file": "lotus20-shuttle-details.spec.js",
+              "line": 198,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-12T06:36:13.895Z",
+    "duration": 172054.84999999998,
+    "expected": 10,
+    "skipped": 11,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

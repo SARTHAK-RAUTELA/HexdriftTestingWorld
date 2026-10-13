@@ -1,0 +1,1735 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "win283-shop-subtotal-v3.spec.js",
+      "file": "win283-shop-subtotal-v3.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "WIN283 [control]",
+          "file": "win283-shop-subtotal-v3.spec.js",
+          "line": 143,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC-01 [control] line copy, layout & button copy match wireframe",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "state",
+                      "description": "{\"text\":\"1 item selected · $1,799 total · Saving $0\",\"btn\":\"ADD TO CART\",\"classes\":[\"cre-t-219\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-264\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275\",\"cre-t-283\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 21587,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T11:58:43.746Z",
+                      "annotations": [
+                        {
+                          "type": "state",
+                          "description": "{\"text\":\"1 item selected · $1,799 total · Saving $0\",\"btn\":\"ADD TO CART\",\"classes\":[\"cre-t-219\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-264\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275\",\"cre-t-283\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-default",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-d4be5-button-copy-match-wireframe-Safari-Desktop\\attachments\\control-default-b0de471ebda41a3a8f7cb79806e9b6cc2db72f81.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-3af90a2f77200c8d3c1f",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 144,
+              "column": 5
+            },
+            {
+              "title": "TC-02 [control] default math: total = price, strike = pre-savings price, saving = strike - total",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "state",
+                      "description": "{\"bodyClasses\":[\"cre-t-219\",\"cre-t-264\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275\",\"cre-t-283\"],\"lineCount\":1,\"text\":\"1 item selected · $1,799 total · Saving $0\",\"count\":1,\"total\":1799,\"strike\":null,\"saving\":0,\"hasStrike\":false,\"btnText\":\"ADD TO CART\",\"btnIsClone\":false,\"nativeBtnVisible\":true,\"base\":1799,\"strike202\":null,\"setupSelected\":false,\"setupPrice\":0,\"setupCompare\":null,\"acc\":0,\"accCount\":0,\"style\":{\"fontSize\":13.2,\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":null,\"strikeDeco\":null,\"overflow\":false,\"lines\":1},\"btnStyle\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67},\"nativeBtnFont\":\"greycliff-cf, sans-serif\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 20522,
+                      "error": {
+                        "message": "Error: saving must not be stale $0 (WIN266 BUG-01 race)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
+                        "stack": "Error: saving must not be stale $0 (WIN266 BUG-01 race)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:169:76",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                          "column": 76,
+                          "line": 169
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 167 |\u001b[39m       expect(s\u001b[33m.\u001b[39mcount)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 168 |\u001b[39m       expect(s\u001b[33m.\u001b[39mtotal)\u001b[33m.\u001b[39mtoBe(s\u001b[33m.\u001b[39mbase)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 169 |\u001b[39m       expect(s\u001b[33m.\u001b[39msaving\u001b[33m,\u001b[39m \u001b[32m\"saving must not be stale $0 (WIN266 BUG-01 race)\"\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 170 |\u001b[39m       expect(s\u001b[33m.\u001b[39msaving)\u001b[33m.\u001b[39mtoBe(s\u001b[33m.\u001b[39mstrike202 \u001b[33m-\u001b[39m s\u001b[33m.\u001b[39mbase)\u001b[33m;\u001b[39m\n \u001b[90m 171 |\u001b[39m       \u001b[36mif\u001b[39m (key \u001b[33m!==\u001b[39m \u001b[32m\"control\"\u001b[39m) {\n \u001b[90m 172 |\u001b[39m         expect(s\u001b[33m.\u001b[39mstrike)\u001b[33m.\u001b[39mtoBe(s\u001b[33m.\u001b[39mstrike202)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                            "column": 76,
+                            "line": 169
+                          },
+                          "message": "Error: saving must not be stale $0 (WIN266 BUG-01 race)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  167 |       expect(s.count).toBe(1);\n  168 |       expect(s.total).toBe(s.base);\n> 169 |       expect(s.saving, \"saving must not be stale $0 (WIN266 BUG-01 race)\").toBeGreaterThan(0);\n      |                                                                            ^\n  170 |       expect(s.saving).toBe(s.strike202 - s.base);\n  171 |       if (key !== \"control\") {\n  172 |         expect(s.strike).toBe(s.strike202);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:169:76"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T11:59:05.508Z",
+                      "annotations": [
+                        {
+                          "type": "state",
+                          "description": "{\"bodyClasses\":[\"cre-t-219\",\"cre-t-264\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275\",\"cre-t-283\"],\"lineCount\":1,\"text\":\"1 item selected · $1,799 total · Saving $0\",\"count\":1,\"total\":1799,\"strike\":null,\"saving\":0,\"hasStrike\":false,\"btnText\":\"ADD TO CART\",\"btnIsClone\":false,\"nativeBtnVisible\":true,\"base\":1799,\"strike202\":null,\"setupSelected\":false,\"setupPrice\":0,\"setupCompare\":null,\"acc\":0,\"accCount\":0,\"style\":{\"fontSize\":13.2,\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":null,\"strikeDeco\":null,\"overflow\":false,\"lines\":1},\"btnStyle\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67},\"nativeBtnFont\":\"greycliff-cf, sans-serif\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-af517-price-saving-strike---total-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-af517-price-saving-strike---total-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                        "column": 76,
+                        "line": 169
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-85daddd6ccf2840c1b21",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 163,
+              "column": 5
+            },
+            {
+              "title": "TC-03 [control] styling per wireframe",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "style",
+                      "description": "{\"line\":{\"fontSize\":13.2,\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":null,\"strikeDeco\":null,\"overflow\":false,\"lines\":1},\"btn\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67},\"nativeBtnFont\":\"greycliff-cf, sans-serif\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18297,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T11:59:27.751Z",
+                      "annotations": [
+                        {
+                          "type": "style",
+                          "description": "{\"line\":{\"fontSize\":13.2,\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":null,\"strikeDeco\":null,\"overflow\":false,\"lines\":1},\"btn\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67},\"nativeBtnFont\":\"greycliff-cf, sans-serif\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-427749164192d38ef1eb",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 178,
+              "column": 5
+            },
+            {
+              "title": "TC-04 [control] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "after",
+                      "description": "{\"text\":\"2 items selected · $2,298 total · Saving $771\",\"btn\":\"ADD 2 ITEMS TO CART\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 30271,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T11:59:46.122Z",
+                      "annotations": [
+                        {
+                          "type": "after",
+                          "description": "{\"text\":\"2 items selected · $2,298 total · Saving $771\",\"btn\":\"ADD 2 ITEMS TO CART\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-platform-frame",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-ac85a-ike-update-saving-unchanged-Safari-Desktop\\attachments\\control-platform-frame-7fb2b22a218fe0c77665732030efe82057b3e88b.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-d209d93757dd14e1f069",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 201,
+              "column": 5
+            },
+            {
+              "title": "TC-05 [control] size change (Queen → King) re-prices line and button",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 26518,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 6000ms exceeded while waiting on the predicate",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 6000ms exceeded while waiting on the predicate\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:226:7",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                          "column": 7,
+                          "line": 226
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 224 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mselectOption(\u001b[32m\"#size-select\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"King\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 225 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m (\u001b[36mawait\u001b[39m readState(page))\u001b[33m.\u001b[39mbase\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m8000\u001b[39m })\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(before\u001b[33m.\u001b[39mbase)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 226 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m { \u001b[36mconst\u001b[39m s \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m readState(page)\u001b[33m;\u001b[39m \u001b[36mreturn\u001b[39m s\u001b[33m.\u001b[39mtotal \u001b[33m===\u001b[39m s\u001b[33m.\u001b[39mbase \u001b[33m&&\u001b[39m s\u001b[33m.\u001b[39msaving \u001b[33m===\u001b[39m s\u001b[33m.\u001b[39mstrike202 \u001b[33m-\u001b[39m s\u001b[33m.\u001b[39mbase\u001b[33m;\u001b[39m }\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m6000\u001b[39m })\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 227 |\u001b[39m       \u001b[36mconst\u001b[39m s \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m readState(page)\u001b[33m;\u001b[39m\n \u001b[90m 228 |\u001b[39m       testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m\"king\"\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ text\u001b[33m:\u001b[39m s\u001b[33m.\u001b[39mtext\u001b[33m,\u001b[39m btn\u001b[33m:\u001b[39m s\u001b[33m.\u001b[39mbtnText }) })\u001b[33m;\u001b[39m\n \u001b[90m 229 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m testInfo\u001b[33m,\u001b[39m \u001b[32m`${key}-king`\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                            "column": 7,
+                            "line": 226
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 6000ms exceeded while waiting on the predicate\n\n  224 |       await page.selectOption(\"#size-select\", \"King\");\n  225 |       await expect.poll(async () => (await readState(page)).base, { timeout: 8000 }).not.toBe(before.base);\n> 226 |       await expect.poll(async () => { const s = await readState(page); return s.total === s.base && s.saving === s.strike202 - s.base; }, { timeout: 6000 }).toBe(true);\n      |       ^\n  227 |       const s = await readState(page);\n  228 |       testInfo.annotations.push({ type: \"king\", description: JSON.stringify({ text: s.text, btn: s.btnText }) });\n  229 |       await shot(page, testInfo, `${key}-king`);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:226:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:00:16.409Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-c923e-g-re-prices-line-and-button-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-c923e-g-re-prices-line-and-button-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                        "column": 7,
+                        "line": 226
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-bcd9287ea9157a12d821",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 221,
+              "column": 5
+            },
+            {
+              "title": "TC-06 [control] Mattress Setup & Removal tier: total includes service, saving never drops",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "setup",
+                      "description": "{\"text\":\"2 items selected · $2,024 total · Saving $0\",\"btn\":\"ADD 2 ITEMS TO CART\",\"setupPrice\":225,\"setupCompare\":300,\"classes\":[\"cre-t-219\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-264\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275\",\"cre-t-283\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 28516,
+                      "error": {
+                        "message": "Error: saving should be 0 + service discount 75\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m75\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: saving should be 0 + service discount 75\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m75\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:250:106",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                          "column": 106,
+                          "line": 250
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 248 |\u001b[39m       expect(s\u001b[33m.\u001b[39mtotal)\u001b[33m.\u001b[39mtoBe(before\u001b[33m.\u001b[39mtotal \u001b[33m+\u001b[39m s\u001b[33m.\u001b[39msetupPrice)\u001b[33m;\u001b[39m\n \u001b[90m 249 |\u001b[39m       \u001b[36mconst\u001b[39m compare \u001b[33m=\u001b[39m s\u001b[33m.\u001b[39msetupCompare \u001b[33m||\u001b[39m s\u001b[33m.\u001b[39msetupPrice\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 250 |\u001b[39m       expect(s\u001b[33m.\u001b[39msaving\u001b[33m,\u001b[39m \u001b[32m`saving should be ${before.saving} + service discount ${compare - s.setupPrice}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(before\u001b[33m.\u001b[39msaving \u001b[33m+\u001b[39m (compare \u001b[33m-\u001b[39m s\u001b[33m.\u001b[39msetupPrice))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 251 |\u001b[39m       \u001b[36mif\u001b[39m (key \u001b[33m!==\u001b[39m \u001b[32m\"control\"\u001b[39m) expect(s\u001b[33m.\u001b[39mstrike \u001b[33m-\u001b[39m s\u001b[33m.\u001b[39mtotal)\u001b[33m.\u001b[39mtoBe(s\u001b[33m.\u001b[39msaving)\u001b[33m;\u001b[39m\n \u001b[90m 252 |\u001b[39m       \u001b[36mif\u001b[39m (key \u001b[33m===\u001b[39m \u001b[32m\"v2\"\u001b[39m) expect(s\u001b[33m.\u001b[39mbtnText)\u001b[33m.\u001b[39mtoBe(\u001b[32m`ADD TO CART · SAVE ${fmt(s.saving)}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 253 |\u001b[39m       \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                            "column": 106,
+                            "line": 250
+                          },
+                          "message": "Error: saving should be 0 + service discount 75\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m75\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  248 |       expect(s.total).toBe(before.total + s.setupPrice);\n  249 |       const compare = s.setupCompare || s.setupPrice;\n> 250 |       expect(s.saving, `saving should be ${before.saving} + service discount ${compare - s.setupPrice}`).toBe(before.saving + (compare - s.setupPrice));\n      |                                                                                                          ^\n  251 |       if (key !== \"control\") expect(s.strike - s.total).toBe(s.saving);\n  252 |       if (key === \"v2\") expect(s.btnText).toBe(`ADD TO CART · SAVE ${fmt(s.saving)}`);\n  253 |       await context.close();\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:250:106"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:00:44.985Z",
+                      "annotations": [
+                        {
+                          "type": "setup",
+                          "description": "{\"text\":\"2 items selected · $2,024 total · Saving $0\",\"btn\":\"ADD 2 ITEMS TO CART\",\"setupPrice\":225,\"setupCompare\":300,\"classes\":[\"cre-t-219\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-264\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275\",\"cre-t-283\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-setup",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-0f1a1--service-saving-never-drops-Safari-Desktop\\attachments\\control-setup-382630b638f6477a14d06de44369d76609fc7cae.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-0f1a1--service-saving-never-drops-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-0f1a1--service-saving-never-drops-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                        "column": 106,
+                        "line": 250
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-4e83e3d26865dd4349f9",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 235,
+              "column": 5
+            },
+            {
+              "title": "TC-07 [control] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "cart",
+                      "description": "{\"cartPosts\":[\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://googleads.g.doubleclick.net/pagead/viewthroughconversion/952039067/?random=857978431&cv=11&fst=1791892905741&fmt=8&bg=ffffff&guid=ON&async=1&en=add_to_cart&gtm=45be6a91v9215421561za200zb72380354zd72380354xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&u_w=1792&u_h=1120&url=https%3A%2F%2Fwww.winkbeds.com%2Fpages%2Fshop-winkbed%3Futm_campaign%3DCro283mode%26_conv_eforce%3D100350737.1003184952&rcb=16&label=S3lbCIfqocoZEJvt-8UD&capi=2&gtm_ee=1&evnid=sh-352450d5-03C2-4D01-5900-894185551515&excid=shp.fd46844a-69fc-492d-a8dd-3863348dd500&frm=0&tiba=WinkBeds%20Luxury%20Hybrid%20Mattress%20%7C%20120%20Night%20Trial%20%7C%20Lifetime%20Warranty&did=dYmNjMT%2CdN2ZkMj%2CdNTU0Yz%2CdNzYwYj&gdid=dYmNjMT.dN2ZkMj.dNTU0Yz&edid=dNzYwYj&value=1799&currency_code=USD&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=713107111.1791892878&ec_mode=c&oidsrc=3&ecsid2=1569960169.1791892880&_tu=ABI&gcl_ctr=2~0~0~0&data=event%3Dadd_to_cart%3Bshopify_event_name%3Dproduct_added_to_cart%3Becomm_prodid%3Dshopify_US_9254932114_33210297618%3Becomm_totalvalue%3D1799%3Becomm_pagetype%3Dcart&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkcKEAjwrbfWBhCk4t_BvI7L72MSMwAjvh6ctvISHlhl62ho9vBIp7WHBkO5vuV2qEuZlSbvijuhKvi8grD6yQZtHj-INoPjZPD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCIfbsQII08WxAgjrzLECCO3OsQII1c-xAgiK8rECCPTasQII4uqxAgjo7rECCJLrsQIIyeOxAgiX1LECCMnbsQIIpt2xAgiw3rECCIDbsQIIzeGxAgjL4bECIgEC&cerd=ChCDsL4t1dW-Lbnrvi2d6bc4&fsk=ChEI8K231gYQqIrpndGEu9GiARIsAHC9fckU6DlbEUt8koKefBIqnsOZDgypJars9CD4D3tNZaHOra2KKzvXLu8aAnaa&pscrd=IhMI7qaTofm2lwMVeaFmAh2d4gzTOhlodHRwczovL3d3dy53aW5rYmVkcy5jb20vQldDaEVJOEsyMzFnWVF4THo3N2FqaS03eW5BUklzQUoyRmVoemdqSDFyeXpueW95VnpKRng3R3J2QXcydVp3eXVZeF9Nc3BuNEpmTnEtYll3c1RidU5sdVl6DAgJYggIABAAGAAgAA\"],\"cart\":{\"count\":1,\"items\":[\"The LUXURY FIRM WinkBed - Queen x1\"]}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 36982,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:01:15.603Z",
+                      "annotations": [
+                        {
+                          "type": "cart",
+                          "description": "{\"cartPosts\":[\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://www.winkbeds.com/cart/update.js\",\"https://googleads.g.doubleclick.net/pagead/viewthroughconversion/952039067/?random=857978431&cv=11&fst=1791892905741&fmt=8&bg=ffffff&guid=ON&async=1&en=add_to_cart&gtm=45be6a91v9215421561za200zb72380354zd72380354xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121046263~121046271~121246026~121246034&u_w=1792&u_h=1120&url=https%3A%2F%2Fwww.winkbeds.com%2Fpages%2Fshop-winkbed%3Futm_campaign%3DCro283mode%26_conv_eforce%3D100350737.1003184952&rcb=16&label=S3lbCIfqocoZEJvt-8UD&capi=2&gtm_ee=1&evnid=sh-352450d5-03C2-4D01-5900-894185551515&excid=shp.fd46844a-69fc-492d-a8dd-3863348dd500&frm=0&tiba=WinkBeds%20Luxury%20Hybrid%20Mattress%20%7C%20120%20Night%20Trial%20%7C%20Lifetime%20Warranty&did=dYmNjMT%2CdN2ZkMj%2CdNTU0Yz%2CdNzYwYj&gdid=dYmNjMT.dN2ZkMj.dNTU0Yz&edid=dNzYwYj&value=1799&currency_code=USD&hn=www.googleadservices.com&rdp=0&npa=0&pscdl=noapi&auid=713107111.1791892878&ec_mode=c&oidsrc=3&ecsid2=1569960169.1791892880&_tu=ABI&gcl_ctr=2~0~0~0&data=event%3Dadd_to_cart%3Bshopify_event_name%3Dproduct_added_to_cart%3Becomm_prodid%3Dshopify_US_9254932114_33210297618%3Becomm_totalvalue%3D1799%3Becomm_pagetype%3Dcart&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkcKEAjwrbfWBhCk4t_BvI7L72MSMwAjvh6ctvISHlhl62ho9vBIp7WHBkO5vuV2qEuZlSbvijuhKvi8grD6yQZtHj-INoPjZPD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCIfbsQII08WxAgjrzLECCO3OsQII1c-xAgiK8rECCPTasQII4uqxAgjo7rECCJLrsQIIyeOxAgiX1LECCMnbsQIIpt2xAgiw3rECCIDbsQIIzeGxAgjL4bECIgEC&cerd=ChCDsL4t1dW-Lbnrvi2d6bc4&fsk=ChEI8K231gYQqIrpndGEu9GiARIsAHC9fckU6DlbEUt8koKefBIqnsOZDgypJars9CD4D3tNZaHOra2KKzvXLu8aAnaa&pscrd=IhMI7qaTofm2lwMVeaFmAh2d4gzTOhlodHRwczovL3d3dy53aW5rYmVkcy5jb20vQldDaEVJOEsyMzFnWVF4THo3N2FqaS03eW5BUklzQUoyRmVoemdqSDFyeXpueW95VnpKRng3R3J2QXcydVp3eXVZeF9Nc3BuNEpmTnEtYll3c1RidU5sdVl6DAgJYggIABAAGAAgAA\"],\"cart\":{\"count\":1,\"items\":[\"The LUXURY FIRM WinkBed - Queen x1\"]}}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-after-atc",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-962dc--the-selection-not-the-cart-Safari-Desktop\\attachments\\control-after-atc-37d2fc2936db5fc02c641b5df388789954ec7038.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-b9cc0ea66fc91fd88486",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 256,
+              "column": 5
+            },
+            {
+              "title": "TC-08 [control] line & button fit the viewport (no overflow)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "layout",
+                      "description": "{\"text\":\"2 items selected · $2,998 total · Saving $771\",\"line\":{\"fontSize\":13.2,\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":null,\"strikeDeco\":null,\"overflow\":false,\"lines\":1},\"btn\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 27683,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:01:52.643Z",
+                      "annotations": [
+                        {
+                          "type": "layout",
+                          "description": "{\"text\":\"2 items selected · $2,998 total · Saving $771\",\"line\":{\"fontSize\":13.2,\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":null,\"strikeDeco\":null,\"overflow\":false,\"lines\":1},\"btn\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67}}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-layout-winkbase",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-80bc8-t-the-viewport-no-overflow--Safari-Desktop\\attachments\\control-layout-winkbase-c904dedcbd9556e6d2e2071eb273ad3ee633dd9d.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-d668f974a40185b7827d",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 275,
+              "column": 5
+            },
+            {
+              "title": "TC-09 [control] no cre-t-283 errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 25972,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:02:20.352Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-f3df296f68b365e1b62b",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 289,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "WIN283 [v1]",
+          "file": "win283-shop-subtotal-v3.spec.js",
+          "line": 143,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC-01 [v1] line copy, layout & button copy match wireframe",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "state",
+                      "description": "{\"text\":\"1 item selected · $1,799 total$2,570 · Saving $771\",\"btn\":\"ADD TO CART\",\"classes\":[\"cre-t-219\",\"cre-t-264\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275-control\",\"cre-t-283\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23717,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:02:46.351Z",
+                      "annotations": [
+                        {
+                          "type": "state",
+                          "description": "{\"text\":\"1 item selected · $1,799 total$2,570 · Saving $771\",\"btn\":\"ADD TO CART\",\"classes\":[\"cre-t-219\",\"cre-t-264\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275-control\",\"cre-t-283\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-default",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-5db33-button-copy-match-wireframe-Safari-Desktop\\attachments\\v1-default-1a1badd0ebbfe873c99a38a8d4a8fea8d366380a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-4424a080614ad8132aaf",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 144,
+              "column": 5
+            },
+            {
+              "title": "TC-02 [v1] default math: total = price, strike = pre-savings price, saving = strike - total",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "state",
+                      "description": "{\"bodyClasses\":[\"cre-t-219\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-264\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275\",\"cre-t-283\"],\"lineCount\":1,\"text\":\"1 item selected · $1,799 total$2,570 · Saving $771\",\"count\":1,\"total\":1799,\"strike\":2570,\"saving\":771,\"hasStrike\":true,\"btnText\":\"ADD TO CART\",\"btnIsClone\":false,\"nativeBtnVisible\":true,\"base\":1799,\"strike202\":2570,\"setupSelected\":false,\"setupPrice\":0,\"setupCompare\":null,\"acc\":0,\"accCount\":0,\"style\":{\"fontSize\":15,\"fontFamily\":\"Inter, \\\"Helvetica Neue\\\", Arial, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":\"rgba(255, 255, 255, 0.6)\",\"strikeDeco\":\"line-through\",\"overflow\":false,\"lines\":1},\"btnStyle\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67},\"nativeBtnFont\":\"greycliff-cf, sans-serif\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18114,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:03:10.085Z",
+                      "annotations": [
+                        {
+                          "type": "state",
+                          "description": "{\"bodyClasses\":[\"cre-t-219\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-264\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275\",\"cre-t-283\"],\"lineCount\":1,\"text\":\"1 item selected · $1,799 total$2,570 · Saving $771\",\"count\":1,\"total\":1799,\"strike\":2570,\"saving\":771,\"hasStrike\":true,\"btnText\":\"ADD TO CART\",\"btnIsClone\":false,\"nativeBtnVisible\":true,\"base\":1799,\"strike202\":2570,\"setupSelected\":false,\"setupPrice\":0,\"setupCompare\":null,\"acc\":0,\"accCount\":0,\"style\":{\"fontSize\":15,\"fontFamily\":\"Inter, \\\"Helvetica Neue\\\", Arial, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":\"rgba(255, 255, 255, 0.6)\",\"strikeDeco\":\"line-through\",\"overflow\":false,\"lines\":1},\"btnStyle\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67},\"nativeBtnFont\":\"greycliff-cf, sans-serif\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-8cc3ac97ed3f347d11e2",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 163,
+              "column": 5
+            },
+            {
+              "title": "TC-03 [v1] styling per wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "style",
+                      "description": "{\"line\":{\"fontSize\":15,\"fontFamily\":\"Inter, \\\"Helvetica Neue\\\", Arial, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":\"rgba(255, 255, 255, 0.6)\",\"strikeDeco\":\"line-through\",\"overflow\":false,\"lines\":1},\"btn\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67},\"nativeBtnFont\":\"greycliff-cf, sans-serif\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 22088,
+                      "error": {
+                        "message": "Error: V1/V2 line font family should match control (site font)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/greycliff/i\u001b[39m\nReceived string:  \u001b[31m\"Inter, \\\"Helvetica Neue\\\", Arial, sans-serif\"\u001b[39m",
+                        "stack": "Error: V1/V2 line font family should match control (site font)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/greycliff/i\u001b[39m\nReceived string:  \u001b[31m\"Inter, \\\"Helvetica Neue\\\", Arial, sans-serif\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:193:100",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                          "column": 100,
+                          "line": 193
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 191 |\u001b[39m         expect(s\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39mstrikeDeco)\u001b[33m.\u001b[39mtoBe(\u001b[32m\"line-through\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 192 |\u001b[39m         \u001b[90m// wireframe only asks for +2px — the page font (greycliff-cf, same as control) should be kept\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 193 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(s\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39mfontFamily\u001b[33m,\u001b[39m \u001b[32m\"V1/V2 line font family should match control (site font)\"\u001b[39m)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/greycliff/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 194 |\u001b[39m       }\n \u001b[90m 195 |\u001b[39m       \u001b[36mif\u001b[39m (key \u001b[33m===\u001b[39m \u001b[32m\"v2\"\u001b[39m) {\n \u001b[90m 196 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(s\u001b[33m.\u001b[39mbtnStyle\u001b[33m.\u001b[39mfontFamily\u001b[33m,\u001b[39m \u001b[32m\"V2 button font family should match native button\"\u001b[39m)\u001b[33m.\u001b[39mtoBe(s\u001b[33m.\u001b[39mnativeBtnFont)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                            "column": 100,
+                            "line": 193
+                          },
+                          "message": "Error: V1/V2 line font family should match control (site font)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/greycliff/i\u001b[39m\nReceived string:  \u001b[31m\"Inter, \\\"Helvetica Neue\\\", Arial, sans-serif\"\u001b[39m\n\n  191 |         expect(s.style.strikeDeco).toBe(\"line-through\");\n  192 |         // wireframe only asks for +2px — the page font (greycliff-cf, same as control) should be kept\n> 193 |         expect.soft(s.style.fontFamily, \"V1/V2 line font family should match control (site font)\").toMatch(/greycliff/i);\n      |                                                                                                    ^\n  194 |       }\n  195 |       if (key === \"v2\") {\n  196 |         expect.soft(s.btnStyle.fontFamily, \"V2 button font family should match native button\").toBe(s.nativeBtnFont);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:193:100"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:03:28.216Z",
+                      "annotations": [
+                        {
+                          "type": "style",
+                          "description": "{\"line\":{\"fontSize\":15,\"fontFamily\":\"Inter, \\\"Helvetica Neue\\\", Arial, sans-serif\",\"fontWeight\":\"600\",\"color\":\"rgb(255, 255, 255)\",\"savingColor\":\"rgb(34, 197, 94)\",\"strikeColor\":\"rgba(255, 255, 255, 0.6)\",\"strikeDeco\":\"line-through\",\"overflow\":false,\"lines\":1},\"btn\":{\"fontFamily\":\"greycliff-cf, sans-serif\",\"fontSize\":\"18px\",\"overflow\":false,\"height\":67},\"nativeBtnFont\":\"greycliff-cf, sans-serif\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-d0721-03-v1-styling-per-wireframe-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-d0721-03-v1-styling-per-wireframe-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                        "column": 100,
+                        "line": 193
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-d7d226ccf3541f585ba7",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 178,
+              "column": 5
+            },
+            {
+              "title": "TC-04 [v1] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "after",
+                      "description": "{\"text\":\"2 items selected · $2,298 total$499 · Saving $0\",\"btn\":\"ADD 2 ITEMS TO CART\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 30557,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:03:50.890Z",
+                      "annotations": [
+                        {
+                          "type": "after",
+                          "description": "{\"text\":\"2 items selected · $2,298 total$499 · Saving $0\",\"btn\":\"ADD 2 ITEMS TO CART\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-platform-frame",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-d7713-ike-update-saving-unchanged-Safari-Desktop\\attachments\\v1-platform-frame-781dddf26e887ab71e550971add93efff5f93f1f.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-4ea9773578bf1b730ec7",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 201,
+              "column": 5
+            },
+            {
+              "title": "TC-05 [v1] size change (Queen → King) re-prices line and button",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 27289,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 6000ms exceeded while waiting on the predicate",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 6000ms exceeded while waiting on the predicate\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:226:7",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                          "column": 7,
+                          "line": 226
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 224 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mselectOption(\u001b[32m\"#size-select\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"King\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 225 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m (\u001b[36mawait\u001b[39m readState(page))\u001b[33m.\u001b[39mbase\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m8000\u001b[39m })\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(before\u001b[33m.\u001b[39mbase)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 226 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m { \u001b[36mconst\u001b[39m s \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m readState(page)\u001b[33m;\u001b[39m \u001b[36mreturn\u001b[39m s\u001b[33m.\u001b[39mtotal \u001b[33m===\u001b[39m s\u001b[33m.\u001b[39mbase \u001b[33m&&\u001b[39m s\u001b[33m.\u001b[39msaving \u001b[33m===\u001b[39m s\u001b[33m.\u001b[39mstrike202 \u001b[33m-\u001b[39m s\u001b[33m.\u001b[39mbase\u001b[33m;\u001b[39m }\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m6000\u001b[39m })\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 227 |\u001b[39m       \u001b[36mconst\u001b[39m s \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m readState(page)\u001b[33m;\u001b[39m\n \u001b[90m 228 |\u001b[39m       testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m\"king\"\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ text\u001b[33m:\u001b[39m s\u001b[33m.\u001b[39mtext\u001b[33m,\u001b[39m btn\u001b[33m:\u001b[39m s\u001b[33m.\u001b[39mbtnText }) })\u001b[33m;\u001b[39m\n \u001b[90m 229 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m testInfo\u001b[33m,\u001b[39m \u001b[32m`${key}-king`\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                            "column": 7,
+                            "line": 226
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 6000ms exceeded while waiting on the predicate\n\n  224 |       await page.selectOption(\"#size-select\", \"King\");\n  225 |       await expect.poll(async () => (await readState(page)).base, { timeout: 8000 }).not.toBe(before.base);\n> 226 |       await expect.poll(async () => { const s = await readState(page); return s.total === s.base && s.saving === s.strike202 - s.base; }, { timeout: 6000 }).toBe(true);\n      |       ^\n  227 |       const s = await readState(page);\n  228 |       testInfo.annotations.push({ type: \"king\", description: JSON.stringify({ text: s.text, btn: s.btnText }) });\n  229 |       await shot(page, testInfo, `${key}-king`);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:226:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:04:21.516Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-c04a4-g-re-prices-line-and-button-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-c04a4-g-re-prices-line-and-button-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                        "column": 7,
+                        "line": 226
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-e941a5946e0ea093ce90",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 221,
+              "column": 5
+            },
+            {
+              "title": "TC-06 [v1] Mattress Setup & Removal tier: total includes service, saving never drops",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "setup",
+                      "description": "{\"text\":\"2 items selected · $2,024 total$300 · Saving $0\",\"btn\":\"ADD 2 ITEMS TO CART\",\"setupPrice\":225,\"setupCompare\":300,\"classes\":[\"cre-t-219\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-264\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275-control\",\"cre-t-283\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 28246,
+                      "error": {
+                        "message": "Error: saving should be 0 + service discount 75\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m75\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: saving should be 0 + service discount 75\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m75\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:250:106",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                          "column": 106,
+                          "line": 250
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 248 |\u001b[39m       expect(s\u001b[33m.\u001b[39mtotal)\u001b[33m.\u001b[39mtoBe(before\u001b[33m.\u001b[39mtotal \u001b[33m+\u001b[39m s\u001b[33m.\u001b[39msetupPrice)\u001b[33m;\u001b[39m\n \u001b[90m 249 |\u001b[39m       \u001b[36mconst\u001b[39m compare \u001b[33m=\u001b[39m s\u001b[33m.\u001b[39msetupCompare \u001b[33m||\u001b[39m s\u001b[33m.\u001b[39msetupPrice\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 250 |\u001b[39m       expect(s\u001b[33m.\u001b[39msaving\u001b[33m,\u001b[39m \u001b[32m`saving should be ${before.saving} + service discount ${compare - s.setupPrice}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(before\u001b[33m.\u001b[39msaving \u001b[33m+\u001b[39m (compare \u001b[33m-\u001b[39m s\u001b[33m.\u001b[39msetupPrice))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 251 |\u001b[39m       \u001b[36mif\u001b[39m (key \u001b[33m!==\u001b[39m \u001b[32m\"control\"\u001b[39m) expect(s\u001b[33m.\u001b[39mstrike \u001b[33m-\u001b[39m s\u001b[33m.\u001b[39mtotal)\u001b[33m.\u001b[39mtoBe(s\u001b[33m.\u001b[39msaving)\u001b[33m;\u001b[39m\n \u001b[90m 252 |\u001b[39m       \u001b[36mif\u001b[39m (key \u001b[33m===\u001b[39m \u001b[32m\"v2\"\u001b[39m) expect(s\u001b[33m.\u001b[39mbtnText)\u001b[33m.\u001b[39mtoBe(\u001b[32m`ADD TO CART · SAVE ${fmt(s.saving)}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 253 |\u001b[39m       \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                            "column": 106,
+                            "line": 250
+                          },
+                          "message": "Error: saving should be 0 + service discount 75\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m75\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  248 |       expect(s.total).toBe(before.total + s.setupPrice);\n  249 |       const compare = s.setupCompare || s.setupPrice;\n> 250 |       expect(s.saving, `saving should be ${before.saving} + service discount ${compare - s.setupPrice}`).toBe(before.saving + (compare - s.setupPrice));\n      |                                                                                                          ^\n  251 |       if (key !== \"control\") expect(s.strike - s.total).toBe(s.saving);\n  252 |       if (key === \"v2\") expect(s.btnText).toBe(`ADD TO CART · SAVE ${fmt(s.saving)}`);\n  253 |       await context.close();\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:250:106"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:04:51.242Z",
+                      "annotations": [
+                        {
+                          "type": "setup",
+                          "description": "{\"text\":\"2 items selected · $2,024 total$300 · Saving $0\",\"btn\":\"ADD 2 ITEMS TO CART\",\"setupPrice\":225,\"setupCompare\":300,\"classes\":[\"cre-t-219\",\"cre-t-202\",\"cre-t-202-v2\",\"cre-t-264\",\"cre-t-272\",\"cre-t-200\",\"cre-t-227\",\"cre-t-264-scroller-event-active\",\"cre-t-275-control\",\"cre-t-283\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-setup",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-6c241--service-saving-never-drops-Safari-Desktop\\attachments\\v1-setup-1bd8095414db3e18a1fc01f67161fe7f126afae9.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-6c241--service-saving-never-drops-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-6c241--service-saving-never-drops-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                        "column": 106,
+                        "line": 250
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-7869dff2231d64b84ac4",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 235,
+              "column": 5
+            },
+            {
+              "title": "TC-07 [v1] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 38830,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\nCall Log:\n- Timeout 15000ms exceeded while waiting on the predicate",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\nCall Log:\n- Timeout 15000ms exceeded while waiting on the predicate\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:264:7",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                          "column": 7,
+                          "line": 264
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 262 |\u001b[39m       expect((\u001b[36mawait\u001b[39m readCart())\u001b[33m.\u001b[39mcount)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 263 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(sel)\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick({ force\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 264 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m (\u001b[36mawait\u001b[39m readCart())\u001b[33m.\u001b[39mcount\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m15000\u001b[39m })\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 265 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m4000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 266 |\u001b[39m       \u001b[36mconst\u001b[39m cart \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m readCart()\u001b[33m;\u001b[39m\n \u001b[90m 267 |\u001b[39m       testInfo\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m\"cart\"\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ cartPosts\u001b[33m,\u001b[39m cart }) })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                            "column": 7,
+                            "line": 264
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\nCall Log:\n- Timeout 15000ms exceeded while waiting on the predicate\n\n  262 |       expect((await readCart()).count).toBe(0);\n  263 |       await page.locator(sel).first().click({ force: true });\n> 264 |       await expect.poll(async () => (await readCart()).count, { timeout: 15000 }).toBeGreaterThan(0);\n      |       ^\n  265 |       await page.waitForTimeout(4000);\n  266 |       const cart = await readCart();\n  267 |       testInfo.annotations.push({ type: \"cart\", description: JSON.stringify({ cartPosts, cart }) });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:264:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:05:21.607Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-6689d--the-selection-not-the-cart-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-6689d--the-selection-not-the-cart-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                        "column": 7,
+                        "line": 264
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-23d7701c60a017fbcefb",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 256,
+              "column": 5
+            },
+            {
+              "title": "TC-08 [v1] line & button fit the viewport (no overflow)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 5009292,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js",
+                            "column": 14,
+                            "line": 55
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#orderForm.loaded .order-form__add')\u001b[22m\n\n\n  53 |   page.on(\"request\", (r) => r.method() === \"POST\" && /cart/i.test(r.url()) && cartPosts.push(r.url()));\n  54 |   await page.goto(URLS[key], { waitUntil: \"domcontentloaded\" });\n> 55 |   await page.waitForSelector(\"#orderForm.loaded .order-form__add\", { state: \"attached\", timeout: 60000 });\n     |              ^\n  56 |   await expect.poll(() => page.locator(LINE).count(), { timeout: slow ? 20000 : 10000 }).toBe(1);\n  57 |   // let init()'s 3s force-refresh window settle (and cre-t-202's strike badge populate)\n  58 |   await page.waitForTimeout(3500);\n    at openArm (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:55:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win283-shop-subtotal-v3.spec.js:276:33"
+                        },
+                        {
+                          "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T12:06:02.481Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win283-shop-subtotal-v3-WI-30e29-t-the-viewport-no-overflow--Safari-Desktop\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-64e1cdc1ef4d2c1e9f5c",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 275,
+              "column": 5
+            },
+            {
+              "title": "TC-09 [v1] no cre-t-283 errors",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.336Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-30fe0c17fd207c272888",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 289,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "WIN283 [v2]",
+          "file": "win283-shop-subtotal-v3.spec.js",
+          "line": 143,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC-01 [v2] line copy, layout & button copy match wireframe",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.336Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-5b8304711b57c8c77e2f",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 144,
+              "column": 5
+            },
+            {
+              "title": "TC-02 [v2] default math: total = price, strike = pre-savings price, saving = strike - total",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.336Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-a16db380b92086b9a3c6",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 163,
+              "column": 5
+            },
+            {
+              "title": "TC-03 [v2] styling per wireframe",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.336Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-a4c777915ae3c7f901c7",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 178,
+              "column": 5
+            },
+            {
+              "title": "TC-04 [v2] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.336Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-336d9570b068adeb1c2f",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 201,
+              "column": 5
+            },
+            {
+              "title": "TC-05 [v2] size change (Queen → King) re-prices line and button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.337Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-8620f2cbf44595da04af",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 221,
+              "column": 5
+            },
+            {
+              "title": "TC-06 [v2] Mattress Setup & Removal tier: total includes service, saving never drops",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.337Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-e1a4d5c89875193658d8",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 235,
+              "column": 5
+            },
+            {
+              "title": "TC-07 [v2] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.373Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-009cf0e050b75354d777",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 256,
+              "column": 5
+            },
+            {
+              "title": "TC-08 [v2] line & button fit the viewport (no overflow)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.373Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-12e1ce009ca4c9b4ca09",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 275,
+              "column": 5
+            },
+            {
+              "title": "TC-09 [v2] no cre-t-283 errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.373Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-4b8f2d9ac252723f7d5b",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 289,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "WIN283 edge cases (Chrome Desktop only)",
+          "file": "win283-shop-subtotal-v3.spec.js",
+          "line": 299,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-10 [v1] no strike/\"SAVE $0\" shown when there is no discount (cre-t-202 strike badge absent)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.374Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-c44ae7653cf49a9059f1",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 303,
+              "column": 5
+            },
+            {
+              "title": "TC-10 [v2] no strike/\"SAVE $0\" shown when there is no discount (cre-t-202 strike badge absent)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.374Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-50a83bd2695b4df82c13",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 303,
+              "column": 5
+            },
+            {
+              "title": "TC-11 [control] 5 fresh loads: saving never stale $0 / mismatched",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.374Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-c64dfb01fc1bcbb01725",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 320,
+              "column": 5
+            },
+            {
+              "title": "TC-11 [v1] 5 fresh loads: saving never stale $0 / mismatched",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.374Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-ae93e5240520729eb8cf",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 320,
+              "column": 5
+            },
+            {
+              "title": "TC-11 [v2] 5 fresh loads: saving never stale $0 / mismatched",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-13T13:29:41.374Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "709007ab2339f1b573a4-f84dc2da921c51e34651",
+              "file": "win283-shop-subtotal-v3.spec.js",
+              "line": 320,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T11:58:37.412Z",
+    "duration": 5464019.107000001,
+    "expected": 9,
+    "skipped": 14,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}

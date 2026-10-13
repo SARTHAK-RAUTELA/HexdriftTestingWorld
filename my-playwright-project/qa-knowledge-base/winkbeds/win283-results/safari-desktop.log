@@ -1,0 +1,255 @@
+
+Running 32 tests using 1 worker
+
+  ✓   1 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:144:5 › WIN283 [control] › TC-01 [control] line copy, layout & button copy match wireframe (21.6s)
+  ✘   2 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:163:5 › WIN283 [control] › TC-02 [control] default math: total = price, strike = pre-savings price, saving = strike - total (20.5s)
+  ✓   3 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [control] › TC-03 [control] styling per wireframe (18.3s)
+  ✓   4 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:201:5 › WIN283 [control] › TC-04 [control] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged (30.3s)
+  ✘   5 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [control] › TC-05 [control] size change (Queen → King) re-prices line and button (26.5s)
+  ✘   6 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [control] › TC-06 [control] Mattress Setup & Removal tier: total includes service, saving never drops (28.5s)
+  ✓   7 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [control] › TC-07 [control] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart (37.0s)
+  ✓   8 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:275:5 › WIN283 [control] › TC-08 [control] line & button fit the viewport (no overflow) (27.7s)
+  ✓   9 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:289:5 › WIN283 [control] › TC-09 [control] no cre-t-283 errors (26.0s)
+  ✓  10 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:144:5 › WIN283 [v1] › TC-01 [v1] line copy, layout & button copy match wireframe (23.7s)
+  ✓  11 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:163:5 › WIN283 [v1] › TC-02 [v1] default math: total = price, strike = pre-savings price, saving = strike - total (18.1s)
+  ✘  12 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v1] › TC-03 [v1] styling per wireframe (22.1s)
+  ✓  13 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:201:5 › WIN283 [v1] › TC-04 [v1] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged (30.6s)
+  ✘  14 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [v1] › TC-05 [v1] size change (Queen → King) re-prices line and button (27.3s)
+  ✘  15 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [v1] › TC-06 [v1] Mattress Setup & Removal tier: total includes service, saving never drops (28.2s)
+  ✘  16 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v1] › TC-07 [v1] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart (38.8s)
+  ✘  17 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:275:5 › WIN283 [v1] › TC-08 [v1] line & button fit the viewport (no overflow) (1.4h)
+  ✘  18 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:289:5 › WIN283 [v1] › TC-09 [v1] no cre-t-283 errors (0ms)
+  -  19 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:144:5 › WIN283 [v2] › TC-01 [v2] line copy, layout & button copy match wireframe
+  -  20 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:163:5 › WIN283 [v2] › TC-02 [v2] default math: total = price, strike = pre-savings price, saving = strike - total
+  -  21 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v2] › TC-03 [v2] styling per wireframe
+  -  22 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:201:5 › WIN283 [v2] › TC-04 [v2] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged
+  -  23 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [v2] › TC-05 [v2] size change (Queen → King) re-prices line and button
+  -  24 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [v2] › TC-06 [v2] Mattress Setup & Removal tier: total includes service, saving never drops
+  -  25 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v2] › TC-07 [v2] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart
+  -  26 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:275:5 › WIN283 [v2] › TC-08 [v2] line & button fit the viewport (no overflow)
+  -  27 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:289:5 › WIN283 [v2] › TC-09 [v2] no cre-t-283 errors
+  -  28 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:303:5 › WIN283 edge cases (Chrome Desktop only) › TC-10 [v1] no strike/"SAVE $0" shown when there is no discount (cre-t-202 strike badge absent)
+  -  29 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:303:5 › WIN283 edge cases (Chrome Desktop only) › TC-10 [v2] no strike/"SAVE $0" shown when there is no discount (cre-t-202 strike badge absent)
+  -  30 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:320:5 › WIN283 edge cases (Chrome Desktop only) › TC-11 [control] 5 fresh loads: saving never stale $0 / mismatched
+  -  31 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:320:5 › WIN283 edge cases (Chrome Desktop only) › TC-11 [v1] 5 fresh loads: saving never stale $0 / mismatched
+  -  32 [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:320:5 › WIN283 edge cases (Chrome Desktop only) › TC-11 [v2] 5 fresh loads: saving never stale $0 / mismatched
+
+
+  1) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:163:5 › WIN283 [control] › TC-02 [control] default math: total = price, strike = pre-savings price, saving = strike - total 
+
+    Error: saving must not be stale $0 (WIN266 BUG-01 race)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: > [32m0[39m
+    Received:   [31m0[39m
+
+      167 |       expect(s.count).toBe(1);
+      168 |       expect(s.total).toBe(s.base);
+    > 169 |       expect(s.saving, "saving must not be stale $0 (WIN266 BUG-01 race)").toBeGreaterThan(0);
+          |                                                                            ^
+      170 |       expect(s.saving).toBe(s.strike202 - s.base);
+      171 |       if (key !== "control") {
+      172 |         expect(s.strike).toBe(s.strike202);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:169:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-af517-price-saving-strike---total-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-af517-price-saving-strike---total-Safari-Desktop\error-context.md
+
+  2) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [control] › TC-05 [control] size change (Queen → King) re-prices line and button 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+    Call Log:
+    - Timeout 6000ms exceeded while waiting on the predicate
+
+      224 |       await page.selectOption("#size-select", "King");
+      225 |       await expect.poll(async () => (await readState(page)).base, { timeout: 8000 }).not.toBe(before.base);
+    > 226 |       await expect.poll(async () => { const s = await readState(page); return s.total === s.base && s.saving === s.strike202 - s.base; }, { timeout: 6000 }).toBe(true);
+          |       ^
+      227 |       const s = await readState(page);
+      228 |       testInfo.annotations.push({ type: "king", description: JSON.stringify({ text: s.text, btn: s.btnText }) });
+      229 |       await shot(page, testInfo, `${key}-king`);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:226:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-c923e-g-re-prices-line-and-button-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-c923e-g-re-prices-line-and-button-Safari-Desktop\error-context.md
+
+  3) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [control] › TC-06 [control] Mattress Setup & Removal tier: total includes service, saving never drops 
+
+    Error: saving should be 0 + service discount 75
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m75[39m
+    Received: [31m0[39m
+
+      248 |       expect(s.total).toBe(before.total + s.setupPrice);
+      249 |       const compare = s.setupCompare || s.setupPrice;
+    > 250 |       expect(s.saving, `saving should be ${before.saving} + service discount ${compare - s.setupPrice}`).toBe(before.saving + (compare - s.setupPrice));
+          |                                                                                                          ^
+      251 |       if (key !== "control") expect(s.strike - s.total).toBe(s.saving);
+      252 |       if (key === "v2") expect(s.btnText).toBe(`ADD TO CART · SAVE ${fmt(s.saving)}`);
+      253 |       await context.close();
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:250:106
+
+    attachment #1: control-setup (image/png) ───────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-0f1a1--service-saving-never-drops-Safari-Desktop\attachments\control-setup-382630b638f6477a14d06de44369d76609fc7cae.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-0f1a1--service-saving-never-drops-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-0f1a1--service-saving-never-drops-Safari-Desktop\error-context.md
+
+  4) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v1] › TC-03 [v1] styling per wireframe 
+
+    Error: V1/V2 line font family should match control (site font)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: [32m/greycliff/i[39m
+    Received string:  [31m"Inter, \"Helvetica Neue\", Arial, sans-serif"[39m
+
+      191 |         expect(s.style.strikeDeco).toBe("line-through");
+      192 |         // wireframe only asks for +2px — the page font (greycliff-cf, same as control) should be kept
+    > 193 |         expect.soft(s.style.fontFamily, "V1/V2 line font family should match control (site font)").toMatch(/greycliff/i);
+          |                                                                                                    ^
+      194 |       }
+      195 |       if (key === "v2") {
+      196 |         expect.soft(s.btnStyle.fontFamily, "V2 button font family should match native button").toBe(s.nativeBtnFont);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:193:100
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-d0721-03-v1-styling-per-wireframe-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-d0721-03-v1-styling-per-wireframe-Safari-Desktop\error-context.md
+
+  5) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [v1] › TC-05 [v1] size change (Queen → King) re-prices line and button 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+    Call Log:
+    - Timeout 6000ms exceeded while waiting on the predicate
+
+      224 |       await page.selectOption("#size-select", "King");
+      225 |       await expect.poll(async () => (await readState(page)).base, { timeout: 8000 }).not.toBe(before.base);
+    > 226 |       await expect.poll(async () => { const s = await readState(page); return s.total === s.base && s.saving === s.strike202 - s.base; }, { timeout: 6000 }).toBe(true);
+          |       ^
+      227 |       const s = await readState(page);
+      228 |       testInfo.annotations.push({ type: "king", description: JSON.stringify({ text: s.text, btn: s.btnText }) });
+      229 |       await shot(page, testInfo, `${key}-king`);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:226:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-c04a4-g-re-prices-line-and-button-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-c04a4-g-re-prices-line-and-button-Safari-Desktop\error-context.md
+
+  6) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [v1] › TC-06 [v1] Mattress Setup & Removal tier: total includes service, saving never drops 
+
+    Error: saving should be 0 + service discount 75
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m75[39m
+    Received: [31m0[39m
+
+      248 |       expect(s.total).toBe(before.total + s.setupPrice);
+      249 |       const compare = s.setupCompare || s.setupPrice;
+    > 250 |       expect(s.saving, `saving should be ${before.saving} + service discount ${compare - s.setupPrice}`).toBe(before.saving + (compare - s.setupPrice));
+          |                                                                                                          ^
+      251 |       if (key !== "control") expect(s.strike - s.total).toBe(s.saving);
+      252 |       if (key === "v2") expect(s.btnText).toBe(`ADD TO CART · SAVE ${fmt(s.saving)}`);
+      253 |       await context.close();
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:250:106
+
+    attachment #1: v1-setup (image/png) ────────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-6c241--service-saving-never-drops-Safari-Desktop\attachments\v1-setup-1bd8095414db3e18a1fc01f67161fe7f126afae9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-6c241--service-saving-never-drops-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-6c241--service-saving-never-drops-Safari-Desktop\error-context.md
+
+  7) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v1] › TC-07 [v1] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: > [32m0[39m
+    Received:   [31m0[39m
+
+    Call Log:
+    - Timeout 15000ms exceeded while waiting on the predicate
+
+      262 |       expect((await readCart()).count).toBe(0);
+      263 |       await page.locator(sel).first().click({ force: true });
+    > 264 |       await expect.poll(async () => (await readCart()).count, { timeout: 15000 }).toBeGreaterThan(0);
+          |       ^
+      265 |       await page.waitForTimeout(4000);
+      266 |       const cart = await readCart();
+      267 |       testInfo.annotations.push({ type: "cart", description: JSON.stringify({ cartPosts, cart }) });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:264:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-6689d--the-selection-not-the-cart-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-6689d--the-selection-not-the-cart-Safari-Desktop\error-context.md
+
+  8) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:275:5 › WIN283 [v1] › TC-08 [v1] line & button fit the viewport (no overflow) 
+
+    [31mTest timeout of 90000ms exceeded.[39m
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('#orderForm.loaded .order-form__add')[22m
+
+
+      53 |   page.on("request", (r) => r.method() === "POST" && /cart/i.test(r.url()) && cartPosts.push(r.url()));
+      54 |   await page.goto(URLS[key], { waitUntil: "domcontentloaded" });
+    > 55 |   await page.waitForSelector("#orderForm.loaded .order-form__add", { state: "attached", timeout: 60000 });
+         |              ^
+      56 |   await expect.poll(() => page.locator(LINE).count(), { timeout: slow ? 20000 : 10000 }).toBe(1);
+      57 |   // let init()'s 3s force-refresh window settle (and cre-t-202's strike badge populate)
+      58 |   await page.waitForTimeout(3500);
+        at openArm (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:55:14)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:276:33
+
+    [31mTest timeout of 90000ms exceeded.[39m
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-30e29-t-the-viewport-no-overflow--Safari-Desktop\error-context.md
+
+  9) [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:289:5 › WIN283 [v1] › TC-09 [v1] no cre-t-283 errors 
+
+    Error: worker process exited unexpectedly (code=3221225794, signal=null)
+
+  9 failed
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:163:5 › WIN283 [control] › TC-02 [control] default math: total = price, strike = pre-savings price, saving = strike - total 
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [control] › TC-05 [control] size change (Queen → King) re-prices line and button 
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [control] › TC-06 [control] Mattress Setup & Removal tier: total includes service, saving never drops 
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v1] › TC-03 [v1] styling per wireframe 
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [v1] › TC-05 [v1] size change (Queen → King) re-prices line and button 
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [v1] › TC-06 [v1] Mattress Setup & Removal tier: total includes service, saving never drops 
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v1] › TC-07 [v1] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart 
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:275:5 › WIN283 [v1] › TC-08 [v1] line & button fit the viewport (no overflow) 
+    [Safari Desktop] › testing\win283-shop-subtotal-v3.spec.js:289:5 › WIN283 [v1] › TC-09 [v1] no cre-t-283 errors 
+  14 did not run
+  9 passed (1.5h)

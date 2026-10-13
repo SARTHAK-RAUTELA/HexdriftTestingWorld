@@ -1,0 +1,288 @@
+
+Running 32 tests using 1 worker
+
+  ✓   1 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:144:5 › WIN283 [control] › TC-01 [control] line copy, layout & button copy match wireframe (19.9s)
+  ✓   2 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:163:5 › WIN283 [control] › TC-02 [control] default math: total = price, strike = pre-savings price, saving = strike - total (12.5s)
+  ✓   3 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [control] › TC-03 [control] styling per wireframe (13.2s)
+  ✓   4 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:201:5 › WIN283 [control] › TC-04 [control] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged (15.6s)
+  ✓   5 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [control] › TC-05 [control] size change (Queen → King) re-prices line and button (15.3s)
+  ✓   6 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [control] › TC-06 [control] Mattress Setup & Removal tier: total includes service, saving never drops (16.0s)
+  ✓   7 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [control] › TC-07 [control] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart (21.5s)
+  ✓   8 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:275:5 › WIN283 [control] › TC-08 [control] line & button fit the viewport (no overflow) (14.8s)
+  ✓   9 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:289:5 › WIN283 [control] › TC-09 [control] no cre-t-283 errors (16.5s)
+  ✓  10 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:144:5 › WIN283 [v1] › TC-01 [v1] line copy, layout & button copy match wireframe (12.8s)
+  ✓  11 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:163:5 › WIN283 [v1] › TC-02 [v1] default math: total = price, strike = pre-savings price, saving = strike - total (11.4s)
+  ✘  12 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v1] › TC-03 [v1] styling per wireframe (12.0s)
+  ✘  13 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:201:5 › WIN283 [v1] › TC-04 [v1] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged (16.4s)
+  ✓  14 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [v1] › TC-05 [v1] size change (Queen → King) re-prices line and button (17.1s)
+  ✓  15 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [v1] › TC-06 [v1] Mattress Setup & Removal tier: total includes service, saving never drops (15.0s)
+  ✘  16 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v1] › TC-07 [v1] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart (26.0s)
+  ✓  17 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:275:5 › WIN283 [v1] › TC-08 [v1] line & button fit the viewport (no overflow) (17.8s)
+  ✓  18 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:289:5 › WIN283 [v1] › TC-09 [v1] no cre-t-283 errors (15.3s)
+  ✓  19 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:144:5 › WIN283 [v2] › TC-01 [v2] line copy, layout & button copy match wireframe (11.1s)
+  ✓  20 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:163:5 › WIN283 [v2] › TC-02 [v2] default math: total = price, strike = pre-savings price, saving = strike - total (11.4s)
+  ✘  21 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v2] › TC-03 [v2] styling per wireframe (11.6s)
+  ✓  22 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:201:5 › WIN283 [v2] › TC-04 [v2] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged (17.0s)
+  ✓  23 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:221:5 › WIN283 [v2] › TC-05 [v2] size change (Queen → King) re-prices line and button (14.0s)
+  ✓  24 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:235:5 › WIN283 [v2] › TC-06 [v2] Mattress Setup & Removal tier: total includes service, saving never drops (14.5s)
+  ✘  25 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v2] › TC-07 [v2] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart (25.6s)
+  ✓  26 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:275:5 › WIN283 [v2] › TC-08 [v2] line & button fit the viewport (no overflow) (18.3s)
+  ✓  27 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:289:5 › WIN283 [v2] › TC-09 [v2] no cre-t-283 errors (14.4s)
+  ✘  28 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:303:5 › WIN283 edge cases (Chrome Desktop only) › TC-10 [v1] no strike/"SAVE $0" shown when there is no discount (cre-t-202 strike badge absent) (19.3s)
+  ✘  29 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:303:5 › WIN283 edge cases (Chrome Desktop only) › TC-10 [v2] no strike/"SAVE $0" shown when there is no discount (cre-t-202 strike badge absent) (19.3s)
+  ✓  30 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:320:5 › WIN283 edge cases (Chrome Desktop only) › TC-11 [control] 5 fresh loads: saving never stale $0 / mismatched (58.9s)
+  ✓  31 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:320:5 › WIN283 edge cases (Chrome Desktop only) › TC-11 [v1] 5 fresh loads: saving never stale $0 / mismatched (57.2s)
+  ✓  32 [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:320:5 › WIN283 edge cases (Chrome Desktop only) › TC-11 [v2] 5 fresh loads: saving never stale $0 / mismatched (55.6s)
+
+
+  1) [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v1] › TC-03 [v1] styling per wireframe 
+
+    Error: V1/V2 line font family should match control (site font)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: [32m/greycliff/i[39m
+    Received string:  [31m"Inter, \"Helvetica Neue\", Arial, sans-serif"[39m
+
+      191 |         expect(s.style.strikeDeco).toBe("line-through");
+      192 |         // wireframe only asks for +2px — the page font (greycliff-cf, same as control) should be kept
+    > 193 |         expect.soft(s.style.fontFamily, "V1/V2 line font family should match control (site font)").toMatch(/greycliff/i);
+          |                                                                                                    ^
+      194 |       }
+      195 |       if (key === "v2") {
+      196 |         expect.soft(s.btnStyle.fontFamily, "V2 button font family should match native button").toBe(s.nativeBtnFont);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:193:100
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-d0721-03-v1-styling-per-wireframe-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-d0721-03-v1-styling-per-wireframe-Chrome-Desktop\error-context.md
+
+  2) [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:201:5 › WIN283 [v1] › TC-04 [v1] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m0[39m
+    Received: [31m771[39m
+
+      208 |       testInfo.annotations.push({ type: "after", description: JSON.stringify({ text: after.text, btn: after.btnText }) });
+      209 |       expect(after.count).toBe(2);
+    > 210 |       expect(after.saving).toBe(before.saving);
+          |                            ^
+      211 |       if (key !== "control") expect(after.strike).toBe(before.strike + 499);
+      212 |       if (key === "v2") expect(after.btnText).toBe(`ADD TO CART · SAVE ${fmt(before.saving)}`);
+      213 |       await toggleAccessory(page, "Platform Frame");
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:210:28
+
+    attachment #1: v1-platform-frame (image/png) ───────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-d7713-ike-update-saving-unchanged-Chrome-Desktop\attachments\v1-platform-frame-d4f466eaef8b2ca4cd236dcc45eaed5354706092.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-d7713-ike-update-saving-unchanged-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-d7713-ike-update-saving-unchanged-Chrome-Desktop\error-context.md
+
+  3) [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v1] › TC-07 [v1] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: > [32m0[39m
+    Received:   [31m0[39m
+
+    Call Log:
+    - Timeout 15000ms exceeded while waiting on the predicate
+
+      262 |       expect((await readCart()).count).toBe(0);
+      263 |       await page.locator(sel).first().click({ force: true });
+    > 264 |       await expect.poll(async () => (await readCart()).count, { timeout: 15000 }).toBeGreaterThan(0);
+          |       ^
+      265 |       await page.waitForTimeout(4000);
+      266 |       const cart = await readCart();
+      267 |       testInfo.annotations.push({ type: "cart", description: JSON.stringify({ cartPosts, cart }) });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:264:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-6689d--the-selection-not-the-cart-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-6689d--the-selection-not-the-cart-Chrome-Desktop\error-context.md
+
+  4) [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v2] › TC-03 [v2] styling per wireframe 
+
+    Error: V1/V2 line font family should match control (site font)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: [32m/greycliff/i[39m
+    Received string:  [31m"Inter, \"Helvetica Neue\", Arial, sans-serif"[39m
+
+      191 |         expect(s.style.strikeDeco).toBe("line-through");
+      192 |         // wireframe only asks for +2px — the page font (greycliff-cf, same as control) should be kept
+    > 193 |         expect.soft(s.style.fontFamily, "V1/V2 line font family should match control (site font)").toMatch(/greycliff/i);
+          |                                                                                                    ^
+      194 |       }
+      195 |       if (key === "v2") {
+      196 |         expect.soft(s.btnStyle.fontFamily, "V2 button font family should match native button").toBe(s.nativeBtnFont);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:193:100
+
+    Error: V2 button font family should match native button
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"[7mgreycliff-cf[27m, sans-serif"[39m
+    Received: [31m"[7mInter, \"Helvetica Neue\", Arial[27m, sans-serif"[39m
+
+      194 |       }
+      195 |       if (key === "v2") {
+    > 196 |         expect.soft(s.btnStyle.fontFamily, "V2 button font family should match native button").toBe(s.nativeBtnFont);
+          |                                                                                                ^
+      197 |       }
+      198 |       await context.close();
+      199 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:196:96
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-3f532-03-v2-styling-per-wireframe-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-3f532-03-v2-styling-per-wireframe-Chrome-Desktop\error-context.md
+
+  5) [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v2] › TC-07 [v2] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: > [32m0[39m
+    Received:   [31m0[39m
+
+    Call Log:
+    - Timeout 15000ms exceeded while waiting on the predicate
+
+      262 |       expect((await readCart()).count).toBe(0);
+      263 |       await page.locator(sel).first().click({ force: true });
+    > 264 |       await expect.poll(async () => (await readCart()).count, { timeout: 15000 }).toBeGreaterThan(0);
+          |       ^
+      265 |       await page.waitForTimeout(4000);
+      266 |       const cart = await readCart();
+      267 |       testInfo.annotations.push({ type: "cart", description: JSON.stringify({ cartPosts, cart }) });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:264:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-be811--the-selection-not-the-cart-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-be811--the-selection-not-the-cart-Chrome-Desktop\error-context.md
+
+  6) [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:303:5 › WIN283 edge cases (Chrome Desktop only) › TC-10 [v1] no strike/"SAVE $0" shown when there is no discount (cre-t-202 strike badge absent) 
+
+    Error: strike price 499 must not be <= total 2298
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      310 |       testInfo.annotations.push({ type: "no-discount", description: JSON.stringify({ text: s.text, btn: s.btnText }) });
+      311 |       await shot(page, testInfo, `${key}-no-discount`);
+    > 312 |       expect.soft(s.strike === null || s.strike > s.total, `strike price ${s.strike} must not be <= total ${s.total}`).toBe(true);
+          |                                                                                                                        ^
+      313 |       expect.soft(s.text, "no 'Saving $0'").not.toMatch(/Saving \$0$/);
+      314 |       if (key === "v2") expect.soft(s.btnText).not.toMatch(/SAVE \$0$/);
+      315 |       await context.close();
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:312:120
+
+    Error: no 'Saving $0'
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mnot[2m.[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: not [32m/Saving \$0$/[39m
+    Received string:      [31m"2 items selected · $2,298 total$499 · [7mSaving $0[27m"[39m
+
+      311 |       await shot(page, testInfo, `${key}-no-discount`);
+      312 |       expect.soft(s.strike === null || s.strike > s.total, `strike price ${s.strike} must not be <= total ${s.total}`).toBe(true);
+    > 313 |       expect.soft(s.text, "no 'Saving $0'").not.toMatch(/Saving \$0$/);
+          |                                                 ^
+      314 |       if (key === "v2") expect.soft(s.btnText).not.toMatch(/SAVE \$0$/);
+      315 |       await context.close();
+      316 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:313:49
+
+    attachment #1: v1-no-discount (image/png) ──────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-2f464--t-202-strike-badge-absent--Chrome-Desktop\attachments\v1-no-discount-d46cb06474adaf0b794fa8aab72a92fbb02c8a40.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-2f464--t-202-strike-badge-absent--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-2f464--t-202-strike-badge-absent--Chrome-Desktop\error-context.md
+
+  7) [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:303:5 › WIN283 edge cases (Chrome Desktop only) › TC-10 [v2] no strike/"SAVE $0" shown when there is no discount (cre-t-202 strike badge absent) 
+
+    Error: strike price 499 must not be <= total 2298
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      310 |       testInfo.annotations.push({ type: "no-discount", description: JSON.stringify({ text: s.text, btn: s.btnText }) });
+      311 |       await shot(page, testInfo, `${key}-no-discount`);
+    > 312 |       expect.soft(s.strike === null || s.strike > s.total, `strike price ${s.strike} must not be <= total ${s.total}`).toBe(true);
+          |                                                                                                                        ^
+      313 |       expect.soft(s.text, "no 'Saving $0'").not.toMatch(/Saving \$0$/);
+      314 |       if (key === "v2") expect.soft(s.btnText).not.toMatch(/SAVE \$0$/);
+      315 |       await context.close();
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:312:120
+
+    Error: no 'Saving $0'
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mnot[2m.[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: not [32m/Saving \$0$/[39m
+    Received string:      [31m"2 items selected · $2,298 total$499 · [7mSaving $0[27m"[39m
+
+      311 |       await shot(page, testInfo, `${key}-no-discount`);
+      312 |       expect.soft(s.strike === null || s.strike > s.total, `strike price ${s.strike} must not be <= total ${s.total}`).toBe(true);
+    > 313 |       expect.soft(s.text, "no 'Saving $0'").not.toMatch(/Saving \$0$/);
+          |                                                 ^
+      314 |       if (key === "v2") expect.soft(s.btnText).not.toMatch(/SAVE \$0$/);
+      315 |       await context.close();
+      316 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:313:49
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mnot[2m.[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: not [32m/SAVE \$0$/[39m
+    Received string:      [31m"ADD TO CART · [7mSAVE $0[27m"[39m
+
+      312 |       expect.soft(s.strike === null || s.strike > s.total, `strike price ${s.strike} must not be <= total ${s.total}`).toBe(true);
+      313 |       expect.soft(s.text, "no 'Saving $0'").not.toMatch(/Saving \$0$/);
+    > 314 |       if (key === "v2") expect.soft(s.btnText).not.toMatch(/SAVE \$0$/);
+          |                                                    ^
+      315 |       await context.close();
+      316 |     });
+      317 |   }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\win283-shop-subtotal-v3.spec.js:314:52
+
+    attachment #1: v2-no-discount (image/png) ──────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-f62df--t-202-strike-badge-absent--Chrome-Desktop\attachments\v2-no-discount-e642a7bcabc72006266f272d2127a2e76a0ec67c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\win283-shop-subtotal-v3-WI-f62df--t-202-strike-badge-absent--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\win283-shop-subtotal-v3-WI-f62df--t-202-strike-badge-absent--Chrome-Desktop\error-context.md
+
+  7 failed
+    [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v1] › TC-03 [v1] styling per wireframe 
+    [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:201:5 › WIN283 [v1] › TC-04 [v1] add/remove Platform Frame (+$499): count, total & strike update, saving unchanged 
+    [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v1] › TC-07 [v1] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart 
+    [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:178:5 › WIN283 [v2] › TC-03 [v2] styling per wireframe 
+    [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:256:5 › WIN283 [v2] › TC-07 [v2] Add to Cart adds exactly one mattress; line keeps showing the selection, not the cart 
+    [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:303:5 › WIN283 edge cases (Chrome Desktop only) › TC-10 [v1] no strike/"SAVE $0" shown when there is no discount (cre-t-202 strike badge absent) 
+    [Chrome Desktop] › testing\win283-shop-subtotal-v3.spec.js:303:5 › WIN283 edge cases (Chrome Desktop only) › TC-10 [v2] no strike/"SAVE $0" shown when there is no discount (cre-t-202 strike badge absent) 
+  25 passed (11.3m)

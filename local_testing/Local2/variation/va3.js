@@ -1,158 +1,204 @@
-(function () {
+(function() {
   try {
-    /* main variables */
-    var debug = 1;
-    var variation_name = 'lotus-22';
+    var debug=1;
+    var variation_name="cre-t-283";
 
-    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
-      var interval = setInterval(function () {
-        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
+    function waitForElement(selector,trigger,delayInterval,delayTimeout) {
+      delayInterval=delayInterval||50;
+      delayTimeout=delayTimeout||15000;
+      var interval=setInterval(function() {
+        if(document.querySelector(selector)&&document.querySelectorAll(selector).length>0) {
           clearInterval(interval);
           trigger();
         }
-      }, delayInterval);
-      setTimeout(function () {
+      },delayInterval);
+      setTimeout(function() {
         clearInterval(interval);
-      }, delayTimeout);
+      },delayTimeout);
+    }
+    function live(selector,event,callback,context) {
+      if(typeof callback!=="function") return;
+      (context||document).addEventListener(event,function(e) {
+        var el=e.target.closest(selector);
+        if(el) callback.call(el,e);
+      });
     }
 
-    // Prevent double execution if the script is injected twice
-    if (window.__lotus22Loaded) return;
-    window.__lotus22Loaded = true;
+    var lastSubtotal=null;
+    var lastStrikeTotal=null;
+    var lastItemCount=null;
+    var subtotalEl=null;
+    var priceSymbol=null;
 
-    /* config */
-    const TIME_RE = /\d{1,2}:\d{2}\s?(AM|PM)/i;
-    const LIST_SELECTOR = '[data-slot="popover-content"] .overflow-y-auto, .max-h-52.overflow-y-auto';
-    const LABEL_ATTR = 'data-lotus22-label';
-
-    // 12:00 AM = Midnight, 12:00 PM = Noon
-    const LABELS = {
-      '12:00 AM': 'Midnight',
-      '12:00 PM': 'Noon',
-    };
-    const LABEL_VALUES = Object.values(LABELS);
-
-    /* all Pure helper functions */
-
-    function log(e) {
-      if (debug) console.log(e, 'error in Test ' + variation_name);
+    function getElText(sel) {
+      var el=document.querySelector(sel);
+      return el? el.textContent:"";
+    }
+    function extractNum(text) {
+      var m=text.replace(/,/g,"").match(/\$([0-9]+(\.[0-9]+)?)/);
+      return m? parseFloat(m[1]):0;
+    }
+    function getPriceSymbol() {
+      if(priceSymbol) return priceSymbol;
+      var m=getElText(".price-row__pay-option-price").trim().match(/[^0-9\s.,]/);
+      priceSymbol=m? m[0]:"$";
+      return priceSymbol;
+    }
+    function formatPrice(n) {
+      return getPriceSymbol()+n.toLocaleString("en-US",{
+        minimumFractionDigits: 0
+        ,maximumFractionDigits: 0
+      });
     }
 
-    // Wrap callbacks so errors inside observers / rAF are still logged
-    function safe(fn) {
-      return function (...args) {
-        try {
-          return fn.apply(this, args);
-        } catch (e) {
-          log(e);
-        }
-      };
+    function getBasePrice() {
+      return extractNum(getElText(".price-row__pay-option-price"));
+    }
+    function getSetupPrice() {
+      var btn=document.querySelector(".order-form__loadup-button");
+      var plus=btn&&btn.querySelector(".order-form__loadup-button-icon-plus");
+      if(!plus||!plus.classList.contains("hide")) return 0;
+      var priceEl=btn.querySelector(".order-form__loadup-button-price");
+      return priceEl? extractNum(priceEl.textContent):0;
+    }
+    function getAccessoriesTotal() {
+      var total=0;
+      document.querySelectorAll(".accessory-tray_item").forEach(function(item) {
+        var cb=item.querySelector(".add-to-accessory-cart");
+        var titleEl=item.querySelector(".accessory-item-title");
+        var isActive=cb&&cb.checked;
+        if(isActive&&titleEl) total+=extractNum(titleEl.textContent);
+      });
+      return total;
+    }
+    function getSelectedItemCount() {
+      var count=1;
+      var setupBtn=document.querySelector(".order-form__loadup-button");
+      var setupPlus=setupBtn&&setupBtn.querySelector(".order-form__loadup-button-icon-plus");
+      if(setupPlus&&setupPlus.classList.contains("hide")) count++;
+      document.querySelectorAll(".accessory-tray_item .add-to-accessory-cart").forEach(function(cb) {
+        if(cb.checked) count++;
+      });
+      return count;
+    }
+    function calculateSubtotal() {
+      return getBasePrice()+getSetupPrice()+getAccessoriesTotal();
+    }
+    function strikeTotal() {
+      var selectors=[
+        ".order-form__loadup-button-compare-price",
+        ".cre-t-202-box-strike-price"
+      ];
+      var total=selectors.reduce(function(total,selector) {
+        return total+extractNum(getElText(selector));
+      },0);
+      return total+getAccessoriesTotal();
     }
 
-    function normalizeTime(text) {
-      return text.trim().toUpperCase().replace(/\s+/g, ' ');
+    function getSubtotalEl() {
+      if(subtotalEl&&subtotalEl.parentNode) return subtotalEl;
+      return (subtotalEl=document.querySelector(".cre-t-283-subtotal-line"));
     }
-
-    function isVisible(el) {
-      return el.isConnected && el.getClientRects().length > 0;
+    var customAddBtn=null;
+    function ensureCustomAddButton() {
+      if(customAddBtn&&customAddBtn.parentNode) return customAddBtn;
+      var btn=document.querySelector(".order-form__add.button");
+      if(!btn) return null;
+      var html='<div class="'+btn.className+' cre-t-283-add-btn"></div>';
+      btn.insertAdjacentHTML("afterend",html);
+      btn.classList.add("cre-t-283-add-btn-original");
+      var clone=document.querySelector(".cre-t-283-add-btn");
+      clone.addEventListener("click",function(e) {
+        e.preventDefault();
+        btn.click();
+      });
+      customAddBtn=clone;
+      return customAddBtn;
     }
-
-    /* Variation functions */
-
-    // Swap "12:00 AM" / "12:00 PM" for "Midnight" / "Noon".
-    // Edits the existing text node's nodeValue (instead of textContent) so React
-    // keeps its reference to the node and can still update it later.
-    function relabelSpan(span) {
-      if (span.childElementCount > 0) return;
-      const node = span.firstChild;
-      if (!node || node.nodeType !== Node.TEXT_NODE || span.childNodes.length !== 1) return;
-
-      const text = normalizeTime(node.nodeValue);
-      const label = LABELS[text];
-
-      if (label) {
-        // React wrote a 12:00 time -> replace it with the label
-        node.nodeValue = label;
-        span.setAttribute(LABEL_ATTR, text); // keep the original time for reference
-      } else if (span.hasAttribute(LABEL_ATTR) && !LABEL_VALUES.includes(node.nodeValue.trim())) {
-        // React changed the time to something else -> remove the marker
-        span.removeAttribute(LABEL_ATTR);
-      }
+    function syncControlButtonCount(savings) {
+      var btn=ensureCustomAddButton();
+      if(!btn) return;
+      btn.textContent="ADD TO CART · SAVE "+formatPrice(savings);
     }
-
-    // Covers both the dropdown options and the pick-up / drop-off fields.
-    // Only spans whose full text is exactly "12:00 AM" / "12:00 PM" are relabelled.
-    function relabelAll() {
-      document.querySelectorAll('button span').forEach(relabelSpan);
+    function updateSubtotal() {
+      var el=getSubtotalEl();
+      var total=calculateSubtotal();
+      var strikePriceTotal=strikeTotal();
+      var itemCount=getSelectedItemCount();
+      syncControlButtonCount(Math.max(0,strikePriceTotal-total));
+      if(!el||(total===lastSubtotal&&strikePriceTotal===lastStrikeTotal&&itemCount===lastItemCount)) return;
+      lastSubtotal=total;
+      lastStrikeTotal=strikePriceTotal;
+      lastItemCount=itemCount;
+      el.innerHTML="<strong>"+itemCount+" "+(itemCount===1? "item":"items")+" selected</strong> &middot; <strong>"+
+        formatPrice(total)+" total<strong class='strike'>"+formatPrice(strikePriceTotal)+"</strong></strong> &middot; <span>Saving <strong>"+
+        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span>";
     }
-
-    function isTimeList(list) {
-      return Array.from(list.querySelectorAll('button span')).some((span) => TIME_RE.test(span.textContent));
-    }
-
-    // Lists currently open and already scrolled (WeakSet = no memory leak)
-    const scrolledLists = new WeakSet();
-
-    function scrollToSelected(list) {
-      if (!isVisible(list)) {
-        // Closed/hidden -> allow scrolling again next time it opens
-        scrolledLists.delete(list);
+    function injectSubtotalLine() {
+      if(getSubtotalEl()) {
+        updateSubtotal();
         return;
       }
-      if (scrolledLists.has(list)) return;
-
-      const selected = Array.from(list.querySelectorAll('button')).find((btn) => btn.classList.contains('bg-accent'));
-      if (!selected) return;
-
-      // Center the selected option inside the list without scrolling the page
-      const listRect = list.getBoundingClientRect();
-      const itemRect = selected.getBoundingClientRect();
-      const offset = itemRect.top - listRect.top + list.scrollTop;
-      list.scrollTop = offset - list.clientHeight / 2 + selected.offsetHeight / 2;
-
-      scrolledLists.add(list);
+      var btn=document.querySelector(".order-form__add.button");
+      if(!btn) return;
+      var total=calculateSubtotal();
+      var strikePriceTotal=strikeTotal();
+      var itemCount=getSelectedItemCount();
+      syncControlButtonCount(Math.max(0,strikePriceTotal-total));
+      btn.insertAdjacentHTML("beforebegin",'<div class="cre-t-283-subtotal-line"><strong>'+itemCount+" "+(itemCount===1? "item":"items")+
+        " selected</strong> &middot; <strong>"+formatPrice(total)+" total<strong class='strike'>"+formatPrice(strikePriceTotal)+"</strong></strong> &middot; <span>Saving <strong>"+
+        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span></div>");
+      subtotalEl=btn.previousElementSibling;
+      lastSubtotal=total;
+      lastStrikeTotal=strikePriceTotal;
+      lastItemCount=itemCount;
     }
-
-    function run() {
-      relabelAll();
-
-      document.querySelectorAll(LIST_SELECTOR).forEach((list) => {
-        if (!isTimeList(list)) return;
-        scrollToSelected(list);
+    var subtotalUpdateInterval=null;
+    function scheduleSubtotalRefresh() {
+      if(subtotalUpdateInterval) {
+        clearInterval(subtotalUpdateInterval);
+        subtotalUpdateInterval=null;
+      }
+      var currentInterval=setInterval(function() {
+        updateSubtotal();
+      },500);
+      subtotalUpdateInterval=currentInterval;
+      setTimeout(function() {
+        clearInterval(currentInterval);
+        if(subtotalUpdateInterval===currentInterval) {
+          subtotalUpdateInterval=null;
+        }
+      },3000);
+    }
+    function eventHandler() {
+      live("#coolingCoverSelect","change",scheduleSubtotalRefresh);
+      live("#size-select","change",scheduleSubtotalRefresh);
+      live("#firmness-select","change",scheduleSubtotalRefresh);
+      live(".order-form__loadup-button, .pop-loadup__service-button, .order-form__loadup-button-price,#orderForm .order-form__add","click",scheduleSubtotalRefresh);
+      document.addEventListener("click",function(e) {
+        var isAccessory=e.target.closest(".add-to-accessory-cart")||e.target.closest(".accessory-item-title");
+        if(isAccessory) scheduleSubtotalRefresh();
       });
     }
 
-    // Run at most once per frame, always before paint -> no flash
-    let scheduled = false;
-    const safeRun = safe(() => {
-      scheduled = false;
-      run();
-    });
-
-    function schedule() {
-      if (scheduled) return;
-      scheduled = true;
-      requestAnimationFrame(safeRun);
-    }
-
-    /* Initialise variation */
     function init() {
-      run();
-
-      new MutationObserver(schedule).observe(document.documentElement, {
-        childList: true,
-        subtree: true,
-        characterData: true, // selected time text changes in the fields
-        attributes: true,
-        attributeFilter: ['class', 'style', 'hidden', 'data-state'], // dropdown shown/hidden without remounting
-      });
+      document.body.classList.add(variation_name);
+      injectSubtotalLine()
+      waitForElement(".cre-t-283-subtotal-line",function() {
+        var forceInsertion=setInterval(function() {
+          scheduleSubtotalRefresh()
+        },250);
+        setTimeout(function() {
+          clearInterval(forceInsertion);
+        },3000);
+      },50,15000);
     }
-
-    // Start after load so we never interfere with React hydration
-    waitForElement('body', function () {
-      safe(init)();
-    });
-  } catch (e) {
-    if (debug) console.log(e, 'error in Test ' + variation_name);
+    if(!window.variation_name_283) {
+      window.variation_name_283=true;
+      eventHandler();
+    }
+    waitForElement("#orderForm.loaded .order-form__add.button",init,50,15000);
+  } catch(e) {
+    if(debug) console.log(e,"error in Test "+variation_name);
   }
-})();
+}());

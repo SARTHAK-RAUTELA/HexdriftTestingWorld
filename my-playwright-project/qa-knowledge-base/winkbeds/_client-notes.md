@@ -62,3 +62,7 @@ Page Select Sub-Total V2](win266-shop-subtotal-v2.md)
 | WIN266/cre-t-266 — Shop Page Select Sub-Total V2 | [win266-shop-subtotal-v2.md](win266-shop-subtotal-v2.md) |
 | WIN272/cre-t-272 — Shop Page Truemed Badges | [win272-truemed-badge.md](win272-truemed-badge.md) |
 | WIN282/cre-t-282 — Shop Page Click Navigation | [win282-click-navigation.md](win282-click-navigation.md) |
+| WIN283/cre-t-283 — Shop Page Select Sub-Total V3 | [win283-shop-subtotal-v3.md](win283-shop-subtotal-v3.md) |
+
+- **Add to Cart posts to `/cart/update.js` (`{"updates":{variantId:1}}`), not `/cart/add`.** Assert via `fetch('/cart.js').item_count`.
+  The `cre-wb-test-28-overlay` "try before you buy" popup also swallows forced clicks on the ATC button (WIN283).

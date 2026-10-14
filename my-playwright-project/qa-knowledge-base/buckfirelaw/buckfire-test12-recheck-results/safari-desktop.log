@@ -1,0 +1,697 @@
+
+Running 30 tests using 1 worker
+
+  ✓   1 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] (9.2s)
+  ✓   2 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] (26.0s)
+  ✘   3 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — medical-malpractice › control: no Client Stories, Test 20 winner baseline intact [medical-malpractice] (25.9s)
+  ✘   4 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — medical-malpractice › variation: section, mapping, layout, playback, Test 20 coexists [medical-malpractice] (19.9s)
+  ✘   5 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — dog-bite › control: no Client Stories, Test 20 winner baseline intact [dog-bite] (8.6s)
+  ✘   6 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — dog-bite › variation: section, mapping, layout, playback, Test 20 coexists [dog-bite] (18.2s)
+  ✘   7 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-lawyers › control: no Client Stories, Test 20 winner baseline intact [slip-fall-lawyers] (6.9s)
+  ✘   8 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] (31.1s)
+  ✘   9 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-attorneys › control: no Client Stories, Test 20 winner baseline intact [slip-fall-attorneys] (23.9s)
+  ✘  10 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] (1.2m)
+  ✘  11 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — free-case-review › control: no Client Stories, Test 20 winner baseline intact [free-case-review] (19.1s)
+  ✘  12 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — free-case-review › variation: section, mapping, layout, playback, Test 20 coexists [free-case-review] (43.7s)
+  ✘  13 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — car-accident › control: no Client Stories, Test 20 winner baseline intact [car-accident] (12.2s)
+  ✘  14 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] (54.8s)
+  ✘  15 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — personal-injury › control: no Client Stories, Test 20 winner baseline intact [personal-injury] (12.6s)
+  ✘  16 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] (54.0s)
+  ✓  17 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — bike-accident › control: no Client Stories, Test 20 winner baseline intact [bike-accident] (13.9s)
+  ✘  18 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — bike-accident › variation: section, mapping, layout, playback, Test 20 coexists [bike-accident] (35.0s)
+  ✓  19 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — wrongful-death › control: no Client Stories, Test 20 winner baseline intact [wrongful-death] (16.5s)
+  ✓  20 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — wrongful-death › variation: section, mapping, layout, playback, Test 20 coexists [wrongful-death] (48.4s)
+  ✓  21 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — nursing-home-abuse › control: no Client Stories, Test 20 winner baseline intact [nursing-home-abuse] (8.2s)
+  ✓  22 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — nursing-home-abuse › variation: section, mapping, layout, playback, Test 20 coexists [nursing-home-abuse] (20.3s)
+  ✓  23 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — birth-injury › control: no Client Stories, Test 20 winner baseline intact [birth-injury] (8.8s)
+  ✓  24 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — birth-injury › variation: section, mapping, layout, playback, Test 20 coexists [birth-injury] (26.8s)
+  ✓  25 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — truck-accidents › control: no Client Stories, Test 20 winner baseline intact [truck-accidents] (7.4s)
+  ✓  26 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — truck-accidents › variation: section, mapping, layout, playback, Test 20 coexists [truck-accidents] (21.3s)
+  ✓  27 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:211:3 › T12 recheck — interactions (medical-malpractice) › Test 20 "What Happens Next?" modal still opens/closes with Test 12 present (11.1s)
+  -  28 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:223:3 › T12 recheck — interactions (medical-malpractice) › audio overlap: Test 20 modal video vs Test 12 card video
+  ✘  29 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) (8.6s)
+  ✘  30 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) (34.9s)
+
+
+  1) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — medical-malpractice › control: no Client Stories, Test 20 winner baseline intact [medical-malpractice] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    Error: Test 20 "What Happens Next?" card should be in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      119 |       if (pg.t20) {
+      120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+    > 121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+          |                                                                                            ^
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+      124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:121:92
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-3c224-intact-medical-malpractice--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-3c224-intact-medical-malpractice--Safari-Desktop\error-context.md
+
+  2) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — medical-malpractice › variation: section, mapping, layout, playback, Test 20 coexists [medical-malpractice] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-0793b-exists-medical-malpractice--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-0793b-exists-medical-malpractice--Safari-Desktop\error-context.md
+
+  3) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — dog-bite › control: no Client Stories, Test 20 winner baseline intact [dog-bite] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    Error: Test 20 "What Happens Next?" card should be in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      119 |       if (pg.t20) {
+      120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+    > 121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+          |                                                                                            ^
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+      124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:121:92
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-74bbb-r-baseline-intact-dog-bite--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-74bbb-r-baseline-intact-dog-bite--Safari-Desktop\error-context.md
+
+  4) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — dog-bite › variation: section, mapping, layout, playback, Test 20 coexists [dog-bite] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-e36b0--Test-20-coexists-dog-bite--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-e36b0--Test-20-coexists-dog-bite--Safari-Desktop\error-context.md
+
+  5) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-lawyers › control: no Client Stories, Test 20 winner baseline intact [slip-fall-lawyers] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-c82c8-e-intact-slip-fall-lawyers--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-c82c8-e-intact-slip-fall-lawyers--Safari-Desktop\error-context.md
+
+  6) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    Error: card 1 currentTime advances
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: > [32m0[39m
+    Received:   [31m0[39m
+
+    Call Log:
+    - Timeout 12000ms exceeded while waiting on the predicate
+
+      192 |         expect(await v.evaluate((el) => el.error && el.error.code), `card ${i + 1} MediaError`).toBeFalsy();
+      193 |         if (i === 0) {
+    > 194 |           await expect.poll(() => v.evaluate((el) => el.currentTime), { timeout: 12000, message: 'card 1 currentTime advances' }).toBeGreaterThan(0);
+          |           ^
+      195 |           await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-variation-playing.png`) });
+      196 |         }
+      197 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:194:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-e2900-coexists-slip-fall-lawyers--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-e2900-coexists-slip-fall-lawyers--Safari-Desktop\error-context.md
+
+  7) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-attorneys › control: no Client Stories, Test 20 winner baseline intact [slip-fall-attorneys] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-725dd-intact-slip-fall-attorneys--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-725dd-intact-slip-fall-attorneys--Safari-Desktop\error-context.md
+
+  8) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: card 1 currentTime advances
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: > [32m0[39m
+    Received:   [31m0[39m
+
+    Call Log:
+    - Timeout 12000ms exceeded while waiting on the predicate
+
+      192 |         expect(await v.evaluate((el) => el.error && el.error.code), `card ${i + 1} MediaError`).toBeFalsy();
+      193 |         if (i === 0) {
+    > 194 |           await expect.poll(() => v.evaluate((el) => el.currentTime), { timeout: 12000, message: 'card 1 currentTime advances' }).toBeGreaterThan(0);
+          |           ^
+      195 |           await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-variation-playing.png`) });
+      196 |         }
+      197 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:194:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-2f057-exists-slip-fall-attorneys--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-2f057-exists-slip-fall-attorneys--Safari-Desktop\error-context.md
+
+  9) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — free-case-review › control: no Client Stories, Test 20 winner baseline intact [free-case-review] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    Error: Test 20 "What Happens Next?" card should be in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      119 |       if (pg.t20) {
+      120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+    > 121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+          |                                                                                            ^
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+      124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:121:92
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-df499-ne-intact-free-case-review--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-df499-ne-intact-free-case-review--Safari-Desktop\error-context.md
+
+  10) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — free-case-review › variation: section, mapping, layout, playback, Test 20 coexists [free-case-review] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-9532d--coexists-free-case-review--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-9532d--coexists-free-case-review--Safari-Desktop\error-context.md
+
+  11) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — car-accident › control: no Client Stories, Test 20 winner baseline intact [car-accident] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-daa98-seline-intact-car-accident--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-daa98-seline-intact-car-accident--Safari-Desktop\error-context.md
+
+  12) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    Error: card 3 readyState>=1
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: >= [32m1[39m
+    Received:    [31m0[39m
+
+    Call Log:
+    - Timeout 25000ms exceeded while waiting on the predicate
+
+      189 |         const v = cards.nth(i).locator(SEL.video);
+      190 |         await expect.poll(() => v.getAttribute('src'), { timeout: 8000, message: `card ${i + 1} src assigned` }).toBeTruthy();
+    > 191 |         await expect.poll(() => v.evaluate((el) => el.readyState), { timeout: 25000, message: `card ${i + 1} readyState>=1` }).toBeGreaterThanOrEqual(1);
+          |         ^
+      192 |         expect(await v.evaluate((el) => el.error && el.error.code), `card ${i + 1} MediaError`).toBeFalsy();
+      193 |         if (i === 0) {
+      194 |           await expect.poll(() => v.evaluate((el) => el.currentTime), { timeout: 12000, message: 'card 1 currentTime advances' }).toBeGreaterThan(0);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:191:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-890c8-t-20-coexists-car-accident--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-890c8-t-20-coexists-car-accident--Safari-Desktop\error-context.md
+
+  13) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — personal-injury › control: no Client Stories, Test 20 winner baseline intact [personal-injury] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-9de1a-ine-intact-personal-injury--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-9de1a-ine-intact-personal-injury--Safari-Desktop\error-context.md
+
+  14) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    Error: card 3 readyState>=1
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: >= [32m1[39m
+    Received:    [31m0[39m
+
+    Call Log:
+    - Timeout 25000ms exceeded while waiting on the predicate
+
+      189 |         const v = cards.nth(i).locator(SEL.video);
+      190 |         await expect.poll(() => v.getAttribute('src'), { timeout: 8000, message: `card ${i + 1} src assigned` }).toBeTruthy();
+    > 191 |         await expect.poll(() => v.evaluate((el) => el.readyState), { timeout: 25000, message: `card ${i + 1} readyState>=1` }).toBeGreaterThanOrEqual(1);
+          |         ^
+      192 |         expect(await v.evaluate((el) => el.error && el.error.code), `card ${i + 1} MediaError`).toBeFalsy();
+      193 |         if (i === 0) {
+      194 |           await expect.poll(() => v.evaluate((el) => el.currentTime), { timeout: 12000, message: 'card 1 currentTime advances' }).toBeGreaterThan(0);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:191:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-6b65a-0-coexists-personal-injury--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-6b65a-0-coexists-personal-injury--Safari-Desktop\error-context.md
+
+  15) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — bike-accident › variation: section, mapping, layout, playback, Test 20 coexists [bike-accident] 
+
+    Error: card 1 currentTime advances
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: > [32m0[39m
+    Received:   [31m0[39m
+
+    Call Log:
+    - Timeout 12000ms exceeded while waiting on the predicate
+
+      192 |         expect(await v.evaluate((el) => el.error && el.error.code), `card ${i + 1} MediaError`).toBeFalsy();
+      193 |         if (i === 0) {
+    > 194 |           await expect.poll(() => v.evaluate((el) => el.currentTime), { timeout: 12000, message: 'card 1 currentTime advances' }).toBeGreaterThan(0);
+          |           ^
+      195 |           await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-variation-playing.png`) });
+      196 |         }
+      197 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:194:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-86c34--20-coexists-bike-accident--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-86c34--20-coexists-bike-accident--Safari-Desktop\error-context.md
+
+  16) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) 
+
+    Error: play control not keyboard-operable: {"tag":"DIV","tabIndex":-1,"role":null,"label":null}
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      246 |     await open(page, url);
+      247 |     const a = await page.locator(SEL.play).first().evaluate((el) => ({ tag: el.tagName, tabIndex: el.tabIndex, role: el.getAttribute('role'), label: el.getAttribute('aria-label') }));
+    > 248 |     expect(a.tag === 'BUTTON' || (a.tabIndex >= 0 && a.role === 'button'), `play control not keyboard-operable: ${JSON.stringify(a)}`).toBeTruthy();
+          |                                                                                                                                        ^
+      249 |   });
+      250 |
+      251 |   test('Test 20 case-results heading copy on non-medical pages (baseline content check)', async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:248:136
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-34b25-cessible-name-prior-BUG-03--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-34b25-cessible-name-prior-BUG-03--Safari-Desktop\error-context.md
+
+  17) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) 
+
+    Error: Test 20 winner sets "Medical Negligence" heading on non-medical PPC pages
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 26[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "dog-bite",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "slip-fall-lawyers",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "slip-fall-attorneys",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "free-case-review",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "car-accident",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "personal-injury",[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      257 |     ti.annotations.push({ type: 'headings', description: JSON.stringify(out) });
+      258 |     const wrong = out.filter((o) => o.page !== 'medical-malpractice' && /Medical Negligence/i.test(o.heading || ''));
+    > 259 |     expect(wrong, 'Test 20 winner sets "Medical Negligence" heading on non-medical PPC pages').toEqual([]);
+          |                                                                                                ^
+      260 |   });
+      261 | });
+      262 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:259:96
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-914ed-ges-baseline-content-check--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-914ed-ges-baseline-content-check--Safari-Desktop\error-context.md
+
+  17 failed
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — medical-malpractice › control: no Client Stories, Test 20 winner baseline intact [medical-malpractice] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — medical-malpractice › variation: section, mapping, layout, playback, Test 20 coexists [medical-malpractice] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — dog-bite › control: no Client Stories, Test 20 winner baseline intact [dog-bite] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — dog-bite › variation: section, mapping, layout, playback, Test 20 coexists [dog-bite] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-lawyers › control: no Client Stories, Test 20 winner baseline intact [slip-fall-lawyers] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-attorneys › control: no Client Stories, Test 20 winner baseline intact [slip-fall-attorneys] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — free-case-review › control: no Client Stories, Test 20 winner baseline intact [free-case-review] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — free-case-review › variation: section, mapping, layout, playback, Test 20 coexists [free-case-review] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — car-accident › control: no Client Stories, Test 20 winner baseline intact [car-accident] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — personal-injury › control: no Client Stories, Test 20 winner baseline intact [personal-injury] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — bike-accident › variation: section, mapping, layout, playback, Test 20 coexists [bike-accident] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) 
+  1 skipped
+  12 passed (12.4m)

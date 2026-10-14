@@ -1,0 +1,372 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "buckfire-12-recheck.spec.js",
+      "file": "buckfire-12-recheck.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "T12 recheck — homepage",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [homepage]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257124\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 32813,
+                      "error": {
+                        "message": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n",
+                        "stack": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:124:18",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                          "column": 18,
+                          "line": 124
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 122 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(b\u001b[33m.\u001b[39mreviews\u001b[33m,\u001b[39m \u001b[32m'Test 20 review count 927'\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[32m'927'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 124 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m path\u001b[33m.\u001b[39mjoin(\u001b[33mSHOT_DIR\u001b[39m\u001b[33m,\u001b[39m \u001b[32m`${pg.key}-${slug(ti.project.name)}-control-top.png`\u001b[39m) })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 125 |\u001b[39m       expect(errors\u001b[33m.\u001b[39mfilter((m) \u001b[33m=>\u001b[39m \u001b[35m/buckfire-12|cre-t-20/i\u001b[39m\u001b[33m.\u001b[39mtest(m))\u001b[33m,\u001b[39m \u001b[32m'no variation page errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 126 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 127 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                            "column": 18,
+                            "line": 124
+                          },
+                          "message": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\n\n  122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');\n  123 |       }\n> 124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });\n      |                  ^\n  125 |       expect(errors.filter((m) => /buckfire-12|cre-t-20/i.test(m)), 'no variation page errors').toEqual([]);\n  126 |     });\n  127 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:124:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:50:27.406Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257124\"}}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-cbef8-r-baseline-intact-homepage--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                        "column": 18,
+                        "line": 124
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5020,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-14T06:51:01.052Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257124\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-b8579b5cee91c738a04d",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [homepage]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257125\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 31946,
+                      "error": {
+                        "message": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n",
+                        "stack": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:184:18",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                          "column": 18,
+                          "line": 184
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 182 |\u001b[39m       \u001b[90m// Posters loaded\u001b[39m\n \u001b[90m 183 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(() \u001b[33m=>\u001b[39m cards\u001b[33m.\u001b[39mevaluateAll((cs) \u001b[33m=>\u001b[39m cs\u001b[33m.\u001b[39mevery((c) \u001b[33m=>\u001b[39m (c\u001b[33m.\u001b[39mquerySelector(\u001b[32m'.buckfire-12-thumb-img'\u001b[39m)\u001b[33m?\u001b[39m\u001b[33m.\u001b[39mnaturalWidth \u001b[33m||\u001b[39m \u001b[35m0\u001b[39m) \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m))\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m25000\u001b[39m\u001b[33m,\u001b[39m message\u001b[33m:\u001b[39m \u001b[32m'all 3 posters loaded'\u001b[39m })\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 184 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m path\u001b[33m.\u001b[39mjoin(\u001b[33mSHOT_DIR\u001b[39m\u001b[33m,\u001b[39m \u001b[32m`${pg.key}-${slug(ti.project.name)}-variation-section.png`\u001b[39m) })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 185 |\u001b[39m\n \u001b[90m 186 |\u001b[39m       \u001b[90m// Playback: card 1 deep, cards 2-3 load; pause-others\u001b[39m\n \u001b[90m 187 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mlet\u001b[39m i \u001b[33m=\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m i \u001b[33m<\u001b[39m \u001b[35m3\u001b[39m\u001b[33m;\u001b[39m i\u001b[33m++\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                            "column": 18,
+                            "line": 184
+                          },
+                          "message": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\n\n  182 |       // Posters loaded\n  183 |       await expect.poll(() => cards.evaluateAll((cs) => cs.every((c) => (c.querySelector('.buckfire-12-thumb-img')?.naturalWidth || 0) > 0)), { timeout: 25000, message: 'all 3 posters loaded' }).toBeTruthy();\n> 184 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-variation-section.png`) });\n      |                  ^\n  185 |\n  186 |       // Playback: card 1 deep, cards 2-3 load; pause-others\n  187 |       for (let i = 0; i < 3; i++) {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:184:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:51:06.176Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257125\"}}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-e5476--Test-20-coexists-homepage--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                        "column": 18,
+                        "line": 184
+                      }
+                    },
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14827,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-14T06:51:39.067Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257125\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-41134da23f96b66ba85b",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T06:50:26.578Z",
+    "duration": 87511.05600000001,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 2
+  }
+}

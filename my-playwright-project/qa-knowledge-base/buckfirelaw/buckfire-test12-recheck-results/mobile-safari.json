@@ -1,0 +1,1845 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "buckfire-12-recheck.spec.js",
+      "file": "buckfire-12-recheck.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "T12 recheck — homepage",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [homepage]",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257124\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 33663,
+                      "error": {
+                        "message": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n",
+                        "stack": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:124:18",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                          "column": 18,
+                          "line": 124
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 122 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(b\u001b[33m.\u001b[39mreviews\u001b[33m,\u001b[39m \u001b[32m'Test 20 review count 927'\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[32m'927'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 123 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 124 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m path\u001b[33m.\u001b[39mjoin(\u001b[33mSHOT_DIR\u001b[39m\u001b[33m,\u001b[39m \u001b[32m`${pg.key}-${slug(ti.project.name)}-control-top.png`\u001b[39m) })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 125 |\u001b[39m       expect(errors\u001b[33m.\u001b[39mfilter((m) \u001b[33m=>\u001b[39m \u001b[35m/buckfire-12|cre-t-20/i\u001b[39m\u001b[33m.\u001b[39mtest(m))\u001b[33m,\u001b[39m \u001b[32m'no variation page errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 126 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 127 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                            "column": 18,
+                            "line": 124
+                          },
+                          "message": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\n\n  122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');\n  123 |       }\n> 124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });\n      |                  ^\n  125 |       expect(errors.filter((m) => /buckfire-12|cre-t-20/i.test(m)), 'no variation page errors').toEqual([]);\n  126 |     });\n  127 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:124:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:39:48.899Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257124\"}}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-cbef8-r-baseline-intact-homepage--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                        "column": 18,
+                        "line": 124
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-b8579b5cee91c738a04d",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [homepage]",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257125\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 32432,
+                      "error": {
+                        "message": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n",
+                        "stack": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:184:18",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                          "column": 18,
+                          "line": 184
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 182 |\u001b[39m       \u001b[90m// Posters loaded\u001b[39m\n \u001b[90m 183 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(() \u001b[33m=>\u001b[39m cards\u001b[33m.\u001b[39mevaluateAll((cs) \u001b[33m=>\u001b[39m cs\u001b[33m.\u001b[39mevery((c) \u001b[33m=>\u001b[39m (c\u001b[33m.\u001b[39mquerySelector(\u001b[32m'.buckfire-12-thumb-img'\u001b[39m)\u001b[33m?\u001b[39m\u001b[33m.\u001b[39mnaturalWidth \u001b[33m||\u001b[39m \u001b[35m0\u001b[39m) \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m))\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m25000\u001b[39m\u001b[33m,\u001b[39m message\u001b[33m:\u001b[39m \u001b[32m'all 3 posters loaded'\u001b[39m })\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 184 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m path\u001b[33m.\u001b[39mjoin(\u001b[33mSHOT_DIR\u001b[39m\u001b[33m,\u001b[39m \u001b[32m`${pg.key}-${slug(ti.project.name)}-variation-section.png`\u001b[39m) })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 185 |\u001b[39m\n \u001b[90m 186 |\u001b[39m       \u001b[90m// Playback: card 1 deep, cards 2-3 load; pause-others\u001b[39m\n \u001b[90m 187 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mlet\u001b[39m i \u001b[33m=\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m i \u001b[33m<\u001b[39m \u001b[35m3\u001b[39m\u001b[33m;\u001b[39m i\u001b[33m++\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                            "column": 18,
+                            "line": 184
+                          },
+                          "message": "TimeoutError: page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\n\n  182 |       // Posters loaded\n  183 |       await expect.poll(() => cards.evaluateAll((cs) => cs.every((c) => (c.querySelector('.buckfire-12-thumb-img')?.naturalWidth || 0) > 0)), { timeout: 25000, message: 'all 3 posters loaded' }).toBeTruthy();\n> 184 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-variation-section.png`) });\n      |                  ^\n  185 |\n  186 |       // Playback: card 1 deep, cards 2-3 load; pause-others\n  187 |       for (let i = 0; i < 3; i++) {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:184:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:40:23.457Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"\",\"caseHeading\":null,\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052748\":\"1000257125\"}}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-e5476--Test-20-coexists-homepage--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                        "column": 18,
+                        "line": 184
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-41134da23f96b66ba85b",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — medical-malpractice",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [medical-malpractice]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7135,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:40:56.540Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-80890fb27f750fa84d9a",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [medical-malpractice]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14126,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:41:03.755Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-a5b611edb023fd8023b6",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — dog-bite",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [dog-bite]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5775,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:41:17.904Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-1c2e8f776c955718ab68",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [dog-bite]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17903,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:41:23.721Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-49855eb73cb61ca5f080",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — slip-fall-lawyers",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [slip-fall-lawyers]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5787,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:41:41.644Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-a758151af20bae6f22fb",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16472,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:41:47.453Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-d10b01a45eb7cba8e4b8",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — slip-fall-attorneys",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [slip-fall-attorneys]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5837,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:42:03.958Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-e81208b346d35dbae28e",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13638,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:42:09.821Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-2d189487ed8bdba87c89",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — free-case-review",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [free-case-review]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6516,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:42:23.476Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-a71cfec20a7bb89bbe07",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [free-case-review]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16726,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:42:30.034Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-d7b5caabb1f7824dfce5",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — car-accident",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [car-accident]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6162,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:42:46.778Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-d60c57b4ea16c026f7e8",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [car-accident]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12185,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:42:52.960Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-9ab78c98c72c1a036077",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — personal-injury",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [personal-injury]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5665,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:43:05.160Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256554\",\"100052957\":\"1000257638\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-c70217eb537f83a0704e",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [personal-injury]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 21260,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:43:10.842Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":1,\"reviews\":\"927  Reviews\",\"caseHeading\":\"Our Michigan Medical Negligence Case Results\",\"formLabel\":\"Briefly tell us what happened. Our team will call to get the full story.*\",\"exps\":{\"100052508\":\"1000256555\",\"100052957\":\"1000257638\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-4c6b336e40f50e316340",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — bike-accident",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [bike-accident]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5820,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:43:32.121Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-87690c185077bec5b705",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [bike-accident]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20963,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:43:37.958Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-cfce5d1a2668d9d28bd1",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — wrongful-death",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [wrongful-death]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews | \",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6235,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:43:58.940Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews | \",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-749f793251ebafcfc015",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [wrongful-death]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews | \",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11497,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:44:05.193Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews | \",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-837d2a687169ddb5f512",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — nursing-home-abuse",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [nursing-home-abuse]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6442,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:44:16.705Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-1d60b90ff7090142e628",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [nursing-home-abuse]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12776,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:44:23.169Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-0b8309f389a9420aad2c",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — birth-injury",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [birth-injury]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5732,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:44:35.961Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-e9164c10b69ace60d0b6",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [birth-injury]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12171,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:44:41.710Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-ba2e76af1b9dddc6cf1e",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — truck-accidents",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 106,
+          "column": 8,
+          "specs": [
+            {
+              "title": "control: no Client Stories, Test 20 winner baseline intact [truck-accidents]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5796,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:44:53.906Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256554\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-629e56bebd2a103c51e4",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 107,
+              "column": 5
+            },
+            {
+              "title": "variation: section, mapping, layout, playback, Test 20 coexists [truck-accidents]",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "baseline",
+                      "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                    },
+                    {
+                      "type": "playing-after-3-clicks",
+                      "description": "[false,false,true]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13589,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:44:59.737Z",
+                      "annotations": [
+                        {
+                          "type": "baseline",
+                          "description": "{\"t20Teaser\":0,\"reviews\":\"847  Reviews\",\"caseHeading\":\"Our Michigan Personal Injury Case Results\",\"formLabel\":\"What Happened (1-3 sentences is perfect)*\",\"exps\":{\"100052508\":\"1000256555\"}}"
+                        },
+                        {
+                          "type": "playing-after-3-clicks",
+                          "description": "[false,false,true]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-0963506f7bf6e719a79f",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 128,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "T12 recheck — interactions (medical-malpractice)",
+          "file": "buckfire-12-recheck.spec.js",
+          "line": 208,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Test 20 \"What Happens Next?\" modal still opens/closes with Test 12 present",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7383,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:45:13.344Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-675eaf5ab78e9ae078a3",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 211,
+              "column": 3
+            },
+            {
+              "title": "audio overlap: Test 20 modal video vs Test 12 card video",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "state",
+                      "description": "{\"t20Playing\":true,\"t20Time\":0,\"t12Playing\":true}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13250,
+                      "error": {
+                        "message": "Error: Test 12 card video keeps playing behind Test 20 modal (two audio tracks)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: Test 12 card video keeps playing behind Test 20 modal (two audio tracks)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:242:120",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                          "column": 120,
+                          "line": 242
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 240 |\u001b[39m     ti\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'state'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(st) })\u001b[33m;\u001b[39m\n \u001b[90m 241 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m path\u001b[33m.\u001b[39mjoin(\u001b[33mSHOT_DIR\u001b[39m\u001b[33m,\u001b[39m \u001b[32m`interaction-${slug(ti.project.name)}-both-videos.png`\u001b[39m) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 242 |\u001b[39m     expect(st\u001b[33m.\u001b[39mt20Playing \u001b[33m&&\u001b[39m st\u001b[33m.\u001b[39mt12Playing\u001b[33m,\u001b[39m \u001b[32m'Test 12 card video keeps playing behind Test 20 modal (two audio tracks)'\u001b[39m)\u001b[33m.\u001b[39mtoBeFalsy()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 243 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 244 |\u001b[39m\n \u001b[90m 245 |\u001b[39m   test(\u001b[32m'a11y: play control is keyboard reachable with an accessible name (prior BUG-03)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                            "column": 120,
+                            "line": 242
+                          },
+                          "message": "Error: Test 12 card video keeps playing behind Test 20 modal (two audio tracks)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m\n\n  240 |     ti.annotations.push({ type: 'state', description: JSON.stringify(st) });\n  241 |     await page.screenshot({ path: path.join(SHOT_DIR, `interaction-${slug(ti.project.name)}-both-videos.png`) });\n> 242 |     expect(st.t20Playing && st.t12Playing, 'Test 12 card video keeps playing behind Test 20 modal (two audio tracks)').toBeFalsy();\n      |                                                                                                                        ^\n  243 |   });\n  244 |\n  245 |   test('a11y: play control is keyboard reachable with an accessible name (prior BUG-03)', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:242:120"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:45:20.743Z",
+                      "annotations": [
+                        {
+                          "type": "state",
+                          "description": "{\"t20Playing\":true,\"t20Time\":0,\"t12Playing\":true}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-2b3f7-video-vs-Test-12-card-video-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-2b3f7-video-vs-Test-12-card-video-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                        "column": 120,
+                        "line": 242
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-29e4f1935d7736fb87ce",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 223,
+              "column": 3
+            },
+            {
+              "title": "a11y: play control is keyboard reachable with an accessible name (prior BUG-03)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6217,
+                      "error": {
+                        "message": "Error: play control not keyboard-operable: {\"tag\":\"DIV\",\"tabIndex\":-1,\"role\":null,\"label\":null}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: play control not keyboard-operable: {\"tag\":\"DIV\",\"tabIndex\":-1,\"role\":null,\"label\":null}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:248:136",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                          "column": 136,
+                          "line": 248
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 246 |\u001b[39m     \u001b[36mawait\u001b[39m open(page\u001b[33m,\u001b[39m url)\u001b[33m;\u001b[39m\n \u001b[90m 247 |\u001b[39m     \u001b[36mconst\u001b[39m a \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[33mSEL\u001b[39m\u001b[33m.\u001b[39mplay)\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mevaluate((el) \u001b[33m=>\u001b[39m ({ tag\u001b[33m:\u001b[39m el\u001b[33m.\u001b[39mtagName\u001b[33m,\u001b[39m tabIndex\u001b[33m:\u001b[39m el\u001b[33m.\u001b[39mtabIndex\u001b[33m,\u001b[39m role\u001b[33m:\u001b[39m el\u001b[33m.\u001b[39mgetAttribute(\u001b[32m'role'\u001b[39m)\u001b[33m,\u001b[39m label\u001b[33m:\u001b[39m el\u001b[33m.\u001b[39mgetAttribute(\u001b[32m'aria-label'\u001b[39m) }))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 248 |\u001b[39m     expect(a\u001b[33m.\u001b[39mtag \u001b[33m===\u001b[39m \u001b[32m'BUTTON'\u001b[39m \u001b[33m||\u001b[39m (a\u001b[33m.\u001b[39mtabIndex \u001b[33m>=\u001b[39m \u001b[35m0\u001b[39m \u001b[33m&&\u001b[39m a\u001b[33m.\u001b[39mrole \u001b[33m===\u001b[39m \u001b[32m'button'\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m`play control not keyboard-operable: ${JSON.stringify(a)}`\u001b[39m)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 249 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 250 |\u001b[39m\n \u001b[90m 251 |\u001b[39m   test(\u001b[32m'Test 20 case-results heading copy on non-medical pages (baseline content check)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                            "column": 136,
+                            "line": 248
+                          },
+                          "message": "Error: play control not keyboard-operable: {\"tag\":\"DIV\",\"tabIndex\":-1,\"role\":null,\"label\":null}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  246 |     await open(page, url);\n  247 |     const a = await page.locator(SEL.play).first().evaluate((el) => ({ tag: el.tagName, tabIndex: el.tabIndex, role: el.getAttribute('role'), label: el.getAttribute('aria-label') }));\n> 248 |     expect(a.tag === 'BUTTON' || (a.tabIndex >= 0 && a.role === 'button'), `play control not keyboard-operable: ${JSON.stringify(a)}`).toBeTruthy();\n      |                                                                                                                                        ^\n  249 |   });\n  250 |\n  251 |   test('Test 20 case-results heading copy on non-medical pages (baseline content check)', async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:248:136"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:45:34.763Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-34b25-cessible-name-prior-BUG-03--Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-34b25-cessible-name-prior-BUG-03--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                        "column": 136,
+                        "line": 248
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-1711be99e734db514df8",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 245,
+              "column": 3
+            },
+            {
+              "title": "Test 20 case-results heading copy on non-medical pages (baseline content check)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "headings",
+                      "description": "[{\"page\":\"medical-malpractice\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"dog-bite\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"slip-fall-lawyers\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"slip-fall-attorneys\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"free-case-review\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"car-accident\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"personal-injury\",\"heading\":\"Our Michigan Medical Negligence Case Results\"}]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 32364,
+                      "error": {
+                        "message": "Error: Test 20 winner sets \"Medical Negligence\" heading on non-medical PPC pages\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 26\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"dog-bite\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"slip-fall-lawyers\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"slip-fall-attorneys\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"free-case-review\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"car-accident\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"personal-injury\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: Test 20 winner sets \"Medical Negligence\" heading on non-medical PPC pages\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 26\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"dog-bite\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"slip-fall-lawyers\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"slip-fall-attorneys\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"free-case-review\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"car-accident\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"personal-injury\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:259:96",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                          "column": 96,
+                          "line": 259
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 257 |\u001b[39m     ti\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'headings'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(out) })\u001b[33m;\u001b[39m\n \u001b[90m 258 |\u001b[39m     \u001b[36mconst\u001b[39m wrong \u001b[33m=\u001b[39m out\u001b[33m.\u001b[39mfilter((o) \u001b[33m=>\u001b[39m o\u001b[33m.\u001b[39mpage \u001b[33m!==\u001b[39m \u001b[32m'medical-malpractice'\u001b[39m \u001b[33m&&\u001b[39m \u001b[35m/Medical Negligence/i\u001b[39m\u001b[33m.\u001b[39mtest(o\u001b[33m.\u001b[39mheading \u001b[33m||\u001b[39m \u001b[32m''\u001b[39m))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 259 |\u001b[39m     expect(wrong\u001b[33m,\u001b[39m \u001b[32m'Test 20 winner sets \"Medical Negligence\" heading on non-medical PPC pages'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 260 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 261 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 262 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                            "column": 96,
+                            "line": 259
+                          },
+                          "message": "Error: Test 20 winner sets \"Medical Negligence\" heading on non-medical PPC pages\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 26\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"dog-bite\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"slip-fall-lawyers\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"slip-fall-attorneys\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"free-case-review\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"car-accident\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"heading\": \"Our Michigan Medical Negligence Case Results\",\u001b[39m\n\u001b[31m+     \"page\": \"personal-injury\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  257 |     ti.annotations.push({ type: 'headings', description: JSON.stringify(out) });\n  258 |     const wrong = out.filter((o) => o.page !== 'medical-malpractice' && /Medical Negligence/i.test(o.heading || ''));\n> 259 |     expect(wrong, 'Test 20 winner sets \"Medical Negligence\" heading on non-medical PPC pages').toEqual([]);\n      |                                                                                                ^\n  260 |   });\n  261 | });\n  262 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js:259:96"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T06:45:41.589Z",
+                      "annotations": [
+                        {
+                          "type": "headings",
+                          "description": "[{\"page\":\"medical-malpractice\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"dog-bite\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"slip-fall-lawyers\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"slip-fall-attorneys\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"free-case-review\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"car-accident\",\"heading\":\"Our Michigan Medical Negligence Case Results\"},{\"page\":\"personal-injury\",\"heading\":\"Our Michigan Medical Negligence Case Results\"}]"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-914ed-ges-baseline-content-check--Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\buckfire-12-recheck-T12-re-914ed-ges-baseline-content-check--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\buckfire-12-recheck.spec.js",
+                        "column": 96,
+                        "line": 259
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6e8b3cc985e472851595-b4d7e186a2f2dc0b59ae",
+              "file": "buckfire-12-recheck.spec.js",
+              "line": 251,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T06:39:48.283Z",
+    "duration": 385815.951,
+    "expected": 25,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

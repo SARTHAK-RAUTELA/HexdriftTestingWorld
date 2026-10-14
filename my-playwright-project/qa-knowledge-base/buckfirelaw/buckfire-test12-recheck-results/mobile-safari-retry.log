@@ -1,0 +1,50 @@
+
+Running 2 tests using 1 worker
+
+  ✘  1 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] (32.8s)
+  ✓  2 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] (retry #1) (5.0s)
+  ✘  3 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] (31.9s)
+  ✓  4 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] (retry #1) (14.8s)
+
+
+  1) [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] 
+
+    TimeoutError: page.screenshot: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - taking page screenshot[22m
+    [2m  - waiting for fonts to load...[22m
+
+
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+    > 124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });
+          |                  ^
+      125 |       expect(errors.filter((m) => /buckfire-12|cre-t-20/i.test(m)), 'no variation page errors').toEqual([]);
+      126 |     });
+      127 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:124:18
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-cbef8-r-baseline-intact-homepage--Mobile-Safari-iPhone-12-\error-context.md
+
+  2) [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] 
+
+    TimeoutError: page.screenshot: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - taking page screenshot[22m
+    [2m  - waiting for fonts to load...[22m
+
+
+      182 |       // Posters loaded
+      183 |       await expect.poll(() => cards.evaluateAll((cs) => cs.every((c) => (c.querySelector('.buckfire-12-thumb-img')?.naturalWidth || 0) > 0)), { timeout: 25000, message: 'all 3 posters loaded' }).toBeTruthy();
+    > 184 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-variation-section.png`) });
+          |                  ^
+      185 |
+      186 |       // Playback: card 1 deep, cards 2-3 load; pause-others
+      187 |       for (let i = 0; i < 3; i++) {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:184:18
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-e5476--Test-20-coexists-homepage--Mobile-Safari-iPhone-12-\error-context.md
+
+  2 flaky
+    [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] 
+    [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] 

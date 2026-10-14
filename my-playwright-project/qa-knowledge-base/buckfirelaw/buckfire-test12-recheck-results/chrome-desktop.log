@@ -1,0 +1,568 @@
+
+Running 30 tests using 1 worker
+
+  ✓   1 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] (8.9s)
+  ✓   2 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] (47.1s)
+  ✘   3 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — medical-malpractice › control: no Client Stories, Test 20 winner baseline intact [medical-malpractice] (9.2s)
+  ✘   4 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — medical-malpractice › variation: section, mapping, layout, playback, Test 20 coexists [medical-malpractice] (23.7s)
+  ✘   5 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — dog-bite › control: no Client Stories, Test 20 winner baseline intact [dog-bite] (10.5s)
+  ✘   6 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — dog-bite › variation: section, mapping, layout, playback, Test 20 coexists [dog-bite] (47.0s)
+  ✘   7 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-lawyers › control: no Client Stories, Test 20 winner baseline intact [slip-fall-lawyers] (16.2s)
+  ✘   8 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] (27.4s)
+  ✘   9 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-attorneys › control: no Client Stories, Test 20 winner baseline intact [slip-fall-attorneys] (9.0s)
+  ✘  10 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] (28.7s)
+  ✘  11 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — free-case-review › control: no Client Stories, Test 20 winner baseline intact [free-case-review] (7.5s)
+  ✘  12 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — free-case-review › variation: section, mapping, layout, playback, Test 20 coexists [free-case-review] (14.4s)
+  ✘  13 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — car-accident › control: no Client Stories, Test 20 winner baseline intact [car-accident] (9.5s)
+  ✘  14 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] (11.7s)
+  ✘  15 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — personal-injury › control: no Client Stories, Test 20 winner baseline intact [personal-injury] (6.7s)
+  ✘  16 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] (17.2s)
+  ✓  17 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — bike-accident › control: no Client Stories, Test 20 winner baseline intact [bike-accident] (20.3s)
+  ✓  18 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — bike-accident › variation: section, mapping, layout, playback, Test 20 coexists [bike-accident] (25.0s)
+  ✓  19 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — wrongful-death › control: no Client Stories, Test 20 winner baseline intact [wrongful-death] (13.2s)
+  ✓  20 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — wrongful-death › variation: section, mapping, layout, playback, Test 20 coexists [wrongful-death] (16.1s)
+  ✓  21 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — nursing-home-abuse › control: no Client Stories, Test 20 winner baseline intact [nursing-home-abuse] (5.5s)
+  ✓  22 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — nursing-home-abuse › variation: section, mapping, layout, playback, Test 20 coexists [nursing-home-abuse] (9.1s)
+  ✓  23 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — birth-injury › control: no Client Stories, Test 20 winner baseline intact [birth-injury] (5.0s)
+  ✓  24 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — birth-injury › variation: section, mapping, layout, playback, Test 20 coexists [birth-injury] (23.9s)
+  ✓  25 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — truck-accidents › control: no Client Stories, Test 20 winner baseline intact [truck-accidents] (5.0s)
+  ✓  26 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — truck-accidents › variation: section, mapping, layout, playback, Test 20 coexists [truck-accidents] (10.9s)
+  ✓  27 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:211:3 › T12 recheck — interactions (medical-malpractice) › Test 20 "What Happens Next?" modal still opens/closes with Test 12 present (11.0s)
+  ✘  28 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:223:3 › T12 recheck — interactions (medical-malpractice) › audio overlap: Test 20 modal video vs Test 12 card video (9.8s)
+  ✘  29 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) (6.4s)
+  ✘  30 [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) (32.6s)
+
+
+  1) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — medical-malpractice › control: no Client Stories, Test 20 winner baseline intact [medical-malpractice] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    Error: Test 20 "What Happens Next?" card should be in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      119 |       if (pg.t20) {
+      120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+    > 121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+          |                                                                                            ^
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+      124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:121:92
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-3c224-intact-medical-malpractice--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-3c224-intact-medical-malpractice--Chrome-Desktop\error-context.md
+
+  2) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — medical-malpractice › variation: section, mapping, layout, playback, Test 20 coexists [medical-malpractice] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-0793b-exists-medical-malpractice--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-0793b-exists-medical-malpractice--Chrome-Desktop\error-context.md
+
+  3) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — dog-bite › control: no Client Stories, Test 20 winner baseline intact [dog-bite] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-74bbb-r-baseline-intact-dog-bite--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-74bbb-r-baseline-intact-dog-bite--Chrome-Desktop\error-context.md
+
+  4) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — dog-bite › variation: section, mapping, layout, playback, Test 20 coexists [dog-bite] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-e36b0--Test-20-coexists-dog-bite--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-e36b0--Test-20-coexists-dog-bite--Chrome-Desktop\error-context.md
+
+  5) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-lawyers › control: no Client Stories, Test 20 winner baseline intact [slip-fall-lawyers] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-c82c8-e-intact-slip-fall-lawyers--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-c82c8-e-intact-slip-fall-lawyers--Chrome-Desktop\error-context.md
+
+  6) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-e2900-coexists-slip-fall-lawyers--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-e2900-coexists-slip-fall-lawyers--Chrome-Desktop\error-context.md
+
+  7) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-attorneys › control: no Client Stories, Test 20 winner baseline intact [slip-fall-attorneys] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-725dd-intact-slip-fall-attorneys--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-725dd-intact-slip-fall-attorneys--Chrome-Desktop\error-context.md
+
+  8) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-2f057-exists-slip-fall-attorneys--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-2f057-exists-slip-fall-attorneys--Chrome-Desktop\error-context.md
+
+  9) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — free-case-review › control: no Client Stories, Test 20 winner baseline intact [free-case-review] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-df499-ne-intact-free-case-review--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-df499-ne-intact-free-case-review--Chrome-Desktop\error-context.md
+
+  10) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — free-case-review › variation: section, mapping, layout, playback, Test 20 coexists [free-case-review] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-9532d--coexists-free-case-review--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-9532d--coexists-free-case-review--Chrome-Desktop\error-context.md
+
+  11) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — car-accident › control: no Client Stories, Test 20 winner baseline intact [car-accident] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-daa98-seline-intact-car-accident--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-daa98-seline-intact-car-accident--Chrome-Desktop\error-context.md
+
+  12) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-890c8-t-20-coexists-car-accident--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-890c8-t-20-coexists-car-accident--Chrome-Desktop\error-context.md
+
+  13) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — personal-injury › control: no Client Stories, Test 20 winner baseline intact [personal-injury] 
+
+    Error: Test 20 winner deploy (100052957) should be active in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      118 |
+      119 |       if (pg.t20) {
+    > 120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+          |                                                                                                           ^
+      121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:120:107
+
+    Error: Test 20 "What Happens Next?" card should be in control
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      119 |       if (pg.t20) {
+      120 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy (100052957) should be active in control').toBe('1000257638');
+    > 121 |         expect.soft(b.t20Teaser, 'Test 20 "What Happens Next?" card should be in control').toBe(1);
+          |                                                                                            ^
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+      124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:121:92
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-9de1a-ine-intact-personal-injury--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-9de1a-ine-intact-personal-injury--Chrome-Desktop\error-context.md
+
+  14) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-6b65a-0-coexists-personal-injury--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-6b65a-0-coexists-personal-injury--Chrome-Desktop\error-context.md
+
+  15) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:223:3 › T12 recheck — interactions (medical-malpractice) › audio overlap: Test 20 modal video vs Test 12 card video 
+
+    Error: Test 12 card video keeps playing behind Test 20 modal (two audio tracks)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeFalsy[2m()[22m
+
+    Received: [31mtrue[39m
+
+      240 |     ti.annotations.push({ type: 'state', description: JSON.stringify(st) });
+      241 |     await page.screenshot({ path: path.join(SHOT_DIR, `interaction-${slug(ti.project.name)}-both-videos.png`) });
+    > 242 |     expect(st.t20Playing && st.t12Playing, 'Test 12 card video keeps playing behind Test 20 modal (two audio tracks)').toBeFalsy();
+          |                                                                                                                        ^
+      243 |   });
+      244 |
+      245 |   test('a11y: play control is keyboard reachable with an accessible name (prior BUG-03)', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:242:120
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-2b3f7-video-vs-Test-12-card-video-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-2b3f7-video-vs-Test-12-card-video-Chrome-Desktop\error-context.md
+
+  16) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) 
+
+    Error: play control not keyboard-operable: {"tag":"DIV","tabIndex":-1,"role":null,"label":null}
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      246 |     await open(page, url);
+      247 |     const a = await page.locator(SEL.play).first().evaluate((el) => ({ tag: el.tagName, tabIndex: el.tabIndex, role: el.getAttribute('role'), label: el.getAttribute('aria-label') }));
+    > 248 |     expect(a.tag === 'BUTTON' || (a.tabIndex >= 0 && a.role === 'button'), `play control not keyboard-operable: ${JSON.stringify(a)}`).toBeTruthy();
+          |                                                                                                                                        ^
+      249 |   });
+      250 |
+      251 |   test('Test 20 case-results heading copy on non-medical pages (baseline content check)', async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:248:136
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-34b25-cessible-name-prior-BUG-03--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-34b25-cessible-name-prior-BUG-03--Chrome-Desktop\error-context.md
+
+  17) [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) 
+
+    Error: Test 20 winner sets "Medical Negligence" heading on non-medical PPC pages
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 26[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "dog-bite",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "slip-fall-lawyers",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "slip-fall-attorneys",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "free-case-review",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "car-accident",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "personal-injury",[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      257 |     ti.annotations.push({ type: 'headings', description: JSON.stringify(out) });
+      258 |     const wrong = out.filter((o) => o.page !== 'medical-malpractice' && /Medical Negligence/i.test(o.heading || ''));
+    > 259 |     expect(wrong, 'Test 20 winner sets "Medical Negligence" heading on non-medical PPC pages').toEqual([]);
+          |                                                                                                ^
+      260 |   });
+      261 | });
+      262 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:259:96
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-914ed-ges-baseline-content-check--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-914ed-ges-baseline-content-check--Chrome-Desktop\error-context.md
+
+  17 failed
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — medical-malpractice › control: no Client Stories, Test 20 winner baseline intact [medical-malpractice] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — medical-malpractice › variation: section, mapping, layout, playback, Test 20 coexists [medical-malpractice] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — dog-bite › control: no Client Stories, Test 20 winner baseline intact [dog-bite] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — dog-bite › variation: section, mapping, layout, playback, Test 20 coexists [dog-bite] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-lawyers › control: no Client Stories, Test 20 winner baseline intact [slip-fall-lawyers] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-attorneys › control: no Client Stories, Test 20 winner baseline intact [slip-fall-attorneys] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — free-case-review › control: no Client Stories, Test 20 winner baseline intact [free-case-review] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — free-case-review › variation: section, mapping, layout, playback, Test 20 coexists [free-case-review] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — car-accident › control: no Client Stories, Test 20 winner baseline intact [car-accident] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — personal-injury › control: no Client Stories, Test 20 winner baseline intact [personal-injury] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:223:3 › T12 recheck — interactions (medical-malpractice) › audio overlap: Test 20 modal video vs Test 12 card video 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) 
+    [Chrome Desktop] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) 
+  13 passed (9.9m)

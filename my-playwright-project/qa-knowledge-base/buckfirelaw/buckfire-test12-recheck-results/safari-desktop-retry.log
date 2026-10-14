@@ -1,0 +1,260 @@
+
+Running 5 tests using 1 worker
+
+  ✘  1 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] (18.6s)
+  ✘  2 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] (retry #1) (12.8s)
+  ✘  3 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] (12.5s)
+  ✘  4 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] (retry #1) (12.2s)
+  ✘  5 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] (11.8s)
+  ✘  6 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] (retry #1) (16.7s)
+  ✘  7 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] (16.5s)
+  ✘  8 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] (retry #1) (11.8s)
+  ✓  9 [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — bike-accident › variation: section, mapping, layout, playback, Test 20 coexists [bike-accident] (12.3s)
+
+
+  1) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-e2900-coexists-slip-fall-lawyers--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-e2900-coexists-slip-fall-lawyers--Safari-Desktop\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-e2900-coexists-slip-fall-lawyers--Safari-Desktop-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-e2900-coexists-slip-fall-lawyers--Safari-Desktop-retry1\error-context.md
+
+  2) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-2f057-exists-slip-fall-attorneys--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-2f057-exists-slip-fall-attorneys--Safari-Desktop\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-2f057-exists-slip-fall-attorneys--Safari-Desktop-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-2f057-exists-slip-fall-attorneys--Safari-Desktop-retry1\error-context.md
+
+  3) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-890c8-t-20-coexists-car-accident--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-890c8-t-20-coexists-car-accident--Safari-Desktop\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-890c8-t-20-coexists-car-accident--Safari-Desktop-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-890c8-t-20-coexists-car-accident--Safari-Desktop-retry1\error-context.md
+
+  4) [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] 
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    Error: Test 20 card present alongside Test 12
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      136 |       if (pg.t20) {
+      137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+    > 138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+          |                                                                            ^
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+      141 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:138:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-6b65a-0-coexists-personal-injury--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-6b65a-0-coexists-personal-injury--Safari-Desktop\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Test 20 winner deploy should be active in variation too
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"1000257638"[39m
+    Received: [31mundefined[39m
+
+      135 |       // Test 20 winner baseline must be identical to control
+      136 |       if (pg.t20) {
+    > 137 |         expect.soft(b.exps['100052957'], 'Test 20 winner deploy should be active in variation too').toBe('1000257638');
+          |                                                                                                     ^
+      138 |         expect.soft(b.t20Teaser, 'Test 20 card present alongside Test 12').toBe(1);
+      139 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      140 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:137:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-6b65a-0-coexists-personal-injury--Safari-Desktop-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-6b65a-0-coexists-personal-injury--Safari-Desktop-retry1\error-context.md
+
+  4 failed
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] 
+    [Safari Desktop] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] 
+  1 passed (2.2m)

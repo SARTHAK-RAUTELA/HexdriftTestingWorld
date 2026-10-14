@@ -215,3 +215,20 @@ still 100052508); homepage uses a **separate** experiment, `?cro_mode=qa&_conv_e
   not investigated further since it's out of scope for the Client Stories section, but worth a manual
   check on whether it can pop up mid-video and block interaction. See `_client-notes.md` — Buckfire pages
   routinely run more than one experiment at once (previously body class `cre-t-11`, now `cre-t-21`).
+
+---
+
+## Update 2026-10-14 — pre-launch re-check (Test 20 winner as control)
+
+**Spec:** `testing/buckfire-12-recheck.spec.js` · recon/builder: `testing/buckfire-12-recon/` · results: `buckfire-test12-recheck-results/` · screenshots: `buckfire-test12-recheck-screenshots/` · report: `local_testing/Local2/buckfire-test12-recheck-qa-report.html`
+**Browsers:** Chrome Desktop, Safari Desktop, Mobile Chrome (Pixel 5), Mobile Safari (iPhone 12)
+**Result:** Test 12 page checks **104/104** (control + variation × 13 pages × 4 browsers; 10 needed an isolated re-run for video/poster/page-load/WebKit-screenshot timeouts). 77/120 fully green; the rest are Test 20 state, the interaction bug and BUG-03.
+
+Client ask: launch once Test 20 is paused, with the **Test 20 winner as control**, then send preview links for a final check.
+
+- **BLOCKER — Test 20 not paused, Convert state flip-flopping.** Test 20 A/B = `100052695` (3 arms 1000256999/257000/257001, 33% each; arm 1000256999 has no "What Happens Next?" card). Winner = deploy `100052957` var 1000257638 (`variation_name "Variation C"`, `cre-t-20-*`). Both target location 100011864 = 7 PPC pages only (med-mal, dog-bite, slip-fall ×2, free-case-review, car, personal-injury). Served config alternated during the day: deploy ~10:45 → A/B ~11:30 → deploy ~12:00 → A/B 12:16. Re-read `window.convert.data.experiences` before any re-test.
+- **NEW MEDIUM — two videos play at once:** a Client Stories card keeps playing when the Test 20 "What Happens Next?" modal video starts (measured t12Playing + t20Playing both true on Chrome, Pixel 5, iPhone 12). Fix on the Test 12 side with a capture-phase `play` listener that pauses every other `<video>`.
+- **BUG-03 still live** (play button is a non-focusable `<div>`).
+- **Test 20 baseline content:** Variation C sets "Our Michigan Medical Negligence Case Results" on all 7 pages, including non-medical ones.
+- **Confirm with client:** Bike, Wrongful Death, Nursing Home, Birth Injury and Truck aren't in the Test 20 location, so their control is the original page.
+- Harness: `cre-t-21` overlay suppressed with cookies `cre-t-21-overlay-dismissed/shown/conversion-done=1`; Test 20 checks are `expect.soft` so Test 12 assertions still run when the visitor lands in a Test 20 A/B arm.

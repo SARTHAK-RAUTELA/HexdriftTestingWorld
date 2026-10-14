@@ -1,0 +1,178 @@
+
+Running 30 tests using 1 worker
+
+  ✘   1 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] (33.7s)
+  ✘   2 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] (32.4s)
+  ✓   3 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — medical-malpractice › control: no Client Stories, Test 20 winner baseline intact [medical-malpractice] (7.1s)
+  ✓   4 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — medical-malpractice › variation: section, mapping, layout, playback, Test 20 coexists [medical-malpractice] (14.1s)
+  ✓   5 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — dog-bite › control: no Client Stories, Test 20 winner baseline intact [dog-bite] (5.8s)
+  ✓   6 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — dog-bite › variation: section, mapping, layout, playback, Test 20 coexists [dog-bite] (17.9s)
+  ✓   7 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-lawyers › control: no Client Stories, Test 20 winner baseline intact [slip-fall-lawyers] (5.8s)
+  ✓   8 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-lawyers › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-lawyers] (16.5s)
+  ✓   9 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — slip-fall-attorneys › control: no Client Stories, Test 20 winner baseline intact [slip-fall-attorneys] (5.8s)
+  ✓  10 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — slip-fall-attorneys › variation: section, mapping, layout, playback, Test 20 coexists [slip-fall-attorneys] (13.6s)
+  ✓  11 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — free-case-review › control: no Client Stories, Test 20 winner baseline intact [free-case-review] (6.5s)
+  ✓  12 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — free-case-review › variation: section, mapping, layout, playback, Test 20 coexists [free-case-review] (16.7s)
+  ✓  13 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — car-accident › control: no Client Stories, Test 20 winner baseline intact [car-accident] (6.2s)
+  ✓  14 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — car-accident › variation: section, mapping, layout, playback, Test 20 coexists [car-accident] (12.2s)
+  ✓  15 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — personal-injury › control: no Client Stories, Test 20 winner baseline intact [personal-injury] (5.7s)
+  ✓  16 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — personal-injury › variation: section, mapping, layout, playback, Test 20 coexists [personal-injury] (21.3s)
+  ✓  17 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — bike-accident › control: no Client Stories, Test 20 winner baseline intact [bike-accident] (5.8s)
+  ✓  18 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — bike-accident › variation: section, mapping, layout, playback, Test 20 coexists [bike-accident] (21.0s)
+  ✓  19 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — wrongful-death › control: no Client Stories, Test 20 winner baseline intact [wrongful-death] (6.2s)
+  ✓  20 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — wrongful-death › variation: section, mapping, layout, playback, Test 20 coexists [wrongful-death] (11.5s)
+  ✓  21 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — nursing-home-abuse › control: no Client Stories, Test 20 winner baseline intact [nursing-home-abuse] (6.4s)
+  ✓  22 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — nursing-home-abuse › variation: section, mapping, layout, playback, Test 20 coexists [nursing-home-abuse] (12.8s)
+  ✓  23 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — birth-injury › control: no Client Stories, Test 20 winner baseline intact [birth-injury] (5.7s)
+  ✓  24 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — birth-injury › variation: section, mapping, layout, playback, Test 20 coexists [birth-injury] (12.2s)
+  ✓  25 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — truck-accidents › control: no Client Stories, Test 20 winner baseline intact [truck-accidents] (5.8s)
+  ✓  26 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — truck-accidents › variation: section, mapping, layout, playback, Test 20 coexists [truck-accidents] (13.6s)
+  ✓  27 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:211:3 › T12 recheck — interactions (medical-malpractice) › Test 20 "What Happens Next?" modal still opens/closes with Test 12 present (7.4s)
+  ✘  28 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:223:3 › T12 recheck — interactions (medical-malpractice) › audio overlap: Test 20 modal video vs Test 12 card video (13.3s)
+  ✘  29 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) (6.2s)
+  ✘  30 [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) (32.4s)
+
+
+  1) [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] 
+
+    TimeoutError: page.screenshot: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - taking page screenshot[22m
+    [2m  - waiting for fonts to load...[22m
+
+
+      122 |         expect.soft(b.reviews, 'Test 20 review count 927').toContain('927');
+      123 |       }
+    > 124 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-control-top.png`) });
+          |                  ^
+      125 |       expect(errors.filter((m) => /buckfire-12|cre-t-20/i.test(m)), 'no variation page errors').toEqual([]);
+      126 |     });
+      127 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:124:18
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-cbef8-r-baseline-intact-homepage--Mobile-Safari-iPhone-12-\error-context.md
+
+  2) [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] 
+
+    TimeoutError: page.screenshot: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - taking page screenshot[22m
+    [2m  - waiting for fonts to load...[22m
+
+
+      182 |       // Posters loaded
+      183 |       await expect.poll(() => cards.evaluateAll((cs) => cs.every((c) => (c.querySelector('.buckfire-12-thumb-img')?.naturalWidth || 0) > 0)), { timeout: 25000, message: 'all 3 posters loaded' }).toBeTruthy();
+    > 184 |       await page.screenshot({ path: path.join(SHOT_DIR, `${pg.key}-${slug(ti.project.name)}-variation-section.png`) });
+          |                  ^
+      185 |
+      186 |       // Playback: card 1 deep, cards 2-3 load; pause-others
+      187 |       for (let i = 0; i < 3; i++) {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:184:18
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-e5476--Test-20-coexists-homepage--Mobile-Safari-iPhone-12-\error-context.md
+
+  3) [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:223:3 › T12 recheck — interactions (medical-malpractice) › audio overlap: Test 20 modal video vs Test 12 card video 
+
+    Error: Test 12 card video keeps playing behind Test 20 modal (two audio tracks)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeFalsy[2m()[22m
+
+    Received: [31mtrue[39m
+
+      240 |     ti.annotations.push({ type: 'state', description: JSON.stringify(st) });
+      241 |     await page.screenshot({ path: path.join(SHOT_DIR, `interaction-${slug(ti.project.name)}-both-videos.png`) });
+    > 242 |     expect(st.t20Playing && st.t12Playing, 'Test 12 card video keeps playing behind Test 20 modal (two audio tracks)').toBeFalsy();
+          |                                                                                                                        ^
+      243 |   });
+      244 |
+      245 |   test('a11y: play control is keyboard reachable with an accessible name (prior BUG-03)', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:242:120
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-2b3f7-video-vs-Test-12-card-video-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-2b3f7-video-vs-Test-12-card-video-Mobile-Safari-iPhone-12-\error-context.md
+
+  4) [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) 
+
+    Error: play control not keyboard-operable: {"tag":"DIV","tabIndex":-1,"role":null,"label":null}
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+
+    Received: [31mfalse[39m
+
+      246 |     await open(page, url);
+      247 |     const a = await page.locator(SEL.play).first().evaluate((el) => ({ tag: el.tagName, tabIndex: el.tabIndex, role: el.getAttribute('role'), label: el.getAttribute('aria-label') }));
+    > 248 |     expect(a.tag === 'BUTTON' || (a.tabIndex >= 0 && a.role === 'button'), `play control not keyboard-operable: ${JSON.stringify(a)}`).toBeTruthy();
+          |                                                                                                                                        ^
+      249 |   });
+      250 |
+      251 |   test('Test 20 case-results heading copy on non-medical pages (baseline content check)', async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:248:136
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-34b25-cessible-name-prior-BUG-03--Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-34b25-cessible-name-prior-BUG-03--Mobile-Safari-iPhone-12-\error-context.md
+
+  5) [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) 
+
+    Error: Test 20 winner sets "Medical Negligence" heading on non-medical PPC pages
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 26[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "dog-bite",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "slip-fall-lawyers",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "slip-fall-attorneys",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "free-case-review",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "car-accident",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "heading": "Our Michigan Medical Negligence Case Results",[39m
+    [31m+     "page": "personal-injury",[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      257 |     ti.annotations.push({ type: 'headings', description: JSON.stringify(out) });
+      258 |     const wrong = out.filter((o) => o.page !== 'medical-malpractice' && /Medical Negligence/i.test(o.heading || ''));
+    > 259 |     expect(wrong, 'Test 20 winner sets "Medical Negligence" heading on non-medical PPC pages').toEqual([]);
+          |                                                                                                ^
+      260 |   });
+      261 | });
+      262 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\buckfire-12-recheck.spec.js:259:96
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\buckfire-12-recheck-T12-re-914ed-ges-baseline-content-check--Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\buckfire-12-recheck-T12-re-914ed-ges-baseline-content-check--Mobile-Safari-iPhone-12-\error-context.md
+
+  5 failed
+    [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:107:5 › T12 recheck — homepage › control: no Client Stories, Test 20 winner baseline intact [homepage] 
+    [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:128:5 › T12 recheck — homepage › variation: section, mapping, layout, playback, Test 20 coexists [homepage] 
+    [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:223:3 › T12 recheck — interactions (medical-malpractice) › audio overlap: Test 20 modal video vs Test 12 card video 
+    [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:245:3 › T12 recheck — interactions (medical-malpractice) › a11y: play control is keyboard reachable with an accessible name (prior BUG-03) 
+    [Mobile Safari (iPhone 12)] › testing\buckfire-12-recheck.spec.js:251:3 › T12 recheck — interactions (medical-malpractice) › Test 20 case-results heading copy on non-medical pages (baseline content check) 
+  25 passed (6.4m)

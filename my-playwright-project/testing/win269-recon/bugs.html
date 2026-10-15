@@ -1,0 +1,68 @@
+<h2>Summary</h2>
+<ul>
+<li><b>The visuals match the wireframe at 1440px+.</b> The six underlined links show in 2 rows × 3, in wireframe order, with wireframe copy and icons, on the light-blue (#edf4fc) 24px-radius card. They replace the native 4-icon bar, and they're hidden at ≤1000px like the control bar. Control is unchanged.</li>
+<li><b>Working destinations:</b> Free Shipping &amp; Returns opens “Can I return or exchange my mattress?”, 150+ Showrooms lands on WIN248's “Try The WinkBed In Person”, and Handmade in the U.S.A. and Rated 4.8 stars land correctly. No URL hash change and no cre-t-269 errors.</li>
+<li><b>BUG-01 (High), tracking:</b> only 3 of the 6 benefits fire their own goal. Showrooms, Handmade in the U.S.A. and Rated 4.8 stars fire only the any-benefit goal.</li>
+<li><b>BUG-02 (High), destination:</b> on the first click after page load, 120-Night Home Trial and Lifetime Warranty land in the wrong place, because the page reflows during the smooth scroll. Same root cause as WIN282 BUG-01.</li>
+<li><b>BUG-03 (Medium), layout:</b> from 1001 to 1439px (1280/1366 laptops) the bar renders 2 per row × 3 rows instead of the wireframe's 3 per row.</li>
+<li><b>BUG-06 (Medium):</b> 150+ Showrooms lands on the Trial section when WIN248's store-locator section isn't present (seen on Safari).</li>
+<li><b>Low:</b> keyboard Enter doesn't fire goals; icon/text columns are misaligned in the 2-column layout.</li>
+</ul>
+
+<h2>Preview links &amp; code</h2>
+<table><tr><th>Arm</th><th>URL</th><th>Local code</th><th>Body class</th></tr>
+<tr><td>Control</td><td><code>https://www.winkbeds.com/pages/shop-winkbed?convert_action=convert_vpreview&amp;convert_e=100350736&amp;convert_v=1003184950</code></td><td>vB.js (vB.css empty)</td><td><code>cre-t-269-control</code></td></tr>
+<tr><td>Variation</td><td><code>https://www.winkbeds.com/pages/shop-winkbed?convert_action=convert_vpreview&amp;convert_e=100350736&amp;convert_v=1003184951</code></td><td>va3.js / va3.css</td><td><code>cre-t-269-d</code></td></tr></table>
+<p class="muted">The deployed DOM matches the local va3.js: same classes, copy, hrefs, icon URLs and computed CSS. Both links work.</p>
+
+<h2>Bugs</h2>
+
+<div class="bug"><span class="tag high">High</span><b>BUG-01: Showrooms, Handmade in the U.S.A. and Rated 4.8 stars have no per-benefit goal</b>
+<p>The ticket asks for “WIN269 - Clicks on {{Benefit Name}} Benefit (x 6 goals)” plus “Clicks on any Benefit”. Exp 100350736 has 8 per-benefit code-trigger goals attached (<code>100334659</code>–<code>100334666</code>) plus any-benefit <code>100334667</code>. But <code>triggerBenefitGoals()</code> in va3.js still maps only the control's 4 benefits:</p>
+<table><tr><th>Variation link</th><th>Goals fired</th></tr>
+<tr><td>120-Night Home Trial</td><td>100334667 + 100334659 ✅</td></tr>
+<tr><td>Free Shipping &amp; Returns</td><td>100334667 + 100334660 ✅</td></tr>
+<tr><td>Lifetime Warranty</td><td>100334667 + 100334662 ✅</td></tr>
+<tr><td>150+ Showrooms</td><td>100334667 only ❌</td></tr>
+<tr><td>Handmade in the U.S.A.</td><td>100334667 only ❌</td></tr>
+<tr><td>Rated 4.8 stars</td><td>100334667 only ❌</td></tr></table>
+<p>The “financing available” entry (100334666) can never match in the variation. Goals 100334661/663/664/665 are attached but never fired by either arm. <b>Fix:</b> add the 3 missing text→goal-ID mappings. Please confirm which IDs are Showrooms, U.S.A. and Rating; Convert doesn't expose goal names client-side. Control is correct: its 4 benefits fire 659/662/660/666 + 667.</p>
+</div>
+
+<div class="bug"><span class="tag high">High</span><b>BUG-02: 120-Night Home Trial and Lifetime Warranty land in the wrong place on the first click</b>
+<p><code>scrollToElement()</code> computes the target Y once, then smooth-scrolls. While the page scrolls, content above these two targets changes height: <code>#shopify-section-shop-box</code> 550→0, and WIN248's <code>.cre-t-248-section</code> is injected and grows 261→810px. The browser ends at a stale Y.</p>
+<ul>
+<li><b>Trial:</b> missed on every fresh-load click in Chrome recon (4/4), with the section top at −111 to −372px. The trial heading is hidden, and the user sees the end of the trial section and the warranty promise. Waiting 20s after load before clicking still missed 3/3.</li>
+<li><b>Warranty:</b> lands 150–280px short (top 309–439) or overshoots (−372).</li>
+<li>A second click, once the page has settled, lands correctly (top 160), which confirms it's reflow during the first scroll.</li>
+<li><b>Per browser (fresh-load run):</b> Trial missed on Chrome, Edge, Firefox and Safari. Warranty missed on Chrome, Edge and Firefox and landed on Safari.</li>
+<li><b>Safari, Free Shipping &amp; Returns:</b> it landed correctly on the opened question (top 161), then about 2s later the page reflowed and left the user at the <b>footer</b> (top −841). Firefox landed 260px low, but the opened answer stayed fully visible, which is acceptable.</li>
+</ul>
+<p>U.S.A. and Rating sit above the reflowing sections and land correctly. Showrooms already has a one-shot re-check, and Shipping waits 350ms before measuring. <b>Fix:</b> after the smooth scroll ends, re-measure and correct until the target's top is stable, for example re-checking at 600/1200/2000ms. The same issue is open on WIN282 (mobile), so both should share the fix.</p>
+<div class="shots">{{img:land-variation-chromium-1440-trial.png|Trial click: lands past the trial heading, on the warranty promise}}{{img:Chrome-Desktop-V8-land-warranty.png|Warranty click (fresh load): wrong landing}}</div>
+</div>
+
+<div class="bug med"><span class="tag med">Medium</span><b>BUG-03: 1001–1439px renders 2 links per row (3 rows) instead of the wireframe's 3 per row</b>
+<p>va3.css uses <code>grid-template-columns: repeat(2, auto)</code> and switches to 3 columns only at <code>min-width:1440px</code>. At 1280/1366 the bar is 565px wide, and the 3-column content needs about 536px, so 3 per row fits. 1280–1439 covers most laptop traffic. The reading order also changes: row 2 becomes Showrooms / Warranty. Unless agreed with the client, use 3 columns from about 1200px and keep 2 columns for 1001–1199, where it really doesn't fit (434px bar at 1024).</p>
+<div class="shots">{{img:Chrome-Desktop-V3-variation-bar-1366.png|1366px: 2 per row, 3 rows}}{{img:Chrome-Desktop-V1-variation-bar-1440.png|1440px: 3 per row (matches wireframe)}}</div>
+</div>
+
+<div class="bug med"><span class="tag med">Medium</span><b>BUG-06: 150+ Showrooms lands on the Trial section when WIN248's store locator isn't on the page (seen on Safari)</b>
+<p>Showrooms scrolls to the bottom of <code>#shopify-section-shop-frames</code> minus 100px, which is where WIN248 injects “Try The WinkBed In Person”. In the Safari (WebKit) run, that section hadn't loaded and wasn't found during the 7s window. The page landed on “Our 120-Night, Risk-Free Trial…”, so a user clicking “150+ Showrooms” sees the trial section. Chrome, Edge and Firefox found the WIN248 heading (top 189–190px). This is the same issue as WIN282 BUG-02, where the client approved <code>/pages/store-locator</code> as the fallback. <b>Fix:</b> target <code>.cre-t-248-section</code> directly, and if it's missing, navigate to <code>/pages/store-locator</code>.</p>
+<div class="shots">{{img:Safari-Desktop-V8-land-showrooms.png|Safari: Showrooms click → Trial section (no WIN248 section)}}{{img:Safari-Desktop-V8-land-shipping.png|Safari: Shipping landed on FAQ, then the page reflowed to the footer}}</div>
+</div>
+
+<div class="bug low"><span class="tag low">Low</span><b>BUG-04: keyboard activation (Enter) scrolls but fires no goal</b>
+<p>Goals are bound to <code>mousedown</code>, so keyboard users' clicks aren't counted, even though the scroll works. Fix: fire goals from the existing <code>click</code> capture listener, which also fires on Enter, and drop the mousedown listener.</p></div>
+
+<div class="bug low"><span class="tag low">Low</span><b>BUG-05: icon/text columns don't line up in the 2-column layout</b>
+<p>At 1001–1439px the left-column labels start up to 4px apart, and in the right column “Free Shipping &amp; Returns” starts about 17px right of “Lifetime Warranty” and “Rated 4.8 stars”, because the icon box widths differ (truck 36px, shield 25px, star 17px). Also, <code>.cre-t-269-link { font-size:14px }</code> in the 1001–1279 query has no effect, because <code>.cre-t-269-text</code> sets 15px directly.</p></div>
+
+<h2>Notes / questions</h2>
+<div class="bug obs"><span class="tag obs">Question</span><b>Q1: copy vs. WIN282</b>
+<p>The wireframe note asks for “consistency in copy, icons, design and link destinations as WIN282”. The WIN282 V1 reference shown reads “120-Night Trial / 100+ Showrooms / 4.8-Star Rating / Made in the USA”, while the WIN269 variation mock reads “120-Night Home Trial / 150+ Showrooms / Rated 4.8 stars / Handmade in the U.S.A.”. The build follows the WIN269 mock. Please confirm that's intended, especially 150+ vs 100+ showrooms.</p></div>
+<div class="bug obs"><span class="tag obs">Note</span><b>Audience / breakpoint</b>
+<p>The bar shows only above 1000px. Both arms also hide the native bar at ≤1000px, so a tablet that Convert buckets as “desktop” sees no bar in either arm, and the comparison stays fair.</p></div>
+
+<h2>Wireframe vs live</h2>
+<div class="shots">{{img:wireframe.png|Wireframe (Group 1944.png)}}{{img:variation-chromium-1440.png|Variation live, 1440px}}{{img:control-chromium-1440-bar.png|Control bar, 1440px}}{{img:variation-chromium-1024.png|Variation, 1024px (2 per row)}}{{img:land-variation-chromium-1440-shipping.png|Free Shipping &amp; Returns → FAQ opened on “Can I return or exchange”}}{{img:land-variation-chromium-1440-showrooms.png|150+ Showrooms → WIN248 “Try The WinkBed In Person”}}</div>

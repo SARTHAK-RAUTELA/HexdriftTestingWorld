@@ -1,57 +1,220 @@
-html body.cre-t-202.cre-t-283 .cre-t-283-subtotal-line {
-    order: 2;
+/* hidden by default, shown only on desktop widths (control hides the bar at 1000px and below) */
+html body .order__benefits .cre-t-269-container {
+  display: none;
 }
 
-html body.cre-t-283 .cre-t-283-subtotal-line {
-    color: #fff;
-    font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+@media screen and (min-width: 1001px) {
+  /* swap: our bar replaces the 4 icon bar, only when it was injected */
+  html body .order__benefits:has(.cre-t-269-container) .order__benefits-items {
+    display: none;
+  }
+
+  html body .order__benefits .cre-t-269-container {
+    display: block;
+    box-sizing: border-box;
+    background-color: #edf4fc;
+    border-radius: 24px;
+  }
+
+  html body .order__benefits .cre-t-269-wrapper {
+    padding: 28px 24px;
+  }
+
+  html body .order__benefits .cre-t-269-main {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-evenly;
+    gap: 14px 16px;
+  }
+
+  html body .order__benefits .cre-t-269-item {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  html body .order__benefits .cre-t-269-link-container {
+    display: flex;
+    margin: 0;
+  }
+
+  html body .order__benefits .cre-t-269-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #030c2d;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  html body .order__benefits .cre-t-269-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 30px;
+    height: 24px;
+  }
+
+  html body .order__benefits .cre-t-269-icon {
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    height: 24px;
+    max-width: none;
+  }
+
+  /* icon files have different padding, sizes are set so every glyph looks the same height */
+ html body .order__benefits .cre-t-269-link[data-cre-target="trial"]{
+    gap: 4px;
+ }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="trial"] .cre-t-269-icon-container{
+    width: 21px;
+    height: 20px;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="trial"] .cre-t-269-icon{
+    width: 21px;
+    height: 20px;
+    object-fit: cover;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="shipping"],
+  html body .order__benefits .cre-t-269-link[data-cre-target="showrooms"]{
+        gap: 6px;
+    }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="shipping"] .cre-t-269-icon-container{
+    width: 36px;
+    height: 22px;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="shipping"] .cre-t-269-icon{
+    width: 36px;
+    height: 22px;
+    object-fit: cover;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="showrooms"] .cre-t-269-icon-container{
+    width: 15.999px;
+    height: 18.667px;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="showrooms"] .cre-t-269-icon{
+    width: 15.999px;
+    height: 18.667px;
+    object-fit: cover;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="warranty"]{
+        gap: 3px;
+    }
+html body .order__benefits .cre-t-269-item.cre-t-269-item-4{
+    margin-left: -3px
+}
+  html body .order__benefits .cre-t-269-link[data-cre-target="warranty"] .cre-t-269-icon-container{
+    width: 25px;
+height: 22px;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="warranty"] .cre-t-269-icon{
+    width: 25px;
+height: 22px;
+    object-fit: cover;
+  }
+
+
+  html body .order__benefits .cre-t-269-item.cre-t-269-item-5{
+    justify-content: end;
+    margin-right: 4px;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="usa"]{
+        gap: 7px;
+    }
+  html body .order__benefits .cre-t-269-link[data-cre-target="usa"] .cre-t-269-icon-container{
+    width: 19px;
+height: 16px;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="usa"] .cre-t-269-icon{
+    width: 19px;
+height: 16px;
+    object-fit: cover;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="rating"]{
+        gap: 7px;
+    }
+  html body .order__benefits .cre-t-269-link[data-cre-target="rating"] .cre-t-269-icon-container{
+    width: 17px;
+height: 19px;
+  }
+
+  html body .order__benefits .cre-t-269-link[data-cre-target="rating"] .cre-t-269-icon{
+    width: 17px;
+height: 19px;
+    object-fit: cover;
+  }
+
+  html body .order__benefits .cre-t-269-text {
+    color: #030C2D;
+    font-family: inherit;
     font-size: 15px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 20.7px;
-    margin: 0 0 14px 0;
-    text-align: center;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.45px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
 }
 
-html body.cre-t-283 .cre-t-283-subtotal-line strong {
-    font-weight: 600;
+@media screen and (min-width: 1001px) and (max-width: 1279px) {
+  html body .order__benefits .cre-t-269-wrapper {
+    padding: 28px 16px;
+  }
+
+  html body .order__benefits .cre-t-269-main {
+    gap: 14px 8px;
+  }
+
+  html body .order__benefits .cre-t-269-link {
+    font-size: 14px;
+    gap: 6px;
+  }
 }
 
-html body.cre-t-283 .cro-subtotal-line {
-    display: none !important;
+@media screen and (min-width: 1001px) and (max-width: 1100px) {
+  /* touch-size tap targets on tablet landscape */
+  html body .order__benefits .cre-t-269-wrapper {
+    padding: 18px 16px;
+  }
+
+  html body .order__benefits .cre-t-269-main {
+    gap: 0 8px;
+  }
+
+  html body .order__benefits .cre-t-269-link {
+    min-height: 40px;
+  }
 }
 
-html body.cre-t-283 .cre-t-283-add-btn-original {
-    display: none !important;
-}
+@media screen and (min-width: 1440px) {
+  html body .order__benefits .cre-t-269-wrapper {
+    padding: 34px 32px;
+  }
 
-html body.cre-t-283 .cre-t-283-subtotal-line span {
-    color: #22C55E;
-}
-
-html body.cre-t-283 .cre-t-283-subtotal-line .strike {
-    color: rgba(255, 255, 255, 0.60);
-    padding-left: 3px;
-    font-weight: 400;
-    text-decoration: line-through;
-}
-
-html body.cre-t-283 .cre-t-283-add-btn {
-    text-align: center;
-    font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
-    font-size: 16.7px !important;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 2.8px;
-}
-
-@media(max-width: 360px) {
-    html body.cre-t-283 .cre-t-283-subtotal-line {
-        font-size: 13px !important;
-    }
-
-    html body.cre-t-283 .cre-t-283-add-btn {
-        letter-spacing: 2px !important;
-    }
+  html body .order__benefits .cre-t-269-main {
+    grid-template-columns: repeat(3, auto);
+    gap: 13px 16px;
+  }
 }

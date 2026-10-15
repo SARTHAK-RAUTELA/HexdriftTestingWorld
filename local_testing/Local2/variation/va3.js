@@ -1,204 +1,249 @@
-(function() {
+(function () {
   try {
-    var debug=1;
-    var variation_name="cre-t-283";
+    /* main variables */
+    var debug = 0;
+    var variation_name = "cre-t-269-d";
+    var scrollOffset = 160;
 
-    function waitForElement(selector,trigger,delayInterval,delayTimeout) {
-      delayInterval=delayInterval||50;
-      delayTimeout=delayTimeout||15000;
-      var interval=setInterval(function() {
-        if(document.querySelector(selector)&&document.querySelectorAll(selector).length>0) {
+    /* all Pure helper functions */
+
+    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+      var interval = setInterval(function () {
+        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
           clearInterval(interval);
           trigger();
         }
-      },delayInterval);
-      setTimeout(function() {
+      }, delayInterval);
+
+      setTimeout(function () {
         clearInterval(interval);
-      },delayTimeout);
+      }, delayTimeout);
     }
-    function live(selector,event,callback,context) {
-      if(typeof callback!=="function") return;
-      (context||document).addEventListener(event,function(e) {
-        var el=e.target.closest(selector);
-        if(el) callback.call(el,e);
+
+    function addClass(selector, className) {
+      var elements = document.querySelectorAll(selector);
+      elements.forEach(function (element) {
+        element.classList.add(className);
       });
     }
 
-    var lastSubtotal=null;
-    var lastStrikeTotal=null;
-    var lastItemCount=null;
-    var subtotalEl=null;
-    var priceSymbol=null;
+    /* Variation functions */
 
-    function getElText(sel) {
-      var el=document.querySelector(sel);
-      return el? el.textContent:"";
-    }
-    function extractNum(text) {
-      var m=text.replace(/,/g,"").match(/\$([0-9]+(\.[0-9]+)?)/);
-      return m? parseFloat(m[1]):0;
-    }
-    function getPriceSymbol() {
-      if(priceSymbol) return priceSymbol;
-      var m=getElText(".price-row__pay-option-price").trim().match(/[^0-9\s.,]/);
-      priceSymbol=m? m[0]:"$";
-      return priceSymbol;
-    }
-    function formatPrice(n) {
-      return getPriceSymbol()+n.toLocaleString("en-US",{
-        minimumFractionDigits: 0
-        ,maximumFractionDigits: 0
-      });
+    /* build the 6 benefit links from one list of data */
+    function getBenefitHtml(benefit, index) {
+      return `<div role="listitem" class="cre-t-269-item cre-t-269-item-${index + 1}">
+        <div class="cre-t-269-link-container">
+          <a href="${benefit.href}" class="cre-t-269-link" data-cre-target="${benefit.target}">
+            <span class="cre-t-269-icon-container"><img class="cre-t-269-icon" src="${benefit.icon}" alt="${benefit.alt}" height="24" /></span>
+            <span class="cre-t-269-text">${benefit.text}</span>
+          </a>
+        </div>
+      </div>`;
     }
 
-    function getBasePrice() {
-      return extractNum(getElText(".price-row__pay-option-price"));
-    }
-    function getSetupPrice() {
-      var btn=document.querySelector(".order-form__loadup-button");
-      var plus=btn&&btn.querySelector(".order-form__loadup-button-icon-plus");
-      if(!plus||!plus.classList.contains("hide")) return 0;
-      var priceEl=btn.querySelector(".order-form__loadup-button-price");
-      return priceEl? extractNum(priceEl.textContent):0;
-    }
-    function getAccessoriesTotal() {
-      var total=0;
-      document.querySelectorAll(".accessory-tray_item").forEach(function(item) {
-        var cb=item.querySelector(".add-to-accessory-cart");
-        var titleEl=item.querySelector(".accessory-item-title");
-        var isActive=cb&&cb.checked;
-        if(isActive&&titleEl) total+=extractNum(titleEl.textContent);
-      });
-      return total;
-    }
-    function getSelectedItemCount() {
-      var count=1;
-      var setupBtn=document.querySelector(".order-form__loadup-button");
-      var setupPlus=setupBtn&&setupBtn.querySelector(".order-form__loadup-button-icon-plus");
-      if(setupPlus&&setupPlus.classList.contains("hide")) count++;
-      document.querySelectorAll(".accessory-tray_item .add-to-accessory-cart").forEach(function(cb) {
-        if(cb.checked) count++;
-      });
-      return count;
-    }
-    function calculateSubtotal() {
-      return getBasePrice()+getSetupPrice()+getAccessoriesTotal();
-    }
-    function strikeTotal() {
-      var selectors=[
-        ".order-form__loadup-button-compare-price",
-        ".cre-t-202-box-strike-price"
+    function addBenefits() {
+      if (document.querySelector(".cre-t-269-container")) return;
+
+      var benefits = [
+        {
+          target: "trial",
+          href: "#shopify-section-shop-the-winkbed-warranty",
+          text: "120-Night Home Trial",
+          alt: "120 night home trial icon",
+          icon: "https://v2.crocdn.com/Winkbed/Win262/moon-new.svg",
+        },
+        {
+          target: "shipping",
+          href: "#shopify-section-faq-content",
+          text: "Free Shipping &amp; Returns",
+          alt: "Free shipping and returns icon",
+          icon: "https://v2.crocdn.com/Winkbed/Win262/truck-right-new.svg",
+        },
+        { target: "showrooms", href: "#shopify-section-shop-frames", text: "150+ Showrooms", alt: "150+ showrooms icon", icon: "https://v2.crocdn.com/Winkbed/Win262/location.svg" },
+        { target: "warranty", href: "#shopify-section-shop-promise", text: "Lifetime Warranty", alt: "Lifetime warranty icon", icon: "https://v2.crocdn.com/Winkbed/Win262/shield-new.svg" },
+        { target: "usa", href: "#shopify-section-shop-hi-touch", text: "Handmade in the U.S.A.", alt: "Handmade in the U.S.A. icon", icon: "https://v2.crocdn.com/Winkbed/test269/homeFinal.svg" },
+        { target: "rating", href: "#shopify-section-testimonials", text: "Rated 4.8 stars", alt: "Rated 4.8 stars icon", icon: "https://v2.crocdn.com/Winkbed/Win262/start.svg" },
       ];
-      var total=selectors.reduce(function(total,selector) {
-        return total+extractNum(getElText(selector));
-      },0);
-      return total+getAccessoriesTotal();
+
+      var benefitsHtml = "";
+      benefits.forEach(function (benefit, index) {
+        benefitsHtml += getBenefitHtml(benefit, index);
+      });
+
+      var html = `<div class="cre-t-269-container">
+        <div class="cre-t-269-wrapper">
+          <div role="list" class="cre-t-269-main">${benefitsHtml}</div>
+        </div>
+      </div>`;
+
+      var benefitsSection = document.querySelector(".order__benefits");
+      if (!benefitsSection) return;
+      benefitsSection.insertAdjacentHTML("afterbegin", html);
     }
 
-    function getSubtotalEl() {
-      if(subtotalEl&&subtotalEl.parentNode) return subtotalEl;
-      return (subtotalEl=document.querySelector(".cre-t-283-subtotal-line"));
+    /* scroll destinations, same as the live mobile test (WIN282) */
+    function firstVisible(selectors) {
+      for (var i = 0; i < selectors.length; i++) {
+        var element = document.querySelector(selectors[i]);
+        if (element && element.getBoundingClientRect().height > 0) return element;
+      }
+      return null;
     }
-    var customAddBtn=null;
-    function ensureCustomAddButton() {
-      if(customAddBtn&&customAddBtn.parentNode) return customAddBtn;
-      var btn=document.querySelector(".order-form__add.button");
-      if(!btn) return null;
-      var html='<div class="'+btn.className+' cre-t-283-add-btn"></div>';
-      btn.insertAdjacentHTML("afterend",html);
-      btn.classList.add("cre-t-283-add-btn-original");
-      var clone=document.querySelector(".cre-t-283-add-btn");
-      clone.addEventListener("click",function(e) {
-        e.preventDefault();
-        btn.click();
+
+    function scrollToElement(element) {
+      if (!element) return;
+      window.scrollTo({
+        top: element.getBoundingClientRect().top + window.pageYOffset - scrollOffset,
+        behavior: "smooth",
       });
-      customAddBtn=clone;
-      return customAddBtn;
     }
-    function syncControlButtonCount(savings) {
-      var btn=ensureCustomAddButton();
-      if(!btn) return;
-      btn.textContent="ADD TO CART · SAVE "+formatPrice(savings);
+
+    function findFaqQuestion(text) {
+      var titles = document.querySelectorAll("#faq-content .concertina__title");
+      for (var i = 0; i < titles.length; i++) {
+        if (titles[i].textContent.trim().toLowerCase().indexOf(text) === 0) return titles[i];
+      }
+      return null;
     }
-    function updateSubtotal() {
-      var el=getSubtotalEl();
-      var total=calculateSubtotal();
-      var strikePriceTotal=strikeTotal();
-      var itemCount=getSelectedItemCount();
-      syncControlButtonCount(Math.max(0,strikePriceTotal-total));
-      if(!el||(total===lastSubtotal&&strikePriceTotal===lastStrikeTotal&&itemCount===lastItemCount)) return;
-      lastSubtotal=total;
-      lastStrikeTotal=strikePriceTotal;
-      lastItemCount=itemCount;
-      el.innerHTML="<strong>"+itemCount+" "+(itemCount===1? "item":"items")+" selected</strong> &middot; <strong>"+
-        formatPrice(total)+" total<strong class='strike'>"+formatPrice(strikePriceTotal)+"</strong></strong> &middot; <span>Saving <strong>"+
-        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span>";
+
+    function openFaqCategory(panel) {
+      if (panel.classList.contains("current")) return;
+
+      var categories = document.querySelectorAll("#faq-content .faq__cat");
+      for (var i = 0; i < categories.length; i++) {
+        if (categories[i].textContent === panel.getAttribute("data-cat")) {
+          categories[i].click();
+          break;
+        }
+      }
     }
-    function injectSubtotalLine() {
-      if(getSubtotalEl()) {
-        updateSubtotal();
+
+    function scrollToFaqQuestion(text) {
+      var title = findFaqQuestion(text);
+      if (!title) {
+        scrollToElement(document.querySelector("#shopify-section-faq-content"));
         return;
       }
-      var btn=document.querySelector(".order-form__add.button");
-      if(!btn) return;
-      var total=calculateSubtotal();
-      var strikePriceTotal=strikeTotal();
-      var itemCount=getSelectedItemCount();
-      syncControlButtonCount(Math.max(0,strikePriceTotal-total));
-      btn.insertAdjacentHTML("beforebegin",'<div class="cre-t-283-subtotal-line"><strong>'+itemCount+" "+(itemCount===1? "item":"items")+
-        " selected</strong> &middot; <strong>"+formatPrice(total)+" total<strong class='strike'>"+formatPrice(strikePriceTotal)+"</strong></strong> &middot; <span>Saving <strong>"+
-        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span></div>");
-      subtotalEl=btn.previousElementSibling;
-      lastSubtotal=total;
-      lastStrikeTotal=strikePriceTotal;
-      lastItemCount=itemCount;
+
+      var panel = title.closest(".faq__panel");
+      if (panel) openFaqCategory(panel);
+
+      var item = title.closest(".concertina");
+      if (item) item.classList.add("concertina--open");
+
+      setTimeout(function () {
+        scrollToElement(title);
+      }, 350);
     }
-    var subtotalUpdateInterval=null;
-    function scheduleSubtotalRefresh() {
-      if(subtotalUpdateInterval) {
-        clearInterval(subtotalUpdateInterval);
-        subtotalUpdateInterval=null;
-      }
-      var currentInterval=setInterval(function() {
-        updateSubtotal();
-      },500);
-      subtotalUpdateInterval=currentInterval;
-      setTimeout(function() {
-        clearInterval(currentInterval);
-        if(subtotalUpdateInterval===currentInterval) {
-          subtotalUpdateInterval=null;
+
+    function scrollToSectionBottom(selector) {
+      var section = document.querySelector(selector);
+      if (!section) return;
+
+      var getBottomPosition = function () {
+        return Math.round(section.getBoundingClientRect().bottom + window.pageYOffset - 100);
+      };
+
+      window.scrollTo({ top: getBottomPosition(), behavior: "smooth" });
+
+      /* one re-check, lazy images can move the section while scrolling */
+      setTimeout(function () {
+        if (Math.abs(window.pageYOffset - getBottomPosition()) > 5) {
+          window.scrollTo({ top: getBottomPosition(), behavior: "smooth" });
         }
-      },3000);
+      }, 900);
     }
-    function eventHandler() {
-      live("#coolingCoverSelect","change",scheduleSubtotalRefresh);
-      live("#size-select","change",scheduleSubtotalRefresh);
-      live("#firmness-select","change",scheduleSubtotalRefresh);
-      live(".order-form__loadup-button, .pop-loadup__service-button, .order-form__loadup-button-price,#orderForm .order-form__add","click",scheduleSubtotalRefresh);
-      document.addEventListener("click",function(e) {
-        var isAccessory=e.target.closest(".add-to-accessory-cart")||e.target.closest(".accessory-item-title");
-        if(isAccessory) scheduleSubtotalRefresh();
+
+    function scrollToBenefit(target) {
+      if (target === "shipping") {
+        scrollToFaqQuestion("can i return or exchange");
+      } else if (target === "showrooms") {
+        scrollToSectionBottom("#shopify-section-shop-frames");
+      } else if (target === "rating") {
+        scrollToElement(firstVisible(["#shopify-section-testimonials", "#shopify-section-winkbed-featured-review", "#yotpo-reviews"]));
+      } else if (target === "usa") {
+        scrollToElement(document.querySelector("#shopify-section-shop-hi-touch"));
+      } else if (target === "trial") {
+        scrollToElement(document.querySelector("#shopify-section-shop-the-winkbed-warranty"));
+      } else if (target === "warranty") {
+        scrollToElement(document.querySelector("#shopify-section-shop-promise"));
+      }
+    }
+
+    /* Convert goals: one per benefit + one for any benefit */
+    function getCleanText(element) {
+      return element.innerHTML
+        .replace(/<br\s*\/?>/gi, " ")
+        .replace(/<[^>]+>/g, "")
+        .replace(/&amp;/g, "&")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase();
+    }
+
+    function triggerBenefitGoals(text) {
+      var goals = [
+        { text: "120-night home trial", id: "100334659" },
+        { text: "free shipping & returns", id: "100334660" },
+        { text: "lifetime warranty", id: "100334662" },
+        { text: "financing available", id: "100334666" },
+      ];
+      var anyBenefitGoalId = "100334667";
+
+      window._conv_q = window._conv_q || [];
+      window._conv_q.push(["triggerConversion", anyBenefitGoalId]);
+
+      goals.forEach(function (goal) {
+        if (text === goal.text) {
+          window._conv_q.push(["triggerConversion", goal.id]);
+        }
       });
     }
 
+    function bindEvents() {
+      if (window.cre_269_events_bound) return;
+      window.cre_269_events_bound = true;
+
+      document.addEventListener(
+        "mousedown",
+        function (e) {
+          var link = e.target.closest(".cre-t-269-link");
+          if (!link) return;
+
+          triggerBenefitGoals(getCleanText(link));
+        },
+        true,
+      );
+
+      /* capture phase, so the site's own "#" link handler can't change the URL hash */
+      document.addEventListener(
+        "click",
+        function (e) {
+          var link = e.target.closest(".cre-t-269-link");
+          if (!link) return;
+
+          e.preventDefault();
+          e.stopPropagation();
+          var target = link.getAttribute("data-cre-target");
+          setTimeout(function () {
+            scrollToBenefit(target);
+          }, 250);
+        },
+        true,
+      );
+    }
+
+    /* Variation Init */
     function init() {
-      document.body.classList.add(variation_name);
-      injectSubtotalLine()
-      waitForElement(".cre-t-283-subtotal-line",function() {
-        var forceInsertion=setInterval(function() {
-          scheduleSubtotalRefresh()
-        },250);
-        setTimeout(function() {
-          clearInterval(forceInsertion);
-        },3000);
-      },50,15000);
+      if (document.body.classList.contains(variation_name)) return;
+      addClass("body", variation_name);
+      addBenefits();
+      bindEvents();
     }
-    if(!window.variation_name_283) {
-      window.variation_name_283=true;
-      eventHandler();
-    }
-    waitForElement("#orderForm.loaded .order-form__add.button",init,50,15000);
-  } catch(e) {
-    if(debug) console.log(e,"error in Test "+variation_name);
+
+    /* Initialise variation */
+    waitForElement(".order__benefits", init, 50, 15000);
+  } catch (e) {
+    if (debug) console.log(e, "error in Test" + variation_name);
   }
-}());
+})();

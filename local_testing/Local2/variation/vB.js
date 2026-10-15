@@ -1,208 +1,90 @@
-(function() {
+(function () {
   try {
-    var debug=1;
-    var variation_name="cre-t-283";
-    /* ============================================================
-       HELPERS
-    ============================================================ */
-    function waitForElement(selector,trigger,delayInterval,delayTimeout) {
-      delayInterval=delayInterval||50;
-      delayTimeout=delayTimeout||15000;
-      var interval=setInterval(function() {
-        if(document.querySelector(selector)&&document.querySelectorAll(selector).length>0) {
+    /* main variables */
+    var debug = 0;
+    var variation_name = "cre-t-269-control";
+
+    /* all Pure helper functions */
+
+    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {
+      var interval = setInterval(function () {
+        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
           clearInterval(interval);
           trigger();
         }
-      },delayInterval);
-      setTimeout(function() {
+      }, delayInterval);
+
+      setTimeout(function () {
         clearInterval(interval);
-      },delayTimeout);
+      }, delayTimeout);
     }
-    function live(selector,event,callback,context) {
-      if(typeof callback!=="function") return;
-      (context||document).addEventListener(event,function(e) {
-        var el=e.target.closest(selector);
-        if(el) callback.call(el,e);
+
+    function addClass(selector, className) {
+      var elements = document.querySelectorAll(selector);
+      elements.forEach(function (element) {
+        element.classList.add(className);
       });
     }
-    /* ============================================================
-       STATE
-    ============================================================ */
-    var lastSubtotal=null;
-    var lastStrikeTotal=null;
-    var lastItemCount=null;
-    var subtotalEl=null;
-    var priceSymbol=null;
-    /* ============================================================
-       PRICE UTILITIES
-    ============================================================ */
-    function getElText(sel) {
-      var el=document.querySelector(sel);
-      return el? el.textContent:"";
+
+    /* Variation functions */
+
+    /* Convert goals: one per benefit + one for any benefit */
+    function getCleanText(element) {
+      return element.innerHTML
+        .replace(/<br\s*\/?>/gi, " ")
+        .replace(/<[^>]+>/g, "")
+        .replace(/&amp;/g, "&")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase();
     }
-    function extractNum(text) {
-      var m=text.replace(/,/g,"").match(/\$([0-9]+(\.[0-9]+)?)/);
-      return m? parseFloat(m[1]):0;
-    }
-    function getPriceSymbol() {
-      if(priceSymbol) return priceSymbol;
-      var m=getElText(".price-row__pay-option-price").trim().match(/[^0-9\s.,]/);
-      priceSymbol=m? m[0]:"$";
-      return priceSymbol;
-    }
-    function formatPrice(n) {
-      return getPriceSymbol()+n.toLocaleString("en-US",{
-        minimumFractionDigits: 0
-        ,maximumFractionDigits: 0
-      });
-    }
-    /* ============================================================
-       PRICE CALCULATORS
-    ============================================================ */
-    function getBasePrice() {
-      return extractNum(getElText(".price-row__pay-option-price"));
-    }
-    function getSetupPrice() {
-      var btn=document.querySelector(".order-form__loadup-button");
-      var plus=btn&&btn.querySelector(".order-form__loadup-button-icon-plus");
-      if(!plus||!plus.classList.contains("hide")) return 0;
-      var priceEl=btn.querySelector(".order-form__loadup-button-price");
-      return priceEl? extractNum(priceEl.textContent):0;
-    }
-    function getAccessoriesTotal() {
-      var total=0;
-      document.querySelectorAll(".accessory-tray_item").forEach(function(item) {
-        var cb=item.querySelector(".add-to-accessory-cart");
-        var titleEl=item.querySelector(".accessory-item-title");
-        var isActive=cb&&cb.checked;
-        if(isActive&&titleEl) total+=extractNum(titleEl.textContent);
-      });
-      return total;
-    }
-    function getSelectedItemCount() {
-      var count=1;
-      var setupBtn=document.querySelector(".order-form__loadup-button");
-      var setupPlus=setupBtn&&setupBtn.querySelector(".order-form__loadup-button-icon-plus");
-      if(setupPlus&&setupPlus.classList.contains("hide")) count++;
-      document.querySelectorAll(".accessory-tray_item .add-to-accessory-cart").forEach(function(cb) {
-        if(cb.checked) count++;
-      });
-      return count;
-    }
-    function calculateSubtotal() {
-      return getBasePrice()+getSetupPrice()+getAccessoriesTotal();
-    }
-    function strikeTotal() {
-      var selectors=[
-        ".order-form__loadup-button-compare-price",
-        ".cre-t-202-box-strike-price"
+
+    function triggerBenefitGoals(text) {
+      var goals = [
+        { text: "120-night risk-free trial", id: "100334659" },
+        { text: "free shipping and returns", id: "100334660" },
+        { text: "lifetime warranty", id: "100334662" },
+        { text: "financing available", id: "100334666" },
       ];
-      var total=selectors.reduce(function(total,selector) {
-        return total+extractNum(getElText(selector));
-      },0);
-      // Accessories have no strike price, so they should not reduce the saving.
-      return total+getAccessoriesTotal();
-    }
-    /* ============================================================
-       DOM
-    ============================================================ */
-    function getSubtotalEl() {
-      if(subtotalEl&&subtotalEl.parentNode) return subtotalEl;
-      return (subtotalEl=document.querySelector(".cre-t-283-subtotal-line"));
-    }
-    function syncControlButtonCount(itemCount) {
-      var btn=document.querySelector(".order-form__add.button");
-      if(!btn) return;
-      if(itemCount===1) {
-        btn.textContent="ADD TO CART";
-      } else {
-        btn.textContent="ADD "+itemCount+" ITEMS TO CART";
-      }
-    }
-    function updateSubtotal() {
-      var el=getSubtotalEl();
-      var total=calculateSubtotal();
-      var strikePriceTotal=strikeTotal();
-      var itemCount=getSelectedItemCount();
-      syncControlButtonCount(itemCount);
-      if(!el||(total===lastSubtotal&&strikePriceTotal===lastStrikeTotal&&itemCount===lastItemCount)) return;
-      lastSubtotal=total;
-      lastStrikeTotal=strikePriceTotal;
-      lastItemCount=itemCount;
-      el.innerHTML="<strong>"+itemCount+" "+(itemCount===1? "item":"items")+" selected</strong> &middot; <strong>"+
-        formatPrice(total)+" total</strong> &middot; <span>Saving <strong>"+
-        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span>";
-    }
-    function injectSubtotalLine() {
-      if(getSubtotalEl()) {
-        updateSubtotal();
-        return;
-      }
-      var btn=document.querySelector(".order-form__add.button");
-      if(!btn) return;
-      var total=calculateSubtotal();
-      var strikePriceTotal=strikeTotal();
-      var itemCount=getSelectedItemCount();
-      syncControlButtonCount(itemCount);
-      btn.insertAdjacentHTML("beforebegin",'<div class="cre-t-283-subtotal-line"><strong>'+itemCount+" "+(itemCount===1? "item":"items")+
-        " selected</strong> &middot; <strong>"+formatPrice(total)+" total</strong> &middot; <span>Saving <strong>"+
-        formatPrice(Math.max(0,strikePriceTotal-total))+"</strong></span></div>");
-      subtotalEl=btn.previousElementSibling;
-      lastSubtotal=total;
-      lastStrikeTotal=strikePriceTotal;
-      lastItemCount=itemCount;
-    }
-    var subtotalUpdateInterval=null;
-    function scheduleSubtotalRefresh() {
-      if(subtotalUpdateInterval) {
-        clearInterval(subtotalUpdateInterval);
-        subtotalUpdateInterval=null;
-      }
-      var currentInterval=setInterval(function() {
-        updateSubtotal();
-      },500);
-      subtotalUpdateInterval=currentInterval;
-      setTimeout(function() {
-        clearInterval(currentInterval);
-        if(subtotalUpdateInterval===currentInterval) {
-          subtotalUpdateInterval=null;
+      var anyBenefitGoalId = "100334667";
+
+      window._conv_q = window._conv_q || [];
+      window._conv_q.push(["triggerConversion", anyBenefitGoalId]);
+
+      goals.forEach(function (goal) {
+        if (text === goal.text) {
+          window._conv_q.push(["triggerConversion", goal.id]);
         }
-      },3000);
-    }
-    /* ============================================================
-       EVENTS
-    ============================================================ */
-    function eventHandler() {
-      live("#coolingCoverSelect","change",scheduleSubtotalRefresh);
-      live("#size-select","change",scheduleSubtotalRefresh);
-      live("#firmness-select","change",scheduleSubtotalRefresh);
-      live(".order-form__loadup-button, .pop-loadup__service-button, .order-form__loadup-button-price,#orderForm .order-form__add","click",scheduleSubtotalRefresh);
-      document.addEventListener("click",function(e) {
-        var isAccessory=e.target.closest(".add-to-accessory-cart")||e.target.closest(".accessory-item-title");
-        if(isAccessory) scheduleSubtotalRefresh();
       });
     }
-    /* ============================================================
-       INIT
-    ============================================================ */
+
+    function bindEvents() {
+      if (window.cre_269_events_bound) return;
+      window.cre_269_events_bound = true;
+
+      document.addEventListener(
+        "mousedown",
+        function (e) {
+          var benefit = e.target.closest(".order__benefit");
+          if (!benefit) return;
+
+          var title = benefit.querySelector(".order__benefit-title");
+          triggerBenefitGoals(getCleanText(title || benefit));
+        },
+        true,
+      );
+    }
+
+    /* Variation Init */
     function init() {
-      document.body.classList.add(variation_name);
-      injectSubtotalLine()
-      waitForElement(".cre-t-283-subtotal-line",function() {
-        var forceInsertion=setInterval(function() {
-          scheduleSubtotalRefresh()
-        },250);
-        setTimeout(function() {
-          clearInterval(forceInsertion);
-        },3000);
-      },50,15000);
+      if (document.body.classList.contains(variation_name)) return;
+      addClass("body", variation_name);
+      bindEvents();
     }
-    if(!window.variation_name_283) {
-      window.variation_name_283=true;
-      eventHandler();
-    }
-    waitForElement("#orderForm.loaded .order-form__add.button",init,50,15000);
-  } catch(e) {
-    if(debug) console.log(e,"error in Test "+variation_name);
+
+    /* Initialise variation */
+    waitForElement(".order__benefits", init, 50, 15000);
+  } catch (e) {
+    if (debug) console.log(e, "error in Test" + variation_name);
   }
-}());
+})();

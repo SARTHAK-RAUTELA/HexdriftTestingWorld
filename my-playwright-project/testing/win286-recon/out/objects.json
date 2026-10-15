@@ -1,0 +1,509 @@
+[
+ {
+  "id": "100350628",
+  "name": "Test #100350628 [276/257]",
+  "type": "a/b",
+  "status": "active",
+  "global_js": null,
+  "global_css": "",
+  "environment": "production",
+  "settings": {
+   "min_order_value": 0,
+   "max_order_value": 99999,
+   "matching_options": {
+    "audiences": "any",
+    "locations": "any"
+   },
+   "placeholders": [],
+   "outliers": {
+    "order_value": {
+     "detection_type": "none"
+    },
+    "products_ordered_count": {
+     "detection_type": "none"
+    }
+   }
+  },
+  "key": null,
+  "version": 12,
+  "locations": [
+   "100310664"
+  ],
+  "site_area": null,
+  "audiences": [
+   "10036007"
+  ],
+  "goals": [
+   "100321041",
+   "100327778",
+   "100324238",
+   "100334580",
+   "100334581"
+  ],
+  "integrations": [
+   {
+    "provider": "crazyegg",
+    "enabled": false
+   },
+   {
+    "provider": "google_analytics",
+    "enabled": true,
+    "type": "ga4",
+    "measurementId": "G-9VJKTBGESY"
+   }
+  ],
+  "variations": [
+   {
+    "id": "1003184697",
+    "name": "Var #1003184697",
+    "key": null,
+    "status": "running",
+    "changes": [
+     {
+      "id": 1003188964,
+      "type": "defaultCode",
+      "data": {
+       "js": null,
+       "css": "",
+       "custom_js": null
+      }
+     },
+     {
+      "id": 1003188963,
+      "type": "customCode",
+      "data": {
+       "css": "html body.cre-t-276-modal-open main.main,\r\nhtml body.cre-t-276-modal-open header.site-header,\r\nhtml body.cre-t-276-modal-open .desktop-promo-container {\r\n    filter: blur(5px);\r\n}\r\n\r\nhtml body .cre-t-276-modal-overlay {\r\n    position: fixed;\r\n    top: 0 !important;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: rgb(0 0 0 / 60%); */\r\n    background: rgba(133, 130, 130, 0.6);\r\n    z-index: 2147483649 !important;\r\n}\r\n\r\nhtml body .cre-t-276-modal-container {\r\n    position: fixed;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    padding: 0;\r\n    z-index: 2147483650 !important;\r\n    text-align: center;\r\n    max-width: 674px;\r\n    width: calc(100% - 30px);\r\n    overflow: hidden;\r\n    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body.cre-t-276-modal-open .cre-t-276-modal-overlay {\r\n    display: block !important;\r\n}\r\n\r\nhtml body.cre-t-276-modal-open .cre-t-276-modal-container {\r\n    display: block !important;\r\n}\r\n\r\nhtml body .cre-t-276-modal-wrapper {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    padding: 72px 25px 82px;\r\n    position: relative;\r\n    border-radius: 12px;\r\n    background: linear-gradient(180deg, #e8f1f5 0%, #eef5f7 50%, #f3f7f8 100%);\r\n    box-shadow:\r\n        0 20px 24px -4px rgba(16, 24, 40, 0.08),\r\n        0 8px 8px -4px rgba(16, 24, 40, 0.03);\r\n}\r\n\r\nhtml body .cre-t-276-modal-close {\r\n    width: 25px;\r\n    height: 25px;\r\n    min-width: 25px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: absolute;\r\n    right: 25px;\r\n    top: 24px;\r\n    cursor: pointer;\r\n}\r\n\r\nhtml body .cre-t-276-content {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    max-width: 500px;\r\n    width: 100%;\r\n}\r\n\r\nhtml body .cre-t-276-content-wrap {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\nhtml body .cre-t-276-eyebrow {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 18px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 37px;\r\n}\r\n\r\nhtml body .cre-t-276-title {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 31px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 40px;\r\n    margin-bottom: 19px;\r\n    max-width: 450px;\r\n}\r\n\r\nhtml body .cre-t-276-description {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n    margin-bottom: 23px;\r\n    max-width: 450px;\r\n}\r\n\r\nhtml body .cre-t-276-description__bold {\r\n    font-weight: 700;\r\n}\r\n\r\nhtml body .cre-t-276-price-line {\r\n    color: #000;\r\n    font-family: inherit;\r\n    font-size: 19px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 24px;\r\n    margin-bottom: 35px;\r\n}\r\n\r\nhtml body .cre-t-276-price-line__strike {\r\n    text-decoration-line: line-through;\r\n}\r\n\r\nhtml body .cre-t-276-cta {\r\n    position: relative;\r\n    overflow: hidden;\r\n    display: flex;\r\n    width: 100%;\r\n    min-height: 61px;\r\n    padding: 17px 25px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    gap: 7px;\r\n    border-radius: 8px;\r\n    background: #fe5f4c;\r\n    cursor: pointer;\r\n    transition:\r\n        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),\r\n        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body .cre-t-276-cta-text {\r\n    color: #fff;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: normal;\r\n    letter-spacing: 0.6px;\r\n    transition:\r\n        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),\r\n        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body .cre-t-276-cta:hover {\r\n    background: #ce4b3c;\r\n    color: #fff;\r\n}\r\n\r\nhtml body .cre-t-276-cta:hover .cre-t-276-cta-text {\r\n    color: #fff;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg {\r\n    position: absolute;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    pointer-events: none;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-top-left {\r\n    left: 10px;\r\n    top: 67px;\r\n    width: 28px;\r\n    min-width: 28px;\r\n    height: 30px;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-top-large {\r\n    left: 45px;\r\n    top: 0;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-top-right {\r\n    left: 140px;\r\n    top: 13px;\r\n    width: 45px;\r\n    min-width: 45px;\r\n    height: 48px;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-bottom-large {\r\n    right: 37px;\r\n    bottom: 0;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-bottom-right {\r\n    right: 11px;\r\n    bottom: 48px;\r\n    width: 28px;\r\n    min-width: 28px;\r\n    height: 30px;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: contain;\r\n    object-fit: contain;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    html body .cre-t-276-title {\r\n        max-width: 500px;\r\n        font-size: 28px;\r\n        line-height: 34px;\r\n    }\r\n\r\n    html body .cre-t-276-cta {\r\n        padding: 12px;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\n\r\n@media (max-height: 550px) and (min-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.9);\r\n    }\r\n}\r\n\r\n@media (max-height: 490px) and (min-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.8);\r\n    }\r\n}\r\n\r\n@media (max-height: 435px) and (min-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.7);\r\n    }\r\n}\r\n\r\n@media (max-height: 385px) and (min-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%);\r\n        overflow: auto;\r\n        height: 90vh;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\n\r\n@media (max-height: 640px) and (max-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.9);\r\n    }\r\n}\r\n\r\n@media (max-height: 570px) and (max-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.8);\r\n    }\r\n}\r\n\r\n@media (max-height: 510px) and (max-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.7);\r\n    }\r\n}\r\n\r\n@media (max-height: 450px) and (max-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%);\r\n        overflow: auto;\r\n        height: 90vh;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\nhtml body .cre-t-276-spinner {\r\n    display: none;\r\n    width: 16px;\r\n    height: 16px;\r\n    border: 4px solid white;\r\n    border-top: 4px solid transparent;\r\n    border-radius: 50%;\r\n    animation: spin 1s linear infinite;\r\n}\r\n\r\nhtml body.cre-t-276-cta-clicked .cre-t-276-cta-text {\r\n    display: none;\r\n}\r\n\r\nhtml body.cre-t-276-cta-clicked .cre-t-276-spinner {\r\n    display: block;\r\n}\r\n\r\n@keyframes spin {\r\n    0% {\r\n        transform: rotate(0deg);\r\n    }\r\n\r\n    100% {\r\n        transform: rotate(360deg);\r\n    }\r\n}"
+      }
+     }
+    ],
+    "traffic_allocation": 50
+   },
+   {
+    "id": "1003184698",
+    "name": "Var #1003184698",
+    "key": null,
+    "status": "running",
+    "changes": [
+     {
+      "id": 1003188958,
+      "type": "defaultCode",
+      "data": {
+       "js": null,
+       "css": "",
+       "custom_js": null
+      }
+     },
+     {
+      "id": 1003188957,
+      "type": "customCode",
+      "data": {
+       "css": "html body.cre-t-276-modal-open main.main,\r\nhtml body.cre-t-276-modal-open header.site-header,\r\nhtml body.cre-t-276-modal-open .desktop-promo-container {\r\n    filter: blur(5px);\r\n}\r\n\r\nhtml body .cre-t-276-modal-overlay {\r\n    position: fixed;\r\n    top: 0 !important;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: rgb(0 0 0 / 60%); */\r\n    background: rgba(133, 130, 130, 0.6);\r\n    z-index: 2147483649 !important;\r\n}\r\n\r\nhtml body .cre-t-276-modal-container {\r\n    position: fixed;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    padding: 0;\r\n    z-index: 2147483650 !important;\r\n    text-align: center;\r\n    max-width: 674px;\r\n    width: calc(100% - 30px);\r\n    overflow: hidden;\r\n    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body.cre-t-276-modal-open .cre-t-276-modal-overlay {\r\n    display: block !important;\r\n}\r\n\r\nhtml body.cre-t-276-modal-open .cre-t-276-modal-container {\r\n    display: block !important;\r\n}\r\n\r\nhtml body .cre-t-276-modal-wrapper {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    padding: 72px 25px 82px;\r\n    position: relative;\r\n    border-radius: 12px;\r\n    background: linear-gradient(180deg, #e8f1f5 0%, #eef5f7 50%, #f3f7f8 100%);\r\n    box-shadow:\r\n        0 20px 24px -4px rgba(16, 24, 40, 0.08),\r\n        0 8px 8px -4px rgba(16, 24, 40, 0.03);\r\n}\r\n\r\nhtml body .cre-t-276-modal-close {\r\n    width: 25px;\r\n    height: 25px;\r\n    min-width: 25px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: absolute;\r\n    right: 25px;\r\n    top: 24px;\r\n    cursor: pointer;\r\n}\r\n\r\nhtml body .cre-t-276-content {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    max-width: 500px;\r\n    width: 100%;\r\n}\r\n\r\nhtml body .cre-t-276-content-wrap {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\nhtml body .cre-t-276-eyebrow {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 18px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 37px;\r\n}\r\n\r\nhtml body .cre-t-276-title {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 31px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 40px;\r\n    margin-bottom: 19px;\r\n    max-width: 450px;\r\n}\r\n\r\nhtml body .cre-t-276-description {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n    margin-bottom: 23px;\r\n    max-width: 450px;\r\n}\r\n\r\nhtml body .cre-t-276-description__bold {\r\n    font-weight: 700;\r\n}\r\n\r\nhtml body .cre-t-276-price-line {\r\n    color: #000;\r\n    font-family: inherit;\r\n    font-size: 19px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 24px;\r\n    margin-bottom: 35px;\r\n}\r\n\r\nhtml body .cre-t-276-price-line__strike {\r\n    text-decoration-line: line-through;\r\n}\r\n\r\nhtml body .cre-t-276-cta {\r\n    position: relative;\r\n    overflow: hidden;\r\n    display: flex;\r\n    width: 100%;\r\n    min-height: 61px;\r\n    padding: 17px 25px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    gap: 7px;\r\n    border-radius: 8px;\r\n    background: #fe5f4c;\r\n    cursor: pointer;\r\n    transition:\r\n        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),\r\n        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body .cre-t-276-cta-text {\r\n    color: #fff;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: normal;\r\n    letter-spacing: 0.6px;\r\n    transition:\r\n        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),\r\n        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body .cre-t-276-cta:hover {\r\n    background: #ce4b3c;\r\n    color: #fff;\r\n}\r\n\r\nhtml body .cre-t-276-cta:hover .cre-t-276-cta-text {\r\n    color: #fff;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg {\r\n    position: absolute;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    pointer-events: none;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-top-left {\r\n    left: 10px;\r\n    top: 67px;\r\n    width: 28px;\r\n    min-width: 28px;\r\n    height: 30px;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-top-large {\r\n    left: 45px;\r\n    top: 0;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-top-right {\r\n    left: 140px;\r\n    top: 13px;\r\n    width: 45px;\r\n    min-width: 45px;\r\n    height: 48px;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-bottom-large {\r\n    right: 37px;\r\n    bottom: 0;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg.cre-t-276-snow-bottom-right {\r\n    right: 11px;\r\n    bottom: 48px;\r\n    width: 28px;\r\n    min-width: 28px;\r\n    height: 30px;\r\n}\r\n\r\nhtml body .cre-t-276-snow-bg img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: contain;\r\n    object-fit: contain;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    html body .cre-t-276-title {\r\n        max-width: 500px;\r\n        font-size: 28px;\r\n        line-height: 34px;\r\n    }\r\n\r\n    html body .cre-t-276-cta {\r\n        padding: 12px;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\n\r\n@media (max-height: 550px) and (min-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.9);\r\n    }\r\n}\r\n\r\n@media (max-height: 490px) and (min-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.8);\r\n    }\r\n}\r\n\r\n@media (max-height: 435px) and (min-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.7);\r\n    }\r\n}\r\n\r\n@media (max-height: 385px) and (min-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%);\r\n        overflow: auto;\r\n        height: 90vh;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\n\r\n@media (max-height: 640px) and (max-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.9);\r\n    }\r\n}\r\n\r\n@media (max-height: 570px) and (max-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.8);\r\n    }\r\n}\r\n\r\n@media (max-height: 510px) and (max-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.7);\r\n    }\r\n}\r\n\r\n@media (max-height: 450px) and (max-width: 768px) {\r\n    html body .cre-t-276-modal-container {\r\n        transform: translate(-50%, -50%);\r\n        overflow: auto;\r\n        height: 90vh;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\nhtml body .cre-t-276-spinner {\r\n    display: none;\r\n    width: 16px;\r\n    height: 16px;\r\n    border: 4px solid white;\r\n    border-top: 4px solid transparent;\r\n    border-radius: 50%;\r\n    animation: spin 1s linear infinite;\r\n}\r\n\r\nhtml body.cre-t-276-cta-clicked .cre-t-276-cta-text {\r\n    display: none;\r\n}\r\n\r\nhtml body.cre-t-276-cta-clicked .cre-t-276-spinner {\r\n    display: block;\r\n}\r\n\r\n@keyframes spin {\r\n    0% {\r\n        transform: rotate(0deg);\r\n    }\r\n\r\n    100% {\r\n        transform: rotate(360deg);\r\n    }\r\n}"
+      }
+     }
+    ],
+    "traffic_allocation": 50
+   }
+  ]
+ },
+ {
+  "id": "100350629",
+  "name": "Test #100350629 [276/257]",
+  "type": "deploy",
+  "status": "active",
+  "global_js": null,
+  "global_css": "",
+  "environment": "production",
+  "settings": {
+   "min_order_value": 0,
+   "max_order_value": 99999,
+   "matching_options": {
+    "audiences": "any",
+    "locations": "any"
+   },
+   "placeholders": [],
+   "outliers": {
+    "order_value": {
+     "detection_type": "none"
+    },
+    "products_ordered_count": {
+     "detection_type": "none"
+    }
+   }
+  },
+  "key": null,
+  "version": 12,
+  "locations": [
+   "100310665"
+  ],
+  "site_area": null,
+  "audiences": [],
+  "goals": [],
+  "integrations": [
+   {
+    "provider": "crazyegg",
+    "enabled": false
+   },
+   {
+    "provider": "google_analytics",
+    "enabled": true,
+    "type": "ga4",
+    "measurementId": "G-9VJKTBGESY"
+   }
+  ],
+  "variations": [
+   {
+    "id": "1003184699",
+    "name": "Var #1003184699",
+    "key": null,
+    "status": "running",
+    "changes": [
+     {
+      "id": 1003188960,
+      "type": "defaultCode",
+      "data": {
+       "js": null,
+       "css": "",
+       "custom_js": null
+      }
+     },
+     {
+      "id": 1003188959,
+      "type": "customCode",
+      "data": {
+       "css": ""
+      }
+     }
+    ],
+    "traffic_allocation": 100
+   }
+  ]
+ },
+ {
+  "id": "100350630",
+  "name": "Test #100350630 [276/257]",
+  "type": "deploy",
+  "status": "active",
+  "global_js": null,
+  "global_css": "",
+  "environment": "production",
+  "settings": {
+   "min_order_value": 0,
+   "max_order_value": 99999,
+   "matching_options": {
+    "audiences": "any",
+    "locations": "any"
+   },
+   "placeholders": [],
+   "outliers": {
+    "order_value": {
+     "detection_type": "none"
+    },
+    "products_ordered_count": {
+     "detection_type": "none"
+    }
+   }
+  },
+  "key": null,
+  "version": 12,
+  "locations": [
+   "10031829"
+  ],
+  "site_area": null,
+  "audiences": [],
+  "goals": [],
+  "integrations": [
+   {
+    "provider": "crazyegg",
+    "enabled": false
+   },
+   {
+    "provider": "google_analytics",
+    "enabled": true,
+    "type": "ga4",
+    "measurementId": "G-9VJKTBGESY"
+   }
+  ],
+  "variations": [
+   {
+    "id": "1003184700",
+    "name": "Var #1003184700",
+    "key": null,
+    "status": "running",
+    "changes": [
+     {
+      "id": 1003188962,
+      "type": "defaultCode",
+      "data": {
+       "js": null,
+       "css": "",
+       "custom_js": null
+      }
+     },
+     {
+      "id": 1003188961,
+      "type": "customCode",
+      "data": {
+       "css": ""
+      }
+     }
+    ],
+    "traffic_allocation": 100
+   }
+  ]
+ },
+ {
+  "id": "100350738",
+  "name": "Test #100350738 [286]",
+  "type": "a/b",
+  "status": "active",
+  "global_js": null,
+  "global_css": "",
+  "environment": "production",
+  "settings": {
+   "min_order_value": 0,
+   "max_order_value": 99999,
+   "matching_options": {
+    "audiences": "any",
+    "locations": "any"
+   },
+   "placeholders": [],
+   "outliers": {
+    "order_value": {
+     "detection_type": "none"
+    },
+    "products_ordered_count": {
+     "detection_type": "none"
+    }
+   }
+  },
+  "key": null,
+  "version": 12,
+  "locations": [
+   "100310730"
+  ],
+  "site_area": null,
+  "audiences": [
+   "10036006"
+  ],
+  "goals": [
+   "100321041",
+   "100324238",
+   "100327778",
+   "100334668"
+  ],
+  "integrations": [
+   {
+    "provider": "crazyegg",
+    "enabled": false
+   },
+   {
+    "provider": "google_analytics",
+    "enabled": true,
+    "type": "ga4",
+    "measurementId": "G-9VJKTBGESY"
+   }
+  ],
+  "variations": [
+   {
+    "id": "1003184955",
+    "name": "Var #1003184955",
+    "key": null,
+    "status": "stopped",
+    "changes": [
+     {
+      "id": 1003189280,
+      "type": "defaultCode",
+      "data": {
+       "js": null,
+       "css": "",
+       "custom_js": null
+      }
+     },
+     {
+      "id": 1003189279,
+      "type": "customCode",
+      "data": {
+       "css": "html body.cre-t-286-modal-open main.main,\r\nhtml body.cre-t-286-modal-open header.site-header,\r\nhtml body.cre-t-286-modal-open .desktop-promo-container {\r\n    filter: blur(5px);\r\n}\r\n\r\nhtml body .cre-t-286-modal-overlay {\r\n    position: fixed;\r\n    top: 0 !important;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: rgb(0 0 0 / 60%); */\r\n    background: rgba(133, 130, 130, 0.6);\r\n    z-index: 2147483649 !important;\r\n}\r\n\r\nhtml body .cre-t-286-modal-container {\r\n    position: fixed;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    padding: 0;\r\n    z-index: 2147483650 !important;\r\n    text-align: center;\r\n    max-width: 674px;\r\n    width: calc(100% - 30px);\r\n    overflow: hidden;\r\n    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body.cre-t-286-modal-open .cre-t-286-modal-overlay {\r\n    display: block !important;\r\n}\r\n\r\nhtml body.cre-t-286-modal-open .cre-t-286-modal-container {\r\n    display: block !important;\r\n}\r\n\r\nhtml body .cre-t-286-modal-wrapper {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    padding: 72px 25px 82px;\r\n    position: relative;\r\n    border-radius: 12px;\r\n    background: linear-gradient(180deg, #e8f1f5 0%, #eef5f7 50%, #f3f7f8 100%);\r\n    box-shadow:\r\n        0 20px 24px -4px rgba(16, 24, 40, 0.08),\r\n        0 8px 8px -4px rgba(16, 24, 40, 0.03);\r\n}\r\n\r\nhtml body .cre-t-286-modal-close {\r\n    width: 25px;\r\n    height: 25px;\r\n    min-width: 25px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: absolute;\r\n    right: 25px;\r\n    top: 24px;\r\n    cursor: pointer;\r\n}\r\n\r\nhtml body .cre-t-286-content {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    max-width: 500px;\r\n    width: 100%;\r\n}\r\n\r\nhtml body .cre-t-286-content-wrap {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\nhtml body .cre-t-286-eyebrow {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 18px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 37px;\r\n}\r\n\r\nhtml body .cre-t-286-title {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 31px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 40px;\r\n    margin-bottom: 19px;\r\n    max-width: 450px;\r\n}\r\n\r\nhtml body .cre-t-286-description {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n    margin-bottom: 23px;\r\n    max-width: 450px;\r\n}\r\n\r\nhtml body .cre-t-286-description__bold {\r\n    font-weight: 700;\r\n}\r\n\r\nhtml body .cre-t-286-price-line {\r\n    color: #000;\r\n    font-family: inherit;\r\n    font-size: 19px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 24px;\r\n    margin-bottom: 35px;\r\n}\r\n\r\nhtml body .cre-t-286-price-line__strike {\r\n    text-decoration-line: line-through;\r\n}\r\n\r\nhtml body .cre-t-286-cta {\r\n    position: relative;\r\n    overflow: hidden;\r\n    display: flex;\r\n    width: 100%;\r\n    min-height: 61px;\r\n    padding: 17px 25px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    gap: 7px;\r\n    border-radius: 8px;\r\n    background: #fe5f4c;\r\n    cursor: pointer;\r\n    transition:\r\n        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),\r\n        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body .cre-t-286-cta-text {\r\n    color: #fff;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: normal;\r\n    letter-spacing: 0.6px;\r\n    transition:\r\n        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),\r\n        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body .cre-t-286-cta:hover {\r\n    background: #ce4b3c;\r\n    color: #fff;\r\n}\r\n\r\nhtml body .cre-t-286-cta:hover .cre-t-286-cta-text {\r\n    color: #fff;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg {\r\n    position: absolute;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    pointer-events: none;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-top-left {\r\n    left: 10px;\r\n    top: 67px;\r\n    width: 28px;\r\n    min-width: 28px;\r\n    height: 30px;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-top-large {\r\n    left: 45px;\r\n    top: 0;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-top-right {\r\n    left: 140px;\r\n    top: 13px;\r\n    width: 45px;\r\n    min-width: 45px;\r\n    height: 48px;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-bottom-large {\r\n    right: 37px;\r\n    bottom: 0;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-bottom-right {\r\n    right: 11px;\r\n    bottom: 48px;\r\n    width: 28px;\r\n    min-width: 28px;\r\n    height: 30px;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: contain;\r\n    object-fit: contain;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    html body .cre-t-286-title {\r\n        max-width: 500px;\r\n        font-size: 28px;\r\n        line-height: 34px;\r\n    }\r\n\r\n    html body .cre-t-286-cta {\r\n        padding: 12px;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\n\r\n@media (max-height: 550px) and (min-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.9);\r\n    }\r\n}\r\n\r\n@media (max-height: 490px) and (min-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.8);\r\n    }\r\n}\r\n\r\n@media (max-height: 435px) and (min-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.7);\r\n    }\r\n}\r\n\r\n@media (max-height: 385px) and (min-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%);\r\n        overflow: auto;\r\n        height: 90vh;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\n\r\n@media (max-height: 640px) and (max-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.9);\r\n    }\r\n}\r\n\r\n@media (max-height: 570px) and (max-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.8);\r\n    }\r\n}\r\n\r\n@media (max-height: 510px) and (max-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.7);\r\n    }\r\n}\r\n\r\n@media (max-height: 450px) and (max-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%);\r\n        overflow: auto;\r\n        height: 90vh;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\nhtml body .cre-t-286-spinner {\r\n    display: none;\r\n    width: 16px;\r\n    height: 16px;\r\n    border: 4px solid white;\r\n    border-top: 4px solid transparent;\r\n    border-radius: 50%;\r\n    animation: spin 1s linear infinite;\r\n}\r\n\r\nhtml body.cre-t-286-cta-clicked .cre-t-286-cta-text {\r\n    display: none;\r\n}\r\n\r\nhtml body.cre-t-286-cta-clicked .cre-t-286-spinner {\r\n    display: block;\r\n}\r\n\r\n@keyframes spin {\r\n    0% {\r\n        transform: rotate(0deg);\r\n    }\r\n\r\n    100% {\r\n        transform: rotate(360deg);\r\n    }\r\n}"
+      }
+     }
+    ],
+    "traffic_allocation": 0
+   },
+   {
+    "id": "1003184956",
+    "name": "Var #1003184956",
+    "key": null,
+    "status": "running",
+    "changes": [
+     {
+      "id": 1003189278,
+      "type": "defaultCode",
+      "data": {
+       "js": null,
+       "css": "",
+       "custom_js": null
+      }
+     },
+     {
+      "id": 1003189277,
+      "type": "customCode",
+      "data": {
+       "css": "html body.cre-t-286-modal-open main.main,\r\nhtml body.cre-t-286-modal-open header.site-header,\r\nhtml body.cre-t-286-modal-open .desktop-promo-container {\r\n    filter: blur(5px);\r\n}\r\n\r\nhtml body .cre-t-286-modal-overlay {\r\n    position: fixed;\r\n    top: 0 !important;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: rgb(0 0 0 / 60%); */\r\n    background: rgba(133, 130, 130, 0.6);\r\n    z-index: 2147483649 !important;\r\n}\r\n\r\nhtml body .cre-t-286-modal-container {\r\n    position: fixed;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    padding: 0;\r\n    z-index: 2147483650 !important;\r\n    text-align: center;\r\n    max-width: 674px;\r\n    width: calc(100% - 30px);\r\n    overflow: hidden;\r\n    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body.cre-t-286-modal-open .cre-t-286-modal-overlay {\r\n    display: block !important;\r\n}\r\n\r\nhtml body.cre-t-286-modal-open .cre-t-286-modal-container {\r\n    display: block !important;\r\n}\r\n\r\nhtml body .cre-t-286-modal-wrapper {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    padding: 72px 25px 82px;\r\n    position: relative;\r\n    border-radius: 12px;\r\n    background: linear-gradient(180deg, #e8f1f5 0%, #eef5f7 50%, #f3f7f8 100%);\r\n    box-shadow:\r\n        0 20px 24px -4px rgba(16, 24, 40, 0.08),\r\n        0 8px 8px -4px rgba(16, 24, 40, 0.03);\r\n}\r\n\r\nhtml body .cre-t-286-modal-close {\r\n    width: 25px;\r\n    height: 25px;\r\n    min-width: 25px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: absolute;\r\n    right: 25px;\r\n    top: 24px;\r\n    cursor: pointer;\r\n}\r\n\r\nhtml body .cre-t-286-content {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    max-width: 500px;\r\n    width: 100%;\r\n}\r\n\r\nhtml body .cre-t-286-content-wrap {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    width: 100%;\r\n}\r\n\r\nhtml body .cre-t-286-eyebrow {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 18px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 37px;\r\n}\r\n\r\nhtml body .cre-t-286-title {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 31px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 40px;\r\n    margin-bottom: 19px;\r\n    max-width: 450px;\r\n}\r\n\r\nhtml body .cre-t-286-description {\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n    margin-bottom: 23px;\r\n    max-width: 450px;\r\n}\r\n\r\nhtml body .cre-t-286-description__bold {\r\n    font-weight: 700;\r\n}\r\n\r\nhtml body .cre-t-286-price-line {\r\n    color: #000;\r\n    font-family: inherit;\r\n    font-size: 19px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: 24px;\r\n    margin-bottom: 35px;\r\n}\r\n\r\nhtml body .cre-t-286-price-line__strike {\r\n    text-decoration-line: line-through;\r\n}\r\n\r\nhtml body .cre-t-286-cta {\r\n    position: relative;\r\n    overflow: hidden;\r\n    display: flex;\r\n    width: 100%;\r\n    min-height: 61px;\r\n    padding: 17px 25px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    gap: 7px;\r\n    border-radius: 8px;\r\n    background: #fe5f4c;\r\n    cursor: pointer;\r\n    transition:\r\n        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),\r\n        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body .cre-t-286-cta-text {\r\n    color: #fff;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    line-height: normal;\r\n    letter-spacing: 0.6px;\r\n    transition:\r\n        background 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),\r\n        color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);\r\n}\r\n\r\nhtml body .cre-t-286-cta:hover {\r\n    background: #ce4b3c;\r\n    color: #fff;\r\n}\r\n\r\nhtml body .cre-t-286-cta:hover .cre-t-286-cta-text {\r\n    color: #fff;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg {\r\n    position: absolute;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    pointer-events: none;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-top-left {\r\n    left: 10px;\r\n    top: 67px;\r\n    width: 28px;\r\n    min-width: 28px;\r\n    height: 30px;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-top-large {\r\n    left: 45px;\r\n    top: 0;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-top-right {\r\n    left: 140px;\r\n    top: 13px;\r\n    width: 45px;\r\n    min-width: 45px;\r\n    height: 48px;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-bottom-large {\r\n    right: 37px;\r\n    bottom: 0;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg.cre-t-286-snow-bottom-right {\r\n    right: 11px;\r\n    bottom: 48px;\r\n    width: 28px;\r\n    min-width: 28px;\r\n    height: 30px;\r\n}\r\n\r\nhtml body .cre-t-286-snow-bg img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: contain;\r\n    object-fit: contain;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    html body .cre-t-286-title {\r\n        max-width: 500px;\r\n        font-size: 28px;\r\n        line-height: 34px;\r\n    }\r\n\r\n    html body .cre-t-286-cta {\r\n        padding: 12px;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\n\r\n@media (max-height: 550px) and (min-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.9);\r\n    }\r\n}\r\n\r\n@media (max-height: 490px) and (min-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.8);\r\n    }\r\n}\r\n\r\n@media (max-height: 435px) and (min-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.7);\r\n    }\r\n}\r\n\r\n@media (max-height: 385px) and (min-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%);\r\n        overflow: auto;\r\n        height: 90vh;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\n\r\n@media (max-height: 640px) and (max-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.9);\r\n    }\r\n}\r\n\r\n@media (max-height: 570px) and (max-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.8);\r\n    }\r\n}\r\n\r\n@media (max-height: 510px) and (max-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%) scale(0.7);\r\n    }\r\n}\r\n\r\n@media (max-height: 450px) and (max-width: 768px) {\r\n    html body .cre-t-286-modal-container {\r\n        transform: translate(-50%, -50%);\r\n        overflow: auto;\r\n        height: 90vh;\r\n    }\r\n}\r\n\r\n/* -------------------------------------------------------------- */\r\n/* -------------------------------------------------------------- */\r\nhtml body .cre-t-286-spinner {\r\n    display: none;\r\n    width: 16px;\r\n    height: 16px;\r\n    border: 4px solid white;\r\n    border-top: 4px solid transparent;\r\n    border-radius: 50%;\r\n    animation: spin 1s linear infinite;\r\n}\r\n\r\nhtml body.cre-t-286-cta-clicked .cre-t-286-cta-text {\r\n    display: none;\r\n}\r\n\r\nhtml body.cre-t-286-cta-clicked .cre-t-286-spinner {\r\n    display: block;\r\n}\r\n\r\n@keyframes spin {\r\n    0% {\r\n        transform: rotate(0deg);\r\n    }\r\n\r\n    100% {\r\n        transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n\r\n\r\n/* Side Button */\r\n\r\n\r\n.cre-t-286-side-button-container {\r\n    z-index: 99;\r\n    position: fixed;\r\n    bottom: 20%;\r\n    display: none;\r\n    left: -75px;\r\n    transform: rotate(90deg);\r\n}\r\n\r\nhtml body.cre-t-286-modal-closed .cre-t-286-side-button-container {\r\n    display: block;\r\n}\r\n\r\nhtml body.cre-t-286-modal-open .cre-t-286-side-button-container {\r\n    display: none;\r\n}\r\n\r\n.cre-t-286-side-button {\r\n    display: inline-flex;\r\n    padding: 10px 25px;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: max-content;\r\n    gap: 10px;\r\n    border-radius: 8px 8px 0 0;\r\n    border-top: 1px solid #C9DEE6;\r\n    border-right: 1px solid #C9DEE6;\r\n    border-left: 1px solid #C9DEE6;\r\n    background: #E9F2F5;\r\n    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);\r\n    cursor: pointer;\r\n}\r\n\r\n.cre-t-286-side-button-text {\r\n    color: #243A44;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    line-height: 24px;\r\n}\r\n\r\n.cre-t-286-cta__disclaimer {\r\n    margin-top: 24px;\r\n    color: #000;\r\n    text-align: center;\r\n    font-family: inherit;\r\n    font-size: 15px;\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 24px;\r\n}\r\n\r\n@keyframes cre286SlideIn {\r\n    from {\r\n        opacity: 0;\r\n        transform: rotate(90deg) translateY(20px);\r\n    }\r\n\r\n    to {\r\n        opacity: 1;\r\n        transform: rotate(90deg) translateY(0);\r\n    }\r\n}\r\n\r\nhtml body .cre-t-286-side-button-container.cre-t-286-side-button-animate {\r\n    animation: cre286SlideIn 0.22s ease-out;\r\n}\r\n\r\n\r\n@media screen and (max-width:1076px) {\r\n\r\n    html body.cre-t-286-modal-closed .cre-t-286-side-button-container {\r\n        display: flex !important;\r\n    }\r\n\r\n    .cre-t-286-side-button-container {\r\n        background-image: url(https://v2.crocdn.com/Winkbed/Win286/cre_286-mobile-bg.svg);\r\n        background-size: cover;\r\n        background-repeat: no-repeat;\r\n    }\r\n\r\n    .cre-t-286-side-button {\r\n        min-height: 54px;\r\n        min-width: 206px;\r\n        background: transparent;\r\n        border: none;\r\n        border-radius: 0;\r\n        box-shadow: none;\r\n        padding-top: 25px;\r\n        padding-bottom: 10px;\r\n    }\r\n\r\n\r\n\r\n    .cre-t-286-side-button-close {\r\n        width: 44px;\r\n        height: 44px;\r\n        z-index: 1;\r\n        position: absolute;\r\n        border-radius: 50%;\r\n        top: -8px;\r\n        right: -8px;\r\n    }\r\n\r\n}"
+      }
+     }
+    ],
+    "traffic_allocation": 100
+   }
+  ]
+ },
+ {
+  "id": "100350740",
+  "name": "Test #100350740 [286]",
+  "type": "deploy",
+  "status": "active",
+  "global_js": null,
+  "global_css": "",
+  "environment": "production",
+  "settings": {
+   "min_order_value": 0,
+   "max_order_value": 99999,
+   "matching_options": {
+    "audiences": "any",
+    "locations": "any"
+   },
+   "placeholders": [],
+   "outliers": {
+    "order_value": {
+     "detection_type": "none"
+    },
+    "products_ordered_count": {
+     "detection_type": "none"
+    }
+   }
+  },
+  "key": null,
+  "version": 12,
+  "locations": [
+   "10031829"
+  ],
+  "site_area": null,
+  "audiences": [
+   "10036006"
+  ],
+  "goals": [],
+  "integrations": [
+   {
+    "provider": "crazyegg",
+    "enabled": false
+   },
+   {
+    "provider": "google_analytics",
+    "enabled": true,
+    "type": "ga4",
+    "measurementId": "G-9VJKTBGESY"
+   }
+  ],
+  "variations": [
+   {
+    "id": "1003184959",
+    "name": "Var #1003184959",
+    "key": null,
+    "status": "running",
+    "changes": [
+     {
+      "id": 1003189281,
+      "type": "customCode",
+      "data": {
+       "css": ""
+      }
+     },
+     {
+      "id": 1003189282,
+      "type": "defaultCode",
+      "data": {
+       "js": null,
+       "css": "",
+       "custom_js": null
+      }
+     }
+    ],
+    "traffic_allocation": 100
+   }
+  ]
+ },
+ {
+  "id": "100350741",
+  "name": "Test #100350741 [286]",
+  "type": "deploy",
+  "status": "active",
+  "global_js": null,
+  "global_css": "",
+  "environment": "production",
+  "settings": {
+   "min_order_value": 0,
+   "max_order_value": 99999,
+   "matching_options": {
+    "audiences": "any",
+    "locations": "any"
+   },
+   "placeholders": [],
+   "outliers": {
+    "order_value": {
+     "detection_type": "none"
+    },
+    "products_ordered_count": {
+     "detection_type": "none"
+    }
+   }
+  },
+  "key": null,
+  "version": 12,
+  "locations": [
+   "10031829"
+  ],
+  "site_area": null,
+  "audiences": [
+   "10036006"
+  ],
+  "goals": [],
+  "integrations": [
+   {
+    "provider": "crazyegg",
+    "enabled": false
+   },
+   {
+    "provider": "google_analytics",
+    "enabled": true,
+    "type": "ga4",
+    "measurementId": "G-9VJKTBGESY"
+   }
+  ],
+  "variations": [
+   {
+    "id": "1003184960",
+    "name": "Var #1003184960",
+    "key": null,
+    "status": "running",
+    "changes": [
+     {
+      "id": 1003189284,
+      "type": "defaultCode",
+      "data": {
+       "js": null,
+       "css": "",
+       "custom_js": null
+      }
+     },
+     {
+      "id": 1003189283,
+      "type": "customCode",
+      "data": {
+       "css": ""
+      }
+     }
+    ],
+    "traffic_allocation": 100
+   }
+  ]
+ }
+]

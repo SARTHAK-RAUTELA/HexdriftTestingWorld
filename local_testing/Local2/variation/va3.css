@@ -1,220 +1,458 @@
-/* hidden by default, shown only on desktop widths (control hides the bar at 1000px and below) */
-html body .order__benefits .cre-t-269-container {
+/* ===== lotus_test_15_C ===== */
+.lotus_test_15_C .lotus_test_15_C-hide { display: none !important; }
+.lotus_test_15_C .lotus_test_15_C-container {
+  width: 100%;
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+/* ---------- HERO ---------- */
+.lotus_test_15_C .lotus_test_15_C-hero-media,
+.lotus_test_15_C .lotus_test_15_C-hero-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+  display: block;
+}
+.lotus_test_15_C .lotus_test_15_C-hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(24, 24, 27, .45) 0%, rgba(24, 24, 27, .25) 55%, rgba(24, 24, 27, .35) 100%);
+}
+.lotus_test_15_C .lotus_test_15_C-hero-done [data-hero-element="heading"],
+.lotus_test_15_C .lotus_test_15_C-hero-done [data-hero-element="description"] { display: none !important; }
+.lotus_test_15_C .lotus_test_15_C-hero-heading { order: 1; margin-bottom: 12px; position: relative; }
+.lotus_test_15_C .lotus_test_15_C-hero-heading h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+}
+.lotus_test_15_C .lotus_test_15_C-hero-desc { order: 2; margin-bottom: 16px; position: relative; }
+.lotus_test_15_C .lotus_test_15_C-hero-desc p {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+}
+.lotus_test_15_C .lotus_test_15_C-hero-usps {
+  order: 2;
+  position: relative;
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.lotus_test_15_C .lotus_test_15_C-hero-usps li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+}
+.lotus_test_15_C .lotus_test_15_C-hero-usps svg { flex-shrink: 0; }
+.lotus_test_15_C .lotus_test_15_C-hero-rating {
+  order: 4;
+  position: relative;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.lotus_test_15_C .lotus_test_15_C-hero-rating:hover { opacity: .9; }
+.lotus_test_15_C .lotus_test_15_C-hero-rating__text { text-shadow: 0 1px 6px rgba(0, 0, 0, .35); font-size: 16px; }
+/* desktop CTA label */
+.lotus_test_15_C [data-booking-element="check-fleet-desktop"] { font-size: 0 !important; }
+.lotus_test_15_C [data-booking-element="check-fleet-desktop"]::after {
+  content: "Search Now";
+  font-size: 14px;
+  line-height: 20px;
+}
+/* ---------- REVIEWS ---------- */
+.lotus_test_15_C #lotus_test_15_C-reviews { order: 1; }
+.lotus_test_15_C .lotus_test_15_C-reviews { padding: 40px 0; background: #fff; }
+.lotus_test_15_C .lotus_test_15_C-reviews__title {
+  margin: 0 auto 28px;
+  max-width: 640px;
+  text-align: center;
+  color: var(--foreground, #18181b);
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.lotus_test_15_C .lotus_test_15_C-reviews__slider { position: relative; }
+.lotus_test_15_C .lotus_test_15_C-reviews__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 4px 2px 8px;
+  outline: none;
+}
+.lotus_test_15_C .lotus_test_15_C-reviews__track::-webkit-scrollbar { display: none; }
+.lotus_test_15_C .lotus_test_15_C-review {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid var(--border, #e4e4e7);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lotus_test_15_C .lotus_test_15_C-review__head { display: flex; align-items: center; gap: 10px; }
+.lotus_test_15_C .lotus_test_15_C-review__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+.lotus_test_15_C .lotus_test_15_C-review__who { min-width: 0; }
+.lotus_test_15_C .lotus_test_15_C-review__name {
+  margin: 0;
+  color: var(--foreground, #18181b);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lotus_test_15_C .lotus_test_15_C-review__time {
+  margin: 2px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted-foreground, #71717a);
+  font-size: 12px;
+  line-height: 16px;
+}
+.lotus_test_15_C .lotus_test_15_C-review__time svg { width: 12px; height: 12px; }
+.lotus_test_15_C .lotus_test_15_C-review__stars { display: flex; gap: 2px; }
+.lotus_test_15_C .lotus_test_15_C-review__text {
+  margin: 0;
+  color: var(--foreground, #18181b);
+  font-size: 14px;
+  line-height: 20px;
+  white-space: pre-line;
+}
+.lotus_test_15_C .lotus_test_15_C-review__text.is-clamped:not(.is-open) {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.lotus_test_15_C .lotus_test_15_C-review__more {
+  align-self: flex-start;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #1a73e8;
+  font-size: 13px;
+  font-weight: 500;
+}
+.lotus_test_15_C .lotus_test_15_C-review__more:hover { text-decoration: underline; }
+.lotus_test_15_C .lotus_test_15_C-reviews__arrow {
   display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border, #e4e4e7);
+  background: #fff;
+  color: var(--foreground, #18181b);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .2s;
 }
-
-@media screen and (min-width: 1001px) {
-  /* swap: our bar replaces the 4 icon bar, only when it was injected */
-  html body .order__benefits:has(.cre-t-269-container) .order__benefits-items {
-    display: none;
+.lotus_test_15_C .lotus_test_15_C-reviews__arrow:disabled { opacity: .35; cursor: default; }
+.lotus_test_15_C .lotus_test_15_C-reviews__arrow--prev { left: -20px;
+    background-color: #f4f4f5;}
+.lotus_test_15_C .lotus_test_15_C-reviews__arrow--next { right: -20px; 
+    background-color: #f4f4f5; }
+/* dots are <button>s – your sizes kept: 4px default, 6px active */
+.lotus_test_15_C .lotus_test_15_C-reviews__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  min-height: 12px;
+}
+.lotus_test_15_C .lotus_test_15_C-reviews__dot {
+  -webkit-appearance: none;
+  appearance: none;
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 100%;
+  background: #e4e4e7;
+  cursor: pointer;
+  transition: background .2s, width .2s, height .2s;
+}
+.lotus_test_15_C .lotus_test_15_C-reviews__dot:hover { background: #a1a1aa; }
+.lotus_test_15_C .lotus_test_15_C-reviews__all {
+  display: block;
+  width: fit-content;
+  margin: 16px auto 0;
+  color: var(--foreground, #18181b);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* ---------- FLEET ---------- */
+.lotus_test_15_C .lotus_test_15_C-fleet { background: #f4f4f5; }
+.lotus_test_15_C .lotus_test_15_C-fleet .lotus_test_15_C-fleet-title-show { display: block !important; }
+.lotus_test_15_C .lotus_test_15_C-fleet .lotus_test_15_C-fleet-title-hide { display: none !important; }
+/* ---------- PLAN YOUR TRIP ---------- */
+.lotus_test_15_C .lotus_test_15_C-plan { padding: 40px 0; background: #fff; }
+.lotus_test_15_C .lotus_test_15_C-plan__heading {
+  margin: 0;
+  color: var(--foreground, #18181b);
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__desc {
+  margin: 10px 0 24px;
+  color: var(--foreground, #18181b);
+  font-size: 16px;
+  line-height: 24px;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__grid::-webkit-scrollbar { display: none; }
+.lotus_test_15_C .lotus_test_15_C-plan__card {
+  flex: 0 0 78%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__media {
+  position: relative;
+  height: 147px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+  background: #e4e4e7;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease-out;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .2);
+}
+.lotus_test_15_C .lotus_test_15_C-plan__card:hover .lotus_test_15_C-plan__media img { transform: scale(1.05); }
+.lotus_test_15_C .lotus_test_15_C-plan__tags {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 1;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__tag {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #fff;
+  color: #18181b;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__read {
+  margin: 0;
+  color: var(--muted-foreground, #71717a);
+  font-size: 12px;
+  line-height: 16px;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__title {
+  margin: 0;
+  color: var(--foreground, #18181b);
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 600;
+  transition: color .3s ease-out;
+}
+.lotus_test_15_C .lotus_test_15_C-plan__card:hover .lotus_test_15_C-plan__title { color: #71717a; }
+.lotus_test_15_C-reviews__dots button.is-active{
+  width: 8px;
+    height: 8px;
+    background: #18181b;
+} 
+/* ---------- TABLET ---------- */
+@media (min-width: 768px) {
+  .lotus_test_15_C .lotus_test_15_C-review { flex-basis: calc((100% - 16px) / 2); }
+  .lotus_test_15_C .lotus_test_15_C-plan__card { flex-basis: calc((100% - 16px) / 2); }
+}
+/* ---------- DESKTOP ---------- */
+@media (min-width: 1024px) {
+  .lotus_test_15_C .lotus_test_15_C-container { padding: 0 24px; }
+  .lotus_test_15_C [data-section-name="hero"] { min-height: 565px !important; }
+  .lotus_test_15_C [data-section-name="hero"] [data-hero-element="content-wrapper"] {
+    padding-top: 72px !important;
+    padding-bottom: 56px !important;
+    gap: 20px !important;
   }
-
-  html body .order__benefits .cre-t-269-container {
-    display: block;
-    box-sizing: border-box;
-    background-color: #edf4fc;
-    border-radius: 24px;
-  }
-
-  html body .order__benefits .cre-t-269-wrapper {
-    padding: 28px 24px;
-  }
-
-  html body .order__benefits .cre-t-269-main {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: space-evenly;
-    gap: 14px 16px;
-  }
-
-  html body .order__benefits .cre-t-269-item {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  html body .order__benefits .cre-t-269-link-container {
-    display: flex;
-    margin: 0;
-  }
-
-  html body .order__benefits .cre-t-269-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #030c2d;
-    font-size: 15px;
+  /* site resets its hero children to order:0 on desktop – keep DOM order */
+  .lotus_test_15_C .lotus_test_15_C-hero-heading,
+  .lotus_test_15_C .lotus_test_15_C-hero-desc,
+  .lotus_test_15_C .lotus_test_15_C-hero-usps,
+  .lotus_test_15_C .lotus_test_15_C-hero-rating { order: 0; }
+  .lotus_test_15_C .lotus_test_15_C-hero-heading { margin-bottom: 0; }
+  .lotus_test_15_C .lotus_test_15_C-hero-heading h1 {
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.1;
     font-weight: 600;
-    line-height: 20px;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
   }
-
-  html body .order__benefits .cre-t-269-icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-    width: 30px;
-    height: 24px;
-  }
-
-  html body .order__benefits .cre-t-269-icon {
-    display: block;
-    flex: 0 0 auto;
-    width: auto;
-    height: 24px;
-    max-width: none;
-  }
-
-  /* icon files have different padding, sizes are set so every glyph looks the same height */
- html body .order__benefits .cre-t-269-link[data-cre-target="trial"]{
-    gap: 4px;
- }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="trial"] .cre-t-269-icon-container{
-    width: 21px;
-    height: 20px;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="trial"] .cre-t-269-icon{
-    width: 21px;
-    height: 20px;
-    object-fit: cover;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="shipping"],
-  html body .order__benefits .cre-t-269-link[data-cre-target="showrooms"]{
-        gap: 6px;
-    }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="shipping"] .cre-t-269-icon-container{
-    width: 36px;
-    height: 22px;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="shipping"] .cre-t-269-icon{
-    width: 36px;
-    height: 22px;
-    object-fit: cover;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="showrooms"] .cre-t-269-icon-container{
-    width: 15.999px;
-    height: 18.667px;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="showrooms"] .cre-t-269-icon{
-    width: 15.999px;
-    height: 18.667px;
-    object-fit: cover;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="warranty"]{
-        gap: 3px;
-    }
-html body .order__benefits .cre-t-269-item.cre-t-269-item-4{
-    margin-left: -3px
-}
-  html body .order__benefits .cre-t-269-link[data-cre-target="warranty"] .cre-t-269-icon-container{
-    width: 25px;
-height: 22px;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="warranty"] .cre-t-269-icon{
-    width: 25px;
-height: 22px;
-    object-fit: cover;
-  }
-
-
-  html body .order__benefits .cre-t-269-item.cre-t-269-item-5{
-    justify-content: end;
-    margin-right: 4px;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="usa"]{
-        gap: 7px;
-    }
-  html body .order__benefits .cre-t-269-link[data-cre-target="usa"] .cre-t-269-icon-container{
-    width: 19px;
-height: 16px;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="usa"] .cre-t-269-icon{
-    width: 19px;
-height: 16px;
-    object-fit: cover;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="rating"]{
-        gap: 7px;
-    }
-  html body .order__benefits .cre-t-269-link[data-cre-target="rating"] .cre-t-269-icon-container{
-    width: 17px;
-height: 19px;
-  }
-
-  html body .order__benefits .cre-t-269-link[data-cre-target="rating"] .cre-t-269-icon{
-    width: 17px;
-height: 19px;
-    object-fit: cover;
-  }
-
-  html body .order__benefits .cre-t-269-text {
-    color: #030C2D;
-    font-family: inherit;
+  .lotus_test_15_C .lotus_test_15_C-hero-desc { margin-bottom: 0; }
+  .lotus_test_15_C .lotus_test_15_C-hero-desc p {
+    text-align: center;
     font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 22px;
-    letter-spacing: -0.45px;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
+    line-height: 24px;
+    max-width: 823px;
+    margin: 0 auto;
+  }
+  .lotus_test_15_C .lotus_test_15_C-hero-usps { justify-content: center; gap: 12px 36px; margin: 12px 0 30px; }
+  .lotus_test_15_C .lotus_test_15_C-hero-usps li { font-size: 15px; }
+  .lotus_test_15_C .lotus_test_15_C-hero-rating { margin-top: 25px;         gap: 0;}
+  .lotus_test_15_C .lotus_test_15_C-reviews { padding: 40px 0; }
+  .lotus_test_15_C .lotus_test_15_C-reviews__title { font-size: 36px; line-height: 1.25; font-weight: 500; margin-bottom: 36px; }
+  .lotus_test_15_C .lotus_test_15_C-review { flex-basis: calc((100% - 48px) / 4); }
+  .lotus_test_15_C .lotus_test_15_C-reviews__arrow { display: flex; }
+  .lotus_test_15_C .lotus_test_15_C-plan { padding: 64px 0 48px; }
+  .lotus_test_15_C .lotus_test_15_C-plan__heading { font-size: 36px; line-height: 36px; font-weight: 500; }
+  .lotus_test_15_C .lotus_test_15_C-plan__desc { margin: 28px 0 28px; }
+  .lotus_test_15_C .lotus_test_15_C-plan__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    overflow: visible;
   }
 }
-
-@media screen and (min-width: 1001px) and (max-width: 1279px) {
-  html body .order__benefits .cre-t-269-wrapper {
-    padding: 28px 16px;
-  }
-
-  html body .order__benefits .cre-t-269-main {
-    gap: 14px 8px;
-  }
-
-  html body .order__benefits .cre-t-269-link {
-    font-size: 14px;
-    gap: 6px;
-  }
+@media (min-width: 1024px) and (max-width: 1320px) {
+  .lotus_test_15_C .lotus_test_15_C-reviews__arrow--prev { left: -8px; }
+  .lotus_test_15_C .lotus_test_15_C-reviews__arrow--next { right: -8px; }
 }
-
-@media screen and (min-width: 1001px) and (max-width: 1100px) {
-  /* touch-size tap targets on tablet landscape */
-  html body .order__benefits .cre-t-269-wrapper {
-    padding: 18px 16px;
-  }
-
-  html body .order__benefits .cre-t-269-main {
-    gap: 0 8px;
-  }
-
-  html body .order__benefits .cre-t-269-link {
-    min-height: 40px;
-  }
+/* ===== lotus_test_15_C – CSS CHANGES ONLY ===== */
+/* 1) REPLACE the existing .lotus_test_15_C-reviews__track rule with this
+      (added align-items: flex-start – JS now controls card heights) */
+.lotus_test_15_C .lotus_test_15_C-reviews__track {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 4px 0px 8px;
+  outline: none;
 }
-
-@media screen and (min-width: 1440px) {
-  html body .order__benefits .cre-t-269-wrapper {
-    padding: 34px 32px;
-  }
-
-  html body .order__benefits .cre-t-269-main {
-    grid-template-columns: repeat(3, auto);
-    gap: 13px 16px;
-  }
+/* 2) REMOVE this old rule (Google icon is now an <img>, not an svg):
+   .lotus_test_15_C .lotus_test_15_C-review__time svg { width: 12px; height: 12px; }
+*/
+/* 3) ADD – image icons */
+.lotus_test_15_C .lotus_test_15_C-icon {
+  display: block;
+  flex-shrink: 0;
+  max-width: none;
+  object-fit: contain;
+}
+/* USP icons – same 16px size as the inline SVGs, forced white to match */
+.lotus_test_15_C .lotus_test_15_C-hero-usps .lotus_test_15_C-icon {
+  filter: brightness(0) invert(1);
+}
+/* Google logo inside review card ("2 months ago on [G]") */
+.lotus_test_15_C .lotus_test_15_C-review__time .lotus_test_15_C-icon--google {
+  width: auto;
+  height: 14px;
+}
+/* Hero rating: Google logo + stars */
+.lotus_test_15_C .lotus_test_15_C-hero-rating__icons {
+  display: inline-flex;
+  align-items: center;
+}
+.lotus_test_15_C .lotus_test_15_C-hero-rating__icons .lotus_test_15_C-icon--google {
+  width: auto;
+  height: 40px;
+}
+.lotus_test_15_C .lotus_test_15_C-hero-rating__stars {
+  display: inline-flex;
+  gap: 2px;
+}
+@media (max-width: 767px) {
+.lotus_test_15_C .lotus_test_15_C-hero-usps > li:last-child{
+  margin-top: 10px;
+}
+img.lotus_test_15_C-icon.lotus_test_15_C-icon--google{
+  max-width: 155px!important;
+}
+.lotus_test_15_C .lotus_test_15_C-hero-rating__text{
+  font-size: 14px;
+}
 }

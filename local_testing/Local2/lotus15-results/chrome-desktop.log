@@ -1,0 +1,212 @@
+
+Running 37 tests using 1 worker
+
+  ✓   1 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:81:5 › control › T01 control: arm loads with correct variation code and no variation errors (27.3s)
+  ✓   2 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:99:7 › control › T02 control: original homepage unchanged (23.0s)
+  ✓   3 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:81:5 › v1 › T01 v1: arm loads with correct variation code and no variation errors (14.7s)
+  ✓   4 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:113:5 › v1 › T02 v1: hero heading and description match wireframe; old copy hidden (11.0s)
+  ✓   5 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:123:5 › v1 › T03 v1: 4 USPs with white icons of a consistent size (7.1s)
+  ✓   6 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:139:5 › v1 › T04 v1: hero background is new image (not the control image) (7.0s)
+  ✓   7 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:165:5 › v1 › T05 v1: booking CTA reads "Search Now" (6.2s)
+  ✘   8 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v1 › T06 v1: CTA accessible name matches the visible label (8.2s)
+  ✓   9 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:179:5 › v1 › T07 v1: Google rating summary replaces old trust block (7.0s)
+  ✓  10 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:192:5 › v1 › T08 v1: review section directly after hero; Why Lotus removed (6.6s)
+  ✓  11 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:207:5 › v1 › T09 v1: review carousel navigation (arrows/dots/swipe) (8.9s)
+  ✓  12 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:248:5 › v1 › T10 v1: Read more expands / Show less collapses a review (6.5s)
+  ✓  13 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:265:5 › v1 › T11 v1: fleet section retitled with grey background (5.7s)
+  ✓  14 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:274:5 › v1 › T12 v1: Plan your trip replaces Before your trip (6.2s)
+  ✘  15 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe (6.6s)
+  ✓  16 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:301:5 › v1 › T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back (11.7s)
+  ✓  17 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:322:5 › v1 › T15 v1: Search Now still starts the booking flow (8.9s)
+  ✓  18 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:332:5 › v1 › T16 v1: FAQ and footer intact, no horizontal overflow (6.4s)
+  ✓  19 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:342:5 › v1 › T17 v1: variation does not run on the German homepage (1.0m)
+  ✓  20 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:81:5 › v2 › T01 v2: arm loads with correct variation code and no variation errors (6.9s)
+  ✓  21 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:113:5 › v2 › T02 v2: hero heading and description match wireframe; old copy hidden (6.1s)
+  ✘  22 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:123:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size (5.7s)
+  ✓  23 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:139:5 › v2 › T04 v2: hero background is new video (not the control image) (9.4s)
+  ✓  24 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:165:5 › v2 › T05 v2: booking CTA reads "Search Now" (6.0s)
+  ✘  25 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v2 › T06 v2: CTA accessible name matches the visible label (5.1s)
+  ✓  26 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:179:5 › v2 › T07 v2: Google rating summary replaces old trust block (7.7s)
+  ✓  27 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:192:5 › v2 › T08 v2: review section directly after hero; Why Lotus removed (5.5s)
+  ✓  28 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:207:5 › v2 › T09 v2: review carousel navigation (arrows/dots/swipe) (9.0s)
+  ✓  29 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:248:5 › v2 › T10 v2: Read more expands / Show less collapses a review (7.1s)
+  ✓  30 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:265:5 › v2 › T11 v2: fleet section retitled with grey background (6.3s)
+  ✓  31 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:274:5 › v2 › T12 v2: Plan your trip replaces Before your trip (6.3s)
+  ✘  32 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe (4.7s)
+  ✓  33 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:301:5 › v2 › T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back (11.7s)
+  ✓  34 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:322:5 › v2 › T15 v2: Search Now still starts the booking flow (8.9s)
+  ✓  35 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:332:5 › v2 › T16 v2: FAQ and footer intact, no horizontal overflow (7.3s)
+  ✓  36 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:342:5 › v2 › T17 v2: variation does not run on the German homepage (59.9s)
+  ✘  37 [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:350:7 › v2 › T18 v2: video respects prefers-reduced-motion (7.2s)
+
+
+  1) [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v1 › T06 v1: CTA accessible name matches the visible label 
+
+    Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+    Expected substring: [32m"Search Now"[39m
+    Received string:    [31m"Check the fleet"[39m
+
+      174 |       const c = await ctaLabel(page);
+      175 |       note(ti, `visible="${c.visible}" accessible name="${c.aria || c.text}"`);
+    > 176 |       expect(c.aria || c.text, 'screen readers announce a different label (WCAG 2.5.3 label-in-name)').toContain(COPY.cta);
+          |                                                                                                        ^
+      177 |     });
+      178 |
+      179 |     test(`T07 ${arm.key}: Google rating summary replaces old trust block`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:176:104
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--6e35a-e-matches-the-visible-label-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--6e35a-e-matches-the-visible-label-Chrome-Desktop\error-context.md
+
+  2) [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 3[39m
+
+    [2m  Array [[22m
+    [31m+   "Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips",[39m
+    [31m+   "What is the Best Month to Visit Iceland? Local Guide.",[39m
+    [2m    "How Many Days Do You Need to Visit Iceland? (2026 Guide)",[22m
+    [32m-   "Campervan vs Car Rental in Iceland: A Local's 2026 Guide",[39m
+    [32m-   "Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide",[39m
+    [32m-   "How to Rent a Car in Iceland: Everything You Need to Know Before You Book",[39m
+    [31m+   "Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)",[39m
+    [2m  ][22m
+
+      296 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);
+      297 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);
+    > 298 |       expect(titles).toEqual(COPY.planPosts);
+          |                      ^
+      299 |     });
+      300 |
+      301 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:298:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Chrome-Desktop\error-context.md
+
+  3) [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:123:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size 
+
+    Error: icon heights differ: 20,16,20,22
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m1[39m
+    Received:    [31m6[39m
+
+      133 |       // wireframe draws all four icons at the same ~16px size
+      134 |       const hs = usps.map((u) => u.h); const ws = usps.map((u) => u.w);
+    > 135 |       expect(Math.max(...hs) - Math.min(...hs), `icon heights differ: ${hs}`).toBeLessThanOrEqual(1);
+          |                                                                               ^
+      136 |       expect(Math.max(...ws), `icon widths: ${ws}`).toBeLessThanOrEqual(18);
+      137 |     });
+      138 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:135:79
+
+    attachment #1: v2-T03-usps (image/png) ─────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Chrome-Desktop\attachments\v2-T03-usps-c1de07e3abee64e2010c35c30be75edb53243ac7.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Chrome-Desktop\error-context.md
+
+  4) [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v2 › T06 v2: CTA accessible name matches the visible label 
+
+    Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+    Expected substring: [32m"Search Now"[39m
+    Received string:    [31m"Check the fleet"[39m
+
+      174 |       const c = await ctaLabel(page);
+      175 |       note(ti, `visible="${c.visible}" accessible name="${c.aria || c.text}"`);
+    > 176 |       expect(c.aria || c.text, 'screen readers announce a different label (WCAG 2.5.3 label-in-name)').toContain(COPY.cta);
+          |                                                                                                        ^
+      177 |     });
+      178 |
+      179 |     test(`T07 ${arm.key}: Google rating summary replaces old trust block`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:176:104
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--48fe9-e-matches-the-visible-label-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--48fe9-e-matches-the-visible-label-Chrome-Desktop\error-context.md
+
+  5) [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 3[39m
+
+    [2m  Array [[22m
+    [31m+   "Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips",[39m
+    [31m+   "What is the Best Month to Visit Iceland? Local Guide.",[39m
+    [2m    "How Many Days Do You Need to Visit Iceland? (2026 Guide)",[22m
+    [32m-   "Campervan vs Car Rental in Iceland: A Local's 2026 Guide",[39m
+    [32m-   "Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide",[39m
+    [32m-   "How to Rent a Car in Iceland: Everything You Need to Know Before You Book",[39m
+    [31m+   "Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)",[39m
+    [2m  ][22m
+
+      296 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);
+      297 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);
+    > 298 |       expect(titles).toEqual(COPY.planPosts);
+          |                      ^
+      299 |     });
+      300 |
+      301 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:298:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Chrome-Desktop\error-context.md
+
+  6) [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:350:7 › v2 › T18 v2: video respects prefers-reduced-motion 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      354 |         const playing = await page.evaluate((p) => { const v = document.querySelector(`.${p}-hero-video`); return v ? !v.paused : false; }, P);
+      355 |         note(ti, `reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`);
+    > 356 |         expect(playing).toBe(false);
+          |                         ^
+      357 |       });
+      358 |     }
+      359 |   });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:356:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Chrome-Desktop\error-context.md
+
+  6 failed
+    [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v1 › T06 v1: CTA accessible name matches the visible label 
+    [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe 
+    [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:123:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size 
+    [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v2 › T06 v2: CTA accessible name matches the visible label 
+    [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe 
+    [Chrome Desktop] › testing\lotus15-homepage-new-hero.spec.js:350:7 › v2 › T18 v2: video respects prefers-reduced-motion 
+  31 passed (7.4m)

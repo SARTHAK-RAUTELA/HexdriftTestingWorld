@@ -1,0 +1,2080 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus15-homepage-new-hero.spec.js",
+      "file": "lotus15-homepage-new-hero.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "control",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 82,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 control: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 | co-running Convert experiences: 100052832, 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15325,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:24:43.744Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 | co-running Convert experiences: 100052832, 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d1a53-ode-and-no-variation-errors-Mobile-Safari-iPhone-12-\\attachments\\control-T01-fold-3681d366a031f8e79fb1ff0017f3626ae51d5948.png"
+                        },
+                        {
+                          "name": "control-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d1a53-ode-and-no-variation-errors-Mobile-Safari-iPhone-12-\\attachments\\control-T01-full-page-f997fb0799a04f09d2546da145e0f5b536f382e2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-1d1c95c6c152599507ad",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 83,
+              "column": 5
+            },
+            {
+              "title": "T02 control: original homepage unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12792,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:24:59.189Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--e5799-original-homepage-unchanged-Mobile-Safari-iPhone-12-\\attachments\\control-T02-hero-13ffc0d182170a2143e1e6d6ebc911815e1539e5.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-93bb6087be33a6fc25e0",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 101,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "v1",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 82,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 v1: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 lotus_test_15_B | co-running Convert experiences: 100052832, 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11136,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:25:12.027Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 lotus_test_15_B | co-running Convert experiences: 100052832, 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--56ce4-ode-and-no-variation-errors-Mobile-Safari-iPhone-12-\\attachments\\v1-T01-fold-fb5ed5f72326c46a83b65585dbdcb56b19d76aff.png"
+                        },
+                        {
+                          "name": "v1-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--56ce4-ode-and-no-variation-errors-Mobile-Safari-iPhone-12-\\attachments\\v1-T01-full-page-8df2fb8cf3185f988e1e597bb9aef733435c10d1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-35b0f177cd49375b10ce",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 83,
+              "column": 5
+            },
+            {
+              "title": "T02 v1: hero heading and description match wireframe; old copy hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10600,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:25:23.213Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--5ff42-h-wireframe-old-copy-hidden-Mobile-Safari-iPhone-12-\\attachments\\v1-T02-hero-4c336511dd90825c1394c76d784729000ee357bd.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-947920776754a2b4e7ef",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 115,
+              "column": 5
+            },
+            {
+              "title": "T03 v1: 4 USPs with white icons of a consistent size",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "USP icon sizes: Locally Owned 16x16, Free Wifi 16x16, 24/7 Support 16x16, No Hidden Fees 16x16"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9725,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:25:33.876Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "USP icon sizes: Locally Owned 16x16, Free Wifi 16x16, 24/7 Support 16x16, No Hidden Fees 16x16"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T03-usps",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b132d--icons-of-a-consistent-size-Mobile-Safari-iPhone-12-\\attachments\\v1-T03-usps-cfb71f98a5a7be8479c861099b64e14c0cf0db9b.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-1c09de085140afad91ae",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 125,
+              "column": 5
+            },
+            {
+              "title": "T04 v1: hero background is new image (not the control image)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Control/original hero src: https://images.prismic.io/lotuscarrental/afxmOcBOoF08xtoI_defender-lava-field-lake-aerial.jpg?auto=format%2Ccompress&fit=max&w=1200 | V1 injected src: https://v2.crocdn.com/Lotus_Car/test15/1.jpg"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8988,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:25:43.757Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Control/original hero src: https://images.prismic.io/lotuscarrental/afxmOcBOoF08xtoI_defender-lava-field-lake-aerial.jpg?auto=format%2Ccompress&fit=max&w=1200 | V1 injected src: https://v2.crocdn.com/Lotus_Car/test15/1.jpg"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T04-hero-bg",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--aadcc-mage-not-the-control-image--Mobile-Safari-iPhone-12-\\attachments\\v1-T04-hero-bg-c9ed30693dd8390d0a97a5d4a6a34cf3cc4a6ad8.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-82c530b9bc8d4361a4dd",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 141,
+              "column": 5
+            },
+            {
+              "title": "T05 v1: booking CTA reads \"Search Now\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "CTA visible=\"Search Now\" DOM text=\"Search Now\" aria-label=null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7876,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:25:52.871Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "CTA visible=\"Search Now\" DOM text=\"Search Now\" aria-label=null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-dddda355d660fa24c37d",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 167,
+              "column": 5
+            },
+            {
+              "title": "T06 v1: CTA accessible name matches the visible label",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "visible=\"Search Now\" accessible name=\"Search Now\""
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6127,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:26:00.775Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "visible=\"Search Now\" accessible name=\"Search Now\""
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-bd3ed773bdf46eff13d0",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 174,
+              "column": 5
+            },
+            {
+              "title": "T07 v1: Google rating summary replaces old trust block",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8840,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:26:06.923Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T07-rating",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--63ebd-ry-replaces-old-trust-block-Mobile-Safari-iPhone-12-\\attachments\\v1-T07-rating-edfb988dbf088a42cd3412484c2f9c588da96811.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-7a5ee03804c52d1df621",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 181,
+              "column": 5
+            },
+            {
+              "title": "T08 v1: review section directly after hero; Why Lotus removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7678,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:26:15.780Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T08-reviews",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d91c6-fter-hero-Why-Lotus-removed-Mobile-Safari-iPhone-12-\\attachments\\v1-T08-reviews-11d2a8baa0a5b11f2310b8538fcb6c0b78840b5a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-de3a67ad19e20a84e71a",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 194,
+              "column": 5
+            },
+            {
+              "title": "T09 v1: review carousel navigation (arrows/dots/swipe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "initial: {\"left\":0,\"vis\":1,\"dots\":14,\"active\":0,\"prevDis\":true}"
+                    },
+                    {
+                      "type": "observation",
+                      "description": "after swipe: {\"left\":314,\"vis\":1,\"dots\":14,\"active\":1,\"prevDis\":false}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14006,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:26:23.493Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "initial: {\"left\":0,\"vis\":1,\"dots\":14,\"active\":0,\"prevDis\":true}"
+                        },
+                        {
+                          "type": "observation",
+                          "description": "after swipe: {\"left\":314,\"vis\":1,\"dots\":14,\"active\":1,\"prevDis\":false}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T09-swiped",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--f00b2-vigation-arrows-dots-swipe--Mobile-Safari-iPhone-12-\\attachments\\v1-T09-swiped-a121f2b1bfcdff02384849caa1ed09f0e085f4c9.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-958dadb01f7e38d8ec87",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 209,
+              "column": 5
+            },
+            {
+              "title": "T10 v1: Read more expands / Show less collapses a review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10197,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:26:37.543Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T10-expanded",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--9a872-how-less-collapses-a-review-Mobile-Safari-iPhone-12-\\attachments\\v1-T10-expanded-a60ee36ed30a6fc713a72eafad2ff410f8d7f982.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-9d63c6fe194da7658fae",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 250,
+              "column": 5
+            },
+            {
+              "title": "T11 v1: fleet section retitled with grey background",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9875,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:26:47.765Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T11-fleet",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--46946-titled-with-grey-background-Mobile-Safari-iPhone-12-\\attachments\\v1-T11-fleet-3c38e1029c50a620cab8984bc1cb56c8494b8edf.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-c41f8a99ad05d6b81688",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 267,
+              "column": 5
+            },
+            {
+              "title": "T12 v1: Plan your trip replaces Before your trip",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9088,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:26:57.659Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T12-plan",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b601c-p-replaces-Before-your-trip-Mobile-Safari-iPhone-12-\\attachments\\v1-T12-plan-4a8a8101a4452bd36655698de2ff0c8d23c0228d.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-994305a051d12395044f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 276,
+              "column": 5
+            },
+            {
+              "title": "T13 v1: Plan your trip shows the posts drawn in the wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6280,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:300:22",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 22,
+                          "line": 300
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 298 |\u001b[39m       \u001b[36mconst\u001b[39m titles \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-plan__title`\u001b[39m)\u001b[33m.\u001b[39mallInnerTexts())\u001b[33m.\u001b[39mmap(norm)\u001b[33m;\u001b[39m\n \u001b[90m 299 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 300 |\u001b[39m       expect(titles)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mplanPosts)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 301 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 302 |\u001b[39m\n \u001b[90m 303 |\u001b[39m     test(\u001b[32m`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 22,
+                            "line": 300
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  298 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);\n  299 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);\n> 300 |       expect(titles).toEqual(COPY.planPosts);\n      |                      ^\n  301 |     });\n  302 |\n  303 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:300:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:27:06.765Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 22,
+                        "line": 300
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-2bfbab6532bbbec0891b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 17919,
+                      "error": {
+                        "message": "Error: pageerror: /g.clarity.ms/collect due to access control checks.\npageerror: /g.clarity.ms/collect due to access control checks.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 4\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /g.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /g.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: pageerror: /g.clarity.ms/collect due to access control checks.\npageerror: /g.clarity.ms/collect due to access control checks.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 4\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /g.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /g.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:321:37",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 37,
+                          "line": 321
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 319 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-hero-media`\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 320 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-T14-after-back`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 321 |\u001b[39m       expect(errs\u001b[33m,\u001b[39m errs\u001b[33m.\u001b[39mjoin(\u001b[32m'\\n'\u001b[39m))\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m\n \u001b[90m 324 |\u001b[39m     test(\u001b[32m`T15 ${arm.key}: Search Now still starts the booking flow`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 37,
+                            "line": 321
+                          },
+                          "message": "Error: pageerror: /g.clarity.ms/collect due to access control checks.\npageerror: /g.clarity.ms/collect due to access control checks.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 4\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /g.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /g.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  319 |       await expect(page.locator(`.${P}-hero-media`)).toHaveCount(1);\n  320 |       await shot(page, ti, `${arm.key}-T14-after-back`);\n> 321 |       expect(errs, errs.join('\\n')).toEqual([]);\n      |                                     ^\n  322 |     });\n  323 |\n  324 |     test(`T15 ${arm.key}: Search Now still starts the booking flow`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:321:37"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:27:14.287Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T14-after-back",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\\attachments\\v1-T14-after-back-b595b02fd8e5531e27385bb0ed81f65adea7967b.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 37,
+                        "line": 321
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-ddded6cd00404dc799bd",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 303,
+              "column": 5
+            },
+            {
+              "title": "T15 v1: Search Now still starts the booking flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11106,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:27:33.279Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T15-after-cta",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--bbc95-ill-starts-the-booking-flow-Mobile-Safari-iPhone-12-\\attachments\\v1-T15-after-cta-f8ac6923b942f6acd13334b38522707c96ae0bae.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-b39297c46d191a221bc2",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 324,
+              "column": 5
+            },
+            {
+              "title": "T16 v1: FAQ and footer intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8006,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:27:44.447Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T16-faq",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--72bce-tact-no-horizontal-overflow-Mobile-Safari-iPhone-12-\\attachments\\v1-T16-faq-99972dd2d18be4194d9fb2e0ae6b175358b93989.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-198e113f6bbb64ec1228",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 334,
+              "column": 5
+            },
+            {
+              "title": "T17 v1: variation does not run on the German homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "lang=de-de"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60637,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:27:52.485Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "lang=de-de"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-08b325248a6dcc09d378",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 344,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "v2",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 82,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 v2: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 lotus_test_15_C | co-running Convert experiences: 100052832, 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9538,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:28:53.145Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 lotus_test_15_C | co-running Convert experiences: 100052832, 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--604ad-ode-and-no-variation-errors-Mobile-Safari-iPhone-12-\\attachments\\v2-T01-fold-70664cf66c7297f1734ad43441b97ffd6d30f58a.png"
+                        },
+                        {
+                          "name": "v2-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--604ad-ode-and-no-variation-errors-Mobile-Safari-iPhone-12-\\attachments\\v2-T01-full-page-5b6be31ea7484a7ddbef449dcfad0f87da66da83.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-4c2f52d559eaf9b6b57f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 83,
+              "column": 5
+            },
+            {
+              "title": "T02 v2: hero heading and description match wireframe; old copy hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8366,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:29:02.699Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--a0e93-h-wireframe-old-copy-hidden-Mobile-Safari-iPhone-12-\\attachments\\v2-T02-hero-1e981ff94055737f7396619f1405031e43c8f4d5.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-a3fcb5de50ca8f48d185",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 115,
+              "column": 5
+            },
+            {
+              "title": "T03 v2: 4 USPs with white icons of a consistent size",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "USP icon sizes: Locally Owned 20x20, Free Wifi 22x16, 24/7 Support 20x20, No Hidden Fees 19x22"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8017,
+                      "error": {
+                        "message": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m",
+                        "stack": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:137:79",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 79,
+                          "line": 137
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 135 |\u001b[39m       \u001b[90m// wireframe draws all four icons at the same ~16px size\u001b[39m\n \u001b[90m 136 |\u001b[39m       \u001b[36mconst\u001b[39m hs \u001b[33m=\u001b[39m usps\u001b[33m.\u001b[39mmap((u) \u001b[33m=>\u001b[39m u\u001b[33m.\u001b[39mh)\u001b[33m;\u001b[39m \u001b[36mconst\u001b[39m ws \u001b[33m=\u001b[39m usps\u001b[33m.\u001b[39mmap((u) \u001b[33m=>\u001b[39m u\u001b[33m.\u001b[39mw)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 137 |\u001b[39m       expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmax(\u001b[33m...\u001b[39mhs) \u001b[33m-\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmin(\u001b[33m...\u001b[39mhs)\u001b[33m,\u001b[39m \u001b[32m`icon heights differ: ${hs}`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 138 |\u001b[39m       expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmax(\u001b[33m...\u001b[39mws)\u001b[33m,\u001b[39m \u001b[32m`icon widths: ${ws}`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m18\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 139 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 140 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 79,
+                            "line": 137
+                          },
+                          "message": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m\n\n  135 |       // wireframe draws all four icons at the same ~16px size\n  136 |       const hs = usps.map((u) => u.h); const ws = usps.map((u) => u.w);\n> 137 |       expect(Math.max(...hs) - Math.min(...hs), `icon heights differ: ${hs}`).toBeLessThanOrEqual(1);\n      |                                                                               ^\n  138 |       expect(Math.max(...ws), `icon widths: ${ws}`).toBeLessThanOrEqual(18);\n  139 |     });\n  140 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:137:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:29:11.086Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "USP icon sizes: Locally Owned 20x20, Free Wifi 22x16, 24/7 Support 20x20, No Hidden Fees 19x22"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T03-usps",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Safari-iPhone-12-\\attachments\\v2-T03-usps-6b787db55ad3e8d4d3800c1526565c9b68781de2.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 79,
+                        "line": 137
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-129f5cab54e58104a7da",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 125,
+              "column": 5
+            },
+            {
+              "title": "T04 v2: hero background is new video (not the control image)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Video https://v2.crocdn.com/Lotus_Car/test15/1000200424_compressed.mp4 dur=45s t 2.5→5.0 paused=false"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12325,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:29:20.083Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Video https://v2.crocdn.com/Lotus_Car/test15/1000200424_compressed.mp4 dur=45s t 2.5→5.0 paused=false"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T04-hero-video",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--8e3a1-ideo-not-the-control-image--Mobile-Safari-iPhone-12-\\attachments\\v2-T04-hero-video-671a21a67e9465946ea9e6b2358ac7acf7a99b4b.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-e1fcadd898ff19ebc652",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 141,
+              "column": 5
+            },
+            {
+              "title": "T05 v2: booking CTA reads \"Search Now\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "CTA visible=\"Search Now\" DOM text=\"Search Now\" aria-label=null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7103,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:29:32.463Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "CTA visible=\"Search Now\" DOM text=\"Search Now\" aria-label=null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-9f926d2aed6613773116",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 167,
+              "column": 5
+            },
+            {
+              "title": "T06 v2: CTA accessible name matches the visible label",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "visible=\"Search Now\" accessible name=\"Search Now\""
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6655,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:29:39.583Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "visible=\"Search Now\" accessible name=\"Search Now\""
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-69c61fb477e295424c4b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 174,
+              "column": 5
+            },
+            {
+              "title": "T07 v2: Google rating summary replaces old trust block",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6986,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:29:46.257Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T07-rating",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ce135-ry-replaces-old-trust-block-Mobile-Safari-iPhone-12-\\attachments\\v2-T07-rating-7278e6466e4bcd3b5f2ffbb0daa6cb3cfb2b3b29.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-ddfa8396dac0203fc304",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 181,
+              "column": 5
+            },
+            {
+              "title": "T08 v2: review section directly after hero; Why Lotus removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7728,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:29:53.269Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T08-reviews",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--29f58-fter-hero-Why-Lotus-removed-Mobile-Safari-iPhone-12-\\attachments\\v2-T08-reviews-49f305b60d8b4bc3e79781034f9d02221181a570.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-b9be1d1558dd76277346",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 194,
+              "column": 5
+            },
+            {
+              "title": "T09 v2: review carousel navigation (arrows/dots/swipe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "initial: {\"left\":0,\"vis\":1,\"dots\":14,\"active\":0,\"prevDis\":true}"
+                    },
+                    {
+                      "type": "observation",
+                      "description": "after swipe: {\"left\":314,\"vis\":1,\"dots\":14,\"active\":1,\"prevDis\":false}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9379,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:30:01.020Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "initial: {\"left\":0,\"vis\":1,\"dots\":14,\"active\":0,\"prevDis\":true}"
+                        },
+                        {
+                          "type": "observation",
+                          "description": "after swipe: {\"left\":314,\"vis\":1,\"dots\":14,\"active\":1,\"prevDis\":false}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T09-swiped",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--99df9-vigation-arrows-dots-swipe--Mobile-Safari-iPhone-12-\\attachments\\v2-T09-swiped-a0d92eb08e264fb0e9df2c1ed93690c557b0a08f.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-3fc828133320ea797769",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 209,
+              "column": 5
+            },
+            {
+              "title": "T10 v2: Read more expands / Show less collapses a review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10203,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:30:10.419Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T10-expanded",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--cb22d-how-less-collapses-a-review-Mobile-Safari-iPhone-12-\\attachments\\v2-T10-expanded-6c83a034f892d3440fdb641b5d6a5612305be833.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-12092cc497c706b85ee2",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 250,
+              "column": 5
+            },
+            {
+              "title": "T11 v2: fleet section retitled with grey background",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9257,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:30:20.645Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T11-fleet",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d5838-titled-with-grey-background-Mobile-Safari-iPhone-12-\\attachments\\v2-T11-fleet-a024fb796ee6e4cc8fe8b2bcaf656b64f5a3c323.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-4497ef320733c2d85713",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 267,
+              "column": 5
+            },
+            {
+              "title": "T12 v2: Plan your trip replaces Before your trip",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8773,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:30:29.933Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T12-plan",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--96235-p-replaces-Before-your-trip-Mobile-Safari-iPhone-12-\\attachments\\v2-T12-plan-67431e67d1360eddb5cf1dc8a2f064324b11167c.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-3ad90a5a536b99c1b822",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 276,
+              "column": 5
+            },
+            {
+              "title": "T13 v2: Plan your trip shows the posts drawn in the wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7797,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:300:22",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 22,
+                          "line": 300
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 298 |\u001b[39m       \u001b[36mconst\u001b[39m titles \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-plan__title`\u001b[39m)\u001b[33m.\u001b[39mallInnerTexts())\u001b[33m.\u001b[39mmap(norm)\u001b[33m;\u001b[39m\n \u001b[90m 299 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 300 |\u001b[39m       expect(titles)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mplanPosts)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 301 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 302 |\u001b[39m\n \u001b[90m 303 |\u001b[39m     test(\u001b[32m`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 22,
+                            "line": 300
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  298 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);\n  299 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);\n> 300 |       expect(titles).toEqual(COPY.planPosts);\n      |                      ^\n  301 |     });\n  302 |\n  303 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:300:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:30:38.733Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 22,
+                        "line": 300
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-739c9dcf6edc0c1d63e9",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 296,
+              "column": 5
+            },
+            {
+              "title": "T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16786,
+                      "error": {
+                        "message": "Error: pageerror: /q.clarity.ms/collect due to access control checks.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /q.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: pageerror: /q.clarity.ms/collect due to access control checks.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /q.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:321:37",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 37,
+                          "line": 321
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 319 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-hero-media`\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 320 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-T14-after-back`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 321 |\u001b[39m       expect(errs\u001b[33m,\u001b[39m errs\u001b[33m.\u001b[39mjoin(\u001b[32m'\\n'\u001b[39m))\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m\n \u001b[90m 324 |\u001b[39m     test(\u001b[32m`T15 ${arm.key}: Search Now still starts the booking flow`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 37,
+                            "line": 321
+                          },
+                          "message": "Error: pageerror: /q.clarity.ms/collect due to access control checks.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /q.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  319 |       await expect(page.locator(`.${P}-hero-media`)).toHaveCount(1);\n  320 |       await shot(page, ti, `${arm.key}-T14-after-back`);\n> 321 |       expect(errs, errs.join('\\n')).toEqual([]);\n      |                                     ^\n  322 |     });\n  323 |\n  324 |     test(`T15 ${arm.key}: Search Now still starts the booking flow`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:321:37"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:30:47.720Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T14-after-back",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\\attachments\\v2-T14-after-back-304a2a86dc5982f4f5460fc0c70002a99ccdff4a.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 37,
+                        "line": 321
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-34fe2b97b524be4bffca",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 303,
+              "column": 5
+            },
+            {
+              "title": "T15 v2: Search Now still starts the booking flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13234,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:31:05.559Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T15-after-cta",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--3f09b-ill-starts-the-booking-flow-Mobile-Safari-iPhone-12-\\attachments\\v2-T15-after-cta-6a78b12070f9d8381020f14e1258e00e2c8652c2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-0c87651eb1273411dc17",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 324,
+              "column": 5
+            },
+            {
+              "title": "T16 v2: FAQ and footer intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10059,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:31:18.866Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T16-faq",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--f6c66-tact-no-horizontal-overflow-Mobile-Safari-iPhone-12-\\attachments\\v2-T16-faq-f2cb7c7dd38bf7037ae3dbcaa745388ef39557d1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-5f7bb38a880845bc45bf",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 334,
+              "column": 5
+            },
+            {
+              "title": "T17 v2: variation does not run on the German homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "lang=de-de"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60492,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:31:28.947Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "lang=de-de"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-5f3fedd0d053f4af404b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 344,
+              "column": 5
+            },
+            {
+              "title": "T18 v2: video respects prefers-reduced-motion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "reduced-motion user: video playing=true (V1 code skips video for reduce; V2 code has no such guard)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9671,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:358:25",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 25,
+                          "line": 358
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 356 |\u001b[39m         \u001b[36mconst\u001b[39m playing \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate((p) \u001b[33m=>\u001b[39m { \u001b[36mconst\u001b[39m v \u001b[33m=\u001b[39m document\u001b[33m.\u001b[39mquerySelector(\u001b[32m`.${p}-hero-video`\u001b[39m)\u001b[33m;\u001b[39m \u001b[36mreturn\u001b[39m v \u001b[33m?\u001b[39m \u001b[33m!\u001b[39mv\u001b[33m.\u001b[39mpaused \u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m }\u001b[33m,\u001b[39m \u001b[33mP\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 357 |\u001b[39m         note(ti\u001b[33m,\u001b[39m \u001b[32m`reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 358 |\u001b[39m         expect(playing)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 359 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 360 |\u001b[39m     }\n \u001b[90m 361 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 25,
+                            "line": 358
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  356 |         const playing = await page.evaluate((p) => { const v = document.querySelector(`.${p}-hero-video`); return v ? !v.paused : false; }, P);\n  357 |         note(ti, `reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`);\n> 358 |         expect(playing).toBe(false);\n      |                         ^\n  359 |       });\n  360 |     }\n  361 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:358:25"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:32:29.458Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "reduced-motion user: video playing=true (V1 code skips video for reduce; V2 code has no such guard)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 25,
+                        "line": 358
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-de9957e486298b803285",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 352,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-16T10:24:42.578Z",
+    "duration": 476659.241,
+    "expected": 31,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

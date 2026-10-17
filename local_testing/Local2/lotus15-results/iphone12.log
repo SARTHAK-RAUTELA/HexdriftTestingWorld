@@ -1,0 +1,232 @@
+
+Running 37 tests using 1 worker
+
+  ✓   1 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:83:5 › control › T01 control: arm loads with correct variation code and no variation errors (15.3s)
+  ✓   2 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:101:7 › control › T02 control: original homepage unchanged (12.8s)
+  ✓   3 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:83:5 › v1 › T01 v1: arm loads with correct variation code and no variation errors (11.1s)
+  ✓   4 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:115:5 › v1 › T02 v1: hero heading and description match wireframe; old copy hidden (10.6s)
+  ✓   5 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:125:5 › v1 › T03 v1: 4 USPs with white icons of a consistent size (9.7s)
+  ✓   6 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:141:5 › v1 › T04 v1: hero background is new image (not the control image) (9.0s)
+  ✓   7 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:167:5 › v1 › T05 v1: booking CTA reads "Search Now" (7.9s)
+  ✓   8 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:174:5 › v1 › T06 v1: CTA accessible name matches the visible label (6.1s)
+  ✓   9 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:181:5 › v1 › T07 v1: Google rating summary replaces old trust block (8.8s)
+  ✓  10 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:194:5 › v1 › T08 v1: review section directly after hero; Why Lotus removed (7.7s)
+  ✓  11 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:209:5 › v1 › T09 v1: review carousel navigation (arrows/dots/swipe) (14.0s)
+  ✓  12 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:250:5 › v1 › T10 v1: Read more expands / Show less collapses a review (10.2s)
+  ✓  13 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:267:5 › v1 › T11 v1: fleet section retitled with grey background (9.9s)
+  ✓  14 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:276:5 › v1 › T12 v1: Plan your trip replaces Before your trip (9.1s)
+  ✘  15 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:296:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe (6.3s)
+  ✘  16 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:303:5 › v1 › T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back (17.9s)
+  ✓  17 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:324:5 › v1 › T15 v1: Search Now still starts the booking flow (11.1s)
+  ✓  18 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:334:5 › v1 › T16 v1: FAQ and footer intact, no horizontal overflow (8.0s)
+  ✓  19 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:344:5 › v1 › T17 v1: variation does not run on the German homepage (1.0m)
+  ✓  20 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:83:5 › v2 › T01 v2: arm loads with correct variation code and no variation errors (9.5s)
+  ✓  21 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:115:5 › v2 › T02 v2: hero heading and description match wireframe; old copy hidden (8.4s)
+  ✘  22 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:125:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size (8.0s)
+  ✓  23 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:141:5 › v2 › T04 v2: hero background is new video (not the control image) (12.3s)
+  ✓  24 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:167:5 › v2 › T05 v2: booking CTA reads "Search Now" (7.1s)
+  ✓  25 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:174:5 › v2 › T06 v2: CTA accessible name matches the visible label (6.7s)
+  ✓  26 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:181:5 › v2 › T07 v2: Google rating summary replaces old trust block (7.0s)
+  ✓  27 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:194:5 › v2 › T08 v2: review section directly after hero; Why Lotus removed (7.7s)
+  ✓  28 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:209:5 › v2 › T09 v2: review carousel navigation (arrows/dots/swipe) (9.4s)
+  ✓  29 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:250:5 › v2 › T10 v2: Read more expands / Show less collapses a review (10.2s)
+  ✓  30 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:267:5 › v2 › T11 v2: fleet section retitled with grey background (9.3s)
+  ✓  31 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:276:5 › v2 › T12 v2: Plan your trip replaces Before your trip (8.8s)
+  ✘  32 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:296:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe (7.8s)
+  ✘  33 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:303:5 › v2 › T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back (16.8s)
+  ✓  34 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:324:5 › v2 › T15 v2: Search Now still starts the booking flow (13.2s)
+  ✓  35 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:334:5 › v2 › T16 v2: FAQ and footer intact, no horizontal overflow (10.1s)
+  ✓  36 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:344:5 › v2 › T17 v2: variation does not run on the German homepage (1.0m)
+  ✘  37 [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:352:7 › v2 › T18 v2: video respects prefers-reduced-motion (9.7s)
+
+
+  1) [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:296:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 3[39m
+
+    [2m  Array [[22m
+    [31m+   "Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips",[39m
+    [31m+   "What is the Best Month to Visit Iceland? Local Guide.",[39m
+    [2m    "How Many Days Do You Need to Visit Iceland? (2026 Guide)",[22m
+    [32m-   "Campervan vs Car Rental in Iceland: A Local's 2026 Guide",[39m
+    [32m-   "Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide",[39m
+    [32m-   "How to Rent a Car in Iceland: Everything You Need to Know Before You Book",[39m
+    [31m+   "Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)",[39m
+    [2m  ][22m
+
+      298 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);
+      299 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);
+    > 300 |       expect(titles).toEqual(COPY.planPosts);
+          |                      ^
+      301 |     });
+      302 |
+      303 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:300:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Mobile-Safari-iPhone-12-\error-context.md
+
+  2) [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:303:5 › v1 › T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back 
+
+    Error: pageerror: /g.clarity.ms/collect due to access control checks.
+    pageerror: /g.clarity.ms/collect due to access control checks.
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 4[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "pageerror: /g.clarity.ms/collect due to access control checks.",[39m
+    [31m+   "pageerror: /g.clarity.ms/collect due to access control checks.",[39m
+    [31m+ ][39m
+
+      319 |       await expect(page.locator(`.${P}-hero-media`)).toHaveCount(1);
+      320 |       await shot(page, ti, `${arm.key}-T14-after-back`);
+    > 321 |       expect(errs, errs.join('\n')).toEqual([]);
+          |                                     ^
+      322 |     });
+      323 |
+      324 |     test(`T15 ${arm.key}: Search Now still starts the booking flow`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:321:37
+
+    attachment #1: v1-T14-after-back (image/png) ───────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\attachments\v1-T14-after-back-b595b02fd8e5531e27385bb0ed81f65adea7967b.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\error-context.md
+
+  3) [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:125:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size 
+
+    Error: icon heights differ: 20,16,20,22
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m1[39m
+    Received:    [31m6[39m
+
+      135 |       // wireframe draws all four icons at the same ~16px size
+      136 |       const hs = usps.map((u) => u.h); const ws = usps.map((u) => u.w);
+    > 137 |       expect(Math.max(...hs) - Math.min(...hs), `icon heights differ: ${hs}`).toBeLessThanOrEqual(1);
+          |                                                                               ^
+      138 |       expect(Math.max(...ws), `icon widths: ${ws}`).toBeLessThanOrEqual(18);
+      139 |     });
+      140 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:137:79
+
+    attachment #1: v2-T03-usps (image/png) ─────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Safari-iPhone-12-\attachments\v2-T03-usps-6b787db55ad3e8d4d3800c1526565c9b68781de2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Safari-iPhone-12-\error-context.md
+
+  4) [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:296:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 3[39m
+
+    [2m  Array [[22m
+    [31m+   "Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips",[39m
+    [31m+   "What is the Best Month to Visit Iceland? Local Guide.",[39m
+    [2m    "How Many Days Do You Need to Visit Iceland? (2026 Guide)",[22m
+    [32m-   "Campervan vs Car Rental in Iceland: A Local's 2026 Guide",[39m
+    [32m-   "Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide",[39m
+    [32m-   "How to Rent a Car in Iceland: Everything You Need to Know Before You Book",[39m
+    [31m+   "Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)",[39m
+    [2m  ][22m
+
+      298 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);
+      299 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);
+    > 300 |       expect(titles).toEqual(COPY.planPosts);
+          |                      ^
+      301 |     });
+      302 |
+      303 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:300:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Mobile-Safari-iPhone-12-\error-context.md
+
+  5) [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:303:5 › v2 › T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back 
+
+    Error: pageerror: /q.clarity.ms/collect due to access control checks.
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 3[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "pageerror: /q.clarity.ms/collect due to access control checks.",[39m
+    [31m+ ][39m
+
+      319 |       await expect(page.locator(`.${P}-hero-media`)).toHaveCount(1);
+      320 |       await shot(page, ti, `${arm.key}-T14-after-back`);
+    > 321 |       expect(errs, errs.join('\n')).toEqual([]);
+          |                                     ^
+      322 |     });
+      323 |
+      324 |     test(`T15 ${arm.key}: Search Now still starts the booking flow`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:321:37
+
+    attachment #1: v2-T14-after-back (image/png) ───────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\attachments\v2-T14-after-back-304a2a86dc5982f4f5460fc0c70002a99ccdff4a.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Mobile-Safari-iPhone-12-\error-context.md
+
+  6) [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:352:7 › v2 › T18 v2: video respects prefers-reduced-motion 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      356 |         const playing = await page.evaluate((p) => { const v = document.querySelector(`.${p}-hero-video`); return v ? !v.paused : false; }, P);
+      357 |         note(ti, `reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`);
+    > 358 |         expect(playing).toBe(false);
+          |                         ^
+      359 |       });
+      360 |     }
+      361 |   });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:358:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Mobile-Safari-iPhone-12-\error-context.md
+
+  6 failed
+    [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:296:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe 
+    [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:303:5 › v1 › T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back 
+    [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:125:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size 
+    [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:296:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe 
+    [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:303:5 › v2 › T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back 
+    [Mobile Safari (iPhone 12)] › testing\lotus15-homepage-new-hero.spec.js:352:7 › v2 › T18 v2: video respects prefers-reduced-motion 
+  31 passed (7.9m)

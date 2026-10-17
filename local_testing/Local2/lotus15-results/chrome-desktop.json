@@ -1,0 +1,2082 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus15-homepage-new-hero.spec.js",
+      "file": "lotus15-homepage-new-hero.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "control",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 80,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 control: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 | co-running Convert experiences: 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 27255,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:55:59.412Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 | co-running Convert experiences: 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d1a53-ode-and-no-variation-errors-Chrome-Desktop\\attachments\\control-T01-fold-286ef61ca00af35000ad25ed7f36cf534bc50fb4.png"
+                        },
+                        {
+                          "name": "control-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d1a53-ode-and-no-variation-errors-Chrome-Desktop\\attachments\\control-T01-full-page-83d632085706ee38599252670e8f8996fd46c966.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-6c17d2c7e7675fdc405c",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "T02 control: original homepage unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22985,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:56:27.257Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--e5799-original-homepage-unchanged-Chrome-Desktop\\attachments\\control-T02-hero-b7dbf84c8466b155c9e51ad2f69dc5e5256db124.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-2ab787d72578466d306a",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 99,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "v1",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 80,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 v1: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_B | co-running Convert experiences: 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14695,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:56:50.600Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_B | co-running Convert experiences: 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--56ce4-ode-and-no-variation-errors-Chrome-Desktop\\attachments\\v1-T01-fold-80eb31fc3413f82f73026d740c7ae9d08a9b4536.png"
+                        },
+                        {
+                          "name": "v1-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--56ce4-ode-and-no-variation-errors-Chrome-Desktop\\attachments\\v1-T01-full-page-1ec2e47662abbb13573dd27c389f6db8f13626e7.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-c23bdde79a4e8925a3e3",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "T02 v1: hero heading and description match wireframe; old copy hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11005,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:57:06.651Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--5ff42-h-wireframe-old-copy-hidden-Chrome-Desktop\\attachments\\v1-T02-hero-caa82158e7764d02baf6b5f46a2f6ce235f535dd.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-63fb7f53fe77ed12a740",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 113,
+              "column": 5
+            },
+            {
+              "title": "T03 v1: 4 USPs with white icons of a consistent size",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "USP icon sizes: Locally Owned 16x16, Free Wifi 16x16, 24/7 Support 16x16, No Hidden Fees 16x16"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7127,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:57:17.716Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "USP icon sizes: Locally Owned 16x16, Free Wifi 16x16, 24/7 Support 16x16, No Hidden Fees 16x16"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T03-usps",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b132d--icons-of-a-consistent-size-Chrome-Desktop\\attachments\\v1-T03-usps-d1ceca8a6c0cf6fd1fc2e7baaa412314da16e0ad.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-bab7ddd80f660bdec1d6",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 123,
+              "column": 5
+            },
+            {
+              "title": "T04 v1: hero background is new image (not the control image)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Control/original hero src: https://images.prismic.io/lotuscarrental/afxmOcBOoF08xtoI_defender-lava-field-lake-aerial.jpg?auto=format%2Ccompress&fit=max&w=1920 | V1 injected src: https://v2.crocdn.com/Lotus_Car/test15/1.jpg"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7007,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:57:24.927Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Control/original hero src: https://images.prismic.io/lotuscarrental/afxmOcBOoF08xtoI_defender-lava-field-lake-aerial.jpg?auto=format%2Ccompress&fit=max&w=1920 | V1 injected src: https://v2.crocdn.com/Lotus_Car/test15/1.jpg"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T04-hero-bg",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--aadcc-mage-not-the-control-image--Chrome-Desktop\\attachments\\v1-T04-hero-bg-2aea85eef29145f9968d7d13c85dafbb3af2ef13.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-990a107e102b87a8d13b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 139,
+              "column": 5
+            },
+            {
+              "title": "T05 v1: booking CTA reads \"Search Now\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "CTA visible=\"Search Now\" DOM text=\"Check the fleet\" aria-label=null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6233,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:57:31.969Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "CTA visible=\"Search Now\" DOM text=\"Check the fleet\" aria-label=null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-3810928d0d576535689b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 165,
+              "column": 5
+            },
+            {
+              "title": "T06 v1: CTA accessible name matches the visible label",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "visible=\"Search Now\" accessible name=\"Check the fleet\""
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8179,
+                      "error": {
+                        "message": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m",
+                        "stack": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:176:104",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 104,
+                          "line": 176
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 174 |\u001b[39m       \u001b[36mconst\u001b[39m c \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m ctaLabel(page)\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`visible=\"${c.visible}\" accessible name=\"${c.aria || c.text}\"`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 176 |\u001b[39m       expect(c\u001b[33m.\u001b[39maria \u001b[33m||\u001b[39m c\u001b[33m.\u001b[39mtext\u001b[33m,\u001b[39m \u001b[32m'screen readers announce a different label (WCAG 2.5.3 label-in-name)'\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mcta)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 177 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 178 |\u001b[39m\n \u001b[90m 179 |\u001b[39m     test(\u001b[32m`T07 ${arm.key}: Google rating summary replaces old trust block`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 104,
+                            "line": 176
+                          },
+                          "message": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m\n\n  174 |       const c = await ctaLabel(page);\n  175 |       note(ti, `visible=\"${c.visible}\" accessible name=\"${c.aria || c.text}\"`);\n> 176 |       expect(c.aria || c.text, 'screen readers announce a different label (WCAG 2.5.3 label-in-name)').toContain(COPY.cta);\n      |                                                                                                        ^\n  177 |     });\n  178 |\n  179 |     test(`T07 ${arm.key}: Google rating summary replaces old trust block`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:176:104"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:57:38.239Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "visible=\"Search Now\" accessible name=\"Check the fleet\""
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--6e35a-e-matches-the-visible-label-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--6e35a-e-matches-the-visible-label-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 104,
+                        "line": 176
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-113c0e43ef7163ffc04c",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 172,
+              "column": 5
+            },
+            {
+              "title": "T07 v1: Google rating summary replaces old trust block",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7021,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:57:51.516Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T07-rating",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--63ebd-ry-replaces-old-trust-block-Chrome-Desktop\\attachments\\v1-T07-rating-6a334eecc1b3e94b6082cfbcd9bcdd7d95874170.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-e9280db2c1444f4f6e5d",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 179,
+              "column": 5
+            },
+            {
+              "title": "T08 v1: review section directly after hero; Why Lotus removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6558,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:57:58.717Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T08-reviews",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d91c6-fter-hero-Why-Lotus-removed-Chrome-Desktop\\attachments\\v1-T08-reviews-b46a890aeeb2c8da05f7099ce18d532e4b069d2c.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-7b5d1256a95774e00731",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 192,
+              "column": 5
+            },
+            {
+              "title": "T09 v1: review carousel navigation (arrows/dots/swipe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "initial: {\"left\":0,\"vis\":4,\"dots\":4,\"active\":0,\"prevDis\":true}"
+                    },
+                    {
+                      "type": "observation",
+                      "description": "after next: {\"left\":1216,\"vis\":4,\"dots\":4,\"active\":1,\"prevDis\":false}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8949,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:58:05.379Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "initial: {\"left\":0,\"vis\":4,\"dots\":4,\"active\":0,\"prevDis\":true}"
+                        },
+                        {
+                          "type": "observation",
+                          "description": "after next: {\"left\":1216,\"vis\":4,\"dots\":4,\"active\":1,\"prevDis\":false}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T09-last-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--f00b2-vigation-arrows-dots-swipe--Chrome-Desktop\\attachments\\v1-T09-last-page-8c6c6126958ededce671f3343f660d58be2078a0.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-653fe9e55224af2b9550",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 207,
+              "column": 5
+            },
+            {
+              "title": "T10 v1: Read more expands / Show less collapses a review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6528,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:58:14.367Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T10-expanded",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--9a872-how-less-collapses-a-review-Chrome-Desktop\\attachments\\v1-T10-expanded-de20f77031000d5c0a6877a15770d54c09d1c11f.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-333173ca47a182b8c454",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 248,
+              "column": 5
+            },
+            {
+              "title": "T11 v1: fleet section retitled with grey background",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5662,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:58:20.912Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T11-fleet",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--46946-titled-with-grey-background-Chrome-Desktop\\attachments\\v1-T11-fleet-96818e914f2f75805b3b2161bf85b497fac8e48e.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-a4418dd9b1fea0c2afef",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 265,
+              "column": 5
+            },
+            {
+              "title": "T12 v1: Plan your trip replaces Before your trip",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6160,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:58:26.591Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T12-plan",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b601c-p-replaces-Before-your-trip-Chrome-Desktop\\attachments\\v1-T12-plan-81bd6387521dd5f120ffa3439ef5f40edf3818b1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-0110538edf218e8f71a5",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 274,
+              "column": 5
+            },
+            {
+              "title": "T13 v1: Plan your trip shows the posts drawn in the wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6598,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:298:22",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 22,
+                          "line": 298
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 296 |\u001b[39m       \u001b[36mconst\u001b[39m titles \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-plan__title`\u001b[39m)\u001b[33m.\u001b[39mallInnerTexts())\u001b[33m.\u001b[39mmap(norm)\u001b[33m;\u001b[39m\n \u001b[90m 297 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 298 |\u001b[39m       expect(titles)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mplanPosts)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 299 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 300 |\u001b[39m\n \u001b[90m 301 |\u001b[39m     test(\u001b[32m`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 22,
+                            "line": 298
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  296 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);\n  297 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);\n> 298 |       expect(titles).toEqual(COPY.planPosts);\n      |                      ^\n  299 |     });\n  300 |\n  301 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:298:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:58:32.768Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 22,
+                        "line": 298
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-55b5f3f895589c933c7f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 294,
+              "column": 5
+            },
+            {
+              "title": "T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11748,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:58:42.779Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T14-after-back",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Chrome-Desktop\\attachments\\v1-T14-after-back-6045f4e4ea5065afabf1832cd667ffd0e0ea658e.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-f5201dd2fbb3ee8b62f0",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 301,
+              "column": 5
+            },
+            {
+              "title": "T15 v1: Search Now still starts the booking flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8930,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:58:54.767Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T15-after-cta",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--bbc95-ill-starts-the-booking-flow-Chrome-Desktop\\attachments\\v1-T15-after-cta-4bd6f74902e2df0b89b0f70232cdd1a8741733c7.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-2e1be37ff1aec81ff75f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 322,
+              "column": 5
+            },
+            {
+              "title": "T16 v1: FAQ and footer intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6434,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:59:03.717Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T16-faq",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--72bce-tact-no-horizontal-overflow-Chrome-Desktop\\attachments\\v1-T16-faq-be9b655a7f53dea9791d58d0e68248ccd0bbcfcc.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-98cc04d100c1324fc1c5",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 332,
+              "column": 5
+            },
+            {
+              "title": "T17 v1: variation does not run on the German homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "lang=de-de"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60390,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T09:59:10.170Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "lang=de-de"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-403ee9a6c609d8be8956",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 342,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "v2",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 80,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 v2: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_C | co-running Convert experiences: 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6851,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:00:10.579Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_C | co-running Convert experiences: 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--604ad-ode-and-no-variation-errors-Chrome-Desktop\\attachments\\v2-T01-fold-49e5ec7711ebbb8e234b0b369d36eed6e69e6d27.png"
+                        },
+                        {
+                          "name": "v2-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--604ad-ode-and-no-variation-errors-Chrome-Desktop\\attachments\\v2-T01-full-page-d7c49758bed722af33deeebd12a4d964ac04ec7b.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-73c8525267f243d21f8e",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "T02 v2: hero heading and description match wireframe; old copy hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6071,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:00:17.448Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--a0e93-h-wireframe-old-copy-hidden-Chrome-Desktop\\attachments\\v2-T02-hero-247fdd458c15a0e6aa9a59a98dea9c0de35c4a09.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-412b6b63066c41baea56",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 113,
+              "column": 5
+            },
+            {
+              "title": "T03 v2: 4 USPs with white icons of a consistent size",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "USP icon sizes: Locally Owned 20x20, Free Wifi 22x16, 24/7 Support 20x20, No Hidden Fees 19x22"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5682,
+                      "error": {
+                        "message": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m",
+                        "stack": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:135:79",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 79,
+                          "line": 135
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 133 |\u001b[39m       \u001b[90m// wireframe draws all four icons at the same ~16px size\u001b[39m\n \u001b[90m 134 |\u001b[39m       \u001b[36mconst\u001b[39m hs \u001b[33m=\u001b[39m usps\u001b[33m.\u001b[39mmap((u) \u001b[33m=>\u001b[39m u\u001b[33m.\u001b[39mh)\u001b[33m;\u001b[39m \u001b[36mconst\u001b[39m ws \u001b[33m=\u001b[39m usps\u001b[33m.\u001b[39mmap((u) \u001b[33m=>\u001b[39m u\u001b[33m.\u001b[39mw)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 135 |\u001b[39m       expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmax(\u001b[33m...\u001b[39mhs) \u001b[33m-\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmin(\u001b[33m...\u001b[39mhs)\u001b[33m,\u001b[39m \u001b[32m`icon heights differ: ${hs}`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 136 |\u001b[39m       expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmax(\u001b[33m...\u001b[39mws)\u001b[33m,\u001b[39m \u001b[32m`icon widths: ${ws}`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m18\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 137 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 138 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 79,
+                            "line": 135
+                          },
+                          "message": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m\n\n  133 |       // wireframe draws all four icons at the same ~16px size\n  134 |       const hs = usps.map((u) => u.h); const ws = usps.map((u) => u.w);\n> 135 |       expect(Math.max(...hs) - Math.min(...hs), `icon heights differ: ${hs}`).toBeLessThanOrEqual(1);\n      |                                                                               ^\n  136 |       expect(Math.max(...ws), `icon widths: ${ws}`).toBeLessThanOrEqual(18);\n  137 |     });\n  138 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:135:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:00:23.544Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "USP icon sizes: Locally Owned 20x20, Free Wifi 22x16, 24/7 Support 20x20, No Hidden Fees 19x22"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T03-usps",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Chrome-Desktop\\attachments\\v2-T03-usps-c1de07e3abee64e2010c35c30be75edb53243ac7.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 79,
+                        "line": 135
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-3923e3651e54c20160fd",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 123,
+              "column": 5
+            },
+            {
+              "title": "T04 v2: hero background is new video (not the control image)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Video https://v2.crocdn.com/Lotus_Car/test15/1000200424_compressed.mp4 dur=45s t 2.4→4.9 paused=false"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9448,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:00:32.489Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Video https://v2.crocdn.com/Lotus_Car/test15/1000200424_compressed.mp4 dur=45s t 2.4→4.9 paused=false"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T04-hero-video",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--8e3a1-ideo-not-the-control-image--Chrome-Desktop\\attachments\\v2-T04-hero-video-9dea3ccfeca4c8992dbe3f1f2687f152ce4db923.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-933675a30c531bdb5597",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 139,
+              "column": 5
+            },
+            {
+              "title": "T05 v2: booking CTA reads \"Search Now\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "CTA visible=\"Search Now\" DOM text=\"Check the fleet\" aria-label=null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5986,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:00:42.034Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "CTA visible=\"Search Now\" DOM text=\"Check the fleet\" aria-label=null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-2a489246a5457efe0bbf",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 165,
+              "column": 5
+            },
+            {
+              "title": "T06 v2: CTA accessible name matches the visible label",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "visible=\"Search Now\" accessible name=\"Check the fleet\""
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5122,
+                      "error": {
+                        "message": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m",
+                        "stack": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:176:104",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 104,
+                          "line": 176
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 174 |\u001b[39m       \u001b[36mconst\u001b[39m c \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m ctaLabel(page)\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`visible=\"${c.visible}\" accessible name=\"${c.aria || c.text}\"`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 176 |\u001b[39m       expect(c\u001b[33m.\u001b[39maria \u001b[33m||\u001b[39m c\u001b[33m.\u001b[39mtext\u001b[33m,\u001b[39m \u001b[32m'screen readers announce a different label (WCAG 2.5.3 label-in-name)'\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mcta)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 177 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 178 |\u001b[39m\n \u001b[90m 179 |\u001b[39m     test(\u001b[32m`T07 ${arm.key}: Google rating summary replaces old trust block`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 104,
+                            "line": 176
+                          },
+                          "message": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m\n\n  174 |       const c = await ctaLabel(page);\n  175 |       note(ti, `visible=\"${c.visible}\" accessible name=\"${c.aria || c.text}\"`);\n> 176 |       expect(c.aria || c.text, 'screen readers announce a different label (WCAG 2.5.3 label-in-name)').toContain(COPY.cta);\n      |                                                                                                        ^\n  177 |     });\n  178 |\n  179 |     test(`T07 ${arm.key}: Google rating summary replaces old trust block`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:176:104"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:00:48.041Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "visible=\"Search Now\" accessible name=\"Check the fleet\""
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--48fe9-e-matches-the-visible-label-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--48fe9-e-matches-the-visible-label-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 104,
+                        "line": 176
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-4705382de221dbfd8ce3",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 172,
+              "column": 5
+            },
+            {
+              "title": "T07 v2: Google rating summary replaces old trust block",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7680,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:00:56.133Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T07-rating",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ce135-ry-replaces-old-trust-block-Chrome-Desktop\\attachments\\v2-T07-rating-da08628d26284be85621d251a63e3a9e0501dc08.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-520c3f69a5bc9392ad68",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 179,
+              "column": 5
+            },
+            {
+              "title": "T08 v2: review section directly after hero; Why Lotus removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5541,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:01:03.930Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T08-reviews",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--29f58-fter-hero-Why-Lotus-removed-Chrome-Desktop\\attachments\\v2-T08-reviews-0dcf139e35823859084754d8ee92dfef96cbcc75.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-debf2f52965af48b59d2",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 192,
+              "column": 5
+            },
+            {
+              "title": "T09 v2: review carousel navigation (arrows/dots/swipe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "initial: {\"left\":0,\"vis\":4,\"dots\":4,\"active\":0,\"prevDis\":true}"
+                    },
+                    {
+                      "type": "observation",
+                      "description": "after next: {\"left\":1216,\"vis\":4,\"dots\":4,\"active\":1,\"prevDis\":false}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9035,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:01:09.496Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "initial: {\"left\":0,\"vis\":4,\"dots\":4,\"active\":0,\"prevDis\":true}"
+                        },
+                        {
+                          "type": "observation",
+                          "description": "after next: {\"left\":1216,\"vis\":4,\"dots\":4,\"active\":1,\"prevDis\":false}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T09-last-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--99df9-vigation-arrows-dots-swipe--Chrome-Desktop\\attachments\\v2-T09-last-page-927e9bfee93d231eb7a437d76dfdd248d5d39ef6.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-a94b37a668794405978f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 207,
+              "column": 5
+            },
+            {
+              "title": "T10 v2: Read more expands / Show less collapses a review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7142,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:01:18.552Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T10-expanded",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--cb22d-how-less-collapses-a-review-Chrome-Desktop\\attachments\\v2-T10-expanded-5d15cb81ae057bb296ea0d0016e9db927019ffeb.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-fdd6aa748acc94323ce0",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 248,
+              "column": 5
+            },
+            {
+              "title": "T11 v2: fleet section retitled with grey background",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6279,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:01:25.720Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T11-fleet",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d5838-titled-with-grey-background-Chrome-Desktop\\attachments\\v2-T11-fleet-6a5b8aa6bb852412b720fe81bcaee28897368ca4.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-378f1f546dc3754e1ae4",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 265,
+              "column": 5
+            },
+            {
+              "title": "T12 v2: Plan your trip replaces Before your trip",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6347,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:01:32.021Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T12-plan",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--96235-p-replaces-Before-your-trip-Chrome-Desktop\\attachments\\v2-T12-plan-98f96f31d4cedf9fad268b237e5274d08099aff7.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-1fce207ad35b1d89a5fa",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 274,
+              "column": 5
+            },
+            {
+              "title": "T13 v2: Plan your trip shows the posts drawn in the wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4691,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:298:22",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 22,
+                          "line": 298
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 296 |\u001b[39m       \u001b[36mconst\u001b[39m titles \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-plan__title`\u001b[39m)\u001b[33m.\u001b[39mallInnerTexts())\u001b[33m.\u001b[39mmap(norm)\u001b[33m;\u001b[39m\n \u001b[90m 297 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 298 |\u001b[39m       expect(titles)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mplanPosts)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 299 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 300 |\u001b[39m\n \u001b[90m 301 |\u001b[39m     test(\u001b[32m`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 22,
+                            "line": 298
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  296 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);\n  297 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);\n> 298 |       expect(titles).toEqual(COPY.planPosts);\n      |                      ^\n  299 |     });\n  300 |\n  301 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:298:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:01:38.403Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 22,
+                        "line": 298
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-17bd96eba7108311a2da",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 294,
+              "column": 5
+            },
+            {
+              "title": "T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11713,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:01:46.326Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T14-after-back",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Chrome-Desktop\\attachments\\v2-T14-after-back-8d44ba9e2df69cbc15ee5088892ee9788514f4a0.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-8ff17835784377d2a17c",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 301,
+              "column": 5
+            },
+            {
+              "title": "T15 v2: Search Now still starts the booking flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8870,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:01:58.153Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T15-after-cta",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--3f09b-ill-starts-the-booking-flow-Chrome-Desktop\\attachments\\v2-T15-after-cta-c7e34ca13b942ba26e28d09b5477f7d1f9fd8087.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-327b9d6d9693f5a6f5b4",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 322,
+              "column": 5
+            },
+            {
+              "title": "T16 v2: FAQ and footer intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7330,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:02:07.041Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T16-faq",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--f6c66-tact-no-horizontal-overflow-Chrome-Desktop\\attachments\\v2-T16-faq-521450098b618631ba592fcb3c616639bb257a4d.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-a3ab9b497ada10fd484f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 332,
+              "column": 5
+            },
+            {
+              "title": "T17 v2: variation does not run on the German homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "lang=de-de"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 59868,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:02:14.400Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "lang=de-de"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-342ea67e7c70a2140ad0",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 342,
+              "column": 5
+            },
+            {
+              "title": "T18 v2: video respects prefers-reduced-motion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "reduced-motion user: video playing=true (V1 code skips video for reduce; V2 code has no such guard)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7170,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:356:25",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 25,
+                          "line": 356
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 354 |\u001b[39m         \u001b[36mconst\u001b[39m playing \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate((p) \u001b[33m=>\u001b[39m { \u001b[36mconst\u001b[39m v \u001b[33m=\u001b[39m document\u001b[33m.\u001b[39mquerySelector(\u001b[32m`.${p}-hero-video`\u001b[39m)\u001b[33m;\u001b[39m \u001b[36mreturn\u001b[39m v \u001b[33m?\u001b[39m \u001b[33m!\u001b[39mv\u001b[33m.\u001b[39mpaused \u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m }\u001b[33m,\u001b[39m \u001b[33mP\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 355 |\u001b[39m         note(ti\u001b[33m,\u001b[39m \u001b[32m`reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 356 |\u001b[39m         expect(playing)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 357 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 358 |\u001b[39m     }\n \u001b[90m 359 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 25,
+                            "line": 356
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  354 |         const playing = await page.evaluate((p) => { const v = document.querySelector(`.${p}-hero-video`); return v ? !v.paused : false; }, P);\n  355 |         note(ti, `reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`);\n> 356 |         expect(playing).toBe(false);\n      |                         ^\n  357 |       });\n  358 |     }\n  359 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:356:25"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:03:14.291Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "reduced-motion user: video playing=true (V1 code skips video for reduce; V2 code has no such guard)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 25,
+                        "line": 356
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-9755f55b0446e91c441e",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 350,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-16T09:55:56.673Z",
+    "duration": 446622.971,
+    "expected": 31,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

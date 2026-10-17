@@ -1,0 +1,296 @@
+
+Running 37 tests using 1 worker
+
+  ✓   1 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:81:5 › control › T01 control: arm loads with correct variation code and no variation errors (37.2s)
+  ✓   2 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:99:7 › control › T02 control: original homepage unchanged (16.7s)
+  ✓   3 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:81:5 › v1 › T01 v1: arm loads with correct variation code and no variation errors (14.0s)
+  ✓   4 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:113:5 › v1 › T02 v1: hero heading and description match wireframe; old copy hidden (10.2s)
+  ✓   5 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:123:5 › v1 › T03 v1: 4 USPs with white icons of a consistent size (9.7s)
+  ✓   6 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:139:5 › v1 › T04 v1: hero background is new image (not the control image) (10.3s)
+  ✓   7 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:165:5 › v1 › T05 v1: booking CTA reads "Search Now" (7.4s)
+  ✘   8 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v1 › T06 v1: CTA accessible name matches the visible label (9.0s)
+  ✓   9 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:179:5 › v1 › T07 v1: Google rating summary replaces old trust block (9.6s)
+  ✓  10 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:192:5 › v1 › T08 v1: review section directly after hero; Why Lotus removed (9.4s)
+  ✓  11 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:207:5 › v1 › T09 v1: review carousel navigation (arrows/dots/swipe) (13.5s)
+  ✓  12 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:248:5 › v1 › T10 v1: Read more expands / Show less collapses a review (10.6s)
+  ✓  13 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:265:5 › v1 › T11 v1: fleet section retitled with grey background (9.2s)
+  ✓  14 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:274:5 › v1 › T12 v1: Plan your trip replaces Before your trip (13.6s)
+  ✘  15 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe (8.9s)
+  ✘  16 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:301:5 › v1 › T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back (23.1s)
+  ✓  17 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:322:5 › v1 › T15 v1: Search Now still starts the booking flow (11.5s)
+  ✓  18 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:332:5 › v1 › T16 v1: FAQ and footer intact, no horizontal overflow (8.0s)
+  ✓  19 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:342:5 › v1 › T17 v1: variation does not run on the German homepage (1.0m)
+  ✓  20 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:81:5 › v2 › T01 v2: arm loads with correct variation code and no variation errors (10.6s)
+  ✓  21 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:113:5 › v2 › T02 v2: hero heading and description match wireframe; old copy hidden (10.2s)
+  ✘  22 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:123:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size (9.5s)
+  ✓  23 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:139:5 › v2 › T04 v2: hero background is new video (not the control image) (13.2s)
+  ✓  24 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:165:5 › v2 › T05 v2: booking CTA reads "Search Now" (6.9s)
+  ✘  25 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v2 › T06 v2: CTA accessible name matches the visible label (9.0s)
+  ✓  26 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:179:5 › v2 › T07 v2: Google rating summary replaces old trust block (8.9s)
+  ✓  27 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:192:5 › v2 › T08 v2: review section directly after hero; Why Lotus removed (8.7s)
+  ✓  28 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:207:5 › v2 › T09 v2: review carousel navigation (arrows/dots/swipe) (13.5s)
+  ✓  29 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:248:5 › v2 › T10 v2: Read more expands / Show less collapses a review (10.6s)
+  ✓  30 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:265:5 › v2 › T11 v2: fleet section retitled with grey background (8.1s)
+  ✓  31 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:274:5 › v2 › T12 v2: Plan your trip replaces Before your trip (11.9s)
+  ✘  32 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe (9.9s)
+  ✘  33 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:301:5 › v2 › T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back (21.4s)
+  ✓  34 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:322:5 › v2 › T15 v2: Search Now still starts the booking flow (13.3s)
+  ✓  35 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:332:5 › v2 › T16 v2: FAQ and footer intact, no horizontal overflow (9.2s)
+  ✓  36 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:342:5 › v2 › T17 v2: variation does not run on the German homepage (1.0m)
+  ✘  37 [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:350:7 › v2 › T18 v2: video respects prefers-reduced-motion (8.3s)
+
+
+  1) [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v1 › T06 v1: CTA accessible name matches the visible label 
+
+    Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+    Expected substring: [32m"Search Now"[39m
+    Received string:    [31m"Check the fleet"[39m
+
+      174 |       const c = await ctaLabel(page);
+      175 |       note(ti, `visible="${c.visible}" accessible name="${c.aria || c.text}"`);
+    > 176 |       expect(c.aria || c.text, 'screen readers announce a different label (WCAG 2.5.3 label-in-name)').toContain(COPY.cta);
+          |                                                                                                        ^
+      177 |     });
+      178 |
+      179 |     test(`T07 ${arm.key}: Google rating summary replaces old trust block`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:176:104
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--6e35a-e-matches-the-visible-label-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--6e35a-e-matches-the-visible-label-Safari-Desktop\error-context.md
+
+  2) [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 3[39m
+
+    [2m  Array [[22m
+    [31m+   "Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips",[39m
+    [31m+   "What is the Best Month to Visit Iceland? Local Guide.",[39m
+    [2m    "How Many Days Do You Need to Visit Iceland? (2026 Guide)",[22m
+    [32m-   "Campervan vs Car Rental in Iceland: A Local's 2026 Guide",[39m
+    [32m-   "Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide",[39m
+    [32m-   "How to Rent a Car in Iceland: Everything You Need to Know Before You Book",[39m
+    [31m+   "Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)",[39m
+    [2m  ][22m
+
+      296 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);
+      297 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);
+    > 298 |       expect(titles).toEqual(COPY.planPosts);
+          |                      ^
+      299 |     });
+      300 |
+      301 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:298:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Safari-Desktop\error-context.md
+
+  3) [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:301:5 › v1 › T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back 
+
+    Error: pageerror: /www.lotuscarrental.is" from accessing a frame with origin "https://chatbot.menni.ai". Protocols, domains, and ports must match.
+    pageerror: /www.lotuscarrental.is" from accessing a frame with origin "https://chatbot.menni.ai". Protocols, domains, and ports must match.
+    pageerror: /q.clarity.ms/collect due to access control checks.
+    pageerror: /www.lotuscarrental.is" from accessing a frame with origin "https://chatbot.menni.ai". Protocols, domains, and ports must match.
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 6[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.",[39m
+    [31m+   "pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.",[39m
+    [31m+   "pageerror: /q.clarity.ms/collect due to access control checks.",[39m
+    [31m+   "pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.",[39m
+    [31m+ ][39m
+
+      317 |       await expect(page.locator(`.${P}-hero-media`)).toHaveCount(1);
+      318 |       await shot(page, ti, `${arm.key}-T14-after-back`);
+    > 319 |       expect(errs, errs.join('\n')).toEqual([]);
+          |                                     ^
+      320 |     });
+      321 |
+      322 |     test(`T15 ${arm.key}: Search Now still starts the booking flow`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:319:37
+
+    attachment #1: v1-T14-after-back (image/png) ───────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Safari-Desktop\attachments\v1-T14-after-back-8a5d6f2c485440015e7df1780eb74bacefd08468.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Safari-Desktop\error-context.md
+
+  4) [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:123:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size 
+
+    Error: icon heights differ: 20,16,20,22
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m1[39m
+    Received:    [31m6[39m
+
+      133 |       // wireframe draws all four icons at the same ~16px size
+      134 |       const hs = usps.map((u) => u.h); const ws = usps.map((u) => u.w);
+    > 135 |       expect(Math.max(...hs) - Math.min(...hs), `icon heights differ: ${hs}`).toBeLessThanOrEqual(1);
+          |                                                                               ^
+      136 |       expect(Math.max(...ws), `icon widths: ${ws}`).toBeLessThanOrEqual(18);
+      137 |     });
+      138 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:135:79
+
+    attachment #1: v2-T03-usps (image/png) ─────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Safari-Desktop\attachments\v2-T03-usps-0c89c6a9a2ee780fb802ddca13c30baebb06abf7.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Safari-Desktop\error-context.md
+
+  5) [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v2 › T06 v2: CTA accessible name matches the visible label 
+
+    Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+    Expected substring: [32m"Search Now"[39m
+    Received string:    [31m"Check the fleet"[39m
+
+      174 |       const c = await ctaLabel(page);
+      175 |       note(ti, `visible="${c.visible}" accessible name="${c.aria || c.text}"`);
+    > 176 |       expect(c.aria || c.text, 'screen readers announce a different label (WCAG 2.5.3 label-in-name)').toContain(COPY.cta);
+          |                                                                                                        ^
+      177 |     });
+      178 |
+      179 |     test(`T07 ${arm.key}: Google rating summary replaces old trust block`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:176:104
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--48fe9-e-matches-the-visible-label-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--48fe9-e-matches-the-visible-label-Safari-Desktop\error-context.md
+
+  6) [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 3[39m
+
+    [2m  Array [[22m
+    [31m+   "Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips",[39m
+    [31m+   "What is the Best Month to Visit Iceland? Local Guide.",[39m
+    [2m    "How Many Days Do You Need to Visit Iceland? (2026 Guide)",[22m
+    [32m-   "Campervan vs Car Rental in Iceland: A Local's 2026 Guide",[39m
+    [32m-   "Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide",[39m
+    [32m-   "How to Rent a Car in Iceland: Everything You Need to Know Before You Book",[39m
+    [31m+   "Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)",[39m
+    [2m  ][22m
+
+      296 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);
+      297 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);
+    > 298 |       expect(titles).toEqual(COPY.planPosts);
+          |                      ^
+      299 |     });
+      300 |
+      301 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:298:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Safari-Desktop\error-context.md
+
+  7) [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:301:5 › v2 › T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back 
+
+    Error: pageerror: /www.lotuscarrental.is" from accessing a frame with origin "https://chatbot.menni.ai". Protocols, domains, and ports must match.
+    pageerror: /www.lotuscarrental.is/our-rental-cars/campers?_rsc=p37cr due to access control checks.
+    pageerror: /www.lotuscarrental.is/our-rental-cars/4x4?_rsc=p37cr due to access control checks.
+    pageerror: /www.lotuscarrental.is" from accessing a frame with origin "https://chatbot.menni.ai". Protocols, domains, and ports must match.
+    pageerror: /b.clarity.ms/collect due to access control checks.
+    pageerror: /www.lotuscarrental.is" from accessing a frame with origin "https://chatbot.menni.ai". Protocols, domains, and ports must match.
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 8[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.",[39m
+    [31m+   "pageerror: /www.lotuscarrental.is/our-rental-cars/campers?_rsc=p37cr due to access control checks.",[39m
+    [31m+   "pageerror: /www.lotuscarrental.is/our-rental-cars/4x4?_rsc=p37cr due to access control checks.",[39m
+    [31m+   "pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.",[39m
+    [31m+   "pageerror: /b.clarity.ms/collect due to access control checks.",[39m
+    [31m+   "pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.",[39m
+    [31m+ ][39m
+
+      317 |       await expect(page.locator(`.${P}-hero-media`)).toHaveCount(1);
+      318 |       await shot(page, ti, `${arm.key}-T14-after-back`);
+    > 319 |       expect(errs, errs.join('\n')).toEqual([]);
+          |                                     ^
+      320 |     });
+      321 |
+      322 |     test(`T15 ${arm.key}: Search Now still starts the booking flow`, async ({ page }, ti) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:319:37
+
+    attachment #1: v2-T14-after-back (image/png) ───────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Safari-Desktop\attachments\v2-T14-after-back-890b389b1249304206a222c6b3c9ddfd28275b99.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Safari-Desktop\error-context.md
+
+  8) [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:350:7 › v2 › T18 v2: video respects prefers-reduced-motion 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      354 |         const playing = await page.evaluate((p) => { const v = document.querySelector(`.${p}-hero-video`); return v ? !v.paused : false; }, P);
+      355 |         note(ti, `reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`);
+    > 356 |         expect(playing).toBe(false);
+          |                         ^
+      357 |       });
+      358 |     }
+      359 |   });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\lotus15-homepage-new-hero.spec.js:356:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Safari-Desktop\error-context.md
+
+  8 failed
+    [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v1 › T06 v1: CTA accessible name matches the visible label 
+    [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v1 › T13 v1: Plan your trip shows the posts drawn in the wireframe 
+    [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:301:5 › v1 › T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back 
+    [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:123:5 › v2 › T03 v2: 4 USPs with white icons of a consistent size 
+    [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:172:5 › v2 › T06 v2: CTA accessible name matches the visible label 
+    [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:294:5 › v2 › T13 v2: Plan your trip shows the posts drawn in the wireframe 
+    [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:301:5 › v2 › T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back 
+    [Safari Desktop] › testing\lotus15-homepage-new-hero.spec.js:350:7 › v2 › T18 v2: video respects prefers-reduced-motion 
+  29 passed (9.3m)

@@ -1,0 +1,2150 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus15-homepage-new-hero.spec.js",
+      "file": "lotus15-homepage-new-hero.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "control",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 80,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 control: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased | co-running Convert experiences: 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 37246,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:03:59.550Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased | co-running Convert experiences: 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d1a53-ode-and-no-variation-errors-Safari-Desktop\\attachments\\control-T01-fold-23978112c806241d90350116866ecc9bb77e08b0.png"
+                        },
+                        {
+                          "name": "control-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d1a53-ode-and-no-variation-errors-Safari-Desktop\\attachments\\control-T01-full-page-0f9d292abaf99403986235c1cbd5d818949402e4.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-25e610c1c543908d1c18",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "T02 control: original homepage unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16707,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:04:44.202Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--e5799-original-homepage-unchanged-Safari-Desktop\\attachments\\control-T02-hero-746d484b1884a5b7a754dd3b79d282e79f5334bc.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-4fe6b2ede829c59f8e66",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 99,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "v1",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 80,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 v1: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 lotus_test_15_B | co-running Convert experiences: 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13963,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:05:00.971Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased cre-t-18 lotus_test_15_B | co-running Convert experiences: 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--56ce4-ode-and-no-variation-errors-Safari-Desktop\\attachments\\v1-T01-fold-d558025f100de27cfd134aaa5b2afe548b06f763.png"
+                        },
+                        {
+                          "name": "v1-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--56ce4-ode-and-no-variation-errors-Safari-Desktop\\attachments\\v1-T01-full-page-c82e5760795f28341e3b082e9d161fb9511c282e.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-429d8d9f057cef823eb2",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "T02 v1: hero heading and description match wireframe; old copy hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10214,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:05:14.969Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--5ff42-h-wireframe-old-copy-hidden-Safari-Desktop\\attachments\\v1-T02-hero-c77071f0b766fa907056f2edacdb9f570e6b65f0.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-da285e69e9bd1774cb21",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 113,
+              "column": 5
+            },
+            {
+              "title": "T03 v1: 4 USPs with white icons of a consistent size",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "USP icon sizes: Locally Owned 16x16, Free Wifi 16x16, 24/7 Support 16x16, No Hidden Fees 16x16"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9659,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:05:25.214Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "USP icon sizes: Locally Owned 16x16, Free Wifi 16x16, 24/7 Support 16x16, No Hidden Fees 16x16"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T03-usps",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b132d--icons-of-a-consistent-size-Safari-Desktop\\attachments\\v1-T03-usps-e0d7f0730bda7445eb15bdd8c8744858d740f88a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-f9136358ea92a467c5b3",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 123,
+              "column": 5
+            },
+            {
+              "title": "T04 v1: hero background is new image (not the control image)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Control/original hero src: https://images.prismic.io/lotuscarrental/afxmOcBOoF08xtoI_defender-lava-field-lake-aerial.jpg?auto=format%2Ccompress&fit=max&w=3840 | V1 injected src: https://v2.crocdn.com/Lotus_Car/test15/1.jpg"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10346,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:05:34.909Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Control/original hero src: https://images.prismic.io/lotuscarrental/afxmOcBOoF08xtoI_defender-lava-field-lake-aerial.jpg?auto=format%2Ccompress&fit=max&w=3840 | V1 injected src: https://v2.crocdn.com/Lotus_Car/test15/1.jpg"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T04-hero-bg",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--aadcc-mage-not-the-control-image--Safari-Desktop\\attachments\\v1-T04-hero-bg-c9547f16aca58c3646b8a5cdecdb247b0b1f52b8.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-04657b4a429c68524dcc",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 139,
+              "column": 5
+            },
+            {
+              "title": "T05 v1: booking CTA reads \"Search Now\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "CTA visible=\"Search Now\" DOM text=\"Check the fleet\" aria-label=null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7423,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:05:45.298Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "CTA visible=\"Search Now\" DOM text=\"Check the fleet\" aria-label=null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-4303295c7fdfcf89598d",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 165,
+              "column": 5
+            },
+            {
+              "title": "T06 v1: CTA accessible name matches the visible label",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "visible=\"Search Now\" accessible name=\"Check the fleet\""
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8970,
+                      "error": {
+                        "message": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m",
+                        "stack": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:176:104",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 104,
+                          "line": 176
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 174 |\u001b[39m       \u001b[36mconst\u001b[39m c \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m ctaLabel(page)\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`visible=\"${c.visible}\" accessible name=\"${c.aria || c.text}\"`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 176 |\u001b[39m       expect(c\u001b[33m.\u001b[39maria \u001b[33m||\u001b[39m c\u001b[33m.\u001b[39mtext\u001b[33m,\u001b[39m \u001b[32m'screen readers announce a different label (WCAG 2.5.3 label-in-name)'\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mcta)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 177 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 178 |\u001b[39m\n \u001b[90m 179 |\u001b[39m     test(\u001b[32m`T07 ${arm.key}: Google rating summary replaces old trust block`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 104,
+                            "line": 176
+                          },
+                          "message": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m\n\n  174 |       const c = await ctaLabel(page);\n  175 |       note(ti, `visible=\"${c.visible}\" accessible name=\"${c.aria || c.text}\"`);\n> 176 |       expect(c.aria || c.text, 'screen readers announce a different label (WCAG 2.5.3 label-in-name)').toContain(COPY.cta);\n      |                                                                                                        ^\n  177 |     });\n  178 |\n  179 |     test(`T07 ${arm.key}: Google rating summary replaces old trust block`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:176:104"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:05:52.753Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "visible=\"Search Now\" accessible name=\"Check the fleet\""
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--6e35a-e-matches-the-visible-label-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--6e35a-e-matches-the-visible-label-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 104,
+                        "line": 176
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-9f6b62375a954e63c849",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 172,
+              "column": 5
+            },
+            {
+              "title": "T07 v1: Google rating summary replaces old trust block",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9568,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:06:03.229Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T07-rating",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--63ebd-ry-replaces-old-trust-block-Safari-Desktop\\attachments\\v1-T07-rating-536224036c0d06508142cf869cfd51b529dc3b33.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-51abbbf6f0c16163af8e",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 179,
+              "column": 5
+            },
+            {
+              "title": "T08 v1: review section directly after hero; Why Lotus removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9357,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:06:12.934Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T08-reviews",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d91c6-fter-hero-Why-Lotus-removed-Safari-Desktop\\attachments\\v1-T08-reviews-dcaee4d881fa94010a8b07da57bf82d9efd15045.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-17b9340310b0d6c95ca8",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 192,
+              "column": 5
+            },
+            {
+              "title": "T09 v1: review carousel navigation (arrows/dots/swipe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "initial: {\"left\":0,\"vis\":4,\"dots\":4,\"active\":0,\"prevDis\":true}"
+                    },
+                    {
+                      "type": "observation",
+                      "description": "after next: {\"left\":1216,\"vis\":4,\"dots\":4,\"active\":1,\"prevDis\":false}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13472,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:06:22.317Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "initial: {\"left\":0,\"vis\":4,\"dots\":4,\"active\":0,\"prevDis\":true}"
+                        },
+                        {
+                          "type": "observation",
+                          "description": "after next: {\"left\":1216,\"vis\":4,\"dots\":4,\"active\":1,\"prevDis\":false}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T09-last-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--f00b2-vigation-arrows-dots-swipe--Safari-Desktop\\attachments\\v1-T09-last-page-a0fd7ae62264624216facdbec0f14763a208e374.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-de359ba518c256cab15f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 207,
+              "column": 5
+            },
+            {
+              "title": "T10 v1: Read more expands / Show less collapses a review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10598,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:06:35.815Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T10-expanded",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--9a872-how-less-collapses-a-review-Safari-Desktop\\attachments\\v1-T10-expanded-8d6cecf4b053289ffe531550ec172bbd5455233d.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-874aa276e876a1ff9fbf",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 248,
+              "column": 5
+            },
+            {
+              "title": "T11 v1: fleet section retitled with grey background",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:06:46.449Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T11-fleet",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--46946-titled-with-grey-background-Safari-Desktop\\attachments\\v1-T11-fleet-368003177dd69dce58dc473e8162c2891db9358a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-10149a582f21e90f2404",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 265,
+              "column": 5
+            },
+            {
+              "title": "T12 v1: Plan your trip replaces Before your trip",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13632,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:06:55.691Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T12-plan",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b601c-p-replaces-Before-your-trip-Safari-Desktop\\attachments\\v1-T12-plan-b28946d77b193fd7d6810e5ccaf176f40e67d176.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-6366561ffd4b24b50e74",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 274,
+              "column": 5
+            },
+            {
+              "title": "T13 v1: Plan your trip shows the posts drawn in the wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8946,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:298:22",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 22,
+                          "line": 298
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 296 |\u001b[39m       \u001b[36mconst\u001b[39m titles \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-plan__title`\u001b[39m)\u001b[33m.\u001b[39mallInnerTexts())\u001b[33m.\u001b[39mmap(norm)\u001b[33m;\u001b[39m\n \u001b[90m 297 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 298 |\u001b[39m       expect(titles)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mplanPosts)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 299 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 300 |\u001b[39m\n \u001b[90m 301 |\u001b[39m     test(\u001b[32m`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 22,
+                            "line": 298
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  296 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);\n  297 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);\n> 298 |       expect(titles).toEqual(COPY.planPosts);\n      |                      ^\n  299 |     });\n  300 |\n  301 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:298:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:07:09.343Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 22,
+                        "line": 298
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-bb1852fa37dbea8a34c1",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 294,
+              "column": 5
+            },
+            {
+              "title": "T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 23116,
+                      "error": {
+                        "message": "Error: pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /q.clarity.ms/collect due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /q.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /q.clarity.ms/collect due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /q.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:319:37",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 37,
+                          "line": 319
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 317 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-hero-media`\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 318 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-T14-after-back`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 319 |\u001b[39m       expect(errs\u001b[33m,\u001b[39m errs\u001b[33m.\u001b[39mjoin(\u001b[32m'\\n'\u001b[39m))\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 320 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 321 |\u001b[39m\n \u001b[90m 322 |\u001b[39m     test(\u001b[32m`T15 ${arm.key}: Search Now still starts the booking flow`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 37,
+                            "line": 319
+                          },
+                          "message": "Error: pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /q.clarity.ms/collect due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /q.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  317 |       await expect(page.locator(`.${P}-hero-media`)).toHaveCount(1);\n  318 |       await shot(page, ti, `${arm.key}-T14-after-back`);\n> 319 |       expect(errs, errs.join('\\n')).toEqual([]);\n      |                                     ^\n  320 |     });\n  321 |\n  322 |     test(`T15 ${arm.key}: Search Now still starts the booking flow`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:319:37"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:07:19.678Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T14-after-back",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Safari-Desktop\\attachments\\v1-T14-after-back-8a5d6f2c485440015e7df1780eb74bacefd08468.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 37,
+                        "line": 319
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-0bd2d2d8ca16320ec7bc",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 301,
+              "column": 5
+            },
+            {
+              "title": "T15 v1: Search Now still starts the booking flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11467,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:07:44.211Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T15-after-cta",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--bbc95-ill-starts-the-booking-flow-Safari-Desktop\\attachments\\v1-T15-after-cta-c193aed8c1995d5f47441502e20ca8e64c955357.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-91b8db9f9d23ba6e3224",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 322,
+              "column": 5
+            },
+            {
+              "title": "T16 v1: FAQ and footer intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8002,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:07:55.765Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T16-faq",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--72bce-tact-no-horizontal-overflow-Safari-Desktop\\attachments\\v1-T16-faq-c67a25967f5bf1c183c4f054f08e03b4adfd1621.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-b9643abbffbc34bed99f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 332,
+              "column": 5
+            },
+            {
+              "title": "T17 v1: variation does not run on the German homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "lang=de-de"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60851,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:08:03.805Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "lang=de-de"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-6e1564309a4d61c8d48b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 342,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "v2",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 80,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 v2: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_C | co-running Convert experiences: 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10641,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:09:04.688Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_C | co-running Convert experiences: 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--604ad-ode-and-no-variation-errors-Safari-Desktop\\attachments\\v2-T01-fold-38c850e817321c14ded6dacb6a0376e072ac7934.png"
+                        },
+                        {
+                          "name": "v2-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--604ad-ode-and-no-variation-errors-Safari-Desktop\\attachments\\v2-T01-full-page-4049b84f73a7cc54520e89df71e14396c685701c.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-38a2ec5740213323d96b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "T02 v2: hero heading and description match wireframe; old copy hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:09:15.356Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--a0e93-h-wireframe-old-copy-hidden-Safari-Desktop\\attachments\\v2-T02-hero-2e178faf7a2aa4c7722178ed4f7f87e45d4d13c4.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-988dc1935f963ec232e4",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 113,
+              "column": 5
+            },
+            {
+              "title": "T03 v2: 4 USPs with white icons of a consistent size",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "USP icon sizes: Locally Owned 20x20, Free Wifi 22x16, 24/7 Support 20x20, No Hidden Fees 19x22"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9460,
+                      "error": {
+                        "message": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m",
+                        "stack": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:135:79",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 79,
+                          "line": 135
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 133 |\u001b[39m       \u001b[90m// wireframe draws all four icons at the same ~16px size\u001b[39m\n \u001b[90m 134 |\u001b[39m       \u001b[36mconst\u001b[39m hs \u001b[33m=\u001b[39m usps\u001b[33m.\u001b[39mmap((u) \u001b[33m=>\u001b[39m u\u001b[33m.\u001b[39mh)\u001b[33m;\u001b[39m \u001b[36mconst\u001b[39m ws \u001b[33m=\u001b[39m usps\u001b[33m.\u001b[39mmap((u) \u001b[33m=>\u001b[39m u\u001b[33m.\u001b[39mw)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 135 |\u001b[39m       expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmax(\u001b[33m...\u001b[39mhs) \u001b[33m-\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmin(\u001b[33m...\u001b[39mhs)\u001b[33m,\u001b[39m \u001b[32m`icon heights differ: ${hs}`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 136 |\u001b[39m       expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmax(\u001b[33m...\u001b[39mws)\u001b[33m,\u001b[39m \u001b[32m`icon widths: ${ws}`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m18\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 137 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 138 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 79,
+                            "line": 135
+                          },
+                          "message": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m\n\n  133 |       // wireframe draws all four icons at the same ~16px size\n  134 |       const hs = usps.map((u) => u.h); const ws = usps.map((u) => u.w);\n> 135 |       expect(Math.max(...hs) - Math.min(...hs), `icon heights differ: ${hs}`).toBeLessThanOrEqual(1);\n      |                                                                               ^\n  136 |       expect(Math.max(...ws), `icon widths: ${ws}`).toBeLessThanOrEqual(18);\n  137 |     });\n  138 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:135:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:09:25.599Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "USP icon sizes: Locally Owned 20x20, Free Wifi 22x16, 24/7 Support 20x20, No Hidden Fees 19x22"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T03-usps",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Safari-Desktop\\attachments\\v2-T03-usps-0c89c6a9a2ee780fb802ddca13c30baebb06abf7.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 79,
+                        "line": 135
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-58600f294bd9a62d853e",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 123,
+              "column": 5
+            },
+            {
+              "title": "T04 v2: hero background is new video (not the control image)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Video https://v2.crocdn.com/Lotus_Car/test15/1000200424_compressed.mp4 dur=45s t 2.4→5.0 paused=false"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13186,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:09:36.008Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Video https://v2.crocdn.com/Lotus_Car/test15/1000200424_compressed.mp4 dur=45s t 2.4→5.0 paused=false"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T04-hero-video",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--8e3a1-ideo-not-the-control-image--Safari-Desktop\\attachments\\v2-T04-hero-video-59e551bff400117926ba6162904c8f5888847af8.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-9adff2916280dafa237b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 139,
+              "column": 5
+            },
+            {
+              "title": "T05 v2: booking CTA reads \"Search Now\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "CTA visible=\"Search Now\" DOM text=\"Check the fleet\" aria-label=null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6888,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:09:49.260Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "CTA visible=\"Search Now\" DOM text=\"Check the fleet\" aria-label=null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-7065b570b63f02ca234c",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 165,
+              "column": 5
+            },
+            {
+              "title": "T06 v2: CTA accessible name matches the visible label",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "visible=\"Search Now\" accessible name=\"Check the fleet\""
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9045,
+                      "error": {
+                        "message": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m",
+                        "stack": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:176:104",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 104,
+                          "line": 176
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 174 |\u001b[39m       \u001b[36mconst\u001b[39m c \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m ctaLabel(page)\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`visible=\"${c.visible}\" accessible name=\"${c.aria || c.text}\"`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 176 |\u001b[39m       expect(c\u001b[33m.\u001b[39maria \u001b[33m||\u001b[39m c\u001b[33m.\u001b[39mtext\u001b[33m,\u001b[39m \u001b[32m'screen readers announce a different label (WCAG 2.5.3 label-in-name)'\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mcta)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 177 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 178 |\u001b[39m\n \u001b[90m 179 |\u001b[39m     test(\u001b[32m`T07 ${arm.key}: Google rating summary replaces old trust block`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 104,
+                            "line": 176
+                          },
+                          "message": "Error: screen readers announce a different label (WCAG 2.5.3 label-in-name)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"Search Now\"\u001b[39m\nReceived string:    \u001b[31m\"Check the fleet\"\u001b[39m\n\n  174 |       const c = await ctaLabel(page);\n  175 |       note(ti, `visible=\"${c.visible}\" accessible name=\"${c.aria || c.text}\"`);\n> 176 |       expect(c.aria || c.text, 'screen readers announce a different label (WCAG 2.5.3 label-in-name)').toContain(COPY.cta);\n      |                                                                                                        ^\n  177 |     });\n  178 |\n  179 |     test(`T07 ${arm.key}: Google rating summary replaces old trust block`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:176:104"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:09:56.176Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "visible=\"Search Now\" accessible name=\"Check the fleet\""
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--48fe9-e-matches-the-visible-label-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--48fe9-e-matches-the-visible-label-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 104,
+                        "line": 176
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-aefa0527dfc87a1cdcfa",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 172,
+              "column": 5
+            },
+            {
+              "title": "T07 v2: Google rating summary replaces old trust block",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8927,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:10:06.240Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T07-rating",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ce135-ry-replaces-old-trust-block-Safari-Desktop\\attachments\\v2-T07-rating-cc7264352ff4d3c1f59cf1c86c39660486265965.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-572fec83a31a4792df3b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 179,
+              "column": 5
+            },
+            {
+              "title": "T08 v2: review section directly after hero; Why Lotus removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8697,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:10:15.241Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T08-reviews",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--29f58-fter-hero-Why-Lotus-removed-Safari-Desktop\\attachments\\v2-T08-reviews-121ca159fa469d4abb6d0ec8cfd41f81a6ff7454.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-e2f19dd47e0231833e5b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 192,
+              "column": 5
+            },
+            {
+              "title": "T09 v2: review carousel navigation (arrows/dots/swipe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "initial: {\"left\":0,\"vis\":4,\"dots\":4,\"active\":0,\"prevDis\":true}"
+                    },
+                    {
+                      "type": "observation",
+                      "description": "after next: {\"left\":1216,\"vis\":4,\"dots\":4,\"active\":1,\"prevDis\":false}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13463,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:10:23.971Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "initial: {\"left\":0,\"vis\":4,\"dots\":4,\"active\":0,\"prevDis\":true}"
+                        },
+                        {
+                          "type": "observation",
+                          "description": "after next: {\"left\":1216,\"vis\":4,\"dots\":4,\"active\":1,\"prevDis\":false}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T09-last-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--99df9-vigation-arrows-dots-swipe--Safari-Desktop\\attachments\\v2-T09-last-page-cde22c5b1ad6d42028216ab78dfefb5c0ec7da89.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-ee392abbef9c55f58974",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 207,
+              "column": 5
+            },
+            {
+              "title": "T10 v2: Read more expands / Show less collapses a review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10582,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:10:37.453Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T10-expanded",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--cb22d-how-less-collapses-a-review-Safari-Desktop\\attachments\\v2-T10-expanded-b98abe4d096e1f4fcf3884418c8e62cdbcbfa3da.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-ac34446ebb54cce17f37",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 248,
+              "column": 5
+            },
+            {
+              "title": "T11 v2: fleet section retitled with grey background",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8142,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:10:48.063Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T11-fleet",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d5838-titled-with-grey-background-Safari-Desktop\\attachments\\v2-T11-fleet-d6bc11b43c5ba6daa3f47684ab0e8c056288a162.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-8f30876eb64bbe035ccd",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 265,
+              "column": 5
+            },
+            {
+              "title": "T12 v2: Plan your trip replaces Before your trip",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11920,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:10:56.236Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T12-plan",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--96235-p-replaces-Before-your-trip-Safari-Desktop\\attachments\\v2-T12-plan-75f4d2c00d22d6a659e2fb94b913913429ba93c8.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-c19ab5742c90fa4323df",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 274,
+              "column": 5
+            },
+            {
+              "title": "T13 v2: Plan your trip shows the posts drawn in the wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9877,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:298:22",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 22,
+                          "line": 298
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 296 |\u001b[39m       \u001b[36mconst\u001b[39m titles \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-plan__title`\u001b[39m)\u001b[33m.\u001b[39mallInnerTexts())\u001b[33m.\u001b[39mmap(norm)\u001b[33m;\u001b[39m\n \u001b[90m 297 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 298 |\u001b[39m       expect(titles)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mplanPosts)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 299 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 300 |\u001b[39m\n \u001b[90m 301 |\u001b[39m     test(\u001b[32m`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 22,
+                            "line": 298
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  296 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);\n  297 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);\n> 298 |       expect(titles).toEqual(COPY.planPosts);\n      |                      ^\n  299 |     });\n  300 |\n  301 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:298:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:11:08.181Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 22,
+                        "line": 298
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-6206c416d48a1db4c5db",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 294,
+              "column": 5
+            },
+            {
+              "title": "T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 21429,
+                      "error": {
+                        "message": "Error: pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /www.lotuscarrental.is/our-rental-cars/campers?_rsc=p37cr due to access control checks.\npageerror: /www.lotuscarrental.is/our-rental-cars/4x4?_rsc=p37cr due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /b.clarity.ms/collect due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 8\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is/our-rental-cars/campers?_rsc=p37cr due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is/our-rental-cars/4x4?_rsc=p37cr due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /b.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /www.lotuscarrental.is/our-rental-cars/campers?_rsc=p37cr due to access control checks.\npageerror: /www.lotuscarrental.is/our-rental-cars/4x4?_rsc=p37cr due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /b.clarity.ms/collect due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 8\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is/our-rental-cars/campers?_rsc=p37cr due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is/our-rental-cars/4x4?_rsc=p37cr due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /b.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:319:37",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 37,
+                          "line": 319
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 317 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-hero-media`\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 318 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-T14-after-back`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 319 |\u001b[39m       expect(errs\u001b[33m,\u001b[39m errs\u001b[33m.\u001b[39mjoin(\u001b[32m'\\n'\u001b[39m))\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 320 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 321 |\u001b[39m\n \u001b[90m 322 |\u001b[39m     test(\u001b[32m`T15 ${arm.key}: Search Now still starts the booking flow`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 37,
+                            "line": 319
+                          },
+                          "message": "Error: pageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /www.lotuscarrental.is/our-rental-cars/campers?_rsc=p37cr due to access control checks.\npageerror: /www.lotuscarrental.is/our-rental-cars/4x4?_rsc=p37cr due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\npageerror: /b.clarity.ms/collect due to access control checks.\npageerror: /www.lotuscarrental.is\" from accessing a frame with origin \"https://chatbot.menni.ai\". Protocols, domains, and ports must match.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 8\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is/our-rental-cars/campers?_rsc=p37cr due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is/our-rental-cars/4x4?_rsc=p37cr due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+   \"pageerror: /b.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /www.lotuscarrental.is\\\" from accessing a frame with origin \\\"https://chatbot.menni.ai\\\". Protocols, domains, and ports must match.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  317 |       await expect(page.locator(`.${P}-hero-media`)).toHaveCount(1);\n  318 |       await shot(page, ti, `${arm.key}-T14-after-back`);\n> 319 |       expect(errs, errs.join('\\n')).toEqual([]);\n      |                                     ^\n  320 |     });\n  321 |\n  322 |     test(`T15 ${arm.key}: Search Now still starts the booking flow`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:319:37"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:11:19.132Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T14-after-back",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Safari-Desktop\\attachments\\v2-T14-after-back-890b389b1249304206a222c6b3c9ddfd28275b99.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 37,
+                        "line": 319
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-68ac0ae4c41b64b68abc",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 301,
+              "column": 5
+            },
+            {
+              "title": "T15 v2: Search Now still starts the booking flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13346,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:11:41.665Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T15-after-cta",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--3f09b-ill-starts-the-booking-flow-Safari-Desktop\\attachments\\v2-T15-after-cta-330cc2d857aeadec9743ccbf6d7ca2cb65eecbaf.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-899470d8c58bb3ad853a",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 322,
+              "column": 5
+            },
+            {
+              "title": "T16 v2: FAQ and footer intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9157,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:11:55.076Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T16-faq",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--f6c66-tact-no-horizontal-overflow-Safari-Desktop\\attachments\\v2-T16-faq-1bda509671408c7b6f92dbc7ac26a24ab9e37219.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-1354175c2b4fc788af8d",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 332,
+              "column": 5
+            },
+            {
+              "title": "T17 v2: variation does not run on the German homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "lang=de-de"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60667,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:12:04.250Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "lang=de-de"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-0a7120674feef046fb3a",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 342,
+              "column": 5
+            },
+            {
+              "title": "T18 v2: video respects prefers-reduced-motion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "reduced-motion user: video playing=true (V1 code skips video for reduce; V2 code has no such guard)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8289,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:356:25",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 25,
+                          "line": 356
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 354 |\u001b[39m         \u001b[36mconst\u001b[39m playing \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate((p) \u001b[33m=>\u001b[39m { \u001b[36mconst\u001b[39m v \u001b[33m=\u001b[39m document\u001b[33m.\u001b[39mquerySelector(\u001b[32m`.${p}-hero-video`\u001b[39m)\u001b[33m;\u001b[39m \u001b[36mreturn\u001b[39m v \u001b[33m?\u001b[39m \u001b[33m!\u001b[39mv\u001b[33m.\u001b[39mpaused \u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m }\u001b[33m,\u001b[39m \u001b[33mP\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 355 |\u001b[39m         note(ti\u001b[33m,\u001b[39m \u001b[32m`reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 356 |\u001b[39m         expect(playing)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 357 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 358 |\u001b[39m     }\n \u001b[90m 359 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 25,
+                            "line": 356
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  354 |         const playing = await page.evaluate((p) => { const v = document.querySelector(`.${p}-hero-video`); return v ? !v.paused : false; }, P);\n  355 |         note(ti, `reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`);\n> 356 |         expect(playing).toBe(false);\n      |                         ^\n  357 |       });\n  358 |     }\n  359 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:356:25"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:13:04.927Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "reduced-motion user: video playing=true (V1 code skips video for reduce; V2 code has no such guard)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 25,
+                        "line": 356
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-5524c3849ccc9c27a196",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 350,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-16T10:03:56.494Z",
+    "duration": 556784.292,
+    "expected": 29,
+    "skipped": 0,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

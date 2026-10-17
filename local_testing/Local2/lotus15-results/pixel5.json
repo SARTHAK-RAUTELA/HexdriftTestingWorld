@@ -1,0 +1,2012 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus15-homepage-new-hero.spec.js",
+      "file": "lotus15-homepage-new-hero.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "control",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 81,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 control: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased | co-running Convert experiences: 100052832, 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20949,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:14:45.744Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased | co-running Convert experiences: 100052832, 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d1a53-ode-and-no-variation-errors-Mobile-Chrome-Pixel-5-\\attachments\\control-T01-fold-484edfd5f6570957487e15f9d78df87f173f110c.png"
+                        },
+                        {
+                          "name": "control-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d1a53-ode-and-no-variation-errors-Mobile-Chrome-Pixel-5-\\attachments\\control-T01-full-page-d23b08db59b25ccf86367526f3a682d2ca126309.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-55a51ff4cfcd57b03687",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "T02 control: original homepage unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10180,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:15:06.862Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--e5799-original-homepage-unchanged-Mobile-Chrome-Pixel-5-\\attachments\\control-T02-hero-434b6fa9534c04e020abb1465c8f4f13757601b9.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-ce061e274027ea08af01",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 100,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "v1",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 81,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 v1: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_B | co-running Convert experiences: 100052832, 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8508,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:15:17.069Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_B | co-running Convert experiences: 100052832, 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--56ce4-ode-and-no-variation-errors-Mobile-Chrome-Pixel-5-\\attachments\\v1-T01-fold-b0ca6ddcf80b948c60e35bcc7c79cc46c9341e42.png"
+                        },
+                        {
+                          "name": "v1-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--56ce4-ode-and-no-variation-errors-Mobile-Chrome-Pixel-5-\\attachments\\v1-T01-full-page-530fbcbc750fe8e60a3d82640069f9bbfa182c70.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-e83060b4eabe3e81054d",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "T02 v1: hero heading and description match wireframe; old copy hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6358,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:15:25.593Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--5ff42-h-wireframe-old-copy-hidden-Mobile-Chrome-Pixel-5-\\attachments\\v1-T02-hero-348f2a84813728d067dc2f0b69ccd35ee91fcf73.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-6cd23ae34b1995e0f6f8",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 114,
+              "column": 5
+            },
+            {
+              "title": "T03 v1: 4 USPs with white icons of a consistent size",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "USP icon sizes: Locally Owned 16x16, Free Wifi 16x16, 24/7 Support 16x16, No Hidden Fees 16x16"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5964,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:15:31.966Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "USP icon sizes: Locally Owned 16x16, Free Wifi 16x16, 24/7 Support 16x16, No Hidden Fees 16x16"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T03-usps",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b132d--icons-of-a-consistent-size-Mobile-Chrome-Pixel-5-\\attachments\\v1-T03-usps-7c282afdb52dd323fb59e035399c995d5602df8e.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-a7ec23c9babf38cd5e7b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 124,
+              "column": 5
+            },
+            {
+              "title": "T04 v1: hero background is new image (not the control image)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Control/original hero src: https://images.prismic.io/lotuscarrental/afxmOcBOoF08xtoI_defender-lava-field-lake-aerial.jpg?auto=format%2Ccompress&fit=max&w=1200 | V1 injected src: https://v2.crocdn.com/Lotus_Car/test15/1.jpg"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6049,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:15:37.951Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Control/original hero src: https://images.prismic.io/lotuscarrental/afxmOcBOoF08xtoI_defender-lava-field-lake-aerial.jpg?auto=format%2Ccompress&fit=max&w=1200 | V1 injected src: https://v2.crocdn.com/Lotus_Car/test15/1.jpg"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T04-hero-bg",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--aadcc-mage-not-the-control-image--Mobile-Chrome-Pixel-5-\\attachments\\v1-T04-hero-bg-788eedfa6559116473b92b5ed59b9f56137646a8.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-d6af63e6c26aa32545e6",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "T05 v1: booking CTA reads \"Search Now\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "CTA visible=\"Search Now\" DOM text=\"Search Now\" aria-label=null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5508,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:15:44.018Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "CTA visible=\"Search Now\" DOM text=\"Search Now\" aria-label=null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-4c3750dd734d4873160d",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 166,
+              "column": 5
+            },
+            {
+              "title": "T06 v1: CTA accessible name matches the visible label",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "visible=\"Search Now\" accessible name=\"Search Now\""
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4593,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:15:49.552Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "visible=\"Search Now\" accessible name=\"Search Now\""
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-e3f3e61179dc012d7695",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "T07 v1: Google rating summary replaces old trust block",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6119,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:15:54.160Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T07-rating",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--63ebd-ry-replaces-old-trust-block-Mobile-Chrome-Pixel-5-\\attachments\\v1-T07-rating-1082f4761622c344d2e453e030b56af3902f44b4.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-6a355bdb6f2b4b5a8bc1",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 180,
+              "column": 5
+            },
+            {
+              "title": "T08 v1: review section directly after hero; Why Lotus removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5263,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:16:00.298Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T08-reviews",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d91c6-fter-hero-Why-Lotus-removed-Mobile-Chrome-Pixel-5-\\attachments\\v1-T08-reviews-f7684d46ecef35f2eda91f20feb5a2465846c9e8.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-7a246dca37a44a17ca4f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "T09 v1: review carousel navigation (arrows/dots/swipe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "initial: {\"left\":0,\"vis\":1,\"dots\":14,\"active\":0,\"prevDis\":true}"
+                    },
+                    {
+                      "type": "observation",
+                      "description": "after swipe: {\"left\":316,\"vis\":1,\"dots\":14,\"active\":1,\"prevDis\":false}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6394,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:16:05.576Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "initial: {\"left\":0,\"vis\":1,\"dots\":14,\"active\":0,\"prevDis\":true}"
+                        },
+                        {
+                          "type": "observation",
+                          "description": "after swipe: {\"left\":316,\"vis\":1,\"dots\":14,\"active\":1,\"prevDis\":false}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T09-swiped",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--f00b2-vigation-arrows-dots-swipe--Mobile-Chrome-Pixel-5-\\attachments\\v1-T09-swiped-d893a5abe3bc03e357520025bccc992a7f6e0ec5.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-2b3f36526807268e75cf",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 208,
+              "column": 5
+            },
+            {
+              "title": "T10 v1: Read more expands / Show less collapses a review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6605,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:16:11.989Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T10-expanded",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--9a872-how-less-collapses-a-review-Mobile-Chrome-Pixel-5-\\attachments\\v1-T10-expanded-b233b9530992a773d3de16478f6a54a94eb79237.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-6b959e4b85e09e18fcb0",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 249,
+              "column": 5
+            },
+            {
+              "title": "T11 v1: fleet section retitled with grey background",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6393,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:16:18.616Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T11-fleet",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--46946-titled-with-grey-background-Mobile-Chrome-Pixel-5-\\attachments\\v1-T11-fleet-6de3de9bb2eb1cfbe9f75ecc9b83ea3ffbb8d158.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-2c55f70b7370ba56834d",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 266,
+              "column": 5
+            },
+            {
+              "title": "T12 v1: Plan your trip replaces Before your trip",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6821,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:16:25.024Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T12-plan",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b601c-p-replaces-Before-your-trip-Mobile-Chrome-Pixel-5-\\attachments\\v1-T12-plan-ff78ec279d4ad0be5bfd9df72604414b8c19a6b2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-d40b85af6ab3f7bce811",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 275,
+              "column": 5
+            },
+            {
+              "title": "T13 v1: Plan your trip shows the posts drawn in the wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4493,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:299:22",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 22,
+                          "line": 299
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 297 |\u001b[39m       \u001b[36mconst\u001b[39m titles \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-plan__title`\u001b[39m)\u001b[33m.\u001b[39mallInnerTexts())\u001b[33m.\u001b[39mmap(norm)\u001b[33m;\u001b[39m\n \u001b[90m 298 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 299 |\u001b[39m       expect(titles)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mplanPosts)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 300 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 301 |\u001b[39m\n \u001b[90m 302 |\u001b[39m     test(\u001b[32m`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 22,
+                            "line": 299
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  297 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);\n  298 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);\n> 299 |       expect(titles).toEqual(COPY.planPosts);\n      |                      ^\n  300 |     });\n  301 |\n  302 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:299:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:16:31.865Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--b504a-osts-drawn-in-the-wireframe-Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 22,
+                        "line": 299
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-f3b1bfcd1f64e4089925",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 295,
+              "column": 5
+            },
+            {
+              "title": "T14 v1: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11556,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:16:39.057Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T14-after-back",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--23ba8-leaned-up-reapplied-on-Back-Mobile-Chrome-Pixel-5-\\attachments\\v1-T14-after-back-8c9467c6a42dab69e956a292cca13bde784778aa.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-875dcff3945ae3ed0c9b",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 302,
+              "column": 5
+            },
+            {
+              "title": "T15 v1: Search Now still starts the booking flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9978,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:16:50.693Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v1-T15-after-cta",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--bbc95-ill-starts-the-booking-flow-Mobile-Chrome-Pixel-5-\\attachments\\v1-T15-after-cta-b5c43665fb6d92f6007093415f5bf035d421fe81.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-49cc7364c1c0536bd370",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 323,
+              "column": 5
+            },
+            {
+              "title": "T16 v1: FAQ and footer intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6540,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:17:00.690Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v1-T16-faq",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--72bce-tact-no-horizontal-overflow-Mobile-Chrome-Pixel-5-\\attachments\\v1-T16-faq-4f6aec6cac01a282981fa9d516bf89085119ae08.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-da3809143211085e928f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 333,
+              "column": 5
+            },
+            {
+              "title": "T17 v1: variation does not run on the German homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "lang=de-de"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60271,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:17:07.245Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "lang=de-de"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-dcfe5c9e629bc7513d6e",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 343,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "v2",
+          "file": "lotus15-homepage-new-hero.spec.js",
+          "line": 81,
+          "column": 8,
+          "specs": [
+            {
+              "title": "T01 v2: arm loads with correct variation code and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_C | co-running Convert experiences: 100052832, 100052950, 100052977"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7872,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:07.530Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Body: flex min-h-screen flex-col bg-background font-sans antialiased lotus_test_15_C | co-running Convert experiences: 100052832, 100052950, 100052977"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T01-fold",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--604ad-ode-and-no-variation-errors-Mobile-Chrome-Pixel-5-\\attachments\\v2-T01-fold-2bdb76237eacbf4e0b77102b3d5fdfd8e629b55a.png"
+                        },
+                        {
+                          "name": "v2-T01-full-page",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--604ad-ode-and-no-variation-errors-Mobile-Chrome-Pixel-5-\\attachments\\v2-T01-full-page-3090d61923bf0bda9bdb301d8adccaf96ee76dbe.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-0691665551dc75b77331",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "T02 v2: hero heading and description match wireframe; old copy hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5910,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:15.419Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T02-hero",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--a0e93-h-wireframe-old-copy-hidden-Mobile-Chrome-Pixel-5-\\attachments\\v2-T02-hero-e1aec9dd793378d614893464c7449c6ea70729b7.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-9a6d4d54c8e5f4487b94",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 114,
+              "column": 5
+            },
+            {
+              "title": "T03 v2: 4 USPs with white icons of a consistent size",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "USP icon sizes: Locally Owned 20x20, Free Wifi 22x16, 24/7 Support 20x20, No Hidden Fees 19x22"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4683,
+                      "error": {
+                        "message": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m",
+                        "stack": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:136:79",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 79,
+                          "line": 136
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 134 |\u001b[39m       \u001b[90m// wireframe draws all four icons at the same ~16px size\u001b[39m\n \u001b[90m 135 |\u001b[39m       \u001b[36mconst\u001b[39m hs \u001b[33m=\u001b[39m usps\u001b[33m.\u001b[39mmap((u) \u001b[33m=>\u001b[39m u\u001b[33m.\u001b[39mh)\u001b[33m;\u001b[39m \u001b[36mconst\u001b[39m ws \u001b[33m=\u001b[39m usps\u001b[33m.\u001b[39mmap((u) \u001b[33m=>\u001b[39m u\u001b[33m.\u001b[39mw)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 136 |\u001b[39m       expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmax(\u001b[33m...\u001b[39mhs) \u001b[33m-\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmin(\u001b[33m...\u001b[39mhs)\u001b[33m,\u001b[39m \u001b[32m`icon heights differ: ${hs}`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 137 |\u001b[39m       expect(\u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mmax(\u001b[33m...\u001b[39mws)\u001b[33m,\u001b[39m \u001b[32m`icon widths: ${ws}`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m18\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 138 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 139 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 79,
+                            "line": 136
+                          },
+                          "message": "Error: icon heights differ: 20,16,20,22\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m1\u001b[39m\nReceived:    \u001b[31m6\u001b[39m\n\n  134 |       // wireframe draws all four icons at the same ~16px size\n  135 |       const hs = usps.map((u) => u.h); const ws = usps.map((u) => u.w);\n> 136 |       expect(Math.max(...hs) - Math.min(...hs), `icon heights differ: ${hs}`).toBeLessThanOrEqual(1);\n      |                                                                               ^\n  137 |       expect(Math.max(...ws), `icon widths: ${ws}`).toBeLessThanOrEqual(18);\n  138 |     });\n  139 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:136:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:21.346Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "USP icon sizes: Locally Owned 20x20, Free Wifi 22x16, 24/7 Support 20x20, No Hidden Fees 19x22"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T03-usps",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Chrome-Pixel-5-\\attachments\\v2-T03-usps-11981dee04af654dd3b4570ccce0e50301b81333.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--671ac--icons-of-a-consistent-size-Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 79,
+                        "line": 136
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-b41e9da0b2beb0d29020",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 124,
+              "column": 5
+            },
+            {
+              "title": "T04 v2: hero background is new video (not the control image)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Video https://v2.crocdn.com/Lotus_Car/test15/1000200424_compressed.mp4 dur=45s t 2.0→4.5 paused=false"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8610,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:28.700Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Video https://v2.crocdn.com/Lotus_Car/test15/1000200424_compressed.mp4 dur=45s t 2.0→4.5 paused=false"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T04-hero-video",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--8e3a1-ideo-not-the-control-image--Mobile-Chrome-Pixel-5-\\attachments\\v2-T04-hero-video-2b7b79f317c005874fa55ce099c91e36f92d23f1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-ff8dbaa823e4312b199f",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "T05 v2: booking CTA reads \"Search Now\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "CTA visible=\"Search Now\" DOM text=\"Search Now\" aria-label=null"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6015,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:37.392Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "CTA visible=\"Search Now\" DOM text=\"Search Now\" aria-label=null"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-ffd5f5149c273e412c94",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 166,
+              "column": 5
+            },
+            {
+              "title": "T06 v2: CTA accessible name matches the visible label",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "visible=\"Search Now\" accessible name=\"Search Now\""
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4297,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:43.424Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "visible=\"Search Now\" accessible name=\"Search Now\""
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-263a84a8abb26a38ed17",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "T07 v2: Google rating summary replaces old trust block",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5430,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:47.739Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T07-rating",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ce135-ry-replaces-old-trust-block-Mobile-Chrome-Pixel-5-\\attachments\\v2-T07-rating-b801ae5c83756f8d1c408d9dea99c296a966b223.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-b95e3af2ace66897e67e",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 180,
+              "column": 5
+            },
+            {
+              "title": "T08 v2: review section directly after hero; Why Lotus removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5567,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:53.186Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T08-reviews",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--29f58-fter-hero-Why-Lotus-removed-Mobile-Chrome-Pixel-5-\\attachments\\v2-T08-reviews-d518a5ad28f6e55f9ac1e05ecf9f94114f078c79.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-7a8bc898eab71eecc064",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "T09 v2: review carousel navigation (arrows/dots/swipe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "initial: {\"left\":0,\"vis\":1,\"dots\":14,\"active\":0,\"prevDis\":true}"
+                    },
+                    {
+                      "type": "observation",
+                      "description": "after swipe: {\"left\":316,\"vis\":1,\"dots\":14,\"active\":1,\"prevDis\":false}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6128,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:18:58.777Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "initial: {\"left\":0,\"vis\":1,\"dots\":14,\"active\":0,\"prevDis\":true}"
+                        },
+                        {
+                          "type": "observation",
+                          "description": "after swipe: {\"left\":316,\"vis\":1,\"dots\":14,\"active\":1,\"prevDis\":false}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T09-swiped",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--99df9-vigation-arrows-dots-swipe--Mobile-Chrome-Pixel-5-\\attachments\\v2-T09-swiped-70ee1d53d4b9439752b2d4eb1024b72cd0b724f7.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-2c54343cd8e80f78e230",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 208,
+              "column": 5
+            },
+            {
+              "title": "T10 v2: Read more expands / Show less collapses a review",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5287,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:19:04.926Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T10-expanded",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--cb22d-how-less-collapses-a-review-Mobile-Chrome-Pixel-5-\\attachments\\v2-T10-expanded-c5e7e2db5facd5cd7b05abab60f3e301d941cd44.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-615daf5d8f21b45c48c2",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 249,
+              "column": 5
+            },
+            {
+              "title": "T11 v2: fleet section retitled with grey background",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6342,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:19:10.229Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T11-fleet",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d5838-titled-with-grey-background-Mobile-Chrome-Pixel-5-\\attachments\\v2-T11-fleet-ac4d91370ea00ce06ddc1fde413babe89f7cd87b.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-8041c9269c417e3be1ae",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 266,
+              "column": 5
+            },
+            {
+              "title": "T12 v2: Plan your trip replaces Before your trip",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6039,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:19:16.588Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live posts: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T12-plan",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--96235-p-replaces-Before-your-trip-Mobile-Chrome-Pixel-5-\\attachments\\v2-T12-plan-cec16b172c394a87a7ae256cdeb3e6bc06fee652.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-81147a5d318b0811a307",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 275,
+              "column": 5
+            },
+            {
+              "title": "T13 v2: Plan your trip shows the posts drawn in the wireframe",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5828,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:299:22",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 22,
+                          "line": 299
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 297 |\u001b[39m       \u001b[36mconst\u001b[39m titles \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`.${P}-plan__title`\u001b[39m)\u001b[33m.\u001b[39mallInnerTexts())\u001b[33m.\u001b[39mmap(norm)\u001b[33m;\u001b[39m\n \u001b[90m 298 |\u001b[39m       note(ti\u001b[33m,\u001b[39m \u001b[32m`Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 299 |\u001b[39m       expect(titles)\u001b[33m.\u001b[39mtoEqual(\u001b[33mCOPY\u001b[39m\u001b[33m.\u001b[39mplanPosts)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 300 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 301 |\u001b[39m\n \u001b[90m 302 |\u001b[39m     test(\u001b[32m`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 22,
+                            "line": 299
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[31m+   \"Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips\",\u001b[39m\n\u001b[31m+   \"What is the Best Month to Visit Iceland? Local Guide.\",\u001b[39m\n\u001b[2m    \"How Many Days Do You Need to Visit Iceland? (2026 Guide)\",\u001b[22m\n\u001b[32m-   \"Campervan vs Car Rental in Iceland: A Local's 2026 Guide\",\u001b[39m\n\u001b[32m-   \"Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide\",\u001b[39m\n\u001b[32m-   \"How to Rent a Car in Iceland: Everything You Need to Know Before You Book\",\u001b[39m\n\u001b[31m+   \"Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  297 |       const titles = (await page.locator(`.${P}-plan__title`).allInnerTexts()).map(norm);\n  298 |       note(ti, `Live: ${titles.join(' | ')} — Wireframe: ${COPY.planPosts.join(' | ')}`);\n> 299 |       expect(titles).toEqual(COPY.planPosts);\n      |                      ^\n  300 |     });\n  301 |\n  302 |     test(`T14 ${arm.key}: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:299:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:19:22.649Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "Live: Iceland in October 2026: Is It a Good Time to Visit? Weather, Driving and Tips | What is the Best Month to Visit Iceland? Local Guide. | How Many Days Do You Need to Visit Iceland? (2026 Guide) | Is Iceland Expensive? A Real Trip to Iceland Cost Breakdown (2026) — Wireframe: How Many Days Do You Need to Visit Iceland? (2026 Guide) | Campervan vs Car Rental in Iceland: A Local's 2026 Guide | Renting a Car in Iceland with Kids: The Complete Family Road Trip Guide | How to Rent a Car in Iceland: Everything You Need to Know Before You Book"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--ea20a-osts-drawn-in-the-wireframe-Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 22,
+                        "line": 299
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-7c697e885f46ed1a6bd6",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 295,
+              "column": 5
+            },
+            {
+              "title": "T14 v2: plan card link opens the blog post (SPA) and variation is cleaned up / reapplied on Back",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12198,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:19:31.093Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T14-after-back",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--4dbb7-leaned-up-reapplied-on-Back-Mobile-Chrome-Pixel-5-\\attachments\\v2-T14-after-back-5285f4b4d731526a5bb3575795623da695967303.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-79a45657bbaa4d17b137",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 302,
+              "column": 5
+            },
+            {
+              "title": "T15 v2: Search Now still starts the booking flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8705,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:19:43.374Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "URL after click: https://www.lotuscarrental.is/rent-a-car-in-iceland"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "v2-T15-after-cta",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--3f09b-ill-starts-the-booking-flow-Mobile-Chrome-Pixel-5-\\attachments\\v2-T15-after-cta-e407dd0c6981f41431ea6c259ec6fa72291060c8.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-c21aedc1c71c02330754",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 323,
+              "column": 5
+            },
+            {
+              "title": "T16 v2: FAQ and footer intact, no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5886,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:19:52.104Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "v2-T16-faq",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--f6c66-tact-no-horizontal-overflow-Mobile-Chrome-Pixel-5-\\attachments\\v2-T16-faq-2072d4c99e55d4895f22659d7755012cef65706b.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-ecde20f0157856e600f4",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 333,
+              "column": 5
+            },
+            {
+              "title": "T17 v2: variation does not run on the German homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "lang=de-de"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60244,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:19:58.006Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "lang=de-de"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-48ae7bbab102027f45d5",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 343,
+              "column": 5
+            },
+            {
+              "title": "T18 v2: video respects prefers-reduced-motion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "observation",
+                      "description": "reduced-motion user: video playing=true (V1 code skips video for reduce; V2 code has no such guard)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7290,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:357:25",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                          "column": 25,
+                          "line": 357
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 355 |\u001b[39m         \u001b[36mconst\u001b[39m playing \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate((p) \u001b[33m=>\u001b[39m { \u001b[36mconst\u001b[39m v \u001b[33m=\u001b[39m document\u001b[33m.\u001b[39mquerySelector(\u001b[32m`.${p}-hero-video`\u001b[39m)\u001b[33m;\u001b[39m \u001b[36mreturn\u001b[39m v \u001b[33m?\u001b[39m \u001b[33m!\u001b[39mv\u001b[33m.\u001b[39mpaused \u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m }\u001b[33m,\u001b[39m \u001b[33mP\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 356 |\u001b[39m         note(ti\u001b[33m,\u001b[39m \u001b[32m`reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 357 |\u001b[39m         expect(playing)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 358 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m 359 |\u001b[39m     }\n \u001b[90m 360 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                            "column": 25,
+                            "line": 357
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  355 |         const playing = await page.evaluate((p) => { const v = document.querySelector(`.${p}-hero-video`); return v ? !v.paused : false; }, P);\n  356 |         note(ti, `reduced-motion user: video playing=${playing} (V1 code skips video for reduce; V2 code has no such guard)`);\n> 357 |         expect(playing).toBe(false);\n      |                         ^\n  358 |       });\n  359 |     }\n  360 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js:357:25"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-16T10:20:58.277Z",
+                      "annotations": [
+                        {
+                          "type": "observation",
+                          "description": "reduced-motion user: video playing=true (V1 code skips video for reduce; V2 code has no such guard)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus15-homepage-new-hero--d32fa-ects-prefers-reduced-motion-Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus15-homepage-new-hero.spec.js",
+                        "column": 25,
+                        "line": 357
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1e3f52afd9fdb516484a-b5aac318feecce475855",
+              "file": "lotus15-homepage-new-hero.spec.js",
+              "line": 351,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-16T10:14:44.491Z",
+    "duration": 382917.37200000003,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QA Launcher</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --ink: #1b1f24; --muted: #5f6b7a; --line: #dde2e8;
+    --accent: #2f5bea; --accent-ink: #ffffff; --ok: #1f8a4c; --bad: #c8342b; --warn: #b86e00;
+    --tool: #eef3ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111418; --panel: #191d23; --ink: #e6e9ee; --muted: #98a3b1; --line: #2c333c;
+      --accent: #6d8dff; --accent-ink: #0d1016; --ok: #4cc283; --bad: #ff6b60; --warn: #f0a63a;
+      --tool: #1c2438;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--panel); }
+  header h1 { margin: 0; font-size: 17px; }
+  header span { color: var(--muted); font-size: 13px; }
+  main { display: grid; grid-template-columns: minmax(380px, 520px) minmax(0, 1fr); gap: 16px; padding: 16px 20px; align-items: start; }
+  @media (max-width: 960px) { main { grid-template-columns: minmax(0, 1fr); padding: 12px 16px; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; min-width: 0; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 18px 0 8px; }
+  h2:first-child { margin-top: 0; }
+  label { display: block; font-weight: 600; font-size: 13px; margin: 10px 0 4px; }
+  label small { font-weight: 400; color: var(--muted); }
+  input[type=text], input[type=url], select, textarea {
+    width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--bg); color: var(--ink); font: inherit;
+  }
+  textarea { resize: vertical; min-height: 70px; }
+  textarea.big { min-height: 180px; font-family: ui-monospace, Consolas, monospace; font-size: 12.5px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; }
+  .checks label { font-weight: 400; margin: 2px 0; display: flex; gap: 6px; align-items: center; }
+  .var-row { display: grid; grid-template-columns: 90px 1fr 32px; gap: 6px; margin-bottom: 6px; }
+  button { font: inherit; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 7px 12px; cursor: pointer; }
+  button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  button.danger { color: var(--bad); }
+  button:disabled { opacity: .5; cursor: default; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 16px; }
+  .errors { color: var(--bad); margin-top: 10px; }
+  .hint { color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+  .jobs { list-style: none; margin: 0 0 12px; padding: 0; max-height: 220px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
+  .jobs li { padding: 7px 10px; border-bottom: 1px solid var(--line); cursor: pointer; display: flex; justify-content: space-between; gap: 8px; }
+  .jobs li:last-child { border-bottom: 0; }
+  .jobs li.active { background: var(--tool); }
+  .jobs .c { color: var(--muted); }
+  .badge { font-size: 11.5px; font-weight: 600; padding: 1px 7px; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; align-self: center; }
+  .s-running { color: var(--accent); } .s-queued { color: var(--warn); } .s-done { color: var(--ok); }
+  .s-failed, .s-cancelled, .s-interrupted { color: var(--bad); }
+
+  .jobhead { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .jobhead h3 { margin: 0; font-size: 15px; }
+  #log { height: calc(100vh - 380px); min-height: 360px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; padding: 10px; background: var(--bg); font-size: 13px; }
+  .ev { margin: 0 0 8px; white-space: pre-wrap; word-break: break-word; }
+  .ev.tool { background: var(--tool); border-radius: 6px; padding: 4px 8px; font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
+  .ev.tool b { color: var(--accent); }
+  .ev.tres { font-family: ui-monospace, Consolas, monospace; font-size: 11.5px; color: var(--muted); max-height: 90px; overflow: hidden; border-left: 2px solid var(--line); padding-left: 8px; }
+  .ev.tres.err { color: var(--bad); border-color: var(--bad); }
+  .ev.meta { color: var(--muted); font-size: 12px; }
+  .ev.stderr { color: var(--warn); font-size: 12px; }
+  .ev.result { border: 1px solid var(--ok); border-radius: 8px; padding: 10px; background: var(--panel); }
+  .ev.result.err { border-color: var(--bad); }
+  .ev.user { border-left: 3px solid var(--accent); padding-left: 8px; }
+  .ev.divider { text-align: center; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 6px; }
+  .followup { display: flex; gap: 8px; margin-top: 10px; }
+  .followup textarea { min-height: 42px; }
+  .empty { color: var(--muted); padding: 30px; text-align: center; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>QA Launcher</h1>
+  <span>Fill in the test, submit, and Claude runs the Playwright QA on this machine.</span>
+</header>
+
+<main>
+  <form id="form" class="panel" autocomplete="off">
+    <h2>Ticket</h2>
+    <div class="row">
+      <div>
+        <label for="client">Client</label>
+        <select id="client" name="client"><option value="">Match by URL</option></select>
+      </div>
+      <div>
+        <label for="ticket">Ticket ID</label>
+        <input type="text" id="ticket" name="ticket" placeholder="WIN290">
+      </div>
+    </div>
+    <label for="testName">Test name</label>
+    <input type="text" id="testName" name="testName" placeholder="Shop page sticky ATC">
+    <div class="row">
+      <div>
+        <label for="runType">Run type</label>
+        <select id="runType" name="runType">
+          <option value="new">New test</option>
+          <option value="retest">Re-test after fixes</option>
+          <option value="prelaunch">Pre-launch check</option>
+        </select>
+      </div>
+      <div>
+        <label for="platform">Platform</label>
+        <select id="platform" name="platform">
+          <option value="">Not sure</option>
+          <option>VWO</option><option>Convert</option><option>Optimizely</option>
+          <option>GrowthBook</option><option>AB Tasty</option><option>Other</option>
+        </select>
+      </div>
+    </div>
+    <label for="experimentId">Experiment / variation IDs <small>(optional)</small></label>
+    <input type="text" id="experimentId" name="experimentId" placeholder="100350737 / 1003184953">
+
+    <h2>URLs</h2>
+    <label for="controlUrl">Control URL</label>
+    <input type="url" id="controlUrl" name="controlUrl" placeholder="https://…">
+    <label>Variation URLs</label>
+    <div id="variations"></div>
+    <button type="button" id="addVar">+ Add variation</button>
+
+    <h2>Design and code</h2>
+    <label for="figma">Figma link or design notes</label>
+    <textarea id="figma" name="figma" placeholder="https://www.figma.com/design/…  or a local PNG path"></textarea>
+    <label for="codePaths">Local code paths <small>(optional)</small></label>
+    <textarea id="codePaths" name="codePaths" placeholder="local_testing/Local2/variation/vB.js"></textarea>
+
+    <h2>Test details</h2>
+    <label for="details">Paste the ticket / test details</label>
+    <textarea id="details" name="details" class="big"></textarea>
+    <label for="goals">Goals / tracking to verify <small>(optional)</small></label>
+    <textarea id="goals" name="goals"></textarea>
+    <div id="retestBox" hidden>
+      <label for="previousBugs">Previous bugs to re-check</label>
+      <textarea id="previousBugs" name="previousBugs" placeholder="BUG-01 …&#10;Previous report path or link …"></textarea>
+    </div>
+
+    <h2>Browsers</h2>
+    <div class="checks" id="browsers">
+      <label><input type="checkbox" value="Chrome Desktop" checked> Chrome desktop</label>
+      <label><input type="checkbox" value="Edge Desktop"> Edge desktop</label>
+      <label><input type="checkbox" value="Firefox Desktop"> Firefox desktop</label>
+      <label><input type="checkbox" value="Safari Desktop" checked> Safari desktop</label>
+      <label><input type="checkbox" value="Mobile Chrome (Pixel 5)" checked> Pixel 5</label>
+      <label><input type="checkbox" value="Mobile Safari (iPhone 12)" checked> iPhone 12</label>
+      <label><input type="checkbox" value="Tablet (iPad Gen 7)"> iPad</label>
+    </div>
+    <label for="viewports">Extra viewports <small>(optional)</small></label>
+    <input type="text" id="viewports" name="viewports" placeholder="1001, 1439, 991">
+
+    <h2>When done</h2>
+    <div class="checks">
+      <label><input type="checkbox" id="publishArtifact" checked> Publish report link</label>
+      <label><input type="checkbox" id="updateKb" checked> Update knowledge base</label>
+      <label><input type="checkbox" id="commit"> Commit files</label>
+    </div>
+
+    <h2>Run settings</h2>
+    <div class="row">
+      <div>
+        <label for="permissionMode">Permissions</label>
+        <select id="permissionMode" name="permissionMode">
+          <option value="auto">auto (recommended)</option>
+          <option value="acceptEdits">acceptEdits</option>
+          <option value="dontAsk">dontAsk</option>
+          <option value="bypassPermissions">bypassPermissions (no checks)</option>
+        </select>
+      </div>
+      <div>
+        <label for="model">Model</label>
+        <select id="model" name="model">
+          <option value="">Default</option>
+          <option value="opus">Opus</option>
+          <option value="sonnet">Sonnet</option>
+          <option value="haiku">Haiku</option>
+        </select>
+      </div>
+    </div>
+    <div class="hint">The run can't ask you anything, so any action the permission mode blocks is skipped.</div>
+
+    <div class="errors" id="errors"></div>
+    <div class="actions">
+      <button type="submit" class="primary" id="submit">Start QA</button>
+      <button type="button" id="preview">Preview prompt</button>
+      <button type="button" id="clear">Clear form</button>
+    </div>
+  </form>
+
+  <section class="panel">
+    <h2>Jobs</h2>
+    <ul class="jobs" id="jobs"></ul>
+    <div id="jobView"><div class="empty">Submit a test or pick a job to see its live log.</div></div>
+  </section>
+</main>
+
+<template id="jobTpl">
+  <div class="jobhead">
+    <h3 class="title"></h3>
+    <div class="actions" style="margin:0">
+      <span class="badge status"></span>
+      <a class="promptLink" target="_blank">Prompt</a>
+      <button type="button" class="rerun">Re-run</button>
+      <button type="button" class="danger cancel">Stop</button>
+    </div>
+  </div>
+  <div id="log"></div>
+  <div class="followup">
+    <textarea class="fuText" placeholder="Follow-up for this run, e.g. &quot;also test at 1001px&quot; (continues the same Claude session)"></textarea>
+    <button type="button" class="fuSend">Send</button>
+  </div>
+</template>
+
+<script>
+const $ = s => document.querySelector(s);
+const DRAFT_KEY = 'qa-launcher-draft';
+let currentId = null, es = null;
+
+// ---------- form ----------
+function addVariation(label = '', url = '') {
+  const n = $('#variations').children.length + 1;
+  const row = document.createElement('div');
+  row.className = 'var-row';
+  row.innerHTML = '<input type="text" class="vl" aria-label="Variation label"><input type="url" class="vu" aria-label="Variation URL" placeholder="https://…"><button type="button" aria-label="Remove variation">×</button>';
+  row.querySelector('.vl').value = label || `V${n}`;
+  row.querySelector('.vu').value = url || '';
+  row.querySelector('button').onclick = () => { row.remove(); saveDraft(); };
+  $('#variations').append(row);
+}
+
+function readForm() {
+  const f = $('#form');
+  return {
+    client: f.client.value, ticket: f.ticket.value, testName: f.testName.value,
+    runType: f.runType.value, platform: f.platform.value, experimentId: f.experimentId.value,
+    controlUrl: f.controlUrl.value,
+    variations: [...document.querySelectorAll('.var-row')].map(r => ({ label: r.querySelector('.vl').value, url: r.querySelector('.vu').value })),
+    figma: f.figma.value, codePaths: f.codePaths.value, details: f.details.value,
+    goals: f.goals.value, previousBugs: f.previousBugs.value,
+    browsers: [...document.querySelectorAll('#browsers input:checked')].map(i => i.value),
+    viewports: f.viewports.value,
+    publishArtifact: $('#publishArtifact').checked, updateKb: $('#updateKb').checked, commit: $('#commit').checked,
+    permissionMode: f.permissionMode.value, model: f.model.value,
+  };
+}
+
+function fillForm(d) {
+  const f = $('#form');
+  for (const k of ['client', 'ticket', 'testName', 'runType', 'platform', 'experimentId', 'controlUrl', 'figma', 'codePaths', 'details', 'goals', 'previousBugs', 'viewports', 'permissionMode', 'model'])
+    if (d[k] !== undefined && f[k]) f[k].value = d[k];
+  if (Array.isArray(d.browsers)) document.querySelectorAll('#browsers input').forEach(i => { i.checked = d.browsers.includes(i.value); });
+  for (const k of ['publishArtifact', 'updateKb', 'commit']) if (k in d) $('#' + k).checked = !!d[k];
+  $('#variations').innerHTML = '';
+  (d.variations?.length ? d.variations : [{}]).forEach(v => addVariation(v.label, v.url));
+  syncRetest();
+}
+
+function syncRetest() { $('#retestBox').hidden = $('#runType').value === 'new'; }
+function saveDraft() { try { localStorage.setItem(DRAFT_KEY, JSON.stringify(readForm())); } catch {} }
+
+$('#addVar').onclick = () => { addVariation(); saveDraft(); };
+$('#runType').addEventListener('change', syncRetest);
+$('#form').addEventListener('input', saveDraft);
+$('#form').addEventListener('change', saveDraft);
+$('#clear').onclick = () => { try { localStorage.removeItem(DRAFT_KEY); } catch {} $('#form').reset(); fillForm({}); $('#errors').textContent = ''; };
+
+$('#preview').onclick = async () => {
+  const r = await fetch('/api/preview', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(readForm()) });
+  const { prompt, errors } = await r.json();
+  $('#errors').textContent = errors.join(' ');
+  const w = window.open('', '_blank');
+  if (w) {
+    w.document.title = 'Prompt preview';
+    const pre = w.document.createElement('pre');
+    pre.style.cssText = 'white-space:pre-wrap;font:13px/1.5 ui-monospace,Consolas,monospace;padding:16px';
+    pre.textContent = prompt;
+    w.document.body.append(pre);
+  }
+};
+
+$('#form').onsubmit = async e => {
+  e.preventDefault();
+  $('#submit').disabled = true;
+  $('#errors').textContent = '';
+  try {
+    const r = await fetch('/api/jobs', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(readForm()) });
+    const data = await r.json();
+    if (!r.ok) { $('#errors').textContent = (data.errors || [data.error]).join(' '); return; }
+    await loadJobs();
+    openJob(data.id);
+  } catch (err) {
+    $('#errors').textContent = 'Could not reach the launcher server: ' + err.message;
+  } finally {
+    $('#submit').disabled = false;
+  }
+};
+
+// ---------- jobs ----------
+async function loadJobs() {
+  const list = await (await fetch('/api/jobs')).json();
+  const ul = $('#jobs');
+  ul.innerHTML = list.length ? '' : '<li class="empty" style="cursor:default">No jobs yet</li>';
+  for (const j of list) {
+    const li = document.createElement('li');
+    li.className = j.id === currentId ? 'active' : '';
+    const when = new Date(j.createdAt).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+    li.innerHTML = '<span><b></b> <span class="c"></span></span><span class="badge"></span>';
+    li.querySelector('b').textContent = j.ticket;
+    li.querySelector('.c').textContent = `${j.client ? j.client + ' · ' : ''}${when}`;
+    const b = li.querySelector('.badge');
+    b.textContent = j.status + (j.status === 'queued' && j.position ? ` #${j.position}` : '');
+    b.className = 'badge s-' + j.status;
+    li.onclick = () => openJob(j.id);
+    ul.append(li);
+  }
+}
+
+function linkify(el, text) {
+  const re = /https?:\/\/[^\s)>\]`"']+/g;
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    el.append(text.slice(last, m.index));
+    const a = document.createElement('a'); a.href = m[0]; a.target = '_blank'; a.rel = 'noopener'; a.textContent = m[0];
+    el.append(a);
+    last = m.index + m[0].length;
+  }
+  el.append(text.slice(last));
+}
+
+function addEv(cls, text) {
+  const log = $('#log');
+  if (!log) return;
+  const stick = log.scrollTop + log.clientHeight >= log.scrollHeight - 40;
+  const div = document.createElement('div');
+  div.className = 'ev ' + cls;
+  if (text !== undefined) linkify(div, String(text));
+  log.append(div);
+  if (stick) log.scrollTop = log.scrollHeight;
+  return div;
+}
+
+function renderEvent(ev) {
+  switch (ev.kind) {
+    case 'cmd': return addEv('meta', '$ ' + ev.text);
+    case 'init': return addEv('meta', `Session ${ev.sessionId}${ev.model ? ' · ' + ev.model : ''}`);
+    case 'text': return addEv('', ev.text);
+    case 'tool': {
+      const d = addEv('tool');
+      const b = document.createElement('b'); b.textContent = ev.name;
+      d.append(b, ' ' + (ev.input || ''));
+      return d;
+    }
+    case 'tool_result': return addEv('tres' + (ev.isError ? ' err' : ''), ev.text);
+    case 'stderr': return addEv('stderr', ev.text);
+    case 'raw': return addEv('meta', ev.text);
+    case 'followup': return addEv('user', 'You: ' + ev.text);
+    case 'divider': return addEv('divider', ev.text);
+    case 'result': {
+      const d = addEv('result' + (ev.isError ? ' err' : ''));
+      const head = document.createElement('div');
+      head.style.cssText = 'font-weight:600;margin-bottom:6px';
+      const parts = [ev.isError ? 'Finished with an error' : 'Finished'];
+      if (ev.durationMs) parts.push((ev.durationMs / 60000).toFixed(1) + ' min');
+      if (ev.costUsd != null) parts.push('$' + ev.costUsd.toFixed(2));
+      if (ev.turns) parts.push(ev.turns + ' turns');
+      head.textContent = parts.join(' · ');
+      d.append(head);
+      for (const r of ev.reports || []) {
+        const a = document.createElement('a'); a.href = r.href; a.target = '_blank'; a.textContent = 'Open report: ' + r.path;
+        const p = document.createElement('div'); p.style.marginBottom = '6px'; p.append(a);
+        d.append(p);
+      }
+      const body = document.createElement('div'); linkify(body, ev.text || ''); d.append(body);
+      return d;
+    }
+    case 'status': {
+      setStatusBadge(ev.status);
+      if (!ev.replayed && ['done', 'failed', 'cancelled'].includes(ev.status)) addEv('meta', 'Status: ' + ev.status);
+      if (!ev.replayed) loadJobs();
+      return;
+    }
+  }
+}
+
+function setStatusBadge(status) {
+  const view = $('#jobView');
+  const b = view.querySelector('.status');
+  if (!b) return;
+  b.textContent = status;
+  b.className = 'badge status s-' + status;
+  const active = ['running', 'queued'].includes(status);
+  view.querySelector('.cancel').hidden = !active;
+  view.querySelector('.rerun').hidden = active;
+  view.querySelector('.fuSend').disabled = active;
+}
+
+async function openJob(id) {
+  currentId = id;
+  if (es) es.close();
+  const job = await (await fetch('/api/jobs/' + id)).json();
+  const view = $('#jobView');
+  view.innerHTML = '';
+  view.append($('#jobTpl').content.cloneNode(true));
+  view.querySelector('.title').textContent = `${job.form.ticket}${job.form.testName ? ' · ' + job.form.testName : ''}`;
+  view.querySelector('.promptLink').href = `/api/jobs/${id}/prompt`;
+  view.querySelector('.cancel').onclick = () => fetch(`/api/jobs/${id}/cancel`, { method: 'POST' });
+  view.querySelector('.rerun').onclick = () => fetch(`/api/jobs/${id}/rerun`, { method: 'POST' });
+  view.querySelector('.fuSend').onclick = async () => {
+    const t = view.querySelector('.fuText');
+    if (!t.value.trim()) return;
+    const r = await fetch(`/api/jobs/${id}/followup`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: t.value }) });
+    if (r.ok) t.value = ''; else addEv('stderr', (await r.json()).error);
+  };
+  setStatusBadge(job.status);
+  loadJobs();
+  es = new EventSource(`/api/jobs/${id}/events`);
+  es.onmessage = e => { if (currentId === id) renderEvent(JSON.parse(e.data)); };
+}
+
+// ---------- boot ----------
+(async () => {
+  try {
+    const clients = await (await fetch('/api/clients')).json();
+    for (const c of clients) { const o = document.createElement('option'); o.value = o.textContent = c; $('#client').append(o); }
+  } catch {}
+  let draft = {};
+  try { draft = JSON.parse(localStorage.getItem(DRAFT_KEY) || '{}'); } catch {}
+  fillForm(draft);
+  await loadJobs();
+  const running = document.querySelector('#jobs .badge.s-running');
+  if (running) running.closest('li').click();
+  setInterval(loadJobs, 15000);
+})();
+</script>
+</body>
+</html>

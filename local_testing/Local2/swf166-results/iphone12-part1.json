@@ -1,0 +1,1688 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swf166-liberty-first.spec.js",
+      "file": "swf166-liberty-first.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SWF166 root",
+          "file": "swf166-liberty-first.spec.js",
+          "line": 157,
+          "column": 8,
+          "specs": [
+            {
+              "title": "C01 control root: unchanged (no cre-t-166, native order kept)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8811,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:29:54.763Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-362fda369014e56785c3",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "C02 control root: per-partner outbound goals fire on the right links only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100038330\",\"100036136\",\"100036140\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7729,
+                      "error": {
+                        "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 59,
+                          "line": 186
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 59,
+                            "line": 186
+                          },
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:30:03.654Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100038330\",\"100036136\",\"100036140\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-2b1e9-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-2b1e9-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 59,
+                        "line": 186
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-795069a4d13c4682d7cf",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "V01 v1 root: bucketed + body class (location rule matches)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6527,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:30:12.468Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-2df8a13c09bc92aaed40",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "V02 v1 root: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7717,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:30:19.064Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-eb40e3aeddd1a011fc4f",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 204,
+              "column": 5
+            },
+            {
+              "title": "V03 v1 root: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7962,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:30:26.806Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-7aa79caeb03959db5170",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 215,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 root: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7276,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:30:34.803Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-2de6c93b24f2f0fe5ce7",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 234,
+              "column": 5
+            },
+            {
+              "title": "V05 v1 root: \"Best Overall\" listing at the bottom is Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.72/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8663,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:30:42.108Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.72/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-2f0e46d1ce0681bdb83e",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 247,
+              "column": 5
+            },
+            {
+              "title": "V06 v1 root: exit modal promotes Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"exitIntentFired\":false,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7437,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:30:50.806Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"exitIntentFired\":false,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-bbe56b469f2f377926b3",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 277,
+              "column": 5
+            },
+            {
+              "title": "V07 v1 root: outbound-click goals — per-partner incl. modal",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6862,
+                      "error": {
+                        "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 81,
+                          "line": 306
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 304 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 305 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 306 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 307 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 308 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 309 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 81,
+                            "line": 306
+                          },
+                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  305 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:30:58.263Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-1443d-ls-—-per-partner-incl-modal-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-1443d-ls-—-per-partner-incl-modal-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 81,
+                        "line": 306
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-f4b4b302a227ff292835",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 289,
+              "column": 5
+            },
+            {
+              "title": "V08 v1 root: no flash of Lemonade-first order + no JS errors",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":163,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":1742,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7562,
+                      "error": {
+                        "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 41,
+                          "line": 320
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 41,
+                            "line": 320
+                          },
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:31:06.193Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":163,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":1742,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-917bf-de-first-order-no-JS-errors-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-917bf-de-first-order-no-JS-errors-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 41,
+                        "line": 320
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-fc69fdab85f6a3f80303",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 315,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "SWF166 home",
+          "file": "swf166-liberty-first.spec.js",
+          "line": 157,
+          "column": 8,
+          "specs": [
+            {
+              "title": "C01 control home: unchanged (no cre-t-166, native order kept)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8335,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:31:14.935Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-07a3dcd1bb8f5304b8ce",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "C02 control home: per-partner outbound goals fire on the right links only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036140\",\"100038330\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6819,
+                      "error": {
+                        "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 59,
+                          "line": 186
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 59,
+                            "line": 186
+                          },
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:31:23.345Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036140\",\"100038330\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-2001c-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-2001c-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 59,
+                        "line": 186
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-60c30c4a5b64ac0bd541",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "V01 v1 home: bucketed + body class (location rule matches)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7500,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:31:31.454Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-999ebcc8b43cba895ce5",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "V02 v1 home: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8900,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:31:39.022Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-c0f2daa00d2479567871",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 204,
+              "column": 5
+            },
+            {
+              "title": "V03 v1 home: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7948,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:31:47.944Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-77e3653043918801fe8e",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 215,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 home: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7981,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:31:55.925Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-1700361c55c9d7030ffd",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 234,
+              "column": 5
+            },
+            {
+              "title": "V05 v1 home: \"Best Overall\" listing at the bottom is Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.72/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8756,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:03.948Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.72/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-d4bdea25a9d6739afd3f",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 247,
+              "column": 5
+            },
+            {
+              "title": "V06 v1 home: exit modal promotes Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"exitIntentFired\":false,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8293,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:12.742Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"exitIntentFired\":false,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-050c845dd09229e664aa",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 277,
+              "column": 5
+            },
+            {
+              "title": "V07 v1 home: outbound-click goals — per-partner incl. modal",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8274,
+                      "error": {
+                        "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 81,
+                          "line": 306
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 304 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 305 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 306 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 307 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 308 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 309 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 81,
+                            "line": 306
+                          },
+                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  305 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:21.058Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-122da-ls-—-per-partner-incl-modal-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-122da-ls-—-per-partner-incl-modal-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 81,
+                        "line": 306
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-708a4b0bd35172ee79bb",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 289,
+              "column": 5
+            },
+            {
+              "title": "V08 v1 home: no flash of Lemonade-first order + no JS errors",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":148,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":2108,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7692,
+                      "error": {
+                        "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 41,
+                          "line": 320
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 41,
+                            "line": 320
+                          },
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:30.438Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":148,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":2108,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-65b64-de-first-order-no-JS-errors-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-65b64-de-first-order-no-JS-errors-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 41,
+                        "line": 320
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-c097257c0f64ebb0b2cd",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 315,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "SWF166 comparison",
+          "file": "swf166-liberty-first.spec.js",
+          "line": 157,
+          "column": 8,
+          "specs": [
+            {
+              "title": "C01 control comparison: unchanged (no cre-t-166, native order kept)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8134,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:39.378Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-a8d27aea8a825ff5229c",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "C02 control comparison: per-partner outbound goals fire on the right links only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7072,
+                      "error": {
+                        "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 59,
+                          "line": 186
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 59,
+                            "line": 186
+                          },
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:47.567Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-f6a1f-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-f6a1f-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 59,
+                        "line": 186
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-594b6244b354ce172f8c",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "V01 v1 comparison: bucketed + body class (location rule matches)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:55.137Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-6e222d91ff3be755f01b",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "V02 v1 comparison: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:55.137Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d20523166cf726f5c666-c5993ce9ddf0fa0f0016",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 204,
+              "column": 5
+            },
+            {
+              "title": "V03 v1 comparison: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:55.137Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d20523166cf726f5c666-4f653efe4eab783b9ea9",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 215,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 comparison: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:55.137Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d20523166cf726f5c666-5df5dbc23a83036a9f60",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 234,
+              "column": 5
+            },
+            {
+              "title": "V05 v1 comparison: \"Best Overall\" listing at the bottom is Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:55.138Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d20523166cf726f5c666-e9a3ea11d3164e5992ba",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 247,
+              "column": 5
+            },
+            {
+              "title": "V06 v1 comparison: exit modal promotes Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:55.138Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d20523166cf726f5c666-6303b3b54c86240d456e",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 277,
+              "column": 5
+            },
+            {
+              "title": "V07 v1 comparison: outbound-click goals — per-partner incl. modal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:55.138Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d20523166cf726f5c666-2742cbe202944b9f5846",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 289,
+              "column": 5
+            },
+            {
+              "title": "V08 v1 comparison: no flash of Lemonade-first order + no JS errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:32:55.138Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d20523166cf726f5c666-ba5175b583fd800aef9e",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 315,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T11:29:53.556Z",
+    "duration": 181585.29200000002,
+    "expected": 15,
+    "skipped": 7,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

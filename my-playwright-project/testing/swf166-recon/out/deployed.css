@@ -1,0 +1,115 @@
+html body.cre-t-166 [data-unique="comparison-table"] > * {
+    order: 3;
+}
+
+html body.cre-t-166 [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] {
+    order: 1;
+}
+
+html body.cre-t-166 [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"] {
+    order: 2;
+}
+
+html body.cre-t-166 [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] .plan-number {
+    line-height: 0;
+    font-size: 0;
+}
+
+html body.cre-t-166 [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] .plan-number::after {
+    content: "1";
+    line-height: 40px;
+    font-size: 2.2rem;
+}
+
+html body.cre-t-166 [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"] .plan-number {
+    line-height: 0;
+    font-size: 0;
+}
+
+html body.cre-t-166 [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"] .plan-number::after {
+    content: "2";
+    line-height: 40px;
+    font-size: 2.2rem;
+}
+
+
+
+
+/* Modal Content Update CSS */
+
+html body.cre-t-166 img.cre-t-166-image {
+    aspect-ratio: auto 800 / 181;
+    width: 67%;
+    max-width: 300px;
+    margin: 0 auto 3rem;
+    /* margin: 0 auto 0px; */
+}
+
+html body.cre-t-166 .cre-t-166-image-wrapper {
+    display:flex
+}
+
+html body.cre-t-166 .oxy-modal-backdrop  img:not(.cre-t-166-image){
+    display:none
+}
+html body.cre-t-166 .oxy-modal-backdrop h2{
+    margin-top:0
+}
+
+html body.cre-t-166 .oxy-modal-backdrop p:not(.button-container, .large){
+    margin:0
+}
+
+
+html body.cre-t-166 .oxy-modal-backdrop h2+p>strong:not(.cre-t-166-strong-text){
+    display: none;
+}
+
+html body.cre-t-166 .cre-t-166-button-container.button-container a.Liberty_Mutual {
+    max-width: 300px;
+    margin:auto;
+    padding: 18px 25px 18px 25px !important;
+}
+
+
+html body.cre-t-166 .oxy-modal-backdrop p.button-container{
+    display:none
+}
+
+html body.cre-t-166 .cre-t-166-button-container.button-container {
+    margin: 0 0 1em 0;
+}
+
+
+
+/* Rating Bar customize */
+
+
+html body.cre-t-166 .plan-repeater .rating-bar.cre-t-166-rating-bar{
+    display:flex !important
+}
+
+html body.cre-t-166 .plan-repeater [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"]  .rating-bar{
+    display:none !important
+}
+
+
+
+@media (max-width: 767px) {
+    html body.cre-t-166 [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] .plan-number::after {
+        font-size: 1.8rem;
+        line-height: 30px;
+    }
+
+    html body.cre-t-166 [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"] .plan-number::after {
+        font-size: 1.8rem;
+        line-height: 30px;
+    }
+	}
+
+
+    @media (max-width: 479px) {
+    html body.cre-t-166 .rating-text {
+        font-size: 1rem;    
+    }
+}

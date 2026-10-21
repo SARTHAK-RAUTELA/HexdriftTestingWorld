@@ -48,6 +48,7 @@
 | Pro_landing_page_phase_1 — hero header "Find more customers" | [pro-landing-page-phase1-hero-header.md](pro-landing-page-phase1-hero-header.md) |
 | Antonio Roofing — vB.js/vB.css code review (static, 2026-06-30) | [antonio-roofing-vb-code-review.md](antonio-roofing-vb-code-review.md) |
 | Sherwin Williams Partner LP — rebuild after /pro redesign (2026-09-25) | [sherwin-williams-partner-lp.md](sherwin-williams-partner-lp.md) |
+| Preset Jobs on Pro LP (TTOD) — QA 2026-10-21 | [ttod-preset-jobs-pro-lp.md](ttod-preset-jobs-pro-lp.md) |
 
 > **2026-09 /pro redesign:** the `hero_heroInnerOffsetRight` / `hero_heroInnerOffsetLeft` / `see-how-different_*`
 > notes above describe the OLD page. /pro now uses `pro-signup-hero_*` (a single H1, no separate mobile H1) plus native

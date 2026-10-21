@@ -1,0 +1,243 @@
+
+Running 30 tests using 1 worker
+
+  ✓   1 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 root › C01 control root: unchanged (no cre-t-166, native order kept) (8.8s)
+  ✘   2 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 root › C02 control root: per-partner outbound goals fire on the right links only (7.7s)
+  ✓   3 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 root › V01 v1 root: bucketed + body class (location rule matches) (6.5s)
+  ✓   4 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 root › V02 v1 root: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential (7.7s)
+  ✓   5 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 root › V03 v1 root: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one (8.0s)
+  ✓   6 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 root › V04 v1 root: affiliate links follow the partner in the listing (7.3s)
+  ✓   7 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 root › V05 v1 root: "Best Overall" listing at the bottom is Liberty Mutual (8.7s)
+  ✓   8 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 root › V06 v1 root: exit modal promotes Liberty Mutual (7.4s)
+  ✘   9 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 root › V07 v1 root: outbound-click goals — per-partner incl. modal (6.9s)
+  ✘  10 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 root › V08 v1 root: no flash of Lemonade-first order + no JS errors (7.6s)
+  ✓  11 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 home › C01 control home: unchanged (no cre-t-166, native order kept) (8.3s)
+  ✘  12 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 home › C02 control home: per-partner outbound goals fire on the right links only (6.8s)
+  ✓  13 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 home › V01 v1 home: bucketed + body class (location rule matches) (7.5s)
+  ✓  14 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 home › V02 v1 home: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential (8.9s)
+  ✓  15 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 home › V03 v1 home: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one (7.9s)
+  ✓  16 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 home › V04 v1 home: affiliate links follow the partner in the listing (8.0s)
+  ✓  17 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 home › V05 v1 home: "Best Overall" listing at the bottom is Liberty Mutual (8.8s)
+  ✓  18 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 home › V06 v1 home: exit modal promotes Liberty Mutual (8.3s)
+  ✘  19 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 home › V07 v1 home: outbound-click goals — per-partner incl. modal (8.3s)
+  ✘  20 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 home › V08 v1 home: no flash of Lemonade-first order + no JS errors (7.7s)
+  ✓  21 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 comparison › C01 control comparison: unchanged (no cre-t-166, native order kept) (8.1s)
+  ✘  22 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 comparison › C02 control comparison: per-partner outbound goals fire on the right links only (7.1s)
+  ✘  23 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 comparison › V01 v1 comparison: bucketed + body class (location rule matches) (0ms)
+  -  24 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 comparison › V02 v1 comparison: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential
+  -  25 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 comparison › V03 v1 comparison: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one
+  -  26 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 comparison › V04 v1 comparison: affiliate links follow the partner in the listing
+  -  27 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 comparison › V05 v1 comparison: "Best Overall" listing at the bottom is Liberty Mutual
+  -  28 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 comparison › V06 v1 comparison: exit modal promotes Liberty Mutual
+  -  29 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 comparison › V07 v1 comparison: outbound-click goals — per-partner incl. modal
+  -  30 [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 comparison › V08 v1 comparison: no flash of Lemonade-first order + no JS errors
+
+
+  1) [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 root › C02 control root: per-partner outbound goals fire on the right links only 
+
+    Error: control Liberty listing CTA
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 1[39m
+
+    [32m- Array [[39m
+    [32m-   "100038331",[39m
+    [32m- ][39m
+    [31m+ Array [][39m
+
+      184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));
+      185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);
+    > 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);
+          |                                                           ^
+      187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);
+      188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);
+      189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:186:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-2b1e9-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-2b1e9-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\error-context.md
+
+  2) [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 root › V07 v1 root: outbound-click goals — per-partner incl. modal 
+
+    Error: Liberty listing CTA fires no SWF166 partner goal
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));
+      305 |       const libSwf = only(libCta), lemSwf = only(lemCta);
+    > 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);
+          |                                                                                 ^
+      307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);
+      308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);
+      309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:306:81
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-1443d-ls-—-per-partner-incl-modal-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-1443d-ls-—-per-partner-incl-modal-Mobile-Safari-iPhone-12-\error-context.md
+
+  3) [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 root › V08 v1 root: no flash of Lemonade-first order + no JS errors 
+
+    Error: JS errors on V1
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 3[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "trigger is not a function. (In 'trigger()', 'trigger' is undefined)",[39m
+    [31m+ ][39m
+
+      318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;
+      319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });
+    > 320 |       expect(errors, 'JS errors on V1').toEqual([]);
+          |                                         ^
+      321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);
+      322 |     });
+      323 |   });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:320:41
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-917bf-de-first-order-no-JS-errors-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-917bf-de-first-order-no-JS-errors-Mobile-Safari-iPhone-12-\error-context.md
+
+  4) [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 home › C02 control home: per-partner outbound goals fire on the right links only 
+
+    Error: control Liberty listing CTA
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 1[39m
+
+    [32m- Array [[39m
+    [32m-   "100038331",[39m
+    [32m- ][39m
+    [31m+ Array [][39m
+
+      184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));
+      185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);
+    > 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);
+          |                                                           ^
+      187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);
+      188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);
+      189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:186:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-2001c-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-2001c-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\error-context.md
+
+  5) [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 home › V07 v1 home: outbound-click goals — per-partner incl. modal 
+
+    Error: Liberty listing CTA fires no SWF166 partner goal
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));
+      305 |       const libSwf = only(libCta), lemSwf = only(lemCta);
+    > 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);
+          |                                                                                 ^
+      307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);
+      308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);
+      309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:306:81
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-122da-ls-—-per-partner-incl-modal-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-122da-ls-—-per-partner-incl-modal-Mobile-Safari-iPhone-12-\error-context.md
+
+  6) [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 home › V08 v1 home: no flash of Lemonade-first order + no JS errors 
+
+    Error: JS errors on V1
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 3[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "trigger is not a function. (In 'trigger()', 'trigger' is undefined)",[39m
+    [31m+ ][39m
+
+      318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;
+      319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });
+    > 320 |       expect(errors, 'JS errors on V1').toEqual([]);
+          |                                         ^
+      321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);
+      322 |     });
+      323 |   });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:320:41
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-65b64-de-first-order-no-JS-errors-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-65b64-de-first-order-no-JS-errors-Mobile-Safari-iPhone-12-\error-context.md
+
+  7) [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 comparison › C02 control comparison: per-partner outbound goals fire on the right links only 
+
+    Error: control Liberty listing CTA
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 1[39m
+
+    [32m- Array [[39m
+    [32m-   "100038331",[39m
+    [32m- ][39m
+    [31m+ Array [][39m
+
+      184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));
+      185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);
+    > 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);
+          |                                                           ^
+      187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);
+      188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);
+      189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:186:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-f6a1f-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-f6a1f-ire-on-the-right-links-only-Mobile-Safari-iPhone-12-\error-context.md
+
+  8) [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 comparison › V01 v1 comparison: bucketed + body class (location rule matches) 
+
+    Error: worker process exited unexpectedly (code=3221225794, signal=null)
+
+  8 failed
+    [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 root › C02 control root: per-partner outbound goals fire on the right links only 
+    [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 root › V07 v1 root: outbound-click goals — per-partner incl. modal 
+    [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 root › V08 v1 root: no flash of Lemonade-first order + no JS errors 
+    [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 home › C02 control home: per-partner outbound goals fire on the right links only 
+    [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 home › V07 v1 home: outbound-click goals — per-partner incl. modal 
+    [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 home › V08 v1 home: no flash of Lemonade-first order + no JS errors 
+    [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 comparison › C02 control comparison: per-partner outbound goals fire on the right links only 
+    [Mobile Safari (iPhone 12)] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 comparison › V01 v1 comparison: bucketed + body class (location rule matches) 
+  7 did not run
+  15 passed (3.0m)

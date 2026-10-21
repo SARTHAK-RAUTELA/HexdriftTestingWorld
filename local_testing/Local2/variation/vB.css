@@ -93,6 +93,10 @@ html body.cre-t-166 .plan-repeater [data-unique="outbound-partner-clicks-Lemonad
     display:none !important
 }
 
+html body.cre-t-166 .plan-repeater [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] .rating-bar:not(.cre-t-166-rating-bar){
+    display:none !important
+}
+
 
 
 @media (max-width: 767px) {
@@ -105,10 +109,10 @@ html body.cre-t-166 .plan-repeater [data-unique="outbound-partner-clicks-Lemonad
         font-size: 1.8rem;
         line-height: 30px;
     }
-	}
+}
 
 
-    @media (max-width: 479px) {
+@media (max-width: 479px) {
     html body.cre-t-166 .rating-text {
         font-size: 1rem;    
     }

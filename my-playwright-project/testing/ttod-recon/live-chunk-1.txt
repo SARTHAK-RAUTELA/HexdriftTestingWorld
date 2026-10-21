@@ -1,0 +1,106 @@
+;\n}\n\n.bm-two-ways__note {\n    margin: 24px 0 0;\n    font-size: 14px;\n    line-height: 1.4;\n    color: #595c61;\n}\n\n/* ============ Desktop ============ */\n@media (min-width: 1025px) {\n    .bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroSection\"] {\n        padding: 128px 24px;\n    }\n\n    .bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroInner\"] {\n        display: grid;\n        grid-template-columns: 570px 502px;\n        grid-template-rows: auto auto 1fr;\n        justify-content: space-between;\n        max-width: 1184px;\n    }\n\n    .bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroInner\"] > .tc.mb5 {\n        grid-column: 1;\n        grid-row: 1;\n    }\n\n    .bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_searchFields\"] {\n        grid-column: 1;\n        grid-row: 2;\n    }\n\n    .bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_footnote\"] {\n        grid-column: 1;\n        grid-row: 3;\n        align-self: start;\n    }\n\n    .bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroImage\"] {\n        grid-column: 2;\n        grid-row: 1 / 4;\n        align-self: center;\n        width: 100%;\n        max-width: none;\n        margin: 0;\n        padding: 0 24px;\n        background-origin: content-box;\n    }\n\n    .bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroTitle\"] {\n        font-size: 48px;\n        letter-spacing: -0.96px;\n    }\n\n    .bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroSubhead\"] {\n        font-size: 28px;\n        letter-spacing: -0.56px;\n        margin-top: 16px;\n    }\n\n    .bm-hiw-bar {\n        padding: 0;\n    }\n\n    .bm-hiw-bar__btn {\n        border-radius: 0;\n    }\n\n    .bm-two-ways {\n        padding: 96px 24px;\n    }\n\n    .bm-two-ways__title {\n        font-size: 36px;\n        letter-spacing: -0.72px;\n    }\n\n    .bm-two-ways__cards {\n        flex-direction: row;\n        justify-content: center;\n        gap: 48px;\n        max-width: 982px;\n        margin-top: 48px;\n    }\n\n    .bm-two-ways__card {\n        width: 467px;\n    }\n\n    .bm-two-ways__copy {\n        margin-top: 36px;\n    }\n\n    .bm-two-ways__card-title {\n        font-size: 28px;\n        letter-spacing: -0.56px;\n    }\n\n    .bm-two-ways__card-desc {\n        max-width: 420px;\n    }\n\n    .bm-two-ways__footer {\n        margin-top: 56px;\n    }\n\n    .bm-two-ways__signup {\n        width: auto;\n    }\n}</style>", "dependencies": []}]}]}], "weightDistributions": [{"entityId": "5870626836054016", "endOfRange": 100}, {"entityId": "5442504495988736", "endOfRange": 10000}], "name": "[QA] Preset Jobs on Pro Landing Page", "bucketingStrategy": null, "experimentMetadata": {"allocationPolicy": "manual", "layerId": "5028798649860096"}, "deployed": false}], "policy": "single_experiment", "viewIds": ["6008860543025152"], "weightDistributions": null, "decisionMetadata": null, "concluded": false}, {"changes": null, "id": "5872827379744768", "name": "[QA] Partnerships FieldPulse", "commitId": "6040235675484160", "groupId": null, "holdback": 0, "activation": {}, "integrationSettings": {}, "integrationStringVersion": 2, "experiments": [{"audienceIds": ["and", "6119117984366592"], "audienceName": "QA [?QA=Partnership_field]", "changes": null, "id": "5792305332879360", "integrationSettings": null, "variations": [{"id": "5698050732064768", "name": "Original", "actions": []}, {"id": "5441470761533440", "name": "Variation #1", "actions": [{"viewId": "6275548880568320", "changes": [{"id": "DEC7AA76-796F-4403-BED7-EB4D41D32BC7", "type": "custom_code", "value": function($){(function () {
+    try {
+        /* Main variables */
+        var debug = 0;
+        var variation_name = "FieldPulse"; // Variation name for tracking
+        /* All Pure helper functions */
+        // Function to wait for an element to appear in the DOM
+        function waitForElement(selector, trigger, delayInterval, delayTimeout) {
+            var interval = setInterval(function () {
+                // Check if the element exists and trigger callback
+                if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {
+                    clearInterval(interval);
+                    trigger(); // Call the trigger function once the element is found
+                }
+            }, delayInterval); // Check every delayInterval milliseconds
+            setTimeout(function () {
+                clearInterval(interval); // Stop checking after delayTimeout
+            }, delayTimeout);
+        }
+        // Function to add event listeners that work across all browsers (including IE 8)
+        function live(selector, event, callback, context) {
+            // Helper function to add event listeners for IE 8 and other browsers
+            function addEvent(el, type, handler) {
+                if (el.attachEvent) el.attachEvent("on" + type, handler); // IE 8
+                else el.addEventListener(type, handler); // Other browsers
+            }
+            // Polyfill for matches method to ensure it works across browsers
+            this &&
+                this.Element &&
+                (function (ElementPrototype) {
+                    ElementPrototype.matches =
+                        ElementPrototype.matches ||
+                        ElementPrototype.matchesSelector ||
+                        ElementPrototype.webkitMatchesSelector ||
+                        ElementPrototype.msMatchesSelector ||
+                        function (selector) {
+                            var node = this,
+                                nodes = (node.parentNode || node.document).querySelectorAll(selector),
+                                i = -1;
+                            while (nodes[++i] && nodes[i] != node);
+                            return !!nodes[i];
+                        };
+                })(Element.prototype);
+            // Live binding helper using matchesSelector
+            function live(selector, event, callback, context) {
+                addEvent(context || document, event, function (e) {
+                    var found,
+                        el = e.target || e.srcElement;
+                    // Loop through parent elements to find a match
+                    while (el && el.matches && el !== context && !(found = el.matches(selector))) el = el.parentElement;
+                    if (found) callback.call(el, e); // Call the callback if a match is found
+                });
+            }
+            live(selector, event, callback, context); // Bind the event
+        }
+const itemsection = `
+ <section class="thumbtack-section thumbtack-section-variation">
+
+  <!-- Testimonials -->
+  <div class="testimonials">
+    <h2>Real results from real pros.</h2>
+    <div class="testimonial-cards">
+      <div class="card">
+        <img src="https://cdn.optimizely.com/img/20611073899/f524c7f63d37407c93087f9896de1942.png " alt="Alex">
+        
+        <p>“About 80–85% of our leads come from the platform. It’s helped us grow quickly, keep our schedule full, and build real relationships with customers that often turn into repeat work.”</p>
+        <span>— Jack M., Electric AVenue</span>
+      </div>
+      <div class="card">
+       <img src="https://cdn.optimizely.com/img/20611073899/6ca18004268b489ab920251e75c49591.png" alt="Beth">
+      
+      <p>“By focusing on fast response times and delivering great service, we’ve been able to turn [Thumbtack] leads into long-term customers.”</p>
+        <span>— Clay R., Mr Electric of Golden, CO</span>
+      </div>
+      <div class="card">
+        <img src="https://cdn.optimizely.com/img/20611073899/3f6cc2b836fd4dd0a125ca4113e99b4f.png" alt="Mehdi">
+        <p>“Thumbtack has helped us
+connect with homeowners looking for reliable, all-in-one solutions. That alignment has allowed us to maintain a consistent pipeline
+while continuing to grow.”</p>
+        <span>— Deon M., Antilleon Restoration</span>
+      </div>
+    </div>
+    <div class="testimonial-line"></div>
+  </div>
+  <!-- Calculator -->
+  <div class="calculator">
+    <h2>See your earning potential.</h2>
+    <p>Use our Growth Calculator* to explore how your business could grow on Thumbtack. Enter your info into the calculator below to gain a clear view of what’s possible. 
+</p>
+    <form>
+      <h6> Tell us about your business. </h6>
+       <p>How much do you typically charge per job? </p>
+      <input type="text" placeholder="Enter $ amount">
+      <p>How many jobs do you expect to complete each month?<p>
+      <input type="text" placeholder="Enter number">
+      <div class="earnings">
+        <h5>Potential earnings.**</h5>
+        <div class="item_secotion_price">
+        <div>Projected monthly revenue: <br> <span class="monthly_revenue">$0</span></div>
+        <div>Projected annual revenue: <br><span class="year_revanu">$0</span></div>
+        </div>
+      </div>
+    </form>
+    <div class="testimonial-line"></div>
+    <div class="subhead_cta">
+    <p>**This tool is for informational purposes only. Actual earnings depend on various factors, including job demand, competition, and business operations and are subject to applicable Platform Fees and/or discounts. Thumbtack does not guarantee 

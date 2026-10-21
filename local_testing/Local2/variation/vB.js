@@ -57,17 +57,18 @@
       // [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"] [data-unique="outbound-partner-see-plans-button"]
       live('[data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"] > .plan-box, [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"] .rating-bar, [data-unique="best-overall"] > [data-unique="outbound-partner-clicks-Lemonade-Listing-Only"] > .plan-box', "mousedown", function () {
         console.log("SWF166 - Outbound clicks on Lemonade");
-        // window._conv_q = window._conv_q || [];
-        // _conv_q.push(["triggerConversion", "100037396"]);
+        window._conv_q = window._conv_q || [];  
+        _conv_q.push(["triggerConversion", "100038330"]);
       });
 
       // SWF166 - Outbound clicks on Liberty Mutual
       // [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] [data-unique="outbound-partner-see-plans-button"]
-      live('[data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] > .plan-box, [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] .rating-bar, [data-unique="best-overall"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] > .plan-box', "mousedown", function () {
+      live('[data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] > .plan-box, [data-unique="comparison-table"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] .rating-bar, [data-unique="best-overall"] > [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] > .plan-box','.button.Liberty_Mutual.rt-aff-link', "mousedown", function () {
         console.log("SWF166 - Outbound clicks on Liberty Mutual");
-        // window._conv_q = window._conv_q || [];
-        // _conv_q.push(["triggerConversion", "100037397"]);
+        window._conv_q = window._conv_q || [];  
+        _conv_q.push(["triggerConversion", "100038331"]);
       });
+
     }
 
      function bestOverall() {
@@ -188,7 +189,7 @@
             }
           });
         }
-      }, 300);
+      }, 700);
     }
 
     function trustpilotContent() {
@@ -268,10 +269,18 @@
 
     }
 
-//     var ratingBarHTml=`<div id="div_block-218-63-1-1" class="ct-div-block rating-bar cre-t-166-rating-bar" data-id="div_block-218-63"><img id="image-223-63-1-1" alt="" src="https://rentersinsurancegurus.com/wp-content/uploads/2025/01/5-stars.png" class="ct-image rating-stars" data-id="image-223-63"><div id="text_block-249-63-1-1" class="ct-text-block rating-text" data-id="text_block-249-63"><span id="span-253-63-1-1" class="ct-span" data-id="span-253-63"><p><strong>499,000</strong> people ranked Libery Mutual as <strong>4.8</strong> on</p>
-// </span></div><img id="image-251-63-1-1" alt="" src="https://rentersinsurancegurus.com/wp-content/uploads/2025/01/apple-app-store.svg" class="ct-image rating-logo" data-id="image-251-63"></div>`
-    var ratingBarHTml=`<div class="rating-bar cre-t-166-rating-bar"><img alt="fiveStar" src="https://rentersinsurancegurus.com/wp-content/uploads/2025/01/5-stars.png" class="rating-stars"><div class="rating-text"><span><p><strong>499,000</strong> people ranked Libery Mutual as <strong>4.8</strong> on</p>
-</span></div><img alt="ratingStar" src="https://rentersinsurancegurus.com/wp-content/uploads/2025/01/apple-app-store.svg" class="rating-logo"></div>`
+var ratingBarHTml=`<div id="cre-t-166-div_block-218-63-1-1" class="cre-t-166-ct-div-block rating-bar cre-t-166-rating-bar" data-id="cre-t-166-div_block-218-63">
+  <img id="cre-t-166-image-223-63-1-1" alt="" src="https://rentersinsurancegurus.com/wp-content/uploads/2025/01/5-stars.png" class="cre-t-166-ct-image rating-stars" data-id="cre-t-166-image-223-63">
+  <div id="cre-t-166-text_block-249-63-1-1" class="cre-t-166-ct-text-block rating-text" data-id="cre-t-166-text_block-249-63">
+    <span id="cre-t-166-span-253-63-1-1" class="cre-t-166-ct-span" data-id="cre-t-166-span-253-63">
+      <p><strong>499,000</strong> people ranked Liberty Mutual as <strong>4.8</strong> on</p>
+    </span>
+  </div>
+  <img id="cre-t-166-image-251-63-1-1" alt="" src="https://rentersinsurancegurus.com/wp-content/uploads/2025/01/apple-app-store.svg" class="cre-t-166-ct-image rating-logo" data-id="cre-t-166-image-251-63">
+</div>`
+
+//     var ratingBarHTml=`<div class="rating-bar cre-t-166-rating-bar"><img alt="fiveStar" src="https://rentersinsurancegurus.com/wp-content/uploads/2025/01/5-stars.png" class="rating-stars"><div class="rating-text"><span><p><strong>499,000</strong> people ranked Libery Mutual as <strong>4.8</strong> on</p>
+// </span></div><img alt="ratingStar" src="https://rentersinsurancegurus.com/wp-content/uploads/2025/01/apple-app-store.svg" class="rating-logo"></div>`
 
 
     function updateListingRatingBar(){

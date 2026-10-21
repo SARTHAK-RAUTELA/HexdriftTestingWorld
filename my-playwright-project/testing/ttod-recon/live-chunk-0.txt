@@ -1,0 +1,126 @@
+ [{"viewId": "6008860543025152", "changes": [{"id": "F4B0BD0A-9DF2-4EB7-93EA-B10A4C78FABF", "type": "custom_code", "value": function($){(function () {
+    var debug = false;
+    var variation_name = "bm_preset_jobs_pro_lp";
+
+    var HERO_SECTION = '[class*="pro-signup-hero_heroSection"]';
+    var HERO_TITLE = '[class*="pro-signup-hero_heroTitle"]';
+    var HERO_SUBHEAD = '[class*="pro-signup-hero_heroSubhead"]';
+    var HOW_IT_WORKS = '[class*="how-tt-works_section"]';
+
+    var NEW_TITLE_PREFIX = 'Grow your business in ';
+    var NEW_SUBHEAD = '5M customers in the last 12 months on Thumbtack';
+
+    var IMG_DIRECT = 'https://cdn.optimizely.com/img/20611073899/73ee393cce64432e88e8e7bdf48adb2f.png';
+    var IMG_PRESET = 'https://cdn.optimizely.com/img/20611073899/daf41ee81a2b4c0a90a1efaec794e03f.png';
+
+    var ARROW_SVG = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5v10.5M2.5 7.5 7 12l4.5-4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    var barHTML =
+        '<div class="bm-hiw-bar">' +
+            '<button type="button" class="bm-hiw-bar__btn">' +
+                '<span class="bm-hiw-bar__text">Show up in search, or claim available jobs. </span>' +
+                '<span class="bm-hiw-bar__cta">See how it works <span class="bm-hiw-bar__arrow">' + ARROW_SVG + '</span></span>' +
+            '</button>' +
+        '</div>';
+
+    function cardHTML(img, alt, title, desc) {
+        return '<div class="bm-two-ways__card">' +
+            '<img class="bm-two-ways__img" src="' + img + '" alt="' + alt + '" loading="lazy">' +
+            '<div class="bm-two-ways__copy">' +
+                '<h3 class="bm-two-ways__card-title">' + title + '</h3>' +
+                '<p class="bm-two-ways__card-desc">' + desc + '</p>' +
+            '</div>' +
+        '</div>';
+    }
+
+    var sectionHTML =
+        '<section class="bm-two-ways" id="bm-two-ways">' +
+            '<div class="bm-two-ways__head">' +
+                '<h2 class="bm-two-ways__title">Two ways to get hired</h2>' +
+                '<p class="bm-two-ways__sub">Stand out in search, or skip the back-and-forth with jobs you can claim right away.</p>' +
+            '</div>' +
+            '<div class="bm-two-ways__cards">' +
+                cardHTML(IMG_DIRECT, 'Deck refinishing job with a quote request', 'Customers find you',
+                    'They see your profile in search and message you about their project. You set your own prices and schedule.') +
+                cardHTML(IMG_PRESET, 'TV mounting job available to claim', 'Claim available jobs',
+                    'Some jobs come with the details and earnings already set. Pick the ones you want, with no bidding.') +
+            '</div>' +
+            '<div class="bm-two-ways__footer">' +
+                '<button type="button" class="bm-two-ways__signup">Sign up for free</button>' +
+                '<p class="bm-two-ways__note">Claimable jobs are available in select areas and services.</p>' +
+            '</div>' +
+        '</section>';
+
+    function scrollToEl(el) {
+        if (!el) return;
+        var top = el.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+
+    // Keep the existing hero form/functionality; only swap the copy.
+    // React can re-render the hero, so this is re-applied on an interval.
+    function updateHeroCopy() {
+        var h1 = document.querySelector(HERO_TITLE);
+        if (h1 && h1.textContent.indexOf(NEW_TITLE_PREFIX) !== 0) {
+            var match = h1.textContent.match(/\bin\s+(.+?)\.?\s*$/);
+            if (match) h1.textContent = NEW_TITLE_PREFIX + match[1];
+        }
+        var sub = document.querySelector(HERO_SUBHEAD);
+        if (sub && sub.textContent !== NEW_SUBHEAD) sub.textContent = NEW_SUBHEAD;
+    }
+
+    function addBar() {
+        var hero = document.querySelector(HERO_SECTION);
+        if (!hero || document.querySelector('.bm-hiw-bar')) return;
+        hero.insertAdjacentHTML('afterend', barHTML);
+    }
+
+    function addTwoWaysSection() {
+        var hiw = document.querySelector(HOW_IT_WORKS);
+        if (!hiw || document.querySelector('.bm-two-ways')) return;
+        hiw.insertAdjacentHTML('afterend', sectionHTML);
+    }
+
+    function bindEvents() {
+        document.addEventListener('click', function (e) {
+            if (e.target.closest('.bm-hiw-bar__btn')) {
+                scrollToEl(document.querySelector('.bm-two-ways'));
+                return;
+            }
+            // Bottom CTA reuses the existing hero signup flow: scroll up and focus the service input.
+            if (e.target.closest('.bm-two-ways__signup')) {
+                var hero = document.querySelector(HERO_SECTION);
+                scrollToEl(hero);
+                var input = hero && hero.querySelector('input');
+                if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 500);
+            }
+        });
+    }
+
+    function init() {
+        document.body.classList.add(variation_name);
+        bindEvents();
+
+        var interval = setInterval(function () {
+            updateHeroCopy();
+            addBar();
+            addTwoWaysSection();
+        }, 50);
+
+        // Failsafe: stop checking after 10 seconds.
+        setTimeout(function () {
+            clearInterval(interval);
+        }, 10000);
+    }
+
+    try {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    } catch (e) {
+        if (debug) console.log(e, "error in Test" + variation_name);
+    }
+})();
+}, "dependencies": []}, {"id": "655C812E-259A-4FFC-98BA-5214902170A8", "type": "append", "selector": "head", "value": "<style>/* ============ Hero (existing banner, redesigned) ============ */\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroSection\"] {\n    padding: 32px 24px 48px;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroInner\"] {\n    display: flex;\n    flex-direction: column;\n    max-width: 570px;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroInner\"] > .tc.mb5 {\n    order: 1;\n    text-align: left !important;\n    margin-bottom: 24px;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_searchFields\"] {\n    order: 2;\n    /* Figma: white inputs with a light grey border */\n    --tp-background-neutral-default: #fff;\n    --tp-border-neutral-default: #dddee1;\n    --tp-border-neutral-default-active: #dddee1;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_searchFields\"] .mw9 {\n    max-width: none;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_footnote\"] {\n    order: 3;\n    margin-top: 24px;\n    color: #595c61;\n    font-size: 16px;\n    line-height: 1.4;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_footnote\"] a,\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_footnote\"] a:hover,\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_footnote\"] a:active {\n    color: #0175a3;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroTitle\"] {\n    font-family: Rise, Avenir, Helvetica, Arial, sans-serif;\n    font-weight: 563;\n    color: #1f2022;\n    font-size: 36px;\n    line-height: 1.05;\n    letter-spacing: -0.72px;\n    text-wrap: initial;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroSubhead\"] {\n    font-size: 22px;\n    line-height: 1.1;\n    letter-spacing: -0.44px;\n    color: #1f2022;\n    max-width: none;\n    margin: 12px 0 0;\n}\n\n/* Swap the old hero image for the new visual */\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroImage\"] {\n    order: 4;\n    max-width: 454px;\n    margin: 40px auto 0;\n    aspect-ratio: 1506 / 1392;\n    background: url(\"https://cdn.optimizely.com/img/20611073899/bb2c85b9827a4cf885e048fb4d7d0406.png\") center / contain no-repeat;\n}\n\n.bm_preset_jobs_pro_lp [class*=\"pro-signup-hero_heroImage\"] picture {\n    display: none !important;\n}\n\n/* ============ \"See how it works\" bar ============ */\n.bm-hiw-bar {\n    padding: 0 0 8px;\n    background: #fff;\n}\n\n.bm-hiw-bar__btn {\n    display: block;\n    width: 100%;\n    margin: 0;\n    padding: 14px 24px;\n    border: 0;\n    border-radius: 8px;\n    background: #e0f4fe;\n    color: #0175a3;\n    font-family: Rise, Avenir, Helvetica, Arial, sans-serif;\n    font-size: 16px;\n    line-height: 1.4;\n    text-align: center;\n    cursor: pointer;\n}\n\n.bm-hiw-bar__btn:focus-visible {\n    outline: 2px solid #0175a3;\n    outline-offset: -4px;\n}\n\n.bm-hiw-bar__text {\n    font-weight: 400;\n}\n\n.bm-hiw-bar__cta {\n    font-weight: 700;\n    white-space: nowrap;\n}\n\n.bm-hiw-bar__arrow {\n    display: inline-block;\n    width: 14px;\n    height: 14px;\n    margin-left: 6px;\n    vertical-align: -1px;\n    animation: bmArrowFloat 1.6s ease-in-out infinite;\n}\n\n.bm-hiw-bar__arrow svg {\n    display: block;\n}\n\n@keyframes bmArrowFloat {\n    0%, 100% { transform: translateY(-2px); }\n    50% { transform: translateY(2px); }\n}\n\n@media (prefers-reduced-motion: reduce) {\n    .bm-hiw-bar__arrow { animation: none; }\n}\n\n/* ============ Two ways to get

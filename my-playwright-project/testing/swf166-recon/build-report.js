@@ -21,9 +21,12 @@ const PROJECTS = [
 
 // results[title][project] = { status, error, notes }
 const results = {}; const order = [];
-for (const p of PROJECTS) {
-  const file = path.join(RES, p.file);
-  if (!fs.existsSync(file)) continue;
+// Main results file first, then any re-run part files (<base>-*.json), which override earlier results.
+const resultFiles = (p) => {
+  const base = p.file.replace(/\.json$/, '');
+  return [p.file, ...fs.readdirSync(RES).filter((f) => f.startsWith(base + '-') && f.endsWith('.json')).sort()].map((f) => path.join(RES, f)).filter((f) => fs.existsSync(f));
+};
+for (const p of PROJECTS) for (const file of resultFiles(p)) {
   const walk = (s) => {
     (s.suites || []).forEach(walk);
     for (const sp of s.specs || []) for (const t of sp.tests) {
@@ -40,40 +43,49 @@ for (const p of PROJECTS) {
 }
 
 const BUGS = [
-  { id: 'BUG-08', sev: 'High', where: 'Control + V1 · all pages · all devices', tests: 'C02, V07', isNew: true,
-    title: 'NEW — Liberty Mutual goal 100038331 never fires (in either arm)',
-    body: 'Round 2 changed the Liberty goal line to <code>live(\'…&gt; .plan-box, … .rating-bar, …best-overall … &gt; .plan-box\', \'.button.Liberty_Mutual.rt-aff-link\', "mousedown", function () {…})</code>. The modal selector was passed as a <em>separate argument</em>, so <code>live(selector, event, callback)</code> receives <code>event = ".button.Liberty_Mutual.rt-aff-link"</code> and <code>callback = "mousedown"</code>, hits <code>if (typeof callback !== "function") return;</code> and binds nothing. Result: mousedown on the Liberty listing CTA, the V1 Best Overall (Liberty) CTA and the V1 modal "Visit Liberty Mutual" CTA fire no 100038331 at all. The same line is in the new control goal code (<code>cre-t-166-goal</code>), so the Liberty goal is dead in both arms. The Lemonade goal 100038330 still fires. In round 1 Liberty fired (too broadly, see BUG-02); now it reports zero.',
-    fix: 'Append the modal selector to the selector string instead of adding a 4th argument, in both V1 and control:<br><code>live(\'[data-unique="comparison-table"] &gt; [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] a.rt-aff-link, [data-unique="best-overall"] &gt; [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] a.rt-aff-link, .cre-t-166-button-container a.rt-aff-link\', "mousedown", function () {…})</code>' },
+  { id: 'BUG-08', sev: 'High', where: 'Control + V1 · all pages · all devices', tests: 'C02, V07', still: true,
+    title: 'STILL OPEN — Liberty Mutual goal 100038331 never fires (in either arm)',
+    body: 'Unchanged since round 2: the Liberty line is still <code>live(\'…&gt; .plan-box, … .rating-bar, …best-overall … &gt; .plan-box\', \'.button.Liberty_Mutual.rt-aff-link\', "mousedown", function () {…})</code>. With the modal selector as an extra 2nd argument, <code>live(selector, event, callback)</code> gets <code>callback = "mousedown"</code>, returns at <code>typeof callback !== "function"</code> and binds nothing. Round 3: mousedown on the Liberty listing CTA, the V1 Best Overall (Liberty) CTA and the V1 modal "Visit Liberty Mutual" button fire no 100038331, in both arms on every page and browser. Lemonade 100038330 fires.',
+    fix: 'Join the modal selector into the selector string in both V1 and the control goal script:<br><code>live(\'[data-unique="comparison-table"] &gt; [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] a.rt-aff-link, [data-unique="best-overall"] &gt; [data-unique="outbound-partner-clicks-Liberty-Mutual-Listing-Only"] a.rt-aff-link, .cre-t-166-button-container a.rt-aff-link\', "mousedown", function () {…})</code>' },
+  { id: 'BUG-09', sev: 'Medium', where: 'V1 · exit modal · all pages · all devices', tests: 'V11', isNew: true,
+    title: 'NEW — the injected modal button "Visit Liberty Mutual" bypasses the site\'s affiliate click tracking',
+    body: 'The site binds its affiliate handler once at page load: <code>$(".rt-aff-link").click(…)</code>. On click it adds <code>sub1</code> (page), <code>sub5</code> (Everflow click ID) and <code>sub3</code>/<code>sub4</code> (running Convert experiment / variation IDs), sends gtag <code>aff_link_click</code>, and opens the partner in a new tab. V1 hides the native modal button and injects a new <code>&lt;a class="button Liberty_Mutual rt-aff-link"&gt;</code> after load, so the handler is never attached. Measured: control modal "Visit Lemonade" goes to <code>…/2F8LBL/?sub1=%2F&amp;sub5=…&amp;sub3=…,100052988&amp;sub4=…,1000257707</code>. V1 modal "Visit Liberty Mutual" goes to a bare <code>…/41NTW2/?sub1=Guru</code> in the same tab: no experiment/variation attribution, no Everflow click ID, no GA event. V1 modal Liberty revenue cannot be attributed to the variation, and the user leaves the site instead of getting a new tab. Listing and Best Overall clicks are attributed correctly (V09 pass).',
+    fix: 'Repurpose the native modal button instead of injecting a new one, as the commented-out block in vB.js already does: set the href of <code>.oxy-modal-backdrop .button.lemonade.rt-aff-link</code> to the Liberty URL and change its text to "Visit Liberty Mutual". Then remove the injected <code>.cre-t-166-button-container</code> and the CSS that hides <code>p.button-container</code>. The site handler reads the href at click time, so attribution then works (the Best Overall rewrite already proves this).' },
   { id: 'BUG-02', sev: 'Medium', where: 'Control + V1 · all pages · all devices', tests: 'C02, V07', still: true,
-    title: 'STILL OPEN — partner goals bound to the whole card (headings, blank space, phone link count as outbound clicks)',
-    body: 'Selectors are unchanged: still <code>&gt; .plan-box</code> and <code>.rating-bar</code>. Mousedown on the Lemonade "AVERAGE PLAN COST" heading still fires 100038330 (control C02, all pages). Liberty does not currently over-fire only because its handler is dead (BUG-08). Once that line is fixed with the current selectors, the Liberty phone link <code>tel:</code> and headings will fire 100038331 again.',
-    fix: 'Bind to the partner links only (<code>a.rt-aff-link</code> inside each partner card), not <code>.plan-box</code> / <code>.rating-bar</code>.' },
+    title: 'STILL OPEN — partner goals are bound to the whole card (a heading counts as an outbound click)',
+    body: 'Selectors are unchanged (<code>&gt; .plan-box</code>, <code>.rating-bar</code>). Mousedown on the Lemonade "AVERAGE PLAN COST" heading fires 100038330 (control C02, all pages). Once BUG-08 is fixed with the current selectors, Liberty headings, blank card space and the <code>tel:</code> phone link will fire 100038331 too.',
+    fix: 'Bind to the partner links only (<code>a.rt-aff-link</code> inside each partner card).' },
   { id: 'BUG-03', sev: 'Medium', where: 'Control + V1 · exit modal · all devices', tests: 'C02, V07', still: true,
     title: 'STILL OPEN — exit-modal CTA clicks are not counted toward the partner goals',
-    body: 'V1 modal "Visit Liberty Mutual" (<code>.cre-t-166-button-container a</code>) fires only the generic <code>100036136</code>, no 100038331, because of BUG-08. Control modal "Visit Lemonade" (<code>.oxy-modal-backdrop a.rt-aff-link</code>) fires only 100036136, no 100038330: the Lemonade selector was not extended to the modal.',
-    fix: 'V1/control Liberty: see BUG-08. Control (and V1) Lemonade: add <code>.oxy-modal-backdrop a.rt-aff-link.lemonade</code> (or the modal button\'s selector) to the Lemonade goal so both arms count modal clicks the same way.' },
-  { id: 'BUG-06', sev: 'Low', where: 'V1 · all pages · all devices', tests: 'V08', still: true,
-    title: 'STILL OPEN — JS error on every V1 page: "trigger is not a function"',
-    body: 'Unchanged: <code>waitForElement(…trustpilot-image\', trustpilotContent(), 50, 25000)</code> still calls the function and passes its <code>undefined</code> return as the callback.',
-    fix: 'Pass the reference: <code>waitForElement(…, trustpilotContent, 50, 25000)</code>.' },
+    body: 'V1 modal "Visit Liberty Mutual" fires only the generic 100036136 (BUG-08). Control modal "Visit Lemonade" fires only 100036136, not 100038330: the Lemonade goal selector does not include the modal button.',
+    fix: 'Liberty: see BUG-08. Lemonade (both arms): add <code>.oxy-modal-backdrop a.rt-aff-link.lemonade</code> to the Lemonade goal selector.' },
+  { id: 'BUG-10', sev: 'Low', where: 'V1 · / and /home/ · desktop', tests: 'V12', isNew: true,
+    title: 'NEW — keyboard Tab order still goes Lemonade → Liberty (visual order is Liberty → Lemonade)',
+    body: 'The swap is CSS <code>order</code> only, so DOM order (and therefore Tab and screen-reader order) is unchanged. Tabbing into the list on / and /home/ reaches Lemonade #2 first, then Liberty #1 (WCAG 2.4.3 Focus Order / 1.3.2 Meaningful Sequence). /comparison/ passes because it is Liberty-first natively.',
+    fix: 'Physically move the Liberty node before Lemonade in <code>init()</code>, e.g. <code>table.insertBefore(libertyCard, lemonadeCard)</code>, and keep the CSS order as the first-paint fallback.' },
+  { id: 'BUG-06', sev: 'Medium', where: 'V1 · all pages · all devices (visible effect seen on Safari /home/)', tests: 'V08, V04 home', still: true,
+    title: 'STILL OPEN, now with a visible effect — "trigger is not a function" also makes the TrustScore swap race the page load',
+    body: 'Unchanged: <code>waitForElement(…trustpilot-image\', trustpilotContent(), 50, 25000)</code> <em>calls</em> <code>trustpilotContent</code> immediately and passes its <code>undefined</code> return as the callback. That throws "trigger is not a function" on every V1 page (V08). It also means the swap runs exactly once, at <code>init</code> (when <code>body</code> first exists), with no wait or retry. If the TrustScore images are not parsed yet at that moment, the swap is silently skipped. Round 3 caught this on Safari desktop /home/: Liberty at #1 showed the <strong>4.7</strong> badge and Lemonade at #2 the <strong>4.90</strong> badge, the reverse of native /comparison/. Intermittent: 1 of ~11 Safari loads (with 2 tests running in parallel), 0 of 8 when re-run alone. Slower devices and networks make it more likely.',
+    fix: 'Pass the reference: <code>waitForElement(…, trustpilotContent, 50, 25000)</code>. The swap then waits until the Liberty TrustScore image exists.' },
   { id: 'BUG-07', sev: 'Low', where: 'V1 · / and /home/ · Chromium', tests: 'V08', still: true,
     title: 'STILL OPEN — brief flash of Lemonade at #1 before the swap',
-    body: 'Still 2 frames of Lemonade-first on / and /home/ on Chromium (61–75 ms on Chrome desktop this round). Init still waits on a <code>waitForElement("body")</code> 50 ms poll before adding the body class.',
+    body: '1–2 frames of Lemonade-first on / and /home/ in Chromium this round (≈38–40 ms on Chrome desktop). The body class is still added after a <code>waitForElement("body")</code> 50 ms poll.',
     fix: 'Add the class to <code>document.documentElement</code> synchronously at the top of the variation and key the CSS off <code>html.cre-t-166</code>.' },
 ];
 const RESOLVED = [
-  { id: 'BUG-01', title: '/home/ now targeted — location rule is https', body: 'Location 100012039 now lists <code>https://rentersinsurancegurus.com/home/</code> (URL and URL-with-query). /home/ buckets into both arms unpatched, and V1 renders correctly there (V01–V06 home pass).' },
-  { id: 'BUG-04', title: 'Single yellow bar on /comparison/', body: 'New CSS hides the native Liberty <code>.rating-bar:not(.cre-t-166-rating-bar)</code>. /comparison/ now shows exactly one bar, "499,000 … 4.8".' },
-  { id: 'BUG-05', title: '"Libery" typo fixed', body: 'The bar now reads "499,000 people ranked Liberty Mutual as 4.8 on [App Store]".' },
-  { id: 'NOTE', title: 'Control now has per-partner goal code', body: 'Control 1000257707 now runs a goal-only script (<code>cre-t-166-goal</code>) so both arms can report 100038330/100038331. This is the right approach, but it copies the broken Liberty line (BUG-08).' },
+  { id: 'BUG-01', title: 'Still fixed — /home/ is targeted', body: 'Location 100012039 still lists the https /home/ URL. /home/ buckets into both arms unpatched, and V1 renders there.' },
+  { id: 'BUG-04', title: 'Still fixed — one yellow bar on /comparison/', body: 'Exactly one visible bar on Liberty ("499,000 … 4.8") on every browser.' },
+  { id: 'BUG-05', title: 'Still fixed — "Liberty" spelling', body: 'The bar reads "499,000 people ranked Liberty Mutual as 4.8 on [App Store]".' },
+  { id: 'NEW PASS', title: 'New round-3 checks that pass', body: 'V09: real clicks on Liberty #1 (CTA + logo), Lemonade #2 and Best Overall open the right partner in a new tab, attributed to 100052988 / 1000257708 (sub3/sub4). V10: listings #3–#7 (Farmers, USAA, State Farm, Progressive, Allstate) are identical to control (number, links, TrustScore, bars), and there is no horizontal scroll. V11: the modal X closes the modal, re-opening does not duplicate the injected logo/text/button, and the Liberty button sits fully inside the viewport.' },
 ];
 const NOTES = [
-  '<strong>Re-runs (not product bugs).</strong> The first iPhone 12 run was stopped by the system for low memory after 23/30 tests, so the 10 /comparison/ tests were re-run on their own. Pixel 5 C01 /comparison/ hit a 45 s page-load timeout and was re-run. The matrix shows the re-run results.',
-  '<strong>Round 2 (recheck, 2026-10-21).</strong> Deployed Convert code was re-extracted (exp version 12) and matches local vB.js/vB.css exactly. Changes since round 1: typo fix, CSS hides native Liberty bar, Best Overall delay 300→700 ms, Liberty goal line edited (now broken), /home/ location rule → https, control goal script added. Round-1 report kept as <code>swf166-liberty-first-qa-report-r1.html</code>.',
-  '<strong>Geo targeting was simulated.</strong> The audience requires one of 30 US states. The test browser patched only the <code>geo.state == \'TX\'</code> check to true. URL rules, audience, bucketing and the deployed variation code are all real. /home/ is no longer patched.',
-  '<strong>Traffic split is 30/70</strong> (control 1000257707 = 30, V1 1000257708 = 70).',
-  '<strong>Exit intent does not fire on touch devices</strong> (same on control). On Pixel 5 / iPhone 12 the modal was force-shown to verify content only.',
+  '<strong>No code change since round 2.</strong> The "updated" local <code>vB.js</code>/<code>vB.css</code> are byte-identical to the round-2 files (git shows no diff). The deployed Convert code, freshly fetched (bundle <code>max-age=300</code>), is still <strong>exp version 12</strong>, the same V1 JS (17,328 chars) and CSS (3,085 chars), and the same control goal script as round 2. Either the fixes were not saved/published in Convert, or a different file was updated. Every round-2 finding therefore reproduces unchanged.',
+  '<strong>Code note (no visible impact):</strong> in <code>modalUpdate()</code> the guard is <code>document.querySelector(\'cre-t-166-strong-text\')</code>, which is missing the leading <code>.</code>, so it never matches. It is harmless today because the <code>waitForElement</code> callback runs only once, but fix it alongside the others.',
+  '<strong>Geo targeting was simulated.</strong> The audience requires one of 30 US states. Only the <code>geo.state == \'TX\'</code> check in the Convert bundle was patched to true. URL rules, audience, bucketing and deployed code are real.',
+  '<strong>Affiliate clicks were stubbed.</strong> In V09/V11, requests to <code>go.rentersinsurancegurus.com</code> were answered locally, so QA clicks did not reach Everflow and did not pollute partner data.',
+  '<strong>Exit intent does not fire on touch devices</strong> (same on control). On Pixel 5 / iPhone 12 the modal was force-shown to verify content and behaviour. V12 (keyboard Tab order) is a desktop-only check, n/a on mobile.',
   '<strong>Goal check method:</strong> a <code>window._conv_q.push</code> spy plus a dispatched <code>mousedown</code> on each target. The generic all-outbound goal 100036136 and the site\'s native per-partner goals (100036137–140) fire correctly in both arms.',
+  '<strong>Previous rounds</strong> are kept as <code>swf166-liberty-first-qa-report-r1.html</code> and <code>-r2.html</code>, with results in <code>swf166-results/r1</code> and <code>/r2</code>.',
 ];
 
 const ICON = { P: '<span class="st p">Pass</span>', F: '<span class="st f">Fail</span>', S: '<span class="st s">n/a</span>' };
@@ -110,7 +122,9 @@ const bugFor = (title) => {
 
   // evidence figures for the bug cards
   const cd = path.join(SHOTS, 'chrome-desktop'); const ip = path.join(SHOTS, 'mobile-safari-iphone-12-');
-  const evidence = {};
+  const evidence = {
+    'BUG-09': [await fig(path.join(cd, 'v1-root-exit-modal.png'), 'Chrome desktop, V1 / — the injected "Visit Liberty Mutual" button (no site click handler)', 700)],
+  };
   const resolvedEvidence = {
     'BUG-01': [await fig(path.join(cd, 'v1-home-listings.png'), 'Chrome desktop, V1 /home/ (unpatched) — Liberty #1', 700)],
     'BUG-04': [await fig(path.join(ip, 'v1-comparison-liberty-card.png'), 'iPhone 12, V1 /comparison/ — one bar, 499,000', 380)],
@@ -133,7 +147,7 @@ const bugFor = (title) => {
   await browser.close();
 
   const bugCards = BUGS.map((b) => `<article class="bug-card sev-${b.sev.toLowerCase()}"><header><span class="id">${b.id}</span><span class="sev">${b.sev}</span><span class="meta">${b.where} · tests: ${b.tests}</span></header><h4>${b.title}</h4><p>${b.body}</p><p class="fix"><strong>Fix:</strong> ${b.fix}</p>${(evidence[b.id] || []).join('')}</article>`).join('');
-  const fixed = RESOLVED.map((b) => `<article class="bug-card sev-fixed"><header><span class="id">${b.id}</span><span class="sev">${b.id === 'NOTE' ? 'Change' : 'Fixed on live'}</span></header><h4>${b.title}</h4><p>${b.body}</p>${(resolvedEvidence[b.id] || []).join('')}</article>`).join('');
+  const fixed = RESOLVED.map((b) => `<article class="bug-card sev-fixed"><header><span class="id">${b.id}</span><span class="sev">${b.id === 'NEW PASS' ? 'Pass' : 'Still fixed'}</span></header><h4>${b.title}</h4><p>${b.body}</p>${(resolvedEvidence[b.id] || []).join('')}</article>`).join('');
   const sevCount = (s) => BUGS.filter((b) => b.sev === s).length;
 
   const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -161,29 +175,29 @@ td.bug{font-weight:600;color:var(--fail);white-space:nowrap}
 figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px}figure img{width:100%;height:auto;display:block;border-radius:4px}figcaption{font-size:12px;color:var(--mute);margin-top:6px}
 ul{padding-left:20px}li{margin:4px 0}@media (max-width:640px){.grid,.grid.mob{grid-template-columns:1fr}}
 </style></head><body><main>
-<h1>The Swiftest — SWF166 — Renters Insurance — Move Liberty to #1 — Recheck (Round 2)</h1>
-<p class="sub">Renters Insurance Gurus · Convert exp 100052988 · Control 1000257707 (30%) · V1 1000257708 (70%, <code>cre-t-166</code>) · Pages: /, /home/, /comparison/ · Audience: 30 US states · Round 2 recheck 2026-10-21</p>
+<h1>The Swiftest — SWF166 — Renters Insurance — Move Liberty to #1 — Recheck (Round 3)</h1>
+<p class="sub">Renters Insurance Gurus · Convert exp 100052988 · Control 1000257707 (30%) · V1 1000257708 (70%, <code>cre-t-166</code>) · Pages: /, /home/, /comparison/ · Audience: 30 US states · Round 3 recheck 2026-10-22 · preview <code>?cro_mode=qa&amp;_conv_eforce=100052988.1000257708</code></p>
 <div class="kpis">
 <div class="kpi"><b>${all.P}/${all.P + all.F}</b><span>checks passed across 4 browsers</span></div>
 ${PROJECTS.map((p, i) => `<div class="kpi"><b>${tot[i].P}/${tot[i].P + tot[i].F}</b><span>${esc(p.short)}</span></div>`).join('')}
 <div class="kpi"><b>${BUGS.length}</b><span>open issues (${sevCount('High')} high, ${sevCount('Medium')} medium, ${sevCount('Low')} low)</span></div>
 </div>
-<p class="verdict"><strong>Verdict (round 2): still not ready to launch.</strong> Fixed: /home/ is now targeted (BUG-01), a single yellow bar on /comparison/ (BUG-04) and the "Liberty" typo (BUG-05). The visual change passes on every browser and page: order, rank numbers, yellow bar, affiliate links, TrustScore, Best Overall and exit modal. <strong>Blocking: BUG-08</strong>, a regression from this round. The Liberty Mutual goal 100038331 is now dead in both arms because of a misplaced argument in <code>live()</code>, so the test cannot measure its main outcome. BUG-02/03 (goal scope, modal clicks) and BUG-06/07 (JS error, short flash) remain. Failures are identical on every browser.</p>
+<p class="verdict"><strong>Verdict (round 3): still not ready to launch. Nothing changed since round 2.</strong> The "updated" vB.js/vB.css are identical to the round-2 code, and Convert still serves exp version 12. So every round-2 issue reproduces: <strong>BUG-08 (High)</strong>, the Liberty Mutual goal 100038331 is dead in both arms, plus BUG-02/03 (goal scope, modal clicks), BUG-06 (JS error; this round it also left the TrustScore badges unswapped on one Safari /home/ load) and BUG-07 (short flash). The new round-3 checks found <strong>BUG-09</strong> (Medium): the V1 exit-modal "Visit Liberty Mutual" button skips the site's affiliate tracking, so no sub3/sub4 experiment attribution, no Everflow click ID, no GA event, and it opens in the same tab. They also found <strong>BUG-10</strong> (Low): keyboard Tab order on / and /home/ still goes Lemonade → Liberty. The visual change itself still passes everywhere: order, rank numbers, yellow bar, links, TrustScore, Best Overall, modal content, close/re-open, real-click destinations and listings #3–#7.</p>
 
 <h2>Open issues</h2>${bugCards}
-<h2>Fixed since round 1</h2>${fixed}
+<h2>Regression-checked fixes and new passes</h2>${fixed}
 
 <h2>Notes</h2><ul>${NOTES.map((n) => `<li>${n}</li>`).join('')}</ul>
 
 <h2>Test matrix</h2>
-<p class="sub">Expected values come from the brief and the native Liberty-first /comparison/ page, not from the code. "home" = /home/ as configured (no patch needed in round 2). C02 is new in round 2 (control goal script). "Details" holds measurements and failure messages.</p>
+<p class="sub">Expected values come from the brief and the native Liberty-first /comparison/ page, not from the code. "home" = /home/ as configured. V09–V12 are new in round 3 (real clicks + attribution, listings #3–#7 vs control, modal close/re-open + Liberty CTA, keyboard order). "Details" holds measurements and failure messages.</p>
 <div class="tablewrap"><table><thead><tr><th>Test</th>${PROJECTS.map((p) => `<th>${esc(p.short)}</th>`).join('')}<th>Bug</th></tr></thead><tbody>${matrix}</tbody></table></div>
 
 <h2>Scope and method</h2>
 <ul>
-<li>Order followed: brief + client comments → vB.js/vB.css → deployed Convert code (round 2: identical to local vB.js/vB.css, exp version 12) → live force URLs → Playwright spec (<code>my-playwright-project/testing/swf166-liberty-first.spec.js</code>) → this report.</li>
+<li>Order followed: brief + client comments → vB.js/vB.css → deployed Convert code (round 3: still exp version 12, identical to round 2 and to local vB.js/vB.css) → live force URLs → Playwright spec (<code>my-playwright-project/testing/swf166-liberty-first.spec.js</code>) → this report.</li>
 <li>Browsers (as requested): Chrome desktop, Safari desktop (WebKit), Chrome mobile (Pixel 5), Safari mobile (iPhone 12), run one at a time.</li>
-<li>Covered: Convert bucketing and body class per page, visual order and shown rank numbers, yellow App Store bar (copy, count, rating, one per card, overflow), affiliate hrefs per partner, TrustScore badges, Best Overall content vs the Liberty listing, exit-modal logo, copy and CTA, goal triggers (via a <code>_conv_q.push</code> spy on mousedown), per-frame flash measurement, console/page errors.</li>
+<li>Covered: Convert bucketing and body class per page, visual order and shown rank numbers, yellow App Store bar (copy, count, rating, one per card, overflow), affiliate hrefs per partner, TrustScore badges, Best Overall content vs the Liberty listing, exit-modal logo, copy and CTA, goal triggers (via a <code>_conv_q.push</code> spy on mousedown), per-frame flash measurement, console/page errors. New in round 3: real clicks with the destination URL and sub1/sub3/sub4/sub5 attribution (affiliate hops stubbed), listings #3–#7 compared against control, horizontal overflow, modal close/re-open idempotency and CTA position, and keyboard Tab order (desktop).</li>
 <li>Not covered: real iOS/macOS Safari hardware (Playwright WebKit used), real US geo-IP (simulated, see Notes), Convert reporting dashboards.</li>
 </ul>
 

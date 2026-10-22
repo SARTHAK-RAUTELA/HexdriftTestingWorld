@@ -1,39 +1,9 @@
 
-Running 30 tests using 1 worker
+Running 42 tests using 1 worker
 
-  ✓   1 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 root › C01 control root: unchanged (no cre-t-166, native order kept) (16.1s)
-  ✘   2 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 root › C02 control root: per-partner outbound goals fire on the right links only (11.2s)
-  ✓   3 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 root › V01 v1 root: bucketed + body class (location rule matches) (12.6s)
-  ✓   4 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 root › V02 v1 root: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential (11.7s)
-  ✓   5 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 root › V03 v1 root: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one (12.7s)
-  ✓   6 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 root › V04 v1 root: affiliate links follow the partner in the listing (16.0s)
-  ✓   7 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 root › V05 v1 root: "Best Overall" listing at the bottom is Liberty Mutual (9.6s)
-  ✓   8 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 root › V06 v1 root: exit modal promotes Liberty Mutual (12.5s)
-  ✘   9 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 root › V07 v1 root: outbound-click goals — per-partner incl. modal (11.4s)
-  ✘  10 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 root › V08 v1 root: no flash of Lemonade-first order + no JS errors (14.7s)
-  ✓  11 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 home › C01 control home: unchanged (no cre-t-166, native order kept) (13.6s)
-  ✘  12 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 home › C02 control home: per-partner outbound goals fire on the right links only (10.1s)
-  ✓  13 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 home › V01 v1 home: bucketed + body class (location rule matches) (11.4s)
-  ✓  14 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 home › V02 v1 home: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential (11.1s)
-  ✓  15 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 home › V03 v1 home: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one (12.0s)
-  ✓  16 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 home › V04 v1 home: affiliate links follow the partner in the listing (9.3s)
-  ✓  17 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 home › V05 v1 home: "Best Overall" listing at the bottom is Liberty Mutual (13.3s)
-  ✓  18 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 home › V06 v1 home: exit modal promotes Liberty Mutual (14.8s)
-  ✘  19 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 home › V07 v1 home: outbound-click goals — per-partner incl. modal (10.9s)
-  ✘  20 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 home › V08 v1 home: no flash of Lemonade-first order + no JS errors (12.2s)
-  ✓  21 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 comparison › C01 control comparison: unchanged (no cre-t-166, native order kept) (15.2s)
-  ✘  22 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 comparison › C02 control comparison: per-partner outbound goals fire on the right links only (9.7s)
-  ✓  23 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 comparison › V01 v1 comparison: bucketed + body class (location rule matches) (11.5s)
-  ✓  24 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 comparison › V02 v1 comparison: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential (13.7s)
-  ✓  25 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 comparison › V03 v1 comparison: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one (9.5s)
-  ✓  26 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 comparison › V04 v1 comparison: affiliate links follow the partner in the listing (13.8s)
-  ✓  27 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 comparison › V05 v1 comparison: "Best Overall" listing at the bottom is Liberty Mutual (11.1s)
-  ✓  28 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 comparison › V06 v1 comparison: exit modal promotes Liberty Mutual (12.8s)
-  ✘  29 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 comparison › V07 v1 comparison: outbound-click goals — per-partner incl. modal (13.5s)
-  ✘  30 [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 comparison › V08 v1 comparison: no flash of Lemonade-first order + no JS errors (18.5s)
-
-
-  1) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 root › C02 control root: per-partner outbound goals fire on the right links only 
+[1A[2K[1/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 root › C01 control root: unchanged (no cre-t-166, native order kept)
+[1A[2K[2/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 root › C02 control root: per-partner outbound goals fire on the right links only
+[1A[2K  1) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 root › C02 control root: per-partner outbound goals fire on the right links only 
 
     Error: control Liberty listing CTA
 
@@ -62,7 +32,15 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-2b1e9-ire-on-the-right-links-only-Chrome-Desktop\error-context.md
 
-  2) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 root › V07 v1 root: outbound-click goals — per-partner incl. modal 
+
+[1A[2K[3/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 root › V01 v1 root: bucketed + body class (location rule matches)
+[1A[2K[4/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 root › V02 v1 root: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential
+[1A[2K[5/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 root › V03 v1 root: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one
+[1A[2K[6/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 root › V04 v1 root: affiliate links follow the partner in the listing
+[1A[2K[7/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 root › V05 v1 root: "Best Overall" listing at the bottom is Liberty Mutual
+[1A[2K[8/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 root › V06 v1 root: exit modal promotes Liberty Mutual
+[1A[2K[9/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 root › V07 v1 root: outbound-click goals — per-partner incl. modal
+[1A[2K  2) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 root › V07 v1 root: outbound-click goals — per-partner incl. modal 
 
     Error: Liberty listing CTA fires no SWF166 partner goal
 
@@ -86,7 +64,9 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-1443d-ls-—-per-partner-incl-modal-Chrome-Desktop\error-context.md
 
-  3) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 root › V08 v1 root: no flash of Lemonade-first order + no JS errors 
+
+[1A[2K[10/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 root › V08 v1 root: no flash of Lemonade-first order + no JS errors
+[1A[2K  3) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 root › V08 v1 root: no flash of Lemonade-first order + no JS errors 
 
     Error: JS errors on V1
 
@@ -106,7 +86,7 @@ Running 30 tests using 1 worker
           |                                         ^
       321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);
       322 |     });
-      323 |   });
+      323 |
         at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:320:41
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
@@ -115,7 +95,66 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-917bf-de-first-order-no-JS-errors-Chrome-Desktop\error-context.md
 
-  4) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 home › C02 control home: per-partner outbound goals fire on the right links only 
+
+[1A[2K[11/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 root › V09 v1 root: real CTA clicks open the right partner (listing #1/#2, Best Overall)
+[1A[2K  4) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 root › V09 v1 root: real CTA clicks open the right partner (listing #1/#2, Best Overall) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=[7mGuru[27m"[39m
+    Received: [31m"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=[7m%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708[27m"[39m
+
+      343 |       };
+      344 |       info.annotations.push({ type: 'data', description: JSON.stringify(r) });
+    > 345 |       expect(r.first).toBe(LIB_AFF);
+          |                       ^
+      346 |       expect(r.firstLogo).toBe(LIB_AFF);
+      347 |       expect(r.second).toBe(LEM_AFF);
+      348 |       expect(r.bestOverall).toBe(LIB_AFF);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:345:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-377f1-r-listing-1-2-Best-Overall--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-377f1-r-listing-1-2-Best-Overall--Chrome-Desktop\error-context.md
+
+
+[1A[2K[12/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:351:5 › SWF166 root › V10 v1 root: listings #3-#7 identical to control + no horizontal overflow
+[1A[2K[13/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:364:5 › SWF166 root › V11 v1 root: exit modal — close works, re-open does not duplicate, Liberty CTA navigates
+[1A[2K[14/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:390:5 › SWF166 root › V12 v1 root: keyboard Tab order follows the new visual order (Liberty before Lemonade)
+[1A[2K  5) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:390:5 › SWF166 root › V12 v1 root: keyboard Tab order follows the new visual order (Liberty before Lemonade) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [2m  Array [[22m
+    [32m-   "Liberty-Mutual",[39m
+    [2m    "Lemonade",[22m
+    [31m+   "Liberty-Mutual",[39m
+    [2m  ][22m
+
+      399 |       }
+      400 |       info.annotations.push({ type: 'data', description: JSON.stringify({ seq }) });
+    > 401 |       expect(seq.slice(0, 2)).toEqual(['Liberty-Mutual', 'Lemonade']);
+          |                               ^
+      402 |     });
+      403 |   });
+      404 | }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:401:31
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-a61ca-er-Liberty-before-Lemonade--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-a61ca-er-Liberty-before-Lemonade--Chrome-Desktop\error-context.md
+
+
+[1A[2K[15/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 home › C01 control home: unchanged (no cre-t-166, native order kept)
+[1A[2K[16/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 home › C02 control home: per-partner outbound goals fire on the right links only
+[1A[2K  6) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 home › C02 control home: per-partner outbound goals fire on the right links only 
 
     Error: control Liberty listing CTA
 
@@ -144,7 +183,15 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-2001c-ire-on-the-right-links-only-Chrome-Desktop\error-context.md
 
-  5) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 home › V07 v1 home: outbound-click goals — per-partner incl. modal 
+
+[1A[2K[17/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 home › V01 v1 home: bucketed + body class (location rule matches)
+[1A[2K[18/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 home › V02 v1 home: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential
+[1A[2K[19/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 home › V03 v1 home: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one
+[1A[2K[20/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 home › V04 v1 home: affiliate links follow the partner in the listing
+[1A[2K[21/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 home › V05 v1 home: "Best Overall" listing at the bottom is Liberty Mutual
+[1A[2K[22/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 home › V06 v1 home: exit modal promotes Liberty Mutual
+[1A[2K[23/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 home › V07 v1 home: outbound-click goals — per-partner incl. modal
+[1A[2K  7) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 home › V07 v1 home: outbound-click goals — per-partner incl. modal 
 
     Error: Liberty listing CTA fires no SWF166 partner goal
 
@@ -168,7 +215,9 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-122da-ls-—-per-partner-incl-modal-Chrome-Desktop\error-context.md
 
-  6) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 home › V08 v1 home: no flash of Lemonade-first order + no JS errors 
+
+[1A[2K[24/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 home › V08 v1 home: no flash of Lemonade-first order + no JS errors
+[1A[2K  8) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 home › V08 v1 home: no flash of Lemonade-first order + no JS errors 
 
     Error: JS errors on V1
 
@@ -188,7 +237,7 @@ Running 30 tests using 1 worker
           |                                         ^
       321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);
       322 |     });
-      323 |   });
+      323 |
         at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:320:41
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
@@ -197,7 +246,66 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-65b64-de-first-order-no-JS-errors-Chrome-Desktop\error-context.md
 
-  7) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 comparison › C02 control comparison: per-partner outbound goals fire on the right links only 
+
+[1A[2K[25/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 home › V09 v1 home: real CTA clicks open the right partner (listing #1/#2, Best Overall)
+[1A[2K  9) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 home › V09 v1 home: real CTA clicks open the right partner (listing #1/#2, Best Overall) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=[7mGuru[27m"[39m
+    Received: [31m"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=[7m%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708[27m"[39m
+
+      343 |       };
+      344 |       info.annotations.push({ type: 'data', description: JSON.stringify(r) });
+    > 345 |       expect(r.first).toBe(LIB_AFF);
+          |                       ^
+      346 |       expect(r.firstLogo).toBe(LIB_AFF);
+      347 |       expect(r.second).toBe(LEM_AFF);
+      348 |       expect(r.bestOverall).toBe(LIB_AFF);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:345:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-d8723-r-listing-1-2-Best-Overall--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-d8723-r-listing-1-2-Best-Overall--Chrome-Desktop\error-context.md
+
+
+[1A[2K[26/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:351:5 › SWF166 home › V10 v1 home: listings #3-#7 identical to control + no horizontal overflow
+[1A[2K[27/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:364:5 › SWF166 home › V11 v1 home: exit modal — close works, re-open does not duplicate, Liberty CTA navigates
+[1A[2K[28/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:390:5 › SWF166 home › V12 v1 home: keyboard Tab order follows the new visual order (Liberty before Lemonade)
+[1A[2K  10) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:390:5 › SWF166 home › V12 v1 home: keyboard Tab order follows the new visual order (Liberty before Lemonade) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [2m  Array [[22m
+    [32m-   "Liberty-Mutual",[39m
+    [2m    "Lemonade",[22m
+    [31m+   "Liberty-Mutual",[39m
+    [2m  ][22m
+
+      399 |       }
+      400 |       info.annotations.push({ type: 'data', description: JSON.stringify({ seq }) });
+    > 401 |       expect(seq.slice(0, 2)).toEqual(['Liberty-Mutual', 'Lemonade']);
+          |                               ^
+      402 |     });
+      403 |   });
+      404 | }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:401:31
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-3073a-er-Liberty-before-Lemonade--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-3073a-er-Liberty-before-Lemonade--Chrome-Desktop\error-context.md
+
+
+[1A[2K[29/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:158:5 › SWF166 comparison › C01 control comparison: unchanged (no cre-t-166, native order kept)
+[1A[2K[30/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 comparison › C02 control comparison: per-partner outbound goals fire on the right links only
+[1A[2K  11) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 comparison › C02 control comparison: per-partner outbound goals fire on the right links only 
 
     Error: control Liberty listing CTA
 
@@ -226,7 +334,15 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-f6a1f-ire-on-the-right-links-only-Chrome-Desktop\error-context.md
 
-  8) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 comparison › V07 v1 comparison: outbound-click goals — per-partner incl. modal 
+
+[1A[2K[31/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:193:5 › SWF166 comparison › V01 v1 comparison: bucketed + body class (location rule matches)
+[1A[2K[32/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:204:5 › SWF166 comparison › V02 v1 comparison: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential
+[1A[2K[33/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:215:5 › SWF166 comparison › V03 v1 comparison: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one
+[1A[2K[34/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:234:5 › SWF166 comparison › V04 v1 comparison: affiliate links follow the partner in the listing
+[1A[2K[35/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:247:5 › SWF166 comparison › V05 v1 comparison: "Best Overall" listing at the bottom is Liberty Mutual
+[1A[2K[36/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:277:5 › SWF166 comparison › V06 v1 comparison: exit modal promotes Liberty Mutual
+[1A[2K[37/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 comparison › V07 v1 comparison: outbound-click goals — per-partner incl. modal
+[1A[2K  12) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 comparison › V07 v1 comparison: outbound-click goals — per-partner incl. modal 
 
     Error: Liberty listing CTA fires no SWF166 partner goal
 
@@ -250,7 +366,9 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-944af-ls-—-per-partner-incl-modal-Chrome-Desktop\error-context.md
 
-  9) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 comparison › V08 v1 comparison: no flash of Lemonade-first order + no JS errors 
+
+[1A[2K[38/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 comparison › V08 v1 comparison: no flash of Lemonade-first order + no JS errors
+[1A[2K  13) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 comparison › V08 v1 comparison: no flash of Lemonade-first order + no JS errors 
 
     Error: JS errors on V1
 
@@ -270,7 +388,7 @@ Running 30 tests using 1 worker
           |                                         ^
       321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);
       322 |     });
-      323 |   });
+      323 |
         at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:320:41
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
@@ -279,14 +397,47 @@ Running 30 tests using 1 worker
 
     Error Context: test-results\swf166-liberty-first-SWF16-3554e-de-first-order-no-JS-errors-Chrome-Desktop\error-context.md
 
-  9 failed
+
+[1A[2K[39/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 comparison › V09 v1 comparison: real CTA clicks open the right partner (listing #1/#2, Best Overall)
+[1A[2K  14) [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 comparison › V09 v1 comparison: real CTA clicks open the right partner (listing #1/#2, Best Overall) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=[7mGuru[27m"[39m
+    Received: [31m"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=[7m%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708[27m"[39m
+
+      343 |       };
+      344 |       info.annotations.push({ type: 'data', description: JSON.stringify(r) });
+    > 345 |       expect(r.first).toBe(LIB_AFF);
+          |                       ^
+      346 |       expect(r.firstLogo).toBe(LIB_AFF);
+      347 |       expect(r.second).toBe(LEM_AFF);
+      348 |       expect(r.bestOverall).toBe(LIB_AFF);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf166-liberty-first.spec.js:345:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf166-liberty-first-SWF16-cea02-r-listing-1-2-Best-Overall--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf166-liberty-first-SWF16-cea02-r-listing-1-2-Best-Overall--Chrome-Desktop\error-context.md
+
+
+[1A[2K[40/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:351:5 › SWF166 comparison › V10 v1 comparison: listings #3-#7 identical to control + no horizontal overflow
+[1A[2K[41/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:364:5 › SWF166 comparison › V11 v1 comparison: exit modal — close works, re-open does not duplicate, Liberty CTA navigates
+[1A[2K[42/42] [Chrome Desktop] › testing\swf166-liberty-first.spec.js:390:5 › SWF166 comparison › V12 v1 comparison: keyboard Tab order follows the new visual order (Liberty before Lemonade)
+[1A[2K  14 failed
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 root › C02 control root: per-partner outbound goals fire on the right links only 
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 root › V07 v1 root: outbound-click goals — per-partner incl. modal 
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 root › V08 v1 root: no flash of Lemonade-first order + no JS errors 
+    [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 root › V09 v1 root: real CTA clicks open the right partner (listing #1/#2, Best Overall) 
+    [Chrome Desktop] › testing\swf166-liberty-first.spec.js:390:5 › SWF166 root › V12 v1 root: keyboard Tab order follows the new visual order (Liberty before Lemonade) 
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 home › C02 control home: per-partner outbound goals fire on the right links only 
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 home › V07 v1 home: outbound-click goals — per-partner incl. modal 
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 home › V08 v1 home: no flash of Lemonade-first order + no JS errors 
+    [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 home › V09 v1 home: real CTA clicks open the right partner (listing #1/#2, Best Overall) 
+    [Chrome Desktop] › testing\swf166-liberty-first.spec.js:390:5 › SWF166 home › V12 v1 home: keyboard Tab order follows the new visual order (Liberty before Lemonade) 
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:173:5 › SWF166 comparison › C02 control comparison: per-partner outbound goals fire on the right links only 
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:289:5 › SWF166 comparison › V07 v1 comparison: outbound-click goals — per-partner incl. modal 
     [Chrome Desktop] › testing\swf166-liberty-first.spec.js:315:5 › SWF166 comparison › V08 v1 comparison: no flash of Lemonade-first order + no JS errors 
-  21 passed (7.2m)
+    [Chrome Desktop] › testing\swf166-liberty-first.spec.js:327:5 › SWF166 comparison › V09 v1 comparison: real CTA clicks open the right partner (listing #1/#2, Best Overall) 
+  28 passed (16.2m)

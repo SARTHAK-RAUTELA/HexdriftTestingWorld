@@ -131,10 +131,10 @@
     "quiet": false,
     "reporter": [
       [
-        "list"
+        "json"
       ],
       [
-        "json"
+        "line"
       ]
     ],
     "reportSlowTests": {
@@ -146,7 +146,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.59.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -160,7 +160,7 @@
         {
           "title": "SWF166 root",
           "file": "swf166-liberty-first.spec.js",
-          "line": 157,
+          "line": 162,
           "column": 8,
           "specs": [
             {
@@ -184,12 +184,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 27691,
+                      "duration": 27774,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:15:19.180Z",
+                      "startTime": "2026-10-22T05:48:37.541Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -204,7 +204,7 @@
               ],
               "id": "d20523166cf726f5c666-bfe48758d421be187732",
               "file": "swf166-liberty-first.spec.js",
-              "line": 158,
+              "line": 163,
               "column": 5
             },
             {
@@ -228,31 +228,31 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 12009,
+                      "duration": 19762,
                       "error": {
                         "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
-                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:191:59",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 59,
-                          "line": 186
+                          "line": 191
                         },
-                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 189 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 190 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 191 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 192 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 194 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 59,
-                            "line": 186
+                            "line": 191
                           },
-                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  189 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  190 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 191 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  192 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  193 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  194 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:191:59"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:15:47.241Z",
+                      "startTime": "2026-10-22T05:49:05.657Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -274,7 +274,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 59,
-                        "line": 186
+                        "line": 191
                       }
                     }
                   ],
@@ -283,7 +283,7 @@
               ],
               "id": "d20523166cf726f5c666-f2dea387e61bf1efbc51",
               "file": "swf166-liberty-first.spec.js",
-              "line": 173,
+              "line": 178,
               "column": 5
             },
             {
@@ -307,12 +307,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 22351,
+                      "duration": 22797,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:16:00.758Z",
+                      "startTime": "2026-10-22T05:49:27.716Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -327,7 +327,7 @@
               ],
               "id": "d20523166cf726f5c666-d31961c2686521ef7b6c",
               "file": "swf166-liberty-first.spec.js",
-              "line": 193,
+              "line": 198,
               "column": 5
             },
             {
@@ -351,12 +351,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 21768,
+                      "duration": 20029,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:16:23.297Z",
+                      "startTime": "2026-10-22T05:49:51.134Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -371,7 +371,7 @@
               ],
               "id": "d20523166cf726f5c666-a49ffb6ae57fd99b60c9",
               "file": "swf166-liberty-first.spec.js",
-              "line": 204,
+              "line": 209,
               "column": 5
             },
             {
@@ -395,12 +395,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 23287,
+                      "duration": 25742,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:16:45.443Z",
+                      "startTime": "2026-10-22T05:50:11.532Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -415,7 +415,7 @@
               ],
               "id": "d20523166cf726f5c666-29c8eea005b6bd146220",
               "file": "swf166-liberty-first.spec.js",
-              "line": 215,
+              "line": 220,
               "column": 5
             },
             {
@@ -439,12 +439,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 20092,
+                      "duration": 22789,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:17:08.847Z",
+                      "startTime": "2026-10-22T05:50:37.332Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -459,7 +459,7 @@
               ],
               "id": "d20523166cf726f5c666-7b4ce4283eab92ba86d2",
               "file": "swf166-liberty-first.spec.js",
-              "line": 234,
+              "line": 239,
               "column": 5
             },
             {
@@ -483,12 +483,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16036,
+                      "duration": 15651,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:17:29.006Z",
+                      "startTime": "2026-10-22T05:51:00.357Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -503,7 +503,7 @@
               ],
               "id": "d20523166cf726f5c666-78dca0f729124450efd8",
               "file": "swf166-liberty-first.spec.js",
-              "line": 247,
+              "line": 252,
               "column": 5
             },
             {
@@ -527,12 +527,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17836,
+                      "duration": 27504,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:17:45.129Z",
+                      "startTime": "2026-10-22T05:51:16.051Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -547,7 +547,7 @@
               ],
               "id": "d20523166cf726f5c666-1a49e1fa8f904615b77f",
               "file": "swf166-liberty-first.spec.js",
-              "line": 277,
+              "line": 282,
               "column": 5
             },
             {
@@ -560,7 +560,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -571,43 +571,38 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11864,
+                      "duration": 31428,
                       "error": {
                         "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
-                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
+                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:311:81",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 81,
-                          "line": 306
+                          "line": 311
                         },
-                        "snippet": "\u001b[0m \u001b[90m 304 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 305 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 306 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 307 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 308 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 309 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 309 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 310 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 311 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 312 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 313 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 314 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 81,
-                            "line": 306
+                            "line": 311
                           },
-                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  305 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81"
+                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  309 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  310 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 311 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  312 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  313 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  314 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:311:81"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:18:03.086Z",
+                      "startTime": "2026-10-22T05:51:43.625Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
                         }
                       ],
                       "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-1443d-ls-—-per-partner-incl-modal-Safari-Desktop\\test-failed-1.png"
-                        },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
@@ -617,7 +612,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 81,
-                        "line": 306
+                        "line": 311
                       }
                     }
                   ],
@@ -626,7 +621,7 @@
               ],
               "id": "d20523166cf726f5c666-f8ab5e1daefe0cf9304e",
               "file": "swf166-liberty-first.spec.js",
-              "line": 289,
+              "line": 294,
               "column": 5
             },
             {
@@ -639,7 +634,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":144,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4712,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":2,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":14833,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -650,35 +645,35 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 14076,
+                      "duration": 40582,
                       "error": {
                         "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
-                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
+                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:325:41",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 41,
-                          "line": 320
+                          "line": 325
                         },
-                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 323 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 324 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 325 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 326 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 327 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 328 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 41,
-                            "line": 320
+                            "line": 325
                           },
-                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  323 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  324 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 325 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  326 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  327 |     });\n  328 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:325:41"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:18:17.112Z",
+                      "startTime": "2026-10-22T05:52:28.782Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":144,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4712,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":2,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":14833,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
                         }
                       ],
                       "attachments": [
@@ -696,7 +691,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 41,
-                        "line": 320
+                        "line": 325
                       }
                     }
                   ],
@@ -705,7 +700,243 @@
               ],
               "id": "d20523166cf726f5c666-5f59fdf2ee756a03cc76",
               "file": "swf166-liberty-first.spec.js",
-              "line": 315,
+              "line": 320,
+              "column": 5
+            },
+            {
+              "title": "V09 v1 root: real CTA clicks open the right partner (listing #1/#2, Best Overall)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=c3281c67dc8944e58ea94efc8f8df435&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=c3281c67dc8944e58ea94efc8f8df435&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2F&sub5=c3281c67dc8944e58ea94efc8f8df435&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=c3281c67dc8944e58ea94efc8f8df435&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 34338,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:53:21.125Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=c3281c67dc8944e58ea94efc8f8df435&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=c3281c67dc8944e58ea94efc8f8df435&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2F&sub5=c3281c67dc8944e58ea94efc8f8df435&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=c3281c67dc8944e58ea94efc8f8df435&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-5f61314103dc3a05137c",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 332,
+              "column": 5
+            },
+            {
+              "title": "V10 v1 root: listings #3-#7 identical to control + no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 36524,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:53:56.868Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-ab4a6630e68b73741bc5",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 359,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 root: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":null}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 54675,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:395:31",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 31,
+                          "line": 395
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 393 |\u001b[39m       expect(c2\u001b[33m,\u001b[39m \u001b[32m'injected modal content duplicated on re-open'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[35m1\u001b[39m\u001b[33m,\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m \u001b[35m1\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 394 |\u001b[39m       expect(box \u001b[33m&&\u001b[39m box\u001b[33m.\u001b[39mx \u001b[33m>=\u001b[39m \u001b[35m0\u001b[39m \u001b[33m&&\u001b[39m box\u001b[33m.\u001b[39mx \u001b[33m+\u001b[39m box\u001b[33m.\u001b[39mwidth \u001b[33m<=\u001b[39m vp\u001b[33m.\u001b[39mwidth\u001b[33m,\u001b[39m \u001b[32m'Liberty modal CTA inside the viewport'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 395 |\u001b[39m       expect(affOffer(r\u001b[33m.\u001b[39mnav))\u001b[33m.\u001b[39mtoBe(affOffer(\u001b[33mLIB_AFF\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 396 |\u001b[39m       \u001b[90m// native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\u001b[39m\n \u001b[90m 397 |\u001b[39m       expect(attributed(r\u001b[33m.\u001b[39mnav)\u001b[33m,\u001b[39m \u001b[32m'modal Liberty click carries no sub3/sub4 experiment attribution'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 398 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 31,
+                            "line": 395
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\n\n  393 |       expect(c2, 'injected modal content duplicated on re-open').toEqual([1, 1, 1]);\n  394 |       expect(box && box.x >= 0 && box.x + box.width <= vp.width, 'Liberty modal CTA inside the viewport').toBe(true);\n> 395 |       expect(affOffer(r.nav)).toBe(affOffer(LIB_AFF));\n      |                               ^\n  396 |       // native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\n  397 |       expect(attributed(r.nav), 'modal Liberty click carries no sub3/sub4 experiment attribution').toBe(true);\n  398 |     });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:395:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:54:34.914Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":null}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 31,
+                        "line": 395
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-2cb68d157211224ca338",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 372,
+              "column": 5
+            },
+            {
+              "title": "V12 v1 root: keyboard Tab order follows the new visual order (Liberty before Lemonade)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"seq\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 67706,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:411:31",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 31,
+                          "line": 411
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 409 |\u001b[39m       }\n \u001b[90m 410 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ seq }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 411 |\u001b[39m       expect(seq\u001b[33m.\u001b[39mslice(\u001b[35m0\u001b[39m\u001b[33m,\u001b[39m \u001b[35m2\u001b[39m))\u001b[33m.\u001b[39mtoEqual([\u001b[32m'Liberty-Mutual'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Lemonade'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 412 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 413 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 414 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 31,
+                            "line": 411
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  409 |       }\n  410 |       info.annotations.push({ type: 'data', description: JSON.stringify({ seq }) });\n> 411 |       expect(seq.slice(0, 2)).toEqual(['Liberty-Mutual', 'Lemonade']);\n      |                               ^\n  412 |     });\n  413 |   });\n  414 | }\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:411:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:55:38.027Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"seq\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-a61ca-er-Liberty-before-Lemonade--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 31,
+                        "line": 411
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-03edfe3e765ab500085b",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 400,
               "column": 5
             }
           ]
@@ -713,7 +944,7 @@
         {
           "title": "SWF166 home",
           "file": "swf166-liberty-first.spec.js",
-          "line": 157,
+          "line": 162,
           "column": 8,
           "specs": [
             {
@@ -734,15 +965,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17014,
+                      "duration": 26184,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:18:32.870Z",
+                      "startTime": "2026-10-22T05:56:53.651Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -757,7 +988,7 @@
               ],
               "id": "d20523166cf726f5c666-41b50e59578ab7d419fc",
               "file": "swf166-liberty-first.spec.js",
-              "line": 158,
+              "line": 163,
               "column": 5
             },
             {
@@ -778,34 +1009,34 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 13230,
+                      "duration": 13475,
                       "error": {
                         "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
-                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:191:59",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 59,
-                          "line": 186
+                          "line": 191
                         },
-                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 189 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 190 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 191 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 192 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 194 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 59,
-                            "line": 186
+                            "line": 191
                           },
-                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  189 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  190 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 191 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  192 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  193 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  194 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:191:59"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:18:50.036Z",
+                      "startTime": "2026-10-22T05:57:20.146Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -827,7 +1058,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 59,
-                        "line": 186
+                        "line": 191
                       }
                     }
                   ],
@@ -836,7 +1067,7 @@
               ],
               "id": "d20523166cf726f5c666-b4b1e12075d5ca53546c",
               "file": "swf166-liberty-first.spec.js",
-              "line": 173,
+              "line": 178,
               "column": 5
             },
             {
@@ -857,15 +1088,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11903,
+                      "duration": 12150,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:19:04.603Z",
+                      "startTime": "2026-10-22T05:57:35.869Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -880,7 +1111,7 @@
               ],
               "id": "d20523166cf726f5c666-9787e67c7b909d3f4cf4",
               "file": "swf166-liberty-first.spec.js",
-              "line": 193,
+              "line": 198,
               "column": 5
             },
             {
@@ -901,15 +1132,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16349,
+                      "duration": 13441,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:19:16.616Z",
+                      "startTime": "2026-10-22T05:57:48.323Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -924,7 +1155,7 @@
               ],
               "id": "d20523166cf726f5c666-08ee5c50d3e2c6288a66",
               "file": "swf166-liberty-first.spec.js",
-              "line": 204,
+              "line": 209,
               "column": 5
             },
             {
@@ -945,15 +1176,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12327,
+                      "duration": 11460,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:19:33.037Z",
+                      "startTime": "2026-10-22T05:58:01.802Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -968,12 +1199,12 @@
               ],
               "id": "d20523166cf726f5c666-b9e30383a5561f082c4c",
               "file": "swf166-liberty-first.spec.js",
-              "line": 215,
+              "line": 220,
               "column": 5
             },
             {
               "title": "V04 v1 home: affiliate links follow the partner in the listing",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -981,7 +1212,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.7-trustscore-800x368.png\",\"4.90-trustscore-800x368.png\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -989,30 +1220,65 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 11704,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 13137,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"4.90-trustscore\"\u001b[39m\nReceived string:    \u001b[31m\"https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.7-trustscore-800x368.png\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"4.90-trustscore\"\u001b[39m\nReceived string:    \u001b[31m\"https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.7-trustscore-800x368.png\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:248:29",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 29,
+                          "line": 248
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 246 |\u001b[39m       lem\u001b[33m.\u001b[39mhrefs\u001b[33m.\u001b[39mforEach(h \u001b[33m=>\u001b[39m expect(h)\u001b[33m.\u001b[39mtoBe(\u001b[33mLEM_AFF\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 247 |\u001b[39m       \u001b[90m// TrustScore badge is position-based on this site (#1 = 4.90, #2 = 4.7 — matches native /comparison/)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 248 |\u001b[39m       expect(rows[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mtrust)\u001b[33m.\u001b[39mtoContain(\u001b[32m'4.90-trustscore'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 249 |\u001b[39m       expect(rows[\u001b[35m1\u001b[39m]\u001b[33m.\u001b[39mtrust)\u001b[33m.\u001b[39mtoContain(\u001b[32m'4.7-trustscore'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 250 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 251 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 29,
+                            "line": 248
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"4.90-trustscore\"\u001b[39m\nReceived string:    \u001b[31m\"https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.7-trustscore-800x368.png\"\u001b[39m\n\n  246 |       lem.hrefs.forEach(h => expect(h).toBe(LEM_AFF));\n  247 |       // TrustScore badge is position-based on this site (#1 = 4.90, #2 = 4.7 — matches native /comparison/)\n> 248 |       expect(rows[0].trust).toContain('4.90-trustscore');\n      |                             ^\n  249 |       expect(rows[1].trust).toContain('4.7-trustscore');\n  250 |     });\n  251 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:248:29"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:19:45.428Z",
+                      "startTime": "2026-10-22T05:58:13.304Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.7-trustscore-800x368.png\",\"4.90-trustscore-800x368.png\"]}"
                         }
                       ],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-0f077--the-partner-in-the-listing-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-0f077--the-partner-in-the-listing-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 29,
+                        "line": 248
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "d20523166cf726f5c666-63e2f43ed4948bcbc7a2",
               "file": "swf166-liberty-first.spec.js",
-              "line": 234,
+              "line": 239,
               "column": 5
             },
             {
@@ -1033,15 +1299,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 7,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15197,
+                      "duration": 13273,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:19:57.189Z",
+                      "startTime": "2026-10-22T05:58:28.616Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1056,7 +1322,7 @@
               ],
               "id": "d20523166cf726f5c666-9a1cfb3f6d9aba917581",
               "file": "swf166-liberty-first.spec.js",
-              "line": 247,
+              "line": 252,
               "column": 5
             },
             {
@@ -1077,15 +1343,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 7,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16085,
+                      "duration": 14557,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:20:12.495Z",
+                      "startTime": "2026-10-22T05:58:42.647Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1100,7 +1366,7 @@
               ],
               "id": "d20523166cf726f5c666-fdbcccdb3cbfc3c54735",
               "file": "swf166-liberty-first.spec.js",
-              "line": 277,
+              "line": 282,
               "column": 5
             },
             {
@@ -1121,34 +1387,34 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 7,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 13142,
+                      "duration": 11495,
                       "error": {
                         "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
-                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
+                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:311:81",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 81,
-                          "line": 306
+                          "line": 311
                         },
-                        "snippet": "\u001b[0m \u001b[90m 304 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 305 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 306 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 307 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 308 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 309 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 309 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 310 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 311 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 312 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 313 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 314 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 81,
-                            "line": 306
+                            "line": 311
                           },
-                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  305 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81"
+                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  309 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  310 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 311 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  312 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  313 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  314 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:311:81"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:20:28.639Z",
+                      "startTime": "2026-10-22T05:58:57.267Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1170,7 +1436,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 81,
-                        "line": 306
+                        "line": 311
                       }
                     }
                   ],
@@ -1179,7 +1445,7 @@
               ],
               "id": "d20523166cf726f5c666-3ad1937d1c274df3b06e",
               "file": "swf166-liberty-first.spec.js",
-              "line": 289,
+              "line": 294,
               "column": 5
             },
             {
@@ -1192,7 +1458,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":33,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":5259,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":79,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4139,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1200,38 +1466,38 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 8,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 19816,
+                      "duration": 12779,
                       "error": {
                         "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
-                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
+                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:325:41",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 41,
-                          "line": 320
+                          "line": 325
                         },
-                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 323 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 324 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 325 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 326 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 327 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 328 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 41,
-                            "line": 320
+                            "line": 325
                           },
-                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  323 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  324 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 325 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  326 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  327 |     });\n  328 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:325:41"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:20:43.835Z",
+                      "startTime": "2026-10-22T05:59:10.968Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":33,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":5259,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":79,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4139,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
                         }
                       ],
                       "attachments": [
@@ -1249,7 +1515,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 41,
-                        "line": 320
+                        "line": 325
                       }
                     }
                   ],
@@ -1258,7 +1524,253 @@
               ],
               "id": "d20523166cf726f5c666-28c26d3e4093a5f3b448",
               "file": "swf166-liberty-first.spec.js",
-              "line": 315,
+              "line": 320,
+              "column": 5
+            },
+            {
+              "title": "V09 v1 home: real CTA clicks open the right partner (listing #1/#2, Best Overall)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=ebfbaa84e9fc48cca9dec1adbb4c40c9&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=ebfbaa84e9fc48cca9dec1adbb4c40c9&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2Fhome%2F&sub5=ebfbaa84e9fc48cca9dec1adbb4c40c9&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=ebfbaa84e9fc48cca9dec1adbb4c40c9&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16788,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:59:25.249Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=ebfbaa84e9fc48cca9dec1adbb4c40c9&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=ebfbaa84e9fc48cca9dec1adbb4c40c9&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2Fhome%2F&sub5=ebfbaa84e9fc48cca9dec1adbb4c40c9&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=ebfbaa84e9fc48cca9dec1adbb4c40c9&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-6e716021027aeada880f",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 332,
+              "column": 5
+            },
+            {
+              "title": "V10 v1 home: listings #3-#7 identical to control + no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19800,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:59:42.184Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-d48b2d98e85cc8ebf2d1",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 359,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 home: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16936,
+                      "error": {
+                        "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 100,
+                          "line": 397
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 395 |\u001b[39m       expect(affOffer(r\u001b[33m.\u001b[39mnav))\u001b[33m.\u001b[39mtoBe(affOffer(\u001b[33mLIB_AFF\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 396 |\u001b[39m       \u001b[90m// native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 397 |\u001b[39m       expect(attributed(r\u001b[33m.\u001b[39mnav)\u001b[33m,\u001b[39m \u001b[32m'modal Liberty click carries no sub3/sub4 experiment attribution'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 398 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 399 |\u001b[39m\n \u001b[90m 400 |\u001b[39m     test(\u001b[32m`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m info) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 100,
+                            "line": 397
+                          },
+                          "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  395 |       expect(affOffer(r.nav)).toBe(affOffer(LIB_AFF));\n  396 |       // native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\n> 397 |       expect(attributed(r.nav), 'modal Liberty click carries no sub3/sub4 experiment attribution').toBe(true);\n      |                                                                                                    ^\n  398 |     });\n  399 |\n  400 |     test(`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`, async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:00:02.030Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-29cbc-icate-Liberty-CTA-navigates-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-29cbc-icate-Liberty-CTA-navigates-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 100,
+                        "line": 397
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-ad2b46eed24916456d76",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 372,
+              "column": 5
+            },
+            {
+              "title": "V12 v1 home: keyboard Tab order follows the new visual order (Liberty before Lemonade)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"seq\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12184,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:411:31",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 31,
+                          "line": 411
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 409 |\u001b[39m       }\n \u001b[90m 410 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ seq }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 411 |\u001b[39m       expect(seq\u001b[33m.\u001b[39mslice(\u001b[35m0\u001b[39m\u001b[33m,\u001b[39m \u001b[35m2\u001b[39m))\u001b[33m.\u001b[39mtoEqual([\u001b[32m'Liberty-Mutual'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Lemonade'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 412 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 413 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 414 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 31,
+                            "line": 411
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  409 |       }\n  410 |       info.annotations.push({ type: 'data', description: JSON.stringify({ seq }) });\n> 411 |       expect(seq.slice(0, 2)).toEqual(['Liberty-Mutual', 'Lemonade']);\n      |                               ^\n  412 |     });\n  413 |   });\n  414 | }\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:411:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:00:21.376Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"seq\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-3073a-er-Liberty-before-Lemonade--Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-3073a-er-Liberty-before-Lemonade--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 31,
+                        "line": 411
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-28e70b0da8ef46a2072f",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 400,
               "column": 5
             }
           ]
@@ -1266,7 +1778,7 @@
         {
           "title": "SWF166 comparison",
           "file": "swf166-liberty-first.spec.js",
-          "line": 157,
+          "line": 162,
           "column": 8,
           "specs": [
             {
@@ -1287,15 +1799,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12072,
+                      "duration": 13596,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:21:06.276Z",
+                      "startTime": "2026-10-22T06:00:35.310Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1310,7 +1822,7 @@
               ],
               "id": "d20523166cf726f5c666-5f68190f470517aafd9b",
               "file": "swf166-liberty-first.spec.js",
-              "line": 158,
+              "line": 163,
               "column": 5
             },
             {
@@ -1323,7 +1835,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1331,38 +1843,38 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 14241,
+                      "duration": 11646,
                       "error": {
                         "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
-                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:191:59",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 59,
-                          "line": 186
+                          "line": 191
                         },
-                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 189 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 190 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 191 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 192 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 193 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 194 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 59,
-                            "line": 186
+                            "line": 191
                           },
-                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  189 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  190 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 191 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  192 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  193 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  194 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:191:59"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:21:18.433Z",
+                      "startTime": "2026-10-22T06:00:49.028Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
                         }
                       ],
                       "attachments": [
@@ -1380,7 +1892,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 59,
-                        "line": 186
+                        "line": 191
                       }
                     }
                   ],
@@ -1389,7 +1901,7 @@
               ],
               "id": "d20523166cf726f5c666-c65ab843047e53a81e76",
               "file": "swf166-liberty-first.spec.js",
-              "line": 173,
+              "line": 178,
               "column": 5
             },
             {
@@ -1410,15 +1922,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13914,
+                      "duration": 10928,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:21:33.550Z",
+                      "startTime": "2026-10-22T06:01:02.728Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1433,7 +1945,7 @@
               ],
               "id": "d20523166cf726f5c666-aa08578010aecb5a3143",
               "file": "swf166-liberty-first.spec.js",
-              "line": 193,
+              "line": 198,
               "column": 5
             },
             {
@@ -1454,15 +1966,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13300,
+                      "duration": 13905,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:21:47.553Z",
+                      "startTime": "2026-10-22T06:01:13.762Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1477,7 +1989,7 @@
               ],
               "id": "d20523166cf726f5c666-c484a56f1b119718e22f",
               "file": "swf166-liberty-first.spec.js",
-              "line": 204,
+              "line": 209,
               "column": 5
             },
             {
@@ -1498,15 +2010,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12507,
+                      "duration": 12129,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:22:00.898Z",
+                      "startTime": "2026-10-22T06:01:27.750Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1521,7 +2033,7 @@
               ],
               "id": "d20523166cf726f5c666-4b77bc3d594e08486240",
               "file": "swf166-liberty-first.spec.js",
-              "line": 215,
+              "line": 220,
               "column": 5
             },
             {
@@ -1542,15 +2054,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17087,
+                      "duration": 10323,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:22:13.436Z",
+                      "startTime": "2026-10-22T06:01:39.924Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1565,7 +2077,7 @@
               ],
               "id": "d20523166cf726f5c666-c2ce81eba065d68662e6",
               "file": "swf166-liberty-first.spec.js",
-              "line": 234,
+              "line": 239,
               "column": 5
             },
             {
@@ -1586,15 +2098,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11358,
+                      "duration": 12729,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:22:30.554Z",
+                      "startTime": "2026-10-22T06:01:50.385Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1609,7 +2121,7 @@
               ],
               "id": "d20523166cf726f5c666-91f5489e72ef4b111069",
               "file": "swf166-liberty-first.spec.js",
-              "line": 247,
+              "line": 252,
               "column": 5
             },
             {
@@ -1630,15 +2142,15 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15703,
+                      "duration": 14435,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:22:41.952Z",
+                      "startTime": "2026-10-22T06:02:03.177Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1653,7 +2165,7 @@
               ],
               "id": "d20523166cf726f5c666-d56f5b5cf0f6bc9188e2",
               "file": "swf166-liberty-first.spec.js",
-              "line": 277,
+              "line": 282,
               "column": 5
             },
             {
@@ -1674,34 +2186,34 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11237,
+                      "duration": 11328,
                       "error": {
                         "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
-                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
+                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:311:81",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 81,
-                          "line": 306
+                          "line": 311
                         },
-                        "snippet": "\u001b[0m \u001b[90m 304 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 305 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 306 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 307 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 308 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 309 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 309 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 310 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 311 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 312 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 313 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 314 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 81,
-                            "line": 306
+                            "line": 311
                           },
-                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  305 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81"
+                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  309 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  310 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 311 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  312 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  313 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  314 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:311:81"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:22:57.703Z",
+                      "startTime": "2026-10-22T06:02:17.703Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1723,7 +2235,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 81,
-                        "line": 306
+                        "line": 311
                       }
                     }
                   ],
@@ -1732,7 +2244,7 @@
               ],
               "id": "d20523166cf726f5c666-3edd0e71e3cf3237249e",
               "file": "swf166-liberty-first.spec.js",
-              "line": 289,
+              "line": 294,
               "column": 5
             },
             {
@@ -1745,7 +2257,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":127,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4768,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":91,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":3697,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1753,38 +2265,38 @@
                   "projectName": "Safari Desktop",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 13,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11572,
+                      "duration": 12021,
                       "error": {
                         "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
-                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
+                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:325:41",
                         "location": {
                           "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                           "column": 41,
-                          "line": 320
+                          "line": 325
                         },
-                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 323 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 324 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 325 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 326 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 327 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 328 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                             "column": 41,
-                            "line": 320
+                            "line": 325
                           },
-                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  323 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  324 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 325 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  326 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  327 |     });\n  328 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:325:41"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:23:09.832Z",
+                      "startTime": "2026-10-22T06:02:30.683Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":127,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4768,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":91,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":3697,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
                         }
                       ],
                       "attachments": [
@@ -1802,7 +2314,7 @@
                       "errorLocation": {
                         "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
                         "column": 41,
-                        "line": 320
+                        "line": 325
                       }
                     }
                   ],
@@ -1811,7 +2323,218 @@
               ],
               "id": "d20523166cf726f5c666-72f786f40ea2c70d5957",
               "file": "swf166-liberty-first.spec.js",
-              "line": 315,
+              "line": 320,
+              "column": 5
+            },
+            {
+              "title": "V09 v1 comparison: real CTA clicks open the right partner (listing #1/#2, Best Overall)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=ea996ac4e3584fb4b8b3f39548898cc8&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=ea996ac4e3584fb4b8b3f39548898cc8&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2Fcomparison%2F&sub5=ea996ac4e3584fb4b8b3f39548898cc8&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=ea996ac4e3584fb4b8b3f39548898cc8&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15603,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:02:44.542Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=ea996ac4e3584fb4b8b3f39548898cc8&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=ea996ac4e3584fb4b8b3f39548898cc8&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2Fcomparison%2F&sub5=ea996ac4e3584fb4b8b3f39548898cc8&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=ea996ac4e3584fb4b8b3f39548898cc8&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-272a53bbd74d2ad8fc50",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 332,
+              "column": 5
+            },
+            {
+              "title": "V10 v1 comparison: listings #3-#7 identical to control + no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20523,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:03:00.271Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-7ecfc073ac16665065e5",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 359,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 comparison: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16037,
+                      "error": {
+                        "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 100,
+                          "line": 397
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 395 |\u001b[39m       expect(affOffer(r\u001b[33m.\u001b[39mnav))\u001b[33m.\u001b[39mtoBe(affOffer(\u001b[33mLIB_AFF\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 396 |\u001b[39m       \u001b[90m// native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 397 |\u001b[39m       expect(attributed(r\u001b[33m.\u001b[39mnav)\u001b[33m,\u001b[39m \u001b[32m'modal Liberty click carries no sub3/sub4 experiment attribution'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 398 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 399 |\u001b[39m\n \u001b[90m 400 |\u001b[39m     test(\u001b[32m`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m info) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 100,
+                            "line": 397
+                          },
+                          "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  395 |       expect(affOffer(r.nav)).toBe(affOffer(LIB_AFF));\n  396 |       // native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\n> 397 |       expect(attributed(r.nav), 'modal Liberty click carries no sub3/sub4 experiment attribution').toBe(true);\n      |                                                                                                    ^\n  398 |     });\n  399 |\n  400 |     test(`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`, async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:03:20.857Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-21c3e-icate-Liberty-CTA-navigates-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-21c3e-icate-Liberty-CTA-navigates-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 100,
+                        "line": 397
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-fc9dbcee9da3b6250ad0",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 372,
+              "column": 5
+            },
+            {
+              "title": "V12 v1 comparison: keyboard Tab order follows the new visual order (Liberty before Lemonade)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"seq\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13765,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:03:38.203Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"seq\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-ea6ee5558191b8516f07",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 400,
               "column": 5
             }
           ]
@@ -1821,11 +2544,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-21T11:15:15.787Z",
-    "duration": 485759.036,
-    "expected": 21,
+    "startTime": "2026-10-22T05:48:35.888Z",
+    "duration": 916364.365,
+    "expected": 27,
     "skipped": 0,
-    "unexpected": 9,
+    "unexpected": 15,
     "flaky": 0
   }
 }

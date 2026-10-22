@@ -1,0 +1,858 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 4,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swf166-liberty-first.spec.js",
+      "file": "swf166-liberty-first.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SWF166 root",
+          "file": "swf166-liberty-first.spec.js",
+          "line": 162,
+          "column": 8,
+          "specs": [
+            {
+              "title": "V04 v1 root: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14858,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:08:21.753Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-7b4ce4283eab92ba86d2",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 239,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 root: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":null}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 31462,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:395:31",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 31,
+                          "line": 395
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 393 |\u001b[39m       expect(c2\u001b[33m,\u001b[39m \u001b[32m'injected modal content duplicated on re-open'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[35m1\u001b[39m\u001b[33m,\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m \u001b[35m1\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 394 |\u001b[39m       expect(box \u001b[33m&&\u001b[39m box\u001b[33m.\u001b[39mx \u001b[33m>=\u001b[39m \u001b[35m0\u001b[39m \u001b[33m&&\u001b[39m box\u001b[33m.\u001b[39mx \u001b[33m+\u001b[39m box\u001b[33m.\u001b[39mwidth \u001b[33m<=\u001b[39m vp\u001b[33m.\u001b[39mwidth\u001b[33m,\u001b[39m \u001b[32m'Liberty modal CTA inside the viewport'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 395 |\u001b[39m       expect(affOffer(r\u001b[33m.\u001b[39mnav))\u001b[33m.\u001b[39mtoBe(affOffer(\u001b[33mLIB_AFF\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 396 |\u001b[39m       \u001b[90m// native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\u001b[39m\n \u001b[90m 397 |\u001b[39m       expect(attributed(r\u001b[33m.\u001b[39mnav)\u001b[33m,\u001b[39m \u001b[32m'modal Liberty click carries no sub3/sub4 experiment attribution'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 398 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 31,
+                            "line": 395
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\n\n  393 |       expect(c2, 'injected modal content duplicated on re-open').toEqual([1, 1, 1]);\n  394 |       expect(box && box.x >= 0 && box.x + box.width <= vp.width, 'Liberty modal CTA inside the viewport').toBe(true);\n> 395 |       expect(affOffer(r.nav)).toBe(affOffer(LIB_AFF));\n      |                               ^\n  396 |       // native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\n  397 |       expect(attributed(r.nav), 'modal Liberty click carries no sub3/sub4 experiment attribution').toBe(true);\n  398 |     });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:395:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:08:37.052Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":null}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop\\test-failed-2.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 31,
+                        "line": 395
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-2cb68d157211224ca338",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 372,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 root: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16787,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:09:23.183Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-935952a2df9fa2308b74",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 239,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 root: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 22391,
+                      "error": {
+                        "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 100,
+                          "line": 397
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 395 |\u001b[39m       expect(affOffer(r\u001b[33m.\u001b[39mnav))\u001b[33m.\u001b[39mtoBe(affOffer(\u001b[33mLIB_AFF\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 396 |\u001b[39m       \u001b[90m// native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 397 |\u001b[39m       expect(attributed(r\u001b[33m.\u001b[39mnav)\u001b[33m,\u001b[39m \u001b[32m'modal Liberty click carries no sub3/sub4 experiment attribution'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 398 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 399 |\u001b[39m\n \u001b[90m 400 |\u001b[39m     test(\u001b[32m`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m info) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 100,
+                            "line": 397
+                          },
+                          "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  395 |       expect(affOffer(r.nav)).toBe(affOffer(LIB_AFF));\n  396 |       // native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\n> 397 |       expect(attributed(r.nav), 'modal Liberty click carries no sub3/sub4 experiment attribution').toBe(true);\n      |                                                                                                    ^\n  398 |     });\n  399 |\n  400 |     test(`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`, async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:09:40.100Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop-repeat1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop-repeat1\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 100,
+                        "line": 397
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-1279b971e5bfa1075f50",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 372,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 root: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11838,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:10:22.480Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-38f618fdd77352832669",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 239,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 root: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19162,
+                      "error": {
+                        "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 100,
+                          "line": 397
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 395 |\u001b[39m       expect(affOffer(r\u001b[33m.\u001b[39mnav))\u001b[33m.\u001b[39mtoBe(affOffer(\u001b[33mLIB_AFF\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 396 |\u001b[39m       \u001b[90m// native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 397 |\u001b[39m       expect(attributed(r\u001b[33m.\u001b[39mnav)\u001b[33m,\u001b[39m \u001b[32m'modal Liberty click carries no sub3/sub4 experiment attribution'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 398 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 399 |\u001b[39m\n \u001b[90m 400 |\u001b[39m     test(\u001b[32m`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m info) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 100,
+                            "line": 397
+                          },
+                          "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  395 |       expect(affOffer(r.nav)).toBe(affOffer(LIB_AFF));\n  396 |       // native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\n> 397 |       expect(attributed(r.nav), 'modal Liberty click carries no sub3/sub4 experiment attribution').toBe(true);\n      |                                                                                                    ^\n  398 |     });\n  399 |\n  400 |     test(`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`, async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:10:34.522Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop-repeat2\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop-repeat2\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 100,
+                        "line": 397
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-e521de030603ee5bde12",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 372,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 root: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11066,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:11:18.154Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-75299f53dd73f7bd0c80",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 239,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 root: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 18428,
+                      "error": {
+                        "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 100,
+                          "line": 397
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 395 |\u001b[39m       expect(affOffer(r\u001b[33m.\u001b[39mnav))\u001b[33m.\u001b[39mtoBe(affOffer(\u001b[33mLIB_AFF\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 396 |\u001b[39m       \u001b[90m// native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 397 |\u001b[39m       expect(attributed(r\u001b[33m.\u001b[39mnav)\u001b[33m,\u001b[39m \u001b[32m'modal Liberty click carries no sub3/sub4 experiment attribution'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 398 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 399 |\u001b[39m\n \u001b[90m 400 |\u001b[39m     test(\u001b[32m`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m info) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 100,
+                            "line": 397
+                          },
+                          "message": "Error: modal Liberty click carries no sub3/sub4 experiment attribution\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  395 |       expect(affOffer(r.nav)).toBe(affOffer(LIB_AFF));\n  396 |       // native modal \"Visit Lemonade\" in control is attributed (sub3/sub4); the injected V1 button must be too\n> 397 |       expect(attributed(r.nav), 'modal Liberty click carries no sub3/sub4 experiment attribution').toBe(true);\n      |                                                                                                    ^\n  398 |     });\n  399 |\n  400 |     test(`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`, async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:397:100"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:11:29.305Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop-repeat3\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-609cd-icate-Liberty-CTA-navigates-Safari-Desktop-repeat3\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 100,
+                        "line": 397
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-8f60f0f6f9f009435b3d",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 372,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "SWF166 home",
+          "file": "swf166-liberty-first.spec.js",
+          "line": 162,
+          "column": 8,
+          "specs": [
+            {
+              "title": "V04 v1 home: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:09:10.474Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-63e2f43ed4948bcbc7a2",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 239,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 home: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15525,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:10:04.754Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-83eeea21c9172b7240f1",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 239,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 home: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19519,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:10:57.097Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-7e16a7c6d74dfbb244da",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 239,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 home: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11891,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T06:11:48.952Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-ffb9693973302b72004b",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 239,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-22T06:08:19.639Z",
+    "duration": 221381.496,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

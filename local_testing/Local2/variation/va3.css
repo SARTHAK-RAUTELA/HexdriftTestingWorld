@@ -17,10 +17,23 @@
 
 .bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] {
     order: 2;
-    /* Figma: white inputs with a light grey border */
-    --tp-background-neutral-default: #fff;
-    --tp-border-neutral-default: #dddee1;
-    --tp-border-neutral-default-active: #dddee1;
+}
+
+/* Figma: white inputs with a light grey border. TextInput_inputStyles is the absolutely
+   positioned pill layer behind the input; style it directly instead of via --tp-* tokens. */
+.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] [class*="TextInput_inputStyles"] {
+    background-color: #fff !important;
+    border: 1px solid #dddee1 !important;
+}
+
+.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] input:focus ~ [class*="TextInput_inputStyles"] {
+    border-color: #8d8f94 !important;
+}
+
+.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] [class*="TextInput_inputInnerElement"],
+.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] [class*="TextInput_inputIconContainer"],
+.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] [class*="TextInput_root"] input {
+    background: transparent !important;
 }
 
 .bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] .mw9 {
@@ -66,7 +79,7 @@
     max-width: 454px;
     margin: 40px auto 0;
     aspect-ratio: 1506 / 1392;
-    background: url("https://cdn.optimizely.com/img/20611073899/bb2c85b9827a4cf885e048fb4d7d0406.png") center / contain no-repeat;
+    background: url("https://cdn.optimizely.com/img/20611073899/d0150460eefd4591ae1b0e80b7e1fb4e.png") center / contain no-repeat;
 }
 
 .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroImage"] picture {
@@ -92,12 +105,6 @@
     font-size: 16px;
     line-height: 1.4;
     text-align: center;
-    cursor: pointer;
-}
-
-.bm-hiw-bar__btn:focus-visible {
-    outline: 2px solid #0175a3;
-    outline-offset: -4px;
 }
 
 .bm-hiw-bar__text {
@@ -105,8 +112,21 @@
 }
 
 .bm-hiw-bar__cta {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
     font-weight: 700;
     white-space: nowrap;
+    cursor: pointer;
+}
+
+.bm-hiw-bar__cta:focus-visible {
+    outline: 2px solid #0175a3;
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 .bm-hiw-bar__arrow {
@@ -129,6 +149,21 @@
 
 @media (prefers-reduced-motion: reduce) {
     .bm-hiw-bar__arrow { animation: none; }
+}
+
+html body.pro-page-updte.bm_preset_jobs_pro_lp [class*='pro-search-signup_mainWrapper'] .relative.mv2 [class*='TextInput_input'] {
+    border-top-right-radius: 9999px !important;
+    border-bottom-right-radius: 9999px !important;
+    border-top-left-radius: 9999px !important;
+    border-bottom-left-radius: 9999px !important;
+    background-color: transparent !important;
+}
+html body.pro-page-updte.bm_preset_jobs_pro_lp #search-location-input {
+    background-color: transparent !important;
+    border-top-right-radius: 9999px !important;
+    border-bottom-left-radius: 9999px !important;
+    border-bottom-right-radius: 9999px !important;
+    border-top-left-radius: 0px !important;
 }
 
 /* ============ Two ways to get hired ============ */
@@ -228,6 +263,12 @@
     line-height: 1.4;
     color: #595c61;
 }
+html body.bm_preset_jobs_pro_lp [class*='pro-search-signup_mainWrapper'] .relative.mv2 [class*='TextInput_input'] {
+    border-top-right-radius: 9999px !important;
+    border-bottom-right-radius: 9999px !important;
+    border-top-left-radius: 9999px !important;
+    border-bottom-left-radius: 9999px !important;
+}
 
 /* ============ Desktop ============ */
 @media (min-width: 1025px) {
@@ -237,10 +278,15 @@
 
     .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroInner"] {
         display: grid;
-        grid-template-columns: 570px 502px;
+        grid-template-columns: minmax(0, 570px) minmax(0, 540px);
+        column-gap: 48px;
         grid-template-rows: auto auto 1fr;
         justify-content: space-between;
         max-width: 1184px;
+    }
+
+    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroInner"] > * {
+        min-width: 0;
     }
 
     .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroInner"] > .tc.mb5 {
@@ -262,12 +308,11 @@
     .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroImage"] {
         grid-column: 2;
         grid-row: 1 / 4;
-        align-self: center;
+        align-self: start;
+        background-position: center top;
         width: 100%;
         max-width: none;
         margin: 0;
-        padding: 0 24px;
-        background-origin: content-box;
     }
 
     .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroTitle"] {
@@ -307,7 +352,8 @@
     }
 
     .bm-two-ways__card {
-        width: 467px;
+        flex: 0 1 467px;
+        min-width: 0;
     }
 
     .bm-two-ways__copy {

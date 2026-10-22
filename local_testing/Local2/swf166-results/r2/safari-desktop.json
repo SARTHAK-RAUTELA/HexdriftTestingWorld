@@ -1,0 +1,1831 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swf166-liberty-first.spec.js",
+      "file": "swf166-liberty-first.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SWF166 root",
+          "file": "swf166-liberty-first.spec.js",
+          "line": 157,
+          "column": 8,
+          "specs": [
+            {
+              "title": "C01 control root: unchanged (no cre-t-166, native order kept)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 27691,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:15:19.180Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-bfe48758d421be187732",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "C02 control root: per-partner outbound goals fire on the right links only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036140\",\"100038330\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12009,
+                      "error": {
+                        "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 59,
+                          "line": 186
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 59,
+                            "line": 186
+                          },
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:15:47.241Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036140\",\"100038330\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-2b1e9-ire-on-the-right-links-only-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-2b1e9-ire-on-the-right-links-only-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 59,
+                        "line": 186
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-f2dea387e61bf1efbc51",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "V01 v1 root: bucketed + body class (location rule matches)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22351,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:16:00.758Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-d31961c2686521ef7b6c",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "V02 v1 root: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 21768,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:16:23.297Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-a49ffb6ae57fd99b60c9",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 204,
+              "column": 5
+            },
+            {
+              "title": "V03 v1 root: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23287,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:16:45.443Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-29c8eea005b6bd146220",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 215,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 root: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20092,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:17:08.847Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-7b4ce4283eab92ba86d2",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 234,
+              "column": 5
+            },
+            {
+              "title": "V05 v1 root: \"Best Overall\" listing at the bottom is Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.72/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16036,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:17:29.006Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.72/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-78dca0f729124450efd8",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 247,
+              "column": 5
+            },
+            {
+              "title": "V06 v1 root: exit modal promotes Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"exitIntentFired\":true,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17836,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:17:45.129Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"exitIntentFired\":true,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-1a49e1fa8f904615b77f",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 277,
+              "column": 5
+            },
+            {
+              "title": "V07 v1 root: outbound-click goals — per-partner incl. modal",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11864,
+                      "error": {
+                        "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 81,
+                          "line": 306
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 304 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 305 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 306 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 307 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 308 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 309 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 81,
+                            "line": 306
+                          },
+                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  305 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:18:03.086Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-1443d-ls-—-per-partner-incl-modal-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-1443d-ls-—-per-partner-incl-modal-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 81,
+                        "line": 306
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-f8ab5e1daefe0cf9304e",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 289,
+              "column": 5
+            },
+            {
+              "title": "V08 v1 root: no flash of Lemonade-first order + no JS errors",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":144,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4712,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 14076,
+                      "error": {
+                        "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 41,
+                          "line": 320
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 41,
+                            "line": 320
+                          },
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:18:17.112Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":144,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4712,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-917bf-de-first-order-no-JS-errors-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-917bf-de-first-order-no-JS-errors-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 41,
+                        "line": 320
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-5f59fdf2ee756a03cc76",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 315,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "SWF166 home",
+          "file": "swf166-liberty-first.spec.js",
+          "line": 157,
+          "column": 8,
+          "specs": [
+            {
+              "title": "C01 control home: unchanged (no cre-t-166, native order kept)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17014,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:18:32.870Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-41b50e59578ab7d419fc",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "C02 control home: per-partner outbound goals fire on the right links only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036140\",\"100038330\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13230,
+                      "error": {
+                        "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 59,
+                          "line": 186
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 59,
+                            "line": 186
+                          },
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:18:50.036Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036140\",\"100038330\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-2001c-ire-on-the-right-links-only-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-2001c-ire-on-the-right-links-only-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 59,
+                        "line": 186
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-b4b1e12075d5ca53546c",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "V01 v1 home: bucketed + body class (location rule matches)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11903,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:19:04.603Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-9787e67c7b909d3f4cf4",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "V02 v1 home: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16349,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:19:16.616Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-08ee5c50d3e2c6288a66",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 204,
+              "column": 5
+            },
+            {
+              "title": "V03 v1 home: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12327,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:19:33.037Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-b9e30383a5561f082c4c",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 215,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 home: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11704,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:19:45.428Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-63e2f43ed4948bcbc7a2",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 234,
+              "column": 5
+            },
+            {
+              "title": "V05 v1 home: \"Best Overall\" listing at the bottom is Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.72/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15197,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:19:57.189Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.72/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.72/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item They also cover college dorms – the coverage is the same as what you’d get if you were to live in an apartment building Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-9a1cfb3f6d9aba917581",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 247,
+              "column": 5
+            },
+            {
+              "title": "V06 v1 home: exit modal promotes Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"exitIntentFired\":true,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16085,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:20:12.495Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"exitIntentFired\":true,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-fdbcccdb3cbfc3c54735",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 277,
+              "column": 5
+            },
+            {
+              "title": "V07 v1 home: outbound-click goals — per-partner incl. modal",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13142,
+                      "error": {
+                        "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 81,
+                          "line": 306
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 304 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 305 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 306 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 307 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 308 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 309 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 81,
+                            "line": 306
+                          },
+                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  305 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:20:28.639Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-122da-ls-—-per-partner-incl-modal-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-122da-ls-—-per-partner-incl-modal-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 81,
+                        "line": 306
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-3ad1937d1c274df3b06e",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 289,
+              "column": 5
+            },
+            {
+              "title": "V08 v1 home: no flash of Lemonade-first order + no JS errors",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":33,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":5259,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19816,
+                      "error": {
+                        "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 41,
+                          "line": 320
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 41,
+                            "line": 320
+                          },
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:20:43.835Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":33,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":5259,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-65b64-de-first-order-no-JS-errors-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-65b64-de-first-order-no-JS-errors-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 41,
+                        "line": 320
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-28c26d3e4093a5f3b448",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 315,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "SWF166 comparison",
+          "file": "swf166-liberty-first.spec.js",
+          "line": 157,
+          "column": 8,
+          "specs": [
+            {
+              "title": "C01 control comparison: unchanged (no cre-t-166, native order kept)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12072,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:21:06.276Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"st\":{\"bucketed\":true,\"variation\":\"1000257707\",\"body166\":false},\"order\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"errors\":[]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-5f68190f470517aafd9b",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "C02 control comparison: per-partner outbound goals fire on the right links only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 14241,
+                      "error": {
+                        "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                        "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 59,
+                          "line": 186
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m       expect(only(lemCta)\u001b[33m,\u001b[39m \u001b[32m'control Lemonade listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m       expect(only(libCta)\u001b[33m,\u001b[39m \u001b[32m'control Liberty listing CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038331'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'control Best Overall (Lemonade) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([\u001b[32m'100038330'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m       expect(only(libPhone)\u001b[33m,\u001b[39m \u001b[32m'phone (tel:) link is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 189 |\u001b[39m       expect(only(lemBlank)\u001b[33m,\u001b[39m \u001b[32m'non-link area of the card is not an outbound partner click'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 59,
+                            "line": 186
+                          },
+                          "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  184 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  185 |       expect(only(lemCta), 'control Lemonade listing CTA').toEqual(['100038330']);\n> 186 |       expect(only(libCta), 'control Liberty listing CTA').toEqual(['100038331']);\n      |                                                           ^\n  187 |       expect(only(boCta), 'control Best Overall (Lemonade) CTA').toEqual(['100038330']);\n  188 |       expect(only(libPhone), 'phone (tel:) link is not an outbound partner click').toEqual([]);\n  189 |       expect(only(lemBlank), 'non-link area of the card is not an outbound partner click').toEqual([]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:21:18.433Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-f6a1f-ire-on-the-right-links-only-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-f6a1f-ire-on-the-right-links-only-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 59,
+                        "line": 186
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-c65ab843047e53a81e76",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 173,
+              "column": 5
+            },
+            {
+              "title": "V01 v1 comparison: bucketed + body class (location rule matches)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13914,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:21:33.550Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"bucketed\":true,\"variation\":\"1000257708\",\"body166\":true}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-aa08578010aecb5a3143",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 193,
+              "column": 5
+            },
+            {
+              "title": "V02 v1 comparison: Liberty #1, Lemonade #2, rest unchanged, numbers 1-7 sequential",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13300,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:21:47.553Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"names\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\",\"State-Farm\",\"Progressive\",\"Allstate\"],\"numbers\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-c484a56f1b119718e22f",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 204,
+              "column": 5
+            },
+            {
+              "title": "V03 v1 comparison: yellow App Store bar moved to Liberty — 4.8 / 499,000, exactly one",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12507,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:22:00.898Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libBars\":[\"499,000 people ranked Liberty Mutual as 4.8 on\"],\"lemBars\":[],\"overflow\":0}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-4b77bc3d594e08486240",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 215,
+              "column": 5
+            },
+            {
+              "title": "V04 v1 comparison: affiliate links follow the partner in the listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17087,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:22:13.436Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lib\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"lem\":[\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru\"],\"trust\":[\"4.90-trustscore-800x368.png\",\"4.7-trustscore-800x368.png\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-c2ce81eba065d68662e6",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 234,
+              "column": 5
+            },
+            {
+              "title": "V05 v1 comparison: \"Best Overall\" listing at the bottom is Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"details\":[\"$11.50/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"Liberty Mutual has the best all-around renters insurance policy at competitive rates. Bundle with car and/or pet insurance and save up to 20% In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.50/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 Liberty Mutual has the best all-around renters insurance policy at competitive rates. Bundle with car and/or pet insurance and save up to 20% In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.50/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"Liberty Mutual has the best all-around renters insurance policy at competitive rates. Bundle with car and/or pet insurance and save up to 20% In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11358,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:22:30.554Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"details\":[\"$11.50/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"Liberty Mutual has the best all-around renters insurance policy at competitive rates. Bundle with car and/or pet insurance and save up to 20% In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\",\"kid\":\"outbound-partner-clicks-Liberty-Mutual-Listing-Only\",\"alt\":\"Liberty mutual logo|\",\"src\":\"https://rentersinsurancegurus.com/wp-content/uploads/2025/03/liberty-mutual-logo.png|https://rentersinsurancegurus.com/wp-content/uploads/2025/04/4.90-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"],\"text\":\" AVERAGE PLAN COST $11.50/mo PROPERTY COVERAGE $15,000 LIABILITY COVERAGE $100,000 Liberty Mutual has the best all-around renters insurance policy at competitive rates. Bundle with car and/or pet insurance and save up to 20% In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent VIEW PLANS Best Price Guaranteed Best Overall \",\"ref\":{\"details\":[\"$11.50/mo\",\"$15,000\",\"$100,000\"],\"bullets\":\"Liberty Mutual has the best all-around renters insurance policy at competitive rates. Bundle with car and/or pet insurance and save up to 20% In the event of a covered loss, Liberty Mutual covers the repairs or replacement of damaged items with a brand new item Founded in 1912 and underwritten by Liberty Mutual Insurance Company Call 844-644-4275 if you would like to get a quote via a licensed agent\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-91f5489e72ef4b111069",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 247,
+              "column": 5
+            },
+            {
+              "title": "V06 v1 comparison: exit modal promotes Liberty Mutual",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"exitIntentFired\":true,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15703,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:22:41.952Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"exitIntentFired\":true,\"logos\":[\"Liberty Mutual\"],\"lead\":\"Liberty Mutual is an excellent option—offering low prices, award-winning customer service, and lightning-fast claim payouts.\",\"buttons\":[{\"text\":\"Visit Liberty Mutual\",\"href\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-d56f5b5cf0f6bc9188e2",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 277,
+              "column": 5
+            },
+            {
+              "title": "V07 v1 comparison: outbound-click goals — per-partner incl. modal",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11237,
+                      "error": {
+                        "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 81,
+                          "line": 306
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 304 |\u001b[39m       \u001b[36mconst\u001b[39m only \u001b[33m=\u001b[39m arr \u001b[33m=>\u001b[39m (arr \u001b[33m||\u001b[39m [])\u001b[33m.\u001b[39mfilter(g \u001b[33m=>\u001b[39m \u001b[33mSWF166_GOALS\u001b[39m\u001b[33m.\u001b[39mincludes(g))\u001b[33m;\u001b[39m\n \u001b[90m 305 |\u001b[39m       \u001b[36mconst\u001b[39m libSwf \u001b[33m=\u001b[39m only(libCta)\u001b[33m,\u001b[39m lemSwf \u001b[33m=\u001b[39m only(lemCta)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 306 |\u001b[39m       expect(libSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Liberty listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 307 |\u001b[39m       expect(lemSwf\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'Lemonade listing CTA fires no SWF166 partner goal'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 308 |\u001b[39m       expect(libSwf[\u001b[35m0\u001b[39m])\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBe(lemSwf[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m 309 |\u001b[39m       expect(only(boCta)\u001b[33m,\u001b[39m \u001b[32m'Best Overall (Liberty) CTA'\u001b[39m)\u001b[33m.\u001b[39mtoEqual(libSwf)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 81,
+                            "line": 306
+                          },
+                          "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  304 |       const only = arr => (arr || []).filter(g => SWF166_GOALS.includes(g));\n  305 |       const libSwf = only(libCta), lemSwf = only(lemCta);\n> 306 |       expect(libSwf.length, 'Liberty listing CTA fires no SWF166 partner goal').toBe(1);\n      |                                                                                 ^\n  307 |       expect(lemSwf.length, 'Lemonade listing CTA fires no SWF166 partner goal').toBe(1);\n  308 |       expect(libSwf[0]).not.toBe(lemSwf[0]);\n  309 |       expect(only(boCta), 'Best Overall (Liberty) CTA').toEqual(libSwf);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:22:57.703Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-944af-ls-—-per-partner-incl-modal-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-944af-ls-—-per-partner-incl-modal-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 81,
+                        "line": 306
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-3edd0e71e3cf3237249e",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 289,
+              "column": 5
+            },
+            {
+              "title": "V08 v1 comparison: no flash of Lemonade-first order + no JS errors",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":127,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4768,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11572,
+                      "error": {
+                        "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 41,
+                          "line": 320
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 41,
+                            "line": 320
+                          },
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T11:23:09.832Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":127,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":4768,\"flashMs\":0,\"errors\":[\"trigger is not a function. (In 'trigger()', 'trigger' is undefined)\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-3554e-de-first-order-no-JS-errors-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-3554e-de-first-order-no-JS-errors-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 41,
+                        "line": 320
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-72f786f40ea2c70d5957",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 315,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T11:15:15.787Z",
+    "duration": 485759.036,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}

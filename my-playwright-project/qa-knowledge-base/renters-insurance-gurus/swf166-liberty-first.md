@@ -41,3 +41,12 @@ cre-t-163 (exp 100052810) shows a vet/pet-insurance quote on the renters homepag
 - **NEW BUG-08 (High):** the Liberty goal line became `live(selectors, '.button.Liberty_Mutual.rt-aff-link', "mousedown", fn)`. The extra argument shifts event/callback, so `live()` returns early and 100038331 never fires. It is also in the new control goal script (`cre-t-166-goal`, control now carries goal code).
 - **Still open:** BUG-02 (whole-card binding; the Lemonade heading fires 100038330), BUG-03 (modal CTA not counted in either arm), BUG-06 (trigger is not a function), BUG-07 (2-frame flash, 61–75 ms Chrome).
 - Spec: `home-fixed` removed, new **C02** control goal test. Round-1 artifacts: `swf166-results/r1/`, `swf166-screenshots-r1/`, `swf166-liberty-first-qa-report-r1.html`.
+
+## Round 3 recheck (2026-10-22, still exp version 12)
+- **No code change.** The "updated" local vB.js/vB.css matched round 2 exactly, and Convert still served v12 (fresh bundle, max-age=300). All round-2 bugs reproduce.
+- **Result:** 109/162 (Chrome 28/42, Safari 27/42, Pixel 5 27/39, iPhone 12 27/39; V12 is desktop-only). iPhone V01 / re-run after a worker crash (`iphone12-v01root.json`). Chrome V09/V11 re-run after an assertion fix (`chrome-desktop-v9v11.json`). The builder merges `<base>-*.json` part files.
+- **New tests V09–V12:** real clicks with affiliate hops stubbed, listings #3–#7 vs control plus overflow, modal close/re-open plus Liberty CTA, keyboard Tab order.
+- **NEW BUG-09 (Med):** the site attribution handler is `$(".rt-aff-link").click(...)`, bound at load. It rewrites to `sub1=<path>&sub5=<EF cid>&sub3=<exp ids>&sub4=<var ids>`, fires gtag `aff_link_click` and opens via `window.open` in a new tab. Elements injected later (the V1 modal button) miss it. **Reusable:** on any RIG/PIG test that injects an `.rt-aff-link`, check sub3/sub4 on click. Repurposing the existing anchor's href works.
+- **NEW BUG-10 (Low):** CSS `order` swap leaves Tab order Lemonade→Liberty on / and /home/.
+- **BUG-06 → Med:** `trustpilotContent()` invoked inline, so the swap runs once at body-ready. Safari /home/ caught it unswapped (Liberty 4.7 at #1), 1 of ~11 loads.
+- Round-2 artifacts: `swf166-results/r2/`, `swf166-screenshots-r2/`, `swf166-liberty-first-qa-report-r2.html` (`build-report-r2.js`).

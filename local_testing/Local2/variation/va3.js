@@ -10,17 +10,17 @@
     var NEW_TITLE_PREFIX = 'Grow your business in ';
     var NEW_SUBHEAD = '5M customers in the last 12 months on Thumbtack';
 
-    var IMG_DIRECT = 'https://cdn.optimizely.com/img/20611073899/73ee393cce64432e88e8e7bdf48adb2f.png';
-    var IMG_PRESET = 'https://cdn.optimizely.com/img/20611073899/daf41ee81a2b4c0a90a1efaec794e03f.png';
+    var IMG_DIRECT = 'https://cdn.optimizely.com/img/20611073899/e633b72a9df34774998491e5d4f6934d.png';
+    var IMG_PRESET = 'https://cdn.optimizely.com/img/20611073899/f9723f4c525749e8a6a135d0537c6b6e.png';
 
     var ARROW_SVG = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5v10.5M2.5 7.5 7 12l4.5-4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
     var barHTML =
         '<div class="bm-hiw-bar">' +
-            '<button type="button" class="bm-hiw-bar__btn">' +
+            '<div class="bm-hiw-bar__btn">' +
                 '<span class="bm-hiw-bar__text">Show up in search, or claim available jobs. </span>' +
-                '<span class="bm-hiw-bar__cta">See how it works <span class="bm-hiw-bar__arrow">' + ARROW_SVG + '</span></span>' +
-            '</button>' +
+                '<button type="button" class="bm-hiw-bar__cta">See how it works <span class="bm-hiw-bar__arrow">' + ARROW_SVG + '</span></button>' +
+            '</div>' +
         '</div>';
 
     function cardHTML(img, alt, title, desc) {
@@ -51,10 +51,35 @@
             '</div>' +
         '</section>';
 
-    function scrollToEl(el) {
+    // Smooth-scroll to an element, then keep correcting until it actually lands at the top.
+    // The native page shifts while scrolling (sticky search bar / collapsing elements on mobile),
+    // so a single scrollTo with a precomputed target overshoots. The selector is re-queried on
+    // every check because React can re-mount the target mid-scroll.
+    function scrollToEl(selector, done) {
+        var el = document.querySelector(selector);
         if (!el) return;
-        var top = el.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior: 'smooth' });
+
+        var lastY = -1;
+        var corrections = 0;
+        var started = Date.now();
+        var check = setInterval(function () {
+            var y = window.pageYOffset;
+            if (y !== lastY) {
+                lastY = y; // still scrolling
+                if (Date.now() - started < 3000) return;
+            }
+            var target = document.querySelector(selector);
+            var offset = target ? target.getBoundingClientRect().top : 0;
+            if (Math.abs(offset) > 2 && corrections < 3 && Date.now() - started < 3000) {
+                corrections++;
+                lastY = -1;
+                window.scrollTo({ top: y + offset, behavior: 'smooth' });
+                return;
+            }
+            clearInterval(check);
+            if (done) done();
+        }, 150);
     }
 
     // Keep the existing hero form/functionality; only swap the copy.
@@ -81,19 +106,36 @@
         hiw.insertAdjacentHTML('afterend', sectionHTML);
     }
 
+    // Delegated event binding so handlers survive React re-renders of the injected markup.
+    function live(selector, event, callback, context) {
+        (context || document).addEventListener(event, function (e) {
+            var el = e.target && e.target.closest ? e.target.closest(selector) : null;
+            if (el) callback.call(el, e);
+        });
+    }
+
     function bindEvents() {
-        document.addEventListener('click', function (e) {
-            if (e.target.closest('.bm-hiw-bar__btn')) {
-                scrollToEl(document.querySelector('.bm-two-ways'));
-                return;
-            }
-            // Bottom CTA reuses the existing hero signup flow: scroll up and focus the service input.
-            if (e.target.closest('.bm-two-ways__signup')) {
-                var hero = document.querySelector(HERO_SECTION);
-                scrollToEl(hero);
-                var input = hero && hero.querySelector('input');
-                if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 500);
-            }
+        // Guard so listeners are only attached once, even if the variation code runs again.
+        if (window.bmPresetJobsProLpEvents) return;
+        window.bmPresetJobsProLpEvents = true;
+
+        live('.bm-hiw-bar__cta', 'click', function () {
+            scrollToEl('.bm-two-ways');
+        });
+
+        // Bottom CTA reuses the existing hero signup flow: scroll up and click the hero "Sign up" button.
+        // The hero has separate desktop/mobile buttons, so click the visible one. It is queried after the
+        // scroll settles; the one present at click time may be detached by then.
+        live('.bm-two-ways__signup', 'click', function () {
+            scrollToEl(HERO_SECTION, function () {
+                var buttons = document.querySelectorAll(HERO_SECTION + ' [class*="pro-signup-hero_searchFields"] button');
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i].offsetParent !== null) {
+                        buttons[i].click();
+                        return;
+                    }
+                }
+            });
         });
     }
 

@@ -131,10 +131,10 @@
     "quiet": false,
     "reporter": [
       [
-        "list"
+        "json"
       ],
       [
-        "json"
+        "line"
       ]
     ],
     "reportSlowTests": {
@@ -146,7 +146,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.59.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -184,12 +184,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16074,
+                      "duration": 18008,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:07:15.024Z",
+                      "startTime": "2026-10-22T05:25:04.988Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -228,7 +228,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11185,
+                      "duration": 13753,
                       "error": {
                         "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
                         "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
@@ -252,7 +252,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:07:31.270Z",
+                      "startTime": "2026-10-22T05:25:23.998Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -307,12 +307,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12617,
+                      "duration": 13948,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:07:47.735Z",
+                      "startTime": "2026-10-22T05:25:41.182Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -351,12 +351,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11678,
+                      "duration": 12992,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:08:00.622Z",
+                      "startTime": "2026-10-22T05:25:55.457Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -395,12 +395,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12749,
+                      "duration": 12305,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:08:12.396Z",
+                      "startTime": "2026-10-22T05:26:08.467Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -439,12 +439,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16006,
+                      "duration": 11340,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:08:25.177Z",
+                      "startTime": "2026-10-22T05:26:20.798Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -483,12 +483,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9605,
+                      "duration": 13179,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:08:41.215Z",
+                      "startTime": "2026-10-22T05:26:32.168Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -527,12 +527,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12508,
+                      "duration": 14236,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:08:50.844Z",
+                      "startTime": "2026-10-22T05:26:45.354Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -560,7 +560,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -571,7 +571,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11424,
+                      "duration": 12984,
                       "error": {
                         "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
                         "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
@@ -595,11 +595,11 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:09:03.374Z",
+                      "startTime": "2026-10-22T05:26:59.614Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036137\",\"100036139\"],\"modalLib\":[\"100036136\"],\"libPhone\":[],\"libBlank\":[]}"
                         }
                       ],
                       "attachments": [
@@ -639,7 +639,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"lemFirstFrames\":2,\"libFirstFrames\":430,\"firstLemFirstAt\":6847,\"lastLemFirstAt\":6896,\"firstLibFirstAt\":6922,\"flashMs\":75,\"errors\":[\"trigger is not a function\"]}"
+                      "description": "{\"lemFirstFrames\":1,\"libFirstFrames\":518,\"firstLemFirstAt\":4499,\"lastLemFirstAt\":4499,\"firstLibFirstAt\":4537,\"flashMs\":38,\"errors\":[\"trigger is not a function\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -650,7 +650,7 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 14740,
+                      "duration": 13818,
                       "error": {
                         "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
                         "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
@@ -659,7 +659,7 @@
                           "column": 41,
                           "line": 320
                         },
-                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
@@ -668,17 +668,17 @@
                             "column": 41,
                             "line": 320
                           },
-                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:09:18.330Z",
+                      "startTime": "2026-10-22T05:27:15.844Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"lemFirstFrames\":2,\"libFirstFrames\":430,\"firstLemFirstAt\":6847,\"lastLemFirstAt\":6896,\"firstLibFirstAt\":6922,\"flashMs\":75,\"errors\":[\"trigger is not a function\"]}"
+                          "description": "{\"lemFirstFrames\":1,\"libFirstFrames\":518,\"firstLemFirstAt\":4499,\"lastLemFirstAt\":4499,\"firstLibFirstAt\":4537,\"flashMs\":38,\"errors\":[\"trigger is not a function\"]}"
                         }
                       ],
                       "attachments": [
@@ -707,6 +707,252 @@
               "file": "swf166-liberty-first.spec.js",
               "line": 315,
               "column": 5
+            },
+            {
+              "title": "V09 v1 root: real CTA clicks open the right partner (listing #1/#2, Best Overall)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 14225,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\u001b[27m\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:345:23",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 23,
+                          "line": 345
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 343 |\u001b[39m       }\u001b[33m;\u001b[39m\n \u001b[90m 344 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(r) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 345 |\u001b[39m       expect(r\u001b[33m.\u001b[39mfirst)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 346 |\u001b[39m       expect(r\u001b[33m.\u001b[39mfirstLogo)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 347 |\u001b[39m       expect(r\u001b[33m.\u001b[39msecond)\u001b[33m.\u001b[39mtoBe(\u001b[33mLEM_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 348 |\u001b[39m       expect(r\u001b[33m.\u001b[39mbestOverall)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 23,
+                            "line": 345
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\u001b[27m\"\u001b[39m\n\n  343 |       };\n  344 |       info.annotations.push({ type: 'data', description: JSON.stringify(r) });\n> 345 |       expect(r.first).toBe(LIB_AFF);\n      |                       ^\n  346 |       expect(r.firstLogo).toBe(LIB_AFF);\n  347 |       expect(r.second).toBe(LEM_AFF);\n  348 |       expect(r.bestOverall).toBe(LIB_AFF);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:345:23"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:27:35.075Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2F&sub5=f995b3f00d8341659628d41b6aa7db22&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-377f1-r-listing-1-2-Best-Overall--Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-377f1-r-listing-1-2-Best-Overall--Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 23,
+                        "line": 345
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-4afb7387c7cf3555d73b",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 327,
+              "column": 5
+            },
+            {
+              "title": "V10 v1 root: listings #3-#7 identical to control + no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19768,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:27:54.445Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-08140aaa003106fcdc10",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 351,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 root: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16324,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:28:14.550Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-ef3d7e74648adf53affa",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 364,
+              "column": 5
+            },
+            {
+              "title": "V12 v1 root: keyboard Tab order follows the new visual order (Liberty before Lemonade)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"seq\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11452,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:401:31",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 31,
+                          "line": 401
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 399 |\u001b[39m       }\n \u001b[90m 400 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ seq }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 401 |\u001b[39m       expect(seq\u001b[33m.\u001b[39mslice(\u001b[35m0\u001b[39m\u001b[33m,\u001b[39m \u001b[35m2\u001b[39m))\u001b[33m.\u001b[39mtoEqual([\u001b[32m'Liberty-Mutual'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Lemonade'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 402 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 403 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 404 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 31,
+                            "line": 401
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  399 |       }\n  400 |       info.annotations.push({ type: 'data', description: JSON.stringify({ seq }) });\n> 401 |       expect(seq.slice(0, 2)).toEqual(['Liberty-Mutual', 'Lemonade']);\n      |                               ^\n  402 |     });\n  403 |   });\n  404 | }\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:401:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:28:30.918Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"seq\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-a61ca-er-Liberty-before-Lemonade--Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-a61ca-er-Liberty-before-Lemonade--Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 31,
+                        "line": 401
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-331a488aa4d0f8afed33",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 390,
+              "column": 5
             }
           ]
         },
@@ -734,15 +980,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13594,
+                      "duration": 19955,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:09:36.591Z",
+                      "startTime": "2026-10-22T05:28:46.399Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -770,7 +1016,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100038330\",\"100036136\",\"100036140\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                      "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036140\",\"100038330\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -778,10 +1024,10 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 10120,
+                      "duration": 12476,
                       "error": {
                         "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
                         "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
@@ -805,11 +1051,11 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:09:50.470Z",
+                      "startTime": "2026-10-22T05:29:06.669Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100038330\",\"100036136\",\"100036140\"],\"boCta\":[\"100038330\",\"100036136\",\"100036140\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
+                          "description": "{\"libCta\":[\"100036136\",\"100036137\",\"100036138\"],\"lemCta\":[\"100036136\",\"100036140\",\"100038330\"],\"boCta\":[\"100036136\",\"100036140\",\"100038330\"],\"modalLem\":[\"100036136\"],\"libPhone\":[],\"lemBlank\":[\"100038330\"]}"
                         }
                       ],
                       "attachments": [
@@ -857,15 +1103,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11416,
+                      "duration": 12389,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:10:09.069Z",
+                      "startTime": "2026-10-22T05:29:23.329Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -901,15 +1147,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11056,
+                      "duration": 11533,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:10:20.748Z",
+                      "startTime": "2026-10-22T05:29:36.032Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -945,15 +1191,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11992,
+                      "duration": 11227,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:10:31.852Z",
+                      "startTime": "2026-10-22T05:29:47.586Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -989,15 +1235,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9346,
+                      "duration": 11805,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:10:43.876Z",
+                      "startTime": "2026-10-22T05:29:58.830Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1033,15 +1279,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13343,
+                      "duration": 12426,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:10:53.250Z",
+                      "startTime": "2026-10-22T05:30:10.650Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1077,15 +1323,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14756,
+                      "duration": 13585,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:11:06.644Z",
+                      "startTime": "2026-10-22T05:30:23.108Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1121,10 +1367,10 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 10937,
+                      "duration": 11400,
                       "error": {
                         "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
                         "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
@@ -1148,7 +1394,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:11:21.429Z",
+                      "startTime": "2026-10-22T05:30:36.713Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1192,7 +1438,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"lemFirstFrames\":2,\"libFirstFrames\":447,\"firstLemFirstAt\":3918,\"lastLemFirstAt\":3949,\"firstLibFirstAt\":3979,\"flashMs\":61,\"errors\":[\"trigger is not a function\"]}"
+                      "description": "{\"lemFirstFrames\":2,\"libFirstFrames\":498,\"firstLemFirstAt\":3454,\"lastLemFirstAt\":3470,\"firstLibFirstAt\":3494,\"flashMs\":40,\"errors\":[\"trigger is not a function\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1200,10 +1446,10 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 7,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 12207,
+                      "duration": 12511,
                       "error": {
                         "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
                         "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
@@ -1212,7 +1458,7 @@
                           "column": 41,
                           "line": 320
                         },
-                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
@@ -1221,17 +1467,17 @@
                             "column": 41,
                             "line": 320
                           },
-                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:11:36.469Z",
+                      "startTime": "2026-10-22T05:30:51.141Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"lemFirstFrames\":2,\"libFirstFrames\":447,\"firstLemFirstAt\":3918,\"lastLemFirstAt\":3949,\"firstLibFirstAt\":3979,\"flashMs\":61,\"errors\":[\"trigger is not a function\"]}"
+                          "description": "{\"lemFirstFrames\":2,\"libFirstFrames\":498,\"firstLemFirstAt\":3454,\"lastLemFirstAt\":3470,\"firstLibFirstAt\":3494,\"flashMs\":40,\"errors\":[\"trigger is not a function\"]}"
                         }
                       ],
                       "attachments": [
@@ -1260,6 +1506,252 @@
               "file": "swf166-liberty-first.spec.js",
               "line": 315,
               "column": 5
+            },
+            {
+              "title": "V09 v1 home: real CTA clicks open the right partner (listing #1/#2, Best Overall)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13528,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\u001b[27m\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:345:23",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 23,
+                          "line": 345
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 343 |\u001b[39m       }\u001b[33m;\u001b[39m\n \u001b[90m 344 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(r) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 345 |\u001b[39m       expect(r\u001b[33m.\u001b[39mfirst)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 346 |\u001b[39m       expect(r\u001b[33m.\u001b[39mfirstLogo)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 347 |\u001b[39m       expect(r\u001b[33m.\u001b[39msecond)\u001b[33m.\u001b[39mtoBe(\u001b[33mLEM_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 348 |\u001b[39m       expect(r\u001b[33m.\u001b[39mbestOverall)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 23,
+                            "line": 345
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\u001b[27m\"\u001b[39m\n\n  343 |       };\n  344 |       info.annotations.push({ type: 'data', description: JSON.stringify(r) });\n> 345 |       expect(r.first).toBe(LIB_AFF);\n      |                       ^\n  346 |       expect(r.firstLogo).toBe(LIB_AFF);\n  347 |       expect(r.second).toBe(LEM_AFF);\n  348 |       expect(r.bestOverall).toBe(LIB_AFF);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:345:23"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:31:12.512Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fhome%2F&sub5=f34b6eeefeec4420bf72895deee18dee&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257293,1000257708\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-d8723-r-listing-1-2-Best-Overall--Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-d8723-r-listing-1-2-Best-Overall--Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 23,
+                        "line": 345
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-ec38bf3cf9cadaef1eff",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 327,
+              "column": 5
+            },
+            {
+              "title": "V10 v1 home: listings #3-#7 identical to control + no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20084,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:31:29.479Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.3-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-3eb316fad0808efe921e",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 351,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 home: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16525,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:31:49.696Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-3193fee03ce3fd656eec",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 364,
+              "column": 5
+            },
+            {
+              "title": "V12 v1 home: keyboard Tab order follows the new visual order (Liberty before Lemonade)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"seq\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16366,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:401:31",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 31,
+                          "line": 401
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 399 |\u001b[39m       }\n \u001b[90m 400 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ seq }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 401 |\u001b[39m       expect(seq\u001b[33m.\u001b[39mslice(\u001b[35m0\u001b[39m\u001b[33m,\u001b[39m \u001b[35m2\u001b[39m))\u001b[33m.\u001b[39mtoEqual([\u001b[32m'Liberty-Mutual'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Lemonade'\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 402 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 403 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 404 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 31,
+                            "line": 401
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m    \"Lemonade\",\u001b[22m\n\u001b[31m+   \"Liberty-Mutual\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  399 |       }\n  400 |       info.annotations.push({ type: 'data', description: JSON.stringify({ seq }) });\n> 401 |       expect(seq.slice(0, 2)).toEqual(['Liberty-Mutual', 'Lemonade']);\n      |                               ^\n  402 |     });\n  403 |   });\n  404 | }\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:401:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:32:06.240Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"seq\":[\"Lemonade\",\"Liberty-Mutual\",\"Farmers\",\"USAA\"]}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-3073a-er-Liberty-before-Lemonade--Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-3073a-er-Liberty-before-Lemonade--Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 31,
+                        "line": 401
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-d536b95d00f5d2b85604",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 390,
+              "column": 5
             }
           ]
         },
@@ -1287,15 +1779,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 10,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15243,
+                      "duration": 20376,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:11:56.508Z",
+                      "startTime": "2026-10-22T05:33:11.747Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1331,10 +1823,10 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 10,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 9686,
+                      "duration": 12715,
                       "error": {
                         "message": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
                         "stack": "Error: control Liberty listing CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"100038331\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:186:59",
@@ -1358,7 +1850,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:12:11.890Z",
+                      "startTime": "2026-10-22T05:33:42.310Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1410,15 +1902,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11519,
+                      "duration": 38787,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:12:25.613Z",
+                      "startTime": "2026-10-22T05:34:31.947Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1454,15 +1946,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13705,
+                      "duration": 22866,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:12:37.504Z",
+                      "startTime": "2026-10-22T05:35:14.930Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1498,15 +1990,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9517,
+                      "duration": 26762,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:12:51.286Z",
+                      "startTime": "2026-10-22T05:35:37.806Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1542,15 +2034,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13824,
+                      "duration": 21114,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:13:00.863Z",
+                      "startTime": "2026-10-22T05:36:04.958Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1586,15 +2078,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11123,
+                      "duration": 23591,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:13:14.777Z",
+                      "startTime": "2026-10-22T05:36:27.043Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1630,15 +2122,15 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12777,
+                      "duration": 20567,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:13:25.964Z",
+                      "startTime": "2026-10-22T05:36:50.844Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1674,10 +2166,10 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 13520,
+                      "duration": 19080,
                       "error": {
                         "message": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
                         "stack": "Error: Liberty listing CTA fires no SWF166 partner goal\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:306:81",
@@ -1701,7 +2193,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:13:38.783Z",
+                      "startTime": "2026-10-22T05:37:12.109Z",
                       "annotations": [
                         {
                           "type": "data",
@@ -1745,7 +2237,7 @@
                   "annotations": [
                     {
                       "type": "data",
-                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":203,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":11290,\"flashMs\":0,\"errors\":[\"trigger is not a function\"]}"
+                      "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":350,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":8925,\"flashMs\":0,\"errors\":[\"trigger is not a function\"]}"
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1753,10 +2245,10 @@
                   "projectName": "Chrome Desktop",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 18487,
+                      "duration": 24267,
                       "error": {
                         "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
                         "stack": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41",
@@ -1765,7 +2257,7 @@
                           "column": 41,
                           "line": 320
                         },
-                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 318 |\u001b[39m       \u001b[36mconst\u001b[39m flashMs \u001b[33m=\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m&&\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m!==\u001b[39m \u001b[36mnull\u001b[39m \u001b[33m?\u001b[39m f\u001b[33m.\u001b[39mfirstLibFirstAt \u001b[33m-\u001b[39m f\u001b[33m.\u001b[39mfirstLemFirstAt \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify({ \u001b[33m...\u001b[39mf\u001b[33m,\u001b[39m flashMs\u001b[33m,\u001b[39m errors }) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 320 |\u001b[39m       expect(errors\u001b[33m,\u001b[39m \u001b[32m'JS errors on V1'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 321 |\u001b[39m       expect(f\u001b[33m.\u001b[39mlemFirstFrames\u001b[33m,\u001b[39m \u001b[32m`Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 322 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 323 |\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
@@ -1774,17 +2266,17 @@
                             "column": 41,
                             "line": 320
                           },
-                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
+                          "message": "Error: JS errors on V1\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"trigger is not a function\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  318 |       const flashMs = f.firstLemFirstAt !== null && f.firstLibFirstAt !== null ? f.firstLibFirstAt - f.firstLemFirstAt : 0;\n  319 |       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });\n> 320 |       expect(errors, 'JS errors on V1').toEqual([]);\n      |                                         ^\n  321 |       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);\n  322 |     });\n  323 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:320:41"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-21T11:13:57.727Z",
+                      "startTime": "2026-10-22T05:38:29.968Z",
                       "annotations": [
                         {
                           "type": "data",
-                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":203,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":11290,\"flashMs\":0,\"errors\":[\"trigger is not a function\"]}"
+                          "description": "{\"lemFirstFrames\":0,\"libFirstFrames\":350,\"firstLemFirstAt\":null,\"lastLemFirstAt\":null,\"firstLibFirstAt\":8925,\"flashMs\":0,\"errors\":[\"trigger is not a function\"]}"
                         }
                       ],
                       "attachments": [
@@ -1813,6 +2305,217 @@
               "file": "swf166-liberty-first.spec.js",
               "line": 315,
               "column": 5
+            },
+            {
+              "title": "V09 v1 comparison: real CTA clicks open the right partner (listing #1/#2, Best Overall)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19168,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\u001b[27m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\u001b[27m\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:345:23",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                          "column": 23,
+                          "line": 345
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 343 |\u001b[39m       }\u001b[33m;\u001b[39m\n \u001b[90m 344 |\u001b[39m       info\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'data'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(r) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 345 |\u001b[39m       expect(r\u001b[33m.\u001b[39mfirst)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 346 |\u001b[39m       expect(r\u001b[33m.\u001b[39mfirstLogo)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 347 |\u001b[39m       expect(r\u001b[33m.\u001b[39msecond)\u001b[33m.\u001b[39mtoBe(\u001b[33mLEM_AFF\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 348 |\u001b[39m       expect(r\u001b[33m.\u001b[39mbestOverall)\u001b[33m.\u001b[39mtoBe(\u001b[33mLIB_AFF\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                            "column": 23,
+                            "line": 345
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7mGuru\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=\u001b[7m%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\u001b[27m\"\u001b[39m\n\n  343 |       };\n  344 |       info.annotations.push({ type: 'data', description: JSON.stringify(r) });\n> 345 |       expect(r.first).toBe(LIB_AFF);\n      |                       ^\n  346 |       expect(r.firstLogo).toBe(LIB_AFF);\n  347 |       expect(r.second).toBe(LEM_AFF);\n  348 |       expect(r.bestOverall).toBe(LIB_AFF);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js:345:23"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:39:28.293Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"first\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"firstLogo\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"second\":\"https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\",\"bestOverall\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=%2Fcomparison%2F&sub5=24bbb10bc97d49c898d7f8148743a40c&sub3=100052610,100052776,100052810,100052988&sub4=1000256792,1000257202,1000257294,1000257708\"}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-cea02-r-listing-1-2-Best-Overall--Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf166-liberty-first-SWF16-cea02-r-listing-1-2-Best-Overall--Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf166-liberty-first.spec.js",
+                        "column": 23,
+                        "line": 345
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-424d25afa24f8826fdfc",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 327,
+              "column": 5
+            },
+            {
+              "title": "V10 v1 comparison: listings #3-#7 identical to control + no horizontal overflow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 25046,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:40:13.066Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"ctl\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"v1\":[{\"du\":\"outbound-partner-clicks-Farmers-Listing-Only\",\"shownNumber\":\"3\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\",\"https://go.rentersinsurancegurus.com/9W598/4CF329/?sub1=Guru\"]},{\"du\":\"outbound-partner-clicks-USAA-Listing-Only\",\"shownNumber\":\"4\",\"bars\":[],\"trust\":\"4.4-trustscore-800x368.png\",\"hrefs\":[\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\",\"https://www.usaa.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-State-Farm-Listing-Only\",\"shownNumber\":\"5\",\"bars\":[],\"trust\":\"4.2-trustscore-800x368.png\",\"hrefs\":[\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\",\"https://www.statefarm.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Progressive-Listing-Only\",\"shownNumber\":\"6\",\"bars\":[],\"trust\":\"4.0-trustscore-800x368.png\",\"hrefs\":[\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\",\"https://www.progressive.com/?utm_source=rentersinsurancegurus.com\"]},{\"du\":\"outbound-partner-clicks-Allstate-Listing-Only\",\"shownNumber\":\"7\",\"bars\":[],\"trust\":\"3.90-trustscore-800x368.png\",\"hrefs\":[\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\",\"https://www.allstate.com/?utm_source=rentersinsurancegurus.com\"]}],\"ov\":{\"docW\":1280,\"vw\":1280}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-4c26bfb518b664a087dc",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 351,
+              "column": 5
+            },
+            {
+              "title": "V11 v1 comparison: exit modal — close works, re-open does not duplicate, Liberty CTA navigates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17292,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:40:38.703Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"c1\":[1,1,1],\"afterClose\":false,\"c2\":[1,1,1],\"box\":{\"x\":490,\"y\":531.46875,\"width\":300,\"height\":53.59375},\"vp\":{\"width\":1280,\"height\":720},\"nav\":\"https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru\"}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-ca6914ff2c79f3d92e26",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 364,
+              "column": 5
+            },
+            {
+              "title": "V12 v1 comparison: keyboard Tab order follows the new visual order (Liberty before Lemonade)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "data",
+                      "description": "{\"seq\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\"]}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12284,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-22T05:40:56.029Z",
+                      "annotations": [
+                        {
+                          "type": "data",
+                          "description": "{\"seq\":[\"Liberty-Mutual\",\"Lemonade\",\"Farmers\",\"USAA\"]}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d20523166cf726f5c666-a03d4e9902a01a8c9b20",
+              "file": "swf166-liberty-first.spec.js",
+              "line": 390,
+              "column": 5
             }
           ]
         }
@@ -1821,11 +2524,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-21T11:07:13.128Z",
-    "duration": 432926.565,
-    "expected": 21,
+    "startTime": "2026-10-22T05:25:03.395Z",
+    "duration": 970181.015,
+    "expected": 28,
     "skipped": 0,
-    "unexpected": 9,
+    "unexpected": 14,
     "flaky": 0
   }
 }

@@ -23,6 +23,11 @@ const LIB_AFF = 'https://go.rentersinsurancegurus.com/9W598/41NTW2/?sub1=Guru';
 const LEM_AFF = 'https://go.rentersinsurancegurus.com/9W598/2F8LBL/?sub1=Guru';
 const REST = ['Farmers', 'USAA', 'State-Farm', 'Progressive', 'Allstate'];
 const SWF166_GOALS = ['100038330', '100038331'];
+const affOffer = u => (u || '').split('?')[0];
+const attributed = u => {
+  const q = new URL(u || 'about:blank').searchParams;
+  return (q.get('sub3') || '').split(',').includes(EXP) && (q.get('sub4') || '').split(',').includes(ARMS.v1);
+};
 
 const SHOT_ROOT = path.join(__dirname, '..', '..', 'local_testing', 'Local2', 'swf166-screenshots');
 
@@ -319,6 +324,91 @@ for (const pg of PAGES) {
       info.annotations.push({ type: 'data', description: JSON.stringify({ ...f, flashMs, errors }) });
       expect(errors, 'JS errors on V1').toEqual([]);
       expect(f.lemFirstFrames, `Lemonade painted above Liberty for ${f.lemFirstFrames} frames (~${flashMs}ms)`).toBe(0);
+    });
+
+    // ---- Round 3 (2026-10-22): extra functional coverage ----
+
+    // Real clicks (not synthetic mousedown). Affiliate hops are stubbed so QA never logs a click on the partner network.
+    test(`V09 v1 ${p}: real CTA clicks open the right partner (listing #1/#2, Best Overall)`, async ({ page }, info) => {
+      await open(page, 'v1', pg);
+      await page.context().route(/go\.rentersinsurancegurus\.com/, r => r.fulfill({ status: 200, contentType: 'text/html', body: '<title>stub</title>stub' }));
+      const clickTo = async sel => {
+        const a = page.locator(sel).first();
+        await a.scrollIntoViewIfNeeded();
+        const [pop] = await Promise.all([page.context().waitForEvent('page', { timeout: 8000 }).catch(() => null), a.click()]);
+        const url = pop ? pop.url() : page.url();
+        if (pop) await pop.close(); else await page.goBack().catch(() => {});
+        return url;
+      };
+      const r = {
+        first: await clickTo('[data-unique="comparison-table"] > [data-unique="' + LIB + '"] .plan-button-container a'),
+        firstLogo: await clickTo('[data-unique="comparison-table"] > [data-unique="' + LIB + '"] a.provider-link'),
+        second: await clickTo('[data-unique="comparison-table"] > [data-unique="' + LEM + '"] .plan-button-container a'),
+        bestOverall: await clickTo('[data-unique="best-overall"] .plan-button-container a'),
+      };
+      info.annotations.push({ type: 'data', description: JSON.stringify(r) });
+      // The site's own click handler ($('.rt-aff-link').click) rewrites the href: sub1=page, sub5=Everflow cid,
+      // sub3/sub4 = running Convert experiment / variation IDs. Check partner + V1 attribution, not the raw href.
+      expect(affOffer(r.first)).toBe(affOffer(LIB_AFF));
+      expect(affOffer(r.firstLogo)).toBe(affOffer(LIB_AFF));
+      expect(affOffer(r.second)).toBe(affOffer(LEM_AFF));
+      expect(affOffer(r.bestOverall)).toBe(affOffer(LIB_AFF));
+      for (const u of Object.values(r)) expect(attributed(u), `click not attributed to ${EXP}/${ARMS.v1}: ${u}`).toBe(true);
+    });
+
+    test(`V10 v1 ${p}: listings #3-#7 identical to control + no horizontal overflow`, async ({ page }, info) => {
+      await open(page, 'control', pg);
+      const ctl = (await listing(page)).filter(r => ![LIB, LEM].includes(r.du));
+      const p2 = await page.context().newPage();
+      await open(p2, 'v1', pg);
+      const v1 = (await listing(p2)).filter(r => ![LIB, LEM].includes(r.du));
+      const ov = await p2.evaluate(() => ({ docW: document.documentElement.scrollWidth, vw: innerWidth }));
+      const strip = rs => rs.map(({ du, shownNumber, bars, trust, hrefs }) => ({ du, shownNumber, bars, trust: trust.split('/').pop(), hrefs }));
+      info.annotations.push({ type: 'data', description: JSON.stringify({ ctl: strip(ctl), v1: strip(v1), ov }) });
+      expect(strip(v1)).toEqual(strip(ctl));
+      expect(ov.docW, 'page scrolls horizontally').toBeLessThanOrEqual(ov.vw);
+    });
+
+    test(`V11 v1 ${p}: exit modal — close works, re-open does not duplicate, Liberty CTA navigates`, async ({ page }, info) => {
+      await open(page, 'v1', pg);
+      await page.context().route(/go\.rentersinsurancegurus\.com/, r => r.fulfill({ status: 200, contentType: 'text/html', body: '<title>stub</title>stub' }));
+      const mobile = !!info.project.use.isMobile;
+      await openExitModal(page, mobile);
+      const counts = () => page.evaluate(() => ['.cre-t-166-image-wrapper', '.cre-t-166-strong-text', '.cre-t-166-button-container'].map(s => document.querySelectorAll(s).length));
+      const shown = () => page.locator('.oxy-modal-backdrop').evaluate(m => getComputedStyle(m).display !== 'none' && m.offsetHeight > 0);
+      const c1 = await counts();
+      await page.locator('.oxy-modal-backdrop .oxy-close-modal').click();
+      await page.waitForTimeout(800);
+      const afterClose = await shown();
+      await openExitModal(page, mobile);
+      const c2 = await counts();
+      const btn = page.locator('.cre-t-166-button-container a');
+      const box = await btn.boundingBox();
+      const vp = page.viewportSize();
+      const [req] = await Promise.all([page.waitForRequest(/go\.rentersinsurancegurus\.com/, { timeout: 8000 }).catch(() => null), btn.click()]);
+      const r = { c1, afterClose, c2, box, vp, nav: req && req.url() };
+      info.annotations.push({ type: 'data', description: JSON.stringify(r) });
+      expect(c1).toEqual([1, 1, 1]);
+      expect(afterClose, 'modal still visible after clicking X').toBe(false);
+      expect(c2, 'injected modal content duplicated on re-open').toEqual([1, 1, 1]);
+      expect(box && box.x >= 0 && box.x + box.width <= vp.width, 'Liberty modal CTA inside the viewport').toBe(true);
+      expect(affOffer(r.nav)).toBe(affOffer(LIB_AFF));
+      // native modal "Visit Lemonade" in control is attributed (sub3/sub4); the injected V1 button must be too
+      expect(attributed(r.nav), 'modal Liberty click carries no sub3/sub4 experiment attribution').toBe(true);
+    });
+
+    test(`V12 v1 ${p}: keyboard Tab order follows the new visual order (Liberty before Lemonade)`, async ({ page }, info) => {
+      test.skip(!!info.project.use.isMobile, 'keyboard Tab order is a desktop check');
+      await open(page, 'v1', pg);
+      await page.evaluate(() => { const t = document.querySelector('[data-unique="comparison-table"]'); t.setAttribute('tabindex', '-1'); t.focus(); });
+      const seq = [];
+      for (let i = 0; i < 12; i++) {
+        await page.keyboard.press('Tab');
+        const du = await page.evaluate(() => { const c = document.activeElement.closest('[data-unique="comparison-table"] > *'); return c ? c.getAttribute('data-unique').replace('outbound-partner-clicks-', '').replace('-Listing-Only', '') : null; });
+        if (du && seq[seq.length - 1] !== du) seq.push(du);
+      }
+      info.annotations.push({ type: 'data', description: JSON.stringify({ seq }) });
+      expect(seq.slice(0, 2)).toEqual(['Liberty-Mutual', 'Lemonade']);
     });
   });
 }

@@ -35,3 +35,14 @@ Hero copy → "Grow your business in [City]" / "5M customers in the last 12 mont
 - WebKit iPhone emulation `page.screenshot` sometimes hangs on "waiting for fonts" — wrap with timeout + catch.
 - Native mobile /pro shows a fixed "Thumbtack for Pros — Install" app banner at the bottom.
 - Typeahead results: `li[class*="search-results_searchResult"]` (not role=option).
+
+## Round 2 retest — 2026-10-22
+**Report:** `local_testing/Local2/ttod-preset-jobs-qa-report-r2.html` (+ `ttod-screenshots-r2/`) · **Scripts:** `testing/ttod-recon/r2/`
+(`extract.js` bundle check, `func.js` interactions, `resp.js` overflow sweep, `fold.js` clean fold shots).
+Deployed bundle = local va3 (new images: hero `d0150460…`, cards `e633b72a…` / `f9723f4c…`).
+- BUG-01..04 all FIXED on Chrome+Safari desktop+iPhone 12; no overflow 320–1920.
+- Section CTA reworked: scrolls to hero then `.click()`s the visible hero Sign up button (empty field → native
+  validation focuses input; service chosen → /pro/occupation/1). **Q-03:** synthetic click can fire hero-CTA goals.
+- L-01 mobile scroll visibly overshoots ~215px then corrects; L-02 only "See how it works" is a button now.
+- New images' overlay copy ("Ted L. messaged you" + grey placeholder bars) differs from wireframe — swapped on purpose.
+- Gotcha: screenshots taken after scrolling show hero fields missing (they move into the native sticky bar) — use a fresh load.

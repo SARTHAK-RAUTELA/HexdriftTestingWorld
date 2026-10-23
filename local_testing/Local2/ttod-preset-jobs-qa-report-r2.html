@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TTOD Preset Jobs Retest</title>
+<style>
+  :root { --bg:#fff; --fg:#1f2022; --muted:#595c61; --line:#e3e4e6; --pass:#0a7d3e; --fail:#c0262d; --warn:#a15c00; --info:#0175a3; --chip:#f4f5f6; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16171a; --fg:#eceef0; --muted:#a3a7ad; --line:#2c2e33; --pass:#4cc983; --fail:#ff6b70; --warn:#f0a840; --info:#5cc4f0; --chip:#22242a; } }
+  :root[data-theme="dark"] { --bg:#16171a; --fg:#eceef0; --muted:#a3a7ad; --line:#2c2e33; --pass:#4cc983; --fail:#ff6b70; --warn:#f0a840; --info:#5cc4f0; --chip:#22242a; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 -apple-system, Segoe UI, Helvetica, Arial, sans-serif; }
+  main { max-width:1100px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:26px; margin:0 0 4px; } h2 { font-size:20px; margin:40px 0 12px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+  h3 { font-size:16px; margin:24px 0 6px; }
+  .meta { color:var(--muted); font-size:14px; }
+  .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:20px 0; }
+  .tile { border:1px solid var(--line); border-radius:8px; padding:12px; } .tile b { display:block; font-size:24px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; } th, td { border-bottom:1px solid var(--line); padding:7px 8px; text-align:left; vertical-align:top; }
+  th { background:var(--chip); } .tw { overflow-x:auto; }
+  .p { color:var(--pass); font-weight:700; } .f { color:var(--fail); font-weight:700; } .w { color:var(--warn); font-weight:700; } .i { color:var(--info); font-weight:700; }
+  .bug { border:1px solid var(--line); border-left:4px solid var(--fail); border-radius:6px; padding:12px 16px; margin:16px 0; }
+  .bug.fixed { border-left-color:var(--pass); } .bug.q { border-left-color:var(--info); } .bug.low { border-left-color:var(--muted); }
+  code, pre { background:var(--chip); border-radius:4px; font-size:13px; } code { padding:1px 4px; } pre { padding:10px; overflow-x:auto; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-top:10px; }
+  figure { margin:0; } figure img { width:100%; border:1px solid var(--line); border-radius:6px; } figcaption { font-size:12px; color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<h1>Thumbtack: Preset Jobs on Pro Landing Page (TTOD), Round 2 retest</h1>
+<div class="meta">Retest date 2026-10-22 · Round 1: 2026-10-21 (<code>ttod-preset-jobs-qa-report.html</code>) · Preview <code>/pro?QA=QA-testing</code> forced with <code>&amp;optimizely_x=5442504495988736</code><br>
+Optimizely exp <code>6154131621019648</code> · Variation #1 <code>5442504495988736</code> · Code <code>local_testing/Local2/variation/va3.js</code> / <code>va3.css</code><br>
+Browsers: Chrome desktop (1440), Chrome mobile (iPhone 12), Safari desktop (WebKit 1440), Safari mobile (WebKit iPhone 12). Responsive sweep across 18 widths from 320 to 1920 in both engines.</div>
+
+<div class="summary">
+  <div class="tile"><b class="p">4 / 4</b>Round-1 bugs fixed</div>
+  <div class="tile"><b class="p">0</b>New blocking bugs</div>
+  <div class="tile"><b class="i">3</b>Open questions (Q-01, Q-02 carried over, Q-03 new)</div>
+  <div class="tile"><b class="w">4</b>Low / notes</div>
+</div>
+
+<p><b>Verdict: ready to launch from a functional standpoint.</b> BUG-01 to BUG-04 are fixed on all four browser/device combos, and the new hero and section images load everywhere. No new functional bugs. Before launch the client should answer Q-03 (the section CTA now fires a synthetic click on the hero button, which can count toward hero-CTA goals) and confirm Q-01 (mobile copy). Neither blocks the build itself.</p>
+
+<h2>Round-1 bugs: status</h2>
+<div class="tw"><table>
+<tr><th>Bug</th><th>Round 1</th><th>Round 2 result</th><th>Chrome desk</th><th>Chrome mob</th><th>Safari desk</th><th>Safari mob</th></tr>
+<tr><td>BUG-01 [High]</td><td>Hero inputs half-styled</td><td>Both pills white, 1px <code>#dddee1</code> border, full radius, icon area transparent; matches wireframe</td><td class="p">Fixed</td><td class="p">Fixed</td><td class="p">Fixed</td><td class="p">Fixed</td></tr>
+<tr><td>BUG-02 [Med]</td><td>Mobile bar tap overshoots −215px</td><td>Click, Enter and Space all settle with the section top at 0–1px</td><td class="p">0</td><td class="p">0 (see L-01)</td><td class="p">1</td><td class="p">1 (see L-01)</td></tr>
+<tr><td>BUG-03 [Med]</td><td>Section CTA never focused service input</td><td>Reworked: scrolls to hero, then clicks the visible hero "Sign up" button. Empty field: focus lands on the service input with native validation (red placeholder). Service chosen: goes straight to <code>/pro/occupation/1?…</code></td><td class="p">Fixed</td><td class="p">Fixed</td><td class="p">Fixed</td><td class="p">Fixed</td></tr>
+<tr><td>BUG-04 [Med]</td><td>Horizontal overflow at 1025–~1095px</td><td><code>scrollWidth == clientWidth</code> at every width from 320 to 1920 (incl. 1025/1040/1060/1080/1100/1120) in both engines</td><td class="p" colspan="4">Fixed</td></tr>
+</table></div>
+
+<h2>Full check matrix</h2>
+<div class="tw"><table>
+<tr><th>#</th><th>Check</th><th>Chrome desktop</th><th>Chrome mobile</th><th>Safari desktop</th><th>Safari mobile</th></tr>
+<tr><td>1</td><td>Variation fires; deployed bundle = local va3 (new image hashes present, old ones gone)</td><td class="p" colspan="4">Pass</td></tr>
+<tr><td>2</td><td>H1 "Grow your business in [City]" + subhead</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>3</td><td>New hero image loads (<code>d0150460…png</code>, 1506×1356)</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>4</td><td>New card images load (<code>e633b72a…</code> 1402×1191, <code>f9723f4c…</code> 1398×1191), alt text set</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>5</td><td>Hero inputs match wireframe</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>6</td><td>Bar CTA click / Enter / Space lands on section top</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>7</td><td>Section placement + cards side-by-side ≥1025 / stacked below</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>8</td><td>Section CTA: empty fields → back to hero, service input focused</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>9</td><td>Section CTA: service chosen → signup flow</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>10</td><td>Hero form regression (typeahead 5 results → <code>/pro/occupation/1</code>)</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>11</td><td>Persists after 12s; 1 bar, 1 section; listener guard set</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>12</td><td>No JS errors from variation (only known site noise)</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td><td class="p">Pass</td></tr>
+<tr><td>13</td><td>No horizontal overflow 320–1920</td><td class="p" colspan="4">Pass</td></tr>
+<tr><td>14</td><td>Section copy vs wireframe</td><td class="i" colspan="4">Q-01 still open</td></tr>
+<tr><td>15</td><td>Hero / card image overlay copy vs wireframe</td><td class="i" colspan="4">Info: images were swapped intentionally; see note under Q-01</td></tr>
+</table></div>
+
+<h2>Fixed: evidence</h2>
+<div class="bug fixed">
+<h3>BUG-01: Hero inputs</h3>
+<p>The CSS now styles <code>TextInput_inputStyles</code> directly. Computed on all 4 combos: border <code>1px rgb(221,222,225)</code>, radius <code>9999px</code>, wrench/pin icon backgrounds transparent. Focus darkens the border to <code>#8d8f94</code>.</p>
+<div class="shots"><figure><img src="ttod-screenshots-r2/chromium-desktop-inputs.png"><figcaption>Round 2: both fields white with grey border</figcaption></figure>
+<figure><img src="ttod-screenshots/bug-input-styling-variation.png"><figcaption>Round 1, for comparison</figcaption></figure></div>
+</div>
+<div class="bug fixed">
+<h3>BUG-02: Mobile bar scroll</h3>
+<p><code>scrollToEl()</code> now re-checks the target after the scroll settles and corrects up to 3 times. Section top sampled every 250ms after tapping the button:</p>
+<pre>Chrome mobile : 495, -128, -215, -15, 0, 0, 0 …
+Safari mobile : -214, -214, 1, 1, 1 …
+Desktop (both): 0 / 1 throughout</pre>
+<div class="shots"><figure><img src="ttod-screenshots-r2/webkit-mobile-after-bar-click.png"><figcaption>Safari iPhone 12 after tapping the bar: the title is at the top</figcaption></figure></div>
+</div>
+<div class="bug fixed">
+<h3>BUG-03: Section "Sign up for free"</h3>
+<p>The approach changed. The button no longer focuses the input directly. It scrolls to the hero and then clicks the visible hero "Sign up" button, re-queried after the scroll, so the detached-node problem is gone. The native form handles what happens next:</p>
+<ul><li><b>Empty service field:</b> the service input gets focus and its placeholder turns red (native validation). The URL doesn't change. <code>activeElement</code> = <code>INPUT "What service do you provide?"</code> on all 4 combos.</li>
+<li><b>Service already chosen in the hero:</b> goes straight to <code>/pro/occupation/1?category_pk=…&amp;zipcode=10118&amp;rawSearchQuery=House%20cleaning</code>, the same as submitting the hero.</li></ul>
+<div class="shots"><figure><img src="ttod-screenshots-r2/chromium-desktop-after-signup-click.png"><figcaption>Desktop after section CTA with an empty field: hero in view, service input focused and flagged</figcaption></figure>
+<figure><img src="ttod-screenshots-r2/webkit-mobile-after-signup-click.png"><figcaption>Safari iPhone 12, same flow</figcaption></figure></div>
+</div>
+<div class="bug fixed">
+<h3>BUG-04: 1025–1095px overflow</h3>
+<p>The grid is now <code>minmax(0,570px) minmax(0,540px)</code> with a 48px gap, and the cards use <code>flex: 0 1 467px</code>. At 1025 the columns are 465/465 and the cards 465/465, with no overflow.</p>
+<div class="shots"><figure><img src="ttod-screenshots-r2/chromium-1025-fold.png"><figcaption>1025px: 2 columns, no horizontal scroll</figcaption></figure></div>
+</div>
+
+<h2>Questions for the client</h2>
+<div class="bug q">
+<h3>Q-03 (new): The section CTA programmatically clicks the hero "Sign up" button. Is that OK for goal tracking?</h3>
+<p>The new code calls <code>button.click()</code> on the hero CTA. That dispatches a real <code>click</code> event (captured as untrusted, <code>isTrusted=false</code>), so any Optimizely or analytics goal bound to the hero Sign up button also fires when the user clicked the <i>section</i> button. That inflates hero-CTA clicks in the variation compared with the control. If hero-CTA clicks are a goal, either exclude synthetic clicks or add a dedicated event for the section CTA (also relates to round-1 L-03: no custom events yet).</p>
+</div>
+<div class="bug q">
+<h3>Q-01 (carried over): Desktop vs Mobile wireframe copy</h3>
+<p>Still unanswered. The build uses the "Desktop Web" copy ("Two ways to get hired / Customers find you / Claim available jobs") on every device.</p>
+<p><b>Note on the new images:</b> the swapped hero and card images now carry different overlay copy from the wireframe. Wireframe: "Deck refinishing · Send a quote · Set your price · Sarah K. · Greenpoint" and "Tv mounting · Free to claim · $120 · Woodside · Oct 5". New images: "Ted L. messaged you · Reply now · Deck refinishing" with grey placeholder bars, and "Ready to claim · Claim now · TV mounting · $120 · Oct 5". You said the images were changed on purpose, so this is recorded as info, not a bug. Please confirm the grey placeholder bars in the "Ted L." card are intended rather than an unfinished export.</p>
+<div class="shots"><figure><img src="ttod-screenshots-r2/chromium-1440-fold.png"><figcaption>Round 2 hero, 1440</figcaption></figure><figure><img src="ttod-screenshots/wireframe-dHero.png"><figcaption>Wireframe hero (old image copy)</figcaption></figure>
+<figure><img src="ttod-screenshots-r2/chromium-1440-twoways.png"><figcaption>Round 2 section, 1440</figcaption></figure><figure><img src="ttod-screenshots/wireframe-dTwo.png"><figcaption>Wireframe section</figcaption></figure></div>
+</div>
+<div class="bug q">
+<h3>Q-02 (carried over): Overlapping /pro experiments</h3>
+<p>Still applies. When the CTA-copy experiment <code>6405370246070272</code> is also active, the hero button reads "Sign up" while the section reads "Sign up for free" (seen in this run at 1025px and on Safari iPhone 12).</p>
+</div>
+
+<h2>Low / notes</h2>
+<div class="bug low"><ul>
+<li><b>L-01 (new):</b> The mobile bar scroll is fixed, but the correction is visible: the page first stops ~215px past the title, holds there for ~0.25–0.5s, then glides back up. It's cosmetic. Removing it fully would need the native element that collapses on scroll to be accounted for before scrolling starts.</li>
+<li><b>L-02 (new):</b> Only "See how it works" is a button now. The rest of the bar text ("Show up in search, or claim available jobs.") is no longer clickable (desktop text click: no scroll). Semantically this is better, but the tap target on mobile is smaller than in round 1. Fine if intended.</li>
+<li><b>L-03 (new):</b> With an empty service field, the section CTA ends on a red "error" placeholder. That's native validation, but a user who simply clicked "Sign up for free" might read it as an error rather than a prompt. Low; for the client's awareness.</li>
+<li><b>Carried:</b> On desktop the native sticky bottom search bar still covers the section CTA when the CTA sits in the bottom ~130px of the viewport (native). The no-geo H1 risk is unchanged. Console noise is the same as round 1 (stale exp 5870164508409856, React #418, Genesys/Branch/Bing CORS), none of it from this variation.</li>
+</ul></div>
+
+<h2>Screenshots</h2>
+<div class="shots">
+<figure><img src="ttod-screenshots-r2/chromium-1440-fold.png"><figcaption>Chrome 1440 above the fold</figcaption></figure>
+<figure><img src="ttod-screenshots-r2/webkit-768-fold.png"><figcaption>Safari 768 (stacked)</figcaption></figure>
+<figure><img src="ttod-screenshots-r2/webkit-iphone12-fold.png"><figcaption>Safari iPhone 12 hero + bar (native Install banner)</figcaption></figure>
+<figure><img src="ttod-screenshots-r2/chromium-iphone12-twoways.png"><figcaption>Chrome iPhone 12: Two ways section with new images</figcaption></figure>
+<figure><img src="ttod-screenshots-r2/chromium-desktop-signup-with-service.png"><figcaption>Section CTA with service chosen → signup flow</figcaption></figure>
+</div>
+</main>
+</body>
+</html>

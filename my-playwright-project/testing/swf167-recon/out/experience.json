@@ -1,0 +1,177 @@
+{
+  "e": {
+    "id": "100052999",
+    "name": "Test #100052999",
+    "type": "a/b",
+    "status": "active",
+    "global_js": null,
+    "global_css": "",
+    "settings": {
+      "min_order_value": 0,
+      "max_order_value": 99999,
+      "matching_options": {
+        "audiences": "any",
+        "locations": "any"
+      },
+      "placeholders": [],
+      "outliers": {
+        "order_value": {
+          "detection_type": "none"
+        },
+        "products_ordered_count": {
+          "detection_type": "none"
+        }
+      }
+    },
+    "version": 12,
+    "locations": [
+      "100012048"
+    ],
+    "site_area": null,
+    "audiences": [
+      "10006103"
+    ],
+    "goals": [
+      "100034508",
+      "100038337"
+    ],
+    "integrations": [],
+    "variations": [
+      {
+        "id": "1000257732",
+        "name": "Var #1000257732",
+        "status": "running",
+        "changes": [],
+        "traffic_allocation": 50
+      },
+      {
+        "id": "1000257733",
+        "name": "Var #1000257733",
+        "status": "running",
+        "changes": [
+          {
+            "id": 1000153692,
+            "type": "customCode",
+            "data": {
+              "css": "html body .cre-t-167-vetApprovedLink {\r\n    cursor: pointer;\r\n    color: #000000;\r\n}\r\n\r\nhtml body .cre-t-167-vetApprovedLink:hover {\r\n    background: #ffffff !important;\r\n    color: #0272E4 !important;\r\n}\r\n\r\nhtml body .cre-t-167-accordion_header {\r\n    background-color: rgba(0, 0, 0, 0);\r\n    color: #000000;\r\n    padding-top: 2rem;\r\n    padding-left: 0rem;\r\n    padding-bottom: 2rem;\r\n    padding-right: 0rem;\r\n    color: inherit;\r\n    cursor: pointer;\r\n    font-size: .7em;\r\n    letter-spacing: .1em;\r\n    transition: all var(--extras-accordion-duration);\r\n    text-transform: uppercase;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    border: none;\r\n    box-shadow: none;\r\n    text-align: left;\r\n    font-family: inherit;\r\n}\r\n\r\nhtml body .cre-t-167-accordion_toggle-icon {\r\n    fill: currentColor;\r\n    font-size: 1em;\r\n    height: 1em;\r\n    width: 1em;\r\n    transition: transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);\r\n    -webkit-transition: -webkit-transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration) / 2);\r\n}\r\n\r\nhtml body .cre-t-167-accordion_item.active .cre-t-167-accordion_header,\r\nhtml body .cre-t-167-accordion_item .cre-t-167-accordion_header:hover {\r\n    color: #0272e4 !important;\r\n}\r\n\r\n@media screen and (max-width: 1060px) and (min-width:991px) {\r\n    html body .oxy-header-left img {\r\n        width: 350px !important;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 768px) {\r\n    html body .cre-t-167-vetApprovedLink {\r\n        font-size: 14px !important;\r\n    }\r\n\r\n    html body .oxy-header-right nav li{\r\n        margin-right: 10px !important;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 370px) {\r\n    html body .oxy-header-right nav li a,\r\n    html body .cre-t-167-vetApprovedLink {\r\n        font-size: 12px !important;\r\n    }\r\n}",
+              "js": "function(convertContext){ \n(function () {\n  try {\n    var debug = 0;\n    var variation_name = \"cre-t-167\";\n\n    // Rendered in this order, above the existing FAQs\n    let NewFAQs = [\n      {\n        Key: \"donations\",\n        Question: \"We donate to animal welfare charities and match your gifts\",\n        Answer:\n          \"We donate for every policy purchased through us, helping animals in need. Want to join us? Donate to the American Humane Society and forward your receipt to info@petinsurancegurus.com. We’ll match your donation up to $100, doubling your impact.\",\n      },\n    ];\n\n    function scrollToEl(selector) {\n      var el = document.querySelector(selector);\n      if (!el) return;\n      var top = el.getBoundingClientRect().top + window.pageYOffset - 100;\n      window.scrollTo({ top: top, behavior: \"smooth\" });\n    }\n\n    function waitForjQuery(trigger, delayInterval, delayTimeout) {\n      var interval = setInterval(function () {\n        if (window.jQuery !== undefined) {\n          clearInterval(interval);\n          trigger(window.jQuery);\n        }\n      }, delayInterval);\n      setTimeout(function () {\n        clearInterval(interval);\n      }, delayTimeout);\n    }\n\n    function generateAccordianItem(faq) {\n      let Question = faq.Question;\n      let Answer = faq.Answer;\n\n      return `<div class=\"cre-t-167-accordion_item oxy-pro-accordion_item\" data-faq=\"${faq.Key}\">\n    <button class=\"cre-t-167-accordion_header\" aria-expanded=\"false\">\n        <span class=\"cre-t-167-accordion_title-area oxy-pro-accordion_title-area\">\n            <h4 class=\"cre-t-167-accordion_title oxy-pro-accordion_title\">${Question}</h4>\n            <span class=\"cre-t-167-accordion_subtitle\"></span>\n        </span>\n        <span class=\"cre-t-167-accordion_icon cre-t-167-accordion_icon-animate oxy-pro-accordion_icon oxy-pro-accordion_icon-animate\">\n            <svg class=\"cre-t-167-accordion_toggle-icon oxy-pro-accordion_toggle-icon\">\n                <use xlink:href=\"#Bootstrapbootstrap-icon-plus\"></use>\n            </svg>\n        </span>\n    </button>\n    <div class=\"cre-t-167-accordion_body oxy-pro-accordion_body\">\n        <div class=\"cre-t-167-accordion_content\">\n            <p>${Answer}</p>\n        </div>\n    </div>\n</div>`;\n    }\n\n    function waitForElement(selector, trigger, delayInterval = 50, delayTimeout = 15000) {\n      var interval = setInterval(function () {\n        if (document && document.querySelector(selector) && document.querySelectorAll(selector).length > 0) {\n          clearInterval(interval);\n          trigger(document.querySelector(selector));\n        }\n      }, delayInterval);\n      setTimeout(function () {\n        clearInterval(interval);\n      }, delayTimeout);\n    }\n\n    // Delegated listener. Pass capture = true to run before the theme's own handlers.\n    function live(selector, event, callback, context = document, capture = false) {\n      const liveHandler = (e) => {\n        const el = e.target && e.target.closest ? e.target.closest(selector) : null;\n        if (el && el !== context) {\n          callback.call(el, e);\n        }\n      };\n      context.addEventListener(event, liveHandler, capture);\n    }\n\n    // Open first, then scroll once the slide animation has finished\n    function openFAQ(key) {\n      let itemSelector = `.cre-t-167-accordion_item[data-faq=\"${key}\"]`;\n      let item = document.querySelector(itemSelector);\n      if (!item) return;\n\n      if (!item.classList.contains(\"active\")) {\n        item.querySelector(\".cre-t-167-accordion_header\").click();\n      }\n\n      // Slide speed is 300ms; wait slightly longer so layout has settled\n      setTimeout(function () {\n        scrollToEl(`${itemSelector} .cre-t-167-accordion_header`);\n      }, 350);\n    }\n\n    function eventHandler() {\n      // \"Donations\" nav link — capture phase so the theme's nav handler can't swallow it.\n      // Matches by class OR by href, so it still works if the nav re-renders and drops the class.\n      live(\n        \".cre-t-167-donations a, a[href='#faq-donations']\",\n        \"click\",\n        function (e) {\n          e.preventDefault();\n          e.stopPropagation();\n          if (debug) console.log(\"clicked donations\");\n          openFAQ(\"donations\");\n        },\n        document,\n        true,\n      );\n\n      // Accordion toggle for the new FAQ items\n      live(\".cre-t-167-accordion_item button\", \"click\", function (e) {\n        e.preventDefault();\n        e.stopImmediatePropagation();\n        var $button = jQuery(this);\n        var $item = $button.closest(\".cre-t-167-accordion_item\");\n        var $body = $item.find(\".oxy-pro-accordion_body\");\n        var speed = 300;\n\n        // Close any open accordion items (existing and new), excluding the current one\n        jQuery(\".oxy-pro-accordion_item.active\")\n          .not($item[0])\n          .each(function () {\n            var $active = jQuery(this);\n            if ($active.hasClass(\"cre-t-167-accordion_item\")) {\n              // New item — close directly since it has no jQuery handler\n              $active.find(\".oxy-pro-accordion_body\").slideUp(speed);\n              $active.find(\".cre-t-167-accordion_header\").attr(\"aria-expanded\", \"false\");\n              $active.removeClass(\"active\");\n            } else {\n              // Existing item — trigger its jQuery handler to close it properly\n              $active.find(\".oxy-pro-accordion_header\").trigger(\"click\");\n            }\n          });\n\n        // Toggle current item open/closed\n        $item.toggleClass(\"active\");\n        $body.slideToggle(speed);\n        $button.attr(\"aria-expanded\", function (i, val) {\n          return val === \"true\" ? \"false\" : \"true\";\n        });\n      });\n    }\n\n    function replaceContactWithDonations() {\n      waitForElement('.oxy-site-navigation.header-nav ul li.menu-item a[href*=\"/contact-us\"]', function () {\n        document.querySelectorAll('.oxy-site-navigation.header-nav ul li.menu-item a[href*=\"/contact-us\"]').forEach(function (link) {\n          var item = link.closest(\"li\");\n          if (!item || item.classList.contains(variation_name + \"-donations\")) return;\n\n          link.textContent = \"Donations\";\n          link.setAttribute(\"href\", \"#faq-donations\");\n          item.classList.add(variation_name + \"-donations\");\n\n          // Order: How We Rank, Donations, About\n          var about = item.parentElement.querySelector('li.menu-item a[href*=\"/about-us\"]');\n          if (about && about.closest(\"li\")) {\n            about.closest(\"li\").insertAdjacentElement(\"beforebegin\", item);\n          }\n        });\n      });\n    }\n\n    // If test 144 is running, wait for its FAQ item to be inserted first.\n    // If it never shows up (144 not active), continue after the timeout.\n    function waitFor144(callback, delayInterval = 50, delayTimeout = 1500) {\n      var done = false;\n      function finish() {\n        if (done) return;\n        done = true;\n        clearInterval(interval);\n        clearTimeout(timer);\n        callback();\n      }\n      var interval = setInterval(function () {\n        if (document.querySelector(\".cre-t-144-accordion_item\")) finish();\n      }, delayInterval);\n      var timer = setTimeout(finish, delayTimeout);\n    }\n\n    function init() {\n      document.querySelector(\"body\").classList.add(variation_name);\n\n      // Insert new FAQs at the very top (above test 144's item too, if present)\n      if (!document.querySelector(\".cre-t-167-accordion_item\")) {\n        let Accordian = NewFAQs.map(generateAccordianItem).join(\"\");\n        document.querySelector(\".faq-container .oxy-pro-accordion .oxy-pro-accordion_item:first-child\").insertAdjacentHTML(\"beforebegin\", Accordian);\n      }\n\n      // Safety: if another test inserts later, keep 167 first (watch for 10s)\n      var container = document.querySelector(\".faq-container .oxy-pro-accordion_inner\") || document.querySelector(\".faq-container .oxy-pro-accordion\");\n      if (container) {\n        var keep167OnTop = function () {\n          var item167 = container.querySelector(\".cre-t-167-accordion_item\");\n          if (item167 && item167 !== container.firstElementChild) {\n            container.insertBefore(item167, container.firstElementChild);\n          }\n        };\n        var observer = new MutationObserver(keep167OnTop);\n        observer.observe(container, { childList: true });\n        setTimeout(function () {\n          observer.disconnect();\n        }, 10000);\n      }\n\n      replaceContactWithDonations();\n\n      // Bind handlers once\n      if (!window.EventHandlerAddedTest167) {\n        eventHandler();\n        window.EventHandlerAddedTest167 = true;\n      }\n    }\n\n    /* Initialize variation */\n    waitForjQuery(function () {\n      waitForElement(\".faq-container .oxy-pro-accordion .oxy-pro-accordion_item:first-child\", function () {\n        // Wait for 144's FAQ only if test 144 is active on this page\n        if (document.body.classList.contains(\"cre-t-144\")) {\n          waitFor144(init);\n        } else {\n          init();\n        }\n      });\n    });\n  } catch (e) {\n    if (debug) console.log(e, \"error in Test \" + variation_name);\n  }\n})();\n}"
+            }
+          },
+          {
+            "id": 1000153693,
+            "type": "defaultCode",
+            "data": {
+              "js": null,
+              "css": "",
+              "custom_js": null
+            }
+          }
+        ],
+        "traffic_allocation": 50
+      }
+    ]
+  },
+  "goals": [
+    {
+      "id": "100034508",
+      "name": "Goal #100034508",
+      "type": "code_trigger",
+      "rules": []
+    },
+    {
+      "id": "100038337",
+      "name": "Goal #100038337",
+      "type": "code_trigger",
+      "rules": []
+    }
+  ],
+  "locs": [
+    {
+      "id": "100012048",
+      "name": "Location #100012048",
+      "rules": {
+        "OR": [
+          {
+            "AND": [
+              {
+                "OR_WHEN": [
+                  {
+                    "rule_type": "url",
+                    "matching": {
+                      "match_type": "matches",
+                      "negated": false
+                    },
+                    "value": "https://petinsurancegurus.com/"
+                  },
+                  {
+                    "rule_type": "url",
+                    "matching": {
+                      "match_type": "matches",
+                      "negated": false
+                    },
+                    "value": "https://petinsurancegurus.com/home/"
+                  },
+                  {
+                    "rule_type": "url",
+                    "matching": {
+                      "match_type": "matches",
+                      "negated": false
+                    },
+                    "value": "https://petinsurancegurus.com/comparison/"
+                  },
+                  {
+                    "rule_type": "url",
+                    "matching": {
+                      "match_type": "matches",
+                      "negated": false
+                    },
+                    "value": "https://petinsurancegurus.com/compare/"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "trigger": {
+        "type": "upon_run"
+      }
+    }
+  ],
+  "auds": [
+    {
+      "id": "10006103",
+      "name": "Audience #10006103",
+      "rules": {
+        "OR": [
+          {
+            "AND": [
+              {
+                "OR_WHEN": [
+                  {
+                    "rule_type": "cookie",
+                    "matching": {
+                      "match_type": "matches",
+                      "negated": false
+                    },
+                    "value": "qa",
+                    "key": "cro_mode"
+                  },
+                  {
+                    "rule_type": "js_condition",
+                    "matching": {
+                      "match_type": "equals",
+                      "negated": false
+                    },
+                    "value": "function(convertContext){ \n return (new URLSearchParams(location.search).get('cro_mode')==='qa');\n}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "type": "permanent"
+    }
+  ]
+}

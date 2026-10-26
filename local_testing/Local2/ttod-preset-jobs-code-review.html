@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TTOD Code Review</title>
+<style>
+  :root { --bg:#fff; --fg:#1f2022; --muted:#595c61; --line:#e3e4e6; --pass:#0a7d3e; --fail:#c0262d; --warn:#a15c00; --info:#0175a3; --chip:#f4f5f6; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16171a; --fg:#eceef0; --muted:#a3a7ad; --line:#2c2e33; --pass:#4cc983; --fail:#ff6b70; --warn:#f0a840; --info:#5cc4f0; --chip:#22242a; } }
+  :root[data-theme="dark"] { --bg:#16171a; --fg:#eceef0; --muted:#a3a7ad; --line:#2c2e33; --pass:#4cc983; --fail:#ff6b70; --warn:#f0a840; --info:#5cc4f0; --chip:#22242a; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 -apple-system, Segoe UI, Helvetica, Arial, sans-serif; }
+  main { max-width:1100px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:26px; margin:0 0 4px; } h2 { font-size:20px; margin:40px 0 12px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+  h3 { font-size:16px; margin:0 0 6px; }
+  .meta { color:var(--muted); font-size:14px; }
+  .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:20px 0; }
+  .tile { border:1px solid var(--line); border-radius:8px; padding:12px; } .tile b { display:block; font-size:24px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; } th, td { border-bottom:1px solid var(--line); padding:7px 8px; text-align:left; vertical-align:top; }
+  th { background:var(--chip); } .tw { overflow-x:auto; }
+  .p { color:var(--pass); font-weight:700; } .f { color:var(--fail); font-weight:700; } .w { color:var(--warn); font-weight:700; } .i { color:var(--info); font-weight:700; } .m { color:var(--muted); font-weight:700; }
+  .bug { border:1px solid var(--line); border-left:4px solid var(--fail); border-radius:6px; padding:12px 16px; margin:16px 0; }
+  .bug.med { border-left-color:var(--warn); } .bug.low { border-left-color:var(--muted); } .bug.q { border-left-color:var(--info); }
+  .bug ul { margin:6px 0; padding-left:20px; }
+  code, pre { background:var(--chip); border-radius:4px; font-size:13px; } code { padding:1px 4px; overflow-wrap:anywhere; } pre { padding:10px; overflow-x:auto; }
+  .label { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-top:10px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Thumbtack: Preset Jobs on Pro Landing Page (TTOD), code review</h1>
+<div class="meta">Review date 2026-10-23 · Optimizely exp <code>6154131621019648</code> · Variation #1 <code>5442504495988736</code><br>
+Code reviewed: <code>local_testing/Local2/variation/va3.js</code> (166 lines) / <code>va3.css</code> (378 lines). Local code spot-checked against the deployed bundle captured 2026-10-22 (<code>testing/ttod-recon/r2/live-bundle.js</code>): matching lines are present.<br>
+Reviewed against the Brillmark 11-point code review checklist.</div>
+
+<div class="summary">
+  <div class="tile"><b class="f">1</b>High</div>
+  <div class="tile"><b class="w">2</b>Medium</div>
+  <div class="tile"><b class="m">2</b>Low</div>
+  <div class="tile"><b class="p">3</b>Checklist rules passed</div>
+  <div class="tile"><b class="i">3</b>Not applicable</div>
+</div>
+
+<p><b>Verdict: functionally fine (QA Round 2 passed), but several checklist rules fail.</b> The main problems: selectors match partial generated class names, the bottom Sign-up CTA has no fallback, the hero changes are applied only during the first 10 seconds, and the scroll interval has no hard stop and isn't cleared on repeat clicks. The CSS also has duplicate rules and depends on another experiment's body class.</p>
+
+<h2>Checklist summary</h2>
+<div class="tw"><table>
+<tr><th>#</th><th>Rule</th><th>Result</th><th>Where</th></tr>
+<tr><td>1</td><td>Variation class name present</td><td class="w">Partial</td><td>Body class added (<code>va3.js:143</code>); injected-component CSS not scoped under it</td></tr>
+<tr><td>2</td><td>Check element exists before injecting</td><td class="p">Pass</td><td><code>va3.js:99</code>, <code>va3.js:105</code></td></tr>
+<tr><td>3</td><td>Intervals cleared under a setTimeout</td><td class="f">Fail</td><td>Main interval OK (<code>va3.js:146-155</code>); <code>scrollToEl</code> interval (<code>va3.js:66</code>) has no timeout to force it off and isn't cleared on repeat clicks</td></tr>
+<tr><td>4</td><td>live() delegation, handlers in one function, window flag</td><td class="p">Pass</td><td><code>va3.js:110-140</code>, flag <code>window.bmPresetJobsProLpEvents</code></td></tr>
+<tr><td>5</td><td>Fallback when hide/inject logic fails</td><td class="f">Fail</td><td>Sign-up CTA (<code>va3.js:131-137</code>), 10-second-only re-apply (<code>va3.js:146-155</code>), hidden <code>&lt;picture&gt;</code> (<code>va3.css:85-87</code>)</td></tr>
+<tr><td>6</td><td>Debounce on observers / scroll detectors</td><td class="i">N/A</td><td>No observer or scroll listener used</td></tr>
+<tr><td>7</td><td>Observers disconnected</td><td class="i">N/A</td><td>No observer used</td></tr>
+<tr><td>8</td><td>No unnecessary code</td><td class="f">Fail</td><td>Duplicate CSS, rules depending on another test, leftover button styles, unused ID, try/catch that catches almost nothing</td></tr>
+<tr><td>9</td><td>Fetched data cached in session</td><td class="i">N/A</td><td>No fetch calls; images come straight from the Optimizely CDN</td></tr>
+<tr><td>10</td><td>Loops cleared</td><td class="w">Partial</td><td><code>for</code> loop returns early (OK); interval-based loop: see rule 3</td></tr>
+<tr><td>11</td><td>Never use dynamic selectors</td><td class="f">Fail</td><td>Most selectors that target the page: <code>va3.js:5-8, 131</code>, most of <code>va3.css</code></td></tr>
+</table></div>
+
+<h2>Findings</h2>
+
+<div class="bug">
+<h3>CR-01 [High] Rule 11: selectors match partial generated class names or generic utility classes</h3>
+<ul>
+  <li><b>JS:</b> <code>[class*="pro-signup-hero_heroSection"]</code>, <code>_heroTitle</code>, <code>_heroSubhead</code>, <code>[class*="how-tt-works_section"]</code> (<code>va3.js:5-8</code>) and <code>[class*="pro-signup-hero_searchFields"] button</code> (<code>va3.js:131</code>).</li>
+  <li><b>CSS:</b> the whole hero block uses <code>[class*="pro-signup-hero_*"]</code> and <code>[class*="TextInput_*"]</code>. It also relies on combinations of generic utility classes that many elements share: <code>.tc.mb5</code> (<code>va3.css:12, 292</code>), <code>.mw9</code> (<code>:39</code>), <code>.relative.mv2</code> (<code>:154, 266</code>).</li>
+  <li><b>Risk:</b> these are CSS-module names generated at build time. A Thumbtack release that renames the module or component breaks the variation silently. Utility-class combinations can also match the wrong element.</li>
+</ul>
+<div class="label">Fix</div>
+<ul>
+  <li>Stable attributes exist for the hero Sign-up buttons: <code>[data-testid="get-started-button-mobile"]</code> and <code>[data-test="get-started-button"]</code>. Another live /pro experiment already uses them. Use these at <code>va3.js:131</code> instead of the <code>searchFields button</code> + <code>offsetParent</code> lookup. The dev should confirm the desktop attribute is on the hero button.</li>
+  <li><code>#search-location-input</code> is a stable ID; use it for input styling where possible.</li>
+  <li>Where no stable hook exists (hero section, h1, subhead, How-it-works section), add a comment saying so, so the risk is known.</li>
+</ul>
+</div>
+
+<div class="bug med">
+<h3>CR-02 [Medium] Rule 5: no fallback when the Sign-up CTA or hero changes fail</h3>
+<ul>
+  <li><b>Sign-up CTA can do nothing.</b> <code>va3.js:131-137</code>: after scrolling to the hero, the code clicks the first visible hero button. If none is found (selector changed, or the hero fields have moved into the native sticky search bar), the loop ends and nothing happens. The user is scrolled to the top with no signup and no feedback.</li>
+  <li><b>Changes only hold for 10 seconds.</b> <code>va3.js:146-155</code>: hero copy, bar and section are re-applied only while the 10-second polling loop runs. If React re-renders the hero after that, the h1 goes back to "Find more customers in [City]." and the injected nodes can disappear for good.</li>
+  <li><b>Low:</b> <code>va3.css:85-87</code> hides the native <code>&lt;picture&gt;</code> and relies on a CSS background image. If that CDN image fails, the hero shows an empty box.</li>
+</ul>
+<div class="label">Suggested fix</div>
+<pre>scrollToEl(HERO_SECTION, function () {
+    // visibleEl(): first match with offsetParent !== null (same check as today)
+    var btn = visibleEl('[data-test="get-started-button"], [data-testid="get-started-button-mobile"]');
+    if (btn) { btn.click(); return; }
+    // Fallback: focus the service field so the user can continue
+    var input = document.querySelector(HERO_SECTION + ' input');
+    if (input) input.focus();
+});</pre>
+<p>For re-renders after 10 seconds: either extend the poll with a backoff, or use a MutationObserver on the hero parent with a debounce, and disconnect it after N minutes or once the page is stable (rules 6 and 7 then apply).</p>
+</div>
+
+<div class="bug med">
+<h3>CR-03 [Medium] Rules 3 / 10: <code>scrollToEl</code> interval has no hard stop and stacks on repeat clicks</h3>
+<ul>
+  <li><code>va3.js:66</code> starts a new <code>setInterval</code> every time the bar CTA or section CTA is clicked. It stops through its own 3-second logic, but no <code>setTimeout</code> clears it from outside.</li>
+  <li>The handle isn't stored, so a second click doesn't stop the first loop. A double-tap on "See how it works", or clicking the bar and then Sign up, runs two correction loops that fight each other with competing <code>scrollTo</code> calls.</li>
+</ul>
+<div class="label">Suggested fix</div>
+<pre>var scrollCheck, scrollStop;
+function scrollToEl(selector, done) {
+    clearInterval(scrollCheck);
+    clearTimeout(scrollStop);
+    ...
+    scrollCheck = setInterval(function () { ... }, 150);
+    scrollStop = setTimeout(function () { clearInterval(scrollCheck); }, 3500);
+}</pre>
+</div>
+
+<div class="bug low">
+<h3>CR-04 [Low] Rule 8: code that should be removed</h3>
+<ul>
+  <li><b>Duplicate CSS:</b> <code>va3.css:154-160</code> and <code>va3.css:266-271</code> set the same pill radius on the same element; the first one also sets a transparent background. Merge them into one rule.</li>
+  <li><b>Dependency on another experiment:</b> <code>va3.css:154-167</code> only apply when <code>body.pro-page-updte</code> is present. That class comes from the old experiment <code>5870164508409856</code> ("test144"), still running at 100%. When that test is stopped, these rules silently stop working. Scope them to <code>.bm_preset_jobs_pro_lp</code> only.</li>
+  <li><b>Leftover button styles:</b> <code>.bm-hiw-bar__btn</code> (<code>va3.css:95-108</code>) still has button-reset styles (<code>border:0</code>, <code>margin:0</code>, <code>display:block</code>, <code>width:100%</code>), but it's a <code>&lt;div&gt;</code> now; only the inner <code>.bm-hiw-bar__cta</code> is a button.</li>
+  <li><b><code>try/catch</code> catches almost nothing:</b> the one at <code>va3.js:158-166</code> only wraps the start-up call. Errors inside the interval and click handlers aren't caught, so the <code>debug</code> logging is effectively dead. Move the <code>try/catch</code> inside <code>init</code> and the callbacks, or drop it.</li>
+  <li><b>Unused ID:</b> <code>id="bm-two-ways"</code> (<code>va3.js:37</code>) isn't referenced anywhere; JS and CSS use the class.</li>
+</ul>
+</div>
+
+<div class="bug low">
+<h3>CR-05 [Low] Rule 1: injected-component CSS not scoped to the variation class</h3>
+<p>The body class <code>bm_preset_jobs_pro_lp</code> is added (<code>va3.js:143</code>) and all hero overrides are scoped to it. The CSS for the injected components (<code>.bm-hiw-bar*</code>, <code>.bm-two-ways*</code>, <code>@keyframes bmArrowFloat</code>) is global. Prefix those rules with <code>.bm_preset_jobs_pro_lp</code> to follow the convention and avoid collisions with other tests.</p>
+</div>
+
+<div class="bug q">
+<h3>Q-03 (already raised in QA Round 2): synthetic click can inflate goals</h3>
+<p>The section CTA calls <code>.click()</code> on the hero Sign-up button. If any goal is tied to clicks on that button, clicks on the new section also count toward it. Confirm with the client whether this attribution is intended, or give the section CTA its own goal.</p>
+</div>
+
+<h2>What passed</h2>
+<ul>
+  <li><b>Rule 2:</b> <code>addBar()</code> and <code>addTwoWaysSection()</code> check for <code>.bm-hiw-bar</code> and <code>.bm-two-ways</code> before inserting (<code>va3.js:99, 105</code>). Adding the body class is safe to repeat.</li>
+  <li><b>Rule 4:</b> a delegated <code>live()</code> helper, all handlers inside <code>bindEvents()</code>, and a <code>window.bmPresetJobsProLpEvents</code> flag so listeners attach only once (<code>va3.js:110-140</code>).</li>
+  <li><b>Rule 3 (main loop):</b> the 50ms setup interval is cleared after 10 seconds (<code>va3.js:153-155</code>).</li>
+  <li><b>Rule 10:</b> the <code>for</code> loop over hero buttons returns as soon as it finds a match.</li>
+</ul>
+</main>
+</body>
+</html>

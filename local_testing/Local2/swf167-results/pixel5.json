@@ -1,0 +1,1003 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swf167-donation-matching.spec.js",
+      "file": "swf167-donation-matching.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Control",
+          "file": "swf167-donation-matching.spec.js",
+          "line": 84,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C01 Control: Contact link kept, no Donations link, no new FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Nav: Vet Approved | How We Rank | About | Contact"
+                    },
+                    {
+                      "type": "note",
+                      "description": "First FAQ in control: Vets love pet insurance"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 26168,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:23:31.904Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Nav: Vet Approved | How We Rank | About | Contact"
+                        },
+                        {
+                          "type": "note",
+                          "description": "First FAQ in control: Vets love pet insurance"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-965ef4f88fca9be87b79",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 85,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Variation",
+          "file": "swf167-donation-matching.spec.js",
+          "line": 103,
+          "column": 6,
+          "specs": [
+            {
+              "title": "V01 Header: Contact replaced by \"Donations\" between How We Rank and About",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Nav: Vet Approved | How We Rank | Donations | About"
+                    },
+                    {
+                      "type": "note",
+                      "description": "Nav link styles: 14px 400 rgb(0, 0, 0) | 14px 400 rgb(0, 0, 0) | 14px 400 rgb(0, 0, 0)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8915,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:24:00.588Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Nav: Vet Approved | How We Rank | Donations | About"
+                        },
+                        {
+                          "type": "note",
+                          "description": "Nav link styles: 14px 400 rgb(0, 0, 0) | 14px 400 rgb(0, 0, 0) | 14px 400 rgb(0, 0, 0)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-af6080271104365ea25e",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 104,
+              "column": 3
+            },
+            {
+              "title": "V02 New FAQ inserted first, exact Figma copy, collapsed by default",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "First 3 FAQs: We donate to animal welfare charities and match your gifts | Vets love pet insurance | Listings are 100% independent"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7863,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:24:09.525Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "First 3 FAQs: We donate to animal welfare charities and match your gifts | Vets love pet insurance | Listings are 100% independent"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-739b7c1448e08f54a66e",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 123,
+              "column": 3
+            },
+            {
+              "title": "V03 New FAQ matches native FAQ styling (closed)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 90022,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 90000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 90000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 90000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 90000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:24:17.422Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-ca2f5--native-FAQ-styling-closed--Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-b17e653f952b04cd4896",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 139,
+              "column": 3
+            },
+            {
+              "title": "V04 Clicking Donations (from top) scrolls to and opens the new FAQ",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.733Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-5878d137adc62c747d2f",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 158,
+              "column": 3
+            },
+            {
+              "title": "V05 Clicking Donations after scrolling to the page bottom still lands on the FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.733Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-634b9d1d30fcfcf4cabc",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 176,
+              "column": 3
+            },
+            {
+              "title": "V06 Clicking Donations again while open keeps it open (no toggle-close)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.733Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-fe8c100a0d6c50dfc0e0",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 191,
+              "column": 3
+            },
+            {
+              "title": "V07 Manual open/close of the new FAQ toggles body, icon and aria-expanded",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.733Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-2c0ecc8e7474c9c7935a",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 204,
+              "column": 3
+            },
+            {
+              "title": "V08 Opening the new FAQ closes an open native FAQ (one open at a time)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.733Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-b0b8b3cdeb11982a8a78",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 217,
+              "column": 3
+            },
+            {
+              "title": "V09 Opening the new FAQ closes an open SWF144 \"Vets love pet insurance\" FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-4117972b194adcee71f6",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 229,
+              "column": 3
+            },
+            {
+              "title": "V10 Opening a native FAQ closes the new FAQ and resets its aria-expanded",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-e7390378f0516bb08a3b",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 244,
+              "column": 3
+            },
+            {
+              "title": "V11 Keyboard: Donations link is focusable and Enter opens the FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-5b7d7eca71f43401256f",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 264,
+              "column": 3
+            },
+            {
+              "title": "V12 Re-running the variation code does not duplicate the FAQ or nav link",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-23381904a7ea285639f7",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 280,
+              "column": 3
+            },
+            {
+              "title": "V13 Target URL /: nav swap, FAQ first, link opens FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-d24f5014626010e57fd3",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 299,
+              "column": 5
+            },
+            {
+              "title": "V13 Target URL /home/: nav swap, FAQ first, link opens FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-b4e4c80ea44b023bf98e",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 299,
+              "column": 5
+            },
+            {
+              "title": "V13 Target URL /comparison/: nav swap, FAQ first, link opens FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-3585ff53e72979999802",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 299,
+              "column": 5
+            },
+            {
+              "title": "V13 Target URL /compare/: nav swap, FAQ first, link opens FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-88ca14b561c07ab9d6fc",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 299,
+              "column": 5
+            },
+            {
+              "title": "V14 Header layout: nav on one row, no overlap with logo/Prices, no horizontal scroll",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-2e20775f283c24e234af",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 317,
+              "column": 3
+            },
+            {
+              "title": "V15 Copy variants V1–V4 (Donations/Donate/Giving/Help a Pet) all fit the header",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-bbd3e23de8bb470e4d71",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 335,
+              "column": 3
+            },
+            {
+              "title": "V16 Goals: Donations-link click / FAQ open fire SWF167 goals",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-f2a4f0e0c3ecd37c7242",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 356,
+              "column": 3
+            },
+            {
+              "title": "V17 \"See How\" link exists (custom goal \"Clicks on See How Link\")",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-b8966c93f8691826b28a",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 373,
+              "column": 3
+            },
+            {
+              "title": "V18 SWF144 coexistence: Donations FAQ sits above \"Vets love pet insurance\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:25:50.735Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-654da94acbf1936050e4",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 381,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-26T10:23:31.339Z",
+    "duration": 139399.933,
+    "expected": 3,
+    "skipped": 17,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

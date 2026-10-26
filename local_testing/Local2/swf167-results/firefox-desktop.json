@@ -1,0 +1,1309 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swf167-donation-matching.spec.js",
+      "file": "swf167-donation-matching.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Control",
+          "file": "swf167-donation-matching.spec.js",
+          "line": 84,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C01 Control: Contact link kept, no Donations link, no new FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Nav: Vet Approved | How We Rank | About | Contact"
+                    },
+                    {
+                      "type": "note",
+                      "description": "First FAQ in control: Vets love pet insurance"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 34517,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:19:45.561Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Nav: Vet Approved | How We Rank | About | Contact"
+                        },
+                        {
+                          "type": "note",
+                          "description": "First FAQ in control: Vets love pet insurance"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-d4bfbb9a39cfaebb03c6",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 85,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Variation",
+          "file": "swf167-donation-matching.spec.js",
+          "line": 103,
+          "column": 6,
+          "specs": [
+            {
+              "title": "V01 Header: Contact replaced by \"Donations\" between How We Rank and About",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Nav: Vet Approved | How We Rank | Donations | About"
+                    },
+                    {
+                      "type": "note",
+                      "description": "Nav link styles: 16px 400 rgb(0, 0, 0) | 16px 400 rgb(0, 0, 0) | 16px 400 rgb(0, 0, 0)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10288,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:20:32.017Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Nav: Vet Approved | How We Rank | Donations | About"
+                        },
+                        {
+                          "type": "note",
+                          "description": "Nav link styles: 16px 400 rgb(0, 0, 0) | 16px 400 rgb(0, 0, 0) | 16px 400 rgb(0, 0, 0)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-8d0761651723e9887c18",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 104,
+              "column": 3
+            },
+            {
+              "title": "V02 New FAQ inserted first, exact Figma copy, collapsed by default",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "First 3 FAQs: We donate to animal welfare charities and match your gifts | Vets love pet insurance | Listings are 100% independent"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9002,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:20:42.451Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "First 3 FAQs: We donate to animal welfare charities and match your gifts | Vets love pet insurance | Listings are 100% independent"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-4742507ef71f659617c5",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 123,
+              "column": 3
+            },
+            {
+              "title": "V03 New FAQ matches native FAQ styling (closed)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"nTitle\":{\"fontSize\":\"16px\",\"fontFamily\":\"\\\"Montserrat\\\", arial, sans-serif\",\"fontWeight\":\"500\",\"color\":\"rgb(0, 0, 0)\",\"textTransform\":\"none\"},\"vTitle\":{\"fontSize\":\"16px\",\"fontFamily\":\"\\\"Montserrat\\\", arial, sans-serif\",\"fontWeight\":\"500\",\"color\":\"rgb(0, 0, 0)\",\"textTransform\":\"none\"},\"nBox\":{\"padTop\":\"20px\",\"padBottom\":\"20px\",\"borderBottom\":\"0px rgb(0, 0, 0)\"},\"vBox\":{\"padTop\":\"20px\",\"padBottom\":\"20px\",\"borderBottom\":\"0px rgb(0, 0, 0)\"},\"nIcon\":24,\"vIcon\":24}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9955,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:20:51.548Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"nTitle\":{\"fontSize\":\"16px\",\"fontFamily\":\"\\\"Montserrat\\\", arial, sans-serif\",\"fontWeight\":\"500\",\"color\":\"rgb(0, 0, 0)\",\"textTransform\":\"none\"},\"vTitle\":{\"fontSize\":\"16px\",\"fontFamily\":\"\\\"Montserrat\\\", arial, sans-serif\",\"fontWeight\":\"500\",\"color\":\"rgb(0, 0, 0)\",\"textTransform\":\"none\"},\"nBox\":{\"padTop\":\"20px\",\"padBottom\":\"20px\",\"borderBottom\":\"0px rgb(0, 0, 0)\"},\"vBox\":{\"padTop\":\"20px\",\"padBottom\":\"20px\",\"borderBottom\":\"0px rgb(0, 0, 0)\"},\"nIcon\":24,\"vIcon\":24}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-2ddbfc01de0a988091f4",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 139,
+              "column": 3
+            },
+            {
+              "title": "V04 Clicking Donations (from top) scrolls to and opens the new FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":135,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12376,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:21:01.589Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":135,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-c0e6d2a50dcc11ba730a",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 158,
+              "column": 3
+            },
+            {
+              "title": "V05 Clicking Donations after scrolling to the page bottom still lands on the FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":100,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8505,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:21:14.043Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":100,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-4c1ace40543e0e758cc3",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 176,
+              "column": 3
+            },
+            {
+              "title": "V06 Clicking Donations again while open keeps it open (no toggle-close)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":135,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9872,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:21:22.600Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":135,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-4b4ace08e70df27d034a",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 191,
+              "column": 3
+            },
+            {
+              "title": "V07 Manual open/close of the new FAQ toggles body, icon and aria-expanded",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "open: {\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":328,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1} closed: {\"active\":false,\"aria\":\"false\",\"bodyVisible\":false,\"hdrTop\":328,\"vh\":720,\"hash\":\"\",\"iconRotated\":false,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[],\"visibleBodies\":0}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6859,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:21:32.507Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "open: {\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":328,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1} closed: {\"active\":false,\"aria\":\"false\",\"bodyVisible\":false,\"hdrTop\":328,\"vh\":720,\"hash\":\"\",\"iconRotated\":false,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[],\"visibleBodies\":0}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-56950e19db06ea2d7877",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 204,
+              "column": 3
+            },
+            {
+              "title": "V08 Opening the new FAQ closes an open native FAQ (one open at a time)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":198,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7565,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:21:39.386Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":198,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-beae855ad11ce7d15074",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 217,
+              "column": 3
+            },
+            {
+              "title": "V09 Opening the new FAQ closes an open SWF144 \"Vets love pet insurance\" FAQ",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":135,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\",\"Vets love pet insurance\"],\"visibleBodies\":2}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9080,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    \"We donate to animal welfare charities and match your gifts\",\u001b[22m\n\u001b[31m+   \"Vets love pet insurance\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    \"We donate to animal welfare charities and match your gifts\",\u001b[22m\n\u001b[31m+   \"Vets love pet insurance\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js:240:26",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                          "column": 26,
+                          "line": 240
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 238 |\u001b[39m     note(\u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(s))\u001b[33m;\u001b[39m\n \u001b[90m 239 |\u001b[39m     \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m info\u001b[33m,\u001b[39m \u001b[32m'V09-144-then-donations'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 240 |\u001b[39m     expect(s\u001b[33m.\u001b[39mopenTitles)\u001b[33m.\u001b[39mtoEqual([\u001b[33mQUESTION\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 241 |\u001b[39m     expect(s\u001b[33m.\u001b[39mvisibleBodies)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 242 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 243 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                            "column": 26,
+                            "line": 240
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[2m    \"We donate to animal welfare charities and match your gifts\",\u001b[22m\n\u001b[31m+   \"Vets love pet insurance\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  238 |     note(JSON.stringify(s));\n  239 |     await shot(page, info, 'V09-144-then-donations');\n> 240 |     expect(s.openTitles).toEqual([QUESTION]);\n      |                          ^\n  241 |     expect(s.visibleBodies).toBe(1);\n  242 |   });\n  243 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js:240:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:21:46.987Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":135,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\",\"Vets love pet insurance\"],\"visibleBodies\":2}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-e72c9-Vets-love-pet-insurance-FAQ-Firefox-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-e72c9-Vets-love-pet-insurance-FAQ-Firefox-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                        "column": 26,
+                        "line": 240
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-9c0b99c5d9836c01e800",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 229,
+              "column": 3
+            },
+            {
+              "title": "V10 Opening a native FAQ closes the new FAQ and resets its aria-expanded",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "after native open: {\"active\":false,\"aria\":\"true\",\"bodyVisible\":false,\"hdrTop\":328,\"vh\":720,\"hash\":\"\",\"iconRotated\":false,\"titleColor\":\"rgb(0, 0, 0)\",\"openTitles\":[\"Listings are 100% independent\"],\"visibleBodies\":1}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7911,
+                      "error": {
+                        "message": "Error: aria-expanded stays \"true\" on a closed item\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mtru\u001b[27me\"\u001b[39m",
+                        "stack": "Error: aria-expanded stays \"true\" on a closed item\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mtru\u001b[27me\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js:255:67",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                          "column": 67,
+                          "line": 255
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 253 |\u001b[39m     expect(s\u001b[33m.\u001b[39mactive)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 254 |\u001b[39m     expect(s\u001b[33m.\u001b[39mbodyVisible)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 255 |\u001b[39m     expect(s\u001b[33m.\u001b[39maria\u001b[33m,\u001b[39m \u001b[32m'aria-expanded stays \"true\" on a closed item'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[32m'false'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 256 |\u001b[39m     \u001b[90m// reopen: aria must say expanded\u001b[39m\n \u001b[90m 257 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[33mHDR\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m900\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 258 |\u001b[39m     \u001b[36mconst\u001b[39m r \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m faqState(page)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                            "column": 67,
+                            "line": 255
+                          },
+                          "message": "Error: aria-expanded stays \"true\" on a closed item\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mtru\u001b[27me\"\u001b[39m\n\n  253 |     expect(s.active).toBe(false);\n  254 |     expect(s.bodyVisible).toBe(false);\n> 255 |     expect(s.aria, 'aria-expanded stays \"true\" on a closed item').toBe('false');\n      |                                                                   ^\n  256 |     // reopen: aria must say expanded\n  257 |     await page.locator(HDR).click(); await page.waitForTimeout(900);\n  258 |     const r = await faqState(page);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js:255:67"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:21:57.555Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "after native open: {\"active\":false,\"aria\":\"true\",\"bodyVisible\":false,\"hdrTop\":328,\"vh\":720,\"hash\":\"\",\"iconRotated\":false,\"titleColor\":\"rgb(0, 0, 0)\",\"openTitles\":[\"Listings are 100% independent\"],\"visibleBodies\":1}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-5f89e-nd-resets-its-aria-expanded-Firefox-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-5f89e-nd-resets-its-aria-expanded-Firefox-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                        "column": 67,
+                        "line": 255
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-8fe23b486249b299e26c",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 244,
+              "column": 3
+            },
+            {
+              "title": "V11 Keyboard: Donations link is focusable and Enter opens the FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "firefox {\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":135,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8404,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:22:07.194Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "firefox {\"active\":true,\"aria\":\"true\",\"bodyVisible\":true,\"hdrTop\":135,\"vh\":720,\"hash\":\"\",\"iconRotated\":true,\"titleColor\":\"rgb(2, 114, 228)\",\"openTitles\":[\"We donate to animal welfare charities and match your gifts\"],\"visibleBodies\":1}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-22b1143a9bb6c51ac1be",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 264,
+              "column": 3
+            },
+            {
+              "title": "V12 Re-running the variation code does not duplicate the FAQ or nav link",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Nav after 3 runs: Vet Approved | How We Rank | Donations | About"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10621,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:22:15.980Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Nav after 3 runs: Vet Approved | How We Rank | Donations | About"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-29dc23f1ab18094bf053",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 280,
+              "column": 3
+            },
+            {
+              "title": "V13 Target URL /: nav swap, FAQ first, link opens FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/ nav: Vet Approved | How We Rank | Donations | About"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7226,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:22:26.624Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/ nav: Vet Approved | How We Rank | Donations | About"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-fe1bedd562b7fa56f304",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 299,
+              "column": 5
+            },
+            {
+              "title": "V13 Target URL /home/: nav swap, FAQ first, link opens FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/home/ nav: Vet Approved | How We Rank | Donations | About"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7700,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:22:33.868Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/home/ nav: Vet Approved | How We Rank | Donations | About"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-d9cf2efc2df9cfd4b07e",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 299,
+              "column": 5
+            },
+            {
+              "title": "V13 Target URL /comparison/: nav swap, FAQ first, link opens FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/comparison/ nav: Vet Approved | How We Rank | Donations | About"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6187,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:22:41.589Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/comparison/ nav: Vet Approved | How We Rank | Donations | About"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-2ca62a42b53e52d9b98a",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 299,
+              "column": 5
+            },
+            {
+              "title": "V13 Target URL /compare/: nav swap, FAQ first, link opens FAQ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/compare/ nav: How We Rank | Donations | About"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6376,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:22:47.796Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/compare/ nav: How We Rank | Donations | About"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-9f17fe7d31989bafc384",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 299,
+              "column": 5
+            },
+            {
+              "title": "V14 Header layout: nav on one row, no overlap with logo/Prices, no horizontal scroll",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"rows\":1,\"overlap\":false,\"maxRight\":1050.0000305175781,\"vw\":1280,\"sw\":1280}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5100,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:22:54.203Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"rows\":1,\"overlap\":false,\"maxRight\":1050.0000305175781,\"vw\":1280,\"sw\":1280}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-5800eb2f8a01d79bfe52",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 317,
+              "column": 3
+            },
+            {
+              "title": "V15 Copy variants V1–V4 (Donations/Donate/Giving/Help a Pet) all fit the header",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "[{\"label\":\"Donations\",\"rows\":1,\"maxRight\":1050,\"vw\":1280},{\"label\":\"Donate\",\"rows\":1,\"maxRight\":1050,\"vw\":1280},{\"label\":\"Giving\",\"rows\":1,\"maxRight\":1050,\"vw\":1280},{\"label\":\"Help a Pet\",\"rows\":1,\"maxRight\":1050,\"vw\":1280}]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6067,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:22:59.321Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "[{\"label\":\"Donations\",\"rows\":1,\"maxRight\":1050,\"vw\":1280},{\"label\":\"Donate\",\"rows\":1,\"maxRight\":1050,\"vw\":1280},{\"label\":\"Giving\",\"rows\":1,\"maxRight\":1050,\"vw\":1280},{\"label\":\"Help a Pet\",\"rows\":1,\"maxRight\":1050,\"vw\":1280}]"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-71173fd47cc493a5e050",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 335,
+              "column": 3
+            },
+            {
+              "title": "V16 Goals: Donations-link click / FAQ open fire SWF167 goals",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "link click → [] · manual FAQ open → []"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8752,
+                      "error": {
+                        "message": "Error: no goal fired for \"Clicks on Donations Link\" / \"Donations FAQ opens\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m0\u001b[39m",
+                        "stack": "Error: no goal fired for \"Clicks on Donations Link\" / \"Donations FAQ opens\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js:369:107",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                          "column": 107,
+                          "line": 369
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 367 |\u001b[39m     note(\u001b[32m`link click → [${linkGoals}] · manual FAQ open → [${manualGoals}]`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 368 |\u001b[39m     \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m info\u001b[33m,\u001b[39m \u001b[32m'V16-goals'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 369 |\u001b[39m     expect(own(linkGoals)\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'no goal fired for \"Clicks on Donations Link\" / \"Donations FAQ opens\"'\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 370 |\u001b[39m     expect(own(manualGoals)\u001b[33m.\u001b[39mlength\u001b[33m,\u001b[39m \u001b[32m'no goal fired for \"Donations FAQ opens (manually)\"'\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 371 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 372 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                            "column": 107,
+                            "line": 369
+                          },
+                          "message": "Error: no goal fired for \"Clicks on Donations Link\" / \"Donations FAQ opens\"\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m0\u001b[39m\n\n  367 |     note(`link click → [${linkGoals}] · manual FAQ open → [${manualGoals}]`);\n  368 |     await shot(page, info, 'V16-goals');\n> 369 |     expect(own(linkGoals).length, 'no goal fired for \"Clicks on Donations Link\" / \"Donations FAQ opens\"').toBeGreaterThanOrEqual(2);\n      |                                                                                                           ^\n  370 |     expect(own(manualGoals).length, 'no goal fired for \"Donations FAQ opens (manually)\"').toBeGreaterThanOrEqual(1);\n  371 |   });\n  372 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js:369:107"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:23:05.407Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "link click → [] · manual FAQ open → []"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-16b50--FAQ-open-fire-SWF167-goals-Firefox-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-16b50--FAQ-open-fire-SWF167-goals-Firefox-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                        "column": 107,
+                        "line": 369
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-a19b2c14b1299efccb8c",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 356,
+              "column": 3
+            },
+            {
+              "title": "V17 \"See How\" link exists (custom goal \"Clicks on See How Link\")",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "elements with text \"See how\": 0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5597,
+                      "error": {
+                        "message": "Error: no \"See How\" link in Figma or code, but the ticket has a goal for it\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
+                        "stack": "Error: no \"See How\" link in Figma or code, but the ticket has a goal for it\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js:378:87",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                          "column": 87,
+                          "line": 378
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 376 |\u001b[39m     note(\u001b[32m`elements with text \"See how\": ${n}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 377 |\u001b[39m     \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m info\u001b[33m,\u001b[39m \u001b[32m'V17-hero'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 378 |\u001b[39m     expect(n\u001b[33m,\u001b[39m \u001b[32m'no \"See How\" link in Figma or code, but the ticket has a goal for it'\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 379 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 380 |\u001b[39m\n \u001b[90m 381 |\u001b[39m   test(\u001b[32m'V18 SWF144 coexistence: Donations FAQ sits above \"Vets love pet insurance\"'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m info) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                            "column": 87,
+                            "line": 378
+                          },
+                          "message": "Error: no \"See How\" link in Figma or code, but the ticket has a goal for it\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  376 |     note(`elements with text \"See how\": ${n}`);\n  377 |     await shot(page, info, 'V17-hero');\n> 378 |     expect(n, 'no \"See How\" link in Figma or code, but the ticket has a goal for it').toBeGreaterThan(0);\n      |                                                                                       ^\n  379 |   });\n  380 |\n  381 |   test('V18 SWF144 coexistence: Donations FAQ sits above \"Vets love pet insurance\"', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js:378:87"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:23:15.647Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "elements with text \"See how\": 0"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-31cc5-oal-Clicks-on-See-How-Link--Firefox-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf167-donation-matching-V-31cc5-oal-Clicks-on-See-How-Link--Firefox-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf167-donation-matching.spec.js",
+                        "column": 87,
+                        "line": 378
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-f371b354c56fdea418f4",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 373,
+              "column": 3
+            },
+            {
+              "title": "V18 SWF144 coexistence: Donations FAQ sits above \"Vets love pet insurance\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "FAQ order: We donate to animal welfare charities and match your gifts | Vets love pet insurance | Listings are 100% independent"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox Desktop",
+                  "projectName": "Firefox Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5501,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T10:23:22.973Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "FAQ order: We donate to animal welfare charities and match your gifts | Vets love pet insurance | Listings are 100% independent"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "566fdc79e38b17f07674-e62ede234c190f531489",
+              "file": "swf167-donation-matching.spec.js",
+              "line": 381,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-26T10:19:45.018Z",
+    "duration": 224585.83599999998,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

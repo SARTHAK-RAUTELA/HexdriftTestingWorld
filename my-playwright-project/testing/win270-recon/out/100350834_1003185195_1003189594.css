@@ -1,0 +1,443 @@
+html body.cre-t-288.cre-t-272 .cre-t-272-container {
+    display: none;
+}
+
+html body.cre-t-288.cre-t-202 #orderForm .cre-t-288-container {
+    order: 3;
+}
+
+html body.cre-t-288.cre-t-202 #orderForm .order-form__financing-buy-box-container {
+    order: 4;
+    margin-top: 0;
+}
+
+/* HSA/FSA eligibility line */
+html body.cre-t-288 .cre-t-288-container {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html body.cre-t-288 .cre-t-288-hsa {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+html body.cre-t-288 .cre-t-288-hsa-text {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+html body.cre-t-288 .cre-t-288-hsa-label {
+    font-weight: 600;
+}
+
+html body.cre-t-288 .cre-t-288-hsa-with {
+    font-weight: 400;
+}
+
+html body.cre-t-288 .cre-t-288-hsa-logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+    width: 93px;
+    height: 20px;
+    justify-content: flex-start;
+    margin-left: 1px;
+    position: relative;
+    top: 1px;
+}
+
+html body.cre-t-288 .cre-t-288-hsa-logo {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+@media (max-width: 280px) {
+    html body.cre-t-288 .cre-t-288-hsa-text {
+        display: inline;
+    }
+
+    html body.cre-t-288 .cre-t-288-hsa-logo-wrapper {
+        top: 5px;
+    }
+}
+
+/* ______________________________________________________________________ */
+/* ______________________________________________________________________ */
+/* Learn more link next to HSA/FSA line */
+html body.cre-t-288 .cre-t-288-container {
+    flex-wrap: wrap;
+    gap: 1px 1px;
+}
+
+html body.cre-t-288 .cre-t-288-hsa-learn-more {
+    cursor: pointer;
+    position: relative;
+    left: -2px;
+}
+
+html body.cre-t-288 .cre-t-288-hsa-learn-more-text {
+    color: #a1abd2;
+    font-family: inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    cursor: pointer;
+}
+
+/* Modal */
+html body .cre-t-288-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(114, 111, 111, 0.9);
+    z-index: 2147483647;
+    display: none;
+}
+
+html body.cre-t-288-modal-open .cre-t-288-modal-overlay {
+    display: block;
+}
+
+html body .cre-t-288-modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 705px;
+    width: calc(100% - 30px);
+    max-height: 90dvh;
+    overflow-y: auto;
+    z-index: 2147483647;
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+html body.cre-t-288-modal-open .cre-t-288-modal-container {
+    display: block;
+}
+
+html body .cre-t-288-modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 56px 30px 70px;
+    background: #fff;
+    width: 100%;
+}
+
+html body .cre-t-288-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+}
+
+html body .cre-t-288-modal-close-img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+html body .cre-t-288-modal-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+html body .cre-t-288-modal-main-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+html body .cre-t-288-modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+html body h2.cre-t-288-modal-title {
+    padding: 0;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: normal;
+    font-family: inherit;
+    line-height: 1;
+    margin: 0;
+    font-weight: 700;
+    max-width: 550px;
+    font-size: 38px;
+    color: #030c2d;
+}
+
+html body p.cre-t-288-modal-subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
+    color: #030c2d;
+    text-align: center;
+    letter-spacing: -0.51px;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 400;
+}
+
+html body .cre-t-288-modal-truemed-logo {
+    width: 113px;
+    min-width: 113px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html body .cre-t-288-modal-truemed {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+html body .cre-t-288-modal-image {
+    width: 100%;
+    max-width: 509px;
+    height: 187px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 23px auto 29px;
+}
+
+html body .cre-t-288-modal-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+html body .cre-t-288-modal-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #030c2d;
+    letter-spacing: -0.51px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+html body .cre-t-288-modal-step {
+    display: flex;
+    gap: 6px;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 400;
+}
+
+html body .cre-t-288-modal-step-number {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 700;
+    text-align: right;
+    min-width: 13px;
+}
+
+html body .cre-t-288-modal-step-strong {
+    font-weight: 700;
+}
+
+html body p.cre-t-288-modal-note {
+    margin: 0;
+    padding: 0;
+    color: rgba(3, 12, 45, 0.6);
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.45px;
+}
+
+html body .cre-t-288-modal-step-wrap {
+    width: 100%;
+    max-width: 509px;
+    margin: 0 auto;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+html body .cre-t-288-modal-step-text {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+}
+
+html body .cre-t-288-modal-subtitle-text {
+    color: inherit;
+    text-align: inherit;
+    letter-spacing: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+}
+
+/* ____________________________________________________________________________ */
+
+@media (min-width: 1025px) and (max-width: 1300px) {
+    html body h2.cre-t-288-modal-title {
+        font-size: 32px;
+    }
+}
+
+/* ____________________________________________________________________________ */
+
+@media (max-width: 767px) {
+    html body .cre-t-288-modal-wrapper {
+        padding: 48px 30px 40px;
+    }
+
+    html body p.cre-t-288-modal-note {
+        font-size: 13px;
+    }
+
+    html body h2.cre-t-288-modal-title {
+        max-width: 500px;
+        font-size: 28px;
+    }
+
+    html body p.cre-t-288-modal-subtitle {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    html body .cre-t-288-modal-truemed-logo {
+        height: 20px;
+        width: 91px;
+        min-width: 91px;
+    }
+
+    html body .cre-t-288-modal-step {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    html body .cre-t-288-modal-step-strong {
+        font-size: 17px;
+    }
+
+    html body .cre-t-288-modal-step-number {
+        font-size: 17px;
+    }
+}
+
+/* ____________________________________________________________________________ */
+
+@media (max-width: 530px) {
+    html body p.cre-t-288-modal-subtitle {
+        display: inline;
+    }
+
+    html body .cre-t-288-modal-truemed-logo {
+        display: inline-block;
+        position: relative;
+        top: 4px;
+    }
+}
+
+/* ____________________________________________________________________________ */
+/* ____________________________________________________________________________ */
+/* ____________________________________________________________________________ */
+@media (min-width: 768px) and (max-height: 660px) and (min-height: 450px) {
+    html body .cre-t-288-modal-container {
+        overflow-y: unset;
+        transform: translate(-50%, -50%) scale(0.9);
+        max-height: none;
+    }
+}
+
+@media (min-width: 768px) and (max-height: 580px) and (min-height: 450px) {
+    html body .cre-t-288-modal-container {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+@media (min-width: 768px) and (max-height: 520px) and (min-height: 450px) {
+    html body .cre-t-288-modal-container {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+}
+
+/* ____________________________________________________________________________ */
+/* ____________________________________________________________________________ */
+@media (max-width: 767px) and (min-width: 320px) and (max-height: 740px) and (min-height: 530px) {
+    html body .cre-t-288-modal-container {
+        overflow-y: unset;
+        transform: translate(-50%, -50%) scale(0.9);
+        max-height: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 320px) and (max-height: 640px) and (min-height: 530px) {
+    html body .cre-t-288-modal-container {
+        transform: translate(-50%, -50%) scale(0.8);
+        width: calc(100% + 30px);
+    }
+}
+
+/* ____________________________________________________________________________ */
+/* ____________________________________________________________________________ */

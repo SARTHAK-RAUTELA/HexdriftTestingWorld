@@ -1,0 +1,1192 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-safari-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-safari-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-safari-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-safari-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-safari-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-safari-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-safari-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "win270-deprioritise-firmness.spec.js",
+      "file": "win270-deprioritise-firmness.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "WIN270 Control",
+          "file": "win270-deprioritise-firmness.spec.js",
+          "line": 115,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C-01 Buy box keeps the native firmness dropdown, label and guide",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20018,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:17:24.268Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-buybox",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-7eb1a-ss-dropdown-label-and-guide-Safari-Desktop\\attachments\\control-buybox-38a3816f59c811b354a4fad8997c67f6ae412c24.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-38d9345ac9441c5d0617",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "C-02 Firmness section keeps tabs + WIN255 V2 Luxury Firm copy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16647,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:17:44.414Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-section",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-208a1--WIN255-V2-Luxury-Firm-copy-Safari-Desktop\\attachments\\control-section-14a6257ea164a24eb5542d2562a778ef463b76b1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-045ddc2b5b4e918f0aa8",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 140,
+              "column": 3
+            },
+            {
+              "title": "C-03 Nav, video and gallery stay original",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17024,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:18:01.086Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-2a04ae03b3c1d56c594a",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 159,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "WIN270 Variation - Buy box",
+          "file": "win270-deprioritise-firmness.spec.js",
+          "line": 171,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-01 Label reads 'Firmness:' and the navy panel shows check + Luxury Firm + Most Popular + Change firmness",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19906,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:18:18.133Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-default",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-99ea2-ost-Popular-Change-firmness-Safari-Desktop\\attachments\\buybox-default-1f211a49996fb91dcbdfe3a93fb3423e9435e7ea.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-9aa90ac41546323b3c1a",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 172,
+              "column": 3
+            },
+            {
+              "title": "TC-02 'Firmness guide' hidden on load; Luxury Firm benefit bullet shown",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15913,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:18:38.062Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-38f24bb9098a226ee4e8",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 213,
+              "column": 3
+            },
+            {
+              "title": "TC-03 Only 'Change firmness' opens the menu; the rest of the panel is not clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18803,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:18:54.005Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-f3ce4c3352a667d4226a",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 221,
+              "column": 3
+            },
+            {
+              "title": "TC-04 Clicking 'Change firmness' reveals 'Firmness guide' and it stays after dismissing without a selection",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 24948,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:19:12.826Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-guide-revealed",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-14c73-missing-without-a-selection-Safari-Desktop\\attachments\\buybox-guide-revealed-429f824e2d5b2c14737d42e83788c0331767dd30.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-a3b4ba70376d475f8a82",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 239,
+              "column": 3
+            },
+            {
+              "title": "TC-05 Selecting Firmer updates panel, original select, price and bullet like control",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22444,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:19:37.791Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-firmer",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-d6561-ice-and-bullet-like-control-Safari-Desktop\\attachments\\buybox-firmer-9f8265041e8cf1292cc429bbc11b86cdaa78e831.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-53dfe8199a25faf4d1a8",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 257,
+              "column": 3
+            },
+            {
+              "title": "TC-06 Selecting Plus: price $1,999 like control, and no pill (pill is Luxury Firm only)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 25603,
+                      "error": {
+                        "message": "Error: pill shows \"Heavier People\" for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: pill shows \"Heavier People\" for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:281:68",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                          "column": 68,
+                          "line": 281
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 279 |\u001b[39m       \u001b[36mawait\u001b[39m center(page\u001b[33m,\u001b[39m \u001b[32m\".cre-t-270-firm-panel\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 280 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m\"buybox-plus\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 281 |\u001b[39m       expect(st\u001b[33m.\u001b[39mbadgeVisible\u001b[33m,\u001b[39m \u001b[32m`pill shows \"${st.badge}\" for Plus`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 282 |\u001b[39m     } \u001b[36mfinally\u001b[39m { \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m }\n \u001b[90m 283 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 284 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                            "column": 68,
+                            "line": 281
+                          },
+                          "message": "Error: pill shows \"Heavier People\" for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  279 |       await center(page, \".cre-t-270-firm-panel\");\n  280 |       await shot(page, ti, \"buybox-plus\");\n> 281 |       expect(st.badgeVisible, `pill shows \"${st.badge}\" for Plus`).toBe(false);\n      |                                                                    ^\n  282 |     } finally { await context.close(); }\n  283 |   });\n  284 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:281:68"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:20:00.252Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-plus",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-b5711-l-pill-is-Luxury-Firm-only--Safari-Desktop\\attachments\\buybox-plus-fb931b3444d209e5d184d9c31189f4e39f6727a6.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-b5711-l-pill-is-Luxury-Firm-only--Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-b5711-l-pill-is-Luxury-Firm-only--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                        "column": 68,
+                        "line": 281
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-cf9bcbf8953698cc54fb",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 272,
+              "column": 3
+            },
+            {
+              "title": "TC-07 Back to Luxury Firm restores pill + bullet and clears the session cookie",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23081,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:20:27.189Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-263fe077e1c8a17f65cb",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 285,
+              "column": 3
+            },
+            {
+              "title": "TC-08 An explicitly chosen firmness survives a reload",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 91756,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                            "column": 17,
+                            "line": 307
+                          },
+                          "message": "Error: browserContext.close: Test ended.\nBrowser logs:\n\n<launching> C:\\Users\\Sarthak Rautela\\AppData\\Local\\ms-playwright\\webkit-2272\\Playwright.exe --inspector-pipe --disable-accelerated-compositing --headless --no-startup-window\n<launched> pid=12764\n[pid=12764] <gracefully close start>\n[pid=12764] <process did exit: exitCode=0, signal=null>\n[pid=12764] starting temporary directories cleanup\n\n  305 |       await expect.poll(() => buyBoxState(page).then((s) => s.name), { timeout: 15000 }).toBe(\"Firmer\");\n  306 |       expect((await buyBoxState(page)).original).toBe(\"Firmer\");\n> 307 |     } finally { await context.close(); }\n      |                 ^\n  308 |   });\n  309 |\n  310 |   test(\"TC-09 Variant-specific URL (?firmness=plus) is displayed\", async ({ browser }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:307:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:20:50.856Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-f683d--firmness-survives-a-reload-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-safari-desktop\\win270-deprioritise-firmne-f683d--firmness-survives-a-reload-Safari-Desktop\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-884ac472950b701c9313",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 299,
+              "column": 3
+            },
+            {
+              "title": "TC-09 Variant-specific URL (?firmness=plus) is displayed",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "failed",
+                      "duration": 0,
+                      "error": {
+                        "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: worker process exited unexpectedly (code=3221225794, signal=null)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-d56727680034b820910c",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 310,
+              "column": 3
+            },
+            {
+              "title": "TC-10 Variant URL wins over an earlier saved choice (?firmness=plus with saved Firmer)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-2b8bea4c9370ec91286e",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 318,
+              "column": 3
+            },
+            {
+              "title": "TC-11 Goals: no firmness goals fire on page load without a user action (saved choice restored)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-4d4cb81113c83bdc29e3",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 330,
+              "column": 3
+            },
+            {
+              "title": "TC-12 Goals: changing firmness via the panel sends 100334728 + 100334729",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-baaf1cef77e78e1d2b2f",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 339,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "WIN270 Variation - Firmness section",
+          "file": "win270-deprioritise-firmness.spec.js",
+          "line": 351,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-13 New headline + sub-copy; tabs removed; Luxury Firm content with WIN255 V2 copy by default",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-cc951836788811c93f6d",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 352,
+              "column": 3
+            },
+            {
+              "title": "TC-14 'Prefer a different feel?' link present, accordion collapsed by default",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-15b08f354436f12ffe5f",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 379,
+              "column": 3
+            },
+            {
+              "title": "TC-15 Toggle expands 4 buttons (Luxury Firm active) and collapses again",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-085958d532ad144a367d",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 390,
+              "column": 3
+            },
+            {
+              "title": "TC-16 Each button switches the content like the control tabs and brings it into view",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-a46d59ca11799022189a",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 406,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "WIN270 Variation - Nav, video, gallery",
+          "file": "win270-deprioritise-firmness.spec.js",
+          "line": 437,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-17 Sticky nav item renamed 'Comfort & Support'",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-aca6ac5968f4ed7540c5",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 438,
+              "column": 3
+            },
+            {
+              "title": "TC-18 'Comfort & Support' scrolls to the firmness (construction) section",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-1e80da5810259727f0a7",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 459,
+              "column": 3
+            },
+            {
+              "title": "TC-19 Video headline, sub-copy and NapLab link updated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-daa30a584a08692c73f1",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 478,
+              "column": 3
+            },
+            {
+              "title": "TC-20 New video thumbnail loads; clicking it starts the YouTube video",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-3bbbaa35eac66b63b847",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 487,
+              "column": 3
+            },
+            {
+              "title": "TC-21 Desktop grid: firmness image replaced; click opens the lightbox on the bed image",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-4958bb67666494403533",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 501,
+              "column": 3
+            },
+            {
+              "title": "TC-22 Firmness-options image removed from the lightbox and carousel",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-40fd51648d4b9efee97b",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 523,
+              "column": 3
+            },
+            {
+              "title": "TC-23 No horizontal overflow and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:22:26.154Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-8c20894b6c4c3486e3d5",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 544,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-26T14:17:23.351Z",
+    "duration": 302806.707,
+    "expected": 9,
+    "skipped": 14,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

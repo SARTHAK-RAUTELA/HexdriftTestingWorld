@@ -1,0 +1,37 @@
+/* Hiding original sub-header */
+html body.cre-t-255 [data-attribute="Luxury Firm"] div.winkbed-construction__content-bottom-main-item-top-left-sub-header,
+html body.cre-t-255 [mobile-data-attribute="Luxury Firm"] div.winkbed-construction__content-bottom-main-item-top-left-sub-header {
+  display: none;
+}
+
+html body.cre-t-255 .cre-t-255-main-subHeader {
+  font-size: 15px;
+  line-height: 1.33;
+  color: #030c2d;
+  font-style: normal;
+  font-weight: 400;
+}
+html body.cre-t-255 .cre-t-255-customer-chosen-copy {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+html body.cre-t-255 .winkbed-construction__content-bottom-main-item-top-left-header-bar-text {
+  display: none;
+}
+
+html body.cre-t-255 .winkbed-construction__content-bottom-main-item-top-left-header-bar {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  html body.cre-t-255 .cre-t-255-main-subHeader {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  html body.cre-t-255 .cre-t-255-wrapper {
+    text-align: center;
+    margin-top: 12px;
+  }
+}

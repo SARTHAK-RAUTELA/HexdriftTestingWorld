@@ -1,0 +1,1394 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-chrome-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-chrome-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-chrome-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-chrome-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-chrome-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-chrome-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results/win270-chrome-desktop",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "win270-deprioritise-firmness.spec.js",
+      "file": "win270-deprioritise-firmness.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "WIN270 Control",
+          "file": "win270-deprioritise-firmness.spec.js",
+          "line": 115,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C-01 Buy box keeps the native firmness dropdown, label and guide",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 43168,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:08:11.751Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-buybox",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-7eb1a-ss-dropdown-label-and-guide-Chrome-Desktop\\attachments\\control-buybox-115c2a4cb97af441bc2f124e36c4dc28104b1ad1.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-77acb76e874f7c16ad2d",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "C-02 Firmness section keeps tabs + WIN255 V2 Luxury Firm copy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 24676,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:08:58.951Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-section",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-208a1--WIN255-V2-Luxury-Firm-copy-Chrome-Desktop\\attachments\\control-section-fc2b1fcf6cbb653ba95d671b867eba86e988866a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-dfb8809d18dcceaf065d",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 140,
+              "column": 3
+            },
+            {
+              "title": "C-03 Nav, video and gallery stay original",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18897,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:09:23.738Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-3d0d330ce7df6fa64888",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 159,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "WIN270 Variation - Buy box",
+          "file": "win270-deprioritise-firmness.spec.js",
+          "line": 171,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-01 Label reads 'Firmness:' and the navy panel shows check + Luxury Firm + Most Popular + Change firmness",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 31696,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:09:42.683Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-default",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-99ea2-ost-Popular-Change-firmness-Chrome-Desktop\\attachments\\buybox-default-6fe06c6f629b2d5468b4be8acc78ec3ba3ba4e58.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-7c649f8cc6e9c5bd2181",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 172,
+              "column": 3
+            },
+            {
+              "title": "TC-02 'Firmness guide' hidden on load; Luxury Firm benefit bullet shown",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22038,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:10:14.431Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-c146392b213ee1a95098",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 213,
+              "column": 3
+            },
+            {
+              "title": "TC-03 Only 'Change firmness' opens the menu; the rest of the panel is not clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 32680,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:10:36.602Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-6e4c2ff64e39ad77d5c7",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 221,
+              "column": 3
+            },
+            {
+              "title": "TC-04 Clicking 'Change firmness' reveals 'Firmness guide' and it stays after dismissing without a selection",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20279,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:11:09.327Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-guide-revealed",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-14c73-missing-without-a-selection-Chrome-Desktop\\attachments\\buybox-guide-revealed-e01ddcb818beaa5d1f5d609aebef924a5b90619b.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-e64b2423c8aae37e4302",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 239,
+              "column": 3
+            },
+            {
+              "title": "TC-05 Selecting Firmer updates panel, original select, price and bullet like control",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15259,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:11:29.637Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-firmer",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-d6561-ice-and-bullet-like-control-Chrome-Desktop\\attachments\\buybox-firmer-07ff7be3bebea3f71f7109e133806b9bb9268489.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-45170b18d17c9d1a6dcf",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 257,
+              "column": 3
+            },
+            {
+              "title": "TC-06 Selecting Plus: price $1,999 like control, and no pill (pill is Luxury Firm only)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 17355,
+                      "error": {
+                        "message": "Error: pill shows \"Heavier People\" for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: pill shows \"Heavier People\" for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:281:68",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                          "column": 68,
+                          "line": 281
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 279 |\u001b[39m       \u001b[36mawait\u001b[39m center(page\u001b[33m,\u001b[39m \u001b[32m\".cre-t-270-firm-panel\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 280 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m\"buybox-plus\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 281 |\u001b[39m       expect(st\u001b[33m.\u001b[39mbadgeVisible\u001b[33m,\u001b[39m \u001b[32m`pill shows \"${st.badge}\" for Plus`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 282 |\u001b[39m     } \u001b[36mfinally\u001b[39m { \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m }\n \u001b[90m 283 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 284 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                            "column": 68,
+                            "line": 281
+                          },
+                          "message": "Error: pill shows \"Heavier People\" for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  279 |       await center(page, \".cre-t-270-firm-panel\");\n  280 |       await shot(page, ti, \"buybox-plus\");\n> 281 |       expect(st.badgeVisible, `pill shows \"${st.badge}\" for Plus`).toBe(false);\n      |                                                                    ^\n  282 |     } finally { await context.close(); }\n  283 |   });\n  284 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:281:68"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:11:44.930Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-plus",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-b5711-l-pill-is-Luxury-Firm-only--Chrome-Desktop\\attachments\\buybox-plus-033094838a57359b560b914e94586a8f8ac691df.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-b5711-l-pill-is-Luxury-Firm-only--Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-b5711-l-pill-is-Luxury-Firm-only--Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                        "column": 68,
+                        "line": 281
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-b17f58e674d3bc1c95b0",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 272,
+              "column": 3
+            },
+            {
+              "title": "TC-07 Back to Luxury Firm restores pill + bullet and clears the session cookie",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 26539,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:12:06.579Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-e653e3f823ae71f55099",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 285,
+              "column": 3
+            },
+            {
+              "title": "TC-08 An explicitly chosen firmness survives a reload",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18294,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:12:36.601Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-5023ab0ec99d0e945eda",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 299,
+              "column": 3
+            },
+            {
+              "title": "TC-09 Variant-specific URL (?firmness=plus) is displayed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13071,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:12:54.912Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-ee5379a7f385331f5ba1",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 310,
+              "column": 3
+            },
+            {
+              "title": "TC-10 Variant URL wins over an earlier saved choice (?firmness=plus with saved Firmer)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13998,
+                      "error": {
+                        "message": "Error: URL asked for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Plus\"\u001b[39m\nReceived: \u001b[31m\"Firmer\"\u001b[39m",
+                        "stack": "Error: URL asked for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Plus\"\u001b[39m\nReceived: \u001b[31m\"Firmer\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:325:49",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                          "column": 49,
+                          "line": 325
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 323 |\u001b[39m       \u001b[36mawait\u001b[39m center(page\u001b[33m,\u001b[39m \u001b[32m\".cre-t-270-firm-panel\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 324 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m\"buybox-url-vs-cookie\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 325 |\u001b[39m       expect(st\u001b[33m.\u001b[39moriginal\u001b[33m,\u001b[39m \u001b[32m\"URL asked for Plus\"\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[32m\"Plus\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 326 |\u001b[39m       expect(st\u001b[33m.\u001b[39mname)\u001b[33m.\u001b[39mtoBe(\u001b[32m\"Plus\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 327 |\u001b[39m     } \u001b[36mfinally\u001b[39m { \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m }\n \u001b[90m 328 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                            "column": 49,
+                            "line": 325
+                          },
+                          "message": "Error: URL asked for Plus\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Plus\"\u001b[39m\nReceived: \u001b[31m\"Firmer\"\u001b[39m\n\n  323 |       await center(page, \".cre-t-270-firm-panel\");\n  324 |       await shot(page, ti, \"buybox-url-vs-cookie\");\n> 325 |       expect(st.original, \"URL asked for Plus\").toBe(\"Plus\");\n      |                                                 ^\n  326 |       expect(st.name).toBe(\"Plus\");\n  327 |     } finally { await context.close(); }\n  328 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:325:49"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:13:08.021Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "buybox-url-vs-cookie",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-6fb47-ess-plus-with-saved-Firmer--Chrome-Desktop\\attachments\\buybox-url-vs-cookie-0157005b78664c4936ee25aa54521d331d404121.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-6fb47-ess-plus-with-saved-Firmer--Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-6fb47-ess-plus-with-saved-Firmer--Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                        "column": 49,
+                        "line": 325
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-23e01aef159424921ad0",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 318,
+              "column": 3
+            },
+            {
+              "title": "TC-11 Goals: no firmness goals fire on page load without a user action (saved choice restored)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19957,
+                      "error": {
+                        "message": "Error: goals sent with no interaction\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 4\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"100334728\",\u001b[39m\n\u001b[31m+   \"100334729\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: goals sent with no interaction\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 4\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"100334728\",\u001b[39m\n\u001b[31m+   \"100334729\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:335:130",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                          "column": 130,
+                          "line": 335
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 333 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m4000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 334 |\u001b[39m       expect((\u001b[36mawait\u001b[39m buyBoxState(page))\u001b[33m.\u001b[39mname)\u001b[33m.\u001b[39mtoBe(\u001b[32m\"Firmer\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 335 |\u001b[39m       expect(goals\u001b[33m.\u001b[39mfilter((g) \u001b[33m=>\u001b[39m g \u001b[33m===\u001b[39m \u001b[33mGOALS\u001b[39m\u001b[33m.\u001b[39mfirmnessClick \u001b[33m||\u001b[39m g \u001b[33m===\u001b[39m \u001b[33mGOALS\u001b[39m\u001b[33m.\u001b[39mnonDefaultFirmness)\u001b[33m,\u001b[39m \u001b[32m\"goals sent with no interaction\"\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 336 |\u001b[39m     } \u001b[36mfinally\u001b[39m { \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m }\n \u001b[90m 337 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 338 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                            "column": 130,
+                            "line": 335
+                          },
+                          "message": "Error: goals sent with no interaction\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 4\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"100334728\",\u001b[39m\n\u001b[31m+   \"100334729\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  333 |       await page.waitForTimeout(4000);\n  334 |       expect((await buyBoxState(page)).name).toBe(\"Firmer\");\n> 335 |       expect(goals.filter((g) => g === GOALS.firmnessClick || g === GOALS.nonDefaultFirmness), \"goals sent with no interaction\").toEqual([]);\n      |                                                                                                                                  ^\n  336 |     } finally { await context.close(); }\n  337 |   });\n  338 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:335:130"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:13:24.711Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-df70e-tion-saved-choice-restored--Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-df70e-tion-saved-choice-restored--Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                        "column": 130,
+                        "line": 335
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-674d57077fd0b679c2ea",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 330,
+              "column": 3
+            },
+            {
+              "title": "TC-12 Goals: changing firmness via the panel sends 100334728 + 100334729",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19081,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:13:49.475Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-ff63cb3de1560f43c7a7",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 339,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "WIN270 Variation - Firmness section",
+          "file": "win270-deprioritise-firmness.spec.js",
+          "line": 351,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-13 New headline + sub-copy; tabs removed; Luxury Firm content with WIN255 V2 copy by default",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14322,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:14:10.909Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "section-default",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-d8908-h-WIN255-V2-copy-by-default-Chrome-Desktop\\attachments\\section-default-a74c157a639b451baff9038c724760dd7586cb41.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-159df7edf6cee1cf9793",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 352,
+              "column": 3
+            },
+            {
+              "title": "TC-14 'Prefer a different feel?' link present, accordion collapsed by default",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12792,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:14:25.250Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "explore-collapsed",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-f5162-ordion-collapsed-by-default-Chrome-Desktop\\attachments\\explore-collapsed-b1cd2ae359158743fc0618aa18aac4c89768e842.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-439202bae8cec5b123e9",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 379,
+              "column": 3
+            },
+            {
+              "title": "TC-15 Toggle expands 4 buttons (Luxury Firm active) and collapses again",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12042,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:14:38.059Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "explore-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-9c08f--active-and-collapses-again-Chrome-Desktop\\attachments\\explore-open-08e835734ee0d946949189839f6328e8f24fb72a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-42ff52eb1661bb5a496f",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 390,
+              "column": 3
+            },
+            {
+              "title": "TC-16 Each button switches the content like the control tabs and brings it into view",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22747,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:14:50.114Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "explore-plus",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-c9c4e-abs-and-brings-it-into-view-Chrome-Desktop\\attachments\\explore-plus-979cdff4ebae7963cd7dcbfa79e3638bd35fd88a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-07f2076b36d89f1ed043",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 406,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "WIN270 Variation - Nav, video, gallery",
+          "file": "win270-deprioritise-firmness.spec.js",
+          "line": 437,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-17 Sticky nav item renamed 'Comfort & Support'",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15503,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:15:12.877Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "sticky-nav",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-5949a-em-renamed-Comfort-Support--Chrome-Desktop\\attachments\\sticky-nav-45bb1d50f421f7abd4fe291aa73f9a081bd8f709.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-14369d7e6da307672176",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 438,
+              "column": 3
+            },
+            {
+              "title": "TC-18 'Comfort & Support' scrolls to the firmness (construction) section",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16367,
+                      "error": {
+                        "message": "Error: construction section top relative to viewport\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m-20\u001b[39m\nReceived:   \u001b[31m-4298\u001b[39m",
+                        "stack": "Error: construction section top relative to viewport\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m-20\u001b[39m\nReceived:   \u001b[31m-4298\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:473:68",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                          "column": 68,
+                          "line": 473
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 471 |\u001b[39m       \u001b[36mconst\u001b[39m top \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mround(document\u001b[33m.\u001b[39mquerySelector(\u001b[32m\"#shopify-section-winkbed-construction\"\u001b[39m)\u001b[33m.\u001b[39mgetBoundingClientRect()\u001b[33m.\u001b[39mtop))\u001b[33m;\u001b[39m\n \u001b[90m 472 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m\"after-comfort-support-click\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 473 |\u001b[39m       expect(top\u001b[33m,\u001b[39m \u001b[32m\"construction section top relative to viewport\"\u001b[39m)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[33m-\u001b[39m\u001b[35m20\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 474 |\u001b[39m       expect(top)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m260\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 475 |\u001b[39m     } \u001b[36mfinally\u001b[39m { \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m }\n \u001b[90m 476 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                            "column": 68,
+                            "line": 473
+                          },
+                          "message": "Error: construction section top relative to viewport\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m-20\u001b[39m\nReceived:   \u001b[31m-4298\u001b[39m\n\n  471 |       const top = await page.evaluate(() => Math.round(document.querySelector(\"#shopify-section-winkbed-construction\").getBoundingClientRect().top));\n  472 |       await shot(page, ti, \"after-comfort-support-click\");\n> 473 |       expect(top, \"construction section top relative to viewport\").toBeGreaterThan(-20);\n      |                                                                    ^\n  474 |       expect(top).toBeLessThan(260);\n  475 |     } finally { await context.close(); }\n  476 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:473:68"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:15:28.400Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "after-comfort-support-click",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-67b2e-rmness-construction-section-Chrome-Desktop\\attachments\\after-comfort-support-click-e1ca24b980fc82d7e7665c786d5d644ce54aa6f9.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-67b2e-rmness-construction-section-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-67b2e-rmness-construction-section-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                        "column": 68,
+                        "line": 473
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-d2a7b8238278cd87d2bb",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 459,
+              "column": 3
+            },
+            {
+              "title": "TC-19 Video headline, sub-copy and NapLab link updated",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15444,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:15:47.235Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-d152d3da71be8cc2aac8",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 478,
+              "column": 3
+            },
+            {
+              "title": "TC-20 New video thumbnail loads; clicking it starts the YouTube video",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12487,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:16:04.754Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video-thumbnail",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-33ab6-it-starts-the-YouTube-video-Chrome-Desktop\\attachments\\video-thumbnail-4b4689919b9aec3977aee27381a8ff9208575d6d.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-c5b35e367dc6b66a8f5b",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 487,
+              "column": 3
+            },
+            {
+              "title": "TC-21 Desktop grid: firmness image replaced; click opens the lightbox on the bed image",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 14339,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/winkbed-5-imageSens/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/winkbed-5-imageSens/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:519:27",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                          "column": 27,
+                          "line": 519
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 517 |\u001b[39m       expect(active\u001b[33m.\u001b[39mopen)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 518 |\u001b[39m       expect(active\u001b[33m.\u001b[39mindex)\u001b[33m.\u001b[39mtoBe(\u001b[35m4\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 519 |\u001b[39m       expect(active\u001b[33m.\u001b[39mhtml)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/winkbed-5-imageSens/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 520 |\u001b[39m     } \u001b[36mfinally\u001b[39m { \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m }\n \u001b[90m 521 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 522 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                            "column": 27,
+                            "line": 519
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/winkbed-5-imageSens/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n  517 |       expect(active.open).toBe(true);\n  518 |       expect(active.index).toBe(4);\n> 519 |       expect(active.html).toMatch(/winkbed-5-imageSens/);\n      |                           ^\n  520 |     } finally { await context.close(); }\n  521 |   });\n  522 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:519:27"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:16:17.263Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "gallery-grid",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-e2360-e-lightbox-on-the-bed-image-Chrome-Desktop\\attachments\\gallery-grid-d7de130305a49f58e2bd49a2014b720264597765.png"
+                        },
+                        {
+                          "name": "gallery-lightbox",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-e2360-e-lightbox-on-the-bed-image-Chrome-Desktop\\attachments\\gallery-lightbox-d3b6dc1206a9378102340eeef30d7d955a7e3d01.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-e2360-e-lightbox-on-the-bed-image-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-e2360-e-lightbox-on-the-bed-image-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                        "column": 27,
+                        "line": 519
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-6b00e3be78bd0821d557",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 501,
+              "column": 3
+            },
+            {
+              "title": "TC-22 Firmness-options image removed from the lightbox and carousel",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19716,
+                      "error": {
+                        "message": "Error: old firmness image still in lightbox/carousel\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"winkbed-firmness-options_1600x.jpg\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: old firmness image still in lightbox/carousel\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"winkbed-firmness-options_1600x.jpg\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:540:69",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                          "column": 69,
+                          "line": 540
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 538 |\u001b[39m         \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m\"lightbox-old-firmness-image\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 539 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 540 |\u001b[39m       expect(left\u001b[33m,\u001b[39m \u001b[32m\"old firmness image still in lightbox/carousel\"\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 541 |\u001b[39m     } \u001b[36mfinally\u001b[39m { \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mclose()\u001b[33m;\u001b[39m }\n \u001b[90m 542 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 543 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                            "column": 69,
+                            "line": 540
+                          },
+                          "message": "Error: old firmness image still in lightbox/carousel\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"winkbed-firmness-options_1600x.jpg\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  538 |         await shot(page, ti, \"lightbox-old-firmness-image\");\n  539 |       }\n> 540 |       expect(left, \"old firmness image still in lightbox/carousel\").toEqual([]);\n      |                                                                     ^\n  541 |     } finally { await context.close(); }\n  542 |   });\n  543 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js:540:69"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:16:34.144Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "lightbox-old-firmness-image",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-9531e-m-the-lightbox-and-carousel-Chrome-Desktop\\attachments\\lightbox-old-firmness-image-43cc4d6038d8674430097bcdaef2a8f422cf47d0.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-9531e-m-the-lightbox-and-carousel-Chrome-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\win270-chrome-desktop\\win270-deprioritise-firmne-9531e-m-the-lightbox-and-carousel-Chrome-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\win270-deprioritise-firmness.spec.js",
+                        "column": 69,
+                        "line": 540
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-e9133558572e39bfef6e",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 523,
+              "column": 3
+            },
+            {
+              "title": "TC-23 No horizontal overflow and no variation errors",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18040,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-26T14:16:58.647Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d8c28b63cad393c10b1c-720229f33613917fca66",
+              "file": "win270-deprioritise-firmness.spec.js",
+              "line": 544,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-26T14:08:10.639Z",
+    "duration": 550238.608,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

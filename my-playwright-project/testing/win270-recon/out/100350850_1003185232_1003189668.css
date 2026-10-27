@@ -1,0 +1,39 @@
+/* =====================================================================
+   LUXURY FIRM COPY (WIN-255)
+   ===================================================================== */
+
+/* Original sub-header hidden only once our copy is inserted in that item */
+html body.cre-t-270 .cre-t-270-lf-updated div.winkbed-construction__content-bottom-main-item-top-left-sub-header {
+  display: none;
+}
+
+html body.cre-t-270 .cre-t-255-main-subHeader {
+  font-size: 15px;
+  line-height: 1.33;
+  color: #030c2d;
+  font-style: normal;
+  font-weight: 400;
+}
+
+html body.cre-t-270 .cre-t-255-customer-chosen-copy {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+html body.cre-t-270 .winkbed-construction__content-bottom-main-item-top-left-header-bar-text,
+html body.cre-t-270 .winkbed-construction__content-bottom-main-item-top-left-header-bar {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  html body.cre-t-270 .cre-t-255-main-subHeader {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  html body.cre-t-270 .cre-t-255-wrapper {
+    text-align: center;
+    margin-top: 12px;
+  }
+}

@@ -1,283 +1,57 @@
-/* =====================================================================
-   1. BUY BOX - firmness panel
-   ===================================================================== */
-.cre-t-270-firm-panel {
-  display: none;
-}
-
-body.cre-t-270.cre-t-270-firm-ready .cre-t-270-firm-option {
+html body.cre-t-03 product-gallery .product-gallery__viewer{
   position: relative;
 }
 
-body.cre-t-270.cre-t-270-firm-ready .cre-t-270-firm-option .dummySelectFirmness {
-  display: none !important;
-}
-
-body.cre-t-270.cre-t-270-firm-ready .cre-t-270-firm-panel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 58px;
-  padding: 0 20px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
-  font-family: greycliff-cf, sans-serif;
-  box-sizing: border-box;
-}
-
-body.cre-t-270 .cre-t-270-firm-check {
-  display: flex;
-  flex-shrink: 0;
-}
-
-body.cre-t-270 .cre-t-270-firm-name {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-body.cre-t-270 .cre-t-270-firm-badge {
-  display: inline-block;
-  padding: 3px 12px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.14);
-  color: #e7e7ea;
-  font-size: 12px;
-  line-height: 1.4;
-  white-space: nowrap;
-}
-
-/* Pill only when the option has a label after ":" (eg. Most Popular, Heavier People) */
-body.cre-t-270 .cre-t-270-firm-badge:empty {
-  display: none;
-}
-
-body.cre-t-270 .cre-t-270-firm-change {
-  margin-left: auto;
-  font-size: 14px;
-  line-height: 1.2;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  white-space: nowrap;
-}
-
-/* Original select stays in the DOM (theme logic) - our select drives it */
-body.cre-t-270.cre-t-270-firm-ready .cre-t-270-firm-option #firmness-select {
-  display: none !important;
-}
-
-/* Our select spans the whole panel (so the native menu opens at full panel width), but clip-path
-   limits its clickable area to the "Change firmness" link - clicks elsewhere on the panel pass through */
-body.cre-t-270 .cre-t-270-firm-select {
+html body.cre-t-03 product-gallery .product-gallery__viewer > .cre-t-03-badges {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  clip-path: inset(0 0 0 calc(100% - 170px));
-  cursor: pointer;
-  font-size: 16px;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-body.cre-t-270.cre-t-270-firm-ready .cre-t-270-firm-label-row .order-form__option-note {
-  visibility: hidden;
-}
-
-body.cre-t-270.cre-t-270-firm-ready.cre-t-270-guide-visible .cre-t-270-firm-label-row .order-form__option-note {
-  visibility: visible;
-}
-
-@media (max-width: 400px) {
-  body.cre-t-270.cre-t-270-firm-ready .cre-t-270-firm-panel {
-    gap: 8px;
-    padding: 0 14px;
-  }
-
-  body.cre-t-270 .cre-t-270-firm-badge {
-    padding: 3px 8px;
-    font-size: 11px;
-  }
-
-  body.cre-t-270 .cre-t-270-firm-change {
-    font-size: 13px;
-  }
-
-  body.cre-t-270 .cre-t-270-firm-select {
-    clip-path: inset(0 0 0 calc(100% - 140px));
-  }
-}
-
-/* =====================================================================
-   2. FIRMNESS SECTION (sticky nav + video copy need no CSS)
-   ===================================================================== */
-
-/* ---------- Construction section: Luxury Firm by default ---------- */
-body.cre-t-270.cre-t-270-explore-ready .winkbed-construction__content-top-header,
-body.cre-t-270.cre-t-270-explore-ready .winkbed-construction__accordion-item-header,
-body.cre-t-270.cre-t-270-explore-ready .winkbed-construction__accordion-item:not(.winkbed-construction__accordion-active) {
-  display: none !important;
-}
-
-/* Pointer arrow linking the panel to the (now hidden) active tab */
-body.cre-t-270.cre-t-270-explore-ready .winkbed-construction__content-bottom-main-item-top::after {
-  display: none;
-}
-
-body.cre-t-270 .cre-t-270-explore {
-  margin: 40px auto 0;
-  text-align: center;
-  font-family: greycliff-cf, sans-serif;
-  color: #030c2d;
-}
-
-body.cre-t-270 .cre-t-270-explore-text {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-body.cre-t-270 .cre-t-270-explore-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: #0c32bc;
-  font: inherit;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  cursor: pointer;
-}
-
-body.cre-t-270 .cre-t-270-explore-chevron {
-  transition: transform 0.2s ease;
-}
-
-body.cre-t-270 .cre-t-270-explore-open .cre-t-270-explore-chevron {
-  transform: rotate(180deg);
-}
-
-body.cre-t-270 .cre-t-270-explore-options {
-  display: none;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-body.cre-t-270 .cre-t-270-explore-open .cre-t-270-explore-options {
-  display: flex;
-}
-
-body.cre-t-270 .cre-t-270-explore-option {
+  top: 12px;
+  right: 12px;
+  z-index: 5;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-width: 150px;
-  padding: 9px 16px;
-  border: 1px solid #0c32bc;
-  border-radius: 4px;
-  background: #fff;
-  color: #0c32bc;
-  font-family: greycliff-cf, sans-serif;
-  font-size: 14px;
-  line-height: 1.3;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  align-items: flex-end;
+  gap: 6px;
+  pointer-events: none;
 }
 
-body.cre-t-270 .cre-t-270-explore-option-score {
-  font-size: 13px;
+html body.cre-t-03 .cre-t-03-badges .cre-t-03-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #cfe6f7;
+    color: #0b4f8a;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: Montserrat,sans-serif;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
-body.cre-t-270 .cre-t-270-explore-option.cre-t-270-active {
-  background: #0c32bc;
-  color: #fff;
+html body.cre-t-03 .cre-t-03-badges .cre-t-03-badge svg {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
 }
 
-@media (max-width: 767px) {
-  body.cre-t-270 .cre-t-270-explore {
-    margin-top: 28px;
-    padding: 0 16px;
+html body.cre-t-03 .cre-t-03-badges .cre-t-03-badge-1{
+  color: #0232cc;
+  background: #eaf0ff;
+}
+html body.cre-t-03 .cre-t-03-badges .cre-t-03-badge-2{
+  color: #06739a;
+  background: #e4f5fb;
+}
+
+@media (max-width: 749px) {
+  html body.cre-t-03 product-gallery .product-gallery__viewer > .cre-t-03-badges {
+    top: 8px;
+    right: 8px;
   }
 
-  body.cre-t-270 .cre-t-270-explore-text {
-    font-size: 15px;
+  html body.cre-t-03 .cre-t-03-badges .cre-t-03-badge {
+    font-size: 10px;
+    padding: 3px 6px;
   }
-
-  body.cre-t-270 .cre-t-270-explore-open .cre-t-270-explore-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  body.cre-t-270 .cre-t-270-explore-option {
-    min-width: 0;
-  }
-}
-
-/* =====================================================================
-   5. LUXURY FIRM COPY (WIN-255)
-   ===================================================================== */
-
-/* Original sub-header hidden only once our copy is inserted in that item */
-html body.cre-t-270 .cre-t-270-lf-updated div.winkbed-construction__content-bottom-main-item-top-left-sub-header {
-  display: none;
-}
-
-html body.cre-t-270 .cre-t-255-main-subHeader {
-  font-size: 15px;
-  line-height: 1.33;
-  color: #030c2d;
-  font-style: normal;
-  font-weight: 400;
-}
-
-html body.cre-t-270 .cre-t-255-customer-chosen-copy {
-  margin-top: 10px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-html body.cre-t-270 .winkbed-construction__content-bottom-main-item-top-left-header-bar-text,
-html body.cre-t-270 .winkbed-construction__content-bottom-main-item-top-left-header-bar {
-  display: none;
-}
-
-@media screen and (max-width: 767px) {
-  html body.cre-t-270 .cre-t-255-main-subHeader {
-    font-size: 14px;
-    line-height: 24px;
-  }
-
-  html body.cre-t-270 .cre-t-255-wrapper {
-    text-align: center;
-    margin-top: 12px;
-  }
-}
-
-
-html body .winkbed-construction__subheader {
-  max-width: 600px !important;
-}
-
-
-html body.cre-t-270 .cre37-navigation-link4 .cre37-navigation-link-text {
-  font-size: 0;
-}
-
-html body.cre-t-270 .cre37-navigation-link4 .cre37-navigation-link-text::before {
-  content: "Comfort & Support";
-  font-size: 16px;
-  display: inline-block;
-  vertical-align: middle;
-
 }

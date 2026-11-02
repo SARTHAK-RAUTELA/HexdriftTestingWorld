@@ -1,0 +1,193 @@
+<title>AFP37 Login Announcement QA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column, verdict first, then bugs, matrix, evidence gallery. */
+:root {
+  --bg: #f6f8fa; --surface: #ffffff; --fg: #14202b; --muted: #5a6876; --line: #dbe3ea;
+  --navy: #0b2f4e; --accent: #027db6;
+  --pass: #1f7a4d; --pass-bg: #e3f3ea; --fail: #b3261e; --fail-bg: #fbe7e5; --warn: #8a5a00; --warn-bg: #fdf1d8;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f151b; --surface: #17202a; --fg: #e4ebf1; --muted: #9aa8b5; --line: #2a3643;
+  --navy: #9cc7ea; --accent: #4fb3e6;
+  --pass: #6fd3a0; --pass-bg: #163326; --fail: #ff8a80; --fail-bg: #3a1a18; --warn: #f2c46b; --warn-bg: #352a12; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f151b; --surface: #17202a; --fg: #e4ebf1; --muted: #9aa8b5; --line: #2a3643;
+  --navy: #9cc7ea; --accent: #4fb3e6;
+  --pass: #6fd3a0; --pass-bg: #163326; --fail: #ff8a80; --fail-bg: #3a1a18; --warn: #f2c46b; --warn-bg: #352a12; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 32px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 40px; }
+h1, h2, h3 { color: var(--navy); line-height: 1.25; text-wrap: balance; margin: 0; }
+h1 { font-size: 30px; font-weight: 700; }
+h2 { font-size: 21px; font-weight: 600; }
+h3 { font-size: 16px; font-weight: 600; }
+p { margin: 0; max-width: 72ch; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+header { display: grid; gap: 12px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--muted); font-size: 13px; }
+.meta b { color: var(--fg); font-weight: 500; }
+section { display: grid; gap: 16px; min-width: 0; }
+.verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 14px; }
+.tally { display: flex; flex-wrap: wrap; gap: 10px; }
+.tally div { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; min-width: 150px; flex: 1; }
+.tally strong { display: block; font: 600 22px/1.2 var(--mono); font-variant-numeric: tabular-nums; }
+.tally span { font-size: 12px; color: var(--muted); }
+.bug { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--fail); border-radius: 8px; padding: 18px 20px; display: grid; gap: 10px; min-width: 0; }
+.bug.med { border-left-color: var(--warn); }
+.bug-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; }
+.pill { font: 600 11px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; padding: 5px 8px; border-radius: 99px; }
+.pill.high { background: var(--fail-bg); color: var(--fail); }
+.pill.med { background: var(--warn-bg); color: var(--warn); }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; margin: 0; font-size: 14px; }
+dt { color: var(--muted); }
+dd { margin: 0; min-width: 0; }
+@media (max-width: 520px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: 6px; } }
+code { font: 13px var(--mono); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; overflow-wrap: anywhere; }
+.figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+figure { margin: 0; display: grid; gap: 6px; min-width: 0; align-content: start; }
+figure a { display: block; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--bg); }
+figure img { display: block; width: 100%; height: 220px; object-fit: cover; object-position: top left; }
+figure.tall img { height: 340px; object-position: top center; }
+figcaption { font-size: 12px; color: var(--muted); }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 13px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 12px; background: var(--surface); }
+td.id { font: 500 12px var(--mono); white-space: nowrap; }
+td.st { text-align: center; white-space: nowrap; }
+.s { font: 600 11px/1 var(--mono); padding: 4px 7px; border-radius: 4px; cursor: help; }
+.s.pass { background: var(--pass-bg); color: var(--pass); }
+.s.fail { background: var(--fail-bg); color: var(--fail); }
+.s.note { background: var(--warn-bg); color: var(--warn); }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+summary { cursor: pointer; font-weight: 600; color: var(--navy); }
+summary:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.detail-list { display: grid; gap: 4px; margin-top: 10px; font: 12px/1.5 var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 80ch; }
+a { color: var(--accent); }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">AFP · VWO exp 84 · QA report · 2 Nov 2026</span>
+    <h1>AFP37: Sitewide Login Update Announcement</h1>
+    <div class="meta">
+      <span>Variation <b>cre-t-37</b> (vB.js / vB.css)</span>
+      <span>Browsers <b>Chrome + Safari, desktop + mobile</b></span>
+      <span>Method <b>Playwright on VWO preview links + manual Chrome pass</b></span>
+    </div>
+  </header>
+
+  <section class="verdict">
+    <h2>Verdict: hold launch until the cookie-banner overlap is fixed</h2>
+    <p>The modal and the eWeb alert match the wireframe in all four browsers: copy, styling, position, the 5-second delay, dismissal, the 7-day cookie, reduced motion and both goals. The blocker is first-time visitors. The modal opens on top of the TrustArc cookie banner, and on phones it covers the "Agree &amp; Proceed" button. The alert also shows on eWeb pages other than login.</p>
+    <div class="tally" id="tally"></div>
+  </section>
+
+  <section>
+    <h2>Bugs</h2>
+
+    <article class="bug">
+      <div class="bug-head"><span class="pill high">High</span><h3>BUG-01 · Modal covers the cookie consent banner for first-time visitors</h3></div>
+      <p>For anyone who hasn't answered the TrustArc banner yet, the modal opens on top of it. Both use <code>z-index: 999999</code>, and the modal is added later, so it wins. On iPhone 12 and Pixel 5 the card sits directly over the <b>Agree &amp; Proceed</b> button. On desktop it covers the start of the privacy text. The wireframe says the card should stay "clear of cookie notices and other overlays".</p>
+      <dl>
+        <dt>Seen in</dt><dd>Chrome, Safari, Mobile Chrome, Mobile Safari (TC-08, 4/4 browsers)</dd>
+        <dt>Cause</dt><dd><code>vB.css</code> already offsets the card by <code>var(--cre-t-37-consent-offset)</code>, but <code>vB.js</code> never sets that variable, so the offset is always 0.</dd>
+        <dt>Suggested fix</dt><dd>In <code>showModal()</code>, if <code>#truste-consent-track</code> is visible, either wait until it's dismissed before showing, or set <code>--cre-t-37-consent-offset</code> to its height and keep it updated with a ResizeObserver. Waiting is cleaner on mobile, where the banner fills most of the screen.</dd>
+      </dl>
+      <div class="figs">
+        <figure class="tall"><a href="mobile-safari-iphone-12-/09-clean-first-visit.png" target="_blank"><img src="mobile-safari-iphone-12-/09-clean-first-visit.png" alt="iPhone 12: modal over the TrustArc Agree and Proceed button"></a><figcaption>iPhone 12, first visit: "Got it" sits on top of "Agree &amp; Proceed"</figcaption></figure>
+        <figure class="tall"><a href="mobile-chrome-pixel-5-/09-clean-first-visit.png" target="_blank"><img src="mobile-chrome-pixel-5-/09-clean-first-visit.png" alt="Pixel 5 first visit with cookie banner"></a><figcaption>Pixel 5, first visit</figcaption></figure>
+        <figure><a href="chrome-desktop/01-modal-open.png" target="_blank"><img src="chrome-desktop/01-modal-open.png" alt="Chrome desktop first visit"></a><figcaption>Chrome desktop, first visit: modal over the privacy text, HubSpot popup open too</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="bug med">
+      <div class="bug-head"><span class="pill med">Medium</span><h3>BUG-02 · Opens at the same time as other site popups</h3></div>
+      <p>On the homepage, the site's HubSpot "AFP 2026 · Don't get stuck with FOMO" countdown popup (<code>#hs-web-interactives-top-anchor</code>, with a dark overlay) opens at the same moment, so a first-time visitor sees two popups plus the cookie banner. In the manual Chrome pass, a Hotjar "Quick question" survey (<code>.hj-survey-*</code>, max z-index) also appeared once in the same bottom-left corner, 24px from the edge, over the bottom of the modal. Hotjar is sampled, so this only happens for some visitors.</p>
+      <dl>
+        <dt>Seen in</dt><dd>HubSpot popup in all 4 browsers (TC-08b); Hotjar in 1 of about 6 manual loads</dd>
+        <dt>Suggested fix</dt><dd>Hold the modal while the HubSpot popup is visible and start the 5s timer after it closes. For Hotjar, move the card up when a survey is present, or ask the client to move the survey to bottom-right. Check with the client first, since the HubSpot popup is their own campaign.</dd>
+      </dl>
+      <div class="figs">
+        <figure><a href="safari-desktop/01-modal-open.png" target="_blank"><img src="safari-desktop/01-modal-open.png" alt="Safari desktop with HubSpot popup, cookie banner and modal"></a><figcaption>Safari desktop: HubSpot popup, cookie banner and AFP37 modal together</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="bug med">
+      <div class="bug-head"><span class="pill med">Medium</span><h3>BUG-03 · eWeb alert shows on non-login pages</h3></div>
+      <p>The ticket scopes the alert to the eWeb <b>login</b> page. The code adds it above the first <code>#eWebFrameWorkMiddleRow h1</code> on any eWeb page, with no WebCode check, and the VWO targeting doesn't narrow it either. Verified on <b>Forgot Password</b> (<code>WebCode=ForgotPassword</code>), where it shows above "Forgot your password?".</p>
+      <dl>
+        <dt>Seen in</dt><dd>All 4 browsers (TC-21) and the manual Chrome pass</dd>
+        <dt>Suggested fix</dt><dd>Gate <code>initAlert()</code> on <code>/WebCode=LoginRequired/i</code>, or add a URL rule in VWO for the eWeb part. It may be wanted on Forgot Password, since that's where people will reset, so confirm with the client before changing.</dd>
+      </dl>
+      <div class="figs">
+        <figure><a href="manual/chrome-eweb-forgot-password.jpg" target="_blank"><img src="manual/chrome-eweb-forgot-password.jpg" alt="Alert on the Forgot Password page"></a><figcaption>Chrome: alert on the Forgot Password page</figcaption></figure>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>Lower-priority notes</h2>
+    <ul>
+      <li><b>The alert pops in late.</b> On eWeb, VWO adds the alert 2–5s after the page renders, pushing the sign-in form down while someone may already be typing. VWO's "hide modified elements" setting can mask it.</li>
+      <li><b>Escape only works with focus inside the modal.</b> The keydown listener sits on the modal and focus is never moved into it, so Escape on the page does nothing. The spec doesn't require Escape; the close icon and "Got it" are both keyboard-focusable.</li>
+      <li><b>The dismiss cookie is host-only</b> (<code>www.financialprofessionals.org</code>). Visitors on the bare domain would see the modal again. Low risk if the bare domain redirects to www.</li>
+      <li><b>eWeb is already wider than the phone screen.</b> On iPhone 12 the alert is 400px in a 390px viewport (TC-19, marked NOTE), but eWeb renders 411px wide without the variation too, so the alert just follows the existing column. Optional: <code>max-width: calc(100vw - 32px)</code> on mobile.</li>
+      <li><b>Goals were checked through <code>VWO.event</code>, not network hits.</b> Preview mode doesn't send tracking. Both identifiers (<code>afp37ModalShows</code>, <code>afp37ModalDismissed</code>) match the campaign's goal config.</li>
+      <li><b>The deployed code matches the local files.</b> The VWO bundle has the same CSS and JS (5s delay, 7-day cookie, <code>eweb.afponline.org</code> branch). Logged-in users weren't tested because there's no test account; the code doesn't branch on login state, so they should see the same thing.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What matches the wireframe</h2>
+    <div class="figs">
+      <figure><a href="manual/wireframe.png" target="_blank"><img src="manual/wireframe.png" alt="Wireframe"></a><figcaption>Wireframe (Group 48098527)</figcaption></figure>
+      <figure><a href="manual/chrome-returning-visitor-modal.jpg" target="_blank"><img src="manual/chrome-returning-visitor-modal.jpg" alt="Chrome desktop modal after consent"></a><figcaption>Chrome desktop, consent already given: bottom-left, 24px, 352px card</figcaption></figure>
+      <figure class="tall"><a href="mobile-safari-iphone-12-/10-clean-modal-only.png" target="_blank"><img src="mobile-safari-iphone-12-/10-clean-modal-only.png" alt="iPhone modal after consent"></a><figcaption>iPhone 12, consent given: compact card with 16px sides, above the chat bubble</figcaption></figure>
+      <figure><a href="manual/chrome-eweb-login-alert.jpg" target="_blank"><img src="manual/chrome-eweb-login-alert.jpg" alt="eWeb login alert in Chrome"></a><figcaption>eWeb login alert, Chrome desktop</figcaption></figure>
+      <figure class="tall"><a href="mobile-safari-iphone-12-/11-clean-eweb-alert.png" target="_blank"><img src="mobile-safari-iphone-12-/11-clean-eweb-alert.png" alt="eWeb login alert on iPhone"></a><figcaption>eWeb login alert, iPhone 12</figcaption></figure>
+      <figure><a href="chrome-desktop/06-control.png" target="_blank"><img src="chrome-desktop/06-control.png" alt="Control homepage"></a><figcaption>Control: no modal</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Test matrix</h2>
+    <p>Hover over a status to see the measured value. The full list is under the table.</p>
+    <div class="table-scroll"><table id="matrix"></table></div>
+    <details><summary>All measured values</summary><div class="detail-list" id="details"></div></details>
+  </section>
+</div>
+
+<script>
+const DATA = [{"project":"Chrome Desktop","id":"TC-01","title":"Modal injected but hidden before the 5s delay","status":"pass","detail":"open at injection: false","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-02","title":"Modal opens ~5s after injection","status":"pass","detail":"delay 5022ms","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-03","title":"Copy matches wireframe (title, body, \"Got it\")","status":"pass","detail":"title \"A new AFP login is coming soon\", CTA \"Got it\", body matches true","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-04","title":"Desktop: fixed bottom-left, 24px from edges, 352px wide","status":"pass","detail":"left 24, right 904, bottom gap 24, top 367, 352×329 in 1280×720","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-05","title":"Close icon fully in viewport; no horizontal scroll","status":"pass","detail":"close icon in view true (35px), no h-scroll true","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-06","title":"Styling: navy title, #027DB6 CTA, site Gotham fonts","status":"pass","detail":"title GothamNarrowBold 23px/800; body 15px/24px; CTA rgb(2, 125, 182), 45px","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-07","title":"\"AFP37 - Modal Shows\" goal fires on open","status":"pass","detail":"VWO.event calls: [\"afp37ModalShows\"]","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-08","title":"Modal clear of chat / cookie / survey overlays","status":"fail","detail":"[{\"label\":\"Cookie notice #truste-consent-track\",\"area\":70752,\"z\":\"999999\",\"rect\":[0,495,1280,225]}]","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-08b","title":"No other popup open at the same time","status":"fail","detail":"#truste-consent-track z999999, #hs-web-interactives-top-anchor z9999, #hubspot-messages-iframe-container z9990","screenshot":"chrome-desktop/01-modal-open.png"},{"project":"Chrome Desktop","id":"TC-09","title":"\"Got it\" closes the modal and fires \"Modal Dismissed\"","status":"pass","detail":"closed true, VWO.event calls [\"afp37ModalShows\",\"afp37ModalDismissed\"]","screenshot":"chrome-desktop/02-after-got-it.png"},{"project":"Chrome Desktop","id":"TC-10","title":"Dismiss cookie set for 7 days","status":"pass","detail":"cre-t-37-dismissed expires in 7.00 days, domain www.financialprofessionals.org","screenshot":"chrome-desktop/02-after-got-it.png"},{"project":"Chrome Desktop","id":"TC-11","title":"After dismissal, modal not shown on another page","status":"pass","detail":"variation applied true, injected false, open false","screenshot":"chrome-desktop/03-second-page-after-dismiss.png"},{"project":"Chrome Desktop","id":"TC-12","title":"Not dismissed → modal shows again on the next page","status":"pass","detail":"opened, delay 5024ms","screenshot":"chrome-desktop/04-second-page-not-dismissed.png"},{"project":"Chrome Desktop","id":"TC-13","title":"Close icon closes the modal and sets the cookie","status":"pass","detail":"closed true, cookie set true","screenshot":"chrome-desktop/05-after-close-icon.png"},{"project":"Chrome Desktop","id":"TC-14","title":"Modal does not close automatically (20s observed)","status":"pass","detail":"still open after 20s: true","screenshot":null},{"project":"Chrome Desktop","id":"TC-15","title":"prefers-reduced-motion: no slide transform / transition","status":"pass","detail":"{\"transform\":\"none\",\"transitionDuration\":\"0s\"}","screenshot":null},{"project":"Chrome Desktop","id":"TC-16","title":"Control: no modal, no cre-t-37 class","status":"pass","detail":"{\"combo\":\"1\",\"cls\":false,\"modal\":false}","screenshot":"chrome-desktop/06-control.png"},{"project":"Chrome Desktop","id":"TC-17","title":"eWeb login: alert inserted once, directly above the \"Sign In\" H1","status":"pass","detail":"count 1, directly before H1 true","screenshot":"chrome-desktop/07-eweb-login-alert.png"},{"project":"Chrome Desktop","id":"TC-18","title":"eWeb alert copy matches wireframe","status":"pass","detail":"title \"A new AFP login is coming soon\", body matches true","screenshot":"chrome-desktop/07-eweb-login-alert.png"},{"project":"Chrome Desktop","id":"TC-19","title":"eWeb alert styling (light-blue box, bold title, aligned with H1, fits viewport)","status":"pass","detail":"bg rgb(240, 247, 251), border rgb(213, 229, 239), radius 8px, padding 28px 43px, title 16px/600, aligned true, 1190px of 1280, no h-scroll true","screenshot":"chrome-desktop/07-eweb-login-alert.png"},{"project":"Chrome Desktop","id":"TC-20","title":"eWeb: sitewide modal NOT shown (excluded)","status":"pass","detail":"modal present: false","screenshot":"chrome-desktop/07-eweb-login-alert.png"},{"project":"Chrome Desktop","id":"TC-21","title":"Alert NOT shown on non-login eWeb page (Forgot Password)","status":"fail","detail":"page H1 \"Forgot your password?\", alert present true","screenshot":"chrome-desktop/08-eweb-forgot-password.png"},{"project":"Safari Desktop","id":"TC-01","title":"Modal injected but hidden before the 5s delay","status":"pass","detail":"open at injection: false","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-02","title":"Modal opens ~5s after injection","status":"pass","detail":"delay 5008ms","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-03","title":"Copy matches wireframe (title, body, \"Got it\")","status":"pass","detail":"title \"A new AFP login is coming soon\", CTA \"Got it\", body matches true","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-04","title":"Desktop: fixed bottom-left, 24px from edges, 352px wide","status":"pass","detail":"left 24, right 904, bottom gap 24, top 367, 352×329 in 1280×720","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-05","title":"Close icon fully in viewport; no horizontal scroll","status":"pass","detail":"close icon in view true (35px), no h-scroll true","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-06","title":"Styling: navy title, #027DB6 CTA, site Gotham fonts","status":"pass","detail":"title GothamNarrowBold 23px/800; body 15px/24px; CTA rgb(2, 125, 182), 45px","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-07","title":"\"AFP37 - Modal Shows\" goal fires on open","status":"pass","detail":"VWO.event calls: [\"afp37ModalShows\"]","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-08","title":"Modal clear of chat / cookie / survey overlays","status":"fail","detail":"[{\"label\":\"Cookie notice #truste-consent-track\",\"area\":70752,\"z\":\"999999\",\"rect\":[0,495,1280,225]}]","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-08b","title":"No other popup open at the same time","status":"fail","detail":"#truste-consent-track z999999, #hubspot-messages-iframe-container z9990, #hs-web-interactives-top-anchor z9999","screenshot":"safari-desktop/01-modal-open.png"},{"project":"Safari Desktop","id":"TC-09","title":"\"Got it\" closes the modal and fires \"Modal Dismissed\"","status":"pass","detail":"closed true, VWO.event calls [\"afp37ModalShows\",\"afp37ModalDismissed\"]","screenshot":"safari-desktop/02-after-got-it.png"},{"project":"Safari Desktop","id":"TC-10","title":"Dismiss cookie set for 7 days","status":"pass","detail":"cre-t-37-dismissed expires in 7.00 days, domain www.financialprofessionals.org","screenshot":"safari-desktop/02-after-got-it.png"},{"project":"Safari Desktop","id":"TC-11","title":"After dismissal, modal not shown on another page","status":"pass","detail":"variation applied true, injected false, open false","screenshot":"safari-desktop/03-second-page-after-dismiss.png"},{"project":"Safari Desktop","id":"TC-12","title":"Not dismissed → modal shows again on the next page","status":"pass","detail":"opened, delay 5013ms","screenshot":"safari-desktop/04-second-page-not-dismissed.png"},{"project":"Safari Desktop","id":"TC-13","title":"Close icon closes the modal and sets the cookie","status":"pass","detail":"closed true, cookie set true","screenshot":"safari-desktop/05-after-close-icon.png"},{"project":"Safari Desktop","id":"TC-14","title":"Modal does not close automatically (20s observed)","status":"pass","detail":"still open after 20s: true","screenshot":null},{"project":"Safari Desktop","id":"TC-15","title":"prefers-reduced-motion: no slide transform / transition","status":"pass","detail":"{\"transform\":\"none\",\"transitionDuration\":\"0s\"}","screenshot":null},{"project":"Safari Desktop","id":"TC-16","title":"Control: no modal, no cre-t-37 class","status":"pass","detail":"{\"combo\":\"1\",\"cls\":false,\"modal\":false}","screenshot":"safari-desktop/06-control.png"},{"project":"Safari Desktop","id":"TC-17","title":"eWeb login: alert inserted once, directly above the \"Sign In\" H1","status":"pass","detail":"count 1, directly before H1 true","screenshot":"safari-desktop/07-eweb-login-alert.png"},{"project":"Safari Desktop","id":"TC-18","title":"eWeb alert copy matches wireframe","status":"pass","detail":"title \"A new AFP login is coming soon\", body matches true","screenshot":"safari-desktop/07-eweb-login-alert.png"},{"project":"Safari Desktop","id":"TC-19","title":"eWeb alert styling (light-blue box, bold title, aligned with H1, fits viewport)","status":"pass","detail":"bg rgb(240, 247, 251), border rgb(213, 229, 239), radius 8px, padding 28px 43px, title 16px/600, aligned true, 1190px of 1280, no h-scroll true","screenshot":"safari-desktop/07-eweb-login-alert.png"},{"project":"Safari Desktop","id":"TC-20","title":"eWeb: sitewide modal NOT shown (excluded)","status":"pass","detail":"modal present: false","screenshot":"safari-desktop/07-eweb-login-alert.png"},{"project":"Safari Desktop","id":"TC-21","title":"Alert NOT shown on non-login eWeb page (Forgot Password)","status":"fail","detail":"page H1 \"Forgot your password?\", alert present true","screenshot":"safari-desktop/08-eweb-forgot-password.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-01","title":"Modal injected but hidden before the 5s delay","status":"pass","detail":"open at injection: false","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-02","title":"Modal opens ~5s after injection","status":"pass","detail":"delay 5026ms","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-03","title":"Copy matches wireframe (title, body, \"Got it\")","status":"pass","detail":"title \"A new AFP login is coming soon\", CTA \"Got it\", body matches true","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-04","title":"Mobile: compact full-width bottom card, fully on screen","status":"pass","detail":"left 16, right 16, bottom gap 88, top 404, 361×235 in 393×727","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-05","title":"Close icon fully in viewport; no horizontal scroll","status":"pass","detail":"close icon in view true (30px), no h-scroll true","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-06","title":"Styling: navy title, #027DB6 CTA, site Gotham fonts","status":"pass","detail":"title GothamNarrowBold 19px/800; body 14px/21px; CTA rgb(2, 125, 182), 42px","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-07","title":"\"AFP37 - Modal Shows\" goal fires on open","status":"pass","detail":"VWO.event calls: [\"afp37ModalShows\"]","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-08","title":"Modal clear of chat / cookie / survey overlays","status":"fail","detail":"[{\"label\":\"HubSpot chat\",\"area\":30174,\"z\":\"9990\",\"rect\":[163,498,230,229]},{\"label\":\"Cookie notice #truste-consent-track\",\"area\":84835,\"z\":\"999999\",\"rect\":[0,188,393,539]}]","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-08b","title":"No other popup open at the same time","status":"fail","detail":"#truste-consent-track z999999, #hs-web-interactives-top-anchor z9999, #hubspot-messages-iframe-container z9990","screenshot":"mobile-chrome-pixel-5-/01-modal-open.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-09","title":"\"Got it\" closes the modal and fires \"Modal Dismissed\"","status":"pass","detail":"closed true, VWO.event calls [\"afp37ModalShows\",\"afp37ModalDismissed\"]","screenshot":"mobile-chrome-pixel-5-/02-after-got-it.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-10","title":"Dismiss cookie set for 7 days","status":"pass","detail":"cre-t-37-dismissed expires in 7.00 days, domain www.financialprofessionals.org","screenshot":"mobile-chrome-pixel-5-/02-after-got-it.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-11","title":"After dismissal, modal not shown on another page","status":"pass","detail":"variation applied true, injected false, open false","screenshot":"mobile-chrome-pixel-5-/03-second-page-after-dismiss.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-12","title":"Not dismissed → modal shows again on the next page","status":"pass","detail":"opened, delay 5022ms","screenshot":"mobile-chrome-pixel-5-/04-second-page-not-dismissed.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-13","title":"Close icon closes the modal and sets the cookie","status":"pass","detail":"closed true, cookie set true","screenshot":"mobile-chrome-pixel-5-/05-after-close-icon.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-14","title":"Modal does not close automatically (20s observed)","status":"pass","detail":"still open after 20s: true","screenshot":null},{"project":"Mobile Chrome (Pixel 5)","id":"TC-15","title":"prefers-reduced-motion: no slide transform / transition","status":"pass","detail":"{\"transform\":\"none\",\"transitionDuration\":\"0s\"}","screenshot":null},{"project":"Mobile Chrome (Pixel 5)","id":"TC-16","title":"Control: no modal, no cre-t-37 class","status":"pass","detail":"{\"combo\":\"1\",\"cls\":false,\"modal\":false}","screenshot":"mobile-chrome-pixel-5-/06-control.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-17","title":"eWeb login: alert inserted once, directly above the \"Sign In\" H1","status":"pass","detail":"count 1, directly before H1 true","screenshot":"mobile-chrome-pixel-5-/07-eweb-login-alert.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-18","title":"eWeb alert copy matches wireframe","status":"pass","detail":"title \"A new AFP login is coming soon\", body matches true","screenshot":"mobile-chrome-pixel-5-/07-eweb-login-alert.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-19","title":"eWeb alert styling (light-blue box, bold title, aligned with H1, fits viewport)","status":"pass","detail":"bg rgb(240, 247, 251), border rgb(213, 229, 239), radius 8px, padding 16px 20px, title 15px/600, aligned true, 400px of 410, no h-scroll true","screenshot":"mobile-chrome-pixel-5-/07-eweb-login-alert.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-20","title":"eWeb: sitewide modal NOT shown (excluded)","status":"pass","detail":"modal present: false","screenshot":"mobile-chrome-pixel-5-/07-eweb-login-alert.png"},{"project":"Mobile Chrome (Pixel 5)","id":"TC-21","title":"Alert NOT shown on non-login eWeb page (Forgot Password)","status":"fail","detail":"page H1 \"Forgot your password?\", alert present true","screenshot":"mobile-chrome-pixel-5-/08-eweb-forgot-password.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-01","title":"Modal injected but hidden before the 5s delay","status":"pass","detail":"open at injection: false","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-02","title":"Modal opens ~5s after injection","status":"pass","detail":"delay 5015ms","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-03","title":"Copy matches wireframe (title, body, \"Got it\")","status":"pass","detail":"title \"A new AFP login is coming soon\", CTA \"Got it\", body matches true","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-04","title":"Mobile: compact full-width bottom card, fully on screen","status":"pass","detail":"left 16, right 16, bottom gap 88, top 341, 358×235 in 390×664","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-05","title":"Close icon fully in viewport; no horizontal scroll","status":"pass","detail":"close icon in view true (30px), no h-scroll true","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-06","title":"Styling: navy title, #027DB6 CTA, site Gotham fonts","status":"pass","detail":"title GothamNarrowBold 19px/800; body 14px/21px; CTA rgb(2, 125, 182), 42px","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-07","title":"\"AFP37 - Modal Shows\" goal fires on open","status":"pass","detail":"VWO.event calls: [\"afp37ModalShows\"]","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-08","title":"Modal clear of chat / cookie / survey overlays","status":"fail","detail":"[{\"label\":\"HubSpot chat\",\"area\":30174,\"z\":\"9990\",\"rect\":[160,435,230,229]},{\"label\":\"Cookie notice #truste-consent-track\",\"area\":84130,\"z\":\"999999\",\"rect\":[0,125,390,539]}]","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-08b","title":"No other popup open at the same time","status":"fail","detail":"#truste-consent-track z999999, #hubspot-messages-iframe-container z9990, #hs-web-interactives-top-anchor z9999","screenshot":"mobile-safari-iphone-12-/01-modal-open.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-09","title":"\"Got it\" closes the modal and fires \"Modal Dismissed\"","status":"pass","detail":"closed true, VWO.event calls [\"afp37ModalShows\",\"afp37ModalDismissed\"]","screenshot":"mobile-safari-iphone-12-/02-after-got-it.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-10","title":"Dismiss cookie set for 7 days","status":"pass","detail":"cre-t-37-dismissed expires in 7.00 days, domain www.financialprofessionals.org","screenshot":"mobile-safari-iphone-12-/02-after-got-it.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-11","title":"After dismissal, modal not shown on another page","status":"pass","detail":"variation applied true, injected false, open false","screenshot":"mobile-safari-iphone-12-/03-second-page-after-dismiss.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-12","title":"Not dismissed → modal shows again on the next page","status":"pass","detail":"opened, delay 5013ms","screenshot":"mobile-safari-iphone-12-/04-second-page-not-dismissed.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-13","title":"Close icon closes the modal and sets the cookie","status":"pass","detail":"closed true, cookie set true","screenshot":"mobile-safari-iphone-12-/05-after-close-icon.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-14","title":"Modal does not close automatically (20s observed)","status":"pass","detail":"still open after 20s: true","screenshot":null},{"project":"Mobile Safari (iPhone 12)","id":"TC-15","title":"prefers-reduced-motion: no slide transform / transition","status":"pass","detail":"{\"transform\":\"none\",\"transitionDuration\":\"0s\"}","screenshot":null},{"project":"Mobile Safari (iPhone 12)","id":"TC-16","title":"Control: no modal, no cre-t-37 class","status":"pass","detail":"{\"combo\":\"1\",\"cls\":false,\"modal\":false}","screenshot":"mobile-safari-iphone-12-/06-control.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-17","title":"eWeb login: alert inserted once, directly above the \"Sign In\" H1","status":"pass","detail":"count 1, directly before H1 true","screenshot":"mobile-safari-iphone-12-/07-eweb-login-alert.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-18","title":"eWeb alert copy matches wireframe","status":"pass","detail":"title \"A new AFP login is coming soon\", body matches true","screenshot":"mobile-safari-iphone-12-/07-eweb-login-alert.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-19","title":"eWeb alert styling (light-blue box, bold title, aligned with H1, fits viewport)","status":"fail","detail":"bg rgb(240, 247, 251), border rgb(213, 229, 239), radius 8px, padding 16px 20px, title 15px/600, aligned true, 400px of 390, no h-scroll false","screenshot":"mobile-safari-iphone-12-/07-eweb-login-alert.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-20","title":"eWeb: sitewide modal NOT shown (excluded)","status":"pass","detail":"modal present: false","screenshot":"mobile-safari-iphone-12-/07-eweb-login-alert.png"},{"project":"Mobile Safari (iPhone 12)","id":"TC-21","title":"Alert NOT shown on non-login eWeb page (Forgot Password)","status":"fail","detail":"page H1 \"Forgot your password?\", alert present true","screenshot":"mobile-safari-iphone-12-/08-eweb-forgot-password.png"}];
+const BROWSERS = ['Chrome Desktop', 'Safari Desktop', 'Mobile Chrome (Pixel 5)', 'Mobile Safari (iPhone 12)'];
+// TC-19 on iPhone is the pre-existing eWeb overflow, reported as a note, not a bug.
+const NOTE = { 'Mobile Safari (iPhone 12)|TC-19': true };
+const ids = [...new Set(DATA.map(r => r.id))];
+const get = (b, id) => DATA.find(r => r.project === b && r.id === id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+const head = '<tr><th>TC</th><th>Check</th>' + BROWSERS.map(b => `<th>${esc(b)}</th>`).join('') + '</tr>';
+const rows = ids.map(id => {
+  const title = (DATA.find(r => r.id === id) || {}).title;
+  return `<tr><td class="id">${id}</td><td>${esc(title)}</td>` + BROWSERS.map(b => {
+    const r = get(b, id);
+    if (!r) return '<td class="st">–</td>';
+    const cls = NOTE[b + '|' + id] ? 'note' : r.status;
+    const label = cls === 'note' ? 'NOTE' : r.status.toUpperCase();
+    return `<td class="st"><span class="s ${cls}" title="${esc(r.detail)}">${label}</span></td>`;
+  }).join('') + '</tr>';
+}).join('');
+document.getElementById('matrix').innerHTML = '<thead>' + head + '</thead><tbody>' + rows + '</tbody>';
+
+document.getElementById('tally').innerHTML = BROWSERS.map(b => {
+  const rs = DATA.filter(r => r.project === b);
+  const pass = rs.filter(r => r.status === 'pass').length;
+  return `<div><strong>${pass}/${rs.length}</strong><span>${esc(b)} checks passed</span></div>`;
+}).join('');
+
+document.getElementById('details').innerHTML = DATA.map(r => `<div>[${esc(r.project)}] ${r.id} ${r.status.toUpperCase()}: ${esc(r.detail)}</div>`).join('');
+</script>

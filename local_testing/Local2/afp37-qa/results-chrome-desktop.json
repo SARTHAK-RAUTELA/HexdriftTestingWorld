@@ -1,0 +1,178 @@
+[
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-01",
+    "title": "Modal injected but hidden before the 5s delay",
+    "status": "pass",
+    "detail": "open at injection: false",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-02",
+    "title": "Modal opens ~5s after injection",
+    "status": "pass",
+    "detail": "delay 5022ms",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-03",
+    "title": "Copy matches wireframe (title, body, \"Got it\")",
+    "status": "pass",
+    "detail": "title \"A new AFP login is coming soon\", CTA \"Got it\", body matches true",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-04",
+    "title": "Desktop: fixed bottom-left, 24px from edges, 352px wide",
+    "status": "pass",
+    "detail": "left 24, right 904, bottom gap 24, top 367, 352×329 in 1280×720",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-05",
+    "title": "Close icon fully in viewport; no horizontal scroll",
+    "status": "pass",
+    "detail": "close icon in view true (35px), no h-scroll true",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-06",
+    "title": "Styling: navy title, #027DB6 CTA, site Gotham fonts",
+    "status": "pass",
+    "detail": "title GothamNarrowBold 23px/800; body 15px/24px; CTA rgb(2, 125, 182), 45px",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-07",
+    "title": "\"AFP37 - Modal Shows\" goal fires on open",
+    "status": "pass",
+    "detail": "VWO.event calls: [\"afp37ModalShows\"]",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-08",
+    "title": "Modal clear of chat / cookie / survey overlays",
+    "status": "fail",
+    "detail": "[{\"label\":\"Cookie notice #truste-consent-track\",\"area\":70752,\"z\":\"999999\",\"rect\":[0,495,1280,225]}]",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-08b",
+    "title": "No other popup open at the same time",
+    "status": "fail",
+    "detail": "#truste-consent-track z999999, #hs-web-interactives-top-anchor z9999, #hubspot-messages-iframe-container z9990",
+    "screenshot": "chrome-desktop/01-modal-open.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-09",
+    "title": "\"Got it\" closes the modal and fires \"Modal Dismissed\"",
+    "status": "pass",
+    "detail": "closed true, VWO.event calls [\"afp37ModalShows\",\"afp37ModalDismissed\"]",
+    "screenshot": "chrome-desktop/02-after-got-it.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-10",
+    "title": "Dismiss cookie set for 7 days",
+    "status": "pass",
+    "detail": "cre-t-37-dismissed expires in 7.00 days, domain www.financialprofessionals.org",
+    "screenshot": "chrome-desktop/02-after-got-it.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-11",
+    "title": "After dismissal, modal not shown on another page",
+    "status": "pass",
+    "detail": "variation applied true, injected false, open false",
+    "screenshot": "chrome-desktop/03-second-page-after-dismiss.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-12",
+    "title": "Not dismissed → modal shows again on the next page",
+    "status": "pass",
+    "detail": "opened, delay 5024ms",
+    "screenshot": "chrome-desktop/04-second-page-not-dismissed.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-13",
+    "title": "Close icon closes the modal and sets the cookie",
+    "status": "pass",
+    "detail": "closed true, cookie set true",
+    "screenshot": "chrome-desktop/05-after-close-icon.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-14",
+    "title": "Modal does not close automatically (20s observed)",
+    "status": "pass",
+    "detail": "still open after 20s: true",
+    "screenshot": null
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-15",
+    "title": "prefers-reduced-motion: no slide transform / transition",
+    "status": "pass",
+    "detail": "{\"transform\":\"none\",\"transitionDuration\":\"0s\"}",
+    "screenshot": null
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-16",
+    "title": "Control: no modal, no cre-t-37 class",
+    "status": "pass",
+    "detail": "{\"combo\":\"1\",\"cls\":false,\"modal\":false}",
+    "screenshot": "chrome-desktop/06-control.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-17",
+    "title": "eWeb login: alert inserted once, directly above the \"Sign In\" H1",
+    "status": "pass",
+    "detail": "count 1, directly before H1 true",
+    "screenshot": "chrome-desktop/07-eweb-login-alert.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-18",
+    "title": "eWeb alert copy matches wireframe",
+    "status": "pass",
+    "detail": "title \"A new AFP login is coming soon\", body matches true",
+    "screenshot": "chrome-desktop/07-eweb-login-alert.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-19",
+    "title": "eWeb alert styling (light-blue box, bold title, aligned with H1, fits viewport)",
+    "status": "pass",
+    "detail": "bg rgb(240, 247, 251), border rgb(213, 229, 239), radius 8px, padding 28px 43px, title 16px/600, aligned true, 1190px of 1280, no h-scroll true",
+    "screenshot": "chrome-desktop/07-eweb-login-alert.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-20",
+    "title": "eWeb: sitewide modal NOT shown (excluded)",
+    "status": "pass",
+    "detail": "modal present: false",
+    "screenshot": "chrome-desktop/07-eweb-login-alert.png"
+  },
+  {
+    "project": "Chrome Desktop",
+    "id": "TC-21",
+    "title": "Alert NOT shown on non-login eWeb page (Forgot Password)",
+    "status": "fail",
+    "detail": "page H1 \"Forgot your password?\", alert present true",
+    "screenshot": "chrome-desktop/08-eweb-forgot-password.png"
+  }
+]

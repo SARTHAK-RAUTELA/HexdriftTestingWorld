@@ -1,0 +1,917 @@
+
+Running 27 tests using 1 worker
+
+  ✘   1 [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › / — variation adds a matching price above every visible CTA (1.2m)
+  ✓   2 [Safari Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › / — control unchanged (21.0s)
+  ✓   3 [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /home/ — variation adds a matching price above every visible CTA (16.2s)
+  ✓   4 [Safari Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /home/ — control unchanged (23.4s)
+  ✘   5 [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /comparison/ — variation adds a matching price above every visible CTA (10.3s)
+  ✓   6 [Safari Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /comparison/ — control unchanged (19.4s)
+  ✓   7 [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /cat-insurance/ — variation adds a matching price above every visible CTA (11.0s)
+  ✓   8 [Safari Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /cat-insurance/ — control unchanged (14.8s)
+  ✓   9 [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /compare/ — variation adds a matching price above every visible CTA (13.2s)
+  ✘  10 [Safari Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /compare/ — control unchanged (1.1m)
+  ✘  11 [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /canada/ — variation adds a matching price above every visible CTA (8.6s)
+  ✓  12 [Safari Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /canada/ — control unchanged (16.1s)
+  ✘  13 [Safari Desktop] › testing\swf173-price-above-button.spec.js:103:3 › SWF173 design › typography matches wireframe (label grey caps, bold amount, smaller /mo) (10.5s)
+  ✓  14 [Safari Desktop] › testing\swf173-price-above-button.spec.js:116:3 › SWF173 design › CTA hrefs and order unchanged vs control (28.6s)
+  ✘  15 [Safari Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1024px — centred, no overflow, price on one line (1.1m)
+  ✓  16 [Safari Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1280px — centred, no overflow, price on one line (11.4s)
+  ✓  17 [Safari Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1440px — centred, no overflow, price on one line (11.8s)
+  ✘  18 [Safari Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1920px — centred, no overflow, price on one line (1.1m)
+  ✘  19 [Safari Desktop] › testing\swf173-price-above-button.spec.js:145:3 › SWF173 design › re-running the code does not duplicate prices (1.1m)
+  ✘  20 [Safari Desktop] › testing\swf173-price-above-button.spec.js:158:5 › SWF173 filters › Cats tab — duplicated price follows the tab's price (1.1m)
+  ✘  21 [Safari Desktop] › testing\swf173-price-above-button.spec.js:158:5 › SWF173 filters › Dogs tab — duplicated price follows the tab's price (18.3s)
+  ✘  22 [Safari Desktop] › testing\swf173-price-above-button.spec.js:173:3 › SWF173 filters › Cats → All Pets round-trip — price matches again (18.9s)
+  ✘  23 [Safari Desktop] › testing\swf173-price-above-button.spec.js:182:3 › SWF173 filters › direct ?petType=cat landing — price matches (1.1m)
+  ✘  24 [Safari Desktop] › testing\swf173-price-above-button.spec.js:189:3 › SWF173 filters › ZIP typed after the observer window (>17s) — price still present and matching (37.9s)
+  ✘  25 [Safari Desktop] › testing\swf173-price-above-button.spec.js:208:3 › SWF173 filters › Show More clicked after the observer window — revealed cards get the price (34.5s)
+  ✓  26 [Safari Desktop] › testing\swf173-price-above-button.spec.js:229:3 › SWF173 filters › Show More clicked quickly — revealed cards get the price (15.4s)
+  ✘  27 [Safari Desktop] › testing\swf173-price-above-button.spec.js:243:3 › SWF173 audience › mobile device does not get the variation (desktop only) (1.1m)
+
+
+  1) [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › / — variation adds a matching price above every visible CTA 
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.plan-box')[22m
+
+
+      28 |   const t0 = Date.now();
+      29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });
+    > 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });
+         |              ^
+      31 |   const tBoxes = Date.now() - t0;
+      32 |   let tPrice = null;
+      33 |   if (arm === 'variation') {
+        at open (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:30:14)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:70:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--11ed4-ice-above-every-visible-CTA-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--11ed4-ice-above-every-visible-CTA-Safari-Desktop\error-context.md
+
+  2) [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /comparison/ — variation adds a matching price above every visible CTA 
+
+    Error: Liberty mutual logo label
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: [32m/^average plan cost$/i[39m
+    Received string:  [31m""[39m
+
+      79 |       for (const x of c) {
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+    > 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+         |                                                 ^
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:81:49
+
+    Error: Liberty mutual logo duplicated == left column
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m""[39m
+    Received: [31m"$42.66/mo"[39m
+
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+    > 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+         |                                                                   ^
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:82:67
+
+    Error: Odie Pet Logo label
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: [32m/^average plan cost$/i[39m
+    Received string:  [31m""[39m
+
+      79 |       for (const x of c) {
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+    > 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+         |                                                 ^
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:81:49
+
+    Error: Odie Pet Logo duplicated == left column
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m""[39m
+    Received: [31m"$26.28/mo"[39m
+
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+    > 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+         |                                                                   ^
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:82:67
+
+    Error: Akc logo label
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected pattern: [32m/^average plan cost$/i[39m
+    Received string:  [31m""[39m
+
+      79 |       for (const x of c) {
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+    > 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+         |                                                 ^
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:81:49
+
+    Error: Akc logo duplicated == left column
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m""[39m
+    Received: [31m"$48.34/mo"[39m
+
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+    > 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+         |                                                                   ^
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:82:67
+
+    Error: Pet best logo wordmark horizontal full color RGB one price
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      78 |       expect(c.length).toBeGreaterThan(0);
+      79 |       for (const x of c) {
+    > 80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+         |                                                        ^
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:80:56
+
+    TypeError: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    [1mMatcher error[22m: [31mreceived[39m value must be a string
+
+    Received has value: [31mnull[39m
+
+      79 |       for (const x of c) {
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+    > 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+         |                                                 ^
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:81:49
+
+    Error: Pet best logo wordmark horizontal full color RGB duplicated == left column
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$28.79/mo"[39m
+    Received: [31mnull[39m
+
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+    > 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+         |                                                                   ^
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:82:67
+
+    Error: Pet best logo wordmark horizontal full color RGB price above CTA
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+    > 83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+         |                                                               ^
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+      86 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:83:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--8f828-ice-above-every-visible-CTA-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--8f828-ice-above-every-visible-CTA-Safari-Desktop\error-context.md
+
+  3) [Safari Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /compare/ — control unchanged 
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.plan-box')[22m
+
+
+      28 |   const t0 = Date.now();
+      29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });
+    > 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });
+         |              ^
+      31 |   const tBoxes = Date.now() - t0;
+      32 |   let tPrice = null;
+      33 |   if (arm === 'variation') {
+        at open (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:30:14)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:91:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--6dceb-compare-—-control-unchanged-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--6dceb-compare-—-control-unchanged-Safari-Desktop\error-context.md
+
+  4) [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /canada/ — variation adds a matching price above every visible CTA 
+
+    Error: Fetch Pet Insurance Logo one price
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      78 |       expect(c.length).toBeGreaterThan(0);
+      79 |       for (const x of c) {
+    > 80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+         |                                                        ^
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:80:56
+
+    TypeError: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    [1mMatcher error[22m: [31mreceived[39m value must be a string
+
+    Received has value: [31mnull[39m
+
+      79 |       for (const x of c) {
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+    > 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+         |                                                 ^
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:81:49
+
+    Error: Fetch Pet Insurance Logo duplicated == left column
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$85.89/mo"[39m
+    Received: [31mnull[39m
+
+      80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+    > 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+         |                                                                   ^
+      83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:82:67
+
+    Error: Fetch Pet Insurance Logo price above CTA
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+      82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+    > 83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+         |                                                               ^
+      84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+      86 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:83:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--55bc7-ice-above-every-visible-CTA-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--55bc7-ice-above-every-visible-CTA-Safari-Desktop\error-context.md
+
+  5) [Safari Desktop] › testing\swf173-price-above-button.spec.js:103:3 › SWF173 design › typography matches wireframe (label grey caps, bold amount, smaller /mo) 
+
+    Error: /mo smaller than the amount (wireframe)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: < [32m18[39m
+    Received:   [31m18[39m
+
+      111 |     expect.soft(Number(s.amt.fw)).toBeGreaterThanOrEqual(700);
+      112 |     expect.soft(s.label.ff).toMatch(/Montserrat/);
+    > 113 |     expect.soft(s.mo.fs, '/mo smaller than the amount (wireframe)').toBeLessThan(s.amt.fs);
+          |                                                                     ^
+      114 |   });
+      115 |
+      116 |   test('CTA hrefs and order unchanged vs control', async ({ page, browser }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:113:69
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--c6296-aps-bold-amount-smaller-mo--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--c6296-aps-bold-amount-smaller-mo--Safari-Desktop\error-context.md
+
+  6) [Safari Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1024px — centred, no overflow, price on one line 
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.plan-box')[22m
+
+
+      28 |   const t0 = Date.now();
+      29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });
+    > 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });
+         |              ^
+      31 |   const tBoxes = Date.now() - t0;
+      32 |   let tPrice = null;
+      33 |   if (arm === 'variation') {
+        at open (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:30:14)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:130:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--52d70--overflow-price-on-one-line-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--52d70--overflow-price-on-one-line-Safari-Desktop\error-context.md
+
+  7) [Safari Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1920px — centred, no overflow, price on one line 
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.plan-box')[22m
+
+
+      28 |   const t0 = Date.now();
+      29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });
+    > 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });
+         |              ^
+      31 |   const tBoxes = Date.now() - t0;
+      32 |   let tPrice = null;
+      33 |   if (arm === 'variation') {
+        at open (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:30:14)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:130:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--8f0a4--overflow-price-on-one-line-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--8f0a4--overflow-price-on-one-line-Safari-Desktop\error-context.md
+
+  8) [Safari Desktop] › testing\swf173-price-above-button.spec.js:145:3 › SWF173 design › re-running the code does not duplicate prices 
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.plan-box')[22m
+
+
+      28 |   const t0 = Date.now();
+      29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });
+    > 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });
+         |              ^
+      31 |   const tBoxes = Date.now() - t0;
+      32 |   let tPrice = null;
+      33 |   if (arm === 'variation') {
+        at open (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:30:14)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:146:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--382c4-e-does-not-duplicate-prices-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--382c4-e-does-not-duplicate-prices-Safari-Desktop\error-context.md
+
+  9) [Safari Desktop] › testing\swf173-price-above-button.spec.js:158:5 › SWF173 filters › Cats tab — duplicated price follows the tab's price 
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.plan-box')[22m
+
+
+      28 |   const t0 = Date.now();
+      29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });
+    > 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });
+         |              ^
+      31 |   const tBoxes = Date.now() - t0;
+      32 |   let tPrice = null;
+      33 |   if (arm === 'variation') {
+        at open (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:30:14)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:159:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--3ebc7-ice-follows-the-tab-s-price-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--3ebc7-ice-follows-the-tab-s-price-Safari-Desktop\error-context.md
+
+  10) [Safari Desktop] › testing\swf173-price-above-button.spec.js:158:5 › SWF173 filters › Dogs tab — duplicated price follows the tab's price 
+
+    Error: Lemonade Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$2[7m2.76[27m/mo"[39m
+    Received: [31m"$2[7m0.28[27m/mo"[39m
+
+      167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      170 |     });
+      171 |   }
+      172 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:169:80
+
+    Error: ASPCA Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$3[7m8.79[27m/mo"[39m
+    Received: [31m"$3[7m4.22[27m/mo"[39m
+
+      167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      170 |     });
+      171 |   }
+      172 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:169:80
+
+    Error: Embrace Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$4[7m9.92[27m/mo"[39m
+    Received: [31m"$4[7m4.87[27m/mo"[39m
+
+      167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      170 |     });
+      171 |   }
+      172 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:169:80
+
+    Error: Pumpkin Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m5[27m4.9[7m1[27m/mo"[39m
+    Received: [31m"$4[7m6[27m.9[7m3[27m/mo"[39m
+
+      167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      170 |     });
+      171 |   }
+      172 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:169:80
+
+    Error: Figo Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m40.00[27m/mo"[39m
+    Received: [31m"$[7m35.28[27m/mo"[39m
+
+      167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      170 |     });
+      171 |   }
+      172 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:169:80
+
+    Error: Trupanion Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m106.57[27m/mo"[39m
+    Received: [31m"$[7m92.15[27m/mo"[39m
+
+      167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      170 |     });
+      171 |   }
+      172 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:169:80
+
+    Error: Lemonade Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$2[7m2.76[27m/mo"[39m
+    Received: [31m"$2[7m0.28[27m/mo"[39m
+
+      167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      170 |     });
+      171 |   }
+      172 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:169:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--00f66-ice-follows-the-tab-s-price-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--00f66-ice-follows-the-tab-s-price-Safari-Desktop\error-context.md
+
+  11) [Safari Desktop] › testing\swf173-price-above-button.spec.js:173:3 › SWF173 filters › Cats → All Pets round-trip — price matches again 
+
+    Error: Lemonade Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$2[7m0.28[27m/mo"[39m
+    Received: [31m"$2[7m3.44[27m/mo"[39m
+
+      177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();
+      178 |     await page.waitForTimeout(3000);
+    > 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                                   ^
+      180 |   });
+      181 |
+      182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:179:67
+
+    Error: ASPCA Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$3[7m4.22[27m/mo"[39m
+    Received: [31m"$3[7m9.56[27m/mo"[39m
+
+      177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();
+      178 |     await page.waitForTimeout(3000);
+    > 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                                   ^
+      180 |   });
+      181 |
+      182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:179:67
+
+    Error: Fetch Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$4[7m2.49[27m/mo"[39m
+    Received: [31m"$4[7m9.12[27m/mo"[39m
+
+      177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();
+      178 |     await page.waitForTimeout(3000);
+    > 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                                   ^
+      180 |   });
+      181 |
+      182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:179:67
+
+    Error: Embrace Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m44[27m.87/mo"[39m
+    Received: [31m"$[7m51[27m.87/mo"[39m
+
+      177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();
+      178 |     await page.waitForTimeout(3000);
+    > 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                                   ^
+      180 |   });
+      181 |
+      182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:179:67
+
+    Error: Pumpkin Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m46.93[27m/mo"[39m
+    Received: [31m"$[7m54.26[27m/mo"[39m
+
+      177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();
+      178 |     await page.waitForTimeout(3000);
+    > 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                                   ^
+      180 |   });
+      181 |
+      182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:179:67
+
+    Error: Figo Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m35.28[27m/mo"[39m
+    Received: [31m"$[7m40.79[27m/mo"[39m
+
+      177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();
+      178 |     await page.waitForTimeout(3000);
+    > 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                                   ^
+      180 |   });
+      181 |
+      182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:179:67
+
+    Error: Trupanion Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m92.15[27m/mo"[39m
+    Received: [31m"$[7m106.53[27m/mo"[39m
+
+      177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();
+      178 |     await page.waitForTimeout(3000);
+    > 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                                   ^
+      180 |   });
+      181 |
+      182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:179:67
+
+    Error: Lemonade Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$2[7m0.28[27m/mo"[39m
+    Received: [31m"$2[7m3.44[27m/mo"[39m
+
+      177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();
+      178 |     await page.waitForTimeout(3000);
+    > 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                                   ^
+      180 |   });
+      181 |
+      182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:179:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--19a1b--trip-—-price-matches-again-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--19a1b--trip-—-price-matches-again-Safari-Desktop\error-context.md
+
+  12) [Safari Desktop] › testing\swf173-price-above-button.spec.js:182:3 › SWF173 filters › direct ?petType=cat landing — price matches 
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.plan-box')[22m
+
+
+      28 |   const t0 = Date.now();
+      29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });
+    > 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });
+         |              ^
+      31 |   const tBoxes = Date.now() - t0;
+      32 |   let tPrice = null;
+      33 |   if (arm === 'variation') {
+        at open (D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:30:14)
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:183:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--dea3f-cat-landing-—-price-matches-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--dea3f-cat-landing-—-price-matches-Safari-Desktop\error-context.md
+
+  13) [Safari Desktop] › testing\swf173-price-above-button.spec.js:189:3 › SWF173 filters › ZIP typed after the observer window (>17s) — price still present and matching 
+
+    Error: Lemonade Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m3[27m0.[7m3[27m2/mo"[39m
+    Received: [31m"$[7m2[27m0.2[7m8[27m/mo"[39m
+
+      202 |     for (const x of c) {
+      203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      205 |     }
+      206 |   });
+      207 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:204:61
+
+    Error: Embrace Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m29.15[27m/mo"[39m
+    Received: [31m"$[7m34.22[27m/mo"[39m
+
+      202 |     for (const x of c) {
+      203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      205 |     }
+      206 |   });
+      207 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:204:61
+
+    Error: ASPCA Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m38.07[27m/mo"[39m
+    Received: [31m"$[7m42.49[27m/mo"[39m
+
+      202 |     for (const x of c) {
+      203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      205 |     }
+      206 |   });
+      207 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:204:61
+
+    Error: Fetch Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m70.55[27m/mo"[39m
+    Received: [31m"$[7m44.87[27m/mo"[39m
+
+      202 |     for (const x of c) {
+      203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      205 |     }
+      206 |   });
+      207 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:204:61
+
+    Error: Pumpkin Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m33.08[27m/mo"[39m
+    Received: [31m"$[7m46.93[27m/mo"[39m
+
+      202 |     for (const x of c) {
+      203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      205 |     }
+      206 |   });
+      207 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:204:61
+
+    Error: Figo Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$3[7m8.92[27m/mo"[39m
+    Received: [31m"$3[7m5.28[27m/mo"[39m
+
+      202 |     for (const x of c) {
+      203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      205 |     }
+      206 |   });
+      207 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:204:61
+
+    Error: Trupanion Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m173.33[27m/mo"[39m
+    Received: [31m"$[7m92.15[27m/mo"[39m
+
+      202 |     for (const x of c) {
+      203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      205 |     }
+      206 |   });
+      207 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:204:61
+
+    Error: Lemonade Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m3[27m0.[7m3[27m2/mo"[39m
+    Received: [31m"$[7m2[27m0.2[7m8[27m/mo"[39m
+
+      202 |     for (const x of c) {
+      203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      205 |     }
+      206 |   });
+      207 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:204:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--2c240--still-present-and-matching-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--2c240--still-present-and-matching-Safari-Desktop\error-context.md
+
+  14) [Safari Desktop] › testing\swf173-price-above-button.spec.js:208:3 › SWF173 filters › Show More clicked after the observer window — revealed cards get the price 
+
+    Error: cards without price after late Show More
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 5[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "Liberty Mutual Logo",[39m
+    [31m+   "Odie Logo",[39m
+    [31m+   "AKC Logo",[39m
+    [31m+ ][39m
+
+      224 |     }
+      225 |     expect(c.length).toBeGreaterThan(n0);
+    > 226 |     expect(missing, 'cards without price after late Show More').toEqual([]);
+          |                                                                 ^
+      227 |   });
+      228 |
+      229 |   test('Show More clicked quickly — revealed cards get the price', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:226:65
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--5b1e8-evealed-cards-get-the-price-Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--5b1e8-evealed-cards-get-the-price-Safari-Desktop\error-context.md
+
+  15) [Safari Desktop] › testing\swf173-price-above-button.spec.js:243:3 › SWF173 audience › mobile device does not get the variation (desktop only) 
+
+    TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('.plan-box')[22m
+
+
+      247 |     const p = await ctx.newPage();
+      248 |     await p.goto(url('variation'), { waitUntil: 'domcontentloaded' });
+    > 249 |     await p.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });
+          |             ^
+      250 |     await p.waitForTimeout(12000);
+      251 |     const n = await p.locator(PRICE).count();
+      252 |     const conv = await p.evaluate(() => (document.cookie.match(/_conv_v=[^;]*/) || [''])[0]);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:249:13
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--15190-the-variation-desktop-only--Safari-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--15190-the-variation-desktop-only--Safari-Desktop\error-context.md
+
+  15 failed
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › / — variation adds a matching price above every visible CTA 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /comparison/ — variation adds a matching price above every visible CTA 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /compare/ — control unchanged 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /canada/ — variation adds a matching price above every visible CTA 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:103:3 › SWF173 design › typography matches wireframe (label grey caps, bold amount, smaller /mo) 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1024px — centred, no overflow, price on one line 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1920px — centred, no overflow, price on one line 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:145:3 › SWF173 design › re-running the code does not duplicate prices 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:158:5 › SWF173 filters › Cats tab — duplicated price follows the tab's price 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:158:5 › SWF173 filters › Dogs tab — duplicated price follows the tab's price 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:173:3 › SWF173 filters › Cats → All Pets round-trip — price matches again 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:182:3 › SWF173 filters › direct ?petType=cat landing — price matches 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:189:3 › SWF173 filters › ZIP typed after the observer window (>17s) — price still present and matching 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:208:3 › SWF173 filters › Show More clicked after the observer window — revealed cards get the price 
+    [Safari Desktop] › testing\swf173-price-above-button.spec.js:243:3 › SWF173 audience › mobile device does not get the variation (desktop only) 
+  12 passed (14.9m)

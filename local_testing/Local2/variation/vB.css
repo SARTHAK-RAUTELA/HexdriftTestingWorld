@@ -1,197 +1,26 @@
-/* Sitewide modal */
-body.cre-t-37 .cre-t-37-modal {
-  position: fixed;
-  left: 24px;
-  bottom: calc(24px + var(--cre-t-37-consent-offset, 0px));
-  z-index: 999999;
-  box-sizing: border-box;
-  width: 352px;
-  max-width: calc(100% - 48px);
-  padding: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 24px 80px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(calc(-100% - 24px));
-  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0s linear 0.5s;
+html body.SWF173 .SWF173-label {
+    color: #8c8ea0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: .5rem;
+    font-family: Montserrat, arial, sans-serif !important;
 }
 
-body.cre-t-37.cre-t-37-modal-open .cre-t-37-modal {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
-  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0s;
+html body.SWF173 .SWF173-amount {
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.1;
+    font-size: 18px;
+    font-family: Montserrat, arial, sans-serif !important;
 }
 
-body.cre-t-37 .cre-t-37-modal .cre-t-37-modal-close {
-  position: absolute;
-  top: -12px;
-  right: -12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 35px;
-  background: #3A3B39;
-  cursor: pointer;
-}
-
-body.cre-t-37 .cre-t-37-modal .cre-t-37-modal-close svg {
-  display: block;
-  width: 12px;
-  height: 12px;
-}
-
-body.cre-t-37 .cre-t-37-modal h2.cre-t-37-modal-title {
-  margin: 0 0 10px;
-  padding: 0;
-  color: #002B49;
-  font-size: 23px;
-  font-weight: 800;
-  line-height: 28px;
-  letter-spacing: 0.25px;
-  text-align: center;
-  text-transform: none;
-}
-
-body.cre-t-37 .cre-t-37-modal p.cre-t-37-modal-text {
-  margin: 0 0 16px;
-  padding: 0;
-  color: #000;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.25px;
-  text-align: center;
-}
-
-body.cre-t-37 .cre-t-37-modal .cre-t-37-modal-cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  width: 100%;
-  height: 45px;
-  margin: 0;
-  padding: 14px 50px;
-  border: 0;
-  border-radius: 6px;
-  background: #027DB6;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: 0.25px;
-  cursor: pointer;
-}
-
-body.cre-t-37 .cre-t-37-modal .cre-t-37-modal-cta:hover {
-  background: #026A9B;
-}
-
-body.cre-t-37 .cre-t-37-modal .cre-t-37-modal-close:focus-visible,
-body.cre-t-37 .cre-t-37-modal .cre-t-37-modal-cta:focus-visible {
-  outline: 2px solid #002B49;
-  outline-offset: 2px;
-}
-
-/* Compact bottom card; raised to clear the HubSpot chat launcher */
-@media (max-width: 767px) {
-  body.cre-t-37 .cre-t-37-modal {
-    left: 16px;
-    right: 16px;
-    bottom: calc(88px + var(--cre-t-37-consent-offset, 0px));
-    width: auto;
-    max-width: none;
-    padding: 20px;
-    border-radius: 16px;
-  }
-
-  body.cre-t-37 .cre-t-37-modal .cre-t-37-modal-close {
-    top: -10px;
-    right: -6px;
-    width: 30px;
-    height: 30px;
-  }
-
-  body.cre-t-37 .cre-t-37-modal h2.cre-t-37-modal-title {
-    margin-bottom: 8px;
-    font-size: 19px;
-    line-height: 24px;
-  }
-
-  body.cre-t-37 .cre-t-37-modal p.cre-t-37-modal-text {
-    margin-bottom: 14px;
-    font-size: 14px;
-    line-height: 21px;
-  }
-
-  body.cre-t-37 .cre-t-37-modal .cre-t-37-modal-cta {
-    height: 42px;
-    padding: 10px 24px;
-    font-size: 15px;
-  }
-}
-
-/* What it does: prefers-reduced-motion: reduce is a CSS media query. It matches when a visitor has turned on "Reduce motion" in their operating system (on macOS: System Settings → Accessibility → Display → Reduce motion; Windows and iOS have the same setting). People turn it on because sliding or moving animations can cause dizziness or nausea, for example with vestibular disorders. */
-@media (prefers-reduced-motion: reduce) {
-
-  body.cre-t-37 .cre-t-37-modal,
-  body.cre-t-37.cre-t-37-modal-open .cre-t-37-modal {
-    transform: none;
-    transition: none;
-  }
-}
-
-/* eWeb login page alert */
-body.cre-t-37 .cre-t-37-alert {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1069px;
-  max-width: 100%;
-  margin: 20px 0 40px;
-  padding: 28px 43px;
-  border: 1px solid #D5E5EF;
-  border-radius: 8px;
-  background: #F0F7FB;
-}
-
-body.cre-t-37 .cre-t-37-alert p.cre-t-37-alert-title,
-body.cre-t-37 .cre-t-37-alert p.cre-t-37-alert-text {
-  /* eWeb sets p margin/line-height with !important */
-  margin: 0 !important;
-  padding: 0;
-  color: #000;
-  font-size: 16px;
-  line-height: 24px !important;
-  letter-spacing: 0.25px;
-}
-
-body.cre-t-37 .cre-t-37-alert p.cre-t-37-alert-title {
-  margin-bottom: 8px !important;
-  font-weight: 600;
-}
-
-body.cre-t-37 .cre-t-37-alert p.cre-t-37-alert-text {
-  font-weight: 400;
-}
-
-@media (max-width: 767px) {
-  body.cre-t-37 .cre-t-37-alert {
-    margin: 12px 0 24px;
-    padding: 16px 20px;
-  }
-
-  body.cre-t-37 .cre-t-37-alert p.cre-t-37-alert-title,
-  body.cre-t-37 .cre-t-37-alert p.cre-t-37-alert-text {
-    font-size: 15px;
-    line-height: 22px !important;
-  }
+html body.SWF173 .SWF173-price {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
 }

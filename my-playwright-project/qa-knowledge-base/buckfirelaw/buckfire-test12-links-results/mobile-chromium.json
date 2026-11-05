@@ -1,0 +1,876 @@
+{
+ "date": "2026-11-03T13:40:51.063Z",
+ "mode": "mobile",
+ "results": [
+  {
+   "label": "Homepage",
+   "url": "https://buckfirelaw.com/?cro_mode=qa&_conv_eforce=100052748.1000257125",
+   "expected": [
+    "Shaylynn",
+    "Denita",
+    "Mike"
+   ],
+   "issues": [
+    "Shaylynn: no Full Story link",
+    "Denita: no Full Story link",
+    "Mike: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Shaylynn",
+     "alt": "Shaylynn video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/shaylynn.mp4",
+     "link": null
+    },
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": null
+    },
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "PPC Medical Malpractice",
+   "url": "https://buckfirelaw.com/medical-malpractice-lawyers/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Denise",
+    "Shaylynn",
+    "Mike"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video2.mp4",
+     "link": {
+      "text": "Read Denise's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denise/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Shaylynn",
+     "alt": "Shaylynn video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/shaylynn.mp4",
+     "link": {
+      "text": "Read Shaylynn's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/shaylynn/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": {
+      "text": "Read Mike's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/wrongful-death/denise/",
+   "pass": true
+  },
+  {
+   "label": "PPC Dog Bite",
+   "url": "https://buckfirelaw.com/dog-bite-lawyer/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Jessica",
+    "Alyssa",
+    "Denita"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Jessica",
+     "alt": "Jessica video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Jessica.mp4",
+     "link": {
+      "text": "Read Jessica's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/motorcycle-accident/jessica/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Alyssa",
+     "alt": "Alyssa video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video1.mp4",
+     "link": {
+      "text": "Read Alyssa's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/pedestrian-accident/alyssa/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": {
+      "text": "Read Denita's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/motorcycle-accident/jessica/",
+   "pass": true
+  },
+  {
+   "label": "PPC Slip & Fall (lawyers)",
+   "url": "https://buckfirelaw.com/slip-and-fall-lawyers/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Jessica",
+    "Alyssa",
+    "Sandra"
+   ],
+   "issues": [
+    "Clients: expected Jessica, Alyssa, Sandra — got Jessica, Alyssa, Denita"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Jessica",
+     "alt": "Jessica video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Jessica.mp4",
+     "link": {
+      "text": "Read Jessica's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/motorcycle-accident/jessica/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Alyssa",
+     "alt": "Alyssa video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video1.mp4",
+     "link": {
+      "text": "Read Alyssa's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/pedestrian-accident/alyssa/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": {
+      "text": "Read Denita's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/motorcycle-accident/jessica/",
+   "pass": false
+  },
+  {
+   "label": "PPC Slip & Fall (attorneys)",
+   "url": "https://buckfirelaw.com/slip-and-fall-attorneys/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Damian",
+    "Alyssa",
+    "Sandra"
+   ],
+   "issues": [
+    "Clients: expected Damian, Alyssa, Sandra — got Damian, Alyssa, Denita"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Damian",
+     "alt": "Damian video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Damian.mp4",
+     "link": {
+      "text": "Read Damian's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/auto-accident/damian/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Alyssa",
+     "alt": "Alyssa video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video1.mp4",
+     "link": {
+      "text": "Read Alyssa's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/pedestrian-accident/alyssa/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": {
+      "text": "Read Denita's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/auto-accident/damian/",
+   "pass": false
+  },
+  {
+   "label": "PPC Free Case Review",
+   "url": "https://buckfirelaw.com/free-case-review/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Shaylynn",
+    "Mike",
+    "Denita"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Shaylynn",
+     "alt": "Shaylynn video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/shaylynn.mp4",
+     "link": {
+      "text": "Read Shaylynn's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/shaylynn/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": {
+      "text": "Read Mike's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": {
+      "text": "Read Denita's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/wrongful-death/shaylynn/",
+   "pass": true
+  },
+  {
+   "label": "PPC Car Accident",
+   "url": "https://buckfirelaw.com/car-accident-lawyers/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Denita",
+    "Damian",
+    "Mike"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": {
+      "text": "Read Denita's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Damian",
+     "alt": "Damian video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Damian.mp4",
+     "link": {
+      "text": "Read Damian's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/auto-accident/damian/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": {
+      "text": "Read Mike's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+   "pass": true
+  },
+  {
+   "label": "PPC Personal Injury",
+   "url": "https://buckfirelaw.com/personal-injury-lawyer/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Mike",
+    "Shaylynn",
+    "Denise"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": {
+      "text": "Read Mike's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Shaylynn",
+     "alt": "Shaylynn video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/shaylynn.mp4",
+     "link": {
+      "text": "Read Shaylynn's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/shaylynn/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Denise",
+     "alt": "Denise video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video2.mp4",
+     "link": {
+      "text": "Read Denise's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denise/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+   "pass": true
+  },
+  {
+   "label": "PPC Bike Accident",
+   "url": "https://buckfirelaw.com/bicycle-accident-lawyer/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Mike",
+    "Jessica",
+    "Sandra"
+   ],
+   "issues": [
+    "Clients: expected Mike, Jessica, Sandra — got Mike, Jessica, Denita"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": {
+      "text": "Read Mike's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Jessica",
+     "alt": "Jessica video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Jessica.mp4",
+     "link": {
+      "text": "Read Jessica's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/motorcycle-accident/jessica/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": {
+      "text": "Read Denita's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+   "pass": false
+  },
+  {
+   "label": "PPC Wrongful Death",
+   "url": "https://buckfirelaw.com/wrongful-death-lawyer/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Denita",
+    "Shaylynn",
+    "Denise"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": {
+      "text": "Read Denita's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Shaylynn",
+     "alt": "Shaylynn video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/shaylynn.mp4",
+     "link": {
+      "text": "Read Shaylynn's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/shaylynn/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Denise",
+     "alt": "Denise video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video2.mp4",
+     "link": {
+      "text": "Read Denise's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denise/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+   "pass": true
+  },
+  {
+   "label": "PPC Nursing Home Abuse",
+   "url": "https://buckfirelaw.com/nursing-home-abuse-lawyer/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Denise",
+    "Alyssa",
+    "Mike"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video2.mp4",
+     "link": {
+      "text": "Read Denise's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denise/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Alyssa",
+     "alt": "Alyssa video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video1.mp4",
+     "link": {
+      "text": "Read Alyssa's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/pedestrian-accident/alyssa/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": {
+      "text": "Read Mike's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/wrongful-death/denise/",
+   "pass": true
+  },
+  {
+   "label": "PPC Birth Injury",
+   "url": "https://buckfirelaw.com/birth-injury-lawyers/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Denise",
+    "Alyssa",
+    "Mike"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video2.mp4",
+     "link": {
+      "text": "Read Denise's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denise/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Alyssa",
+     "alt": "Alyssa video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video1.mp4",
+     "link": {
+      "text": "Read Alyssa's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/pedestrian-accident/alyssa/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": {
+      "text": "Read Mike's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/wrongful-death/denise/",
+   "pass": true
+  },
+  {
+   "label": "PPC Truck Accidents",
+   "url": "https://buckfirelaw.com/truck-accident-lawyers/?cro_mode=qa&_conv_eforce=100052508.1000256555",
+   "expected": [
+    "Denita",
+    "Mike",
+    "Damian"
+   ],
+   "issues": [],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denita",
+     "alt": "Denita video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4",
+     "link": {
+      "text": "Read Denita's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Mike",
+     "alt": "Mike video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4",
+     "link": {
+      "text": "Read Mike's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/",
+      "target": "",
+      "visible": true
+     }
+    },
+    {
+     "name": "Damian",
+     "alt": "Damian video thumbnail",
+     "video": "https://v2.crocdn.com/BuckfireLaw/test12/Damian.mp4",
+     "link": {
+      "text": "Read Damian's Full Story →",
+      "href": "https://buckfirelaw.com/client-stories/auto-accident/damian/",
+      "target": "",
+      "visible": true
+     }
+    }
+   ],
+   "clickLanded": "https://buckfirelaw.com/client-stories/wrongful-death/denita/",
+   "pass": true
+  },
+  {
+   "label": "CT Medical Malpractice",
+   "url": "https://buckfirelaw.com/case-types/medical-malpractice/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Denise"
+   ],
+   "issues": [
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Personal Injury",
+   "url": "https://buckfirelaw.com/case-types/personal-injury/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Mike"
+   ],
+   "issues": [
+    "Clients: expected Mike — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Car Accident",
+   "url": "https://buckfirelaw.com/case-types/car-accidents/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Denita"
+   ],
+   "issues": [
+    "Clients: expected Denita — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Motorcycle Accidents",
+   "url": "https://buckfirelaw.com/case-types/motorcycle-accidents/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Jessica"
+   ],
+   "issues": [
+    "Clients: expected Jessica — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Product Liability",
+   "url": "https://buckfirelaw.com/case-types/product-liability/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Alyssa"
+   ],
+   "issues": [
+    "Clients: expected Alyssa — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Truck Accidents",
+   "url": "https://buckfirelaw.com/case-types/truck-accidents/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Denita"
+   ],
+   "issues": [
+    "Clients: expected Denita — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Dog Bite",
+   "url": "https://buckfirelaw.com/case-types/dog-bite/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Damian"
+   ],
+   "issues": [
+    "Clients: expected Damian — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Dog Bite (child page /children/)",
+   "url": "https://buckfirelaw.com/case-types/dog-bite/children/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Damian"
+   ],
+   "issues": [
+    "No story card rendered",
+    "Clients: expected Damian — got none"
+   ],
+   "body": "",
+   "cards": [],
+   "pass": false
+  },
+  {
+   "label": "CT Cerebral Palsy",
+   "url": "https://buckfirelaw.com/case-types/cerebral-palsy/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Shaylynn"
+   ],
+   "issues": [
+    "Clients: expected Shaylynn — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Nursing Home Abuse",
+   "url": "https://buckfirelaw.com/case-types/nursing-home-abuse/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Denise"
+   ],
+   "issues": [
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Wrongful Death",
+   "url": "https://buckfirelaw.com/case-types/wrongful-death/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Denita"
+   ],
+   "issues": [
+    "Clients: expected Denita — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  },
+  {
+   "label": "CT Slip & Fall",
+   "url": "https://buckfirelaw.com/case-types/slip-and-fall/?utm_campaign=cre_qa&_conv_eforce=100052509.1000256557",
+   "expected": [
+    "Sandra"
+   ],
+   "issues": [
+    "Clients: expected Sandra — got Denise",
+    "Denise: no Full Story link"
+   ],
+   "body": "BuckfireLaw_12",
+   "cards": [
+    {
+     "name": "Denise",
+     "alt": "Denise's testimonial video thumbnail",
+     "video": "",
+     "link": null
+    }
+   ],
+   "pass": false
+  }
+ ],
+ "linkStatus": {
+  "https://buckfirelaw.com/client-stories/wrongful-death/denise/": 200,
+  "https://buckfirelaw.com/client-stories/wrongful-death/shaylynn/": 200,
+  "https://buckfirelaw.com/client-stories/catastrophic-injury/mike/": 200,
+  "https://buckfirelaw.com/client-stories/motorcycle-accident/jessica/": 200,
+  "https://buckfirelaw.com/client-stories/pedestrian-accident/alyssa/": 200,
+  "https://buckfirelaw.com/client-stories/wrongful-death/denita/": 200,
+  "https://buckfirelaw.com/client-stories/auto-accident/damian/": 200
+ }
+}

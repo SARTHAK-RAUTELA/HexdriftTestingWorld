@@ -98,4 +98,5 @@ Tests get cloned between this site and Renters Insurance Gurus (CRE-T-123 → CR
 | SWF164 — Rearrange comparison listings + rating overrides (2 arms) | [swf164-rearrange-listings.md](swf164-rearrange-listings.md) |
 | SWF164-v2 — Rearrange listings rebuild, 6 variations (exp 100052846) | [swf164-v2-six-variation-rearrange.md](swf164-v2-six-variation-rearrange.md)  / [HTML report](swf164-v2-six-variation-qa-report.html) — kept current, all 6 pass after the 2026-09-23 retest |
 | CRE-T-143 — Comparison listing price discount, 13.5%/32.9% (2 arms, no ticket number) | [cre-t-143-price-discount.md](cre-t-143-price-discount.md) / [HTML report](cre-t-143-price-discount-retest-qa-report.html) |
+| SWF173 — Price duplicated above VIEW PLANS, desktop (exp 100053060) | [swf173-price-above-button.md](swf173-price-above-button.md) / [HTML report](swf173-price-above-button-qa-report.html) |
 | CRE-T-162 — Testimonial quote section above comparison table (no ticket/Figma) | [cre-t-162-quote-section.md](cre-t-162-quote-section.md) / [HTML report](cre-t-162-quote-section-qa-report.html) |

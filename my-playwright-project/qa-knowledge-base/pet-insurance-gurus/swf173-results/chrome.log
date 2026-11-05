@@ -1,0 +1,1055 @@
+
+Running 27 tests using 1 worker
+
+  ✓   1 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › / — variation adds a matching price above every visible CTA (13.5s)
+  ✓   2 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:89:5 › SWF173 targeted URLs › / — control unchanged (15.5s)
+  ✓   3 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /home/ — variation adds a matching price above every visible CTA (13.1s)
+  ✓   4 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:89:5 › SWF173 targeted URLs › /home/ — control unchanged (17.6s)
+  ✘   5 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /comparison/ — variation adds a matching price above every visible CTA (11.0s)
+  ✓   6 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:89:5 › SWF173 targeted URLs › /comparison/ — control unchanged (14.6s)
+  ✓   7 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /cat-insurance/ — variation adds a matching price above every visible CTA (8.4s)
+  ✓   8 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:89:5 › SWF173 targeted URLs › /cat-insurance/ — control unchanged (13.9s)
+  ✓   9 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /compare/ — variation adds a matching price above every visible CTA (10.3s)
+  ✓  10 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:89:5 › SWF173 targeted URLs › /compare/ — control unchanged (14.3s)
+  ✘  11 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /canada/ — variation adds a matching price above every visible CTA (10.2s)
+  ✓  12 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:89:5 › SWF173 targeted URLs › /canada/ — control unchanged (15.6s)
+  ✘  13 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:102:3 › SWF173 design › typography matches wireframe (label grey caps, bold amount, smaller /mo) (9.1s)
+  ✓  14 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:115:3 › SWF173 design › CTA hrefs and order unchanged vs control (24.0s)
+  ✓  15 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:127:5 › SWF173 design › layout at 1024px — centred, no overflow, price on one line (8.9s)
+  ✓  16 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:127:5 › SWF173 design › layout at 1280px — centred, no overflow, price on one line (8.5s)
+  ✓  17 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:127:5 › SWF173 design › layout at 1440px — centred, no overflow, price on one line (8.2s)
+  ✓  18 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:127:5 › SWF173 design › layout at 1920px — centred, no overflow, price on one line (8.5s)
+  ✓  19 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:144:3 › SWF173 design › re-running the code does not duplicate prices (11.8s)
+  ✘  20 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:157:5 › SWF173 filters › Cats tab — duplicated price follows the tab's price (12.4s)
+  ✘  21 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:157:5 › SWF173 filters › Dogs tab — duplicated price follows the tab's price (17.3s)
+  ✓  22 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:172:3 › SWF173 filters › Cats → All Pets round-trip — price matches again (19.6s)
+  ✘  23 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:181:3 › SWF173 filters › direct ?petType=cat landing — price matches (9.7s)
+  ✘  24 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:188:3 › SWF173 filters › ZIP typed after the observer window (>17s) — price still present and matching (32.4s)
+  ✘  25 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:207:3 › SWF173 filters › Show More clicked after the observer window — revealed cards get the price (29.7s)
+  ✓  26 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:228:3 › SWF173 filters › Show More clicked quickly — revealed cards get the price (11.2s)
+  ✓  27 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:242:3 › SWF173 audience › mobile device does not get the variation (desktop only) (16.8s)
+
+
+  1) [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /comparison/ — variation adds a matching price above every visible CTA 
+
+    Error: Pet best logo wordmark horizontal full color RGB no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Aspca Pet Health Insurance Logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Fetch Pet Insurance Logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Pumpkin new logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Embrace no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Figo Logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Trupanion Logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Liberty mutual logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Odie Pet Logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Akc logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Pet best logo wordmark horizontal full color RGB one price
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      77 |       expect(c.length).toBeGreaterThan(0);
+      78 |       for (const x of c) {
+    > 79 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+         |                                                        ^
+      80 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+      81 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:79:56
+
+    TypeError: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    [1mMatcher error[22m: [31mreceived[39m value must be a string
+
+    Received has value: [31mnull[39m
+
+      78 |       for (const x of c) {
+      79 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+    > 80 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+         |                                                 ^
+      81 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:80:49
+
+    Error: Pet best logo wordmark horizontal full color RGB duplicated == left column
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$28.79/mo"[39m
+    Received: [31mnull[39m
+
+      79 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+      80 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+    > 81 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+         |                                                                   ^
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:81:67
+
+    Error: Pet best logo wordmark horizontal full color RGB price above CTA
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      80 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+      81 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+    > 82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+         |                                                               ^
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+      85 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:82:63
+
+    Error: Pet best logo wordmark horizontal full color RGB no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--8f828-ice-above-every-visible-CTA-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--8f828-ice-above-every-visible-CTA-Chrome-Desktop\error-context.md
+
+  2) [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /canada/ — variation adds a matching price above every visible CTA 
+
+    Error: Fetch Pet Insurance Logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Trupanion Logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Furkin Pet Insurance no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Pets Plus Us Insurance no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Petsecure Insurance no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    Error: Fetch Pet Insurance Logo one price
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m1[39m
+    Received: [31m0[39m
+
+      77 |       expect(c.length).toBeGreaterThan(0);
+      78 |       for (const x of c) {
+    > 79 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+         |                                                        ^
+      80 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+      81 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:79:56
+
+    TypeError: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+
+    [1mMatcher error[22m: [31mreceived[39m value must be a string
+
+    Received has value: [31mnull[39m
+
+      78 |       for (const x of c) {
+      79 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+    > 80 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+         |                                                 ^
+      81 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:80:49
+
+    Error: Fetch Pet Insurance Logo duplicated == left column
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$85.89/mo"[39m
+    Received: [31mnull[39m
+
+      79 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);
+      80 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+    > 81 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+         |                                                                   ^
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:81:67
+
+    Error: Fetch Pet Insurance Logo price above CTA
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      80 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);
+      81 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);
+    > 82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+         |                                                               ^
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+      84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+      85 |       }
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:82:63
+
+    Error: Fetch Pet Insurance Logo no horizontal overflow
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mfalse[39m
+    Received: [31mtrue[39m
+
+      82 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);
+      83 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);
+    > 84 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);
+         |                                                                      ^
+      85 |       }
+      86 |       expect.soft(errors.filter(e => /SWF173/i.test(e)), 'no SWF173 errors').toEqual([]);
+      87 |     });
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:84:70
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--55bc7-ice-above-every-visible-CTA-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--55bc7-ice-above-every-visible-CTA-Chrome-Desktop\error-context.md
+
+  3) [Chrome Desktop] › testing\swf173-price-above-button.spec.js:102:3 › SWF173 design › typography matches wireframe (label grey caps, bold amount, smaller /mo) 
+
+    Error: /mo smaller than the amount (wireframe)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThan[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: < [32m18[39m
+    Received:   [31m18[39m
+
+      110 |     expect.soft(Number(s.amt.fw)).toBeGreaterThanOrEqual(700);
+      111 |     expect.soft(s.label.ff).toMatch(/Montserrat/);
+    > 112 |     expect.soft(s.mo.fs, '/mo smaller than the amount (wireframe)').toBeLessThan(s.amt.fs);
+          |                                                                     ^
+      113 |   });
+      114 |
+      115 |   test('CTA hrefs and order unchanged vs control', async ({ page, browser }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:112:69
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--c6296-aps-bold-amount-smaller-mo--Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--c6296-aps-bold-amount-smaller-mo--Chrome-Desktop\error-context.md
+
+  4) [Chrome Desktop] › testing\swf173-price-above-button.spec.js:157:5 › SWF173 filters › Cats tab — duplicated price follows the tab's price 
+
+    Error: Lemonade Logo dup == left on Cats
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m14.65[27m/mo"[39m
+    Received: [31m"$[7m20.28[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: ASPCA Logo dup == left on Cats
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m15.95[27m/mo"[39m
+    Received: [31m"$[7m34.22[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Fetch Logo dup == left on Cats
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m17.84[27m/mo"[39m
+    Received: [31m"$[7m42.49[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Embrace Logo dup == left on Cats
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m24.66[27m/mo"[39m
+    Received: [31m"$[7m44.87[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Pumpkin Logo dup == left on Cats
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m18.49[27m/mo"[39m
+    Received: [31m"$[7m46.93[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Figo Logo dup == left on Cats
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m20.66[27m/mo"[39m
+    Received: [31m"$[7m35.28[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Trupanion Logo dup == left on Cats
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m34.49[27m/mo"[39m
+    Received: [31m"$[7m92.15[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Lemonade Logo dup == left on Cats
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m14.65[27m/mo"[39m
+    Received: [31m"$[7m20.28[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--3ebc7-ice-follows-the-tab-s-price-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--3ebc7-ice-follows-the-tab-s-price-Chrome-Desktop\error-context.md
+
+  5) [Chrome Desktop] › testing\swf173-price-above-button.spec.js:157:5 › SWF173 filters › Dogs tab — duplicated price follows the tab's price 
+
+    Error: Lemonade Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$2[7m2.76[27m/mo"[39m
+    Received: [31m"$2[7m3.44[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: ASPCA Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$3[7m8.79[27m/mo"[39m
+    Received: [31m"$3[7m9.56[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Fetch Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$4[7m2.49[27m/mo"[39m
+    Received: [31m"$4[7m9.12[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Embrace Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m49.92[27m/mo"[39m
+    Received: [31m"$[7m51.87[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Pumpkin Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$54.[7m91[27m/mo"[39m
+    Received: [31m"$54.[7m26[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Figo Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$40.[7m00[27m/mo"[39m
+    Received: [31m"$40.[7m79[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Trupanion Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$106.5[7m7[27m/mo"[39m
+    Received: [31m"$106.5[7m3[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    Error: Lemonade Logo dup == left on Dogs
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$2[7m2.76[27m/mo"[39m
+    Received: [31m"$2[7m3.44[27m/mo"[39m
+
+      166 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);
+      167 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);
+    > 168 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);
+          |                                                                                ^
+      169 |     });
+      170 |   }
+      171 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:168:80
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--00f66-ice-follows-the-tab-s-price-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--00f66-ice-follows-the-tab-s-price-Chrome-Desktop\error-context.md
+
+  6) [Chrome Desktop] › testing\swf173-price-above-button.spec.js:181:3 › SWF173 filters › direct ?petType=cat landing — price matches 
+
+    Error: Lemonade Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$1[7m4.65[27m/mo"[39m
+    Received: [31m"$1[7m6.94[27m/mo"[39m
+
+      183 |     const c = await cards(page);
+      184 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));
+    > 185 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                   ^
+      186 |   });
+      187 |
+      188 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:185:51
+
+    Error: ASPCA Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$1[7m5.95[27m/mo"[39m
+    Received: [31m"$1[7m8.44[27m/mo"[39m
+
+      183 |     const c = await cards(page);
+      184 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));
+    > 185 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                   ^
+      186 |   });
+      187 |
+      188 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:185:51
+
+    Error: Fetch Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m17.84[27m/mo"[39m
+    Received: [31m"$[7m20.63[27m/mo"[39m
+
+      183 |     const c = await cards(page);
+      184 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));
+    > 185 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                   ^
+      186 |   });
+      187 |
+      188 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:185:51
+
+    Error: Embrace Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$2[7m4.66[27m/mo"[39m
+    Received: [31m"$2[7m8.51[27m/mo"[39m
+
+      183 |     const c = await cards(page);
+      184 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));
+    > 185 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                   ^
+      186 |   });
+      187 |
+      188 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:185:51
+
+    Error: Pumpkin Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m18.49[27m/mo"[39m
+    Received: [31m"$[7m21.37[27m/mo"[39m
+
+      183 |     const c = await cards(page);
+      184 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));
+    > 185 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                   ^
+      186 |   });
+      187 |
+      188 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:185:51
+
+    Error: Figo Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$2[7m0.66[27m/mo"[39m
+    Received: [31m"$2[7m3.89[27m/mo"[39m
+
+      183 |     const c = await cards(page);
+      184 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));
+    > 185 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                   ^
+      186 |   });
+      187 |
+      188 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:185:51
+
+    Error: Trupanion Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$3[7m4.49[27m/mo"[39m
+    Received: [31m"$3[7m9.87[27m/mo"[39m
+
+      183 |     const c = await cards(page);
+      184 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));
+    > 185 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                   ^
+      186 |   });
+      187 |
+      188 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:185:51
+
+    Error: Lemonade Logo
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$1[7m4.65[27m/mo"[39m
+    Received: [31m"$1[7m6.94[27m/mo"[39m
+
+      183 |     const c = await cards(page);
+      184 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));
+    > 185 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);
+          |                                                   ^
+      186 |   });
+      187 |
+      188 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:185:51
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--dea3f-cat-landing-—-price-matches-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--dea3f-cat-landing-—-price-matches-Chrome-Desktop\error-context.md
+
+  7) [Chrome Desktop] › testing\swf173-price-above-button.spec.js:188:3 › SWF173 filters › ZIP typed after the observer window (>17s) — price still present and matching 
+
+    Error: Lemonade Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m3[27m0.[7m3[27m2/mo"[39m
+    Received: [31m"$[7m2[27m0.2[7m8[27m/mo"[39m
+
+      201 |     for (const x of c) {
+      202 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 203 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      204 |     }
+      205 |   });
+      206 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:203:61
+
+    Error: Embrace Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m29.15[27m/mo"[39m
+    Received: [31m"$[7m34.22[27m/mo"[39m
+
+      201 |     for (const x of c) {
+      202 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 203 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      204 |     }
+      205 |   });
+      206 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:203:61
+
+    Error: ASPCA Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m38.07[27m/mo"[39m
+    Received: [31m"$[7m42.49[27m/mo"[39m
+
+      201 |     for (const x of c) {
+      202 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 203 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      204 |     }
+      205 |   });
+      206 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:203:61
+
+    Error: Fetch Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m70.55[27m/mo"[39m
+    Received: [31m"$[7m44.87[27m/mo"[39m
+
+      201 |     for (const x of c) {
+      202 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 203 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      204 |     }
+      205 |   });
+      206 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:203:61
+
+    Error: Pumpkin Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m33.08[27m/mo"[39m
+    Received: [31m"$[7m46.93[27m/mo"[39m
+
+      201 |     for (const x of c) {
+      202 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 203 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      204 |     }
+      205 |   });
+      206 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:203:61
+
+    Error: Figo Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$3[7m8.92[27m/mo"[39m
+    Received: [31m"$3[7m5.28[27m/mo"[39m
+
+      201 |     for (const x of c) {
+      202 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 203 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      204 |     }
+      205 |   });
+      206 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:203:61
+
+    Error: Trupanion Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m173.33[27m/mo"[39m
+    Received: [31m"$[7m92.15[27m/mo"[39m
+
+      201 |     for (const x of c) {
+      202 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 203 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      204 |     }
+      205 |   });
+      206 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:203:61
+
+    Error: Lemonade Logo dup == left after ZIP
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"$[7m3[27m0.[7m3[27m2/mo"[39m
+    Received: [31m"$[7m2[27m0.2[7m8[27m/mo"[39m
+
+      201 |     for (const x of c) {
+      202 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);
+    > 203 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);
+          |                                                             ^
+      204 |     }
+      205 |   });
+      206 |
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:203:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--2c240--still-present-and-matching-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--2c240--still-present-and-matching-Chrome-Desktop\error-context.md
+
+  8) [Chrome Desktop] › testing\swf173-price-above-button.spec.js:207:3 › SWF173 filters › Show More clicked after the observer window — revealed cards get the price 
+
+    Error: cards without price after late Show More
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 5[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "Liberty Mutual Logo",[39m
+    [31m+   "Odie Logo",[39m
+    [31m+   "AKC Logo",[39m
+    [31m+ ][39m
+
+      223 |     }
+      224 |     expect(c.length).toBeGreaterThan(n0);
+    > 225 |     expect(missing, 'cards without price after late Show More').toEqual([]);
+          |                                                                 ^
+      226 |   });
+      227 |
+      228 |   test('Show More clicked quickly — revealed cards get the price', async ({ page }) => {
+        at D:\Installed-apps-files\Github\Git_repos\HexdriftTestingWorld\my-playwright-project\testing\swf173-price-above-button.spec.js:225:65
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\swf173-price-above-button--5b1e8-evealed-cards-get-the-price-Chrome-Desktop\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\swf173-price-above-button--5b1e8-evealed-cards-get-the-price-Chrome-Desktop\error-context.md
+
+  8 failed
+    [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /comparison/ — variation adds a matching price above every visible CTA 
+    [Chrome Desktop] › testing\swf173-price-above-button.spec.js:68:5 › SWF173 targeted URLs › /canada/ — variation adds a matching price above every visible CTA 
+    [Chrome Desktop] › testing\swf173-price-above-button.spec.js:102:3 › SWF173 design › typography matches wireframe (label grey caps, bold amount, smaller /mo) 
+    [Chrome Desktop] › testing\swf173-price-above-button.spec.js:157:5 › SWF173 filters › Cats tab — duplicated price follows the tab's price 
+    [Chrome Desktop] › testing\swf173-price-above-button.spec.js:157:5 › SWF173 filters › Dogs tab — duplicated price follows the tab's price 
+    [Chrome Desktop] › testing\swf173-price-above-button.spec.js:181:3 › SWF173 filters › direct ?petType=cat landing — price matches 
+    [Chrome Desktop] › testing\swf173-price-above-button.spec.js:188:3 › SWF173 filters › ZIP typed after the observer window (>17s) — price still present and matching 
+    [Chrome Desktop] › testing\swf173-price-above-button.spec.js:207:3 › SWF173 filters › Show More clicked after the observer window — revealed cards get the price 
+  19 passed (9.5m)

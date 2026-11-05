@@ -1,0 +1,2053 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swf173-price-above-button.spec.js",
+      "file": "swf173-price-above-button.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SWF173 targeted URLs",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 67,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/ — variation adds a matching price above every visible CTA",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 69286,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:70:42",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:70:42"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:18:13.727Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--11ed4-ice-above-every-visible-CTA-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--11ed4-ice-above-every-visible-CTA-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-6bbdeb6f949d7de5b72e",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20967,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:19:28.485Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-046638350e1403334304",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/home/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/home/: listings at 10021ms, SWF173 price at 11033ms (+1012ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/home/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16240,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:19:49.562Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/home/: listings at 10021ms, SWF173 price at 11033ms (+1012ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/home/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-18bc182be0e5ded87049",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/home/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23433,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:20:05.841Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-4f4f31ed058221dec413",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/comparison/ — variation adds a matching price above every visible CTA",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/comparison/: listings at 4871ms, SWF173 price at 5387ms (+516ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/comparison/: Pet best logo wordmark horizontal full color RGB $24.90/mo|$24.90/mo off0; Aspca Pet Health Insurance $34.22/mo|$34.22/mo off0; Fetch Pet Insurance $42.49/mo|$42.49/mo off0; Pumpkin new logo $46.93/mo|$46.93/mo off0; Embrace $44.87/mo|$44.87/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Liberty mutual logo $42.66/mo| off0; Odie Pet $26.28/mo| off0; Akc logo $48.34/mo| off0; Pet best logo wordmark horizontal full color RGB null|$28.79/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10317,
+                      "error": {
+                        "message": "Error: Liberty mutual logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m",
+                        "stack": "Error: Liberty mutual logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 49,
+                          "line": 81
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 79 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m x \u001b[36mof\u001b[39m c) {\n \u001b[90m 80 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdupCount\u001b[33m,\u001b[39m \u001b[32m`${x.name} one price`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 81 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mlabel\u001b[33m,\u001b[39m \u001b[32m`${x.name} label`\u001b[39m)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/^average plan cost$/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 82 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdup\u001b[33m,\u001b[39m \u001b[32m`${x.name} duplicated == left column`\u001b[39m)\u001b[33m.\u001b[39mtoBe(x\u001b[33m.\u001b[39mleft)\u001b[33m;\u001b[39m\n \u001b[90m 83 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mbeforeCta\u001b[33m,\u001b[39m \u001b[32m`${x.name} price above CTA`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mcentreOff\u001b[33m,\u001b[39m \u001b[32m`${x.name} column vertically centred`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 49,
+                            "line": 81
+                          },
+                          "message": "Error: Liberty mutual logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n  79 |       for (const x of c) {\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n> 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n     |                                                 ^\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 82
+                          },
+                          "message": "Error: Liberty mutual logo duplicated == left column\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"$42.66/mo\"\u001b[39m\n\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n> 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n     |                                                                   ^\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:82:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 49,
+                            "line": 81
+                          },
+                          "message": "Error: Odie Pet Logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n  79 |       for (const x of c) {\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n> 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n     |                                                 ^\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 82
+                          },
+                          "message": "Error: Odie Pet Logo duplicated == left column\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"$26.28/mo\"\u001b[39m\n\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n> 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n     |                                                                   ^\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:82:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 49,
+                            "line": 81
+                          },
+                          "message": "Error: Akc logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n  79 |       for (const x of c) {\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n> 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n     |                                                 ^\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 82
+                          },
+                          "message": "Error: Akc logo duplicated == left column\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"$48.34/mo\"\u001b[39m\n\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n> 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n     |                                                                   ^\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:82:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 56,
+                            "line": 80
+                          },
+                          "message": "Error: Pet best logo wordmark horizontal full color RGB one price\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  78 |       expect(c.length).toBeGreaterThan(0);\n  79 |       for (const x of c) {\n> 80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n     |                                                        ^\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:80:56"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 49,
+                            "line": 81
+                          },
+                          "message": "TypeError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: \u001b[31mreceived\u001b[39m value must be a string\n\nReceived has value: \u001b[31mnull\u001b[39m\n\n  79 |       for (const x of c) {\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n> 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n     |                                                 ^\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 82
+                          },
+                          "message": "Error: Pet best logo wordmark horizontal full color RGB duplicated == left column\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$28.79/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n> 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n     |                                                                   ^\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:82:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 63,
+                            "line": 83
+                          },
+                          "message": "Error: Pet best logo wordmark horizontal full color RGB price above CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n> 83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n     |                                                               ^\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n  86 |       }\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:83:63"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:20:29.319Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/comparison/: listings at 4871ms, SWF173 price at 5387ms (+516ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/comparison/: Pet best logo wordmark horizontal full color RGB $24.90/mo|$24.90/mo off0; Aspca Pet Health Insurance $34.22/mo|$34.22/mo off0; Fetch Pet Insurance $42.49/mo|$42.49/mo off0; Pumpkin new logo $46.93/mo|$46.93/mo off0; Embrace $44.87/mo|$44.87/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Liberty mutual logo $42.66/mo| off0; Odie Pet $26.28/mo| off0; Akc logo $48.34/mo| off0; Pet best logo wordmark horizontal full color RGB null|$28.79/mo off0"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--8f828-ice-above-every-visible-CTA-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--8f828-ice-above-every-visible-CTA-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 49,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5237a7af66f065eff1e3",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/comparison/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19403,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:20:40.263Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-a0cddd1d4b184f896716",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/cat-insurance/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/cat-insurance/: listings at 5112ms, SWF173 price at 5529ms (+417ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/cat-insurance/: Lemonade $16.94/mo|$16.94/mo off0; ASPCA $18.44/mo|$18.44/mo off0; Fetch $20.63/mo|$20.63/mo off0; Embrace $28.51/mo|$28.51/mo off0; Pumpkin $21.37/mo|$21.37/mo off0; Figo $23.89/mo|$23.89/mo off0; Trupanion $39.87/mo|$39.87/mo off0; Lemonade $16.94/mo|$16.94/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10995,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:20:59.745Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/cat-insurance/: listings at 5112ms, SWF173 price at 5529ms (+417ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/cat-insurance/: Lemonade $16.94/mo|$16.94/mo off0; ASPCA $18.44/mo|$18.44/mo off0; Fetch $20.63/mo|$20.63/mo off0; Embrace $28.51/mo|$28.51/mo off0; Pumpkin $21.37/mo|$21.37/mo off0; Figo $23.89/mo|$23.89/mo off0; Trupanion $39.87/mo|$39.87/mo off0; Lemonade $16.94/mo|$16.94/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-94652f620e61ecfcf6af",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/cat-insurance/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14848,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:21:10.786Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5e51dbb994d604b48fc1",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/compare/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/compare/: listings at 7197ms, SWF173 price at 7831ms (+634ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/compare/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13169,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:21:25.668Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/compare/: listings at 7197ms, SWF173 price at 7831ms (+634ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/compare/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-af6d27c1cd4ddd1046b9",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/compare/ — control unchanged",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 65919,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:91:7",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:91:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:21:38.889Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--6dceb-compare-—-control-unchanged-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--6dceb-compare-—-control-unchanged-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-53bed6723b580023496d",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/canada/ — variation adds a matching price above every visible CTA",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/canada/: listings at 4180ms, SWF173 price at 4373ms (+193ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/canada/: Fetch Pet Insurance $85.89/mo|$85.89/mo off0; Trupanion $224.92/mo|$224.92/mo off0; Furkin Pet Insurance $110.48/mo|$110.48/mo off0; Pets Plus Us Insurance $100.44/mo|$100.44/mo off0; Petsecure Insurance $123.11/mo|$123.11/mo off0; Fetch Pet Insurance null|$85.89/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8618,
+                      "error": {
+                        "message": "Error: Fetch Pet Insurance Logo one price\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                        "stack": "Error: Fetch Pet Insurance Logo one price\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:80:56",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 56,
+                          "line": 80
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 78 |\u001b[39m       expect(c\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 79 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m x \u001b[36mof\u001b[39m c) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 80 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdupCount\u001b[33m,\u001b[39m \u001b[32m`${x.name} one price`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 81 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mlabel\u001b[33m,\u001b[39m \u001b[32m`${x.name} label`\u001b[39m)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/^average plan cost$/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 82 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdup\u001b[33m,\u001b[39m \u001b[32m`${x.name} duplicated == left column`\u001b[39m)\u001b[33m.\u001b[39mtoBe(x\u001b[33m.\u001b[39mleft)\u001b[33m;\u001b[39m\n \u001b[90m 83 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mbeforeCta\u001b[33m,\u001b[39m \u001b[32m`${x.name} price above CTA`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 56,
+                            "line": 80
+                          },
+                          "message": "Error: Fetch Pet Insurance Logo one price\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n  78 |       expect(c.length).toBeGreaterThan(0);\n  79 |       for (const x of c) {\n> 80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n     |                                                        ^\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:80:56"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 49,
+                            "line": 81
+                          },
+                          "message": "TypeError: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: \u001b[31mreceived\u001b[39m value must be a string\n\nReceived has value: \u001b[31mnull\u001b[39m\n\n  79 |       for (const x of c) {\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n> 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n     |                                                 ^\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 82
+                          },
+                          "message": "Error: Fetch Pet Insurance Logo duplicated == left column\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$85.89/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n> 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n     |                                                                   ^\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:82:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 63,
+                            "line": 83
+                          },
+                          "message": "Error: Fetch Pet Insurance Logo price above CTA\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n> 83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n     |                                                               ^\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n  86 |       }\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:83:63"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:22:45.542Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/canada/: listings at 4180ms, SWF173 price at 4373ms (+193ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/canada/: Fetch Pet Insurance $85.89/mo|$85.89/mo off0; Trupanion $224.92/mo|$224.92/mo off0; Furkin Pet Insurance $110.48/mo|$110.48/mo off0; Pets Plus Us Insurance $100.44/mo|$100.44/mo off0; Petsecure Insurance $123.11/mo|$123.11/mo off0; Fetch Pet Insurance null|$85.89/mo off0"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--55bc7-ice-above-every-visible-CTA-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--55bc7-ice-above-every-visible-CTA-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 56,
+                        "line": 80
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5e9e5992839c5a8f271d",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/canada/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16114,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:22:54.781Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-6289edeba8ee758561fd",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "SWF173 design",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 102,
+          "column": 6,
+          "specs": [
+            {
+              "title": "typography matches wireframe (label grey caps, bold amount, smaller /mo)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"label\":{\"fs\":12,\"fw\":\"500\",\"tt\":\"uppercase\",\"color\":\"rgb(140, 142, 160)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"amt\":{\"fs\":18,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"mo\":{\"fs\":18,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"cta\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"uppercase\",\"color\":\"rgb(255, 255, 255)\",\"ff\":\"Montserrat, arial, sans-serif\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10506,
+                      "error": {
+                        "message": "Error: /mo smaller than the amount (wireframe)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m18\u001b[39m\nReceived:   \u001b[31m18\u001b[39m",
+                        "stack": "Error: /mo smaller than the amount (wireframe)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m18\u001b[39m\nReceived:   \u001b[31m18\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:113:69",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 69,
+                          "line": 113
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 111 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(\u001b[33mNumber\u001b[39m(s\u001b[33m.\u001b[39mamt\u001b[33m.\u001b[39mfw))\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(\u001b[35m700\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 112 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(s\u001b[33m.\u001b[39mlabel\u001b[33m.\u001b[39mff)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/Montserrat/\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 113 |\u001b[39m     expect\u001b[33m.\u001b[39msoft(s\u001b[33m.\u001b[39mmo\u001b[33m.\u001b[39mfs\u001b[33m,\u001b[39m \u001b[32m'/mo smaller than the amount (wireframe)'\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(s\u001b[33m.\u001b[39mamt\u001b[33m.\u001b[39mfs)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 114 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 115 |\u001b[39m\n \u001b[90m 116 |\u001b[39m   test(\u001b[32m'CTA hrefs and order unchanged vs control'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page\u001b[33m,\u001b[39m browser }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 69,
+                            "line": 113
+                          },
+                          "message": "Error: /mo smaller than the amount (wireframe)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m18\u001b[39m\nReceived:   \u001b[31m18\u001b[39m\n\n  111 |     expect.soft(Number(s.amt.fw)).toBeGreaterThanOrEqual(700);\n  112 |     expect.soft(s.label.ff).toMatch(/Montserrat/);\n> 113 |     expect.soft(s.mo.fs, '/mo smaller than the amount (wireframe)').toBeLessThan(s.amt.fs);\n      |                                                                     ^\n  114 |   });\n  115 |\n  116 |   test('CTA hrefs and order unchanged vs control', async ({ page, browser }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:113:69"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:23:10.989Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"label\":{\"fs\":12,\"fw\":\"500\",\"tt\":\"uppercase\",\"color\":\"rgb(140, 142, 160)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"amt\":{\"fs\":18,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"mo\":{\"fs\":18,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"cta\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"uppercase\",\"color\":\"rgb(255, 255, 255)\",\"ff\":\"Montserrat, arial, sans-serif\"}}"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--c6296-aps-bold-amount-smaller-mo--Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--c6296-aps-bold-amount-smaller-mo--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 69,
+                        "line": 113
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-1d16bab05a05cfce7ca7",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 103,
+              "column": 3
+            },
+            {
+              "title": "CTA hrefs and order unchanged vs control",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 28580,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:23:22.120Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-eae31c42cbab7abcb27e",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "layout at 1024px — centred, no overflow, price on one line",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 65819,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:130:7",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:130:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:23:50.767Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--52d70--overflow-price-on-one-line-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--52d70--overflow-price-on-one-line-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-9e897b1715c79df4aaf0",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1280px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1280: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11443,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:24:57.186Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1280: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-af063658e9fcf8732739",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1440px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1440: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11772,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:25:08.725Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1440: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-180c110ccc51df0f8a01",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1920px — centred, no overflow, price on one line",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 66272,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:130:7",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:130:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:25:20.518Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--8f0a4--overflow-price-on-one-line-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--8f0a4--overflow-price-on-one-line-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-56c5325911a3c99fa34d",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "re-running the code does not duplicate prices",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 67077,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:146:5",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:146:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:26:27.377Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--382c4-e-does-not-duplicate-prices-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--382c4-e-does-not-duplicate-prices-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5588a0539503bad0dbb7",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 145,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "SWF173 filters",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 156,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Cats tab — duplicated price follows the tab's price",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 66192,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:159:7",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:159:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:27:35.179Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--3ebc7-ice-follows-the-tab-s-price-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--3ebc7-ice-follows-the-tab-s-price-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-04bef14907164b0f256e",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "Dogs tab — duplicated price follows the tab's price",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Dogs: Lemonade dup $20.28/mo / left $22.76/mo; ASPCA dup $34.22/mo / left $38.79/mo; Fetch dup $42.49/mo / left $42.49/mo; Embrace dup $44.87/mo / left $49.92/mo; Pumpkin dup $46.93/mo / left $54.91/mo; Figo dup $35.28/mo / left $40.00/mo; Trupanion dup $92.15/mo / left $106.57/mo; Lemonade dup $20.28/mo / left $22.76/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 18278,
+                      "error": {
+                        "message": "Error: Lemonade Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$2\u001b[7m2.76\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$2\u001b[7m0.28\u001b[27m/mo\"\u001b[39m",
+                        "stack": "Error: Lemonade Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$2\u001b[7m2.76\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$2\u001b[7m0.28\u001b[27m/mo\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:169:80",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 80,
+                          "line": 169
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 167 |\u001b[39m       \u001b[36mawait\u001b[39m shot(first\u001b[33m,\u001b[39m info\u001b[33m,\u001b[39m \u001b[32m`tab-${pet.toLowerCase()}-card1`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 168 |\u001b[39m       expect(c\u001b[33m.\u001b[39msome((x\u001b[33m,\u001b[39m i) \u001b[33m=>\u001b[39m before[i] \u001b[33m&&\u001b[39m x\u001b[33m.\u001b[39mleft \u001b[33m!==\u001b[39m before[i]\u001b[33m.\u001b[39mleft)\u001b[33m,\u001b[39m \u001b[32m'site changed prices on tab'\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 169 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m x \u001b[36mof\u001b[39m c) expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdup\u001b[33m,\u001b[39m \u001b[32m`${x.name} dup == left on ${pet}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(x\u001b[33m.\u001b[39mleft)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 170 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 171 |\u001b[39m   }\n \u001b[90m 172 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 80,
+                            "line": 169
+                          },
+                          "message": "Error: Lemonade Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$2\u001b[7m2.76\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$2\u001b[7m0.28\u001b[27m/mo\"\u001b[39m\n\n  167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);\n  168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);\n> 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);\n      |                                                                                ^\n  170 |     });\n  171 |   }\n  172 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:169:80"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 80,
+                            "line": 169
+                          },
+                          "message": "Error: ASPCA Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$3\u001b[7m8.79\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$3\u001b[7m4.22\u001b[27m/mo\"\u001b[39m\n\n  167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);\n  168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);\n> 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);\n      |                                                                                ^\n  170 |     });\n  171 |   }\n  172 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:169:80"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 80,
+                            "line": 169
+                          },
+                          "message": "Error: Embrace Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$4\u001b[7m9.92\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$4\u001b[7m4.87\u001b[27m/mo\"\u001b[39m\n\n  167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);\n  168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);\n> 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);\n      |                                                                                ^\n  170 |     });\n  171 |   }\n  172 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:169:80"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 80,
+                            "line": 169
+                          },
+                          "message": "Error: Pumpkin Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m5\u001b[27m4.9\u001b[7m1\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$4\u001b[7m6\u001b[27m.9\u001b[7m3\u001b[27m/mo\"\u001b[39m\n\n  167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);\n  168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);\n> 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);\n      |                                                                                ^\n  170 |     });\n  171 |   }\n  172 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:169:80"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 80,
+                            "line": 169
+                          },
+                          "message": "Error: Figo Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m40.00\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m35.28\u001b[27m/mo\"\u001b[39m\n\n  167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);\n  168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);\n> 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);\n      |                                                                                ^\n  170 |     });\n  171 |   }\n  172 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:169:80"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 80,
+                            "line": 169
+                          },
+                          "message": "Error: Trupanion Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m106.57\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m92.15\u001b[27m/mo\"\u001b[39m\n\n  167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);\n  168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);\n> 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);\n      |                                                                                ^\n  170 |     });\n  171 |   }\n  172 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:169:80"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 80,
+                            "line": 169
+                          },
+                          "message": "Error: Lemonade Logo dup == left on Dogs\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$2\u001b[7m2.76\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$2\u001b[7m0.28\u001b[27m/mo\"\u001b[39m\n\n  167 |       await shot(first, info, `tab-${pet.toLowerCase()}-card1`);\n  168 |       expect(c.some((x, i) => before[i] && x.left !== before[i].left), 'site changed prices on tab').toBe(true);\n> 169 |       for (const x of c) expect.soft(x.dup, `${x.name} dup == left on ${pet}`).toBe(x.left);\n      |                                                                                ^\n  170 |     });\n  171 |   }\n  172 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:169:80"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:28:41.980Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Dogs: Lemonade dup $20.28/mo / left $22.76/mo; ASPCA dup $34.22/mo / left $38.79/mo; Fetch dup $42.49/mo / left $42.49/mo; Embrace dup $44.87/mo / left $49.92/mo; Pumpkin dup $46.93/mo / left $54.91/mo; Figo dup $35.28/mo / left $40.00/mo; Trupanion dup $92.15/mo / left $106.57/mo; Lemonade dup $20.28/mo / left $22.76/mo"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--00f66-ice-follows-the-tab-s-price-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--00f66-ice-follows-the-tab-s-price-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 80,
+                        "line": 169
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-d045b7b4c940d3d2c751",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "Cats → All Pets round-trip — price matches again",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 18878,
+                      "error": {
+                        "message": "Error: Lemonade Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$2\u001b[7m0.28\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$2\u001b[7m3.44\u001b[27m/mo\"\u001b[39m",
+                        "stack": "Error: Lemonade Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$2\u001b[7m0.28\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$2\u001b[7m3.44\u001b[27m/mo\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 67,
+                          "line": 179
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 177 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.oxy-tab'\u001b[39m\u001b[33m,\u001b[39m { hasText\u001b[33m:\u001b[39m \u001b[32m'All Pets'\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 178 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 179 |\u001b[39m     \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m x \u001b[36mof\u001b[39m \u001b[36mawait\u001b[39m cards(page)) expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdup\u001b[33m,\u001b[39m x\u001b[33m.\u001b[39mname)\u001b[33m.\u001b[39mtoBe(x\u001b[33m.\u001b[39mleft)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 180 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 181 |\u001b[39m\n \u001b[90m 182 |\u001b[39m   test(\u001b[32m'direct ?petType=cat landing — price matches'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 179
+                          },
+                          "message": "Error: Lemonade Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$2\u001b[7m0.28\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$2\u001b[7m3.44\u001b[27m/mo\"\u001b[39m\n\n  177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();\n  178 |     await page.waitForTimeout(3000);\n> 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                                   ^\n  180 |   });\n  181 |\n  182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 179
+                          },
+                          "message": "Error: ASPCA Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$3\u001b[7m4.22\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$3\u001b[7m9.56\u001b[27m/mo\"\u001b[39m\n\n  177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();\n  178 |     await page.waitForTimeout(3000);\n> 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                                   ^\n  180 |   });\n  181 |\n  182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 179
+                          },
+                          "message": "Error: Fetch Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$4\u001b[7m2.49\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$4\u001b[7m9.12\u001b[27m/mo\"\u001b[39m\n\n  177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();\n  178 |     await page.waitForTimeout(3000);\n> 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                                   ^\n  180 |   });\n  181 |\n  182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 179
+                          },
+                          "message": "Error: Embrace Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m44\u001b[27m.87/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m51\u001b[27m.87/mo\"\u001b[39m\n\n  177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();\n  178 |     await page.waitForTimeout(3000);\n> 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                                   ^\n  180 |   });\n  181 |\n  182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 179
+                          },
+                          "message": "Error: Pumpkin Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m46.93\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m54.26\u001b[27m/mo\"\u001b[39m\n\n  177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();\n  178 |     await page.waitForTimeout(3000);\n> 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                                   ^\n  180 |   });\n  181 |\n  182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 179
+                          },
+                          "message": "Error: Figo Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m35.28\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m40.79\u001b[27m/mo\"\u001b[39m\n\n  177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();\n  178 |     await page.waitForTimeout(3000);\n> 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                                   ^\n  180 |   });\n  181 |\n  182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 179
+                          },
+                          "message": "Error: Trupanion Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m92.15\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m106.53\u001b[27m/mo\"\u001b[39m\n\n  177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();\n  178 |     await page.waitForTimeout(3000);\n> 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                                   ^\n  180 |   });\n  181 |\n  182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 179
+                          },
+                          "message": "Error: Lemonade Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$2\u001b[7m0.28\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$2\u001b[7m3.44\u001b[27m/mo\"\u001b[39m\n\n  177 |     await page.locator('.oxy-tab', { hasText: 'All Pets' }).first().click();\n  178 |     await page.waitForTimeout(3000);\n> 179 |     for (const x of await cards(page)) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                                   ^\n  180 |   });\n  181 |\n  182 |   test('direct ?petType=cat landing — price matches', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:179:67"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:29:00.905Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--19a1b--trip-—-price-matches-again-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--19a1b--trip-—-price-matches-again-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 67,
+                        "line": 179
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-67006ac73c2ff9a48772",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 173,
+              "column": 3
+            },
+            {
+              "title": "direct ?petType=cat landing — price matches",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 66982,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:183:5",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:183:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:29:20.431Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--dea3f-cat-landing-—-price-matches-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--dea3f-cat-landing-—-price-matches-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-de907b4ac44996c5e222",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 182,
+              "column": 3
+            },
+            {
+              "title": "ZIP typed after the observer window (>17s) — price still present and matching",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 150000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "price first at 8402ms; after ZIP: Lemonade $20.28/mo/$30.32/mo; Embrace $34.22/mo/$29.15/mo; ASPCA $42.49/mo/$38.07/mo; Fetch $44.87/mo/$70.55/mo; Pumpkin $46.93/mo/$33.08/mo; Figo $35.28/mo/$38.92/mo; Trupanion $92.15/mo/$173.33/mo; Lemonade $20.28/mo/$30.32/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 37907,
+                      "error": {
+                        "message": "Error: Lemonade Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m3\u001b[27m0.\u001b[7m3\u001b[27m2/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m2\u001b[27m0.2\u001b[7m8\u001b[27m/mo\"\u001b[39m",
+                        "stack": "Error: Lemonade Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m3\u001b[27m0.\u001b[7m3\u001b[27m2/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m2\u001b[27m0.2\u001b[7m8\u001b[27m/mo\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 61,
+                          "line": 204
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 202 |\u001b[39m     \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m x \u001b[36mof\u001b[39m c) {\n \u001b[90m 203 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdupCount\u001b[33m,\u001b[39m \u001b[32m`${x.name} price present after ZIP`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 204 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdup\u001b[33m,\u001b[39m \u001b[32m`${x.name} dup == left after ZIP`\u001b[39m)\u001b[33m.\u001b[39mtoBe(x\u001b[33m.\u001b[39mleft)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 205 |\u001b[39m     }\n \u001b[90m 206 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 207 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 61,
+                            "line": 204
+                          },
+                          "message": "Error: Lemonade Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m3\u001b[27m0.\u001b[7m3\u001b[27m2/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m2\u001b[27m0.2\u001b[7m8\u001b[27m/mo\"\u001b[39m\n\n  202 |     for (const x of c) {\n  203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);\n> 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);\n      |                                                             ^\n  205 |     }\n  206 |   });\n  207 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 61,
+                            "line": 204
+                          },
+                          "message": "Error: Embrace Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m29.15\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m34.22\u001b[27m/mo\"\u001b[39m\n\n  202 |     for (const x of c) {\n  203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);\n> 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);\n      |                                                             ^\n  205 |     }\n  206 |   });\n  207 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 61,
+                            "line": 204
+                          },
+                          "message": "Error: ASPCA Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m38.07\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m42.49\u001b[27m/mo\"\u001b[39m\n\n  202 |     for (const x of c) {\n  203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);\n> 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);\n      |                                                             ^\n  205 |     }\n  206 |   });\n  207 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 61,
+                            "line": 204
+                          },
+                          "message": "Error: Fetch Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m70.55\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m44.87\u001b[27m/mo\"\u001b[39m\n\n  202 |     for (const x of c) {\n  203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);\n> 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);\n      |                                                             ^\n  205 |     }\n  206 |   });\n  207 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 61,
+                            "line": 204
+                          },
+                          "message": "Error: Pumpkin Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m33.08\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m46.93\u001b[27m/mo\"\u001b[39m\n\n  202 |     for (const x of c) {\n  203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);\n> 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);\n      |                                                             ^\n  205 |     }\n  206 |   });\n  207 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 61,
+                            "line": 204
+                          },
+                          "message": "Error: Figo Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$3\u001b[7m8.92\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$3\u001b[7m5.28\u001b[27m/mo\"\u001b[39m\n\n  202 |     for (const x of c) {\n  203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);\n> 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);\n      |                                                             ^\n  205 |     }\n  206 |   });\n  207 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 61,
+                            "line": 204
+                          },
+                          "message": "Error: Trupanion Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m173.33\u001b[27m/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m92.15\u001b[27m/mo\"\u001b[39m\n\n  202 |     for (const x of c) {\n  203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);\n> 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);\n      |                                                             ^\n  205 |     }\n  206 |   });\n  207 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 61,
+                            "line": 204
+                          },
+                          "message": "Error: Lemonade Logo dup == left after ZIP\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$\u001b[7m3\u001b[27m0.\u001b[7m3\u001b[27m2/mo\"\u001b[39m\nReceived: \u001b[31m\"$\u001b[7m2\u001b[27m0.2\u001b[7m8\u001b[27m/mo\"\u001b[39m\n\n  202 |     for (const x of c) {\n  203 |       expect.soft(x.dupCount, `${x.name} price present after ZIP`).toBe(1);\n> 204 |       expect.soft(x.dup, `${x.name} dup == left after ZIP`).toBe(x.left);\n      |                                                             ^\n  205 |     }\n  206 |   });\n  207 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:204:61"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:30:28.059Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "price first at 8402ms; after ZIP: Lemonade $20.28/mo/$30.32/mo; Embrace $34.22/mo/$29.15/mo; ASPCA $42.49/mo/$38.07/mo; Fetch $44.87/mo/$70.55/mo; Pumpkin $46.93/mo/$33.08/mo; Figo $35.28/mo/$38.92/mo; Trupanion $92.15/mo/$173.33/mo; Lemonade $20.28/mo/$30.32/mo"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--2c240--still-present-and-matching-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--2c240--still-present-and-matching-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 61,
+                        "line": 204
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-8924ea7c7a418ea3072a",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 189,
+              "column": 3
+            },
+            {
+              "title": "Show More clicked after the observer window — revealed cards get the price",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 150000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "cards 8 → 11; Lemonade:1, ASPCA:1, Fetch:1, Embrace:1, Pumpkin:1, Figo:1, Trupanion:1, Liberty Mutual:0, Odie:0, AKC:0, Lemonade:1"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 34509,
+                      "error": {
+                        "message": "Error: cards without price after late Show More\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Liberty Mutual Logo\",\u001b[39m\n\u001b[31m+   \"Odie Logo\",\u001b[39m\n\u001b[31m+   \"AKC Logo\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: cards without price after late Show More\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Liberty Mutual Logo\",\u001b[39m\n\u001b[31m+   \"Odie Logo\",\u001b[39m\n\u001b[31m+   \"AKC Logo\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:226:65",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 65,
+                          "line": 226
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 224 |\u001b[39m     }\n \u001b[90m 225 |\u001b[39m     expect(c\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(n0)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 226 |\u001b[39m     expect(missing\u001b[33m,\u001b[39m \u001b[32m'cards without price after late Show More'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 227 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 228 |\u001b[39m\n \u001b[90m 229 |\u001b[39m   test(\u001b[32m'Show More clicked quickly — revealed cards get the price'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 65,
+                            "line": 226
+                          },
+                          "message": "Error: cards without price after late Show More\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Liberty Mutual Logo\",\u001b[39m\n\u001b[31m+   \"Odie Logo\",\u001b[39m\n\u001b[31m+   \"AKC Logo\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  224 |     }\n  225 |     expect(c.length).toBeGreaterThan(n0);\n> 226 |     expect(missing, 'cards without price after late Show More').toEqual([]);\n      |                                                                 ^\n  227 |   });\n  228 |\n  229 |   test('Show More clicked quickly — revealed cards get the price', async ({ page }) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:226:65"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:31:06.667Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "cards 8 → 11; Lemonade:1, ASPCA:1, Fetch:1, Embrace:1, Pumpkin:1, Figo:1, Trupanion:1, Liberty Mutual:0, Odie:0, AKC:0, Lemonade:1"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--5b1e8-evealed-cards-get-the-price-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--5b1e8-evealed-cards-get-the-price-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 65,
+                        "line": 226
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-55ca432b0037c6bfdcd6",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 208,
+              "column": 3
+            },
+            {
+              "title": "Show More clicked quickly — revealed cards get the price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15438,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:31:41.866Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-6b77001ba96f8a47e62b",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 229,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "SWF173 audience",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 242,
+          "column": 6,
+          "specs": [
+            {
+              "title": "mobile device does not get the variation (desktop only)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 67344,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:249:13",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 13,
+                          "line": 249
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 247 |\u001b[39m     \u001b[36mconst\u001b[39m p \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m ctx\u001b[33m.\u001b[39mnewPage()\u001b[33m;\u001b[39m\n \u001b[90m 248 |\u001b[39m     \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mgoto(url(\u001b[32m'variation'\u001b[39m)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 249 |\u001b[39m     \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 250 |\u001b[39m     \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m12000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 251 |\u001b[39m     \u001b[36mconst\u001b[39m n \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mlocator(\u001b[33mPRICE\u001b[39m)\u001b[33m.\u001b[39mcount()\u001b[33m;\u001b[39m\n \u001b[90m 252 |\u001b[39m     \u001b[36mconst\u001b[39m conv \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m (document\u001b[33m.\u001b[39mcookie\u001b[33m.\u001b[39mmatch(\u001b[35m/_conv_v=[^;]*/\u001b[39m) \u001b[33m||\u001b[39m [\u001b[32m''\u001b[39m])[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 13,
+                            "line": 249
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  247 |     const p = await ctx.newPage();\n  248 |     await p.goto(url('variation'), { waitUntil: 'domcontentloaded' });\n> 249 |     await p.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n      |             ^\n  250 |     await p.waitForTimeout(12000);\n  251 |     const n = await p.locator(PRICE).count();\n  252 |     const conv = await p.evaluate(() => (document.cookie.match(/_conv_v=[^;]*/) || [''])[0]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:249:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T07:31:57.384Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--15190-the-variation-desktop-only--Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--15190-the-variation-desktop-only--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 13,
+                        "line": 249
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-9282e4007c6b73965935",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 243,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T07:18:12.882Z",
+    "duration": 892127.433,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 15,
+    "flaky": 0
+  }
+}

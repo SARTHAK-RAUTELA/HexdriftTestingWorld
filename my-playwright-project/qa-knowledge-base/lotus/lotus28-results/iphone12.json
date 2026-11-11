@@ -1,0 +1,1198 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus28-hide-header.spec.js",
+      "file": "lotus28-hide-header.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Lotus 28 — control",
+          "file": "lotus28-hide-header.spec.js",
+          "line": 69,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC01 control: bucketed + variation markers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10792,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:10:38.025Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-top",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--7432c--bucketed-variation-markers-Mobile-Safari-iPhone-12-\\attachments\\control-top-fccc688e3966c1d7bb55500839cb2d7f10a45d9f.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-a6481e2ffc03ed1f48fc",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 70,
+              "column": 5
+            },
+            {
+              "title": "TC02 control: scroll down → header stays visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8042,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:10:49.414Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-scrolled-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--22a43-down-→-header-stays-visible-Mobile-Safari-iPhone-12-\\attachments\\control-scrolled-down-e19edffecc75de9265e819c079bc7b079c07c48a.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-283858e11e31de19a4f8",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 87,
+              "column": 5
+            },
+            {
+              "title": "TC03 control: scroll up → header visible again",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9469,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:10:57.508Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-scrolled-up",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--0302e-l-up-→-header-visible-again-Mobile-Safari-iPhone-12-\\attachments\\control-scrolled-up-69529eae94b4c92b731540985e02f203bc4e8480.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-e60dcc1076ac3aa66799",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 105,
+              "column": 5
+            },
+            {
+              "title": "TC04 control: back at top + small-scroll thresholds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9730,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:11:07.030Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-987c991be66ce5f76b94",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 120,
+              "column": 5
+            },
+            {
+              "title": "TC05 control: continuous swipe — header hides while scrolling",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "timing",
+                      "description": "first hide at never; scrolling stopped at 1165ms (y=1052)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9745,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:11:16.802Z",
+                      "annotations": [
+                        {
+                          "type": "timing",
+                          "description": "first hide at never; scrolling stopped at 1165ms (y=1052)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-fa8e121f0d744f881d4e",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 135,
+              "column": 5
+            },
+            {
+              "title": "TC06 control: hamburger menu after scroll",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 28600,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header button[aria-label=\"Open menu\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-label=\"Open menu\" class=\"flex items-center justify-center lg:hidden\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    11 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header button[aria-label=\"Open menu\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-label=\"Open menu\" class=\"flex items-center justify-center lg:hidden\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    11 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:170:17",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 17,
+                          "line": 170
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 168 |\u001b[39m       \u001b[36mconst\u001b[39m btn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'header button[aria-label=\"Open menu\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 169 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(btn)\u001b[33m.\u001b[39mtoBeInViewport()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 170 |\u001b[39m       \u001b[36mawait\u001b[39m btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 171 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m900\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 172 |\u001b[39m       \u001b[36mconst\u001b[39m overlay \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div.fixed.inset-0.z-\\\\[60\\\\]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 173 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(overlay\u001b[33m,\u001b[39m \u001b[32m'mobile menu overlay open'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 17,
+                            "line": 170
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header button[aria-label=\"Open menu\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-label=\"Open menu\" class=\"flex items-center justify-center lg:hidden\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    11 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n  168 |       const btn = page.locator('header button[aria-label=\"Open menu\"]');\n  169 |       await expect.soft(btn).toBeInViewport();\n> 170 |       await btn.click();\n      |                 ^\n  171 |       await page.waitForTimeout(900);\n  172 |       const overlay = page.locator('div.fixed.inset-0.z-\\\\[60\\\\]');\n  173 |       await expect.soft(overlay, 'mobile menu overlay open').toBeVisible();\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:170:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:11:26.588Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--da08c-hamburger-menu-after-scroll-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--da08c-hamburger-menu-after-scroll-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 17,
+                        "line": 170
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-989355caecd07c410c2c",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 163,
+              "column": 5
+            },
+            {
+              "title": "TC07 control: sitewide — English pages",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 400000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 53198,
+                      "error": {
+                        "message": "Error: no JS errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /n.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /n.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /s.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /s.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: no JS errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /n.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /n.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /s.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /s.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:198:41",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 41,
+                          "line": 198
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 196 |\u001b[39m       }\n \u001b[90m 197 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(bad\u001b[33m,\u001b[39m \u001b[32m'pages where behaviour is wrong'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 198 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(errs\u001b[33m,\u001b[39m \u001b[32m'no JS errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 199 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 200 |\u001b[39m\n \u001b[90m 201 |\u001b[39m     test(\u001b[32m`TC08 ${arm.key}: sitewide — localised pages (/de, /es)`\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m ti) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 41,
+                            "line": 198
+                          },
+                          "message": "Error: no JS errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /n.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /n.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /s.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+   \"pageerror: /s.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  196 |       }\n  197 |       expect.soft(bad, 'pages where behaviour is wrong').toEqual([]);\n> 198 |       expect.soft(errs, 'no JS errors').toEqual([]);\n      |                                         ^\n  199 |     });\n  200 |\n  201 |     test(`TC08 ${arm.key}: sitewide — localised pages (/de, /es)`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:198:41"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:11:56.277Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-our-rental-cars-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--a8df2-ol-sitewide-—-English-pages-Mobile-Safari-iPhone-12-\\attachments\\control-our-rental-cars-down-76b8cd8db45a836f6ad37ce5fa215891c0326b56.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--a8df2-ol-sitewide-—-English-pages-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--a8df2-ol-sitewide-—-English-pages-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 41,
+                        "line": 198
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-9ca1cd3db2d66a76c2f1",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 181,
+              "column": 5
+            },
+            {
+              "title": "TC08 control: sitewide — localised pages (/de, /es)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "locales",
+                      "description": "[{\"p\":\"/de\",\"bucket\":null,\"body\":false,\"hidden\":false},{\"p\":\"/es\",\"bucket\":null,\"body\":false,\"hidden\":false}]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 60073,
+                      "error": {
+                        "message": "Error: /de bucketed into control\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257924\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: /de bucketed into control\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257924\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 85,
+                          "line": 212
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 210 |\u001b[39m       }\n \u001b[90m 211 |\u001b[39m       ti\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'locales'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(res) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 212 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m res) expect\u001b[33m.\u001b[39msoft(r\u001b[33m.\u001b[39mbucket\u001b[33m,\u001b[39m \u001b[32m`${r.p} bucketed into ${arm.key}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(arm\u001b[33m.\u001b[39mid)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 213 |\u001b[39m       \u001b[36mif\u001b[39m (arm\u001b[33m.\u001b[39mhides) \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m res) expect\u001b[33m.\u001b[39msoft(r\u001b[33m.\u001b[39mhidden\u001b[33m,\u001b[39m \u001b[32m`${r.p} header hides`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 214 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 215 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 85,
+                            "line": 212
+                          },
+                          "message": "Error: /de bucketed into control\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257924\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  210 |       }\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n> 212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n      |                                                                                     ^\n  213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n  214 |     });\n  215 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 85,
+                            "line": 212
+                          },
+                          "message": "Error: /es bucketed into control\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257924\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  210 |       }\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n> 212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n      |                                                                                     ^\n  213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n  214 |     });\n  215 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:12:50.159Z",
+                      "annotations": [
+                        {
+                          "type": "locales",
+                          "description": "[{\"p\":\"/de\",\"bucket\":null,\"body\":false,\"hidden\":false},{\"p\":\"/es\",\"bucket\":null,\"body\":false,\"hidden\":false}]"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-de-scrolled-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--8c749-de-—-localised-pages-de-es--Mobile-Safari-iPhone-12-\\attachments\\control-de-scrolled-down-2bbcbea7f70af7f4474970143e8319bc169c92e6.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--8c749-de-—-localised-pages-de-es--Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--8c749-de-—-localised-pages-de-es--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 85,
+                        "line": 212
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-eb3a707d3af1cde26bf3",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 201,
+              "column": 5
+            },
+            {
+              "title": "TC09 control: >1024px gate + rotate/resize while hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11141,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:13:50.881Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-resized-1100",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--407af--rotate-resize-while-hidden-Mobile-Safari-iPhone-12-\\attachments\\control-resized-1100-d053c4e7182545d64ec86f0c5de6f7ccb929a135.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-7d30a286c4605616644c",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 216,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Lotus 28 — variant",
+          "file": "lotus28-hide-header.spec.js",
+          "line": 69,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC01 variant: bucketed + variation markers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8303,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:14:02.101Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-top",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--2e490--bucketed-variation-markers-Mobile-Safari-iPhone-12-\\attachments\\variant-top-c207f50742c2b8a00fec81de05bf01c0302978ca.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-3bf444b885de288eac9d",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 70,
+              "column": 5
+            },
+            {
+              "title": "TC02 variant: scroll down → header hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6976,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:14:10.431Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-scrolled-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--27653-scroll-down-→-header-hidden-Mobile-Safari-iPhone-12-\\attachments\\variant-scrolled-down-f4e44dd1dc8140b65a78ffcf92b15c79bdc5e70f.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-ca1ee6475d15b4b8a8ab",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 87,
+              "column": 5
+            },
+            {
+              "title": "TC03 variant: scroll up → header visible again",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8716,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:14:17.434Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-scrolled-up",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--308f8-l-up-→-header-visible-again-Mobile-Safari-iPhone-12-\\attachments\\variant-scrolled-up-674304f1fb9a85a67b8510cd2e0d3474feb847a2.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-9b264e018425bed8d0ec",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 105,
+              "column": 5
+            },
+            {
+              "title": "TC04 variant: back at top + small-scroll thresholds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:14:26.169Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-a966ee4e28246f717d26",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 120,
+              "column": 5
+            },
+            {
+              "title": "TC05 variant: continuous swipe — header hides while scrolling",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "timing",
+                      "description": "first hide at 1361ms; scrolling stopped at 1143ms (y=1016)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9589,
+                      "error": {
+                        "message": "Error: header should hide during the swipe (<400ms), not only after it stops\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m400\u001b[39m\nReceived:   \u001b[31m1361\u001b[39m",
+                        "stack": "Error: header should hide during the swipe (<400ms), not only after it stops\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m400\u001b[39m\nReceived:   \u001b[31m1361\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:157:121",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 121,
+                          "line": 157
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 155 |\u001b[39m       \u001b[36mif\u001b[39m (arm\u001b[33m.\u001b[39mhides) {\n \u001b[90m 156 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(firstHide\u001b[33m,\u001b[39m \u001b[32m'header hid at some point'\u001b[39m)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 157 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(firstHide \u001b[33m&&\u001b[39m firstHide[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m \u001b[32m'header should hide during the swipe (<400ms), not only after it stops'\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 158 |\u001b[39m       } \u001b[36melse\u001b[39m {\n \u001b[90m 159 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(firstHide\u001b[33m,\u001b[39m \u001b[32m'control never hides'\u001b[39m)\u001b[33m.\u001b[39mtoBeFalsy()\u001b[33m;\u001b[39m\n \u001b[90m 160 |\u001b[39m       }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 121,
+                            "line": 157
+                          },
+                          "message": "Error: header should hide during the swipe (<400ms), not only after it stops\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m400\u001b[39m\nReceived:   \u001b[31m1361\u001b[39m\n\n  155 |       if (arm.hides) {\n  156 |         expect.soft(firstHide, 'header hid at some point').toBeTruthy();\n> 157 |         expect.soft(firstHide && firstHide[0], 'header should hide during the swipe (<400ms), not only after it stops').toBeLessThan(400);\n      |                                                                                                                         ^\n  158 |       } else {\n  159 |         expect.soft(firstHide, 'control never hides').toBeFalsy();\n  160 |       }\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:157:121"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:14:36.585Z",
+                      "annotations": [
+                        {
+                          "type": "timing",
+                          "description": "first hide at 1361ms; scrolling stopped at 1143ms (y=1016)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c0ccb-eader-hides-while-scrolling-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c0ccb-eader-hides-while-scrolling-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 121,
+                        "line": 157
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-704b07343dfbc46b6965",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 135,
+              "column": 5
+            },
+            {
+              "title": "TC06 variant: hamburger menu after scroll",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 29397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:14:46.831Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-menu-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--ad533-hamburger-menu-after-scroll-Mobile-Safari-iPhone-12-\\attachments\\variant-menu-open-bae7a9136228b193b8ea29251f7fa279aa7716ae.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-d501b548d0becf6017bd",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 163,
+              "column": 5
+            },
+            {
+              "title": "TC07 variant: sitewide — English pages",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 400000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 52683,
+                      "error": {
+                        "message": "Error: pages where behaviour is wrong\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"/our-rental-cars: body=true down={\\\"y\\\":900,\\\"top\\\":-81,\\\"bottom\\\":0,\\\"height\\\":81,\\\"hidden\\\":true} up={\\\"y\\\":750,\\\"top\\\":-6,\\\"bottom\\\":74,\\\"height\\\":81,\\\"hidden\\\":false}\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: pages where behaviour is wrong\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"/our-rental-cars: body=true down={\\\"y\\\":900,\\\"top\\\":-81,\\\"bottom\\\":0,\\\"height\\\":81,\\\"hidden\\\":true} up={\\\"y\\\":750,\\\"top\\\":-6,\\\"bottom\\\":74,\\\"height\\\":81,\\\"hidden\\\":false}\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:197:58",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 58,
+                          "line": 197
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 195 |\u001b[39m         \u001b[36mif\u001b[39m (p \u001b[33m===\u001b[39m \u001b[32m'/our-rental-cars'\u001b[39m) { \u001b[36mawait\u001b[39m scrollTo(page\u001b[33m,\u001b[39m mid \u001b[33m+\u001b[39m \u001b[35m300\u001b[39m)\u001b[33m;\u001b[39m \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-our-rental-cars-down`\u001b[39m)\u001b[33m;\u001b[39m }\n \u001b[90m 196 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 197 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(bad\u001b[33m,\u001b[39m \u001b[32m'pages where behaviour is wrong'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 198 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(errs\u001b[33m,\u001b[39m \u001b[32m'no JS errors'\u001b[39m)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m 199 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 200 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 58,
+                            "line": 197
+                          },
+                          "message": "Error: pages where behaviour is wrong\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"/our-rental-cars: body=true down={\\\"y\\\":900,\\\"top\\\":-81,\\\"bottom\\\":0,\\\"height\\\":81,\\\"hidden\\\":true} up={\\\"y\\\":750,\\\"top\\\":-6,\\\"bottom\\\":74,\\\"height\\\":81,\\\"hidden\\\":false}\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  195 |         if (p === '/our-rental-cars') { await scrollTo(page, mid + 300); await shot(page, ti, `${arm.key}-our-rental-cars-down`); }\n  196 |       }\n> 197 |       expect.soft(bad, 'pages where behaviour is wrong').toEqual([]);\n      |                                                          ^\n  198 |       expect.soft(errs, 'no JS errors').toEqual([]);\n  199 |     });\n  200 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:197:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 41,
+                            "line": 198
+                          },
+                          "message": "Error: no JS errors\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"pageerror: /o.clarity.ms/collect due to access control checks.\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  196 |       }\n  197 |       expect.soft(bad, 'pages where behaviour is wrong').toEqual([]);\n> 198 |       expect.soft(errs, 'no JS errors').toEqual([]);\n      |                                         ^\n  199 |     });\n  200 |\n  201 |     test(`TC08 ${arm.key}: sitewide — localised pages (/de, /es)`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:198:41"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:15:16.313Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-our-rental-cars-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--d9984-nt-sitewide-—-English-pages-Mobile-Safari-iPhone-12-\\attachments\\variant-our-rental-cars-down-79e9361c6ecac1225ed6945f18b27a88faa9b373.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--d9984-nt-sitewide-—-English-pages-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--d9984-nt-sitewide-—-English-pages-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 58,
+                        "line": 197
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-d4f4082f4cd1bd3200fd",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 181,
+              "column": 5
+            },
+            {
+              "title": "TC08 variant: sitewide — localised pages (/de, /es)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "locales",
+                      "description": "[{\"p\":\"/de\",\"bucket\":null,\"body\":false,\"hidden\":false},{\"p\":\"/es\",\"bucket\":null,\"body\":false,\"hidden\":false}]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 60498,
+                      "error": {
+                        "message": "Error: /de bucketed into variant\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257925\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: /de bucketed into variant\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257925\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 85,
+                          "line": 212
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 210 |\u001b[39m       }\n \u001b[90m 211 |\u001b[39m       ti\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'locales'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(res) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 212 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m res) expect\u001b[33m.\u001b[39msoft(r\u001b[33m.\u001b[39mbucket\u001b[33m,\u001b[39m \u001b[32m`${r.p} bucketed into ${arm.key}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(arm\u001b[33m.\u001b[39mid)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 213 |\u001b[39m       \u001b[36mif\u001b[39m (arm\u001b[33m.\u001b[39mhides) \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m res) expect\u001b[33m.\u001b[39msoft(r\u001b[33m.\u001b[39mhidden\u001b[33m,\u001b[39m \u001b[32m`${r.p} header hides`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 214 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 215 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 85,
+                            "line": 212
+                          },
+                          "message": "Error: /de bucketed into variant\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257925\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  210 |       }\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n> 212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n      |                                                                                     ^\n  213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n  214 |     });\n  215 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 85,
+                            "line": 212
+                          },
+                          "message": "Error: /es bucketed into variant\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257925\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  210 |       }\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n> 212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n      |                                                                                     ^\n  213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n  214 |     });\n  215 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 88,
+                            "line": 213
+                          },
+                          "message": "Error: /de header hides\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n  212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n> 213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n      |                                                                                        ^\n  214 |     });\n  215 |\n  216 |     test(`TC09 ${arm.key}: >1024px gate + rotate/resize while hidden`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:213:88"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 88,
+                            "line": 213
+                          },
+                          "message": "Error: /es header hides\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n  212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n> 213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n      |                                                                                        ^\n  214 |     });\n  215 |\n  216 |     test(`TC09 ${arm.key}: >1024px gate + rotate/resize while hidden`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:213:88"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:16:09.568Z",
+                      "annotations": [
+                        {
+                          "type": "locales",
+                          "description": "[{\"p\":\"/de\",\"bucket\":null,\"body\":false,\"hidden\":false},{\"p\":\"/es\",\"bucket\":null,\"body\":false,\"hidden\":false}]"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "variant-de-scrolled-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--ab08e-de-—-localised-pages-de-es--Mobile-Safari-iPhone-12-\\attachments\\variant-de-scrolled-down-4c3a0c34774cca7936515b4f690848f450c67831.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--ab08e-de-—-localised-pages-de-es--Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--ab08e-de-—-localised-pages-de-es--Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 85,
+                        "line": 212
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-92eb3ad539a197aaf339",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 201,
+              "column": 5
+            },
+            {
+              "title": "TC09 variant: >1024px gate + rotate/resize while hidden",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari (iPhone 12)",
+                  "projectName": "Mobile Safari (iPhone 12)",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12676,
+                      "error": {
+                        "message": "Error: header visible at 1100px after resize (top=-81, hidden=true)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: header visible at 1100px after resize (top=-81, hidden=true)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:225:116",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 116,
+                          "line": 225
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 223 |\u001b[39m       \u001b[36mawait\u001b[39m scrollTo(page\u001b[33m,\u001b[39m \u001b[35m1200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 224 |\u001b[39m       \u001b[36mconst\u001b[39m wide \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m scrollTo(page\u001b[33m,\u001b[39m \u001b[35m1400\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 225 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(visible(wide)\u001b[33m,\u001b[39m \u001b[32m`header visible at 1100px after resize (top=${wide.top}, hidden=${wide.hidden})`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 226 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-resized-1100`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 227 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 228 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 116,
+                            "line": 225
+                          },
+                          "message": "Error: header visible at 1100px after resize (top=-81, hidden=true)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  223 |       await scrollTo(page, 1200);\n  224 |       const wide = await scrollTo(page, 1400);\n> 225 |       expect.soft(visible(wide), `header visible at 1100px after resize (top=${wide.top}, hidden=${wide.hidden})`).toBe(true);\n      |                                                                                                                    ^\n  226 |       await shot(page, ti, `${arm.key}-resized-1100`);\n  227 |     });\n  228 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:225:116"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:17:10.674Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-resized-1100",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c96d9--rotate-resize-while-hidden-Mobile-Safari-iPhone-12-\\attachments\\variant-resized-1100-2f3b13a63df621889b01a6a84fc069935d0987a1.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c96d9--rotate-resize-while-hidden-Mobile-Safari-iPhone-12-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c96d9--rotate-resize-while-hidden-Mobile-Safari-iPhone-12-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 116,
+                        "line": 225
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-c496388770d69d025bf7",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 216,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-11T06:10:37.431Z",
+    "duration": 406038.284,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 0
+  }
+}

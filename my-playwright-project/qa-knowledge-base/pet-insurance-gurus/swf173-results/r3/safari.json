@@ -1,0 +1,1583 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swf173-price-above-button.spec.js",
+      "file": "swf173-price-above-button.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SWF173 targeted URLs",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 67,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/: listings at 6097ms, SWF173 price at 6375ms (+278ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10151,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:34:02.188Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/: listings at 6097ms, SWF173 price at 6375ms (+278ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-6bbdeb6f949d7de5b72e",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16509,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:34:12.502Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-046638350e1403334304",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/home/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/home/: listings at 5844ms, SWF173 price at 6005ms (+161ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/home/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10962,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:34:29.021Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/home/: listings at 5844ms, SWF173 price at 6005ms (+161ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/home/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-18bc182be0e5ded87049",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/home/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19611,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:34:39.992Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-4f4f31ed058221dec413",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/comparison/ — variation adds a matching price above every visible CTA",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/comparison/: listings at 3946ms, SWF173 price at 4406ms (+460ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/comparison/: Pet best logo wordmark horizontal full color RGB $24.90/mo|$24.90/mo off0; Aspca Pet Health Insurance $34.22/mo|$34.22/mo off0; Fetch Pet Insurance $42.49/mo|$42.49/mo off0; Pumpkin new logo $46.93/mo|$46.93/mo off0; Embrace $44.87/mo|$44.87/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Liberty mutual logo $42.66/mo| off0; Odie Pet $26.28/mo| off0; Akc logo $48.34/mo| off0; Pet best logo wordmark horizontal full color RGB $28.79/mo|$28.79/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8431,
+                      "error": {
+                        "message": "Error: Liberty mutual logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m",
+                        "stack": "Error: Liberty mutual logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 49,
+                          "line": 81
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 79 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m x \u001b[36mof\u001b[39m c) {\n \u001b[90m 80 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdupCount\u001b[33m,\u001b[39m \u001b[32m`${x.name} one price`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m1\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 81 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mlabel\u001b[33m,\u001b[39m \u001b[32m`${x.name} label`\u001b[39m)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/^average plan cost$/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 82 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdup\u001b[33m,\u001b[39m \u001b[32m`${x.name} duplicated == left column`\u001b[39m)\u001b[33m.\u001b[39mtoBe(x\u001b[33m.\u001b[39mleft)\u001b[33m;\u001b[39m\n \u001b[90m 83 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mbeforeCta\u001b[33m,\u001b[39m \u001b[32m`${x.name} price above CTA`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mcentreOff\u001b[33m,\u001b[39m \u001b[32m`${x.name} column vertically centred`\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 49,
+                            "line": 81
+                          },
+                          "message": "Error: Liberty mutual logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n  79 |       for (const x of c) {\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n> 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n     |                                                 ^\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 82
+                          },
+                          "message": "Error: Liberty mutual logo duplicated == left column\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"$42.66/mo\"\u001b[39m\n\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n> 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n     |                                                                   ^\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:82:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 49,
+                            "line": 81
+                          },
+                          "message": "Error: Odie Pet Logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n  79 |       for (const x of c) {\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n> 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n     |                                                 ^\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 82
+                          },
+                          "message": "Error: Odie Pet Logo duplicated == left column\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"$26.28/mo\"\u001b[39m\n\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n> 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n     |                                                                   ^\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:82:67"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 49,
+                            "line": 81
+                          },
+                          "message": "Error: Akc logo label\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/^average plan cost$/i\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\n\n  79 |       for (const x of c) {\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n> 81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n     |                                                 ^\n  82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:81:49"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 67,
+                            "line": 82
+                          },
+                          "message": "Error: Akc logo duplicated == left column\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"$48.34/mo\"\u001b[39m\n\n  80 |         expect.soft(x.dupCount, `${x.name} one price`).toBe(1);\n  81 |         expect.soft(x.label, `${x.name} label`).toMatch(/^average plan cost$/i);\n> 82 |         expect.soft(x.dup, `${x.name} duplicated == left column`).toBe(x.left);\n     |                                                                   ^\n  83 |         expect.soft(x.beforeCta, `${x.name} price above CTA`).toBe(true);\n  84 |         expect.soft(x.centreOff, `${x.name} column vertically centred`).toBeLessThanOrEqual(2);\n  85 |         expect.soft(x.overflowX, `${x.name} no horizontal overflow`).toBe(false);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:82:67"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:34:59.612Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/comparison/: listings at 3946ms, SWF173 price at 4406ms (+460ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/comparison/: Pet best logo wordmark horizontal full color RGB $24.90/mo|$24.90/mo off0; Aspca Pet Health Insurance $34.22/mo|$34.22/mo off0; Fetch Pet Insurance $42.49/mo|$42.49/mo off0; Pumpkin new logo $46.93/mo|$46.93/mo off0; Embrace $44.87/mo|$44.87/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Liberty mutual logo $42.66/mo| off0; Odie Pet $26.28/mo| off0; Akc logo $48.34/mo| off0; Pet best logo wordmark horizontal full color RGB $28.79/mo|$28.79/mo off0"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--8f828-ice-above-every-visible-CTA-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--8f828-ice-above-every-visible-CTA-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 49,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5237a7af66f065eff1e3",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/comparison/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15866,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:35:08.707Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-a0cddd1d4b184f896716",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/cat-insurance/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/cat-insurance/: listings at 2350ms, SWF173 price at 3583ms (+1233ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/cat-insurance/: Lemonade $16.94/mo|$16.94/mo off0; ASPCA $18.44/mo|$18.44/mo off0; Fetch $20.63/mo|$20.63/mo off0; Embrace $28.51/mo|$28.51/mo off0; Pumpkin $21.37/mo|$21.37/mo off0; Figo $23.89/mo|$23.89/mo off0; Trupanion $39.87/mo|$39.87/mo off0; Lemonade $16.94/mo|$16.94/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7428,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:35:24.668Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/cat-insurance/: listings at 2350ms, SWF173 price at 3583ms (+1233ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/cat-insurance/: Lemonade $16.94/mo|$16.94/mo off0; ASPCA $18.44/mo|$18.44/mo off0; Fetch $20.63/mo|$20.63/mo off0; Embrace $28.51/mo|$28.51/mo off0; Pumpkin $21.37/mo|$21.37/mo off0; Figo $23.89/mo|$23.89/mo off0; Trupanion $39.87/mo|$39.87/mo off0; Lemonade $16.94/mo|$16.94/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-94652f620e61ecfcf6af",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/cat-insurance/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14860,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:35:32.107Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5e51dbb994d604b48fc1",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/compare/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/compare/: listings at 4470ms, SWF173 price at 4580ms (+110ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/compare/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18947,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:35:46.975Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/compare/: listings at 4470ms, SWF173 price at 4580ms (+110ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/compare/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-af6d27c1cd4ddd1046b9",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/compare/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19399,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:36:05.931Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-53bed6723b580023496d",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/canada/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/canada/: listings at 4480ms, SWF173 price at 4710ms (+230ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/canada/: Fetch Pet Insurance $85.89/mo|$85.89/mo off0; Trupanion $224.92/mo|$224.92/mo off0; Furkin Pet Insurance $110.48/mo|$110.48/mo off0; Pets Plus Us Insurance $100.44/mo|$100.44/mo off0; Petsecure Insurance $123.11/mo|$123.11/mo off0; Fetch Pet Insurance $85.89/mo|$85.89/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9607,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:36:25.367Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/canada/: listings at 4480ms, SWF173 price at 4710ms (+230ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/canada/: Fetch Pet Insurance $85.89/mo|$85.89/mo off0; Trupanion $224.92/mo|$224.92/mo off0; Furkin Pet Insurance $110.48/mo|$110.48/mo off0; Pets Plus Us Insurance $100.44/mo|$100.44/mo off0; Petsecure Insurance $123.11/mo|$123.11/mo off0; Fetch Pet Insurance $85.89/mo|$85.89/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5e9e5992839c5a8f271d",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/canada/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15450,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:36:35.003Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-6289edeba8ee758561fd",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "SWF173 design",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 102,
+          "column": 6,
+          "specs": [
+            {
+              "title": "typography matches wireframe (label grey caps, bold amount, smaller /mo)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"label\":{\"fs\":12,\"fw\":\"500\",\"tt\":\"uppercase\",\"color\":\"rgb(140, 142, 160)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"amt\":{\"fs\":18,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"mo\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"cta\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"uppercase\",\"color\":\"rgb(255, 255, 255)\",\"ff\":\"Montserrat, arial, sans-serif\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13512,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:36:50.484Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"label\":{\"fs\":12,\"fw\":\"500\",\"tt\":\"uppercase\",\"color\":\"rgb(140, 142, 160)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"amt\":{\"fs\":18,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"mo\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"cta\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"uppercase\",\"color\":\"rgb(255, 255, 255)\",\"ff\":\"Montserrat, arial, sans-serif\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-1d16bab05a05cfce7ca7",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 103,
+              "column": 3
+            },
+            {
+              "title": "CTA hrefs and order unchanged vs control",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 40877,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:37:04.031Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-eae31c42cbab7abcb27e",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "layout at 1024px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1024: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16924,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:37:45.065Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1024: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-9e897b1715c79df4aaf0",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1280px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1280: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12729,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:38:02.154Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1280: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-af063658e9fcf8732739",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1440px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1440: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18402,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:38:14.912Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1440: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-180c110ccc51df0f8a01",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1920px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1920: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16651,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:38:33.373Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1920: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-56c5325911a3c99fa34d",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "re-running the code does not duplicate prices",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15434,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:38:50.111Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5588a0539503bad0dbb7",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 145,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "SWF173 filters",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 156,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Cats tab — duplicated price follows the tab's price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Cats: Lemonade dup $14.65/mo / left $14.65/mo; ASPCA dup $15.95/mo / left $15.95/mo; Fetch dup $17.84/mo / left $17.84/mo; Embrace dup $24.66/mo / left $24.66/mo; Pumpkin dup $18.49/mo / left $18.49/mo; Figo dup $20.66/mo / left $20.66/mo; Trupanion dup $34.49/mo / left $34.49/mo; Lemonade dup $14.65/mo / left $14.65/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 21738,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:39:05.588Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Cats: Lemonade dup $14.65/mo / left $14.65/mo; ASPCA dup $15.95/mo / left $15.95/mo; Fetch dup $17.84/mo / left $17.84/mo; Embrace dup $24.66/mo / left $24.66/mo; Pumpkin dup $18.49/mo / left $18.49/mo; Figo dup $20.66/mo / left $20.66/mo; Trupanion dup $34.49/mo / left $34.49/mo; Lemonade dup $14.65/mo / left $14.65/mo"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-04bef14907164b0f256e",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "Dogs tab — duplicated price follows the tab's price",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 77408,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:159:7",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:159:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:39:27.390Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--00f66-ice-follows-the-tab-s-price-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-d045b7b4c940d3d2c751",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "Cats → All Pets round-trip — price matches again",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 51537,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:40:46.246Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-67006ac73c2ff9a48772",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 173,
+              "column": 3
+            },
+            {
+              "title": "direct ?petType=cat landing — price matches",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "null/$16.94/mo; null/$18.44/mo; null/$20.63/mo; null/$28.51/mo; null/$21.37/mo; null/$23.89/mo; null/$39.87/mo; null/$16.94/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 14517,
+                      "error": {
+                        "message": "Error: Lemonade Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$16.94/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: Lemonade Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$16.94/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 51,
+                          "line": 186
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 184 |\u001b[39m     \u001b[36mconst\u001b[39m c \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m cards(page)\u001b[33m;\u001b[39m\n \u001b[90m 185 |\u001b[39m     note(c\u001b[33m.\u001b[39mmap(x \u001b[33m=>\u001b[39m \u001b[32m`${x.dup}/${x.left}`\u001b[39m)\u001b[33m.\u001b[39mjoin(\u001b[32m'; '\u001b[39m))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 186 |\u001b[39m     \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m x \u001b[36mof\u001b[39m c) expect\u001b[33m.\u001b[39msoft(x\u001b[33m.\u001b[39mdup\u001b[33m,\u001b[39m x\u001b[33m.\u001b[39mname)\u001b[33m.\u001b[39mtoBe(x\u001b[33m.\u001b[39mleft)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 187 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 188 |\u001b[39m\n \u001b[90m 189 |\u001b[39m   test(\u001b[32m'ZIP typed after the observer window (>17s) — price still present and matching'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m info) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 51,
+                            "line": 186
+                          },
+                          "message": "Error: Lemonade Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$16.94/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  184 |     const c = await cards(page);\n  185 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));\n> 186 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                   ^\n  187 |   });\n  188 |\n  189 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 51,
+                            "line": 186
+                          },
+                          "message": "Error: ASPCA Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$18.44/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  184 |     const c = await cards(page);\n  185 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));\n> 186 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                   ^\n  187 |   });\n  188 |\n  189 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 51,
+                            "line": 186
+                          },
+                          "message": "Error: Fetch Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$20.63/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  184 |     const c = await cards(page);\n  185 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));\n> 186 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                   ^\n  187 |   });\n  188 |\n  189 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 51,
+                            "line": 186
+                          },
+                          "message": "Error: Embrace Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$28.51/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  184 |     const c = await cards(page);\n  185 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));\n> 186 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                   ^\n  187 |   });\n  188 |\n  189 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 51,
+                            "line": 186
+                          },
+                          "message": "Error: Pumpkin Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$21.37/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  184 |     const c = await cards(page);\n  185 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));\n> 186 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                   ^\n  187 |   });\n  188 |\n  189 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 51,
+                            "line": 186
+                          },
+                          "message": "Error: Figo Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$23.89/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  184 |     const c = await cards(page);\n  185 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));\n> 186 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                   ^\n  187 |   });\n  188 |\n  189 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 51,
+                            "line": 186
+                          },
+                          "message": "Error: Trupanion Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$39.87/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  184 |     const c = await cards(page);\n  185 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));\n> 186 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                   ^\n  187 |   });\n  188 |\n  189 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 51,
+                            "line": 186
+                          },
+                          "message": "Error: Lemonade Logo\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"$16.94/mo\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  184 |     const c = await cards(page);\n  185 |     note(c.map(x => `${x.dup}/${x.left}`).join('; '));\n> 186 |     for (const x of c) expect.soft(x.dup, x.name).toBe(x.left);\n      |                                                   ^\n  187 |   });\n  188 |\n  189 |   test('ZIP typed after the observer window (>17s) — price still present and matching', async ({ page }, info) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:186:51"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:41:38.704Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "null/$16.94/mo; null/$18.44/mo; null/$20.63/mo; null/$28.51/mo; null/$21.37/mo; null/$23.89/mo; null/$39.87/mo; null/$16.94/mo"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--dea3f-cat-landing-—-price-matches-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--dea3f-cat-landing-—-price-matches-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 51,
+                        "line": 186
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-de907b4ac44996c5e222",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 182,
+              "column": 3
+            },
+            {
+              "title": "ZIP typed after the observer window (>17s) — price still present and matching",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 150000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "price first at 11318ms; after ZIP: Lemonade $30.32/mo/$30.32/mo; Embrace $29.15/mo/$29.15/mo; ASPCA $38.07/mo/$38.07/mo; Fetch $70.55/mo/$70.55/mo; Pumpkin $33.08/mo/$33.08/mo; Figo $38.92/mo/$38.92/mo; Trupanion $173.33/mo/$173.33/mo; Lemonade $30.32/mo/$30.32/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 44297,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:41:54.161Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "price first at 11318ms; after ZIP: Lemonade $30.32/mo/$30.32/mo; Embrace $29.15/mo/$29.15/mo; ASPCA $38.07/mo/$38.07/mo; Fetch $70.55/mo/$70.55/mo; Pumpkin $33.08/mo/$33.08/mo; Figo $38.92/mo/$38.92/mo; Trupanion $173.33/mo/$173.33/mo; Lemonade $30.32/mo/$30.32/mo"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-8924ea7c7a418ea3072a",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 189,
+              "column": 3
+            },
+            {
+              "title": "Show More clicked after the observer window — revealed cards get the price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 150000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "cards 8 → 11; Lemonade:1, ASPCA:1, Fetch:1, Embrace:1, Pumpkin:1, Figo:1, Trupanion:1, Liberty Mutual:1, Odie:1, AKC:1, Lemonade:1"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 35234,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:42:38.558Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "cards 8 → 11; Lemonade:1, ASPCA:1, Fetch:1, Embrace:1, Pumpkin:1, Figo:1, Trupanion:1, Liberty Mutual:1, Odie:1, AKC:1, Lemonade:1"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-55ca432b0037c6bfdcd6",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 208,
+              "column": 3
+            },
+            {
+              "title": "Show More clicked quickly — revealed cards get the price",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 66480,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:230:5",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 14,
+                          "line": 30
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 28 |\u001b[39m   \u001b[36mconst\u001b[39m t0 \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow()\u001b[33m;\u001b[39m\n \u001b[90m 29 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(url(arm\u001b[33m,\u001b[39m p\u001b[33m,\u001b[39m qs)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 30 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 31 |\u001b[39m   \u001b[36mconst\u001b[39m tBoxes \u001b[33m=\u001b[39m \u001b[33mDate\u001b[39m\u001b[33m.\u001b[39mnow() \u001b[33m-\u001b[39m t0\u001b[33m;\u001b[39m\n \u001b[90m 32 |\u001b[39m   \u001b[36mlet\u001b[39m tPrice \u001b[33m=\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m   \u001b[36mif\u001b[39m (arm \u001b[33m===\u001b[39m \u001b[32m'variation'\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 14,
+                            "line": 30
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  28 |   const t0 = Date.now();\n  29 |   await page.goto(url(arm, p, qs), { waitUntil: 'domcontentloaded' });\n> 30 |   await page.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n     |              ^\n  31 |   const tBoxes = Date.now() - t0;\n  32 |   let tPrice = null;\n  33 |   if (arm === 'variation') {\n    at open (D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:30:14)\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:230:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:43:13.827Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--a305b-evealed-cards-get-the-price-Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--a305b-evealed-cards-get-the-price-Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 14,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-6b77001ba96f8a47e62b",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 229,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "SWF173 audience",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 242,
+          "column": 6,
+          "specs": [
+            {
+              "title": "mobile device does not get the variation (desktop only)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Safari Desktop",
+                  "projectName": "Safari Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 66306,
+                      "error": {
+                        "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n",
+                        "stack": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:249:13",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                          "column": 13,
+                          "line": 249
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 247 |\u001b[39m     \u001b[36mconst\u001b[39m p \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m ctx\u001b[33m.\u001b[39mnewPage()\u001b[33m;\u001b[39m\n \u001b[90m 248 |\u001b[39m     \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mgoto(url(\u001b[32m'variation'\u001b[39m)\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 249 |\u001b[39m     \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'.plan-box'\u001b[39m\u001b[33m,\u001b[39m { state\u001b[33m:\u001b[39m \u001b[32m'attached'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 250 |\u001b[39m     \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m12000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 251 |\u001b[39m     \u001b[36mconst\u001b[39m n \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mlocator(\u001b[33mPRICE\u001b[39m)\u001b[33m.\u001b[39mcount()\u001b[33m;\u001b[39m\n \u001b[90m 252 |\u001b[39m     \u001b[36mconst\u001b[39m conv \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m p\u001b[33m.\u001b[39mevaluate(() \u001b[33m=>\u001b[39m (document\u001b[33m.\u001b[39mcookie\u001b[33m.\u001b[39mmatch(\u001b[35m/_conv_v=[^;]*/\u001b[39m) \u001b[33m||\u001b[39m [\u001b[32m''\u001b[39m])[\u001b[35m0\u001b[39m])\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                            "column": 13,
+                            "line": 249
+                          },
+                          "message": "TimeoutError: page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.plan-box')\u001b[22m\n\n\n  247 |     const p = await ctx.newPage();\n  248 |     await p.goto(url('variation'), { waitUntil: 'domcontentloaded' });\n> 249 |     await p.waitForSelector('.plan-box', { state: 'attached', timeout: 60000 });\n      |             ^\n  250 |     await p.waitForTimeout(12000);\n  251 |     const n = await p.locator(PRICE).count();\n  252 |     const conv = await p.evaluate(() => (document.cookie.match(/_conv_v=[^;]*/) || [''])[0]);\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js:249:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:44:20.966Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--15190-the-variation-desktop-only--Safari-Desktop\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\swf173-price-above-button--15190-the-variation-desktop-only--Safari-Desktop\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\swf173-price-above-button.spec.js",
+                        "column": 13,
+                        "line": 249
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-9282e4007c6b73965935",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 243,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T10:34:01.401Z",
+    "duration": 686181.9280000001,
+    "expected": 22,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

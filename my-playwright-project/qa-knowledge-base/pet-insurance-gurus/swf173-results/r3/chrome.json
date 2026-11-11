@@ -1,0 +1,1374 @@
+
+Running 27 tests using 1 worker
+
+  ✓   1 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › / — variation adds a matching price above every visible CTA (13.4s)
+  ✓   2 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › / — control unchanged (15.0s)
+  ✓   3 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /home/ — variation adds a matching price above every visible CTA (15.3s)
+  ✓   4 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /home/ — control unchanged (14.7s)
+  ✓   5 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /comparison/ — variation adds a matching price above every visible CTA (7.3s)
+  ✓   6 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /comparison/ — control unchanged (13.3s)
+  ✓   7 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /cat-insurance/ — variation adds a matching price above every visible CTA (7.0s)
+  ✓   8 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /cat-insurance/ — control unchanged (13.8s)
+  ✓   9 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /compare/ — variation adds a matching price above every visible CTA (8.0s)
+  ✓  10 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /compare/ — control unchanged (17.2s)
+  ✓  11 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:69:5 › SWF173 targeted URLs › /canada/ — variation adds a matching price above every visible CTA (19.9s)
+  ✓  12 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:90:5 › SWF173 targeted URLs › /canada/ — control unchanged (13.2s)
+  ✓  13 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:103:3 › SWF173 design › typography matches wireframe (label grey caps, bold amount, smaller /mo) (8.6s)
+  ✓  14 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:116:3 › SWF173 design › CTA hrefs and order unchanged vs control (22.4s)
+  ✓  15 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1024px — centred, no overflow, price on one line (8.4s)
+  ✓  16 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1280px — centred, no overflow, price on one line (9.6s)
+  ✓  17 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1440px — centred, no overflow, price on one line (7.6s)
+  ✓  18 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:128:5 › SWF173 design › layout at 1920px — centred, no overflow, price on one line (7.3s)
+  ✓  19 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:145:3 › SWF173 design › re-running the code does not duplicate prices (10.6s)
+  ✓  20 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:158:5 › SWF173 filters › Cats tab — duplicated price follows the tab's price (11.9s)
+  ✓  21 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:158:5 › SWF173 filters › Dogs tab — duplicated price follows the tab's price (17.0s)
+  ✓  22 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:173:3 › SWF173 filters › Cats → All Pets round-trip — price matches again (13.9s)
+  ✓  23 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:182:3 › SWF173 filters › direct ?petType=cat landing — price matches (7.1s)
+  ✓  24 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:189:3 › SWF173 filters › ZIP typed after the observer window (>17s) — price still present and matching (31.9s)
+  ✓  25 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:208:3 › SWF173 filters › Show More clicked after the observer window — revealed cards get the price (29.1s)
+  ✓  26 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:229:3 › SWF173 filters › Show More clicked quickly — revealed cards get the price (13.5s)
+  ✓  27 [Chrome Desktop] › testing\swf173-price-above-button.spec.js:243:3 › SWF173 audience › mobile device does not get the variation (desktop only) (20.2s)
+
+  Slow test file: [Chrome Desktop] › testing\swf173-price-above-button.spec.js (6.3m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  27 passed (6.7m)
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "swf173-price-above-button.spec.js",
+      "file": "swf173-price-above-button.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SWF173 targeted URLs",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 67,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/: listings at 5958ms, SWF173 price at 6975ms (+1017ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13379,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:26:48.255Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/: listings at 5958ms, SWF173 price at 6975ms (+1017ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-5abf97a9efd0414717fe",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14977,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:27:01.752Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-d4857fb7f7dda380295e",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/home/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/home/: listings at 3677ms, SWF173 price at 4650ms (+973ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/home/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15263,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:27:16.742Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/home/: listings at 3677ms, SWF173 price at 4650ms (+973ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/home/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-473bbdc912d60fc7316f",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/home/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14692,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:27:32.014Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-21ffa9a91140ce657538",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/comparison/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/comparison/: listings at 2795ms, SWF173 price at 4327ms (+1532ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/comparison/: Pet best logo wordmark horizontal full color RGB $24.90/mo|$24.90/mo off0; Aspca Pet Health Insurance $34.22/mo|$34.22/mo off0; Fetch Pet Insurance $42.49/mo|$42.49/mo off0; Pumpkin new logo $46.93/mo|$46.93/mo off0; Embrace $44.87/mo|$44.87/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Liberty mutual logo $42.66/mo|$42.66/mo off0; Odie Pet $26.28/mo|$26.28/mo off0; Akc logo $48.34/mo|$48.34/mo off0; Pet best logo wordmark horizontal full color RGB $28.79/mo|$28.79/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7251,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:27:46.714Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/comparison/: listings at 2795ms, SWF173 price at 4327ms (+1532ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/comparison/: Pet best logo wordmark horizontal full color RGB $24.90/mo|$24.90/mo off0; Aspca Pet Health Insurance $34.22/mo|$34.22/mo off0; Fetch Pet Insurance $42.49/mo|$42.49/mo off0; Pumpkin new logo $46.93/mo|$46.93/mo off0; Embrace $44.87/mo|$44.87/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Liberty mutual logo $42.66/mo|$42.66/mo off0; Odie Pet $26.28/mo|$26.28/mo off0; Akc logo $48.34/mo|$48.34/mo off0; Pet best logo wordmark horizontal full color RGB $28.79/mo|$28.79/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-3aa87c3f8eebdf05c2c8",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/comparison/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13331,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:27:53.977Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-2ab1199dff70f9ac48b5",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/cat-insurance/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/cat-insurance/: listings at 2625ms, SWF173 price at 3866ms (+1241ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/cat-insurance/: Lemonade $16.94/mo|$16.94/mo off0; ASPCA $18.44/mo|$18.44/mo off0; Fetch $20.63/mo|$20.63/mo off0; Embrace $28.51/mo|$28.51/mo off0; Pumpkin $21.37/mo|$21.37/mo off0; Figo $23.89/mo|$23.89/mo off0; Trupanion $39.87/mo|$39.87/mo off0; Lemonade $16.94/mo|$16.94/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7019,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:28:07.323Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/cat-insurance/: listings at 2625ms, SWF173 price at 3866ms (+1241ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/cat-insurance/: Lemonade $16.94/mo|$16.94/mo off0; ASPCA $18.44/mo|$18.44/mo off0; Fetch $20.63/mo|$20.63/mo off0; Embrace $28.51/mo|$28.51/mo off0; Pumpkin $21.37/mo|$21.37/mo off0; Figo $23.89/mo|$23.89/mo off0; Trupanion $39.87/mo|$39.87/mo off0; Lemonade $16.94/mo|$16.94/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-be9afcc8afd5251c8f60",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/cat-insurance/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13842,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:28:14.464Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-ae54476e35ba59bdbacd",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/compare/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/compare/: listings at 4119ms, SWF173 price at 4290ms (+171ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/compare/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8034,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:28:28.324Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/compare/: listings at 4119ms, SWF173 price at 4290ms (+171ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/compare/: Lemonade $20.28/mo|$20.28/mo off0; ASPCA $34.22/mo|$34.22/mo off0; Fetch $42.49/mo|$42.49/mo off0; Embrace $44.87/mo|$44.87/mo off0; Pumpkin $46.93/mo|$46.93/mo off0; Figo $35.28/mo|$35.28/mo off0; Trupanion $92.15/mo|$92.15/mo off0; Lemonade $20.28/mo|$20.28/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-482574979392b2bb50f8",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/compare/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17154,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:28:36.671Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-a1796f7e48a986530bec",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/canada/ — variation adds a matching price above every visible CTA",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "/canada/: listings at 4651ms, SWF173 price at 5829ms (+1178ms)"
+                    },
+                    {
+                      "type": "note",
+                      "description": "/canada/: Fetch Pet Insurance $85.89/mo|$85.89/mo off0; Trupanion $224.92/mo|$224.92/mo off0; Furkin Pet Insurance $110.48/mo|$110.48/mo off0; Pets Plus Us Insurance $100.44/mo|$100.44/mo off0; Petsecure Insurance $123.11/mo|$123.11/mo off0; Fetch Pet Insurance $85.89/mo|$85.89/mo off0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19934,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:28:53.890Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "/canada/: listings at 4651ms, SWF173 price at 5829ms (+1178ms)"
+                        },
+                        {
+                          "type": "note",
+                          "description": "/canada/: Fetch Pet Insurance $85.89/mo|$85.89/mo off0; Trupanion $224.92/mo|$224.92/mo off0; Furkin Pet Insurance $110.48/mo|$110.48/mo off0; Pets Plus Us Insurance $100.44/mo|$100.44/mo off0; Petsecure Insurance $123.11/mo|$123.11/mo off0; Fetch Pet Insurance $85.89/mo|$85.89/mo off0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-7a9c82da5d393001caef",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 69,
+              "column": 5
+            },
+            {
+              "title": "/canada/ — control unchanged",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13196,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:29:14.269Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-9f89cb63d59f6202bed1",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 90,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "SWF173 design",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 102,
+          "column": 6,
+          "specs": [
+            {
+              "title": "typography matches wireframe (label grey caps, bold amount, smaller /mo)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "{\"label\":{\"fs\":12,\"fw\":\"500\",\"tt\":\"uppercase\",\"color\":\"rgb(140, 142, 160)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"amt\":{\"fs\":18,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"mo\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"cta\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"uppercase\",\"color\":\"rgb(255, 255, 255)\",\"ff\":\"Montserrat, arial, sans-serif\"}}"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8620,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:29:27.508Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "{\"label\":{\"fs\":12,\"fw\":\"500\",\"tt\":\"uppercase\",\"color\":\"rgb(140, 142, 160)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"amt\":{\"fs\":18,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"mo\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"none\",\"color\":\"rgb(0, 0, 0)\",\"ff\":\"Montserrat, arial, sans-serif\"},\"cta\":{\"fs\":16,\"fw\":\"700\",\"tt\":\"uppercase\",\"color\":\"rgb(255, 255, 255)\",\"ff\":\"Montserrat, arial, sans-serif\"}}"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-98d26dc01aa807b842fc",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 103,
+              "column": 3
+            },
+            {
+              "title": "CTA hrefs and order unchanged vs control",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22358,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:29:36.144Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-afc563b54da5cfd14dde",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "layout at 1024px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1024: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8413,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:29:58.513Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1024: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-39ecdf94dde62c7f69dd",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1280px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1280: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9554,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:30:06.931Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1280: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-7ae6e32ef17979d0a597",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1440px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1440: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7592,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:30:16.492Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1440: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-32a73ec115b0f6e926d9",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "layout at 1920px — centred, no overflow, price on one line",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "1920: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7265,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:30:24.092Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "1920: amount heights 20,20,20,20,20,20,20,20; centre offsets 0,0,0,0,0,0,0,0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-ed78ce5196746b3a6b95",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 128,
+              "column": 5
+            },
+            {
+              "title": "re-running the code does not duplicate prices",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10633,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:30:31.369Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-87acb81aab66dddf40bf",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 145,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "SWF173 filters",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 156,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Cats tab — duplicated price follows the tab's price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Cats: Lemonade dup $14.65/mo / left $14.65/mo; ASPCA dup $15.95/mo / left $15.95/mo; Fetch dup $17.84/mo / left $17.84/mo; Embrace dup $24.66/mo / left $24.66/mo; Pumpkin dup $18.49/mo / left $18.49/mo; Figo dup $20.66/mo / left $20.66/mo; Trupanion dup $34.49/mo / left $34.49/mo; Lemonade dup $14.65/mo / left $14.65/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11859,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:30:42.008Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Cats: Lemonade dup $14.65/mo / left $14.65/mo; ASPCA dup $15.95/mo / left $15.95/mo; Fetch dup $17.84/mo / left $17.84/mo; Embrace dup $24.66/mo / left $24.66/mo; Pumpkin dup $18.49/mo / left $18.49/mo; Figo dup $20.66/mo / left $20.66/mo; Trupanion dup $34.49/mo / left $34.49/mo; Lemonade dup $14.65/mo / left $14.65/mo"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-11188b2f0b5d911ddbe5",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "Dogs tab — duplicated price follows the tab's price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "Dogs: Lemonade dup $22.76/mo / left $22.76/mo; ASPCA dup $38.79/mo / left $38.79/mo; Fetch dup $42.49/mo / left $42.49/mo; Embrace dup $49.92/mo / left $49.92/mo; Pumpkin dup $54.91/mo / left $54.91/mo; Figo dup $40.00/mo / left $40.00/mo; Trupanion dup $106.57/mo / left $106.57/mo; Lemonade dup $22.76/mo / left $22.76/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16976,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:30:53.877Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "Dogs: Lemonade dup $22.76/mo / left $22.76/mo; ASPCA dup $38.79/mo / left $38.79/mo; Fetch dup $42.49/mo / left $42.49/mo; Embrace dup $49.92/mo / left $49.92/mo; Pumpkin dup $54.91/mo / left $54.91/mo; Figo dup $40.00/mo / left $40.00/mo; Trupanion dup $106.57/mo / left $106.57/mo; Lemonade dup $22.76/mo / left $22.76/mo"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-7286d00600d480cf5f3f",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 158,
+              "column": 5
+            },
+            {
+              "title": "Cats → All Pets round-trip — price matches again",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13923,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:31:10.860Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-a2782610d2af3f8cbcec",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 173,
+              "column": 3
+            },
+            {
+              "title": "direct ?petType=cat landing — price matches",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "$14.65/mo/$14.65/mo; $15.95/mo/$15.95/mo; $17.84/mo/$17.84/mo; $24.66/mo/$24.66/mo; $18.49/mo/$18.49/mo; $20.66/mo/$20.66/mo; $34.49/mo/$34.49/mo; $14.65/mo/$14.65/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7144,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:31:24.792Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "$14.65/mo/$14.65/mo; $15.95/mo/$15.95/mo; $17.84/mo/$17.84/mo; $24.66/mo/$24.66/mo; $18.49/mo/$18.49/mo; $20.66/mo/$20.66/mo; $34.49/mo/$34.49/mo; $14.65/mo/$14.65/mo"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-e921099d9e20e5aee694",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 182,
+              "column": 3
+            },
+            {
+              "title": "ZIP typed after the observer window (>17s) — price still present and matching",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 150000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "price first at 4708ms; after ZIP: Lemonade $30.32/mo/$30.32/mo; Embrace $29.15/mo/$29.15/mo; ASPCA $38.07/mo/$38.07/mo; Fetch $70.55/mo/$70.55/mo; Pumpkin $33.08/mo/$33.08/mo; Figo $38.92/mo/$38.92/mo; Trupanion $173.33/mo/$173.33/mo; Lemonade $30.32/mo/$30.32/mo"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 31925,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:31:31.946Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "price first at 4708ms; after ZIP: Lemonade $30.32/mo/$30.32/mo; Embrace $29.15/mo/$29.15/mo; ASPCA $38.07/mo/$38.07/mo; Fetch $70.55/mo/$70.55/mo; Pumpkin $33.08/mo/$33.08/mo; Figo $38.92/mo/$38.92/mo; Trupanion $173.33/mo/$173.33/mo; Lemonade $30.32/mo/$30.32/mo"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-9e132a3c44c0edc3305b",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 189,
+              "column": 3
+            },
+            {
+              "title": "Show More clicked after the observer window — revealed cards get the price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 150000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "cards 8 → 11; Lemonade:1, ASPCA:1, Fetch:1, Embrace:1, Pumpkin:1, Figo:1, Trupanion:1, Liberty Mutual:1, Odie:1, AKC:1, Lemonade:1"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 29143,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:32:03.880Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "cards 8 → 11; Lemonade:1, ASPCA:1, Fetch:1, Embrace:1, Pumpkin:1, Figo:1, Trupanion:1, Liberty Mutual:1, Odie:1, AKC:1, Lemonade:1"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-86e4d1ad2777f7c1deba",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 208,
+              "column": 3
+            },
+            {
+              "title": "Show More clicked quickly — revealed cards get the price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13511,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:32:33.049Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-3e1de26c021c5ffa4bab",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 229,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "SWF173 audience",
+          "file": "swf173-price-above-button.spec.js",
+          "line": 242,
+          "column": 6,
+          "specs": [
+            {
+              "title": "mobile device does not get the variation (desktop only)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "note",
+                      "description": "mobile prices: 0; bucketed in 100053060: false"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome Desktop",
+                  "projectName": "Chrome Desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20156,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T10:32:46.678Z",
+                      "annotations": [
+                        {
+                          "type": "note",
+                          "description": "mobile prices: 0; bucketed in 100053060: false"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a42195d36ab22401f8cf-8973f000750ff4953089",
+              "file": "swf173-price-above-button.spec.js",
+              "line": 243,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T10:26:47.482Z",
+    "duration": 403140.608,
+    "expected": 27,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

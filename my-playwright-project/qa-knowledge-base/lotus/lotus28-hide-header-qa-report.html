@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lotus 28 QA Report</title>
+<style>
+:root{--bg:#f7f7f8;--card:#fff;--ink:#1a1a2e;--mut:#5c5f6b;--line:#e2e4ea;--ok:#1a7f4b;--okbg:#e6f5ec;--bad:#b42318;--badbg:#fdecea;--warn:#946200;--warnbg:#fff4d6;--info:#2f5bb7;--infobg:#e8effc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15161b;--card:#1f2027;--ink:#ececf1;--mut:#a3a6b3;--line:#33353f;--ok:#5fd394;--okbg:#173326;--bad:#ff8a80;--badbg:#3a1d1b;--warn:#f2c14e;--warnbg:#3a2f12;--info:#8fb2ff;--infobg:#1c2742}}
+:root[data-theme="dark"]{--bg:#15161b;--card:#1f2027;--ink:#ececf1;--mut:#a3a6b3;--line:#33353f;--ok:#5fd394;--okbg:#173326;--bad:#ff8a80;--badbg:#3a1d1b;--warn:#f2c14e;--warnbg:#3a2f12;--info:#8fb2ff;--infobg:#1c2742}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:32px 0 10px}
+.sub{color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0}
+.bug{border-left:4px solid var(--bad)}.bug.med{border-left-color:var(--warn)}.bug.low{border-left-color:var(--info)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.tag{display:inline-block;border-radius:5px;padding:1px 8px;font-size:12px;font-weight:600}
+.pass{background:var(--okbg);color:var(--ok)}.fail{background:var(--badbg);color:var(--bad)}.warn{background:var(--warnbg);color:var(--warn)}.info{background:var(--infobg);color:var(--info)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}.kpi b{display:block;font-size:24px}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:10px}
+.shots figure{margin:0}.shots img{width:100%;border:1px solid var(--line);border-radius:6px}.shots figcaption{font-size:12px;color:var(--mut);margin-top:4px}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:10px 0}summary{cursor:pointer;font-weight:600}
+code{background:var(--bg);padding:1px 4px;border-radius:4px;font-size:13px;word-break:break-word}
+pre{background:var(--bg);padding:10px;border-radius:6px;overflow-x:auto;font-size:13px}
+.wrap{overflow-x:auto}small{color:var(--mut)}
+ul{margin:6px 0;padding-left:20px}
+</style>
+</head>
+<body><main>
+<h1>Lotus Car Rental: Test 28, Hide Header on Scroll Down (Mobile, Sitewide)</h1>
+<p class="sub">lotuscarrental.is · sitewide · all mobile users · Convert exp 100053078 · Control 1000257924 / Variant 1000257925 · preview links (<code>cro_mode=qa</code>) · tested 2026-11-11 · Mobile Chrome (Pixel 5) + Mobile Safari (iPhone 12)</p>
+
+<div class="card">
+<b>Verdict: works, with one fix recommended before launch.</b> The variant does what the brief asks. Scrolling down slides the header fully off-screen, scrolling up brings it back, and it's always shown at the top of the page. This works on the homepage and all 9 English pages tested, on both browsers, with no JS errors from the test. The control never hides the header. The header only hides <b>after</b> the user stops scrolling, not while they scroll (BUG-01, a 1-line fix). Also, the test doesn't run on the German and Spanish pages (Q-01), which needs a yes/no from the client.
+</div>
+
+<div class="kpis">
+<div class="kpi"><b>28/36</b>checks passed (14/18 per browser)</div>
+<div class="kpi"><b>2</b>browsers: Mobile Chrome + Mobile Safari</div>
+<div class="kpi"><b>12</b>pages: home + 9 English + /de + /es</div>
+<div class="kpi"><b>2</b>bugs (1 medium, 1 low) + 1 targeting question</div>
+</div>
+
+<h2>What the test should do (from the brief + wireframes)</h2>
+<div class="card wrap"><table>
+<tr><th>Arm</th><th>Expected</th><th>What we found</th></tr>
+<tr><td>Control</td><td>Sticky header stays pinned at the top while scrolling</td><td>Pinned at <code>top:0</code> through every scroll on every page. ✅</td></tr>
+<tr><td>Variant</td><td>Hide header on scroll down. Show it again on scroll up.</td><td>Down: <code>translateY(-100%)</code>, fully off-screen (bottom = 0px), no leftover strip or gap. Up: back at <code>top:0</code>. Shown within 20px of the top. Small &lt;10px jitter ignored. Repeated cycles work. ✅ The hide comes late though, see BUG-01.</td></tr>
+</table></div>
+
+<div class="shots">
+<figure><img src="lotus28-screenshots/wireframe/control.png" alt="Control wireframe"><figcaption>Wireframe: Control</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/control-our-rental-cars-down.png" alt="Control scrolled"><figcaption>Live control, scrolled (Pixel 5): header pinned</figcaption></figure>
+<figure><img src="lotus28-screenshots/wireframe/variant.png" alt="Variant wireframe"><figcaption>Wireframe: Variant</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-scrolled-down.png" alt="Variant scrolled down"><figcaption>Live variant, scrolled down (iPhone 12): header hidden</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-scrolled-up.png" alt="Variant scrolled up"><figcaption>Live variant, scrolled up (iPhone 12): header back</figcaption></figure>
+</div>
+
+<h2>Bugs</h2>
+
+<div class="card bug med">
+<p><span class="tag warn">BUG-01 · Medium</span> <b>Header only hides after scrolling stops, not while the user is scrolling down</b></p>
+<p>The scroll handler is wrapped in a 100ms <b>debounce</b> (<code>vB.js:79</code>, <code>debounce(toggleHeader, 100)</code>). A debounce runs only once scroll events have stopped for 100ms. On a phone, a swipe plus its momentum fires scroll events for the whole movement. So the header stays visible while the content scrolls under it, then pops away at the end. The wireframe and brief describe the header hiding <i>on</i> scroll down.</p>
+<table>
+<tr><th>Browser</th><th>Continuous scroll stopped</th><th>Header hid at</th></tr>
+<tr><td>Mobile Chrome (Pixel 5)</td><td>1195 ms</td><td>1328 ms (after the scroll ended)</td></tr>
+<tr><td>Mobile Safari (iPhone 12)</td><td>1143 ms</td><td>1361 ms (after the scroll ended)</td></tr>
+</table>
+<p><small>TC05: starting from a revealed header mid-page, scroll 12px every frame for 1.2s.</small></p>
+<p><b>Suggested fix:</b> use a throttle or <code>requestAnimationFrame</code> instead of the debounce. The existing 10px <code>minScroll</code> already prevents jitter.</p>
+<pre>var ticking = false;
+window.addEventListener("scroll", function () {
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(function () { toggleHeader(); ticking = false; });
+}, { passive: true });</pre>
+</div>
+
+<div class="card bug low">
+<p><span class="tag info">BUG-02 · Low</span> <b>Header stays hidden if the viewport grows past 1024px while hidden (tablet rotate)</b></p>
+<p><code>toggleHeader()</code> returns early when <code>innerWidth &gt; 1024</code> (<code>vB.js:57</code>) without removing <code>cre-t-28-header-hidden</code>. If the header is hidden and the viewport then widens past 1024px, it stays off-screen even when scrolling up. This happens on a tablet rotating to landscape or a resized window. Reproduced in TC09: hide at 393px, resize to 1100px, scroll up gives <code>top=-81</code>, <code>hidden=true</code> on both browsers. Phones in landscape stay under 1024px, so this only matters if tablets are in the "mobile" audience.</p>
+<p><b>Fix:</b> remove the class before the early return: <code>if (window.innerWidth &gt; 1024) { header.classList.remove(hiddenClass); return; }</code></p>
+<div class="shots"><figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/variant-resized-1100.png" alt="Resized 1100 header missing"><figcaption>Variant after resize to 1100px + scroll up: no header</figcaption></figure></div>
+</div>
+
+<div class="card bug med">
+<p><span class="tag warn">Q-01 · Targeting question</span> <b>Test doesn't run on German (/de) or Spanish (/es) pages</b></p>
+<p>The brief says "sitewide". On <code>/de</code>, <code>/de/mietwagen-island</code> and <code>/es</code>, Convert doesn't bucket the visitor into exp 100053078, even with the force link. Only exp 100053089 runs there. The variant header never hides on those pages. <code>/fr</code> and <code>/it</code> do bucket, but they serve English content (<code>lang="en-us"</code>). Same result on both browsers, both arms (TC08). <b>Client to confirm:</b> is English-only intended, or should the URL targeting include the localised paths?</p>
+</div>
+
+<h2>What passed (both browsers, both arms)</h2>
+<div class="card"><ul>
+<li><b>TC01</b> Correct bucketing. <code>body.cre-t-28</code> and the CSS appear in the variant only. Exactly one sticky header. Deployed CSS matches local <code>vB.css</code> exactly.</li>
+<li><b>TC02</b> Scroll down. Variant header fully off-screen and the top of the viewport is page content. Control stays pinned.</li>
+<li><b>TC03</b> Scroll up shows the header again. A second down/up cycle works too.</li>
+<li><b>TC04</b> Shown at the top and within 20px of it. A 5px up-jitter doesn't flicker it back.</li>
+<li><b>TC06</b> After scrolling up, the hamburger is reachable. The full-screen menu (a separate <code>fixed z-[60]</code> overlay, outside the header) opens and closes normally, and the header is visible after closing.</li>
+<li><b>TC07</b> Sitewide, English: /our-rental-cars, /our-rental-cars/4x4, /insurance, /faq, /blog, /about-us/driving-in-iceland, /rent-a-car-in-iceland/keflavik-airport, /our-services/airport-shuttle, /contact. Hide/show works on each, and no page has another sticky bar left behind with a gap.</li>
+</ul></div>
+
+<h2>Results by browser</h2>
+<div class="card wrap"><table>
+<tr><th>TC</th><th>Pixel 5 · control</th><th>Pixel 5 · variant</th><th>iPhone 12 · control</th><th>iPhone 12 · variant</th></tr>
+<tr><td>TC01 bucketing + markers</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>TC02 scroll down</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>TC03 scroll up</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>TC04 top + thresholds</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>TC05 continuous swipe</td><td><span class="tag pass">PASS</span></td><td><span class="tag fail">FAIL · BUG-01</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag fail">FAIL · BUG-01</span></td></tr>
+<tr><td>TC06 hamburger menu</td><td><span class="tag pass">PASS*</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS*</span></td><td><span class="tag pass">PASS</span></td></tr>
+<tr><td>TC07 English pages</td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag pass">PASS*</span></td><td><span class="tag pass">PASS*</span></td></tr>
+<tr><td>TC08 /de, /es</td><td><span class="tag fail">FAIL · Q-01</span></td><td><span class="tag fail">FAIL · Q-01</span></td><td><span class="tag fail">FAIL · Q-01</span></td><td><span class="tag fail">FAIL · Q-01</span></td></tr>
+<tr><td>TC09 resize &gt;1024</td><td><span class="tag pass">PASS</span></td><td><span class="tag fail">FAIL · BUG-02</span></td><td><span class="tag pass">PASS</span></td><td><span class="tag fail">FAIL · BUG-02</span></td></tr>
+</table>
+<p><small>* Passed on re-run after fixing the test harness, not the variation:
+(a) TC06 control: the timed "You've Unlocked a Private Rate" modal from another live test (<code>#cre-t-18-modal</code>) covered the menu button and blocked the tap. It's now hidden in the spec.
+(b) TC07 iPhone: Microsoft Clarity beacon CORS errors (WebKit, both arms) and React #418 hydration errors (both arms) are site-native noise and are now filtered out.
+(c) TC07 iPhone variant: one sample on /our-rental-cars (21,865px tall) read <code>top=-6</code> mid-transition. It settled to 0 on re-sample, and the re-run passed. The saved JSON in <code>lotus28-results/</code> is from the first full run, before these harness fixes.</small></p>
+</div>
+
+<h2>Other notes</h2>
+<div class="card"><ul>
+<li><b>Other live overlays:</b> a "Singles Day offer 11% OFF" promo modal opens on first load, and the <code>cre-t-18</code> Private Rate modal appears after a delay. Neither interacts with the header logic. Both sit above it.</li>
+<li><code>isMenuOpen()</code> looks for <code>[role=dialog][data-state=open]</code> (Radix). The site uses Base UI (<code>data-open</code>), so that selector never matches. In practice it doesn't matter: the menu button is in the header, so the header is always visible when the menu opens, and the menu is a separate full-screen overlay. It's dead code, though.</li>
+<li>The transition is 0.1s linear, which is quick and a bit abrupt. The wireframe gives no animation spec, so this is fine as built.</li>
+<li>Real iOS hardware and iOS rubber-band overscroll (negative <code>scrollY</code>) couldn't be simulated. The code handles it because <code>y ≤ 20</code> shows the header.</li>
+</ul></div>
+
+<h2>How it was tested</h2>
+<div class="card"><ul>
+<li>Order: wireframes (Control.png / Variant.png), then <code>local_testing/Local2/variation/vB.js</code> + <code>vB.css</code>, then the live preview links, then the Playwright spec <code>testing/lotus28-hide-header.spec.js</code> (9 TCs × 2 arms).</li>
+<li>Projects: <code>Mobile Chrome (Pixel 5)</code> and <code>Mobile Safari (iPhone 12)</code>, run one at a time. Cookie banner hidden (no consent). Promo modal closed with Escape.</li>
+<li>Header state is read from <code>getBoundingClientRect()</code> of <code>header.sticky.top-0</code> after each scroll, with a 450ms settle for the debounce and transition.</li>
+<li>Recon scripts: <code>testing/lotus28-recon/</code>.</li>
+</ul></div>
+
+<h2>All screenshots</h2>
+<details><summary>Mobile Chrome (Pixel 5)</summary><div class="shots">
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/control-top.png" alt=""><figcaption>control · top</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/control-scrolled-down.png" alt=""><figcaption>control · scrolled down</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/control-scrolled-up.png" alt=""><figcaption>control · scrolled up</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/control-menu-open.png" alt=""><figcaption>control · menu open</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/control-de-scrolled-down.png" alt=""><figcaption>control · /de scrolled</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/variant-top.png" alt=""><figcaption>variant · top</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/variant-scrolled-down.png" alt=""><figcaption>variant · scrolled down (hidden)</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/variant-scrolled-up.png" alt=""><figcaption>variant · scrolled up (shown)</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/variant-menu-open.png" alt=""><figcaption>variant · menu open</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/variant-our-rental-cars-down.png" alt=""><figcaption>variant · /our-rental-cars down</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-chrome-pixel-5-/variant-de-scrolled-down.png" alt=""><figcaption>variant · /de scrolled (header still pinned, Q-01)</figcaption></figure>
+</div></details>
+<details><summary>Mobile Safari (iPhone 12)</summary><div class="shots">
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/control-top.png" alt=""><figcaption>control · top</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/control-scrolled-down.png" alt=""><figcaption>control · scrolled down</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/control-scrolled-up.png" alt=""><figcaption>control · scrolled up</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/control-menu-open.png" alt=""><figcaption>control · menu open</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-top.png" alt=""><figcaption>variant · top</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-scrolled-down.png" alt=""><figcaption>variant · scrolled down (hidden)</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-scrolled-up.png" alt=""><figcaption>variant · scrolled up (shown)</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-menu-open.png" alt=""><figcaption>variant · menu open</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-our-rental-cars-down.png" alt=""><figcaption>variant · /our-rental-cars down</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-resized-1100.png" alt=""><figcaption>variant · resized 1100 (BUG-02)</figcaption></figure>
+<figure><img src="lotus28-screenshots/mobile-safari-iphone-12-/variant-de-scrolled-down.png" alt=""><figcaption>variant · /de scrolled (Q-01)</figcaption></figure>
+</div></details>
+</main></body>
+</html>

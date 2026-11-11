@@ -1,0 +1,1122 @@
+{
+  "config": {
+    "configFile": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\playwright.config.js",
+    "rootDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome Desktop",
+        "name": "Chrome Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox Desktop",
+        "name": "Firefox Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Edge Desktop",
+        "name": "Edge Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Safari Desktop",
+        "name": "Safari Desktop",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome (Pixel 5)",
+        "name": "Mobile Chrome (Pixel 5)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari (iPhone 12)",
+        "name": "Mobile Safari (iPhone 12)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Tablet (iPad Gen 7)",
+        "name": "Tablet (iPad Gen 7)",
+        "testDir": "D:/Installed-apps-files/Github/Git_repos/HexdriftTestingWorld/my-playwright-project/testing",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "lotus28-hide-header.spec.js",
+      "file": "lotus28-hide-header.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Lotus 28 — control",
+          "file": "lotus28-hide-header.spec.js",
+          "line": 69,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC01 control: bucketed + variation markers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9248,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:17:25.594Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-top",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--7432c--bucketed-variation-markers-Mobile-Chrome-Pixel-5-\\attachments\\control-top-9a5591e9798a68004c96275eb55f3fd2338c0b4d.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-f9dc0e47ebe5d6f6561d",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 70,
+              "column": 5
+            },
+            {
+              "title": "TC02 control: scroll down → header stays visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6639,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:17:35.087Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-scrolled-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--22a43-down-→-header-stays-visible-Mobile-Chrome-Pixel-5-\\attachments\\control-scrolled-down-fe97f4d8d056a4acdfbdf0a3bc35cc62cf1712cd.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-169410d3cb33e9ef0268",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 87,
+              "column": 5
+            },
+            {
+              "title": "TC03 control: scroll up → header visible again",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8229,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:17:41.740Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-scrolled-up",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--0302e-l-up-→-header-visible-again-Mobile-Chrome-Pixel-5-\\attachments\\control-scrolled-up-76fc7e8a3cb45e986d469886daa76f8540f10152.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-68bf6b34009b74fa09ad",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 105,
+              "column": 5
+            },
+            {
+              "title": "TC04 control: back at top + small-scroll thresholds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8107,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:17:49.984Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-0a970581b100351572fe",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 120,
+              "column": 5
+            },
+            {
+              "title": "TC05 control: continuous swipe — header hides while scrolling",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "timing",
+                      "description": "first hide at never; scrolling stopped at 1196ms (y=1676)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9009,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:17:58.105Z",
+                      "annotations": [
+                        {
+                          "type": "timing",
+                          "description": "first hide at never; scrolling stopped at 1196ms (y=1676)"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-b41f875e43d6580c83f6",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 135,
+              "column": 5
+            },
+            {
+              "title": "TC06 control: hamburger menu after scroll",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 27555,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header button[aria-label=\"Open menu\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-label=\"Open menu\" class=\"flex items-center justify-center lg:hidden\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    38 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header button[aria-label=\"Open menu\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-label=\"Open menu\" class=\"flex items-center justify-center lg:hidden\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    38 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:170:17",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 17,
+                          "line": 170
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 168 |\u001b[39m       \u001b[36mconst\u001b[39m btn \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'header button[aria-label=\"Open menu\"]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 169 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(btn)\u001b[33m.\u001b[39mtoBeInViewport()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 170 |\u001b[39m       \u001b[36mawait\u001b[39m btn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 171 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m900\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 172 |\u001b[39m       \u001b[36mconst\u001b[39m overlay \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div.fixed.inset-0.z-\\\\[60\\\\]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 173 |\u001b[39m       \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(overlay\u001b[33m,\u001b[39m \u001b[32m'mobile menu overlay open'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 17,
+                            "line": 170
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header button[aria-label=\"Open menu\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-label=\"Open menu\" class=\"flex items-center justify-center lg:hidden\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    38 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"cre-t-18-overlay\"></div> from <div id=\"cre-t-18-modal\" class=\"cre-t-18-modal\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n  168 |       const btn = page.locator('header button[aria-label=\"Open menu\"]');\n  169 |       await expect.soft(btn).toBeInViewport();\n> 170 |       await btn.click();\n      |                 ^\n  171 |       await page.waitForTimeout(900);\n  172 |       const overlay = page.locator('div.fixed.inset-0.z-\\\\[60\\\\]');\n  173 |       await expect.soft(overlay, 'mobile menu overlay open').toBeVisible();\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:170:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:18:07.131Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--da08c-hamburger-menu-after-scroll-Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--da08c-hamburger-menu-after-scroll-Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 17,
+                        "line": 170
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-8ce2c146add1a269dc2b",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 163,
+              "column": 5
+            },
+            {
+              "title": "TC07 control: sitewide — English pages",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 400000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46638,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:18:35.414Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-our-rental-cars-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--a8df2-ol-sitewide-—-English-pages-Mobile-Chrome-Pixel-5-\\attachments\\control-our-rental-cars-down-27ac768ca3608eb99925d306193cdbcd1946bc8f.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-4b5a5236f8a61f2ee057",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 181,
+              "column": 5
+            },
+            {
+              "title": "TC08 control: sitewide — localised pages (/de, /es)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "locales",
+                      "description": "[{\"p\":\"/de\",\"bucket\":null,\"body\":false,\"hidden\":false},{\"p\":\"/es\",\"bucket\":null,\"body\":false,\"hidden\":false}]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 60489,
+                      "error": {
+                        "message": "Error: /de bucketed into control\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257924\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: /de bucketed into control\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257924\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 85,
+                          "line": 212
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 210 |\u001b[39m       }\n \u001b[90m 211 |\u001b[39m       ti\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'locales'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(res) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 212 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m res) expect\u001b[33m.\u001b[39msoft(r\u001b[33m.\u001b[39mbucket\u001b[33m,\u001b[39m \u001b[32m`${r.p} bucketed into ${arm.key}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(arm\u001b[33m.\u001b[39mid)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 213 |\u001b[39m       \u001b[36mif\u001b[39m (arm\u001b[33m.\u001b[39mhides) \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m res) expect\u001b[33m.\u001b[39msoft(r\u001b[33m.\u001b[39mhidden\u001b[33m,\u001b[39m \u001b[32m`${r.p} header hides`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 214 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 215 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 85,
+                            "line": 212
+                          },
+                          "message": "Error: /de bucketed into control\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257924\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  210 |       }\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n> 212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n      |                                                                                     ^\n  213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n  214 |     });\n  215 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 85,
+                            "line": 212
+                          },
+                          "message": "Error: /es bucketed into control\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257924\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  210 |       }\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n> 212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n      |                                                                                     ^\n  213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n  214 |     });\n  215 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:19:22.140Z",
+                      "annotations": [
+                        {
+                          "type": "locales",
+                          "description": "[{\"p\":\"/de\",\"bucket\":null,\"body\":false,\"hidden\":false},{\"p\":\"/es\",\"bucket\":null,\"body\":false,\"hidden\":false}]"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "control-de-scrolled-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--8c749-de-—-localised-pages-de-es--Mobile-Chrome-Pixel-5-\\attachments\\control-de-scrolled-down-edb229568cdc739551b78a1897e5eb90a903fa0a.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--8c749-de-—-localised-pages-de-es--Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--8c749-de-—-localised-pages-de-es--Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 85,
+                        "line": 212
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-e12e06804b29f9ce7e34",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 201,
+              "column": 5
+            },
+            {
+              "title": "TC09 control: >1024px gate + rotate/resize while hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9027,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:20:23.218Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "control-resized-1100",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--407af--rotate-resize-while-hidden-Mobile-Chrome-Pixel-5-\\attachments\\control-resized-1100-9ef1bb2c8bac4e4e1f499e5c377fd2b5a21d82cb.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-c22f3209c42f59fa3c9d",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 216,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Lotus 28 — variant",
+          "file": "lotus28-hide-header.spec.js",
+          "line": 69,
+          "column": 8,
+          "specs": [
+            {
+              "title": "TC01 variant: bucketed + variation markers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6411,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:20:32.336Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-top",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--2e490--bucketed-variation-markers-Mobile-Chrome-Pixel-5-\\attachments\\variant-top-85cf21a7f9a1a232545b95c5fa50d4423a660834.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-6d943e3d051eab79a146",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 70,
+              "column": 5
+            },
+            {
+              "title": "TC02 variant: scroll down → header hidden",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8934,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:20:38.766Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-scrolled-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--27653-scroll-down-→-header-hidden-Mobile-Chrome-Pixel-5-\\attachments\\variant-scrolled-down-a55c81c8a47646528ba17c8b7f0973207a4d708c.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-7758da5be4f068636627",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 87,
+              "column": 5
+            },
+            {
+              "title": "TC03 variant: scroll up → header visible again",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8337,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:20:47.731Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-scrolled-up",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--308f8-l-up-→-header-visible-again-Mobile-Chrome-Pixel-5-\\attachments\\variant-scrolled-up-31bd9a501747c6467d78281c0a758c4309adb474.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-60a8af125e0c535bef01",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 105,
+              "column": 5
+            },
+            {
+              "title": "TC04 variant: back at top + small-scroll thresholds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9176,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:20:56.100Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-97a6189eeca0e5d24931",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 120,
+              "column": 5
+            },
+            {
+              "title": "TC05 variant: continuous swipe — header hides while scrolling",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "timing",
+                      "description": "first hide at 1328ms; scrolling stopped at 1195ms (y=1676)"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8464,
+                      "error": {
+                        "message": "Error: header should hide during the swipe (<400ms), not only after it stops\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m400\u001b[39m\nReceived:   \u001b[31m1328\u001b[39m",
+                        "stack": "Error: header should hide during the swipe (<400ms), not only after it stops\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m400\u001b[39m\nReceived:   \u001b[31m1328\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:157:121",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 121,
+                          "line": 157
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 155 |\u001b[39m       \u001b[36mif\u001b[39m (arm\u001b[33m.\u001b[39mhides) {\n \u001b[90m 156 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(firstHide\u001b[33m,\u001b[39m \u001b[32m'header hid at some point'\u001b[39m)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 157 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(firstHide \u001b[33m&&\u001b[39m firstHide[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m \u001b[32m'header should hide during the swipe (<400ms), not only after it stops'\u001b[39m)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m400\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 158 |\u001b[39m       } \u001b[36melse\u001b[39m {\n \u001b[90m 159 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(firstHide\u001b[33m,\u001b[39m \u001b[32m'control never hides'\u001b[39m)\u001b[33m.\u001b[39mtoBeFalsy()\u001b[33m;\u001b[39m\n \u001b[90m 160 |\u001b[39m       }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 121,
+                            "line": 157
+                          },
+                          "message": "Error: header should hide during the swipe (<400ms), not only after it stops\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m400\u001b[39m\nReceived:   \u001b[31m1328\u001b[39m\n\n  155 |       if (arm.hides) {\n  156 |         expect.soft(firstHide, 'header hid at some point').toBeTruthy();\n> 157 |         expect.soft(firstHide && firstHide[0], 'header should hide during the swipe (<400ms), not only after it stops').toBeLessThan(400);\n      |                                                                                                                         ^\n  158 |       } else {\n  159 |         expect.soft(firstHide, 'control never hides').toBeFalsy();\n  160 |       }\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:157:121"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:21:05.299Z",
+                      "annotations": [
+                        {
+                          "type": "timing",
+                          "description": "first hide at 1328ms; scrolling stopped at 1195ms (y=1676)"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c0ccb-eader-hides-while-scrolling-Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c0ccb-eader-hides-while-scrolling-Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 121,
+                        "line": 157
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-597e68ab4bdfe9b4c523",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 135,
+              "column": 5
+            },
+            {
+              "title": "TC06 variant: hamburger menu after scroll",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 28209,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:21:14.478Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-menu-open",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--ad533-hamburger-menu-after-scroll-Mobile-Chrome-Pixel-5-\\attachments\\variant-menu-open-ab5661ff4e3536d64798804294c84cc17988e62e.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-7c0e0acf615882e3a342",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 163,
+              "column": 5
+            },
+            {
+              "title": "TC07 variant: sitewide — English pages",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 400000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 47841,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:21:42.785Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-our-rental-cars-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--d9984-nt-sitewide-—-English-pages-Mobile-Chrome-Pixel-5-\\attachments\\variant-our-rental-cars-down-01d153e411daf8654048498c8ea23a44d8010e18.png"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-07f1c22fb6b2b644d7e1",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 181,
+              "column": 5
+            },
+            {
+              "title": "TC08 variant: sitewide — localised pages (/de, /es)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "locales",
+                      "description": "[{\"p\":\"/de\",\"bucket\":null,\"body\":false,\"hidden\":false},{\"p\":\"/es\",\"bucket\":null,\"body\":false,\"hidden\":false}]"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 60323,
+                      "error": {
+                        "message": "Error: /de bucketed into variant\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257925\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: /de bucketed into variant\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257925\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 85,
+                          "line": 212
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 210 |\u001b[39m       }\n \u001b[90m 211 |\u001b[39m       ti\u001b[33m.\u001b[39mannotations\u001b[33m.\u001b[39mpush({ type\u001b[33m:\u001b[39m \u001b[32m'locales'\u001b[39m\u001b[33m,\u001b[39m description\u001b[33m:\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(res) })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 212 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m res) expect\u001b[33m.\u001b[39msoft(r\u001b[33m.\u001b[39mbucket\u001b[33m,\u001b[39m \u001b[32m`${r.p} bucketed into ${arm.key}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(arm\u001b[33m.\u001b[39mid)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 213 |\u001b[39m       \u001b[36mif\u001b[39m (arm\u001b[33m.\u001b[39mhides) \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m r \u001b[36mof\u001b[39m res) expect\u001b[33m.\u001b[39msoft(r\u001b[33m.\u001b[39mhidden\u001b[33m,\u001b[39m \u001b[32m`${r.p} header hides`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 214 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 215 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 85,
+                            "line": 212
+                          },
+                          "message": "Error: /de bucketed into variant\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257925\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  210 |       }\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n> 212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n      |                                                                                     ^\n  213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n  214 |     });\n  215 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 85,
+                            "line": 212
+                          },
+                          "message": "Error: /es bucketed into variant\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1000257925\"\u001b[39m\nReceived: \u001b[31mnull\u001b[39m\n\n  210 |       }\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n> 212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n      |                                                                                     ^\n  213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n  214 |     });\n  215 |\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:212:85"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 88,
+                            "line": 213
+                          },
+                          "message": "Error: /de header hides\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n  212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n> 213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n      |                                                                                        ^\n  214 |     });\n  215 |\n  216 |     test(`TC09 ${arm.key}: >1024px gate + rotate/resize while hidden`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:213:88"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 88,
+                            "line": 213
+                          },
+                          "message": "Error: /es header hides\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  211 |       ti.annotations.push({ type: 'locales', description: JSON.stringify(res) });\n  212 |       for (const r of res) expect.soft(r.bucket, `${r.p} bucketed into ${arm.key}`).toBe(arm.id);\n> 213 |       if (arm.hides) for (const r of res) expect.soft(r.hidden, `${r.p} header hides`).toBe(true);\n      |                                                                                        ^\n  214 |     });\n  215 |\n  216 |     test(`TC09 ${arm.key}: >1024px gate + rotate/resize while hidden`, async ({ page }, ti) => {\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:213:88"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:22:30.649Z",
+                      "annotations": [
+                        {
+                          "type": "locales",
+                          "description": "[{\"p\":\"/de\",\"bucket\":null,\"body\":false,\"hidden\":false},{\"p\":\"/es\",\"bucket\":null,\"body\":false,\"hidden\":false}]"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "variant-de-scrolled-down",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--ab08e-de-—-localised-pages-de-es--Mobile-Chrome-Pixel-5-\\attachments\\variant-de-scrolled-down-5c39d1184668e96afad6239a60ea7ad631b38a72.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--ab08e-de-—-localised-pages-de-es--Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--ab08e-de-—-localised-pages-de-es--Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 85,
+                        "line": 212
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-db92f5e8da4586e50db8",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 201,
+              "column": 5
+            },
+            {
+              "title": "TC09 variant: >1024px gate + rotate/resize while hidden",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome (Pixel 5)",
+                  "projectName": "Mobile Chrome (Pixel 5)",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9874,
+                      "error": {
+                        "message": "Error: header visible at 1100px after resize (top=-81, hidden=true)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: header visible at 1100px after resize (top=-81, hidden=true)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:225:116",
+                        "location": {
+                          "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                          "column": 116,
+                          "line": 225
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 223 |\u001b[39m       \u001b[36mawait\u001b[39m scrollTo(page\u001b[33m,\u001b[39m \u001b[35m1200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 224 |\u001b[39m       \u001b[36mconst\u001b[39m wide \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m scrollTo(page\u001b[33m,\u001b[39m \u001b[35m1400\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 225 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(visible(wide)\u001b[33m,\u001b[39m \u001b[32m`header visible at 1100px after resize (top=${wide.top}, hidden=${wide.hidden})`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 226 |\u001b[39m       \u001b[36mawait\u001b[39m shot(page\u001b[33m,\u001b[39m ti\u001b[33m,\u001b[39m \u001b[32m`${arm.key}-resized-1100`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 227 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 228 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                            "column": 116,
+                            "line": 225
+                          },
+                          "message": "Error: header visible at 1100px after resize (top=-81, hidden=true)\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  223 |       await scrollTo(page, 1200);\n  224 |       const wide = await scrollTo(page, 1400);\n> 225 |       expect.soft(visible(wide), `header visible at 1100px after resize (top=${wide.top}, hidden=${wide.hidden})`).toBe(true);\n      |                                                                                                                    ^\n  226 |       await shot(page, ti, `${arm.key}-resized-1100`);\n  227 |     });\n  228 |   });\n    at D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js:225:116"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-11T06:23:31.628Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "variant-resized-1100",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c96d9--rotate-resize-while-hidden-Mobile-Chrome-Pixel-5-\\attachments\\variant-resized-1100-df22b25633009e07980d1cf5429b817c8f1a6462.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c96d9--rotate-resize-while-hidden-Mobile-Chrome-Pixel-5-\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\test-results\\lotus28-hide-header-Lotus--c96d9--rotate-resize-while-hidden-Mobile-Chrome-Pixel-5-\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Installed-apps-files\\Github\\Git_repos\\HexdriftTestingWorld\\my-playwright-project\\testing\\lotus28-hide-header.spec.js",
+                        "column": 116,
+                        "line": 225
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b2758a36c6381e7ffe58-12a9549f63f6f8077479",
+              "file": "lotus28-hide-header.spec.js",
+              "line": 216,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-11T06:17:25.004Z",
+    "duration": 376670.388,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

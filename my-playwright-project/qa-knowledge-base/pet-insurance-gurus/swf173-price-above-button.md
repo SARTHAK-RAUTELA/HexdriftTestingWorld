@@ -28,3 +28,17 @@ Root cause of BUG-01/02/03/05: "insert once, skip if `.SWF173-price` exists" com
 - The native `/comparison/` and `/canada/` button column already overflows by 2px in the control. Don't flag horizontal overflow under 3px.
 - WebKit on this site often takes >60s to render `.plan-box`. Treat 1.1-minute failures as timeouts, not verdicts.
 - Pet-tab prices differ even inside CRE-T-143: Cats Lemonade $14.65, Dogs $22.76, All Pets $20.28.
+
+## Round 2 — 2026-11-05 (dev says fixed): STILL NOT READY — variation crashes live
+- **NEW BUG-07 (Critical):** the live Convert code calls `observeSelector(CTA_SELECTOR, init, { …, filter: isPlanMutation })` but `isPlanMutation` is never defined. It throws `ReferenceError: isPlanMutation is not defined` inside the 1.5s setTimeout (outside the try/catch). **0 prices on the live variation**, `body.SWF173` not added. `observeSelector` doesn't read `filter`, so the fix is to delete that option.
+- **BUG-06 still open:** the new `.SWF173-mo { font-size:16px }` rule comes after a stray `;` in vB.css. CSS treats the `;` as part of the selector and drops the whole rule, so `/mo` is still 18px. Removing the `;` gives 16px.
+- `debug = 1` was left on.
+- **Logic check:** the dev's code was injected into the control arm with only `filter: isPlanMutation` removed (`testing/swf173-recon/probe-r2-patched.js`, shots in `swf173-recon/r2/`). Chrome desktop 1440: all 6 URLs priced and centred (0px), Cats/Dogs/All Pets round-trip matches, ZIP 90210 after 17s matches, late Show More 8→11 all priced, Best Overall on /comparison/ + /canada/ priced, re-run ×2 shows no duplicates, `?petType=cat` 2/2 discounted, 0 self-mutations in 10s idle (no observer loop). → BUG-01/02/03/04/05 **are fixed in logic** and become effective once BUG-07 is fixed.
+- Full spec not re-run: every variation test would fail at waitForSelector. Re-run the spec + Safari + mobile-audience after the republish.
+
+## Round 3 — 2026-11-05 (isPlanMutation added + republished): READY
+- Live Chrome Desktop **27/27** (`swf173-results/r3/chrome.json`). All of BUG-01 → BUG-07 fixed live; live CSS has no stray `;` (/mo 16px, amount 18px).
+- Safari Desktop 22/27 (`r3/safari.json`): 3 WebKit `.plan-box` 60s timeouts (Dogs, quick Show More, iPhone 12 audience) = inconclusive. /comparison/ Liberty/Odie/AKC = **test artifact** (collapsed behind Show More, WebKit `innerText` of the native price = ""; SWF173 price is present). `?petType=cat` did not reproduce (4/4 WebKit loads OK).
+- NOTE-01 (Low): the copied price can flash the CRE-T-143 pre-discount figure for 250–450ms on first load (Chrome 4/6, WebKit 1/4), then corrects (`probe-r3-race.js`). Not a blocker.
+- Local repo `vB.css` still has the stray `;` (Convert copy clean).
+- **Spec gotcha:** the `cards()` visible filter uses `offsetParent`, which WebKit doesn't null for collapsed Show More cards. Filter on the native price's innerText too before comparing.

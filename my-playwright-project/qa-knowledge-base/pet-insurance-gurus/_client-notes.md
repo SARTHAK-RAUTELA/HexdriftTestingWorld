@@ -28,6 +28,12 @@
   unrelated code path re-ran). See [cre-t-144-vet-faq-top.md](cre-t-144-vet-faq-top.md) BUG-E and
   [_shared/troubleshooting-changes-not-showing.md](../_shared/troubleshooting-changes-not-showing.md) for the
   full diagnostic playbook — this pattern is likely cloned into other tests on this site/template family.
+- **`?convert_optout=1` in the URL also bypasses the Cloudflare/WP Rocket page cache, so "fixed by opt-out" does NOT prove a Convert test is the cause.**
+  The site serves cached pages with WP Rocket "Remove Unused CSS" (`<style id="wpr-usedcss">`). If that saved CSS is stale or incomplete for one URL,
+  the layout breaks only on cached loads, and *any* query string (`?x=123`) loads the full CSS and looks correct. To tell them apart:
+  try a random query string, the `convert_optout=1` **cookie** with no query string, the `cf-cache-status` header, and the `_conv_v` `exp:{}`.
+  Seen 2026-11-05 on /cat-insurance/ (VIEW PLANS dropped below the bullets): see [cat-insurance-cta-wprocket-cache.md](cat-insurance-cta-wprocket-cache.md).
+  Fixing it needs the client's WP admin + Cloudflare access (clear Used CSS + purge).
 - **A long-lived, heavily-reused Chrome tab can give a false "never works" result** on this site due to stale
   Convert bucketing cookies from prior QA sessions. If a bug won't reproduce consistently in your regular test
   browser, re-check in a fresh Playwright `browser.newContext()` (or a private window) before concluding

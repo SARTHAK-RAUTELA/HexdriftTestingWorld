@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buckfire Test 24 QA</title>
+<style>
+:root{--bg:#f6f4f1;--card:#fff;--ink:#1d1d1d;--muted:#5d5a55;--line:#e3ddd5;--accent:#d37935;--crit:#b3261e;--high:#c25e00;--med:#8a6d00;--low:#4b6a88;--ok:#2e7d32}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171614;--card:#211f1c;--ink:#ece8e2;--muted:#a9a39a;--line:#36322d;--ok:#6cc070;--crit:#ff8a80;--high:#ffb366;--med:#e0c45c;--low:#9cc0e0}}
+:root[data-theme="dark"]{--bg:#171614;--card:#211f1c;--ink:#ece8e2;--muted:#a9a39a;--line:#36322d;--ok:#6cc070;--crit:#ff8a80;--high:#ffb366;--med:#e0c45c;--low:#9cc0e0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:26px;margin:0 0 4px}
+h2{font-size:19px;margin:36px 0 12px;border-bottom:2px solid var(--accent);padding-bottom:6px}
+.sub{color:var(--muted);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px}
+.kpi b{display:block;font-size:22px}
+.kpi span{color:var(--muted);font-size:13px}
+.bug{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--low);border-radius:8px;padding:14px 16px;margin:12px 0}
+.bug.crit{border-left-color:var(--crit)}.bug.high{border-left-color:var(--high)}.bug.med{border-left-color:var(--med)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;border:1px solid currentColor;margin-right:6px}
+.crit .tag{color:var(--crit)}.high .tag{color:var(--high)}.med .tag{color:var(--med)}.low .tag{color:var(--low)}
+.bug h3{display:inline;font-size:16px}
+code{background:rgba(127,127,127,.15);padding:1px 5px;border-radius:4px;font-size:13px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--card);font-size:14px}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:rgba(127,127,127,.08)}
+.p{color:var(--ok);font-weight:700}.f{color:var(--crit);font-weight:700}.n{color:var(--muted)}
+figure{margin:12px 0;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px}
+figure img{max-width:100%;height:auto;display:block;margin:0 auto}
+figcaption{color:var(--muted);font-size:13px;margin-top:6px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.shots img{max-height:520px;object-fit:contain}
+</style>
+</head>
+<body>
+<main>
+<h1>Buckfire Law · Test 24 · Case Type Pages: video testimonial</h1>
+<p class="sub">Convert exp <code>100053058</code> · V1 <code>1000257876</code> / Control <code>1000257875</code> · QA 2026-11-11 · code under test <code>va3.js</code> / <code>va3.css</code> (byte-identical to the deployed Convert code)</p>
+
+<div class="grid">
+  <div class="kpi"><b style="color:var(--crit)">Not ready</b><span>launch verdict</span></div>
+  <div class="kpi"><b>11 / 11</b><span>parent case-type pages show the correct person</span></div>
+  <div class="kpi"><b style="color:var(--crit)">0 / 12</b><span>child pages correct (4 wrong person, 8 no card)</span></div>
+  <div class="kpi"><b style="color:var(--crit)">~50%</b><span>of V1 visitors don't see the card (site quiz-form arm)</span></div>
+  <div class="kpi"><b>5</b><span>bugs + 1 design question</span></div>
+</div>
+
+<h2>Bugs</h2>
+
+<div class="bug crit"><span class="tag">CRITICAL</span><h3>BUG-01: card is hidden for about half of visitors (the site's own quiz-form split)</h3>
+<p>The site runs a native A/B on the sidebar form: <code>.bf-ab-quiz-form</code> vs <code>.bf-ab-original-form</code> (the quiz arm rewrites the landing URL to <code>?bf_variant=quiz</code>). <code>.sidebar_form</code> sits <b>inside</b> <code>.bf-ab-original-form</code>, so <code>insertAdjacentHTML('beforebegin')</code> on it (<code>va3.js:188</code>) puts the card inside that wrapper. When the visitor gets the quiz arm, the wrapper is <code>display:none</code> and <b>the card is hidden with it</b>.</p>
+<p>Measured: card width 0 on 3 of 6 Chrome loads, 2 of 4 on a second run, and also on Safari/Firefox desktop. These visitors are still counted as V1 but never see the card or fire the video goal, which dilutes the result.</p>
+<p><b>Fix:</b> anchor above both form wrappers, not on the form itself, e.g. insert before <code>#sidebar-main .bf-ab-quiz-form</code> (or before <code>form.closest('.bf-ab-original-form') || form</code>, whichever comes first), so the card sits above whichever form is shown.</p>
+</div>
+
+<div class="bug high"><span class="tag">HIGH</span><h3>BUG-02: child pages show Denise instead of the parent case type's person, including the preview URL itself</h3>
+<p><code>Cre_24_urlVideoMap</code> is an exact-pathname lookup (<code>va3.js:114</code>). Any child page misses and falls back to <code>Cre_24_defaultVideoName = 'Denise'</code>. The spec says <i>"Case type and Location pages also include any child pages"</i>, and the Convert location uses "URL contains" on each parent, so child pages are in scope.</p>
+<div class="tbl"><table><tr><th>Page</th><th>Expected</th><th>Got</th></tr>
+<tr><td>/case-types/personal-injury/<b>autism-abuse</b>/ (the preview link)</td><td>Mike</td><td class="f">Denise</td></tr>
+<tr><td>/case-types/personal-injury/body/</td><td>Mike</td><td class="f">Denise</td></tr>
+<tr><td>/case-types/product-liability/dangerous-toys/</td><td>Alyssa</td><td class="f">Denise</td></tr>
+<tr><td>/case-types/slip-and-fall/airport/</td><td>Sandra</td><td class="f">Denise</td></tr></table></div>
+<p><b>Fix:</b> use a longest-prefix match: <code>Object.keys(map).sort((a,b)=&gt;b.length-a.length).find(k =&gt; path.indexOf(k) === 0)</code>.</p>
+</div>
+
+<div class="bug high"><span class="tag">HIGH</span><h3>BUG-03: no card at all on settlement-template child pages</h3>
+<p>Every <code>/case-types/*/settlements/</code> page (template <code>case-settlement-pages.php</code>) has <code>aside.blog-sidebar</code> and <code>.sidebar_form</code> but <b>no <code>#sidebar-main</code></b>. The selector <code>#sidebar-main .sidebar_form</code> never matches, so the card never renders. Measured on 8 of 11 case types: medical-malpractice, car-accidents, motorcycle, truck, dog-bite, cerebral-palsy, nursing-home, wrongful-death.</p>
+<p><b>Fix:</b> widen the selector to <code>#sidebar-main .sidebar_form, .blog-sidebar .sidebar_form</code>, or ask the client whether settlement pages are meant to be in scope.</p>
+</div>
+
+<div class="bug high"><span class="tag">HIGH · launch config</span><h3>BUG-04: old exp 100052509 is still active on the same pages, so two video cards stack</h3>
+<p>Exp <code>100052509</code> (the old single "Denise" testimonial card on case-type pages, location <code>100011764</code>) is still <b>active at 50/50</b>. Forcing both experiments renders the old <code>.testimonial-card</code> and the new <code>.buckfire-24-story-card</code> in the same sidebar, and puts both <code>BuckfireLaw_12</code> and <code>BuckfireLaw_24</code> on the body. If it isn't paused, half of Test 24's <b>control</b> arm will also see a video testimonial, which contaminates the comparison.</p>
+<p><b>Action:</b> pause or archive 100052509 before Test 24 launches.</p>
+</div>
+
+<div class="bug med"><span class="tag">MEDIUM · a11y</span><h3>BUG-05: video can't be started by keyboard</h3>
+<p><code>.buckfire-24-play-button</code> is a bare <code>&lt;div&gt;</code> (<code>tabIndex −1</code>, no role or label), and native controls only appear after the first click. This fails WCAG 2.1.1 and 4.1.2. It's the same issue that was open on Test 12 (BUG-03) and exp 100052509. <b>Fix:</b> use <code>&lt;button type="button" aria-label="Play Mike's story"&gt;</code>.</p>
+</div>
+
+<h2>Question for the client</h2>
+<div class="bug low"><span class="tag">Q-01 · design</span><h3>The play button doesn't match the Test 12 play button</h3>
+<p>The ticket asks to "lighten the play button over the person's face" <i>and</i> to keep the design consistent with the other tests. The build follows the Figma: a <b>34px orange disc at 60% opacity</b>. The live Test 12 carousel (PPC pages and homepage) uses a <b>60px transparent white ring</b>. The quote and name typography <b>do</b> match Test 12 exactly (Lato 20px/700, 18px/600). Which play button should be the standard?</p>
+<div class="shots">
+<figure><img src="buckfire-test24-results/shots/desktop-chromium-card-idle.png" alt="Test 24 card"><figcaption>Test 24 card: small orange disc (on Denise, wrong person for this page; see BUG-02)</figcaption></figure>
+<figure><img src="buckfire-test24-results/shots/desktop-chromium-test12-reference-card.png" alt="Test 12 card"><figcaption>Live Test 12 card on /personal-injury-lawyer/: white ring</figcaption></figure>
+</div>
+</div>
+
+<h2>Evidence</h2>
+<div class="shots">
+<figure><img src="buckfire-test24-results/shots/desktop-chromium-quiz-arm-viewport.png" alt="Quiz arm without card"><figcaption>BUG-01: quiz-form arm, V1 forced, no card above the form</figcaption></figure>
+<figure><img src="buckfire-test24-results/shots/desktop-chromium-double-card-509-plus-24.png" alt="Two cards"><figcaption>BUG-04: exp 100052509 + Test 24 forced together, two testimonial cards</figcaption></figure>
+<figure><img src="buckfire-test24-results/shots/mobile-webkit-card-idle.png" alt="iPhone 12 card"><figcaption>iPhone 12: card above the form, fits 390px, no horizontal scroll</figcaption></figure>
+<figure><img src="buckfire-test24-results/shots/desktop-chromium-card-playing.png" alt="Playing"><figcaption>After click: poster and button hidden, native controls, video plays</figcaption></figure>
+</div>
+
+<h2>What works</h2>
+<div class="tbl"><table>
+<tr><th>Check</th><th>Chrome desk</th><th>Pixel 5</th><th>iPhone 12</th><th>Firefox / Safari desk</th></tr>
+<tr><td>Card above the form, same width as the form</td><td class="p">✓</td><td class="p">✓</td><td class="p">✓</td><td class="n">✓ when original-form arm (BUG-01)</td></tr>
+<tr><td>Poster loads, ratio 415:233, lazy (no src, preload=none, playsinline)</td><td class="p">✓</td><td class="p">✓</td><td class="p">✓</td><td class="p">✓</td></tr>
+<tr><td>Click → video decodes and plays, poster/button hidden, controls shown</td><td class="p">✓</td><td class="p">✓</td><td class="p">✓</td><td class="n">blocked by BUG-01 in run</td></tr>
+<tr><td>Goal <code>100038435</code> fires once on <code>playing</code>, not again on resume</td><td class="p">✓</td><td class="p">✓</td><td class="p">✓</td><td class="n">n/a</td></tr>
+<tr><td>Correct person on the preview URL</td><td class="f">✗ BUG-02</td><td class="f">✗</td><td class="f">✗</td><td class="f">✗</td></tr>
+<tr><td>Keyboard-operable</td><td class="f">✗ BUG-05</td><td class="f">✗</td><td class="f">✗</td><td class="f">✗</td></tr>
+<tr><td>No page errors from the variation</td><td class="p">✓</td><td class="p">✓</td><td class="p">✓</td><td class="p">✓</td></tr>
+</table></div>
+<ul>
+<li><b>All 11 parent case-type pages</b> show the person from the client sheet, including the new Sandra video on slip-and-fall.</li>
+<li><b>All 16 CDN assets</b> (8 mp4 + 8 webp) return 206. Videos are 19–25 MB but load only on click.</li>
+<li>Control renders nothing. Out-of-scope page (<code>/reviews/</code>) is untouched. Body class <code>BuckfireLaw_24</code> is unique (no name collision this time).</li>
+<li>The card has no headline, unlike the Figma ("Buckfire has a heart for their clients"). This <b>matches live Test 12</b>, which also hides its headline, so it's consistent and I'm not raising it as a bug.</li>
+</ul>
+
+<h2>Launch notes</h2>
+<ul>
+<li>Audience <code>10007176</code> is currently <b>QA-only</b> (<code>cro_mode=qa</code> cookie/param). Switch it to "All users" per the ticket at launch.</li>
+<li>Console noise (<code>trigger is not defined</code>, <code>$ is not a function</code>, <code>Unexpected token '?'</code>) also appears on control and 100052509-only loads. It comes from other scripts, not Test 24.</li>
+</ul>
+</main>
+</body>
+</html>

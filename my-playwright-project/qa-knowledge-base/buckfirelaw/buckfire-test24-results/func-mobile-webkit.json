@@ -1,0 +1,167 @@
+[
+ {
+  "id": "T01",
+  "name": "Card renders above sidebar form",
+  "pass": true,
+  "detail": {
+   "card": {
+    "x": 15,
+    "y": 142,
+    "w": 360,
+    "h": 378
+   },
+   "form": {
+    "x": 15,
+    "y": 541,
+    "w": 360,
+    "h": 1016
+   }
+  }
+ },
+ {
+  "id": "T02",
+  "name": "Card width matches form width",
+  "pass": true,
+  "detail": {
+   "card": 360,
+   "form": 360
+  }
+ },
+ {
+  "id": "T03",
+  "name": "Poster loads",
+  "pass": true,
+  "detail": "830x434"
+ },
+ {
+  "id": "T04",
+  "name": "Lazy: no src, preload=none, playsinline",
+  "pass": true,
+  "detail": {
+   "src": null,
+   "preload": "none",
+   "playsinline": true
+  }
+ },
+ {
+  "id": "T05",
+  "name": "Thumb ratio 415:233",
+  "pass": true,
+  "detail": {
+   "x": 16,
+   "y": 143,
+   "w": 358,
+   "h": 201
+  }
+ },
+ {
+  "id": "T06",
+  "name": "No horizontal scroll",
+  "pass": true,
+  "detail": 390
+ },
+ {
+  "id": "I01",
+  "name": "Play button style",
+  "pass": null,
+  "detail": {
+   "bg": "rgba(211, 121, 53, 0.6)",
+   "w": "34px",
+   "tab": -1,
+   "role": null,
+   "label": null
+  }
+ },
+ {
+  "id": "I02",
+  "name": "Quote/name typography",
+  "pass": null,
+  "detail": {
+   "quote": {
+    "text": "\"If I could scream to the mountaintops that Buckfire is an amazing law firm, I would.\"",
+    "size": "20px",
+    "weight": "700",
+    "family": "Lato, sans-serif",
+    "color": "rgb(0, 0, 0)",
+    "lh": "26.6px"
+   },
+   "name": {
+    "text": "– Denise",
+    "size": "18px",
+    "weight": "600",
+    "family": "Lato, sans-serif"
+   },
+   "heading": false,
+   "border": "rgb(227, 199, 176) 1px",
+   "pad": "25px"
+  }
+ },
+ {
+  "id": "T07",
+  "name": "Play button keyboard-focusable",
+  "pass": false,
+  "detail": {
+   "bg": "rgba(211, 121, 53, 0.6)",
+   "w": "34px",
+   "tab": -1,
+   "role": null,
+   "label": null
+  }
+ },
+ {
+  "id": "T08",
+  "name": "Video plays after play-button click",
+  "pass": true,
+  "detail": {
+   "rs": 4,
+   "t": 0.3614161,
+   "err": null,
+   "vw": 358
+  }
+ },
+ {
+  "id": "T09",
+  "name": "Correct clip for autism-abuse (Mike)",
+  "pass": false,
+  "detail": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video2.mp4"
+ },
+ {
+  "id": "T10",
+  "name": "Poster + play button hidden, controls on",
+  "pass": true,
+  "detail": {
+   "img": true,
+   "pb": true,
+   "controls": true
+  }
+ },
+ {
+  "id": "T11",
+  "name": "Goal 100038435 fired once",
+  "pass": true,
+  "detail": [
+   "[\"triggerConversion\",\"100038435\"]"
+  ]
+ },
+ {
+  "id": "T12",
+  "name": "Goal not re-fired on resume",
+  "pass": true,
+  "detail": [
+   "[\"triggerConversion\",\"100038435\"]"
+  ]
+ },
+ {
+  "id": "T13",
+  "name": "No variation page errors",
+  "pass": true,
+  "detail": [
+   "Error: Aborting execution.",
+   "Unexpected token '?'",
+   "$ is not a function. (In '$(document)', '$' is undefined)",
+   "Can't find variable: trigger",
+   "$ is not a function. (In '$(window)', '$' is undefined)",
+   "/player.vimeo.com\" from accessing a frame with origin \"https://buckfirelaw.com\". Protocols, domains, and ports must match."
+  ]
+ }
+]

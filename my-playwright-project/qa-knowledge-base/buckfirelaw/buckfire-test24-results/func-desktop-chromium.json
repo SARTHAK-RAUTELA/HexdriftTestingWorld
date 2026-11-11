@@ -1,0 +1,187 @@
+[
+ {
+  "id": "T01",
+  "name": "Card renders above sidebar form",
+  "pass": true,
+  "detail": {
+   "card": {
+    "x": 913,
+    "y": 500,
+    "w": 400,
+    "h": 401
+   },
+   "form": {
+    "x": 913,
+    "y": 921,
+    "w": 400,
+    "h": 1022
+   }
+  }
+ },
+ {
+  "id": "T02",
+  "name": "Card width matches form width",
+  "pass": true,
+  "detail": {
+   "card": 400,
+   "form": 400
+  }
+ },
+ {
+  "id": "T03",
+  "name": "Poster loads",
+  "pass": true,
+  "detail": "830x434"
+ },
+ {
+  "id": "T04",
+  "name": "Lazy: no src, preload=none, playsinline",
+  "pass": true,
+  "detail": {
+   "src": null,
+   "preload": "none",
+   "playsinline": true
+  }
+ },
+ {
+  "id": "T05",
+  "name": "Thumb ratio 415:233",
+  "pass": true,
+  "detail": {
+   "x": 914,
+   "y": 501,
+   "w": 398,
+   "h": 223
+  }
+ },
+ {
+  "id": "T06",
+  "name": "No horizontal scroll",
+  "pass": true,
+  "detail": 1366
+ },
+ {
+  "id": "I01",
+  "name": "Play button style",
+  "pass": null,
+  "detail": {
+   "bg": "rgba(211, 121, 53, 0.6)",
+   "w": "34px",
+   "tab": -1,
+   "role": null,
+   "label": null
+  }
+ },
+ {
+  "id": "I02",
+  "name": "Quote/name typography",
+  "pass": null,
+  "detail": {
+   "quote": {
+    "text": "\"If I could scream to the mountaintops that Buckfire is an amazing law firm, I would.\"",
+    "size": "20px",
+    "weight": "700",
+    "family": "Lato, sans-serif",
+    "color": "rgb(0, 0, 0)",
+    "lh": "26.6px"
+   },
+   "name": {
+    "text": "– Denise",
+    "size": "18px",
+    "weight": "600",
+    "family": "Lato, sans-serif"
+   },
+   "heading": false,
+   "border": "rgb(227, 199, 176) 1px",
+   "pad": "25px"
+  }
+ },
+ {
+  "id": "T07",
+  "name": "Play button keyboard-focusable",
+  "pass": false,
+  "detail": {
+   "bg": "rgba(211, 121, 53, 0.6)",
+   "w": "34px",
+   "tab": -1,
+   "role": null,
+   "label": null
+  }
+ },
+ {
+  "id": "T08",
+  "name": "Video plays after play-button click",
+  "pass": true,
+  "detail": {
+   "rs": 4,
+   "t": 0.326758,
+   "err": null,
+   "vw": 1920
+  }
+ },
+ {
+  "id": "T09",
+  "name": "Correct clip for autism-abuse (Mike)",
+  "pass": false,
+  "detail": "https://v2.crocdn.com/BuckfireLaw/test12/Test12_video2.mp4"
+ },
+ {
+  "id": "T10",
+  "name": "Poster + play button hidden, controls on",
+  "pass": true,
+  "detail": {
+   "img": true,
+   "pb": true,
+   "controls": true
+  }
+ },
+ {
+  "id": "T11",
+  "name": "Goal 100038435 fired once",
+  "pass": true,
+  "detail": [
+   "[\"triggerConversion\",\"100038435\"]"
+  ]
+ },
+ {
+  "id": "T12",
+  "name": "Goal not re-fired on resume",
+  "pass": true,
+  "detail": [
+   "[\"triggerConversion\",\"100038435\"]"
+  ]
+ },
+ {
+  "id": "T13",
+  "name": "No variation page errors",
+  "pass": true,
+  "detail": [
+   "Aborting execution.",
+   "Unexpected token '?'",
+   "$ is not a function",
+   "trigger is not defined"
+  ]
+ },
+ {
+  "id": "I03",
+  "name": "Test 12 live card style (consistency reference)",
+  "pass": null,
+  "detail": {
+   "pbBg": "rgba(0, 0, 0, 0)",
+   "pbBorder": "5px solid rgb(255, 255, 255)",
+   "pbW": "60px",
+   "pbHTML": "<svg width=\"26\" height=\"30\" viewBox=\"0 0 26 30\" xmlns=\"http://www.w3.org/2000/svg\" plerdy-tracking-id=\"17633276101\"><polygon points=\"0,0 26,15 0,30\" fill=\"#ffffff\"></polygon></svg>",
+   "quote": {
+    "size": "20px",
+    "weight": "700",
+    "family": "Lato, sans-serif",
+    "lh": "26.6px"
+   },
+   "name": {
+    "size": "18px",
+    "weight": "600"
+   },
+   "border": "0px none rgb(0, 0, 0)"
+  }
+ }
+]

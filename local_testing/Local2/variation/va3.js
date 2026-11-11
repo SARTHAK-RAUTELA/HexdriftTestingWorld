@@ -1,167 +1,201 @@
 (function () {
-    var debug = false;
-    var variation_name = "bm_preset_jobs_pro_lp";
+  try {
+    /* main variables */
+    var debug = 0;
+    var variation_name = "BuckfireLaw_24";
 
-    var HERO_SECTION = '[class*="pro-signup-hero_heroSection"]';
-    var HERO_TITLE = '[class*="pro-signup-hero_heroTitle"]';
-    var HERO_SUBHEAD = '[class*="pro-signup-hero_heroSubhead"]';
-    var HOW_IT_WORKS = '[class*="how-tt-works_section"]';
-
-    var NEW_TITLE_PREFIX = 'Grow your business in ';
-    var NEW_SUBHEAD = '5M customers in the last 12 months on Thumbtack';
-
-    var IMG_DIRECT = 'https://cdn.optimizely.com/img/20611073899/e633b72a9df34774998491e5d4f6934d.png';
-    var IMG_PRESET = 'https://cdn.optimizely.com/img/20611073899/f9723f4c525749e8a6a135d0537c6b6e.png';
-
-    var ARROW_SVG = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5v10.5M2.5 7.5 7 12l4.5-4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-
-    var barHTML =
-        '<div class="bm-hiw-bar">' +
-            '<div class="bm-hiw-bar__btn">' +
-                '<span class="bm-hiw-bar__text">Show up in search, or claim available jobs. </span>' +
-                '<button type="button" class="bm-hiw-bar__cta">See how it works <span class="bm-hiw-bar__arrow">' + ARROW_SVG + '</span></button>' +
-            '</div>' +
-        '</div>';
-
-    function cardHTML(img, alt, title, desc) {
-        return '<div class="bm-two-ways__card">' +
-            '<img class="bm-two-ways__img" src="' + img + '" alt="' + alt + '" loading="lazy">' +
-            '<div class="bm-two-ways__copy">' +
-                '<h3 class="bm-two-ways__card-title">' + title + '</h3>' +
-                '<p class="bm-two-ways__card-desc">' + desc + '</p>' +
-            '</div>' +
-        '</div>';
-    }
-
-    var sectionHTML =
-        '<section class="bm-two-ways" id="bm-two-ways">' +
-            '<div class="bm-two-ways__head">' +
-                '<h2 class="bm-two-ways__title">Two ways to get hired</h2>' +
-                '<p class="bm-two-ways__sub">Stand out in search, or skip the back-and-forth with jobs you can claim right away.</p>' +
-            '</div>' +
-            '<div class="bm-two-ways__cards">' +
-                cardHTML(IMG_DIRECT, 'Deck refinishing job with a quote request', 'Customers find you',
-                    'They see your profile in search and message you about their project. You set your own prices and schedule.') +
-                cardHTML(IMG_PRESET, 'TV mounting job available to claim', 'Claim available jobs',
-                    'Some jobs come with the details and earnings already set. Pick the ones you want, with no bidding.') +
-            '</div>' +
-            '<div class="bm-two-ways__footer">' +
-                '<button type="button" class="bm-two-ways__signup">Sign up for free</button>' +
-                '<p class="bm-two-ways__note">Claimable jobs are available in select areas and services.</p>' +
-            '</div>' +
-        '</section>';
-
-    // Smooth-scroll to an element, then keep correcting until it actually lands at the top.
-    // The native page shifts while scrolling (sticky search bar / collapsing elements on mobile),
-    // so a single scrollTo with a precomputed target overshoots. The selector is re-queried on
-    // every check because React can re-mount the target mid-scroll.
-    function scrollToEl(selector, done) {
-        var el = document.querySelector(selector);
-        if (!el) return;
-        window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior: 'smooth' });
-
-        var lastY = -1;
-        var corrections = 0;
-        var started = Date.now();
-        var check = setInterval(function () {
-            var y = window.pageYOffset;
-            if (y !== lastY) {
-                lastY = y; // still scrolling
-                if (Date.now() - started < 3000) return;
-            }
-            var target = document.querySelector(selector);
-            var offset = target ? target.getBoundingClientRect().top : 0;
-            if (Math.abs(offset) > 2 && corrections < 3 && Date.now() - started < 3000) {
-                corrections++;
-                lastY = -1;
-                window.scrollTo({ top: y + offset, behavior: 'smooth' });
-                return;
-            }
-            clearInterval(check);
-            if (done) done();
-        }, 150);
-    }
-
-    // Keep the existing hero form/functionality; only swap the copy.
-    // React can re-render the hero, so this is re-applied on an interval.
-    function updateHeroCopy() {
-        var h1 = document.querySelector(HERO_TITLE);
-        if (h1 && h1.textContent.indexOf(NEW_TITLE_PREFIX) !== 0) {
-            var match = h1.textContent.match(/\bin\s+(.+?)\.?\s*$/);
-            if (match) h1.textContent = NEW_TITLE_PREFIX + match[1];
+    function waitForElement(selector, trigger) {
+      var interval = setInterval(function () {
+        if (document.querySelector(selector)) {
+          clearInterval(interval);
+          trigger();
         }
-        var sub = document.querySelector(HERO_SUBHEAD);
-        if (sub && sub.textContent !== NEW_SUBHEAD) sub.textContent = NEW_SUBHEAD;
+      }, 50);
+
+      setTimeout(function () {
+        clearInterval(interval);
+      }, 15000);
     }
 
-    function addBar() {
-        var hero = document.querySelector(HERO_SECTION);
-        if (!hero || document.querySelector('.bm-hiw-bar')) return;
-        hero.insertAdjacentHTML('afterend', barHTML);
-    }
-
-    function addTwoWaysSection() {
-        var hiw = document.querySelector(HOW_IT_WORKS);
-        if (!hiw || document.querySelector('.bm-two-ways')) return;
-        hiw.insertAdjacentHTML('afterend', sectionHTML);
-    }
-
-    // Delegated event binding so handlers survive React re-renders of the injected markup.
     function live(selector, event, callback, context) {
-        (context || document).addEventListener(event, function (e) {
-            var el = e.target && e.target.closest ? e.target.closest(selector) : null;
-            if (el) callback.call(el, e);
-        });
+      if (typeof callback !== "function") return;
+      context = context || document;
+
+      context.addEventListener(event, function (e) {
+        var el = e.target.closest(selector);
+        if (el && context.contains(el)) {
+          callback.call(el, e);
+        }
+      });
     }
 
-    function bindEvents() {
-        // Guard so listeners are only attached once, even if the variation code runs again.
-        if (window.bmPresetJobsProLpEvents) return;
-        window.bmPresetJobsProLpEvents = true;
+    /* ─── video library — one entry per person, keyed by name ─── */
+    var Cre_24_videoLibrary = {
+      Denise: {
+        videoUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Test12_video2.mp4',
+        thumbUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Denise_new.webp',
+        thumbAlt: 'Denise video thumbnail',
+        quote: '"If I could scream to the mountaintops that Buckfire is an amazing law firm, I would."',
+        name: '– Denise'
+      },
+      Jessica: {
+        videoUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Jessica.mp4',
+        thumbUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Jessica_new.webp',
+        thumbAlt: 'Jessica video thumbnail',
+        quote: '"They took all the stress out of the entire process."',
+        name: '– Jessica'
+      },
+      Alyssa: {
+        videoUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Test12_video1.mp4',
+        thumbUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Alyssaa_new.webp',
+        thumbAlt: 'Alyssa video thumbnail',
+        quote: "\"It just felt like a relief to have somebody say, 'Yeah, we've got this.'\"",
+        name: '– Alyssa'
+      },
+      Denita: {
+        videoUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Test12_video3.mp4',
+        thumbUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Denita_new.webp',
+        thumbAlt: 'Denita video thumbnail',
+        quote: '"Buckfire Law was a law firm, a friend, and family at the time of my need."',
+        name: '– Denita'
+      },
+      Mike: {
+        videoUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/mike.mp4',
+        thumbUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/mike_new.webp',
+        thumbAlt: 'Mike video thumbnail',
+        quote: '"My world was turned completely upside down."',
+        name: '– Mike'
+      },
+      Shaylynn: {
+        videoUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/shaylynn.mp4',
+        thumbUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/shaylynn_new.webp',
+        thumbAlt: 'Shaylynn video thumbnail',
+        quote: '"I do believe that I fulfilled that promise to my dad. I really do."',
+        name: '– Shaylynn'
+      },
+      Damian: {
+        videoUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Damian.mp4',
+        thumbUrl: 'https://v2.crocdn.com/BuckfireLaw/test12/Damian_new.webp',
+        thumbAlt: 'Damian video thumbnail',
+        quote: '"He told me, hold on, and I\'m going to fight for you, and we\'re going to make this right."',
+        name: '– Damian'
+      },
+      Sandra: {
+        videoUrl: 'https://v2.crocdn.com/BuckfireLaw/test24/Sandra_Ford_Testimonial.mp4',
+        thumbUrl: 'https://v2.crocdn.com/BuckfireLaw/test24/sandra.webp',
+        thumbAlt: 'Sandra video thumbnail',
+        quote: '"They treated me like a person. They made me feel comfortable and safe."',
+        name: '– Sandra'
+      }
+    };
 
-        live('.bm-hiw-bar__cta', 'click', function () {
-            scrollToEl('.bm-two-ways');
-        });
+    /* ─── which person shows on each case-type page, keyed by pathname ─── */
+    var Cre_24_urlVideoMap = {
+      '/case-types/medical-malpractice/': 'Denise',
+      '/case-types/personal-injury/': 'Mike',
+      '/case-types/car-accidents/': 'Denita',
+      '/case-types/motorcycle-accidents/': 'Jessica',
+      '/case-types/product-liability/': 'Alyssa',
+      '/case-types/truck-accidents/': 'Denita',
+      '/case-types/dog-bite/': 'Damian',
+      '/case-types/cerebral-palsy/': 'Shaylynn',
+      '/case-types/nursing-home-abuse/': 'Denise',
+      '/case-types/wrongful-death/': 'Denita',
+      '/case-types/slip-and-fall/': 'Sandra'
+    };
 
-        // Bottom CTA reuses the existing hero signup flow: scroll up and click the hero "Sign up" button.
-        // The hero has separate desktop/mobile buttons, so click the visible one. It is queried after the
-        // scroll settles; the one present at click time may be detached by then.
-        live('.bm-two-ways__signup', 'click', function () {
-            scrollToEl(HERO_SECTION, function () {
-                var buttons = document.querySelectorAll(HERO_SECTION + ' [class*="pro-signup-hero_searchFields"] button');
-                for (var i = 0; i < buttons.length; i++) {
-                    if (buttons[i].offsetParent !== null) {
-                        buttons[i].click();
-                        return;
-                    }
-                }
-            });
-        });
+    /* used when the current page's pathname isn't in the map above (e.g. QA/staging) */
+    var Cre_24_defaultVideoName = 'Denise';
+
+    function getStoryItemForCurrentPage() {
+      var path = window.location.pathname;
+      if (path.charAt(path.length - 1) !== '/') path += '/';
+
+      var name = Cre_24_urlVideoMap[path];
+      if (!name) {
+        if (debug) console.log(variation_name + ": no video mapping for path '" + path + "', using default");
+        name = Cre_24_defaultVideoName;
+      }
+
+      var item = Cre_24_videoLibrary[name];
+      if (!item && debug) console.log(variation_name + ": no video in library for '" + name + "'");
+      return item;
+    }
+
+    function generateCard(item) {
+      return '<div class="buckfire-24-story-card">' +
+          '<div class="buckfire-24-video-thumb">' +
+            '<video class="buckfire-24-video" playsinline preload="none" video-url=\'' + item.videoUrl + '\'></video>' +
+            '<img class="buckfire-24-thumb-img" src="' + item.thumbUrl + '" alt="' + item.thumbAlt + '" width="830" height="434" loading="lazy" decoding="async">' +
+            '<div class="buckfire-24-play-button">' +
+              '<svg width="12" height="14" viewBox="0 0 26 30" xmlns="http://www.w3.org/2000/svg">' +
+                '<polygon points="0,0 26,15 0,30" fill="#ffffff"></polygon>' +
+              '</svg>' +
+            '</div>' +
+          '</div>' +
+          '<div class="buckfire-24-story-content">' +
+            '<p>' + item.quote + '</p>' +
+            '<span class="buckfire-24-name">' + item.name + '</span>' +
+          '</div>' +
+        '</div>';
+    }
+
+    /* ─── click-to-load-and-play for the story card ─── */
+    function playVideoInThumb(thumbBox) {
+      var videoEl = thumbBox.querySelector(".buckfire-24-video");
+      var imgEl = thumbBox.querySelector(".buckfire-24-thumb-img");
+      var playBtn = thumbBox.querySelector(".buckfire-24-play-button");
+
+      if (imgEl) imgEl.style.display = "none";
+      if (playBtn) playBtn.style.display = "none";
+
+      if (!videoEl.src) {
+        videoEl.src = videoEl.getAttribute("video-url");
+        videoEl.controls = true;
+        videoEl.load();
+
+        /* goal: users who click and watch the video — fires once, when playback actually starts */
+        videoEl.addEventListener("playing", function () {
+          window._conv_q = window._conv_q || [];
+          window._conv_q.push(["triggerConversion", "100038435"]);
+          if (debug) console.log(variation_name + ": goal 100038435 fired (video watched)");
+        }, { once: true });
+      }
+
+      videoEl.play().catch(function (err) {
+        if (debug) console.log(variation_name + ": play() blocked/failed", err);
+      });
+
+      if (debug) console.log(variation_name + ": thumbnail clicked, video loading+playing url=" + videoEl.getAttribute("video-url"));
+    }
+
+    function eventHandler() {
+      live(".buckfire-24-thumb-img, .buckfire-24-play-button", "click", function () {
+        var thumbBox = this.closest(".buckfire-24-video-thumb");
+        if (thumbBox) playVideoInThumb(thumbBox);
+      });
     }
 
     function init() {
-        document.body.classList.add(variation_name);
-        bindEvents();
+      document.body.classList.add(variation_name);
 
-        var interval = setInterval(function () {
-            updateHeroCopy();
-            addBar();
-            addTwoWaysSection();
-        }, 50);
+      waitForElement("#sidebar-main .sidebar_form", function () {
+        if (document.querySelector(".buckfire-24-story-card")) return;
 
-        // Failsafe: stop checking after 10 seconds.
-        setTimeout(function () {
-            clearInterval(interval);
-        }, 10000);
+        var item = getStoryItemForCurrentPage();
+        if (!item) return;
+
+        document.querySelector("#sidebar-main .sidebar_form").insertAdjacentHTML('beforebegin', generateCard(item));
+      });
+
+      if (!window.Cre_t_24_eventHandlerAdded) {
+        eventHandler();
+        window.Cre_t_24_eventHandlerAdded = true;
+      }
     }
 
-    try {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', init);
-        } else {
-            init();
-        }
-    } catch (e) {
-        if (debug) console.log(e, "error in Test" + variation_name);
-    }
+    waitForElement("body", init);
+  } catch (e) {
+    if (debug) console.log(e, "error in Test " + variation_name);
+  }
 })();

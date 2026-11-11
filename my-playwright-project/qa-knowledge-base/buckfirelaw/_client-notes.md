@@ -19,6 +19,11 @@
 |---|---|
 | BuckfireLaw_12 — Client Stories video carousel (exp. `100052508`, `/medical-malpractice-lawyers/`) | [buckfire-12-client-stories.md](buckfire-12-client-stories.md) |
 | Testimonial video card on internal case-type pages (exp. `100052509`, `/case-types/personal-injury/`) | [buckfire-personal-injury-testimonial.md](buckfire-personal-injury-testimonial.md) |
+| Test 24 — per-case-type single video card (exp. `100053058`, all `/case-types/*` + child pages) | [buckfire-test24-case-type-video.md](buckfire-test24-case-type-video.md) |
+
+> ⚠ **Native sidebar form A/B:** case-type sidebars randomly show `.bf-ab-quiz-form` or `.bf-ab-original-form`
+> (`?bf_variant=quiz`). `.sidebar_form` is *inside* the original wrapper — anything inserted relative to it is
+> hidden for quiz-arm visitors (~50%). Settlement child pages (`/settlements/`) have no `#sidebar-main`.
 
 > ⚠ **Both experiments currently use the same body class `BuckfireLaw_12`** — exp. 100052509 never got its
 > own name. Scope assertions to the component prefix (`buckfire-12-` vs `testimonial-card__`), not the body

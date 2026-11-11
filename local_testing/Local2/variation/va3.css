@@ -1,379 +1,82 @@
-/* ============ Hero (existing banner, redesigned) ============ */
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroSection"] {
-    padding: 32px 24px 48px;
+html body.BuckfireLaw_24 .buckfire-24-story-card {
+    background: #ffffff;
+    border: 1px solid #e3c7b0;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroInner"] {
-    display: flex;
-    flex-direction: column;
-    max-width: 570px;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroInner"] > .tc.mb5 {
-    order: 1;
-    text-align: left !important;
-    margin-bottom: 24px;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] {
-    order: 2;
-}
-
-/* Figma: white inputs with a light grey border. TextInput_inputStyles is the absolutely
-   positioned pill layer behind the input; style it directly instead of via --tp-* tokens. */
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] [class*="TextInput_inputStyles"] {
-    background-color: #fff !important;
-    border: 1px solid #dddee1 !important;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] input:focus ~ [class*="TextInput_inputStyles"] {
-    border-color: #8d8f94 !important;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] [class*="TextInput_inputInnerElement"],
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] [class*="TextInput_inputIconContainer"],
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] [class*="TextInput_root"] input {
-    background: transparent !important;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] .mw9 {
-    max-width: none;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_footnote"] {
-    order: 3;
-    margin-top: 24px;
-    color: #595c61;
-    font-size: 16px;
-    line-height: 1.4;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_footnote"] a,
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_footnote"] a:hover,
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_footnote"] a:active {
-    color: #0175a3;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroTitle"] {
-    font-family: Rise, Avenir, Helvetica, Arial, sans-serif;
-    font-weight: 563;
-    color: #1f2022;
-    font-size: 36px;
-    line-height: 1.05;
-    letter-spacing: -0.72px;
-    text-wrap: initial;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroSubhead"] {
-    font-size: 22px;
-    line-height: 1.1;
-    letter-spacing: -0.44px;
-    color: #1f2022;
-    max-width: none;
-    margin: 12px 0 0;
-}
-
-/* Swap the old hero image for the new visual */
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroImage"] {
-    order: 4;
-    max-width: 454px;
-    margin: 40px auto 0;
-    aspect-ratio: 1506 / 1392;
-    background: url("https://cdn.optimizely.com/img/20611073899/d0150460eefd4591ae1b0e80b7e1fb4e.png") center / contain no-repeat;
-}
-
-.bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroImage"] picture {
-    display: none !important;
-}
-
-/* ============ "See how it works" bar ============ */
-.bm-hiw-bar {
-    padding: 0 0 8px;
-    background: #fff;
-}
-
-.bm-hiw-bar__btn {
-    display: block;
+/* ─── video/thumbnail box ─── */
+html body.BuckfireLaw_24 .buckfire-24-video-thumb {
+    position: relative;
     width: 100%;
-    margin: 0;
-    padding: 14px 24px;
-    border: 0;
-    border-radius: 8px;
-    background: #e0f4fe;
-    color: #0175a3;
-    font-family: Rise, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
-    text-align: center;
-}
-
-.bm-hiw-bar__text {
-    font-weight: 400;
-}
-
-.bm-hiw-bar__cta {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: inherit;
-    font: inherit;
-    font-weight: 700;
-    white-space: nowrap;
+    /* aspect-ratio: 4 / 3; */
+    aspect-ratio: 415 / 233;
+    background: #000;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.bm-hiw-bar__cta:focus-visible {
-    outline: 2px solid #0175a3;
-    outline-offset: 2px;
-    border-radius: 2px;
-}
-
-.bm-hiw-bar__arrow {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin-left: 6px;
-    vertical-align: -1px;
-    animation: bmArrowFloat 1.6s ease-in-out infinite;
-}
-
-.bm-hiw-bar__arrow svg {
-    display: block;
-}
-
-@keyframes bmArrowFloat {
-    0%, 100% { transform: translateY(-2px); }
-    50% { transform: translateY(2px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .bm-hiw-bar__arrow { animation: none; }
-}
-
-html body.pro-page-updte.bm_preset_jobs_pro_lp [class*='pro-search-signup_mainWrapper'] .relative.mv2 [class*='TextInput_input'] {
-    border-top-right-radius: 9999px !important;
-    border-bottom-right-radius: 9999px !important;
-    border-top-left-radius: 9999px !important;
-    border-bottom-left-radius: 9999px !important;
-    background-color: transparent !important;
-}
-html body.pro-page-updte.bm_preset_jobs_pro_lp #search-location-input {
-    background-color: transparent !important;
-    border-top-right-radius: 9999px !important;
-    border-bottom-left-radius: 9999px !important;
-    border-bottom-right-radius: 9999px !important;
-    border-top-left-radius: 0px !important;
-}
-
-/* ============ Two ways to get hired ============ */
-.bm-two-ways {
-    background: #e0f4fe;
-    padding: 48px 24px;
-    font-family: Rise, Avenir, Helvetica, Arial, sans-serif;
-}
-
-.bm-two-ways__head {
-    max-width: 474px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.bm-two-ways__title {
-    margin: 0;
-    font-size: 32px;
-    font-weight: 563;
-    line-height: 1.05;
-    letter-spacing: -0.64px;
-    color: #2f3033;
-}
-
-.bm-two-ways__sub {
-    margin: 16px 0 0;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #595c61;
-}
-
-.bm-two-ways__cards {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    max-width: 467px;
-    margin: 32px auto 0;
-}
-
-.bm-two-ways__img {
-    display: block;
+html body.BuckfireLaw_24 .buckfire-24-video-thumb .buckfire-24-thumb-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
-.bm-two-ways__copy {
-    margin-top: 24px;
+html body.BuckfireLaw_24 .buckfire-24-video-thumb .buckfire-24-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.bm-two-ways__card-title {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 563;
-    line-height: 1.1;
-    letter-spacing: -0.48px;
-    color: #1f2022;
-}
-
-.bm-two-ways__card-desc {
-    margin: 8px 0 0;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #595c61;
-}
-
-.bm-two-ways__footer {
-    margin-top: 32px;
-    text-align: center;
-}
-
-.bm-two-ways__signup {
-    display: inline-flex;
+html body.BuckfireLaw_24 .buckfire-24-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(211, 121, 53, 0.6);
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 481px;
-    height: 52px;
-    padding: 12px 24px;
-    border: 0;
-    border-radius: 9999px;
-    background: #07344a;
-    color: #7cdcfd;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-.bm-two-ways__signup:hover {
-    background: #0a4762;
+html body.BuckfireLaw_24 .buckfire-24-video-thumb:hover .buckfire-24-play-button {
+    background: rgba(211, 121, 53, 0.85);
 }
 
-.bm-two-ways__note {
-    margin: 24px 0 0;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #595c61;
-}
-html body.bm_preset_jobs_pro_lp [class*='pro-search-signup_mainWrapper'] .relative.mv2 [class*='TextInput_input'] {
-    border-top-right-radius: 9999px !important;
-    border-bottom-right-radius: 9999px !important;
-    border-top-left-radius: 9999px !important;
-    border-bottom-left-radius: 9999px !important;
+html body.BuckfireLaw_24 .buckfire-24-play-button svg {
+    margin-left: 3px;
 }
 
-/* ============ Desktop ============ */
-@media (min-width: 1025px) {
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroSection"] {
-        padding: 128px 24px;
-    }
+html body.BuckfireLaw_24 .buckfire-24-story-content {
+    padding: 25px;
+}
 
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroInner"] {
-        display: grid;
-        grid-template-columns: minmax(0, 570px) minmax(0, 540px);
-        column-gap: 48px;
-        grid-template-rows: auto auto 1fr;
-        justify-content: space-between;
-        max-width: 1184px;
-    }
+html body.BuckfireLaw_24 .buckfire-24-story-content p {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26.6px;
+    margin: 0;
+}
 
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroInner"] > * {
-        min-width: 0;
-    }
-
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroInner"] > .tc.mb5 {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_searchFields"] {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_footnote"] {
-        grid-column: 1;
-        grid-row: 3;
-        align-self: start;
-    }
-
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroImage"] {
-        grid-column: 2;
-        grid-row: 1 / 4;
-        align-self: start;
-        background-position: center top;
-        width: 100%;
-        max-width: none;
-        margin: 0;
-    }
-
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroTitle"] {
-        font-size: 48px;
-        letter-spacing: -0.96px;
-    }
-
-    .bm_preset_jobs_pro_lp [class*="pro-signup-hero_heroSubhead"] {
-        font-size: 28px;
-        letter-spacing: -0.56px;
-        margin-top: 16px;
-    }
-
-    .bm-hiw-bar {
-        padding: 0;
-    }
-
-    .bm-hiw-bar__btn {
-        border-radius: 0;
-    }
-
-    .bm-two-ways {
-        padding: 96px 24px;
-    }
-
-    .bm-two-ways__title {
-        font-size: 36px;
-        letter-spacing: -0.72px;
-    }
-
-    .bm-two-ways__cards {
-        flex-direction: row;
-        justify-content: center;
-        gap: 48px;
-        max-width: 982px;
-        margin-top: 48px;
-    }
-
-    .bm-two-ways__card {
-        flex: 0 1 467px;
-        min-width: 0;
-    }
-
-    .bm-two-ways__copy {
-        margin-top: 36px;
-    }
-
-    .bm-two-ways__card-title {
-        font-size: 28px;
-        letter-spacing: -0.56px;
-    }
-
-    .bm-two-ways__card-desc {
-        max-width: 420px;
-    }
-
-    .bm-two-ways__footer {
-        margin-top: 56px;
-    }
-
-    .bm-two-ways__signup {
-        width: auto;
-    }
+html body.BuckfireLaw_24 .buckfire-24-story-content .buckfire-24-name {
+    display: block;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25.6px;
+    margin-top: 20px;
 }

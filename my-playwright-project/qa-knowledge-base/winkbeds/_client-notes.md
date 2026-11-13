@@ -66,6 +66,7 @@ Page Select Sub-Total V2](win266-shop-subtotal-v2.md)
 | WIN283/cre-t-283 — Shop Page Select Sub-Total V3 | [win283-shop-subtotal-v3.md](win283-shop-subtotal-v3.md) |
 | WIN286/cre-t-286 — Persistent Targeted Offer (badge) | [win286-persistent-targeted-offer.md](win286-persistent-targeted-offer.md) |
 | WIN270/cre-t-270 — Deprioritise Secondary Firmness Levels | [win270-deprioritise-firmness.md](win270-deprioritise-firmness.md) |
+| WIN291/cre-t-291 — Reassurance Benefits V2 (Desktop, no links) | [win291-reassurance-benefits-v2.md](win291-reassurance-benefits-v2.md) |
 
 - **Add to Cart posts to `/cart/update.js` (`{"updates":{variantId:1}}`), not `/cart/add`.** Assert via `fetch('/cart.js').item_count`.
   The `cre-wb-test-28-overlay` "try before you buy" popup also swallows forced clicks on the ATC button (WIN283).

@@ -12,6 +12,8 @@
 - **Use `page.addInitScript({ content: JS })`, not `page.evaluate()`** — matches how VWO injects before DOM parse (AFP13 pattern).
 - **Edge requires `channel: 'msedge'`** in the Playwright project config.
 - **Desktop-only variations are the norm** — breakpoints seen: 1024px (modals AFP08/09), 1199/1200px (nav button AFP10). Always test the exact breakpoint edge.
+- **VWO "Desktop" audience is device-type, not width** (AFP43): a JS `min-width:1200px` gate leaves 992–1199px desktop windows bucketed into Variation but seeing control. Always test bucketing at 1152/1199 and flag it.
+- **Goal definitions are readable at runtime** from `window._vwo_exp[<id>].goals`; hits are `ping_tpc.php?...name=_vis_opt_exp_<id>_goal_<n>` on the `?utm_campaign=Cro_mode` QA link (preview links don't track).
 - **Timed modals persist timer in `sessionStorage.startTime`** across same-domain navigation. AFP08 = 15s + `sessionStorage.modalTriggered` guard; AFP09 = 30s + exit intent + `exit_popup_dismissed` **cookie** guard (clear with `max-age=0` between tests).
 - **Blur targets differ per test:** AFP08 blurs `.mm-page`; AFP09 blurs `#site-header` + `#site-main`. Check the variation code, don't assume.
 - **Nav uses `[type="button"]` elements, not `<button>`** — dropdown clicks may need `scrollIntoViewIfNeeded()` + `click({ force: true })` + JS-dispatch fallback (AFP15).
@@ -34,3 +36,4 @@ Copy is frequently carried over from earlier AFP tests (AFP05 → AFP10 stale bu
 | AFP19 — Compensation survey hero | [afp19-compensation-survey-hero.md](afp19-compensation-survey-hero.md) |
 | AFP21 — Join AFP membership page redesign | [afp21-membership-page-redesign.md](afp21-membership-page-redesign.md) |
 | AFP26 — Homepage updated design (hero + sections) | [afp26-homepage-updated-design.md](afp26-homepage-updated-design.md) |
+| AFP43 — FP&A Forum navigation (exp 88) | [afp43-fpa-forum-navigation.md](afp43-fpa-forum-navigation.md) |

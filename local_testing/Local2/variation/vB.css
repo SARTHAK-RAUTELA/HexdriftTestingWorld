@@ -1,7 +1,206 @@
-html body.cre-t-28 header.sticky.top-0 {
-    transition: transform 0.1s linear !important;
+/* top bar: hide old register button (added by cre-t-05) */
+html body:has(.cre-t-43-nav-bar) .cre-t-05-reg {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  /* hero logo and date block removed */
+  html body:has(.cre-t-43-nav-bar) .banner_site-logo {
+    display: none;
   }
 
-  html body.cre-t-28 header.sticky.top-0.cre-t-28-header-hidden {
-    transform: translateY(-100%);
+  /* nav bar under the breadcrumb */
+  /* main stops being a box so the bar sticks for the whole page, like the site header */
+  html body main#site-main:has(.cre-t-43-nav-bar) {
+    display: contents;
   }
+
+  html body .sub-header.cre-t-43-nav-bar {
+    margin: 0 0 48px;
+  }
+
+  /* home page only: room left by the removed hero logo block */
+  html body main#site-main:has(.banner_site-logo) > .sub-header.cre-t-43-nav-bar {
+    margin-bottom: 80px;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .sub-header__inner {
+    align-items: center;
+    min-height: 89px;
+    padding: 0 12px 0 0;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .sub-header__logo {
+    padding: 0 12px;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .sub-header__navigation {
+    margin: 0 0 0 auto;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list {
+    align-items: center;
+    gap: 42px;
+    height: auto;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > .cre-t-43-registration-item {
+    display: none;
+  }
+
+  /* orange Pricing & Register pill, matched from Figma */
+  html body .sub-header.cre-t-43-nav-bar .cre-t-43-cta-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .cre-t-43-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 52px;
+    line-height: 1;
+    font-family: GothamNarrowMedium, Arial, Helvetica, sans;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.75rem 1.75rem;
+    min-width: 0;
+    border: 0;
+    transition: all 0.2s ease-out;
+    border-radius: 2rem;
+    color: #000;
+    background: #fb8f2e;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .cre-t-43-cta:hover {
+    text-decoration: none !important;
+    color: #fff;
+    background: #7a4616;
+  }
+
+  /* dropdown panels: one column by default (Hotel, Sponsors) */
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .afp-nav__sub-nav {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    padding: 30px 44px 25px;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__sub-nav > li {
+    width: auto;
+  }
+
+  /* Program: two columns, divider, Past Forum Sessions */
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu {
+    grid-template-columns: 524px 1fr;
+    grid-auto-flow: row;
+    grid-template-rows: none;
+    column-gap: 0;
+    row-gap: 12px;
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-heading {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-family: GothamNarrowBold, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    line-height: 22px;
+    text-transform: uppercase;
+    list-style: none;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-heading-sessions {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-heading-networking {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-educational {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-keynote {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-schedule {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-networking-link {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-feedback {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-divider {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    height: 1px;
+    width: 1000px;
+    margin: 11px 0 6px -12px;
+    background-color: #569abf;
+    list-style: none;
+  }
+
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-past {
+    grid-column: 1;
+    grid-row: 6;
+  }
+
+  /* Past Forum Sessions link is slightly larger in Figma; host font-size is !important */
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .cre-t-43-program-menu > .cre-t-43-program-past > a {
+    font-size: 17px !important;
+  }
+
+  /* orange underline under the open item: thinner and lower, matched from Figma */
+  html body .sub-header.cre-t-43-nav-bar .afp-nav__list > li > .afp-nav__link.has-sub::before {
+    top: auto;
+    bottom: -8px;
+    height: 3px;
+  }
+
+  /* ----------------------------------------------------------------------- */
+  /* ----------------------------------------------------------------------- */
+
+  html body .sub-header__navigation .afp-nav .afp-nav__list > li > .afp-nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  html body .sub-header .afp-nav__link.has-sub::after {
+    position: relative;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      transform 0.3s ease-in-out,
+      color 0.3s ease-in-out,
+      margin-bottom 0.3s ease-in-out;
+  }
+
+  html body .sub-header .afp-nav__link.has-sub.active::after {
+    margin-bottom: -3px;
+  }
+}

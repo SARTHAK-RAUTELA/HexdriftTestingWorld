@@ -1,0 +1,218 @@
+[
+  {
+    "id": "TC-01",
+    "title": "Variation applied; forum nav bar sits right under the breadcrumb on the forum homepage",
+    "pass": true,
+    "detail": "combo=2, applied=true, bar y=232, gap below breadcrumb=20px",
+    "shots": [
+      "chrome-desktop/v-home-top.png"
+    ]
+  },
+  {
+    "id": "TC-02",
+    "title": "Hero \"AFP FP&A FORUM / March 22-24, 2027 | New Orleans\" block removed (wireframe)",
+    "pass": true,
+    "detail": "banner logo visible=false",
+    "shots": []
+  },
+  {
+    "id": "TC-03",
+    "title": "Menu order = PROGRAM · HOTEL · SPONSORS · [PRICING & REGISTER]; Registration link hidden",
+    "pass": true,
+    "detail": "items=[\"PROGRAM\",\"HOTEL\",\"SPONSORS\",\"PRICING & REGISTER\"], Registration visible=false",
+    "shots": []
+  },
+  {
+    "id": "TC-04",
+    "title": "CTA text \"PRICING & REGISTER\", href /afp-fp-a--forum/pricing, orange #FB8F2E pill",
+    "pass": true,
+    "detail": "{\"text\":\"PRICING & REGISTER\",\"href\":\"/afp-fp-a--forum/pricing\",\"bg\":\"rgb(251, 143, 46)\",\"color\":\"rgb(0, 0, 0)\",\"radius\":\"32px\",\"font\":\"GothamNarrowMedium, Arial, Helvetica, sans\",\"size\":\"16px\",\"rect\":{\"x\":1187,\"y\":251,\"w\":222,\"h\":52}}",
+    "shots": [
+      "chrome-desktop/v-cta.png"
+    ]
+  },
+  {
+    "id": "TC-05",
+    "title": "CTA has a visible hover state",
+    "pass": true,
+    "detail": "{\"bg\":\"rgb(122, 70, 22)\",\"color\":\"rgb(255, 255, 255)\"}",
+    "shots": []
+  },
+  {
+    "id": "TC-06",
+    "title": "CTA → /afp-fp-a--forum/pricing; variation persists on the next page",
+    "pass": true,
+    "detail": "url=https://www.financialprofessionals.org/afp-fp-a--forum/pricing, applied=true",
+    "shots": [
+      "chrome-desktop/v-pricing-after-cta.png"
+    ]
+  },
+  {
+    "id": "TC-07",
+    "title": "Program: 2 titled columns (Sessions & Schedule / Networking & Experience), divider, Past Forum Sessions",
+    "pass": true,
+    "detail": "{\"panelVisible\":true,\"allPresent\":true,\"col1Aligned\":true,\"col2Aligned\":true,\"col1Order\":true,\"col2Order\":true,\"headingsSameRow\":true,\"dividerThenPast\":true,\"headingsUpper\":true,\"hrefs\":true} | fonts: link={\"family\":\"GothamNarrow\",\"size\":\"16px\",\"color\":\"rgb(255, 255, 255)\",\"transform\":\"none\",\"spacing\":\"0.25px\"} past={\"family\":\"GothamNarrow\",\"size\":\"17px\",\"color\":\"rgb(255, 255, 255)\",\"transform\":\"none\",\"spacing\":\"0.25px\"} heading={\"family\":\"GothamNarrowBold\",\"size\":\"14px\",\"color\":\"rgb(255, 255, 255)\",\"transform\":\"uppercase\",\"spacing\":\"1.5px\"} | panel={\"x\":0,\"y\":321,\"w\":1440,\"h\":267} logoX=20",
+    "shots": [
+      "chrome-desktop/v-program-open.png"
+    ]
+  },
+  {
+    "id": "TC-08-Hotel",
+    "title": "Hotel: \"Book Your Hotel\" above \"Explore New Orleans\" in one column",
+    "pass": true,
+    "detail": "a={\"x\":44,\"y\":351,\"w\":1352,\"h\":28} b={\"x\":44,\"y\":391,\"w\":1352,\"h\":28} panel={\"x\":0,\"y\":321,\"w\":1440,\"h\":123}",
+    "shots": [
+      "chrome-desktop/v-hotel-open.png"
+    ]
+  },
+  {
+    "id": "TC-08-Sponsors",
+    "title": "Sponsors: \"Our Sponsors\" above \"Sponsorship Opportunities\" in one column",
+    "pass": true,
+    "detail": "a={\"x\":44,\"y\":351,\"w\":1352,\"h\":28} b={\"x\":44,\"y\":391,\"w\":1352,\"h\":28} panel={\"x\":0,\"y\":321,\"w\":1440,\"h\":123}",
+    "shots": [
+      "chrome-desktop/v-sponsors-open.png"
+    ]
+  },
+  {
+    "id": "TC-09",
+    "title": "Opening Hotel closes Program; clicking Hotel again closes it",
+    "pass": true,
+    "detail": "program aria-expanded=true, open after Hotel=1, Hotel visible after 2nd click=false",
+    "shots": []
+  },
+  {
+    "id": "TC-10",
+    "title": "After scrolling, bar stays pinned under the sticky site header and dropdowns still open",
+    "pass": true,
+    "detail": "{\"navTop\":172,\"hdrBottom\":172,\"scrollY\":1600} programOpen=true",
+    "shots": [
+      "chrome-desktop/v-scrolled-sticky.png",
+      "chrome-desktop/v-scrolled-program-open.png"
+    ]
+  },
+  {
+    "id": "TC-11",
+    "title": "Main-site dropdown overlapping the bar paints on top of it (z-index)",
+    "pass": true,
+    "detail": "{\"hit\":\"site-header\",\"menuBottom\":545,\"navTop\":232}",
+    "shots": [
+      "chrome-desktop/v-membership-megamenu.png"
+    ]
+  },
+  {
+    "id": "TC-12",
+    "title": "Bar position + look identical on all 12 forum pages (gap below breadcrumb, height, logo x, CTA x/w, items)",
+    "pass": true,
+    "detail": "Home: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Schedule at a Glance: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Educational Sessions: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Networking Opportunities: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Keynote Speakers: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Past Forum Sessions: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Attendee Feedback: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Pricing: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Book Your Hotel: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Explore New Orleans: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Our Sponsors: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK ; Sponsorship Opportunities: 200 applied=true y=232 gap=20 h=89 ctaX=1187 OK",
+    "shots": [
+      "chrome-desktop/v-page-home.png",
+      "chrome-desktop/v-page-schedule-at-a-glance.png",
+      "chrome-desktop/v-page-educational-sessions.png",
+      "chrome-desktop/v-page-networking-opportunities.png",
+      "chrome-desktop/v-page-keynote-speakers.png",
+      "chrome-desktop/v-page-past-forum-sessions.png",
+      "chrome-desktop/v-page-attendee-feedback.png",
+      "chrome-desktop/v-page-pricing.png",
+      "chrome-desktop/v-page-book-your-hotel.png",
+      "chrome-desktop/v-page-explore-new-orleans.png",
+      "chrome-desktop/v-page-our-sponsors.png",
+      "chrome-desktop/v-page-sponsorship-opportunities.png"
+    ]
+  },
+  {
+    "id": "TC-13",
+    "title": "All 11 nav destinations return 200",
+    "pass": true,
+    "detail": "/afp-fp-a--forum/program/schedule-at-a-glance → 200 ; /afp-fp-a--forum/program/educational-sessions → 200 ; /afp-fp-a--forum/program/networking → 200 ; /afp-fp-a--forum/program/keynote-speakers → 200 ; /afp-fp-a--forum/program/past-forum-sessions → 200 ; /afp-fp-a--forum/program/afp-fp-a-forum-attendee-feedback → 200 ; /afp-fp-a--forum/hotel/book-your-hotel → 200 ; /afp-fp-a--forum/hotel/explore-NOLA → 200 ; /afp-fp-a--forum/sponsors/our-sponsors → 200 ; /afp-fp-a--forum/sponsors/sponsor → 200 ; /afp-fp-a--forum/pricing → 200",
+    "shots": []
+  },
+  {
+    "id": "TC-14",
+    "title": "Keyboard reachable: focus order through bar ends on CTA; Enter opens Program",
+    "pass": true,
+    "detail": "focus order=[\"PROGRAM\",\"HOTEL\",\"SPONSORS\",\"PRICING & REGISTER\"]; Program open via Enter=true",
+    "shots": []
+  },
+  {
+    "id": "TC-15",
+    "title": "Code gate min-width 1200px works at the edge (1200 = variation, 1199 = untouched)",
+    "pass": true,
+    "detail": "1200 applied=true; 1199 applied=false, combo@1199=2",
+    "shots": [
+      "chrome-desktop/v-1199.png"
+    ]
+  },
+  {
+    "id": "TC-16",
+    "title": "After shrinking below 1200 the bar does not show both Registration and an unstyled CTA",
+    "pass": true,
+    "detail": "{\"registration\":false,\"cta\":false,\"ctaBg\":\"rgba(0, 0, 0, 0)\",\"heroLogo\":true,\"programHeadings\":false}",
+    "shots": [
+      "chrome-desktop/v-resized-1100.png"
+    ]
+  },
+  {
+    "id": "TC-18",
+    "title": "At 1920px dropdown links align with the bar logo, as control does (logo 292 → link 320)",
+    "pass": false,
+    "detail": "[{\"label\":\"Program\",\"logoX\":260,\"firstX\":44,\"delta\":-216},{\"label\":\"Hotel\",\"logoX\":260,\"firstX\":44,\"delta\":-216},{\"label\":\"Sponsors\",\"logoX\":260,\"firstX\":44,\"delta\":-216}]",
+    "shots": [
+      "chrome-desktop/v-1920-program-open.png"
+    ]
+  },
+  {
+    "id": "TC-19",
+    "title": "A desktop visitor at 1152px CSS width (1440 screen @125%) is not counted in Variation while seeing control",
+    "pass": false,
+    "detail": "combo=2, variation applied=false",
+    "shots": [
+      "chrome-desktop/v-1152-bucketed-no-change.png"
+    ]
+  },
+  {
+    "id": "TC-17",
+    "title": "No page errors attributable to cre-t-43",
+    "pass": true,
+    "detail": "all errors (2): Invalid or unexpected token | License expired",
+    "shots": []
+  },
+  {
+    "id": "TC-20",
+    "title": "Control: bar below the hero, hero logo shown, Program · Registration · Hotel · Sponsors, no cre-t-43 markup",
+    "pass": true,
+    "detail": "combo=1, bar y=920, items=[\"PROGRAM\",\"REGISTRATION\",\"HOTEL\",\"SPONSORS\"], join=[\"JOIN\"]",
+    "shots": [
+      "chrome-desktop/c-home-top.png",
+      "chrome-desktop/c-home-bar.png"
+    ]
+  },
+  {
+    "id": "TC-21",
+    "title": "Control subpages: bar already directly under breadcrumb (brief note confirmed)",
+    "pass": true,
+    "detail": "gap=20, y=232",
+    "shots": [
+      "chrome-desktop/c-networking-top.png"
+    ]
+  },
+  {
+    "id": "TC-22",
+    "title": "Control Program dropdown unchanged (6 links, original labels)",
+    "pass": true,
+    "detail": "FP&A Forum Schedule | Educational Sessions | Networking | Keynote Speakers | Past Forum Sessions | FP&A Forum Attendee Feedback",
+    "shots": [
+      "chrome-desktop/c-program-open.png"
+    ]
+  },
+  {
+    "id": "TC-30",
+    "title": "QA link (utm_campaign=Cro_mode) buckets into both arms; VWO tracking requests after register click",
+    "pass": true,
+    "detail": "[{\"arm\":\"control\",\"combo\":\"1\",\"hitsOnClickAndPricing\":10,\"sample\":[\"https://dev.visualwebsiteoptimizer.com/ping_tpc.php?account=1165615&name=_vis_opt_exp_88_goal_4&value=1&days=100&random=0.22693527040163153&\",\"https://dev.visualwebsiteoptimizer.com/ping_tpc.php?account=1165615&name=_vis_opt_exp_88_goal_5&value=1&days=100&random=0.03483439138110933&\",\"https://dev.visualwebsiteoptimizer.com/collect/events/t?en=vwo_dom_click&a=1165615&v=55c6bb8&_cu=https%3A%2F%2Fwww.financialprofessionals.or\"]},{\"arm\":\"variation\",\"combo\":\"2\",\"hitsOnClickAndPricing\":10,\"sample\":[\"https://dev.visualwebsiteoptimizer.com/ping_tpc.php?account=1165615&name=_vis_opt_exp_88_goal_4&value=1&days=100&random=0.8305849789190695&e\",\"https://dev.visualwebsiteoptimizer.com/ping_tpc.php?account=1165615&name=_vis_opt_exp_88_goal_5&value=1&days=100&random=0.10187532490250295&\",\"https://dev.visualwebsiteoptimizer.com/collect/events/t?en=vwo_dom_click&a=1165615&v=55c6bb8&_cu=https%3A%2F%2Fwww.financialprofessionals.or\"]}]",
+    "shots": [
+      "chrome-desktop/qa-link-control.png",
+      "chrome-desktop/qa-link-variation.png"
+    ]
+  }
+]

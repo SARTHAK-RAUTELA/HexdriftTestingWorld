@@ -1,0 +1,101 @@
+{
+  "vwo": "1",
+  "navParent": "DIV#.main-content",
+  "navClass": "sub-header",
+  "navPos": "sticky",
+  "navTop": 919.640625,
+  "crumbBottom": 212,
+  "bannerLogo": true,
+  "bannerLogoDisplay": "block",
+  "join": [
+    "Join"
+  ],
+  "reg05": [],
+  "items": [
+    {
+      "cls": "afp-nav__item",
+      "tag": "BUTTON",
+      "text": "Program",
+      "href": null,
+      "display": "list-item",
+      "sub": [
+        {
+          "cls": " afp-nav__item",
+          "text": "FP&A Forum Schedule",
+          "href": "/afp-fp-a--forum/program/schedule-at-a-glance"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "Educational Sessions",
+          "href": "/afp-fp-a--forum/program/educational-sessions"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "Networking",
+          "href": "/afp-fp-a--forum/program/networking"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "Keynote Speakers",
+          "href": "/afp-fp-a--forum/program/keynote-speakers"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "Past Forum Sessions",
+          "href": "/afp-fp-a--forum/program/past-forum-sessions"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "FP&A Forum Attendee Feedback",
+          "href": "/afp-fp-a--forum/program/afp-fp-a-forum-attendee-feedback"
+        }
+      ]
+    },
+    {
+      "cls": "",
+      "tag": "A",
+      "text": "Registration",
+      "href": "/afp-fp-a--forum/pricing",
+      "display": "list-item",
+      "sub": []
+    },
+    {
+      "cls": "afp-nav__item",
+      "tag": "BUTTON",
+      "text": "Hotel",
+      "href": null,
+      "display": "list-item",
+      "sub": [
+        {
+          "cls": " afp-nav__item",
+          "text": "Book Your Hotel",
+          "href": "/afp-fp-a--forum/hotel/book-your-hotel"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "Explore New Orleans",
+          "href": "/afp-fp-a--forum/hotel/explore-NOLA"
+        }
+      ]
+    },
+    {
+      "cls": "afp-nav__item",
+      "tag": "BUTTON",
+      "text": "Sponsors",
+      "href": null,
+      "display": "list-item",
+      "sub": [
+        {
+          "cls": " afp-nav__item",
+          "text": "Our Sponsors",
+          "href": "/afp-fp-a--forum/sponsors/our-sponsors"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "Sponsorship Opportunities",
+          "href": "/afp-fp-a--forum/sponsors/sponsor"
+        }
+      ]
+    }
+  ]
+}

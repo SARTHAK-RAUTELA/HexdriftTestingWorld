@@ -1,0 +1,124 @@
+{
+  "vwo": "2",
+  "navParent": "MAIN#site-main.",
+  "navClass": "sub-header cre-t-43-nav-bar",
+  "navPos": "sticky",
+  "navTop": 232,
+  "crumbBottom": 212,
+  "bannerLogo": true,
+  "bannerLogoDisplay": "none",
+  "join": [
+    "JOIN"
+  ],
+  "reg05": [],
+  "items": [
+    {
+      "cls": "afp-nav__item",
+      "tag": "BUTTON",
+      "text": "Program",
+      "href": null,
+      "display": "list-item",
+      "sub": [
+        {
+          "cls": "cre-t-43-program-heading cre-t-43-program-heading-sessions",
+          "text": "Sessions & Schedule",
+          "href": null
+        },
+        {
+          "cls": "cre-t-43-program-heading cre-t-43-program-heading-networking",
+          "text": "Networking & Experience",
+          "href": null
+        },
+        {
+          "cls": "afp-nav__item cre-t-43-program-sessions cre-t-43-program-schedule",
+          "text": "Schedule at a Glance",
+          "href": "/afp-fp-a--forum/program/schedule-at-a-glance"
+        },
+        {
+          "cls": "afp-nav__item cre-t-43-program-sessions cre-t-43-program-educational",
+          "text": "Educational Sessions",
+          "href": "/afp-fp-a--forum/program/educational-sessions"
+        },
+        {
+          "cls": "afp-nav__item cre-t-43-program-networking cre-t-43-program-networking-link",
+          "text": "Networking Opportunities",
+          "href": "/afp-fp-a--forum/program/networking"
+        },
+        {
+          "cls": "afp-nav__item cre-t-43-program-sessions cre-t-43-program-keynote",
+          "text": "Keynote Speakers",
+          "href": "/afp-fp-a--forum/program/keynote-speakers"
+        },
+        {
+          "cls": "cre-t-43-program-divider",
+          "text": "",
+          "href": null
+        },
+        {
+          "cls": "afp-nav__item cre-t-43-program-past",
+          "text": "Past Forum Sessions",
+          "href": "/afp-fp-a--forum/program/past-forum-sessions"
+        },
+        {
+          "cls": "afp-nav__item cre-t-43-program-networking cre-t-43-program-feedback",
+          "text": "Attendee Feedback",
+          "href": "/afp-fp-a--forum/program/afp-fp-a-forum-attendee-feedback"
+        }
+      ]
+    },
+    {
+      "cls": "cre-t-43-registration-item",
+      "tag": "A",
+      "text": "Registration",
+      "href": "/afp-fp-a--forum/pricing",
+      "display": "none",
+      "sub": []
+    },
+    {
+      "cls": "afp-nav__item",
+      "tag": "BUTTON",
+      "text": "Hotel",
+      "href": null,
+      "display": "list-item",
+      "sub": [
+        {
+          "cls": " afp-nav__item",
+          "text": "Book Your Hotel",
+          "href": "/afp-fp-a--forum/hotel/book-your-hotel"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "Explore New Orleans",
+          "href": "/afp-fp-a--forum/hotel/explore-NOLA"
+        }
+      ]
+    },
+    {
+      "cls": "afp-nav__item",
+      "tag": "BUTTON",
+      "text": "Sponsors",
+      "href": null,
+      "display": "list-item",
+      "sub": [
+        {
+          "cls": " afp-nav__item",
+          "text": "Our Sponsors",
+          "href": "/afp-fp-a--forum/sponsors/our-sponsors"
+        },
+        {
+          "cls": " afp-nav__item",
+          "text": "Sponsorship Opportunities",
+          "href": "/afp-fp-a--forum/sponsors/sponsor"
+        }
+      ]
+    },
+    {
+      "cls": "cre-t-43-cta-item",
+      "tag": "DIV",
+      "text": "Pricing & Register",
+      "href": null,
+      "display": "block",
+      "sub": []
+    }
+  ]
+}

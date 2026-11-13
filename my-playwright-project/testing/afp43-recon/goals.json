@@ -1,0 +1,143 @@
+{
+  "defs": {
+    "name": "[QA] AFP43 - FP&A Forum - Navigation",
+    "combos": {
+      "1": "Control",
+      "2": "Variation-1"
+    },
+    "goals": {
+      "1": {
+        "type": "CUSTOM_GOAL"
+      },
+      "2": {
+        "type": "CUSTOM_GOAL"
+      },
+      "3": {
+        "type": "CUSTOM_GOAL"
+      },
+      "4": {
+        "type": "CUSTOM_GOAL",
+        "url": ".sub-header .afp-nav__list > li > a[href$='/pricing'], .cre-t-43-cta"
+      },
+      "5": {
+        "type": "CUSTOM_GOAL",
+        "url": ".sub-header .afp-nav__list > li > button, .sub-header .afp-nav__list > li > a, .sub-header .afp-nav__sub-nav a, .cre-t-43-cta"
+      },
+      "6": {
+        "type": "CUSTOM_GOAL"
+      },
+      "7": {
+        "type": "CUSTOM_GOAL"
+      },
+      "8": {
+        "type": "CUSTOM_GOAL"
+      },
+      "9": {
+        "type": "CUSTOM_GOAL"
+      },
+      "10": {
+        "type": "CUSTOM_GOAL"
+      },
+      "11": {
+        "type": "CUSTOM_GOAL"
+      },
+      "12": {
+        "type": "CUSTOM_GOAL"
+      },
+      "13": {
+        "type": "CUSTOM_GOAL"
+      },
+      "14": {
+        "type": "CUSTOM_GOAL"
+      },
+      "15": {
+        "type": "CUSTOM_GOAL"
+      },
+      "16": {
+        "type": "CUSTOM_GOAL"
+      }
+    }
+  },
+  "arms": {
+    "control": [
+      [
+        "land home",
+        []
+      ],
+      [
+        "open Program dropdown",
+        [
+          "5"
+        ]
+      ],
+      [
+        "open Hotel dropdown",
+        []
+      ],
+      [
+        "click Program > Keynote Speakers",
+        []
+      ],
+      [
+        "click Sponsors > Our Sponsors",
+        [
+          "15"
+        ]
+      ],
+      [
+        "click Registration / Pricing & Register",
+        [
+          "4",
+          "6"
+        ]
+      ],
+      [
+        "direct visit Book Your Hotel",
+        [
+          "13"
+        ]
+      ]
+    ],
+    "variation": [
+      [
+        "land home",
+        []
+      ],
+      [
+        "open Program dropdown",
+        [
+          "5"
+        ]
+      ],
+      [
+        "open Hotel dropdown",
+        []
+      ],
+      [
+        "click Program > Keynote Speakers",
+        [
+          "10"
+        ]
+      ],
+      [
+        "click Sponsors > Our Sponsors",
+        [
+          "15"
+        ]
+      ],
+      [
+        "click Registration / Pricing & Register",
+        [
+          "4",
+          "6"
+        ]
+      ],
+      [
+        "direct visit Book Your Hotel",
+        [
+          "13"
+        ]
+      ]
+    ]
+  }
+}
